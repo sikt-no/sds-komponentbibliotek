@@ -1,0 +1,12 @@
+.vscode
+.idea
+.iml
+.DS_Store
+
+node_modules
+*.log
+
+coverage
+build
+dist
+storybook-static

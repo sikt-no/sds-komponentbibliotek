@@ -1,0 +1,22 @@
+{
+  "name": "@sikt/horisont-core",
+  "version": "0.1.0",
+  "main": "dist/index.css",
+  "style": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "npm run prepare",
+    "build": "rollup -i index.pcss -c ../../rollup.config.mjs",
+    "postbuild": "rimraf dist/*.{d.ts,js*}",
+    "build:tokens": "style-dictionary build -c style-dictionary.config.json",
+    "prepare": "npm run build:tokens"
+  },
+  "dependencies": {
+    "sanitize.css": "^13.0.0"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.7.2"
+  }
+}

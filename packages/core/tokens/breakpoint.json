@@ -1,0 +1,13 @@
+{
+  "breakpoint": {
+    "m": {
+      "value": "320px"
+    },
+    "l": {
+      "value": "768px"
+    },
+    "xl": {
+      "value": "1440px"
+    }
+  }
+}
