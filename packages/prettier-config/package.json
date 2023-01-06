@@ -1,0 +1,8 @@
+{
+  "name": "@sikt/prettier-config-horisont",
+  "version": "1.0.0",
+  "scripts": {},
+  "peerDependencies": {
+    "prettier": "^2.0.0"
+  }
+}
