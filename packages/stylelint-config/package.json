@@ -1,0 +1,12 @@
+{
+  "name": "@sikt/stylelint-config-horisont",
+  "version": "0.1.0",
+  "scripts": {},
+  "dependencies": {
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^14.0.0"
+  }
+}
