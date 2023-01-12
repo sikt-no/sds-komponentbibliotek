@@ -9,7 +9,9 @@
   "scripts": {
     "prebuild": "npm run prepare",
     "build": "rollup -i index.pcss -c ../../rollup.config.mjs",
-    "postbuild": "rimraf dist/*.{d.ts,js*}",
+    "postbuild": "run-p build:fonts build:clean",
+    "build:clean": "rimraf dist/*.{d.ts,js*}",
+    "build:fonts": "copyfiles fonts/* dist",
     "build:tokens": "style-dictionary build -c style-dictionary.config.json",
     "prepare": "npm run build:tokens"
   },
