@@ -1,0 +1,57 @@
+{
+  "size": {
+    "base": {
+      "xxs": {
+        "value": "calc(4rem / 16)"
+      },
+      "xxs1": {
+        "value": "calc(6rem / 16)"
+      },
+      "xs": {
+        "value": "calc(8rem / 16)"
+      },
+      "xs1": {
+        "value": "calc(10rem / 16)"
+      },
+      "s": {
+        "value": "calc(12rem / 16)"
+      },
+      "s1": {
+        "value": "calc(16rem / 16)"
+      },
+      "s2": {
+        "value": "calc(20rem / 16)"
+      },
+      "m": {
+        "value": "calc(24rem / 16)"
+      },
+      "m1": {
+        "value": "calc(32rem / 16)"
+      },
+      "m2": {
+        "value": "calc(40rem / 16)"
+      },
+      "l": {
+        "value": "calc(48rem / 16)"
+      },
+      "l1": {
+        "value": "calc(64rem / 16)"
+      },
+      "l2": {
+        "value": "calc(80rem / 16)"
+      },
+      "xl": {
+        "value": "calc(96rem / 16)"
+      },
+      "xl1": {
+        "value": "calc(128rem / 16)"
+      },
+      "xl2": {
+        "value": "calc(160rem / 16)"
+      },
+      "xxl": {
+        "value": "calc(192rem / 16)"
+      }
+    }
+  }
+}
