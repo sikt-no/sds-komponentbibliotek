@@ -1,5 +1,6 @@
 module.exports = {
   stories: [
+    "../*.stories.mdx",
     "../../packages/**/*.stories.mdx",
     "../../packages/**/*.stories.@(js|jsx|ts|tsx)",
   ],
@@ -7,6 +8,10 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    {
+      name: "@storybook/addon-docs",
+      options: { transcludeMarkdown: true },
+    },
     {
       name: "@storybook/addon-postcss",
       options: {

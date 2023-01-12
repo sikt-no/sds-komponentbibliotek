@@ -10,24 +10,41 @@ Be nice! 🙂
 
 ## Develop
 
+### Architecture
+
+#### Stylesheets
+
+Follow [BEM](https://getbem.com/naming/) naming convention for style scoping to a specific component
+
+```
+.prefix-block {
+  &__element {
+    &--modifier {
+    }
+  }
+}
+```
+
+Do not use element selectors for styling since these effect global styles and may change
+
+#### TypeScript
+
+Write unit tests for component APIs & features to make it easier to make future changes
+
+#### Output
+
+Export as both CSS & React components to allow use of custom markup
+
+#### Documentation
+
+Document components & features near the code with markdown files. Also document interactive examples with [Storybook](https://storybook.js.org/docs/react/get-started/introduction)
+
 ### Setup
 
 ```sh
 npm i
 npm run storybook
 ```
-
-### Stylesheets
-
-Follow [BEM](https://getbem.com/naming/) naming convention for style scoping
-
-### TypeScript
-
-Assure consumers with unit tests of component APIs & features
-
-### Output
-
-Export as both CSS & React components to allow use of custom markup
 
 ### Creating a new component
 
@@ -36,21 +53,17 @@ npm init -w ./packages/<package-name>
 package name: @sikt/horisont-<package-name>
 ```
 
-### Tips
+#### Tips
 
 - Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link)
 
-### Documentation
+### Branch
 
-Document components & features near the code with markdown files. Also document interactive examples with [Storybook](https://storybook.js.org/docs/react/get-started/introduction)
+Work on a feature branch named `<user>/<conventional-commit-type>-<package-name>-<issue-description>`
 
-## Branch
+### Commit
 
-Work on a feature branch named `<user>/<conventional-commit-type>-<package-name>`
-
-## Commit
-
-Commit with messages following [Conventional Commits](https://www.conventionalcommits.org/) & corresponding to [SemVer](https://semver.org/).
+Commit with messages following [Conventional Commits](https://www.conventionalcommits.org/) & corresponding to [SemVer](https://semver.org/)  
 Keep the history clean with one commit per feature
 
 ### Tips
@@ -58,11 +71,11 @@ Keep the history clean with one commit per feature
 - Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 - Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
 
-## Pull request
+### Pull request
 
 Create a pull request & wait for a required code review before merging to `main`
 
-## Publish
+### Publish
 
 Bump version & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version)
 
@@ -82,7 +95,7 @@ Publish package to registry
 npm publish --workspace=packages/<package-name>
 ```
 
-### Tips
+#### Tips
 
 - Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link) before you publish to registry
 - Test the effect of scripts with the flag `-- --dry-run`

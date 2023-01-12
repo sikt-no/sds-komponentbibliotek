@@ -1,6 +1,6 @@
 # Horisont
 
-Design System made with ♥ by [Sikt](https://www.sikt.no/)
+Horisont the component library for [Sikt](https://www.sikt.no/)
 
 ## Consume
 
@@ -41,8 +41,21 @@ Create custom markup
 <button class="horisont-button horisont-button--primary">Hello, World!</button>
 ```
 
-## Contributing
+## Contribute
 
 [Contributing](CONTRIBUTING.md)
 
+## Feedback
+
+Please give us feedback  
+E-mail [designsystem@sikt.no](designsystem@sikt.no)  
+Slack [#designsystem](https://sikt-no.slack.com/archives/horisont)  
+Gitlab [Issues](https://gitlab.sikt.no/designsystem/horisont/-/issues)
+
 ## License
+
+MIT
+
+---
+
+Made with ♥ at [Sikt](https://www.sikt.no/)

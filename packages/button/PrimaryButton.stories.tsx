@@ -10,9 +10,9 @@ export default {
 
 const Template: Story<ButtonProps> = (args) => <PrimaryButton {...args} />;
 
-export const Primary: Story<ButtonProps> = Template.bind({});
-Primary.args = {
-  children: "Primary",
+export const Button: Story<ButtonProps> = Template.bind({});
+Button.args = {
+  children: "Button",
   onClick: () => {
     alert("click handler");
   },

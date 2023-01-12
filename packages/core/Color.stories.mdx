@@ -1,3 +1,38 @@
-<Meta title="Core/HelloWorld" />
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs";
+import * as tokens from "../core/dist/tokens/js/tokens.js";
 
-# Welcome to Horisont
+<Meta title="Core/Color" />
+
+# Color
+
+## Base
+
+<ColorPalette>
+  {Object.entries(tokens.color.base).map((token) => {
+    const colors = {};
+    Object.entries(token[1]).map((item) => (colors[item[0]] = item[1].value));
+    return (
+      <ColorItem
+        title={token[0]}
+        subtitle={`color.base.${token[0]}`}
+        colors={colors}
+      />
+    );
+  })}
+</ColorPalette>
+
+## Typography
+
+<ColorPalette>
+  {Object.entries(tokens.color.typography).map((token) => {
+    const colors = {};
+    Object.entries(token[1]).map((item) => (colors[item[0]] = item[1].value));
+    return (
+      <ColorItem
+        title={token[0]}
+        subtitle={`color.typography.${token[0]}`}
+        colors={colors}
+      />
+    );
+  })}
+</ColorPalette>

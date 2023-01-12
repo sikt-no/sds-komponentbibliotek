@@ -1,83 +1,85 @@
 {
   "color": {
-    "lilla": {
-      "01": {
-        "value": "#7351fa"
+    "base": {
+      "lilla": {
+        "01": {
+          "value": "#7351fa"
+        },
+        "02": {
+          "value": "#c3b4fd"
+        },
+        "03": {
+          "value": "#ebe6fe"
+        }
       },
-      "02": {
-        "value": "#c3b4fd"
+      "bla": {
+        "01": {
+          "value": "#3381ff"
+        },
+        "02": {
+          "value": "#80b1ff"
+        },
+        "03": {
+          "value": "#e5efff"
+        }
       },
-      "03": {
-        "value": "#ebe6fe"
-      }
-    },
-    "bla": {
-      "01": {
-        "value": "#3381ff"
+      "gronn": {
+        "01": {
+          "value": "#13bb83"
+        },
+        "02": {
+          "value": "#8bf3d1"
+        },
+        "03": {
+          "value": "#e8fdf6"
+        }
       },
-      "02": {
-        "value": "#80b1ff"
+      "oransje": {
+        "01": {
+          "value": "#ff8f66"
+        },
+        "02": {
+          "value": "#ffb499"
+        },
+        "03": {
+          "value": "#ffece5"
+        }
       },
-      "03": {
-        "value": "#e5efff"
-      }
-    },
-    "gronn": {
-      "01": {
-        "value": "#13bb83"
+      "gul": {
+        "01": {
+          "value": "#ffd04c"
+        },
+        "02": {
+          "value": "#ffe499"
+        },
+        "03": {
+          "value": "#fff2cc"
+        }
       },
-      "02": {
-        "value": "#8bf3d1"
+      "rosa": {
+        "01": {
+          "value": "#ff66ba"
+        },
+        "02": {
+          "value": "#ffb2dd"
+        },
+        "03": {
+          "value": "#ffe5f3"
+        }
       },
-      "03": {
-        "value": "#e8fdf6"
-      }
-    },
-    "oransje": {
-      "01": {
-        "value": "#ff8f66"
-      },
-      "02": {
-        "value": "#ffb499"
-      },
-      "03": {
-        "value": "#ffece5"
-      }
-    },
-    "gul": {
-      "01": {
-        "value": "#ffd04c"
-      },
-      "02": {
-        "value": "#ffe499"
-      },
-      "03": {
-        "value": "#fff2cc"
-      }
-    },
-    "rosa": {
-      "01": {
-        "value": "#ff66ba"
-      },
-      "02": {
-        "value": "#ffb2dd"
-      },
-      "03": {
-        "value": "#ffe5f3"
-      }
-    },
-    "background": {
-      "light": {
-        "value": "#f8f8f8"
-      },
-      "dark": {
-        "value": "#0e0033"
-      },
-      "white": {
-        "value": "#fff"
-      },
-      "black": {
-        "value": "#000"
+      "background": {
+        "light": {
+          "value": "#f8f8f8"
+        },
+        "dark": {
+          "value": "#0e0033"
+        },
+        "white": {
+          "value": "#fff"
+        },
+        "black": {
+          "value": "#000"
+        }
       }
     },
     "typography": {
