@@ -80,6 +80,11 @@
         "black": {
           "value": "#000"
         }
+      },
+      "theme": {
+        "color": {
+          "value": "{color.base.bla.02.value}"
+        }
       }
     },
     "typography": {
