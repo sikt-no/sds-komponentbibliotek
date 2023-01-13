@@ -8,7 +8,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 interface ButtonTypes {
-  buttonType: "primary" | "secondary";
+  buttonType: "primary" | "secondary" | "tertiary";
 }
 
 const Button = ({
@@ -28,7 +28,7 @@ const Button = ({
       onClick={onClick}
       {...rest}
     >
-      {children}
+      <span className="horisont-button__label">{children}</span>
     </button>
   );
 };
@@ -37,3 +37,5 @@ export const PrimaryButton = (props: ButtonProps) =>
   Button({ ...props, buttonType: "primary" });
 export const SecondaryButton = (props: ButtonProps) =>
   Button({ ...props, buttonType: "secondary" });
+export const TertiaryButton = (props: ButtonProps) =>
+  Button({ ...props, buttonType: "tertiary" });

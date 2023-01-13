@@ -1,8 +1,62 @@
 .horisont-button {
   cursor: pointer;
-  background-color: #fff;
+  border: 1px solid;
+  border-radius: 24px;
+  padding: 11px;
+
+  &__label {
+    padding: 0 16px;
+  }
+
+  /* TODO: use variables */
+  /* TODO: &__icon */
+  /* TODO: focus only on keyboard */
+  &:focus {
+    outline: 4px dashed #3381ff;
+  }
 
   &--primary {
-    background-color: aliceblue;
+    color: #fff;
+    background-color: #7351fa;
+    border-color: #7351fa;
+
+    &:hover {
+      background: #9b83fc;
+    }
+    &:focus {
+      background: #9b83fc;
+      border-color: #9b83fc;
+    }
+    &:active {
+      background: #5e39f9;
+    }
+  }
+
+  &--secondary {
+    color: #0b0132;
+    background-color: #fff;
+    border-color: #c3b4fd;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  &--tertiary {
+    color: #0b0132;
+    background-color: #fff;
+    border-color: #fff;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+    &:active {
+      text-decoration: none;
+    }
   }
 }
