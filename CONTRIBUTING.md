@@ -66,14 +66,15 @@ Work on a feature branch named `<user>/<conventional-commit-type>-<package-name>
 Commit with messages following [Conventional Commits](https://www.conventionalcommits.org/) & corresponding to [SemVer](https://semver.org/)  
 Keep the history clean with one commit per feature
 
-### Tips
+#### Tips
 
 - Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 - Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
 
-### Pull request
+### Merge request
 
-Create a pull request & wait for a required code review before merging to `main`
+Create a merge request & wait for a required code review before merging to `main`  
+Review comments are closed by the reviewer & not the branch owner
 
 ### Publish
 
