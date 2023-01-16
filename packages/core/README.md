@@ -2,6 +2,10 @@
 
 ## Consume
 
+```sh
+npm i -s @sikt/horisont-core
+```
+
 ### Stylesheet
 
 ```css
