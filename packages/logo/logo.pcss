@@ -1,0 +1,30 @@
+.horisont-logo {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+
+  &__icon {
+    width: 75px;
+    height: 48px;
+  }
+
+  &--primary {
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 48px;
+  }
+
+  &--secondary {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+
+    .horisont-logo__subtitle {
+      font-weight: 400;
+    }
+  }
+
+  &--light {
+    color: var(--horisont-color-typography-light-primary);
+  }
+}

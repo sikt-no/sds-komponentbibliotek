@@ -6,6 +6,17 @@
 npm i -s @sikt/horisont-logo
 ```
 
+### Logo
+
+#### React
+
+```js
+import { PrimaryLogo } from "@sikt/horisont-logo";
+import "@sikt/horisont-logo/dist/index.css";
+
+<PrimaryLogo />;
+```
+
 ### Favicon
 
 `index.html`

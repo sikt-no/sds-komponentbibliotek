@@ -13,6 +13,7 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   moduleNameMapper: {
     "^.+\\.(css|less|scss|sass|pcss)$": "<rootDir>/jest/__mocks__/styleMock.js",
+    "\\.svg$": "<rootDir>/jest/__mocks__/svgMock.js",
   },
   roots: ["<rootDir>/packages"],
   testEnvironment: "jsdom",

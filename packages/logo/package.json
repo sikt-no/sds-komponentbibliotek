@@ -1,5 +1,20 @@
 {
   "name": "@sikt/horisont-logo",
   "version": "1.0.0",
-  "scripts": {}
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "style": "dist/index.css",
+  "files": [
+    "dist",
+    "*.png",
+    "*.svg"
+  ],
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.mjs"
+  },
+  "peerDependencies": {
+    "clsx": "^1.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
 }
