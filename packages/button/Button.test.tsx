@@ -2,11 +2,12 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import { PrimaryButton, SecondaryButton } from "./Button";
+import { PrimaryButton, SecondaryButton, TertiaryButton } from "./Button";
 
 const buttonTypes = [
   { name: "primary", component: PrimaryButton },
   { name: "secondary", component: SecondaryButton },
+  { name: "tertiary", component: TertiaryButton },
 ];
 
 describe("Button", () => {
@@ -25,9 +26,9 @@ describe("Button", () => {
     buttonTypes.map((buttonType) => {
       it(`${buttonType.name} should render`, async () => {
         const { name, component: Button } = buttonType;
-        render(<Button>{name}</Button>);
+        render(<Button data-testid={name}>{name}</Button>);
 
-        expect(screen.getByText(name)).toHaveClass(
+        expect(screen.getByTestId(name)).toHaveClass(
           `horisont-button horisont-button--${name}`
         );
       });
@@ -44,9 +45,13 @@ describe("Button", () => {
     });
 
     it("should have class name", async () => {
-      render(<PrimaryButton className="test-class-name">Foo</PrimaryButton>);
+      render(
+        <PrimaryButton data-testid="test" className="test-class-name">
+          Foo
+        </PrimaryButton>
+      );
 
-      expect(screen.getByText("Foo")).toHaveClass(
+      expect(screen.getByTestId("test")).toHaveClass(
         "horisont-button test-class-name"
       );
     });
