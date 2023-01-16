@@ -2,6 +2,12 @@
 
 ## Consume
 
+```sh
+npm i -s @sikt/stylelint-config-horisont
+```
+
+### Config
+
 `stylelint.config.js`
 
 ```js

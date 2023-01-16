@@ -2,13 +2,19 @@
 
 ## Consume
 
+```sh
+npm i -s @sikt/prettier-config-horisont
+```
+
+### Config
+
 `prettier.config.js`
 
 ```js
 module.exports = "@sikt/prettier-config-horisont";
 ```
 
-### Extend
+#### Extend
 
 ```js
 module.exports = {

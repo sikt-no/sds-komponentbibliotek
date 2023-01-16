@@ -2,6 +2,12 @@
 
 ## Consume
 
+```sh
+npm i -s @sikt/browserslist-config-horisont
+```
+
+### Config
+
 `package.json`
 
 ```json
