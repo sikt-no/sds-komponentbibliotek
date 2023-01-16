@@ -16,6 +16,7 @@ import * as tokens from "../core/dist/tokens/js/tokens.js";
 >
   <div
     style={{
+      fontSize: "14px",
       fontWeight: "700",
       color: "rgba(51,51,51,0.6)",
       paddingBottom: "20px",
@@ -25,6 +26,7 @@ import * as tokens from "../core/dist/tokens/js/tokens.js";
   </div>
   <div
     style={{
+      fontSize: "14px",
       fontWeight: "700",
       color: "rgba(51,51,51,0.6)",
       paddingBottom: "20px",
@@ -34,11 +36,16 @@ import * as tokens from "../core/dist/tokens/js/tokens.js";
   </div>
   {Object.entries(tokens.size.base).map((token) => {
     const size = token[1].value;
+    const isPrimary = !/\d/.test(token[1].attributes.item);
     return (
       <>
         <div>
-          <div style={{ fontWeight: "700", color: "#333333" }}>{token[0]}</div>
-          <div style={{ color: "rgba(51,51,51,0.8)" }}>
+          <div
+            style={{ fontSize: "14px", fontWeight: "700", color: "#333333" }}
+          >
+            {token[0]}
+          </div>
+          <div style={{ color: "rgba(51,51,51,0.8)", fontSize: "14px" }}>
             {token[1].attributes.category}.{token[1].attributes.type}.
             {token[1].attributes.item}
           </div>
@@ -48,7 +55,9 @@ import * as tokens from "../core/dist/tokens/js/tokens.js";
             style={{
               width: size,
               height: "85px",
-              background: tokens.color.base.background.dark.value,
+              background: isPrimary
+                ? tokens.color.base.background.dark.value
+                : tokens.color.typography.dark.disabled.value,
             }}
           />
         </div>

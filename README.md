@@ -45,13 +45,6 @@ Create custom markup
 
 [Contributing](CONTRIBUTING.md)
 
-## Feedback
-
-Please give us feedback  
-E-mail [designsystem@sikt.no](designsystem@sikt.no)  
-Slack [#designsystem](https://sikt-no.slack.com/archives/horisont)  
-Gitlab [Issues](https://gitlab.sikt.no/designsystem/horisont/-/issues)
-
 ## License
 
 MIT

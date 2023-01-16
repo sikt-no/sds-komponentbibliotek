@@ -4,6 +4,13 @@
 
 Be nice! 🙂
 
+## Feedback
+
+Please give us feedback  
+E-mail [designsystem@sikt.no](designsystem@sikt.no)  
+Slack [#designsystem](https://sikt-no.slack.com/archives/horisont)  
+Gitlab [Issues](https://gitlab.sikt.no/designsystem/horisont/-/issues)
+
 ## Design
 
 [Figma](https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem)
