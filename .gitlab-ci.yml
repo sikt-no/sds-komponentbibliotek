@@ -1,0 +1,66 @@
+image: node:18
+
+stages:
+  - install
+  - build
+  - test
+  - deploy
+
+install:
+  stage: install
+  script:
+    - npm ci
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+    untracked: true
+    expire_in: 30 mins
+    paths:
+      - node_modules
+
+#build-packages:
+#  stage: build
+#  script:
+#    - npm run build
+#  artifacts:
+#    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+#    untracked: true
+#    expire_in: 1 days
+#    paths:
+#      - packages/**/*
+#  dependencies:
+#    - install
+
+#build-storybook:
+#  stage: build
+#  script:
+#    - npm run storybook:build
+#  artifacts:
+#    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+#    untracked: true
+#    expire_in: 1 days
+#    paths:
+#      - storybook/storybook-static
+#  dependencies:
+#    - install
+
+lint:
+  stage: test
+  script:
+    - npm run lint
+  dependencies:
+    - install
+
+test:
+  stage: test
+  script:
+    - npm run test
+  dependencies:
+    - install
+#deploy-storybook:
+#  stage: deploy
+#  script:
+#    - deploy storybook/deploy.yaml
+#  only:
+#    - main
+#  dependencies:
+#    - build-storybook
