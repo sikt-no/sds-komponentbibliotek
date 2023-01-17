@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
-import { ButtonProps, TertiaryButton as Button } from "./Button";
+import { ButtonProps, TertiaryButton as Button } from "../Button";
 
 export default {
   title: "Components/Button/Tertiary",
