@@ -31,6 +31,7 @@ describe("Button", () => {
         expect(screen.getByTestId(name)).toHaveClass(
           `horisont-button horisont-button--${name}`
         );
+        expect(screen.getByText(name)).toBeInTheDocument();
       });
     });
 
@@ -54,6 +55,40 @@ describe("Button", () => {
       expect(screen.getByTestId("test")).toHaveClass(
         "horisont-button test-class-name"
       );
+    });
+
+    it("should have left icon element", async () => {
+      render(
+        <PrimaryButton data-testid="test" iconLeft="icon">
+          Foo
+        </PrimaryButton>
+      );
+
+      expect(screen.getByText("icon")).toHaveClass("horisont-button__icon");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
+
+    it("should have right icon element", async () => {
+      render(
+        <PrimaryButton data-testid="test" iconRight="icon">
+          Foo
+        </PrimaryButton>
+      );
+
+      expect(screen.getByText("icon")).toHaveClass("horisont-button__icon");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
+
+    it("should have icon element", async () => {
+      render(
+        <PrimaryButton data-testid="test" icon="icon">
+          Foo
+        </PrimaryButton>
+      );
+
+      expect(screen.getByText("icon")).toHaveClass("horisont-button__icon");
+      expect(screen.getByText("icon")).toHaveAccessibleName("Foo");
+      expect(screen.queryByText("Foo")).not.toBeInTheDocument();
     });
   });
 });
