@@ -17,3 +17,30 @@ PrimaryButton.args = {
     alert("click handler");
   },
 };
+
+export const PrimaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
+PrimaryButtonIconLeft.args = {
+  children: "Primary Button",
+  iconLeft: "i",
+  onClick: () => {
+    alert("click handler");
+  },
+};
+
+export const PrimaryButtonIconRight: Story<ButtonProps> = Template.bind({});
+PrimaryButtonIconRight.args = {
+  children: "Primary Button",
+  iconRight: "i",
+  onClick: () => {
+    alert("click handler");
+  },
+};
+
+export const PrimaryButtonIcon: Story<ButtonProps> = Template.bind({});
+PrimaryButtonIcon.args = {
+  children: "Primary Button",
+  icon: "i",
+  onClick: () => {
+    alert("click handler");
+  },
+};

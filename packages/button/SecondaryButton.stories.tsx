@@ -17,3 +17,21 @@ SecondaryButton.args = {
     alert("click handler");
   },
 };
+
+export const SecondaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
+SecondaryButtonIconLeft.args = {
+  children: "Secondary Button",
+  iconLeft: "i",
+  onClick: () => {
+    alert("click handler");
+  },
+};
+
+export const SecondaryButtonIconRight: Story<ButtonProps> = Template.bind({});
+SecondaryButtonIconRight.args = {
+  children: "Secondary Button",
+  iconRight: "i",
+  onClick: () => {
+    alert("click handler");
+  },
+};

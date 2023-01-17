@@ -5,6 +5,9 @@ import "./button.pcss";
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children: ReactNode;
+  icon?: ReactNode;
+  iconLeft?: ReactNode;
+  iconRight?: ReactNode;
 }
 
 interface ButtonTypes {
@@ -16,8 +19,12 @@ const Button = ({
   children,
   className,
   onClick,
+  iconLeft,
+  iconRight,
+  icon,
   ...rest
 }: ButtonProps & ButtonTypes) => {
+  const ariaLabel = typeof children === "string" ? children : undefined;
   return (
     <button
       className={clsx(
@@ -28,14 +35,22 @@ const Button = ({
       onClick={onClick}
       {...rest}
     >
-      <span className="horisont-button__label">{children}</span>
+      {iconLeft && <div className="horisont-button__icon">{iconLeft}</div>}
+      {icon ? (
+        <div className="horisont-button__icon" aria-label={ariaLabel}>
+          {icon}
+        </div>
+      ) : (
+        <span className="horisont-button__label">{children}</span>
+      )}
+      {iconRight && <div className="horisont-button__icon">{iconRight}</div>}
     </button>
   );
 };
 
 export const PrimaryButton = (props: ButtonProps) =>
   Button({ ...props, buttonType: "primary" });
-export const SecondaryButton = (props: ButtonProps) =>
+export const SecondaryButton = (props: Omit<ButtonProps, "icon">) =>
   Button({ ...props, buttonType: "secondary" });
-export const TertiaryButton = (props: ButtonProps) =>
+export const TertiaryButton = (props: Omit<ButtonProps, "icon">) =>
   Button({ ...props, buttonType: "tertiary" });

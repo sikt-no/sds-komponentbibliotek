@@ -1,20 +1,22 @@
 .horisont-button {
-  cursor: pointer;
+  align-items: center;
   border: 1px solid;
   border-radius: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
   padding: 11px;
 
   &__label {
     padding: 0 16px;
   }
 
-  /*
-  TODO:
-   use variables
-   &__icon
-   focus only on keyboard
-  */
-  &:focus {
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:focus-visible {
     outline: 4px dashed #3381ff;
   }
 
@@ -27,7 +29,7 @@
       background: #9b83fc;
     }
 
-    &:focus {
+    &:focus-visible {
       background: #9b83fc;
       border-color: #9b83fc;
     }
@@ -41,15 +43,6 @@
     color: #0b0132;
     background-color: #fff;
     border-color: #c3b4fd;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-
-    &:active {
-      text-decoration: none;
-    }
   }
 
   &--tertiary {
@@ -57,13 +50,26 @@
     background-color: #fff;
     border-color: #fff;
 
+    .horisont-button__icon {
+      background-color: var(--horisont-color-base-background-dark);
+      border-radius: 50%;
+      color: var(--horisont-color-typography-light-primary);
+    }
+  }
+
+  &--secondary,
+  &--tertiary {
     &:hover,
-    &:focus {
-      text-decoration: underline;
+    &:focus-visible {
+      .horisont-button__label {
+        text-decoration: underline;
+      }
     }
 
     &:active {
-      text-decoration: none;
+      .horisont-button__label {
+        text-decoration: none;
+      }
     }
   }
 }
