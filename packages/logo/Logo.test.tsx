@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import { LogoProps, PrimaryLogo, SecondaryLogo } from "./Logo";
+import { PrimaryLogo, SecondaryLogo } from "./Logo";
 
 const logoTypes = [
   { name: "primary", component: PrimaryLogo },
