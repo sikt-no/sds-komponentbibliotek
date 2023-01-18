@@ -7,8 +7,7 @@ Be nice! 🙂
 ## Feedback
 
 Please give us feedback  
-E-mail [designsystem@sikt.no](designsystem@sikt.no)  
-Slack [#designsystem](https://sikt-no.slack.com/archives/horisont)  
+Slack [#komponentbibliotek](https://sikt-no.slack.com/archives/C04K82KES0J)  
 Gitlab [Issues](https://gitlab.sikt.no/designsystem/horisont/-/issues)
 
 ## Design
@@ -17,7 +16,13 @@ Gitlab [Issues](https://gitlab.sikt.no/designsystem/horisont/-/issues)
 
 ## Develop
 
+[Gitlab](https://gitlab.sikt.no/designsystem/horisont/)
+
 ### Architecture
+
+#### Accessibility
+
+All components should be tested with [jest-axe](https://github.com/nickcolley/jest-axe) for accessibility issues. This only catches a small amount of issues and manual testing is still required by both designers & developers
 
 #### Stylesheets
 
@@ -34,7 +39,7 @@ Follow [BEM](https://getbem.com/naming/) naming convention for style scoping to 
 
 Do not use element selectors for styling since these effect global styles and may change
 
-#### TypeScript
+#### React
 
 Write unit tests for component APIs & features to make it easier to make future changes
 
