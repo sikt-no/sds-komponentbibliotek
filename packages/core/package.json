@@ -11,7 +11,7 @@
     "build": "rollup -i index.pcss -c ../../rollup.config.mjs",
     "postbuild": "run-p build:fonts build:clean",
     "build:clean": "rimraf dist/*.{d.ts,js*}",
-    "build:fonts": "copyfiles fonts/* dist",
+    "build:fonts": "cpy fonts/* dist",
     "build:tokens": "style-dictionary build -c style-dictionary.config.js",
     "prepare": "npm run build:tokens"
   },

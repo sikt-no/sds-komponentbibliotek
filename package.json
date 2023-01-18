@@ -61,7 +61,7 @@
     "@typescript-eslint/parser": "^5.48.0",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",
-    "copyfiles": "^2.4.1",
+    "cpy-cli": "^4.2.0",
     "cross-var": "^1.1.0",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
