@@ -18,28 +18,39 @@ PrimaryButton.args = {
   },
 };
 
-export const PrimaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
-PrimaryButtonIconLeft.args = {
-  children: "Primary Button",
-  iconLeft: "i",
-  onClick: () => {
-    alert("click handler");
-  },
-};
-
 export const PrimaryButtonIconRight: Story<ButtonProps> = Template.bind({});
 PrimaryButtonIconRight.args = {
   children: "Primary Button",
-  iconRight: "i",
+  icon: "i",
   onClick: () => {
     alert("click handler");
   },
 };
 
-export const PrimaryButtonIcon: Story<ButtonProps> = Template.bind({});
-PrimaryButtonIcon.args = {
+export const PrimaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
+PrimaryButtonIconLeft.args = {
   children: "Primary Button",
   icon: "i",
+  iconType: "left",
+  onClick: () => {
+    alert("click handler");
+  },
+};
+
+export const PrimaryButtonIconOnly: Story<ButtonProps> = Template.bind({});
+PrimaryButtonIconOnly.args = {
+  children: "Primary Button",
+  icon: "i",
+  iconType: "only",
+  onClick: () => {
+    alert("click handler");
+  },
+};
+
+export const PrimaryButtonLight: Story<ButtonProps> = Template.bind({});
+PrimaryButtonLight.args = {
+  children: "Primary Button",
+  color: "light",
   onClick: () => {
     alert("click handler");
   },

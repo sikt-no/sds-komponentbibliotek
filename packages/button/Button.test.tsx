@@ -59,7 +59,7 @@ describe("Button", () => {
 
     it("should have left icon element", async () => {
       render(
-        <PrimaryButton data-testid="test" iconLeft="icon">
+        <PrimaryButton data-testid="test" icon="icon" iconType="left">
           Foo
         </PrimaryButton>
       );
@@ -70,7 +70,7 @@ describe("Button", () => {
 
     it("should have right icon element", async () => {
       render(
-        <PrimaryButton data-testid="test" iconRight="icon">
+        <PrimaryButton data-testid="test" icon="icon" iconType="right">
           Foo
         </PrimaryButton>
       );

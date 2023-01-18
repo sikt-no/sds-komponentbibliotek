@@ -17,38 +17,61 @@
   }
 
   &:focus-visible {
-    outline: 4px dashed #3381ff;
+    outline: 4px dashed var(--horisont-color-base-bla-01);
   }
 
   &--primary {
-    color: #fff;
-    background-color: #7351fa;
-    border-color: #7351fa;
+    color: var(--horisont-color-typography-light-primary);
+    background-color: var(--horisont-color-base-background-dark);
+    border-color: var(--horisont-color-base-background-dark);
 
-    &:hover {
-      background: #9b83fc;
-    }
-
+    &:hover,
     &:focus-visible {
-      background: #9b83fc;
-      border-color: #9b83fc;
+      background: #160363; /* .Base/Purple/20 */
+      border-color: #160363;
     }
 
     &:active {
-      background: #5e39f9;
+      background: #050119; /* .Base/Purple/5 */
+    }
+
+    &:disabled {
+      color: var(--horisont-color-typography-light-disabled);
+      background-color: #0b013433;
+      border-color: transparent;
+    }
+
+    &.horisont-button--light {
+      background-color: var(--horisont-color-base-lilla-01);
+      border-color: var(--horisont-color-base-lilla-01);
+
+      &:hover,
+      &:focus-visible {
+        background: #9b83fc; /* .Base/Purple/75 */
+        border-color: #9b83fc;
+      }
+
+      &:active {
+        background: #5e39f9; /* .Base/Purple/60 */
+      }
+
+      &:disabled {
+        color: var(--horisont-color-typography-light-disabled);
+        background-color: var(--horisont-color-base-lilla-01) 33;
+        border-color: transparent;
+      }
     }
   }
 
   &--secondary {
-    color: #0b0132;
-    background-color: #fff;
-    border-color: #c3b4fd;
+    color: var(--horisont-color-typography-dark-primary);
+    background-color: var(--horisont-color-base-background-white);
+    border-color: var(--horisont-color-base-lilla-02);
   }
 
   &--tertiary {
-    color: #0b0132;
-    background-color: #fff;
-    border-color: #fff;
+    color: var(--horisont-color-typography-dark-primary);
+    border-color: transparent;
 
     .horisont-button__icon {
       background-color: var(--horisont-color-base-background-dark);
@@ -70,6 +93,10 @@
       .horisont-button__label {
         text-decoration: none;
       }
+    }
+
+    &:disabled {
+      color: var(--horisont-color-typography-dark-disabled);
     }
   }
 }

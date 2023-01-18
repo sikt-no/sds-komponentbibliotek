@@ -18,19 +18,30 @@ TertiaryButton.args = {
   },
 };
 
-export const TertiaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
-TertiaryButtonIconLeft.args = {
+export const TertiaryButtonIconRight: Story<ButtonProps> = Template.bind({});
+TertiaryButtonIconRight.args = {
   children: "Tertiary Button",
-  iconLeft: "i",
+  icon: "i",
   onClick: () => {
     alert("click handler");
   },
 };
 
-export const TertiaryButtonIconRight: Story<ButtonProps> = Template.bind({});
-TertiaryButtonIconRight.args = {
+export const TertiaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
+TertiaryButtonIconLeft.args = {
   children: "Tertiary Button",
-  iconRight: "i",
+  icon: "i",
+  iconType: "left",
+  onClick: () => {
+    alert("click handler");
+  },
+};
+
+export const TertiaryButtonIconOnly: Story<ButtonProps> = Template.bind({});
+TertiaryButtonIconOnly.args = {
+  children: "Tertiary Button",
+  icon: "i",
+  iconType: "only",
   onClick: () => {
     alert("click handler");
   },

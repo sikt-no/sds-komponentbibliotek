@@ -18,19 +18,30 @@ SecondaryButton.args = {
   },
 };
 
-export const SecondaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
-SecondaryButtonIconLeft.args = {
+export const SecondaryButtonIconRight: Story<ButtonProps> = Template.bind({});
+SecondaryButtonIconRight.args = {
   children: "Secondary Button",
-  iconLeft: "i",
+  icon: "i",
   onClick: () => {
     alert("click handler");
   },
 };
 
-export const SecondaryButtonIconRight: Story<ButtonProps> = Template.bind({});
-SecondaryButtonIconRight.args = {
+export const SecondaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
+SecondaryButtonIconLeft.args = {
   children: "Secondary Button",
-  iconRight: "i",
+  icon: "i",
+  iconType: "left",
+  onClick: () => {
+    alert("click handler");
+  },
+};
+
+export const SecondaryButtonIconOnly: Story<ButtonProps> = Template.bind({});
+SecondaryButtonIconOnly.args = {
+  children: "Secondary Button",
+  icon: "i",
+  iconType: "only",
   onClick: () => {
     alert("click handler");
   },
