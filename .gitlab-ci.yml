@@ -9,6 +9,7 @@ stages:
 install:
   stage: install
   script:
+    - npm pkg delete scripts.prepare
     - npm ci
   artifacts:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
@@ -17,6 +18,23 @@ install:
     paths:
       - node_modules
 
+lint:
+  stage: test
+  script:
+    - npm run lint
+  dependencies:
+    - install
+  needs:
+    - install
+
+test:
+  stage: test
+  script:
+    - npm run test
+  dependencies:
+    - install
+  needs:
+    - install
 #build-packages:
 #  stage: build
 #  script:
@@ -28,6 +46,8 @@ install:
 #    paths:
 #      - packages/**/*
 #  dependencies:
+#    - install
+#  needs:
 #    - install
 
 #build-storybook:
@@ -42,20 +62,9 @@ install:
 #      - storybook/storybook-static
 #  dependencies:
 #    - install
+#  needs:
+#    - install
 
-lint:
-  stage: test
-  script:
-    - npm run lint
-  dependencies:
-    - install
-
-test:
-  stage: test
-  script:
-    - npm run test
-  dependencies:
-    - install
 #deploy-storybook:
 #  stage: deploy
 #  script:
@@ -63,4 +72,7 @@ test:
 #  only:
 #    - main
 #  dependencies:
+#    - build-storybook
+#  needs:
+#    - install
 #    - build-storybook
