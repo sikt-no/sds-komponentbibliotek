@@ -81,7 +81,7 @@ describe("Button", () => {
 
     it("should have icon element", async () => {
       render(
-        <PrimaryButton data-testid="test" icon="icon">
+        <PrimaryButton data-testid="test" icon="icon" iconType="only">
           Foo
         </PrimaryButton>
       );
