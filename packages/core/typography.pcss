@@ -1,41 +1,161 @@
-:root {
-  --horisont-fontsize-mod-l: 0.875;
-  --horisont-fontsize-mod-m: 0.75;
+.horisont-typography {
+  &-body {
+    &--normal {
+      font-size: var(--horisont-size-base-s1);
+      line-height: var(--horisont-size-base-m);
+    }
 
-  @media (--horisont-breakpoint-tablet) {
-    color: red;
+    &--lead {
+      font-size: var(--horisont-size-base-s2);
+      line-height: var(--horisont-size-base-m1);
+
+      @media (--horisont-breakpoint-desktop) {
+        font-size: var(--horisont-size-base-s2);
+        line-height: var(--horisont-size-base-m);
+      }
+      @media (--horisont-breakpoint-ultrawide) {
+        font-size: var(--horisont-size-base-m1);
+        line-height: var(--horisont-size-base-m1);
+      }
+    }
+
+    &--caption {
+      font-size: var(--horisont-size-base-s2);
+      line-height: var(--horisont-size-base-s1);
+    }
   }
-}
 
-.horisont-typography-body {
-  /*
-  TODO:
-   -normal
-   -lead
-   -caption
-   */
-}
+  &-heading {
+    &--page {
+      font-size: calc(
+        var(--horisont-size-base-l) * var(--horisont-fontsize-mod-m)
+      );
+      font-weight: 700;
+      line-height: var(--horisont-size-base-l);
 
-.horisont-typography-heading {
-  /*
-  TODO:
-   -page
-   -section
-   -component
-   -group
-   -paragraph
-   -overline
-   */
-}
+      @media (--horisont-breakpoint-tablet) {
+        font-size: calc(
+          var(--horisont-size-base-l1) * var(--horisont-fontsize-mod-l)
+        );
+        line-height: var(--horisont-size-base-l1);
+      }
+      @media (--horisont-breakpoint-desktop) {
+        font-size: calc(
+          var(--horisont-size-base-l2) * var(--horisont-fontsize-mod-l)
+        );
+        line-height: var(--horisont-size-base-l2);
+      }
+      @media (--horisont-breakpoint-ultrawide) {
+        font-size: calc(
+          var(--horisont-size-base-xl) * var(--horisont-fontsize-mod-l)
+        );
+        line-height: var(--horisont-size-base-xl);
+      }
+    }
 
-.horisont-typography-link {
-  /*
-  TODO:
-   -link
-   -em
-   -strong
-   -quote
-   -blockquote
-   -abbr
-   */
+    &--section {
+      font-size: calc(
+        var(--horisont-size-base-m2) * var(--horisont-fontsize-mod-l)
+      );
+      font-weight: 400;
+      line-height: var(--horisont-size-base-m2);
+
+      @media (--horisont-breakpoint-tablet) {
+        font-size: calc(
+          var(--horisont-size-base-l) * var(--horisont-fontsize-mod-m)
+        );
+        line-height: var(--horisont-size-base-l);
+      }
+      @media (--horisont-breakpoint-desktop) {
+        font-size: calc(
+          var(--horisont-size-base-l1) * var(--horisont-fontsize-mod-m)
+        );
+        line-height: var(--horisont-size-base-l1);
+      }
+      @media (--horisont-breakpoint-ultrawide) {
+        font-size: calc(
+          var(--horisont-size-base-l2) * var(--horisont-fontsize-mod-l)
+        );
+        line-height: var(--horisont-size-base-l2);
+      }
+    }
+
+    &--component {
+      font-size: calc(
+        var(--horisont-size-base-m1) * var(--horisont-fontsize-mod-m)
+      );
+      font-weight: 400;
+      line-height: var(--horisont-size-base-m1);
+
+      @media (--horisont-breakpoint-tablet) {
+        font-size: calc(
+          var(--horisont-size-base-m2) * var(--horisont-fontsize-mod-m)
+        );
+        line-height: var(--horisont-size-base-m2);
+      }
+      @media (--horisont-breakpoint-desktop) {
+        font-size: calc(
+          var(--horisont-size-base-l) * var(--horisont-fontsize-mod-m)
+        );
+        line-height: var(--horisont-size-base-l);
+      }
+    }
+
+    &--group {
+      font-size: calc(
+        var(--horisont-size-base-m) * var(--horisont-fontsize-mod-m)
+      );
+      font-weight: 400;
+      line-height: var(--horisont-size-base-m);
+
+      @media (--horisont-breakpoint-tablet) {
+        font-size: calc(
+          var(--horisont-size-base-m1) * var(--horisont-fontsize-mod-m)
+        );
+        line-height: var(--horisont-size-base-m1);
+      }
+      @media (--horisont-breakpoint-desktop) {
+        font-size: calc(
+          var(--horisont-size-base-m2) * var(--horisont-fontsize-mod-m)
+        );
+        line-height: var(--horisont-size-base-m2);
+      }
+    }
+
+    &--paragraph {
+      font-size: calc(
+        var(--horisont-size-base-s2) * var(--horisont-fontsize-mod-m)
+      );
+      font-weight: 700;
+      line-height: var(--horisont-size-base-s2);
+
+      @media (--horisont-breakpoint-tablet) {
+        font-size: calc(
+          var(--horisont-size-base-m) * var(--horisont-fontsize-mod-m)
+        );
+        line-height: var(--horisont-size-base-m);
+      }
+    }
+
+    &--overline {
+      font-size: calc(
+        var(--horisont-size-base-s1) * var(--horisont-fontsize-mod-m)
+      );
+      font-weight: 700;
+      line-height: var(--horisont-size-base-s1);
+      text-transform: uppercase;
+    }
+  }
+
+  &-em {
+    font-style: italic;
+  }
+
+  &-strong {
+    font-weight: 700;
+  }
+
+  &-link {
+    /* TODO */
+  }
 }
