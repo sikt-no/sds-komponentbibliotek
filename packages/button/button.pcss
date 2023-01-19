@@ -1,19 +1,21 @@
 .horisont-button {
   align-items: center;
-  border: 1px solid;
-  border-radius: 24px;
+  border: 0 none;
+  border-radius: var(--horisont-size-base-m);
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  padding: 11px;
+  font-size: var(--horisont-size-base-s2);
+  line-height: var(--horisont-size-base-m);
+  padding: 12px;
 
   &__label {
     padding: 0 16px;
   }
 
   &__icon {
-    width: 24px;
-    height: 24px;
+    width: var(--horisont-size-base-m);
+    height: var(--horisont-size-base-m);
   }
 
   &:focus-visible {
@@ -23,12 +25,10 @@
   &--primary {
     color: var(--horisont-color-typography-light-primary);
     background-color: var(--horisont-color-base-background-dark);
-    border-color: var(--horisont-color-base-background-dark);
 
     &:hover,
     &:focus-visible {
       background: #160363; /* .Base/Purple/20 */
-      border-color: #160363;
     }
 
     &:active {
@@ -39,17 +39,14 @@
       color: var(--horisont-color-typography-light-disabled);
       cursor: auto;
       background-color: #0b013433;
-      border-color: transparent;
     }
 
     &.horisont-button--light {
       background-color: var(--horisont-color-base-lilla-01);
-      border-color: var(--horisont-color-base-lilla-01);
 
       &:hover,
       &:focus-visible {
         background: #9b83fc; /* .Base/Purple/75 */
-        border-color: #9b83fc;
       }
 
       &:active {
@@ -59,13 +56,14 @@
       &:disabled {
         color: var(--horisont-color-typography-light-disabled);
         cursor: auto;
-        background-color: var(--horisont-color-base-lilla-01) 33;
-        border-color: transparent;
+        background-color: #7351fa33; /* TODO: how to add alpha to variable --horisont-color-base-lilla-01 + 33 */
       }
     }
   }
 
   &--secondary {
+    border: 1px solid;
+    padding: 11px;
     color: var(--horisont-color-typography-dark-primary);
     background-color: var(--horisont-color-base-background-white);
     border-color: var(--horisont-color-base-lilla-02);
@@ -73,7 +71,6 @@
 
   &--tertiary {
     color: var(--horisont-color-typography-dark-primary);
-    border-color: transparent;
 
     .horisont-button__icon {
       background-color: var(--horisont-color-base-background-dark);
@@ -89,6 +86,10 @@
       .horisont-button__label {
         text-decoration: underline;
       }
+    }
+
+    &:focus-visible {
+      border-color: transparent;
     }
 
     &:active {

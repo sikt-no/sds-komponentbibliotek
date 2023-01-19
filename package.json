@@ -37,7 +37,7 @@
     "not ie <= 11"
   ],
   "lint-staged": {
-    "**/*.css": "stylelint --fix",
+    "**/*.{css,pcss}": "stylelint --fix",
     "**/*.{ts,tsx}": "eslint --fix",
     "**/*": "prettier --write --ignore-unknown"
   },
