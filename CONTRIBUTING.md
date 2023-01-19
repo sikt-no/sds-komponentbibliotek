@@ -105,7 +105,7 @@ git push --follow-tags origin main
 Publish package to registry
 
 ```sh
-npm publish --workspace=packages/<package-name>
+npm publish --workspace=packages/<package-name> --access public
 ```
 
 #### Tips
