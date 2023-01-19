@@ -1,57 +1,42 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
-import { ButtonProps, PrimaryButton as Button } from "../Button";
+import { ButtonProps, PrimaryButton } from "../Button";
 
 export default {
   title: "Components/Button/Primary",
-  component: Button,
+  component: PrimaryButton,
+  args: {
+    children: "Primary Button",
+    disabled: false,
+    onClick: () => {
+      alert("click handler");
+    },
+  },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <PrimaryButton {...args} />;
 
-export const PrimaryButton: Story<ButtonProps> = Template.bind({});
-PrimaryButton.args = {
-  children: "Primary Button",
-  onClick: () => {
-    alert("click handler");
-  },
-};
+export const Button: Story<ButtonProps> = Template.bind({});
 
-export const PrimaryButtonIconRight: Story<ButtonProps> = Template.bind({});
-PrimaryButtonIconRight.args = {
-  children: "Primary Button",
+export const IconRight: Story<ButtonProps> = Template.bind({});
+IconRight.args = {
   icon: "i",
-  onClick: () => {
-    alert("click handler");
-  },
 };
 
-export const PrimaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
-PrimaryButtonIconLeft.args = {
-  children: "Primary Button",
+export const IconLeft: Story<ButtonProps> = Template.bind({});
+IconLeft.args = {
   icon: "i",
   iconType: "left",
-  onClick: () => {
-    alert("click handler");
-  },
 };
 
-export const PrimaryButtonIconOnly: Story<ButtonProps> = Template.bind({});
-PrimaryButtonIconOnly.args = {
-  children: "Primary Button",
+export const IconOnly: Story<ButtonProps> = Template.bind({});
+IconOnly.args = {
   icon: "i",
   iconType: "only",
-  onClick: () => {
-    alert("click handler");
-  },
 };
 
-export const PrimaryButtonLight: Story<ButtonProps> = Template.bind({});
-PrimaryButtonLight.args = {
-  children: "Primary Button",
+export const Light: Story<ButtonProps> = Template.bind({});
+Light.args = {
   color: "light",
-  onClick: () => {
-    alert("click handler");
-  },
 };

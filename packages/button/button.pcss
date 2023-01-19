@@ -37,6 +37,7 @@
 
     &:disabled {
       color: var(--horisont-color-typography-light-disabled);
+      cursor: auto;
       background-color: #0b013433;
       border-color: transparent;
     }
@@ -57,6 +58,7 @@
 
       &:disabled {
         color: var(--horisont-color-typography-light-disabled);
+        cursor: auto;
         background-color: var(--horisont-color-base-lilla-01) 33;
         border-color: transparent;
       }
@@ -97,6 +99,11 @@
 
     &:disabled {
       color: var(--horisont-color-typography-dark-disabled);
+      cursor: auto;
+
+      .horisont-button__label {
+        text-decoration: none;
+      }
     }
   }
 }

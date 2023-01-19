@@ -1,48 +1,37 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
-import { ButtonProps, TertiaryButton as Button } from "../Button";
+import { ButtonProps, TertiaryButton } from "../Button";
 
 export default {
   title: "Components/Button/Tertiary",
-  component: Button,
+  component: TertiaryButton,
+  args: {
+    children: "Tertiary Button",
+    disabled: false,
+    onClick: () => {
+      alert("click handler");
+    },
+  },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <TertiaryButton {...args} />;
 
-export const TertiaryButton: Story<ButtonProps> = Template.bind({});
-TertiaryButton.args = {
-  children: "Tertiary Button",
-  onClick: () => {
-    alert("click handler");
-  },
-};
+export const Button: Story<ButtonProps> = Template.bind({});
 
-export const TertiaryButtonIconRight: Story<ButtonProps> = Template.bind({});
-TertiaryButtonIconRight.args = {
-  children: "Tertiary Button",
+export const IconRight: Story<ButtonProps> = Template.bind({});
+IconRight.args = {
   icon: "i",
-  onClick: () => {
-    alert("click handler");
-  },
 };
 
-export const TertiaryButtonIconLeft: Story<ButtonProps> = Template.bind({});
-TertiaryButtonIconLeft.args = {
-  children: "Tertiary Button",
+export const IconLeft: Story<ButtonProps> = Template.bind({});
+IconLeft.args = {
   icon: "i",
   iconType: "left",
-  onClick: () => {
-    alert("click handler");
-  },
 };
 
-export const TertiaryButtonIconOnly: Story<ButtonProps> = Template.bind({});
-TertiaryButtonIconOnly.args = {
-  children: "Tertiary Button",
+export const IconOnly: Story<ButtonProps> = Template.bind({});
+IconOnly.args = {
   icon: "i",
   iconType: "only",
-  onClick: () => {
-    alert("click handler");
-  },
 };
