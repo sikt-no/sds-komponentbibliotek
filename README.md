@@ -48,7 +48,7 @@ Create custom markup
 
 ## License
 
-MIT
+UNLICENSED
 
 ---
 
