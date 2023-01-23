@@ -30,7 +30,7 @@ export const sampleText =
   <strong className="horisont-typography-strong">{sampleText}</strong>
 </Canvas>
 
-## Abbreviation & acronym
+## Abbreviation
 
 <Canvas>
   <abbr className="horisont-typography-abbr" title={sampleText} tabIndex={0}>
@@ -38,10 +38,36 @@ export const sampleText =
   </abbr>
 </Canvas>
 
+## Quote
+
+### Inline Quotation
+
+<Canvas>
+  <q className="horisont-typography-q" cite="//path/to/quote">
+    {sampleText}
+  </q>
+</Canvas>
+
+### Block Quotation
+
+<Canvas>
+  <figure className="horisont-typography-blockquote">
+    <blockquote
+      className="horisont-typography-blockquote__quote"
+      cite="//path/to/quote"
+    >
+      <p>{sampleText}</p>
+    </blockquote>
+    <figcaption className="horisont-typography-blockquote__caption">
+      —Platon, <cite>Sikt component library</cite>
+    </figcaption>
+  </figure>
+</Canvas>
+
 ## Link
 
 <Canvas>
-  <a className="horisont-typography-link" href="#">
+  <a className="horisont-typography-link" href="//path/to/link">
     {sampleText}
   </a>
 </Canvas>
