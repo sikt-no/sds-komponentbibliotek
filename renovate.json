@@ -1,0 +1,51 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":disableDependencyDashboard",
+    ":preserveSemverRanges",
+    ":rebaseStalePrs"
+  ],
+  "addLabels": ["dependencies"],
+  "lockFileMaintenance": { "enabled": true },
+  "automerge": true,
+  "gitLabIgnoreApprovals": true,
+  "major": {
+    "automerge": false,
+    "gitLabIgnoreApprovals": false
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": ["react", "@types/react", "react-dom"],
+      "groupName": "react"
+    },
+    {
+      "matchPackagePatterns": ["rollup"],
+      "groupName": "rollup"
+    },
+    {
+      "matchPackagePatterns": ["^postcss"],
+      "groupName": "postcss"
+    },
+    {
+      "matchPackagePatterns": ["@commitlint"],
+      "groupName": "commitlint"
+    },
+    {
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "matchPackagePatterns": ["stylelint"],
+      "groupName": "stylelint"
+    },
+    {
+      "matchPackagePatterns": ["jest", "^@testing-library"],
+      "groupName": "jest"
+    },
+    {
+      "matchPackagePatterns": ["@storybook"],
+      "groupName": "storybook"
+    }
+  ]
+}
