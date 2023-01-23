@@ -26,18 +26,21 @@ All components should be tested with [jest-axe](https://github.com/nickcolley/je
 
 #### Stylesheets
 
-Follow [BEM](https://getbem.com/naming/) naming convention for style scoping to a specific component
+Do not use element selectors for styling since these effect global styles and elements used may change  
+Follow [BEM](https://getbem.com/naming/) (Block, Element, Modifier) naming convention for style scoping to a specific component  
+Use a prefix on selector class names to avoid collision with others selectors
 
-```
-.prefix-block {
-  &__element {
-    &--modifier {
-    }
+```css
+.horistont-<package-name > {
+  /* styles go here */
+  &__<element > {
+  }
+  &--<modifier > {
   }
 }
 ```
 
-Do not use element selectors for styling since these effect global styles and may change
+PostCSS is used to allow usage of future CSS specs, like [nesting modules](https://www.w3.org/TR/css-nesting-1/) & [custom media queries](https://www.w3.org/TR/mediaqueries-5/#custom-mq)
 
 #### React
 
@@ -54,7 +57,7 @@ Document components & features near the code with markdown files. Also document 
 ### Setup
 
 ```sh
-npm i
+npm ci
 npm run storybook
 ```
 

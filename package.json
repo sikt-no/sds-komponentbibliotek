@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "description": "Sikt Design System",
+  "description": "Sikt component library",
   "homepage": "",
   "bugs": {
     "url": "https://gitlab.sikt.no/designsystem/horisont/-/issues"

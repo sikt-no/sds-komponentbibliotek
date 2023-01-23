@@ -1,6 +1,7 @@
 # Horisont
 
-Horisont the component library for [Sikt](https://www.sikt.no/)
+Horisont the component library for [Sikt](https://www.sikt.no/)  
+_Horizon derives from Greek (horízō) 'to divide, to separate' and (hóros) 'boundary'_
 
 ## Consume
 
@@ -15,7 +16,7 @@ npm i -s @sikt/horisont-<package-name>
 Import [@sikt/horisont-core](./packages/core/) package which among other things contain stylesheet reset, font family and [Design Tokens](./packages/core/README.md#design-tokens) from which other packages are based
 
 ```css
-@import "@sikt/horisont-core/dist/index.css";
+@import url("@sikt/horisont-core/dist/index.css");
 ```
 
 ### React
@@ -32,7 +33,7 @@ import "@sikt/horisont-button/dist/index.css";
 Import stylesheet
 
 ```css
-@import "@sikt/horisont-button/dist/index.css";
+@import url("@sikt/horisont-button/dist/index.css");
 ```
 
 Create custom markup
