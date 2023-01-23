@@ -19,7 +19,7 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "npm run build --workspaces --if-present",
-    "clean": "rimraf packages/**/dist",
+    "clean": "rimraf packages/**/dist && rimraf storybook/storybook-static",
     "format": "prettier --write . --ignore-unknown",
     "lint": "run-p lint:*",
     "lint:css": "stylelint \"**/*.{css,pcss}\" --ignore-path .gitignore",
