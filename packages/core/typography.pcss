@@ -156,6 +156,51 @@
   }
 
   &-link {
-    /* TODO */
+    /* TODO: no design provided for element */
+    color: inherit;
+    text-decoration: underline;
+
+    &:active,
+    &:hover,
+    &:focus-visible {
+      text-decoration: none;
+    }
+
+    &:focus-visible {
+      outline: 2px dashed var(--horisont-color-base-bla-01);
+    }
+  }
+
+  &-abbr {
+    /* TODO: no design provided for element */
+    --abbr-outline-width: 2px;
+
+    position: relative;
+    text-decoration: underline dotted;
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+
+      &::after {
+        background-color: var(--horisont-color-base-background-dark);
+        color: var(--horisont-color-typography-light-primary);
+        content: attr(title);
+        padding: 0 4px;
+        position: absolute;
+        left: calc(var(--abbr-outline-width) * -1);
+        bottom: calc(
+          calc(var(--horisont-size-base-m) * -1) - var(--abbr-outline-width)
+        );
+        text-decoration: none;
+        white-space: nowrap;
+        width: auto;
+      }
+    }
+
+    &:focus-visible {
+      outline: var(--abbr-outline-width) dashed
+        var(--horisont-color-base-bla-01);
+    }
   }
 }
