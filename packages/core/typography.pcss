@@ -1,148 +1,114 @@
-.horisont-typography {
+.sds-typography {
   &-body {
     &--normal {
-      font-size: var(--horisont-size-base-s1);
-      line-height: var(--horisont-size-base-m);
+      font-size: var(--sds-size-base-s1);
+      line-height: var(--sds-size-base-m);
     }
 
     &--lead {
-      font-size: var(--horisont-size-base-s2);
-      line-height: var(--horisont-size-base-m1);
+      font-size: var(--sds-size-base-s2);
+      line-height: var(--sds-size-base-m1);
 
-      @media (--horisont-breakpoint-desktop) {
-        font-size: var(--horisont-size-base-s2);
-        line-height: var(--horisont-size-base-m);
+      @media (--sds-breakpoint-desktop) {
+        font-size: var(--sds-size-base-s2);
+        line-height: var(--sds-size-base-m);
       }
-      @media (--horisont-breakpoint-ultrawide) {
-        font-size: var(--horisont-size-base-m1);
-        line-height: var(--horisont-size-base-m1);
+      @media (--sds-breakpoint-ultrawide) {
+        font-size: var(--sds-size-base-m1);
+        line-height: var(--sds-size-base-m1);
       }
     }
 
     &--caption {
-      font-size: var(--horisont-size-base-s2);
-      line-height: var(--horisont-size-base-s1);
+      font-size: var(--sds-size-base-s2);
+      line-height: var(--sds-size-base-s1);
     }
   }
 
   &-heading {
     &--page {
-      font-size: calc(
-        var(--horisont-size-base-l) * var(--horisont-fontsize-mod-m)
-      );
+      font-size: calc(var(--sds-size-base-l) * var(--sds-fontsize-mod-m));
       font-weight: 700;
-      line-height: var(--horisont-size-base-l);
+      line-height: var(--sds-size-base-l);
 
-      @media (--horisont-breakpoint-tablet) {
-        font-size: calc(
-          var(--horisont-size-base-l1) * var(--horisont-fontsize-mod-l)
-        );
-        line-height: var(--horisont-size-base-l1);
+      @media (--sds-breakpoint-tablet) {
+        font-size: calc(var(--sds-size-base-l1) * var(--sds-fontsize-mod-l));
+        line-height: var(--sds-size-base-l1);
       }
-      @media (--horisont-breakpoint-desktop) {
-        font-size: calc(
-          var(--horisont-size-base-l2) * var(--horisont-fontsize-mod-l)
-        );
-        line-height: var(--horisont-size-base-l2);
+      @media (--sds-breakpoint-desktop) {
+        font-size: calc(var(--sds-size-base-l2) * var(--sds-fontsize-mod-l));
+        line-height: var(--sds-size-base-l2);
       }
-      @media (--horisont-breakpoint-ultrawide) {
-        font-size: calc(
-          var(--horisont-size-base-xl) * var(--horisont-fontsize-mod-l)
-        );
-        line-height: var(--horisont-size-base-xl);
+      @media (--sds-breakpoint-ultrawide) {
+        font-size: calc(var(--sds-size-base-xl) * var(--sds-fontsize-mod-l));
+        line-height: var(--sds-size-base-xl);
       }
     }
 
     &--section {
-      font-size: calc(
-        var(--horisont-size-base-m2) * var(--horisont-fontsize-mod-l)
-      );
+      font-size: calc(var(--sds-size-base-m2) * var(--sds-fontsize-mod-l));
       font-weight: 400;
-      line-height: var(--horisont-size-base-m2);
+      line-height: var(--sds-size-base-m2);
 
-      @media (--horisont-breakpoint-tablet) {
-        font-size: calc(
-          var(--horisont-size-base-l) * var(--horisont-fontsize-mod-m)
-        );
-        line-height: var(--horisont-size-base-l);
+      @media (--sds-breakpoint-tablet) {
+        font-size: calc(var(--sds-size-base-l) * var(--sds-fontsize-mod-m));
+        line-height: var(--sds-size-base-l);
       }
-      @media (--horisont-breakpoint-desktop) {
-        font-size: calc(
-          var(--horisont-size-base-l1) * var(--horisont-fontsize-mod-m)
-        );
-        line-height: var(--horisont-size-base-l1);
+      @media (--sds-breakpoint-desktop) {
+        font-size: calc(var(--sds-size-base-l1) * var(--sds-fontsize-mod-m));
+        line-height: var(--sds-size-base-l1);
       }
-      @media (--horisont-breakpoint-ultrawide) {
-        font-size: calc(
-          var(--horisont-size-base-l2) * var(--horisont-fontsize-mod-l)
-        );
-        line-height: var(--horisont-size-base-l2);
+      @media (--sds-breakpoint-ultrawide) {
+        font-size: calc(var(--sds-size-base-l2) * var(--sds-fontsize-mod-l));
+        line-height: var(--sds-size-base-l2);
       }
     }
 
     &--component {
-      font-size: calc(
-        var(--horisont-size-base-m1) * var(--horisont-fontsize-mod-m)
-      );
+      font-size: calc(var(--sds-size-base-m1) * var(--sds-fontsize-mod-m));
       font-weight: 400;
-      line-height: var(--horisont-size-base-m1);
+      line-height: var(--sds-size-base-m1);
 
-      @media (--horisont-breakpoint-tablet) {
-        font-size: calc(
-          var(--horisont-size-base-m2) * var(--horisont-fontsize-mod-m)
-        );
-        line-height: var(--horisont-size-base-m2);
+      @media (--sds-breakpoint-tablet) {
+        font-size: calc(var(--sds-size-base-m2) * var(--sds-fontsize-mod-m));
+        line-height: var(--sds-size-base-m2);
       }
-      @media (--horisont-breakpoint-desktop) {
-        font-size: calc(
-          var(--horisont-size-base-l) * var(--horisont-fontsize-mod-m)
-        );
-        line-height: var(--horisont-size-base-l);
+      @media (--sds-breakpoint-desktop) {
+        font-size: calc(var(--sds-size-base-l) * var(--sds-fontsize-mod-m));
+        line-height: var(--sds-size-base-l);
       }
     }
 
     &--group {
-      font-size: calc(
-        var(--horisont-size-base-m) * var(--horisont-fontsize-mod-m)
-      );
+      font-size: calc(var(--sds-size-base-m) * var(--sds-fontsize-mod-m));
       font-weight: 400;
-      line-height: var(--horisont-size-base-m);
+      line-height: var(--sds-size-base-m);
 
-      @media (--horisont-breakpoint-tablet) {
-        font-size: calc(
-          var(--horisont-size-base-m1) * var(--horisont-fontsize-mod-m)
-        );
-        line-height: var(--horisont-size-base-m1);
+      @media (--sds-breakpoint-tablet) {
+        font-size: calc(var(--sds-size-base-m1) * var(--sds-fontsize-mod-m));
+        line-height: var(--sds-size-base-m1);
       }
-      @media (--horisont-breakpoint-desktop) {
-        font-size: calc(
-          var(--horisont-size-base-m2) * var(--horisont-fontsize-mod-m)
-        );
-        line-height: var(--horisont-size-base-m2);
+      @media (--sds-breakpoint-desktop) {
+        font-size: calc(var(--sds-size-base-m2) * var(--sds-fontsize-mod-m));
+        line-height: var(--sds-size-base-m2);
       }
     }
 
     &--paragraph {
-      font-size: calc(
-        var(--horisont-size-base-s2) * var(--horisont-fontsize-mod-m)
-      );
+      font-size: calc(var(--sds-size-base-s2) * var(--sds-fontsize-mod-m));
       font-weight: 700;
-      line-height: var(--horisont-size-base-s2);
+      line-height: var(--sds-size-base-s2);
 
-      @media (--horisont-breakpoint-tablet) {
-        font-size: calc(
-          var(--horisont-size-base-m) * var(--horisont-fontsize-mod-m)
-        );
-        line-height: var(--horisont-size-base-m);
+      @media (--sds-breakpoint-tablet) {
+        font-size: calc(var(--sds-size-base-m) * var(--sds-fontsize-mod-m));
+        line-height: var(--sds-size-base-m);
       }
     }
 
     &--overline {
-      font-size: calc(
-        var(--horisont-size-base-s1) * var(--horisont-fontsize-mod-m)
-      );
+      font-size: calc(var(--sds-size-base-s1) * var(--sds-fontsize-mod-m));
       font-weight: 700;
-      line-height: var(--horisont-size-base-s1);
+      line-height: var(--sds-size-base-s1);
       text-transform: uppercase;
     }
   }
@@ -160,18 +126,16 @@
   }
 
   &-blockquote {
-    font-size: calc(
-      var(--horisont-size-base-m1) * var(--horisont-fontsize-mod-m)
-    );
+    font-size: calc(var(--sds-size-base-m1) * var(--sds-fontsize-mod-m));
     font-weight: 400;
-    line-height: var(--horisont-size-base-m1);
+    line-height: var(--sds-size-base-m1);
     margin: 0;
     padding-left: 48px;
     position: relative;
 
     &::before {
       content: open-quote;
-      font-size: var(--horisont-size-base-xl);
+      font-size: var(--sds-size-base-xl);
       position: absolute;
       top: calc(50% + 10px);
       margin-left: -48px;
@@ -190,7 +154,7 @@
     &:active,
     &:hover,
     &:focus-visible {
-      color: var(--horisont-color-base-lilla-01);
+      color: var(--sds-color-base-lilla-01);
     }
 
     &:focus-visible {
@@ -205,16 +169,16 @@
 
     &:focus,
     &:hover {
-      color: var(--horisont-color-base-lilla-01);
+      color: var(--sds-color-base-lilla-01);
 
       &::after {
-        background-color: var(--horisont-color-base-background-dark);
-        color: var(--horisont-color-typography-light-primary);
+        background-color: var(--sds-color-base-background-dark);
+        color: var(--sds-color-typography-light-primary);
         content: attr(title);
         padding: 0 4px;
         position: absolute;
         left: -2px;
-        bottom: calc(calc(var(--horisont-size-base-m) * -1) - 2px);
+        bottom: calc(calc(var(--sds-size-base-m) * -1) - 2px);
         text-decoration: none;
         white-space: nowrap;
         width: auto;

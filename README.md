@@ -1,29 +1,28 @@
-# Horisont
+# Sikt komponentbibliotek
 
-Horisont the component library for [Sikt](https://www.sikt.no/)  
-_Horizon derives from Greek (horízō) 'to divide, to separate' and (hóros) 'boundary'_
+A component library for [Sikt](https://www.sikt.no/)
 
 ## Consume
 
 Install package to be consumed
 
 ```sh
-npm i -s @sikt/horisont-<package-name>
+npm i -s @sikt/sds-<package-name>
 ```
 
 ### Core & Design Tokens
 
-Import [@sikt/horisont-core](./packages/core/) package which among other things contain stylesheet reset, font family and [Design Tokens](./packages/core/README.md#design-tokens) from which other packages are based
+Import [@sikt/sds-core](./packages/core/) package which among other things contain stylesheet reset, font family and [Design Tokens](./packages/core/README.md#design-tokens) from which other packages are based
 
 ```css
-@import url("@sikt/horisont-core/dist/index.css");
+@import url("@sikt/sds-core/dist/index.css");
 ```
 
 ### React
 
 ```js
-import { PrimaryButton } from "@sikt/horisont-button";
-import "@sikt/horisont-button/dist/index.css";
+import { PrimaryButton } from "@sikt/sds-button";
+import "@sikt/sds-button/dist/index.css";
 
 <PrimaryButton>Hello, World!</PrimaryButton>;
 ```
@@ -35,13 +34,13 @@ If you are not able to use the React components, for example if you are using Vu
 Import stylesheet
 
 ```css
-@import url("@sikt/horisont-button/dist/index.css");
+@import url("@sikt/sds-button/dist/index.css");
 ```
 
 Create custom markup
 
 ```html
-<button class="horisont-button horisont-button--primary">Hello, World!</button>
+<button class="sds-button sds-button--primary">Hello, World!</button>
 ```
 
 ## Accessibility

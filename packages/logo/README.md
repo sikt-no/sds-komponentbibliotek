@@ -1,9 +1,9 @@
-# `@sikt/horisont-logo`
+# `@sikt/sds-logo`
 
 ## Consume
 
 ```sh
-npm i -s @sikt/horisont-logo
+npm i -s @sikt/sds-logo
 ```
 
 ### Logo
@@ -11,8 +11,8 @@ npm i -s @sikt/horisont-logo
 #### React
 
 ```js
-import { PrimaryLogo } from "@sikt/horisont-logo";
-import "@sikt/horisont-logo/dist/index.css";
+import { PrimaryLogo } from "@sikt/sds-logo";
+import "@sikt/sds-logo/dist/index.css";
 
 <PrimaryLogo />;
 ```
@@ -23,20 +23,13 @@ import "@sikt/horisont-logo/dist/index.css";
 
 ```html
 <head>
+  <link rel="icon" href="@sikt/sds-logo/Favicon-Light@32px.png" sizes="any" />
   <link
     rel="icon"
-    href="@sikt/horisont-logo/Favicon-Light@32px.png"
-    sizes="any"
-  />
-  <link
-    rel="icon"
-    href="@sikt/horisont-logo/Favicon-Light.svg"
+    href="@sikt/sds-logo/Favicon-Light.svg"
     type="image/svg+xml"
   />
-  <link
-    rel="apple-touch-icon"
-    href="@sikt/horisont-logo/Favicon-Light@180px.png"
-  />
+  <link rel="apple-touch-icon" href="@sikt/sds-logo/Favicon-Light@180px.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
 </head>
 ```
@@ -47,12 +40,12 @@ import "@sikt/horisont-logo/dist/index.css";
 {
   "icons": [
     {
-      "src": "@sikt/horisont-logo/Favicon-Light@192px.png",
+      "src": "@sikt/sds-logo/Favicon-Light@192px.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "@sikt/horisont-logo/Favicon-Light@512px.png",
+      "src": "@sikt/sds-logo/Favicon-Light@512px.png",
       "type": "image/png",
       "sizes": "512x512"
     }

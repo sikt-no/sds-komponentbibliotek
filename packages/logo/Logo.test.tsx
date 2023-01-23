@@ -27,7 +27,7 @@ describe("Logo", () => {
         render(<Logo data-testid={name} />);
 
         expect(screen.getByTestId(name)).toHaveClass(
-          `horisont-logo horisont-logo--${name}`
+          `sds-logo sds-logo--${name}`
         );
       });
     });
@@ -36,7 +36,7 @@ describe("Logo", () => {
       render(<PrimaryLogo data-testid="test" className="test-class-name" />);
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "horisont-logo test-class-name"
+        "sds-logo test-class-name"
       );
     });
 

@@ -1,9 +1,9 @@
-# `@sikt/stylelint-config-horisont`
+# `@sikt/stylelint-config-sds`
 
 ## Consume
 
 ```sh
-npm i -s @sikt/stylelint-config-horisont
+npm i -s @sikt/stylelint-config-sds
 ```
 
 ### Config
@@ -12,6 +12,6 @@ npm i -s @sikt/stylelint-config-horisont
 
 ```js
 module.exports = {
-  extends: ["@sikt/stylelint-config-horisont"],
+  extends: ["@sikt/stylelint-config-sds"],
 };
 ```

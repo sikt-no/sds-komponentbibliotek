@@ -1,9 +1,9 @@
-# `@sikt/browserslist-config-horisont`
+# `@sikt/browserslist-config-sds`
 
 ## Consume
 
 ```sh
-npm i -s @sikt/browserslist-config-horisont
+npm i -s @sikt/browserslist-config-sds
 ```
 
 ### Config
@@ -11,5 +11,5 @@ npm i -s @sikt/browserslist-config-horisont
 `package.json`
 
 ```json
-"browserslist": ["extends @sikt/browserslist-config-horisont"]
+"browserslist": ["extends @sikt/browserslist-config-sds"]
 ```

@@ -9,5 +9,5 @@ module.exports = {
   "no-verify": true,
   packageFiles: [`./packages/${packageName}/package.json`],
   path: `./packages/${packageName}`,
-  "tag-prefix": `@sikt/horisont-${packageName}@`,
+  "tag-prefix": `@sikt/sds-${packageName}@`,
 };

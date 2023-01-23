@@ -1,1 +1,1 @@
-# `@sikt/horisont-icons`
+# `@sikt/sds-icons`

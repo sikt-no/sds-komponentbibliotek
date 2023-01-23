@@ -1,16 +1,16 @@
 {
-  "name": "@sikt/horisont",
+  "name": "@sikt/sds-komponentbibliotek",
   "version": "0.1.0",
   "private": true,
   "license": "SEE LICENSE IN LICENSE.md",
   "description": "Sikt component library",
   "homepage": "",
   "bugs": {
-    "url": "https://gitlab.sikt.no/designsystem/horisont/-/issues"
+    "url": "https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.sikt.no/designsystem/horisont.git"
+    "url": "https://gitlab.sikt.no/designsystem/komponentbibliotek.git"
   },
   "workspaces": [
     "packages/*",

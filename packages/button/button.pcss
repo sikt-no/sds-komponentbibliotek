@@ -1,12 +1,12 @@
-.horisont-button {
+.sds-button {
   align-items: center;
   border: 0 none;
-  border-radius: var(--horisont-size-base-m);
+  border-radius: var(--sds-size-base-m);
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  font-size: var(--horisont-size-base-s2);
-  line-height: var(--horisont-size-base-m);
+  font-size: var(--sds-size-base-s2);
+  line-height: var(--sds-size-base-m);
   padding: 12px;
 
   &__label {
@@ -14,17 +14,17 @@
   }
 
   &__icon {
-    width: var(--horisont-size-base-m);
-    height: var(--horisont-size-base-m);
+    width: var(--sds-size-base-m);
+    height: var(--sds-size-base-m);
   }
 
   &:focus-visible {
-    outline: 4px dashed var(--horisont-color-base-bla-01);
+    outline: 4px dashed var(--sds-color-base-bla-01);
   }
 
   &--primary {
-    color: var(--horisont-color-typography-light-primary);
-    background-color: var(--horisont-color-base-background-dark);
+    color: var(--sds-color-typography-light-primary);
+    background-color: var(--sds-color-base-background-dark);
 
     &:hover,
     &:focus-visible {
@@ -36,13 +36,13 @@
     }
 
     &:disabled {
-      color: var(--horisont-color-typography-light-disabled);
+      color: var(--sds-color-typography-light-disabled);
       cursor: auto;
       background-color: #0b013433;
     }
 
-    &.horisont-button--light {
-      background-color: var(--horisont-color-base-lilla-01);
+    &.sds-button--light {
+      background-color: var(--sds-color-base-lilla-01);
 
       &:hover,
       &:focus-visible {
@@ -54,9 +54,9 @@
       }
 
       &:disabled {
-        color: var(--horisont-color-typography-light-disabled);
+        color: var(--sds-color-typography-light-disabled);
         cursor: auto;
-        background-color: #7351fa33; /* TODO: change to color-mix(in hex, var(--horisont-color-base-lilla-01) 20%, transparent) */
+        background-color: #7351fa33; /* TODO: change to color-mix(in hex, var(--sds-color-base-lilla-01) 20%, transparent) */
       }
     }
   }
@@ -64,18 +64,18 @@
   &--secondary {
     border: 1px solid;
     padding: 11px;
-    color: var(--horisont-color-typography-dark-primary);
-    background-color: var(--horisont-color-base-background-white);
-    border-color: var(--horisont-color-base-lilla-02);
+    color: var(--sds-color-typography-dark-primary);
+    background-color: var(--sds-color-base-background-white);
+    border-color: var(--sds-color-base-lilla-02);
   }
 
   &--tertiary {
-    color: var(--horisont-color-typography-dark-primary);
+    color: var(--sds-color-typography-dark-primary);
 
-    .horisont-button__icon {
-      background-color: var(--horisont-color-base-background-dark);
+    .sds-button__icon {
+      background-color: var(--sds-color-base-background-dark);
       border-radius: 50%;
-      color: var(--horisont-color-typography-light-primary);
+      color: var(--sds-color-typography-light-primary);
     }
   }
 
@@ -83,7 +83,7 @@
   &--tertiary {
     &:hover,
     &:focus-visible {
-      .horisont-button__label {
+      .sds-button__label {
         text-decoration: underline;
       }
     }
@@ -93,16 +93,16 @@
     }
 
     &:active {
-      .horisont-button__label {
+      .sds-button__label {
         text-decoration: none;
       }
     }
 
     &:disabled {
-      color: var(--horisont-color-typography-dark-disabled);
+      color: var(--sds-color-typography-dark-disabled);
       cursor: auto;
 
-      .horisont-button__label {
+      .sds-button__label {
         text-decoration: none;
       }
     }

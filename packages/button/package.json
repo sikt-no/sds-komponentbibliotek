@@ -1,5 +1,5 @@
 {
-  "name": "@sikt/horisont-button",
+  "name": "@sikt/sds-button",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.js",

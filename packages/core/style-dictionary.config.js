@@ -17,7 +17,7 @@ StyleDictionary.registerFormat({
   },
 });
 
-const prefix = "horisont";
+const prefix = "sds";
 const buildPath = "dist/tokens/";
 
 module.exports = {

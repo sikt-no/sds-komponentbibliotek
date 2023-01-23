@@ -34,19 +34,19 @@ const Logo = ({
   return (
     <div
       className={clsx(
-        "horisont-logo",
-        `horisont-logo--${logoType}`,
-        `horisont-logo--${color}`,
+        "sds-logo",
+        `sds-logo--${logoType}`,
+        `sds-logo--${color}`,
         className
       )}
       {...rest}
     >
-      <LogoSvg className="horisont-logo__icon" aria-hidden />
+      <LogoSvg className="sds-logo__icon" aria-hidden />
       <div>
-        <div className="horisont-logo__title">Sikt</div>
+        <div className="sds-logo__title">Sikt</div>
         {isSecondary && (
           <div
-            className="horisont-logo__subtitle"
+            className="sds-logo__subtitle"
             dangerouslySetInnerHTML={{ __html: i18n[lang] }}
           />
         )}

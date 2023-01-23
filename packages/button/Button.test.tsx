@@ -29,7 +29,7 @@ describe("Button", () => {
         render(<Button data-testid={name}>{name}</Button>);
 
         expect(screen.getByTestId(name)).toHaveClass(
-          `horisont-button horisont-button--${name}`
+          `sds-button sds-button--${name}`
         );
         expect(screen.getByText(name)).toBeInTheDocument();
       });
@@ -53,7 +53,7 @@ describe("Button", () => {
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "horisont-button test-class-name"
+        "sds-button test-class-name"
       );
     });
 
@@ -64,7 +64,7 @@ describe("Button", () => {
         </PrimaryButton>
       );
 
-      expect(screen.getByText("icon")).toHaveClass("horisont-button__icon");
+      expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
 
@@ -75,7 +75,7 @@ describe("Button", () => {
         </PrimaryButton>
       );
 
-      expect(screen.getByText("icon")).toHaveClass("horisont-button__icon");
+      expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
 
@@ -86,7 +86,7 @@ describe("Button", () => {
         </PrimaryButton>
       );
 
-      expect(screen.getByText("icon")).toHaveClass("horisont-button__icon");
+      expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
       expect(screen.getByText("icon")).toHaveAccessibleName("Foo");
       expect(screen.queryByText("Foo")).not.toBeInTheDocument();
     });

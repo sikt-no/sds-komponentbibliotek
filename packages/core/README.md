@@ -1,22 +1,22 @@
-# `@sikt/horisont-core`
+# `@sikt/sds-core`
 
 ## Consume
 
 ```sh
-npm i -s @sikt/horisont-core
+npm i -s @sikt/sds-core
 ```
 
 ### Stylesheet
 
 ```css
-@import url("@sikt/horisont-core/dist/index.css");
+@import url("@sikt/sds-core/dist/index.css");
 ```
 
 ### React
 
 ```js
-import { PrimaryButton } from "@sikt/horisont-button";
-import "@sikt/horisont-button/dist/index.css";
+import { PrimaryButton } from "@sikt/sds-button";
+import "@sikt/sds-core/dist/index.css";
 
 <PrimaryButton>Hello, World!</PrimaryButton>;
 ```
@@ -32,17 +32,17 @@ Note that Style Dictionary tokens follow a CTI (Category/Type/Item) naming patte
 #### Stylesheet
 
 ```css
-@import url("@sikt/horisont-core/dist/index.css");
+@import url("@sikt/sds-core/dist/index.css");
 
 .prefix-custom-block__element--blue {
-  color: var(--horisont-color-primary-dark);
+  color: var(--sds-color-primary-dark);
 }
 ```
 
 #### React
 
 ```js
-import * as tokens from "@sikt/horisont-core/dist/tokens/ts/tokens";
+import * as tokens from "@sikt/sds-core/dist/tokens/ts/tokens";
 
 <Button style={{ color: tokens.default.color.primary.dark.value }}>
   Hello, World!

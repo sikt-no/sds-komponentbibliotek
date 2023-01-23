@@ -1,9 +1,9 @@
-# `@sikt/prettier-config-horisont`
+# `@sikt/prettier-config-sds`
 
 ## Consume
 
 ```sh
-npm i -s @sikt/prettier-config-horisont
+npm i -s @sikt/prettier-config-sds
 ```
 
 ### Config
@@ -11,7 +11,7 @@ npm i -s @sikt/prettier-config-horisont
 `prettier.config.js`
 
 ```js
-module.exports = "@sikt/prettier-config-horisont";
+module.exports = "@sikt/prettier-config-sds";
 ```
 
 #### Extend

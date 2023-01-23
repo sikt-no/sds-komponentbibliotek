@@ -1,5 +1,5 @@
 {
-  "name": "@sikt/horisont-storybook",
+  "name": "@sikt/sds-storybook",
   "version": "0.1.0",
   "private": true,
   "scripts": {

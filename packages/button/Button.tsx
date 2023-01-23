@@ -28,26 +28,26 @@ const Button = ({
   return (
     <button
       className={clsx(
-        "horisont-button",
-        `horisont-button--${buttonType}`,
-        buttonType === "primary" ? `horisont-button--${color}` : null,
+        "sds-button",
+        `sds-button--${buttonType}`,
+        buttonType === "primary" ? `sds-button--${color}` : null,
         className
       )}
       onClick={onClick}
       {...rest}
     >
       {icon && iconType === "left" && (
-        <div className="horisont-button__icon">{icon}</div>
+        <div className="sds-button__icon">{icon}</div>
       )}
       {icon && iconType === "only" ? (
-        <div className="horisont-button__icon" aria-label={ariaLabel}>
+        <div className="sds-button__icon" aria-label={ariaLabel}>
           {icon}
         </div>
       ) : (
-        <span className="horisont-button__label">{children}</span>
+        <span className="sds-button__label">{children}</span>
       )}
       {icon && iconType === "right" && (
-        <div className="horisont-button__icon">{icon}</div>
+        <div className="sds-button__icon">{icon}</div>
       )}
     </button>
   );

@@ -9,7 +9,7 @@ _"0.1 ratio smiles to text"_ -dev @Sikt
 
 Please give us feedback  
 Slack [#komponentbibliotek](https://sikt-no.slack.com/archives/C04K82KES0J)  
-Gitlab [Issues](https://gitlab.sikt.no/designsystem/horisont/-/issues)
+Gitlab [Issues](https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues)
 
 ## Design
 
@@ -17,7 +17,7 @@ Figma [File](https://www.figma.com/files/1167338716494500240/project/73250738/De
 
 ## Develop
 
-Gitlab [Project](https://gitlab.sikt.no/designsystem/horisont/)
+Gitlab [Project](https://gitlab.sikt.no/designsystem/komponentbibliotek/)
 
 ### Architecture
 
@@ -32,7 +32,7 @@ Follow [BEM](https://getbem.com/naming/) (Block, Element, Modifier) naming conve
 Use a prefix on selector class names to avoid collision with others selectors
 
 ```css
-.horistont-<package-name > {
+.sds-<package-name > {
   /* styles */
   &__<element > {
   }
@@ -66,7 +66,7 @@ npm run storybook
 
 ```sh
 npm init -w ./packages/<package-name>
-package name: @sikt/horisont-<package-name>
+package name: @sikt/sds-<package-name>
 entry point: dist/index.js
 license: SEE LICENSE IN LICENSE.md
 ```
