@@ -30,6 +30,8 @@ import "@sikt/horisont-button/dist/index.css";
 
 ### Stylesheets & custom markup
 
+If you are not able to use the React components, for example if you are using Vue or PHP. You can still benefit by using the stylesheets and building your own markup and components
+
 Import stylesheet
 
 ```css
@@ -41,6 +43,10 @@ Create custom markup
 ```html
 <button class="horisont-button horisont-button--primary">Hello, World!</button>
 ```
+
+## Accessibility
+
+[Accessibility](A11Y.md)
 
 ## Contribute
 

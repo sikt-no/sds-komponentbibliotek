@@ -2,7 +2,8 @@
 
 ## Code of conduct
 
-Be nice! 🙂
+Be nice! 🙂  
+_"0.1 ratio smiles to text"_ -dev @Sikt
 
 ## Feedback
 
@@ -12,17 +13,17 @@ Gitlab [Issues](https://gitlab.sikt.no/designsystem/horisont/-/issues)
 
 ## Design
 
-[Figma](https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem)
+Figma [File](https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem)
 
 ## Develop
 
-[Gitlab](https://gitlab.sikt.no/designsystem/horisont/)
+Gitlab [Project](https://gitlab.sikt.no/designsystem/horisont/)
 
 ### Architecture
 
 #### Accessibility
 
-All components should be tested with [jest-axe](https://github.com/nickcolley/jest-axe) for accessibility issues. This only catches a small amount of issues and manual testing is still required by both designers & developers
+[Accessibility](A11Y.md)
 
 #### Stylesheets
 
@@ -32,7 +33,7 @@ Use a prefix on selector class names to avoid collision with others selectors
 
 ```css
 .horistont-<package-name > {
-  /* styles go here */
+  /* styles */
   &__<element > {
   }
   &--<modifier > {
@@ -79,7 +80,8 @@ Work on a feature branch named `<user>/<conventional-commit-type>-<package-name>
 ### Commit
 
 Commit with messages following [Conventional Commits](https://www.conventionalcommits.org/) & corresponding to [SemVer](https://semver.org/)  
-Keep the history clean with one commit per feature
+Keep the history clean with one single commit per feature  
+**Note** Package versions will be bumped based on commit types and commit messages will end up in the changelog
 
 #### Tips
 
@@ -89,11 +91,12 @@ Keep the history clean with one commit per feature
 ### Merge request
 
 Create a merge request & wait for a required code review before merging to `main`  
-Review comments are closed by the reviewer & not the branch owner
+Review comments are closed by the reviewer & not the branch owner  
+Rebase before merge so that your commits end up on top of the history
 
 ### Publish
 
-Bump version & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version)
+Bump package versions & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version)
 
 ```sh
 npm run release --package=<package-name>
