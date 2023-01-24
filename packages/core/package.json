@@ -1,6 +1,7 @@
 {
   "name": "@sikt/horisont-core",
   "version": "0.1.0",
+  "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/index.css",
   "style": "dist/index.css",
   "files": [

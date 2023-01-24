@@ -54,7 +54,7 @@ Create custom markup
 
 ## License
 
-UNLICENSED
+[License](LICENSE.md)
 
 ---
 

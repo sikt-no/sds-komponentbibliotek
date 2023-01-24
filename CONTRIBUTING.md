@@ -67,6 +67,8 @@ npm run storybook
 ```sh
 npm init -w ./packages/<package-name>
 package name: @sikt/horisont-<package-name>
+entry point: dist/index.js
+license: UNLICENSED
 ```
 
 #### Tips
