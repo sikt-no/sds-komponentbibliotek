@@ -3,21 +3,21 @@
 ## Code of conduct
 
 Be nice! 🙂  
-_"0.1 ratio smiles to text"_ -dev @Sikt
+_">0.1 ratio smileys to text"_ -dev @Sikt
 
 ## Feedback
 
-Please give us feedback  
-Slack [#komponentbibliotek](https://sikt-no.slack.com/archives/C04K82KES0J)  
-Gitlab [Issues](https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues)
+Please give us feedback.  
+Slack: [#komponentbibliotek](https://sikt-no.slack.com/archives/C04K82KES0J)  
+Gitlab: [Issues](https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues)
 
 ## Design
 
-Figma [File](https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem)
+[Figma File](https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem)
 
 ## Develop
 
-Gitlab [Project](https://gitlab.sikt.no/designsystem/komponentbibliotek/)
+[Gitlab Project](https://gitlab.sikt.no/designsystem/komponentbibliotek/)
 
 ### Architecture
 
@@ -27,9 +27,9 @@ Gitlab [Project](https://gitlab.sikt.no/designsystem/komponentbibliotek/)
 
 #### Stylesheets
 
-Do not use element selectors for styling since these effect global styles and elements used may change  
-Follow [BEM](https://getbem.com/naming/) (Block, Element, Modifier) naming convention for style scoping to a specific component  
-Use a prefix on selector class names to avoid collision with others selectors
+Do not use element selectors for styling since these effect global styles and elements used may change.  
+Follow [BEM](https://getbem.com/naming/) (Block, Element, Modifier) naming convention for style scoping to a specific component.  
+Use a prefix on selector class names to avoid collision with others selectors:
 
 ```css
 .sds-<package-name > {
@@ -41,19 +41,21 @@ Use a prefix on selector class names to avoid collision with others selectors
 }
 ```
 
-PostCSS is used to allow usage of future CSS specs, like [nesting modules](https://www.w3.org/TR/css-nesting-1/) & [custom media queries](https://www.w3.org/TR/mediaqueries-5/#custom-mq)
+PostCSS is used to allow usage of future CSS specs, like [nesting modules](https://www.w3.org/TR/css-nesting-1/) & [custom media queries](https://www.w3.org/TR/mediaqueries-5/#custom-mq).
 
 #### React
 
-Write unit tests for component APIs & features to make it easier to make future changes
+Write unit tests for component APIs & features to make it easier to make future changes.
 
-#### Output
+#### Build
 
-Export as both CSS & React components to allow use of custom markup
+Export components as both CSS & React components to allow use of both custom markup & React.  
+Build all packages with `npm run build` from root.
 
 #### Documentation
 
-Document components & features near the code with markdown files. Also document interactive examples with [Storybook](https://storybook.js.org/docs/react/get-started/introduction)
+Document components & features near the code with markdown files.  
+Create interactive examples with [Storybook](https://storybook.js.org/docs/react/get-started/introduction).
 
 ### Setup
 
@@ -66,9 +68,20 @@ npm run storybook
 
 ```sh
 npm init -w ./packages/<package-name>
+```
+
+```sh
 package name: @sikt/sds-<package-name>
 entry point: dist/index.js
 license: SEE LICENSE IN LICENSE.md
+```
+
+Add build script to package `package.json`:
+
+```json
+"scripts": {
+  "build": "rollup -c ../../rollup.config.mjs"
+}
 ```
 
 #### Tips
@@ -77,13 +90,13 @@ license: SEE LICENSE IN LICENSE.md
 
 ### Branch
 
-Work on a feature branch named `<user>/<conventional-commit-type>-<package-name>-<issue-description>`
+Work on a feature branch named `<user>/<conventional-commit-type>-<package-name>-<issue-description>`.
 
 ### Commit
 
-Commit with messages following [Conventional Commits](https://www.conventionalcommits.org/) & corresponding to [SemVer](https://semver.org/)  
-Keep the history clean with one single commit per feature  
-**Note** Package versions will be bumped based on commit types and commit messages will end up in the changelog
+Commit with messages following [Conventional Commits](https://www.conventionalcommits.org/) & corresponding to [SemVer](https://semver.org/).  
+Keep the history clean with one single commit per feature.  
+**Note** Package versions will be bumped based on commit types and commit messages will end up in the changelog.
 
 #### Tips
 
@@ -92,25 +105,25 @@ Keep the history clean with one single commit per feature
 
 ### Merge request
 
-Create a merge request & wait for a required code review before merging to `main`  
-Review comments are closed by the reviewer & not the branch owner  
-Rebase before merge so that your commits end up on top of the history
+Create a merge request & wait for a required code review before merging to `main`.  
+Review comments are closed by the reviewer & not the branch owner.  
+Rebase before merge so that your commits end up on top of the history.
 
 ### Publish
 
-Bump package versions & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version)
+Bump package versions & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version):
 
 ```sh
 npm run release --package=<package-name>
 ```
 
-Push tags
+Push tags:
 
 ```sh
 git push --follow-tags origin main
 ```
 
-Publish package to registry
+Publish package to registry:
 
 ```sh
 npm publish --workspace=packages/<package-name> --access public
