@@ -12,7 +12,7 @@ module.exports = {
   ],
   plugins: ["react", "jsx-a11y"],
   rules: {
-    /*"jsx-a11y/anchor-ambiguous-text": [
+    "jsx-a11y/anchor-ambiguous-text": [
       "error",
       {
         words: [
@@ -30,7 +30,7 @@ module.exports = {
           "mer",
         ],
       },
-    ],*/
+    ],
     "jsx-a11y/control-has-associated-label": "error",
   },
 };
