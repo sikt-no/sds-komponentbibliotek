@@ -9,5 +9,6 @@ module.exports = {
   "no-verify": true,
   packageFiles: [`./packages/${packageName}/package.json`],
   path: `./packages/${packageName}`,
+  releaseCommitMessageFormat: `chore(${packageName}): release {{currentTag}}`,
   "tag-prefix": `@sikt/sds-${packageName}@`,
 };
