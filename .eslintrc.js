@@ -1,15 +1,7 @@
 module.exports = {
-  env: {
-    browser: true,
-    node: true,
-    es2021: true,
-  },
   extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
+    "./packages/eslint-config",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jsx-a11y/recommended",
-    "prettier",
   ],
   overrides: [],
   parser: "@typescript-eslint/parser",
@@ -17,26 +9,6 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "jsx-a11y"],
-  rules: {
-    "jsx-a11y/anchor-ambiguous-text": [
-      "error",
-      {
-        words: [
-          "klikk",
-          "klikk her",
-          "les",
-          "les mer",
-          "les her",
-          "les mer her",
-          "se",
-          "se mer",
-          "se mer her",
-          "her",
-          "mer",
-        ],
-      },
-    ],
-    "jsx-a11y/control-has-associated-label": "error",
-  },
+  plugins: ["@typescript-eslint"],
+  rules: {},
 };
