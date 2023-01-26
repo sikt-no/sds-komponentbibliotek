@@ -9,7 +9,7 @@ npm i -s @sikt/sds-core
 ### Stylesheet
 
 ```css
-@import url("@sikt/sds-core/dist/index.css");
+@import url("@sikt/sds-core");
 ```
 
 ### React
@@ -32,7 +32,7 @@ Note that Style Dictionary tokens follow a CTI (Category/Type/Item) naming patte
 #### Stylesheet
 
 ```css
-@import url("@sikt/sds-core/dist/index.css");
+@import url("@sikt/sds-core");
 
 .prefix-custom-block__element--blue {
   color: var(--sds-color-primary-dark);

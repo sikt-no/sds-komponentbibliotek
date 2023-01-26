@@ -8,10 +8,10 @@ Install package dependencies:
 npm i -s @sikt/sds-core @sikt/sds-button
 ```
 
-Import [@sikt/sds-core](./packages/core/) package in `main.js`:
+Import [@sikt/sds-core](./packages/core/) package in `main.css`:
 
-```js
-import "@sikt/sds-core/dist/index.css";
+```css
+@import url("@sikt/sds-core");
 ```
 
 Create Vue SFC component:
@@ -37,6 +37,6 @@ export default {
 </template>
 
 <style scoped>
-@import url("@sikt/sds-button/dist/index.css");
+@import url("@sikt/sds-button");
 </style>
 ```

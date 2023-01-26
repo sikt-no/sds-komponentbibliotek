@@ -15,7 +15,7 @@ npm i -s @sikt/sds-<package-name>
 Import [@sikt/sds-core](./packages/core/) package which among other things contain stylesheet reset, font family and [Design Tokens](./packages/core/README.md#design-tokens) from which other packages are based:
 
 ```css
-@import url("@sikt/sds-core/dist/index.css");
+@import url("@sikt/sds-core");
 ```
 
 ### React
@@ -36,7 +36,7 @@ If you are not able to use the React components, for example if you are using Vu
 Import stylesheet:
 
 ```css
-@import url("@sikt/sds-button/dist/index.css");
+@import url("@sikt/sds-button");
 ```
 
 Create custom markup:

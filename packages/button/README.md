@@ -20,7 +20,7 @@ import "@sikt/sds-button/dist/index.css";
 Import stylesheet
 
 ```css
-@import "@sikt/sds-button/dist/index.css";
+@import url("@sikt/sds-button");
 ```
 
 Create custom markup
