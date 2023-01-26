@@ -1,0 +1,14 @@
+{
+  "name": "@sikt/eslint-config-sds",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11"
+  },
+  "peerDependencies": {
+    "eslint": "^8.31.0"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "name": "@sikt/stylelint-config-sds",
   "version": "0.1.0",
+  "main": "index.js",
   "scripts": {},
   "dependencies": {
     "stylelint-config-prettier": "^9.0.4",
