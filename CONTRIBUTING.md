@@ -3,7 +3,7 @@
 ## Code of conduct
 
 Be nice! 🙂  
-_">0.1 ratio smileys to text"_ -dev @Sikt
+_">0.1 ratio smileys to text"_ -developer @Sikt
 
 ## Feedback
 
@@ -66,9 +66,13 @@ npm run storybook
 
 ### Creating a new component
 
+Init package:
+
 ```sh
 npm init -w ./packages/<package-name>
 ```
+
+Change input:
 
 ```sh
 package name: @sikt/sds-<package-name>
@@ -101,13 +105,16 @@ Keep the history clean with one single commit per feature.
 #### Tips
 
 - Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
-- Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
 
 ### Merge request
 
 Create a merge request & wait for a required code review before merging to `main`.  
 Review comments are closed by the reviewer & not the branch owner.  
 Rebase before merge so that your commits end up on top of the history.
+
+#### Tips
+
+- Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
 
 ### Publish
 

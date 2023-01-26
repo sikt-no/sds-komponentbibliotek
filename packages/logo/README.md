@@ -19,7 +19,7 @@ import "@sikt/sds-logo/dist/index.css";
 
 ### Favicon
 
-`index.html`
+`index.html`:
 
 ```html
 <head>
@@ -34,7 +34,7 @@ import "@sikt/sds-logo/dist/index.css";
 </head>
 ```
 
-`manifest.webmanifest`
+`manifest.webmanifest`:
 
 ```json
 {

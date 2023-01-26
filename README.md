@@ -31,7 +31,7 @@ import "@sikt/sds-button/dist/index.css";
 
 ### Stylesheets & custom markup
 
-If you are not able to use the React components, for example if you are using Vue or PHP. You can still benefit by using the stylesheets and building your own markup and components
+If you are not able to use the React components, for example if you are using Vue or PHP. You can still benefit by using the stylesheets and building your own markup and components.
 
 Import stylesheet:
 
@@ -42,8 +42,14 @@ Import stylesheet:
 Create custom markup:
 
 ```html
-<button class="sds-button sds-button--primary">Hello, World!</button>
+<button class="sds-button sds-button--primary">
+  <span class="sds-button__label">Hello, World!</span>
+</button>
 ```
+
+### Vue
+
+See custom markup above or [Vue component example](VUE.md).
 
 ## Accessibility
 

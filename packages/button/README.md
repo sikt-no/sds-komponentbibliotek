@@ -26,5 +26,7 @@ Import stylesheet
 Create custom markup
 
 ```html
-<button class="sds-button sds-button--primary">Hello, World!</button>
+<button class="sds-button sds-button--primary">
+  <span class="sds-button__label">Hello, World!</span>
+</button>
 ```
