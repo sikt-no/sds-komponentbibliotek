@@ -18,6 +18,7 @@ export const parameters = {
         "Logotype",
         "Iconography",
         "*",
+        "Utils",
         "Config",
       ],
     },
