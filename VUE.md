@@ -14,7 +14,7 @@ Import [@sikt/sds-core](./packages/core/) package in `main.css`:
 @import url("@sikt/sds-core");
 ```
 
-Create Vue SFC component:
+Create Vue SFC:
 
 ```vue
 <script>

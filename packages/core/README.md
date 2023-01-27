@@ -23,9 +23,9 @@ import "@sikt/sds-core/dist/index.css";
 
 ## Design Tokens
 
-Created using [Style Dictionary](https://github.com/amzn/style-dictionary) and exported as CSS & JavaScript variables  
-Do not change these directly in the `/core/dist` output folder but rather in the `/core/tokens` source folder  
-Note that Style Dictionary tokens follow a CTI (Category/Type/Item) naming pattern that may affect their outcome by what transforms are applied
+Created using [Style Dictionary](https://github.com/amzn/style-dictionary) and exported as CSS & JavaScript variables.  
+Do not change these directly in the `/core/dist` output directory but rather in the `/core/tokens` source directory.  
+**Note** That Style Dictionary tokens follow a CTI (Category/Type/Item) naming pattern that may affect their outcome by what transforms are applied.
 
 ### Consume
 
@@ -42,7 +42,7 @@ Note that Style Dictionary tokens follow a CTI (Category/Type/Item) naming patte
 #### React
 
 ```js
-import * as tokens from "@sikt/sds-core/dist/tokens/ts/tokens";
+import * as tokens from "@sikt/sds-core/dist/tokens/js/tokens";
 
 <Button style={{ color: tokens.default.color.primary.dark.value }}>
   Hello, World!

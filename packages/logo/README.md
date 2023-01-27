@@ -17,6 +17,8 @@ import "@sikt/sds-logo/dist/index.css";
 <PrimaryLogo />;
 ```
 
+Supported languages: Norwegian Bokmål (nb), Norwegian Nynorsk (nn), Finnish (fi), Northern Sámi (se), Lule Sámi (smj), Southern Sámi (sma), English (en).
+
 ### Favicon
 
 `index.html`:

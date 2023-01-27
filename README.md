@@ -1,6 +1,6 @@
 # Sikt komponentbibliotek
 
-A component library for [Sikt](https://www.sikt.no/) designsystem.
+A component library for [Sikt designsystem](https://isikt.sharepoint.com/sites/Innsikt-OmOss/SitePages/Profil.aspx).
 
 ## Consume
 
@@ -29,6 +29,10 @@ import "@sikt/sds-button/dist/index.css";
 <PrimaryButton>Hello, World!</PrimaryButton>;
 ```
 
+### Vue
+
+See custom markup below or [Vue component example](VUE.md).
+
 ### Stylesheets & custom markup
 
 If you are not able to use the React components, for example if you are using Vue or PHP. You can still benefit by using the stylesheets and building your own markup and components.
@@ -46,10 +50,6 @@ Create custom markup:
   <span class="sds-button__label">Hello, World!</span>
 </button>
 ```
-
-### Vue
-
-See custom markup above or [Vue component example](VUE.md).
 
 ## Accessibility
 

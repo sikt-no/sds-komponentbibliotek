@@ -15,11 +15,18 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues
 
 [Figma File](https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem)
 
-## Develop
+## Development
 
 [Gitlab Project](https://gitlab.sikt.no/designsystem/komponentbibliotek/)
 
 ### Architecture
+
+Sikt Design System acronym `sds` is used as prefix for packages, classes and so on.
+
+#### Monorepo
+
+This is a monorepo where all directories in `/packages/*` are seperate packages with their own `package.json`.  
+The reasoning behind multiple packages is that a breaking change to one package won't affect consumers of other packages.
 
 #### Accessibility
 

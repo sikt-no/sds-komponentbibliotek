@@ -4,7 +4,7 @@
   "private": true,
   "license": "SEE LICENSE IN LICENSE.md",
   "description": "Sikt component library",
-  "homepage": "",
+  "homepage": "https://komponentbibliotek.paas2.uninett.no/",
   "bugs": {
     "url": "https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues"
   },
