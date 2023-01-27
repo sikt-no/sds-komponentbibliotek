@@ -1,6 +1,7 @@
 {
   "name": "@sikt/prettier-config-sds",
   "version": "0.1.0",
+  "license": "UNLICENSED",
   "main": "index.js",
   "scripts": {},
   "peerDependencies": {

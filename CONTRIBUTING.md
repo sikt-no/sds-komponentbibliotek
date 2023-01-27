@@ -77,7 +77,7 @@ Change input:
 ```sh
 package name: @sikt/sds-<package-name>
 entry point: dist/index.js
-license: SEE LICENSE IN LICENSE.md
+license: UNLICENSED
 ```
 
 Add build script to package `package.json`:
@@ -87,6 +87,9 @@ Add build script to package `package.json`:
   "build": "rollup -c ../../rollup.config.mjs"
 }
 ```
+
+Export component from `index.ts`.  
+Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
 
 #### Tips
 

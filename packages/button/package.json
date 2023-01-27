@@ -1,6 +1,7 @@
 {
   "name": "@sikt/sds-button",
   "version": "0.1.0",
+  "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "style": "dist/index.css",
