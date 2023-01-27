@@ -21,7 +21,10 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues
 
 ### Architecture
 
-Sikt Design System acronym `sds` is used as prefix for packages, classes and so on.
+#### Naming
+
+Sikt Design System acronym `sds` is used as prefix for packages, classes and so on.  
+Sikt scope `@sikt` is used on packages to link them to our organization.
 
 #### Monorepo
 
@@ -36,7 +39,7 @@ The reasoning behind multiple packages is that a breaking change to one package 
 
 Do not use element selectors for styling since these effect global styles and elements used may change.  
 Follow [BEM](https://getbem.com/naming/) (Block, Element, Modifier) naming convention for style scoping to a specific component.  
-Use a prefix on selector class names to avoid collision with others selectors:
+Use a prefix `sds` on selector class names to avoid collision with others selectors:
 
 ```css
 .sds-<package-name > {
@@ -95,6 +98,7 @@ Add build script to package `package.json`:
 }
 ```
 
+If you have custom build need this may vary.  
 Export component from `index.ts`.  
 Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
 
