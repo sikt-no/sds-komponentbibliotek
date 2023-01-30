@@ -7,13 +7,13 @@
     ":rebaseStalePrs"
   ],
   "addLabels": ["dependencies"],
-  "lockFileMaintenance": { "enabled": true },
   "automerge": true,
   "gitLabIgnoreApprovals": true,
   "major": {
     "automerge": false,
     "gitLabIgnoreApprovals": false
   },
+  "updateLockFiles": true,
   "packageRules": [
     {
       "matchPackageNames": ["react", "@types/react", "react-dom"],
