@@ -5,7 +5,7 @@ import { ReactComponent as LogoSvg } from "./Logo.svg";
 
 export interface LogoProps {
   className?: string;
-  lang?: "nb" | "nn" | "fkv" | "se" | "smj" | "sma" | "en";
+  lang?: "nb" | "nn" | "en" | "se" | "smj" | "sma" | "fkv";
   color?: "light" | "dark";
 }
 
