@@ -31,7 +31,7 @@ import "@sikt/sds-button/dist/index.css";
 
 ### Vue
 
-See custom markup below or [Vue component example](VUE.md).
+See custom markup below or [Vue component example](./docs/VUE.md).
 
 ### Stylesheets & custom markup
 
@@ -53,7 +53,7 @@ Create custom markup:
 
 ## Accessibility
 
-[Accessibility](A11Y.md)
+[Accessibility](./docs/A11Y.md)
 
 ## Contribute
 

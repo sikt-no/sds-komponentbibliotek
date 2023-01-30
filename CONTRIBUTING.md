@@ -33,7 +33,7 @@ The reasoning behind multiple packages is that a breaking change to one package 
 
 #### Accessibility
 
-[Accessibility](A11Y.md)
+[Accessibility](./docs/A11Y.md)
 
 #### Stylesheets
 
