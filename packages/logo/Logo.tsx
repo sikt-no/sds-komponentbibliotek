@@ -5,7 +5,7 @@ import { ReactComponent as LogoSvg } from "./Logo.svg";
 
 export interface LogoProps {
   className?: string;
-  lang?: "nb" | "nn" | "fi" | "se" | "smj" | "sma" | "en";
+  lang?: "nb" | "nn" | "fkv" | "se" | "smj" | "sma" | "en";
   color?: "light" | "dark";
 }
 
@@ -16,7 +16,7 @@ interface LogoTypes {
 const i18n = {
   nb: "Kunnskapssektorens<br /> tjenesteleverandør",
   nn: "Kunnskapssektorens<br /> tenesteleverandør",
-  fi: "Tietosektorin<br /> palvelu",
+  fkv: "Tietosektorin<br /> palvelu",
   se: "Máhttosuorggi<br /> bálvaluslágideaddji",
   smj: "Máhtudaksuorge<br /> dievnastusbuvtadadiddje",
   sma: "Maahtoesuerkien<br /> dïenesjedeellije",
