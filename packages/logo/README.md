@@ -17,7 +17,7 @@ import "@sikt/sds-logo/dist/index.css";
 <PrimaryLogo />;
 ```
 
-Supported languages: Norwegian Bokmål (nb), Norwegian Nynorsk (nn), Kven (fkv), Northern Sámi (se), Lule Sámi (smj), Southern Sámi (sma), English (en).
+Supported languages: Norwegian Bokmål (nb), Norwegian Nynorsk (nn), English (en), Northern Sámi (se), Lule Sámi (smj), Southern Sámi (sma), Kven (fkv).
 
 ### Favicon
 

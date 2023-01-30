@@ -16,11 +16,11 @@ interface LogoTypes {
 const i18n = {
   nb: "Kunnskapssektorens<br /> tjenesteleverandør",
   nn: "Kunnskapssektorens<br /> tenesteleverandør",
-  fkv: "Tietosektorin<br /> palvelu",
+  en: "Norwegian Agency for Shared<br /> Services in Education and Research",
   se: "Máhttosuorggi<br /> bálvaluslágideaddji",
   smj: "Máhtudaksuorge<br /> dievnastusbuvtadadiddje",
   sma: "Maahtoesuerkien<br /> dïenesjedeellije",
-  en: "Norwegian Agency for Shared<br /> Services in Education and Research",
+  fkv: "Tietosektorin<br /> palvelu",
 };
 
 const Logo = ({

@@ -28,8 +28,13 @@ Sikt scope `@sikt` is used on packages to link them to our organization.
 
 #### Monorepo
 
-This is a monorepo where all directories in `/packages/*` are seperate packages with their own `package.json`.  
+This is a monorepo where all directories in `/packages/*` are seperate packages with their own `package.json` & `README.md`.  
 The reasoning behind multiple packages is that a breaking change to one package won't affect consumers of other packages.
+
+#### Documentation
+
+Document components & features near the code with markdown files.  
+Create interactive examples with [Storybook](https://storybook.js.org/docs/react/get-started/introduction) stories.
 
 #### Accessibility
 
@@ -55,17 +60,13 @@ PostCSS is used to allow usage of future CSS specs, like [nesting modules](https
 
 #### React
 
-Write unit tests for component APIs & features to make it easier to make future changes.
+Write unit tests for component APIs & features to make it easier to make future changes.  
+_TODO: Screenshot testing with Playwright._
 
 #### Build
 
-Export components as both CSS & React components to allow use of both custom markup & React.  
+Export components as both CSS & React components, with [Rollup](https://rollupjs.org/), to allow use of both custom markup & React.  
 Build all packages with `npm run build` from root.
-
-#### Documentation
-
-Document components & features near the code with markdown files.  
-Create interactive examples with [Storybook](https://storybook.js.org/docs/react/get-started/introduction).
 
 ### Setup
 
@@ -98,7 +99,7 @@ Add build script to package `package.json`:
 }
 ```
 
-If you have custom build need this may vary.  
+If you have custom build need this script may vary.  
 Export component from `index.ts`.  
 Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
 
@@ -108,7 +109,7 @@ Create a [Storybook](https://storybook.js.org/docs/react/get-started/introductio
 
 ### Branch
 
-Work on a feature branch named `<user>/<conventional-commit-type>-<package-name>-<issue-description>`.
+Work on a feature branch named `<gitlab-user>/<conventional-commit-type>-<package-name>-<issue-description>`.
 
 ### Commit
 
