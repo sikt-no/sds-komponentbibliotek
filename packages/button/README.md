@@ -17,13 +17,13 @@ import "@sikt/sds-button/dist/index.css";
 
 ### Stylesheets & custom markup
 
-Import stylesheet
+Import stylesheet:
 
 ```css
 @import url("@sikt/sds-button");
 ```
 
-Create custom markup
+Create custom markup:
 
 ```html
 <button class="sds-button sds-button--primary">
