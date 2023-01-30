@@ -9,8 +9,7 @@
   ],
   "scripts": {
     "prebuild": "npm run prepare",
-    "build": "rollup -i index.pcss -c ../../rollup.config.mjs",
-    "postbuild": "rimraf dist/*.{d.ts,js*}",
+    "build": "rollup -c ../../rollup.config.mjs",
     "build:tokens": "style-dictionary build -c style-dictionary.config.js",
     "prepare": "npm run build:tokens"
   },
@@ -19,5 +18,10 @@
   },
   "devDependencies": {
     "style-dictionary": "^3.7.2"
+  },
+  "peerDependencies": {
+    "clsx": "^1.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
