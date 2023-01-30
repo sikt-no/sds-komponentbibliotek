@@ -33,4 +33,9 @@ module.exports = {
     ],
     "jsx-a11y/control-has-associated-label": "error",
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
 };

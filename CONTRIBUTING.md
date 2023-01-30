@@ -101,6 +101,7 @@ Add build script to package `package.json`:
 
 If you have custom build need this script may vary.  
 Export component from `index.ts`.  
+Create a `README.md` for documentation.  
 Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
 
 #### Tips
