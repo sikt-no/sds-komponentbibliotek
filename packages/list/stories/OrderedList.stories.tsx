@@ -16,8 +16,8 @@ export const List = Template.bind({});
 List.args = {
   children: [
     <ListItem key={0}>First Item</ListItem>,
-    <ListItem key={0}>Second Item</ListItem>,
-    <ListItem key={0}>Third Item</ListItem>,
+    <ListItem key={1}>Second Item</ListItem>,
+    <ListItem key={2}>Third Item</ListItem>,
   ],
 };
 
@@ -25,13 +25,13 @@ export const Nested = Template.bind({});
 Nested.args = {
   children: [
     <ListItem key={0}>First Item</ListItem>,
-    <ListItem key={0}>
+    <ListItem key={1}>
       Second Item
       <OrderedList>
-        <ListItem key={0}>First Sub Item</ListItem>
-        <ListItem key={0}>Second Sub Item</ListItem>
+        <ListItem key={20}>First Sub Item</ListItem>
+        <ListItem key={21}>Second Sub Item</ListItem>
       </OrderedList>
     </ListItem>,
-    <ListItem key={0}>Third Item</ListItem>,
+    <ListItem key={2}>Third Item</ListItem>,
   ],
 };

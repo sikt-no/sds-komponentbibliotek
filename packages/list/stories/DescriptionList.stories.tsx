@@ -15,12 +15,12 @@ const Template: Story<ListProps> = (args) => <DescriptionList {...args} />;
 export const List = Template.bind({});
 List.args = {
   children: [
-    <DescriptionTerm key={0}>First Term</DescriptionTerm>,
-    <DescriptionDetails key={0}>
+    <DescriptionTerm key={1}>First Term</DescriptionTerm>,
+    <DescriptionDetails key={10}>
       Description of the first term
     </DescriptionDetails>,
-    <DescriptionTerm key={0}>Second term</DescriptionTerm>,
-    <DescriptionDetails key={0}>
+    <DescriptionTerm key={2}>Second term</DescriptionTerm>,
+    <DescriptionDetails key={20}>
       Description of the second term
     </DescriptionDetails>,
   ],
