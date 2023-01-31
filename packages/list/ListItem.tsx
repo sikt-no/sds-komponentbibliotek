@@ -6,8 +6,6 @@ export interface ListItemProps extends HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
-const ListItem = ({ children, className }: ListItemProps) => {
+export const ListItem = ({ children, className }: ListItemProps) => {
   return <li className={clsx("sds-list__item", className)}>{children}</li>;
 };
-
-export default ListItem;

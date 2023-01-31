@@ -6,7 +6,7 @@ export interface DescriptionDetailsProps extends HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
-const DescriptionDetails = ({
+export const DescriptionDetails = ({
   children,
   className,
 }: DescriptionDetailsProps) => {
@@ -16,5 +16,3 @@ const DescriptionDetails = ({
     </dd>
   );
 };
-
-export default DescriptionDetails;

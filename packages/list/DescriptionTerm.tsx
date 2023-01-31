@@ -6,12 +6,13 @@ export interface DescriptionTermProps extends HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
-const DescriptionTerm = ({ children, className }: DescriptionTermProps) => {
+export const DescriptionTerm = ({
+  children,
+  className,
+}: DescriptionTermProps) => {
   return (
     <dt className={clsx("sds-description-list__term", className)}>
       {children}
     </dt>
   );
 };
-
-export default DescriptionTerm;

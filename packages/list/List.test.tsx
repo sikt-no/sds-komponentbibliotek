@@ -2,9 +2,9 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { DescriptionList, OrderedList, UnorderedList } from "./List";
-import ListItem from "./ListItem";
-import DescriptionTerm from "./DescriptionTerm";
-import DescriptionDetails from "./DescriptionDetails";
+import { ListItem } from "./ListItem";
+import { DescriptionTerm } from "./DescriptionTerm";
+import { DescriptionDetails } from "./DescriptionDetails";
 
 const listTypes = [
   { name: "ordered", component: OrderedList },
