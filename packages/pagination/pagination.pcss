@@ -1,0 +1,62 @@
+.sds-pagination {
+  &__list {
+    /* TODO */
+  }
+
+  &__list-item {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 12px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__button {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    background-color: var(--sds-color-base-background-white);
+    border: 1px solid var(--sds-color-base-lilla-02);
+    border-radius: 50%;
+    color: var(--sds-color-base-background-dark);
+    cursor: pointer;
+    font-size: var(--sds-size-base-s2);
+    line-height: var(--sds-size-base-m);
+    text-align: center;
+    width: var(--sds-size-base-l);
+    height: var(--sds-size-base-l);
+    padding: 0;
+
+    &:hover,
+    &:focus-visible {
+      /* TODO: hover style */
+    }
+
+    &:focus-visible {
+      border-color: transparent;
+      outline: 4px dashed var(--sds-color-base-bla-01);
+    }
+
+    &:active {
+      /* TODO: hover style */
+    }
+
+    &[aria-current] {
+      /* TODO: background-dark is not active color of other elements */
+      background-color: var(--sds-color-base-background-dark);
+      border-color: var(--sds-color-base-background-dark);
+      color: var(--sds-color-base-background-white);
+    }
+
+    &[disabled] {
+      cursor: inherit;
+    }
+
+    &--spacer {
+      cursor: inherit;
+    }
+  }
+}

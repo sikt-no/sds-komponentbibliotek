@@ -1,0 +1,23 @@
+{
+  "name": "@sikt/sds-pagination",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "style": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.mjs"
+  },
+  "dependencies": {
+    "@sikt/sds-icons": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@sikt/sds-core": "^0.1.0",
+    "clsx": "^1.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
