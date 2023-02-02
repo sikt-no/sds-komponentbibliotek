@@ -11,13 +11,20 @@ variables:
   REPLICAS: "1"
 
 stages:
-  - install
-  - test
+  - prepare
   - build
+  - test
   - deploy
+#  - release
+
+#.publish:
+#  rules:
+#    - if: $CI_COMMIT_TAG
+#  only:
+#    - main
 
 install:
-  stage: install
+  stage: prepare
   script:
     - npm pkg delete scripts.prepare
     - npm ci
@@ -53,6 +60,7 @@ test:
     - install
 
 #packages:
+#  extends: .publish
 #  stage: build
 #  script:
 #    - npm run build
@@ -113,3 +121,29 @@ prod:
     - docker
   needs:
     - docker
+#release:
+#  extends: .publish
+#  stage: release
+#  image: registry.gitlab.com/gitlab-org/release-cli
+#  script:
+#    - echo "Release $CI_COMMIT_TAG"
+#  release:
+#    tag_name: "$CI_COMMIT_TAG"
+#    description: "$CI_COMMIT_TAG"
+
+#publish:
+#  extends: .publish
+#  stage: release
+#  when: manual
+#  before_script:
+#    - PACKAGE_NAME=$(echo "$CI_COMMIT_TAG" | sed -e "s/^@sikt\/sds-//" -e "s/^@sikt\///" -e "s/-sds@[0-9]*.[0-9]*.[0-9]*$//" -e "s/@[0-9]*.[0-9]*.[0-9]*$//")
+#    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}">.npmrc
+#  script:
+#    - npm publish --workspace=packages/$PACKAGE_NAME --access public
+#  dependencies:
+#    - install
+#    - packages
+#  needs:
+#    - install
+#    - packages
+#    - release
