@@ -2,5 +2,28 @@
   "name": "@sikt/sds-icons",
   "version": "0.1.0",
   "license": "SEE LICENSE IN LICENSE.md",
-  "scripts": {}
+  "main": "dist/index.css",
+  "style": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "npm run prepare",
+    "build": "rollup -c ../../rollup.config.mjs",
+    "build:icons": "node bin/build.js",
+    "build:sprite": "svgstore dist/assets/*.svg -o dist/sds-icons.svg",
+    "prepare": "run-s build:icons build:sprite"
+  },
+  "dependencies": {
+    "@phosphor-icons/core": "^1.4.7"
+  },
+  "devDependencies": {
+    "cpy-cli": "^4.2.0",
+    "svgstore-cli": "^2.0.1"
+  },
+  "peerDependencies": {
+    "clsx": "^1.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
 }

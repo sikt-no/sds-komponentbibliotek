@@ -1,0 +1,20 @@
+import { Meta, IconGallery, IconItem } from "@storybook/addon-docs";
+import { Icon } from "../";
+import { icons } from "../icons.config";
+import Readme from "../README.md";
+
+<Meta title="Components/Icons/Iconography" />
+
+<Readme />
+
+## Icons
+
+<IconGallery>
+  {icons.map((icon) => {
+    return (
+      <IconItem key={icon} name={icon}>
+        <Icon icon={icon} />
+      </IconItem>
+    );
+  })}
+</IconGallery>
