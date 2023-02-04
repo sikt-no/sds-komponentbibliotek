@@ -2,6 +2,7 @@ import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
 import { ButtonProps, SecondaryButton } from "../";
+import { Icon } from "@sikt/sds-icons";
 
 export default {
   title: "Components/Button/Secondary",
@@ -21,17 +22,17 @@ export const Button: Story<ButtonProps> = Template.bind({});
 
 export const IconRight: Story<ButtonProps> = Template.bind({});
 IconRight.args = {
-  icon: "i",
+  icon: <Icon icon="arrow-right" />,
 };
 
 export const IconLeft: Story<ButtonProps> = Template.bind({});
 IconLeft.args = {
-  icon: "i",
+  icon: <Icon icon="arrow-left" />,
   iconType: "left",
 };
 
 export const IconOnly: Story<ButtonProps> = Template.bind({});
 IconOnly.args = {
-  icon: "i",
+  icon: <Icon icon="arrow-right" />,
   iconType: "only",
 };

@@ -2,10 +2,12 @@ import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
 import { ButtonProps, PrimaryButton } from "../";
+import { Icon } from "../../icons/";
 
 export default {
   title: "Components/Button/Primary",
   component: PrimaryButton,
+  subcomponents: { Icon },
   args: {
     children: "Primary Button",
     disabled: false,
@@ -21,18 +23,18 @@ export const Button: Story<ButtonProps> = Template.bind({});
 
 export const IconRight: Story<ButtonProps> = Template.bind({});
 IconRight.args = {
-  icon: "i",
+  icon: <Icon icon="arrow-right" />,
 };
 
 export const IconLeft: Story<ButtonProps> = Template.bind({});
 IconLeft.args = {
-  icon: "i",
+  icon: <Icon icon="arrow-left" />,
   iconType: "left",
 };
 
 export const IconOnly: Story<ButtonProps> = Template.bind({});
 IconOnly.args = {
-  icon: "i",
+  icon: <Icon icon="arrow-right" />,
   iconType: "only",
 };
 
