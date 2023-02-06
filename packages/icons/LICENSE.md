@@ -2,7 +2,7 @@ Copyright (c) Sikt (Norwegian Agency for Shared Services in Education and Resear
 
 All rights reserved.
 
-Copyright (c) 2023 Phosphor Icons
+Phosphor Icons Copyright (c) Phosphor Icons
 
 MIT License
 

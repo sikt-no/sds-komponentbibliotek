@@ -8,7 +8,9 @@ export default {
   component: Icon,
 } as Meta;
 
-const Template: Story<IconProps> = (args) => <Icon {...args} />;
+const Template: Story<IconProps> = (args) => (
+  <Icon {...args} style={{ fontSize: "32px" }} />
+);
 
 export const ArrowRight: Story<IconProps> = Template.bind({});
 ArrowRight.args = {

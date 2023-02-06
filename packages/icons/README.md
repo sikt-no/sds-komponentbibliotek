@@ -32,3 +32,7 @@ Create custom markup:
   <use href="@sikt/sds-icons/dist/sds-icons.svg#icon-name"></use>
 </svg>
 ```
+
+## Contribute
+
+Add new icons by adding name to `icons.config.js`.
