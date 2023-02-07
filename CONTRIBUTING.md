@@ -143,7 +143,7 @@ npm run release --package=<package-name>
 Push tags:
 
 ```sh
-git push --follow-tags origin main
+git push --follow-tags
 ```
 
 Publish package to registry:
