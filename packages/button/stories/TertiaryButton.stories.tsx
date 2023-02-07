@@ -2,7 +2,7 @@ import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
 import { ButtonProps, TertiaryButton } from "../index";
-import { Icon } from "@sikt/sds-icons";
+import { Icon } from "../../icons/index";
 
 export default {
   title: "Components/Button/Tertiary",
