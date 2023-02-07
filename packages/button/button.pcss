@@ -1,4 +1,10 @@
 .sds-button {
+  /* TODO: how to handle local tokens */
+  --sds-color-base-purple-5: #050119;
+  --sds-color-base-purple-20: #160363;
+  --sds-color-base-purple-60: #5e39f9;
+  --sds-color-base-purple-75: #9b83fc;
+
   align-items: center;
   border: 0 none;
   border-radius: var(--sds-size-base-m);
@@ -32,11 +38,11 @@
 
     &:hover,
     &:focus-visible {
-      background: #160363; /* .Base/Purple/20 */
+      background: var(--sds-color-base-purple-20);
     }
 
     &:active {
-      background: #050119; /* .Base/Purple/5 */
+      background: var(--sds-color-base-purple-5);
     }
 
     &:disabled {
@@ -50,11 +56,11 @@
 
       &:hover,
       &:focus-visible {
-        background: #9b83fc; /* .Base/Purple/75 */
+        background: var(--sds-color-base-purple-75);
       }
 
       &:active {
-        background: #5e39f9; /* .Base/Purple/60 */
+        background: var(--sds-color-base-purple-60);
       }
 
       &:disabled {
