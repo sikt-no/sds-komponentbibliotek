@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { axe } from "jest-axe";
-import { Icon } from "./";
+import { Icon } from "./Icon";
 
 describe("Icons", () => {
   describe("a11y", () => {
