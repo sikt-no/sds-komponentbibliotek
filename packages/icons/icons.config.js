@@ -1,10 +1,14 @@
 module.exports = /** @type {const} */ ({
   icons: [
-    "arrow-up",
     "arrow-down",
     "arrow-left",
     "arrow-right",
+    "arrow-up",
     "arrow-square-out",
+    "caret-down",
+    "caret-left",
+    "caret-right",
+    "caret-up",
     "copy-simple",
     "download-simple",
     "envelope-simple",
