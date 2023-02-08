@@ -11,25 +11,25 @@
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  font-size: var(--sds-size-base-s2);
-  line-height: var(--sds-size-base-m);
-  padding: 12px;
+  font-size: var(--sds-fontsize-base-s2);
+  line-height: var(--sds-fontsize-base-m);
+  padding: var(--sds-size-base-s);
 
   &__label {
-    padding: 0 16px;
+    padding: 0 var(--sds-size-base-s1);
   }
 
   &__icon {
     align-items: center;
     display: inline-flex;
-    font-size: var(--sds-size-base-m);
+    font-size: var(--sds-fontsize-base-m);
     justify-content: center;
-    width: var(--sds-size-base-m);
-    height: var(--sds-size-base-m);
+    width: var(--sds-fontsize-base-m);
+    height: var(--sds-fontsize-base-m);
   }
 
   &:focus-visible {
-    outline: 4px dashed var(--sds-color-base-bla-01);
+    outline: var(--sds-size-base-xxs) dashed var(--sds-color-base-bla-01);
   }
 
   &--primary {
@@ -86,7 +86,7 @@
       background-color: var(--sds-color-base-background-dark);
       border-radius: 50%;
       color: var(--sds-color-typography-light-primary);
-      font-size: var(--sds-size-base-s2);
+      font-size: var(--sds-fontsize-base-s2);
     }
   }
 

@@ -2,6 +2,61 @@
   "size": {
     "base": {
       "xxs": {
+        "value": "4px"
+      },
+      "xxs1": {
+        "value": "6px"
+      },
+      "xs": {
+        "value": "8px"
+      },
+      "xs1": {
+        "value": "10px"
+      },
+      "s": {
+        "value": "12px"
+      },
+      "s1": {
+        "value": "16px"
+      },
+      "s2": {
+        "value": "20px"
+      },
+      "m": {
+        "value": "24px"
+      },
+      "m1": {
+        "value": "32px"
+      },
+      "m2": {
+        "value": "40px"
+      },
+      "l": {
+        "value": "48px"
+      },
+      "l1": {
+        "value": "64px"
+      },
+      "l2": {
+        "value": "80px"
+      },
+      "xl": {
+        "value": "96px"
+      },
+      "xl1": {
+        "value": "128px"
+      },
+      "xl2": {
+        "value": "160px"
+      },
+      "xxl": {
+        "value": "192px"
+      }
+    }
+  },
+  "fontsize": {
+    "base": {
+      "xxs": {
         "value": "calc(4rem / 16)"
       },
       "xxs1": {
@@ -51,6 +106,14 @@
       },
       "xxl": {
         "value": "calc(192rem / 16)"
+      }
+    },
+    "mod": {
+      "m": {
+        "value": "0.75"
+      },
+      "l": {
+        "value": "0.875"
       }
     }
   }

@@ -7,7 +7,7 @@
     align-items: center;
     display: inline-flex;
     justify-content: center;
-    margin-right: 12px;
+    margin-right: var(--sds-size-base-s);
 
     &:last-of-type {
       margin-right: 0;
@@ -23,11 +23,11 @@
     border-radius: 50%;
     color: var(--sds-color-base-background-dark);
     cursor: pointer;
-    font-size: var(--sds-size-base-s2);
-    line-height: var(--sds-size-base-m);
+    font-size: var(--sds-fontsize-base-s2);
+    line-height: var(--sds-fontsize-base-m);
     text-align: center;
-    width: var(--sds-size-base-l);
-    height: var(--sds-size-base-l);
+    width: var(--sds-fontsize-base-l);
+    height: var(--sds-fontsize-base-l);
     padding: 0;
 
     &:hover,
@@ -37,7 +37,7 @@
 
     &:focus-visible {
       border-color: transparent;
-      outline: 4px dashed var(--sds-color-base-bla-01);
+      outline: var(--sds-size-base-xxs) dashed var(--sds-color-base-bla-01);
     }
 
     &:active {
