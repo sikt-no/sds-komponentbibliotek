@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, MouseEventHandler } from "react";
+import React, { HTMLAttributes } from "react";
 import { Icon } from "@sikt/sds-icons/Icon";
 import { clsx } from "clsx";
 import "./pagination.pcss";
