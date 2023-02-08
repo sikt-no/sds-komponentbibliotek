@@ -41,6 +41,12 @@ test:
   stage: test
   script:
     - npm run test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
   dependencies:
     - install
   needs:
