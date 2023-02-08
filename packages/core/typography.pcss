@@ -148,13 +148,24 @@
 
   &-link {
     /* TODO: no design provided for element */
-    color: inherit;
+    color: var(--sds-color-typography-dark-primary);
     text-decoration: underline;
+    text-underline-position: under;
+
+    &::after,
+    &::before {
+      background-color: var(--sds-color-typography-dark-primary);
+    }
 
     &:active,
     &:hover,
     &:focus-visible {
       color: var(--sds-color-base-lilla-01);
+
+      &::after,
+      &::before {
+        background-color: var(--sds-color-base-lilla-01);
+      }
     }
 
     &:focus-visible {
@@ -163,12 +174,53 @@
 
     &[target="_blank"],
     &--external {
-      /* TODO */
+      padding-right: var(--sds-size-base-m);
+      position: relative;
+
+      &::after {
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M224,100a8,8,0,0,1-16,0V59.3l-58.4,58.4A8,8,0,0,1,144,120a8.3,8.3,0,0,1-5.7-2.3,8,8,0,0,1,0-11.3L196.7,48H156a8,8,0,0,1,0-16h60a8,8,0,0,1,8,8Zm-40,36a8,8,0,0,0-8,8v64H48V80h64a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V144A8,8,0,0,0,184,136Z"/></svg>');
+        content: "";
+        display: block;
+        mask-position: center right;
+        mask-repeat: no-repeat;
+        mask-size: var(--sds-size-base-s2);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: var(--sds-size-base-s2);
+        height: var(--sds-size-base-s2);
+      }
     }
 
     &[href^="mailto:"],
     &[href^="tel:"] {
-      /* TODO */
+      padding-left: var(--sds-size-base-m);
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        mask-position: center left;
+        mask-repeat: no-repeat;
+        mask-size: var(--sds-size-base-s2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--sds-size-base-s2);
+        height: var(--sds-size-base-s2);
+      }
+    }
+
+    &[href^="mailto:"] {
+      &::before {
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.4,64,128,133.1,52.6,64ZM216,192H40V74.2l82.6,75.7a8,8,0,0,0,10.8,0L216,74.2V192Z"/></svg>');
+      }
+    }
+
+    &[href^="tel:"] {
+      &::before {
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M176,224C96.6,224,32,159.4,32,80A56.2,56.2,0,0,1,80.9,24.4,16.3,16.3,0,0,1,97.6,34l20.1,46.9A15.9,15.9,0,0,1,116.3,96L99.7,121.4h0a76.5,76.5,0,0,0,35.2,35L160,139.7a15.6,15.6,0,0,1,15.1-1.3l46.9,20a16.3,16.3,0,0,1,9.6,16.7A56.2,56.2,0,0,1,176,224ZM82.9,40.3A40,40,0,0,0,48,80,128.1,128.1,0,0,0,176,208a40,40,0,0,0,39.7-34.9l-46.9-20-25,16.7a16,16,0,0,1-15.7,1.1,92.5,92.5,0,0,1-42.8-42.6,16,16,0,0,1,1-15.7L103,87.2ZM135,156.5Z"/></svg>');
+      }
     }
   }
 
@@ -176,14 +228,14 @@
     /* TODO: no design provided for element */
     position: relative;
     text-decoration: underline dotted;
+    text-underline-position: under;
 
     &:focus,
     &:hover {
       color: var(--sds-color-base-lilla-01);
 
       &::after {
-        background-color: var(--sds-color-base-background-dark);
-        color: var(--sds-color-typography-light-primary);
+        background-color: var(--sds-color-base-background-white);
         content: attr(title);
         padding: 0 4px;
         position: absolute;
