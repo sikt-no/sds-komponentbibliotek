@@ -9,6 +9,7 @@ module.exports = /** @type {const} */ ({
     "caret-left",
     "caret-right",
     "caret-up",
+    "check",
     "copy-simple",
     "download-simple",
     "envelope-simple",
