@@ -23,8 +23,8 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues
 
 #### Naming
 
-Sikt Design System acronym `sds` is used as prefix for packages, classes and so on.  
-Sikt scope `@sikt` is used on packages to link them to our organization.
+Sikt Design System acronym `sds` is used as prefix for packages, classes and so on. It used as a suffix for config packages since that is convention and a requirement for some configs.  
+Sikt scope `@sikt` is used on packages to link them to our organization on NPM.
 
 #### Monorepo
 
@@ -134,6 +134,7 @@ Rebase before merge so that your commits end up on top of the history.
 
 ### Publish
 
+Create a release branch `<gitlab-user>/release-<package-name>-<version>`.  
 Bump package versions & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version):
 
 ```sh
@@ -146,7 +147,8 @@ Push tags:
 git push --follow-tags
 ```
 
-Publish package to registry:
+Open a merge request. When approved and merged publish package to registry:  
+_TODO: Add this to CI-pipeline._
 
 ```sh
 npm publish --workspace=packages/<package-name> --access public
