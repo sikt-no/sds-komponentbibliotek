@@ -2,7 +2,8 @@
   "name": "@sikt/sds-icons",
   "version": "0.1.0",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "dist/index.css",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "style": "dist/index.css",
   "files": [
     "dist"
