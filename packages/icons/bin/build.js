@@ -3,8 +3,22 @@
 const cpy = require("cpy");
 const config = require("../icons.config");
 
-const icons = config.icons.map(
-  (icon) => `../../node_modules/@phosphor-icons/core/assets/regular/${icon}.svg`
+let icons = [];
+icons.push(
+  ...config.icons
+    .filter((icon) => !icon.endsWith("-fill"))
+    .map(
+      (icon) =>
+        `../../node_modules/@phosphor-icons/core/assets/regular/${icon}.svg`
+    )
+);
+icons.push(
+  ...config.icons
+    .filter((icon) => icon.endsWith("-fill"))
+    .map(
+      (icon) =>
+        `../../node_modules/@phosphor-icons/core/assets/fill/${icon}.svg`
+    )
 );
 
 cpy(icons, "dist/assets", { flat: true });
