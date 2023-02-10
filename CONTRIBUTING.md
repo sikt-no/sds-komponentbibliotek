@@ -23,13 +23,14 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues
 
 #### Naming
 
-Sikt Design System acronym `sds` is used as prefix for packages, classes and so on. It used as a suffix for config packages since that is convention and a requirement for some configs.  
-Sikt scope `@sikt` is used on packages to link them to our organization on NPM.
+Sikt Design System acronym `sds` is used as prefix for packages, classes and so on. It is used as a suffix for config packages since that is convention and a requirement for some configs.  
+Sikt scope `@sikt` is used on packages to link them to our organization on NPM.  
+Keep directory names lowercase while component names PascalCase.
 
 #### Monorepo
 
 This is a monorepo where all directories in `/packages/*` are seperate packages with their own `package.json` & `README.md`.  
-The reasoning behind multiple packages is that a breaking change to one package won't affect consumers of other packages.
+The reasoning behind multiple packages is micro architecture. So that a breaking change to one package won't affect consumers of other packages.
 
 #### Documentation
 
