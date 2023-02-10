@@ -116,6 +116,7 @@ Work on a feature branch named `<gitlab-user>/<conventional-commit-type>-<packag
 
 Commit with messages following [Conventional Commits](https://www.conventionalcommits.org/) & corresponding to [SemVer](https://semver.org/).  
 Keep the history clean with one single commit per feature.  
+**Note** How you commit while working is not important as long as you clean up before creating a merge request.  
 **Note** Package versions will be bumped based on commit types and commit messages will end up in the changelog.
 
 #### Tips
@@ -141,6 +142,7 @@ Bump package versions & generate change log based on commit history with [Standa
 npm run release --package=<package-name>
 ```
 
+**Note** You can always edit the changelog and commit before pushing if need be.  
 Push tags:
 
 ```sh
@@ -148,7 +150,7 @@ git push --follow-tags
 ```
 
 Open a merge request. When approved and merged publish package to registry:  
-_TODO: Add this to CI-pipeline._
+_TODO: Add publish step to CI-pipeline._
 
 ```sh
 npm publish --workspace=packages/<package-name> --access public

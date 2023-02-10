@@ -9,7 +9,7 @@ export default {
 } as Meta;
 
 const Template: Story<IconProps> = (args) => (
-  <Icon {...args} style={{ fontSize: "32px" }} />
+  <Icon {...args} style={{ fontSize: "calc(32rem / 16)" }} />
 );
 
 export const ArrowRight: Story<IconProps> = Template.bind({});
