@@ -6,11 +6,11 @@
   "description": "Sikt component library",
   "homepage": "https://komponentbibliotek.paas2.uninett.no/",
   "bugs": {
-    "url": "https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues"
+    "url": "https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.sikt.no/designsystem/komponentbibliotek.git"
+    "url": "https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
   },
   "workspaces": [
     "packages/*",

@@ -9,7 +9,7 @@ _">0.1 ratio smileys to text"_ -developer @Sikt
 
 Please give us feedback.  
 Slack: [#komponentbibliotek](https://sikt-no.slack.com/archives/C04K82KES0J)  
-Gitlab: [Issues](https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues)
+Gitlab: [Issues](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues)
 
 ## Design
 
@@ -17,7 +17,7 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/komponentbibliotek/-/issues
 
 ## Development
 
-[Gitlab Project](https://gitlab.sikt.no/designsystem/komponentbibliotek/)
+[Gitlab Project](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/)
 
 ### Architecture
 
