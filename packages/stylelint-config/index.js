@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["stylelint-config-standard", "stylelint-config-prettier"],
+  extends: ["stylelint-config-standard"],
   rules: {
     "media-feature-name-disallowed-list": [
       "^max-width",
