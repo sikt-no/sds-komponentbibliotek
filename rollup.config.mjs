@@ -4,7 +4,7 @@ import postcss from "rollup-plugin-postcss";
 import url from "@rollup/plugin-url";
 import svgr from "@svgr/rollup";
 import ts from "rollup-plugin-ts";
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 
 export default defineConfig({
   input: "index.ts",
@@ -20,7 +20,9 @@ export default defineConfig({
       minimize: true,
       sourceMap: true,
     }),
-    url(),
+    url({
+      fileName: "[name].[hash][extname]",
+    }),
     svgr(),
     ts({
       tsconfig: "../../tsconfig.json",
