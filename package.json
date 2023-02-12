@@ -78,7 +78,7 @@
     "postcss-custom-media": "^9.0.1",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.0",
-    "prettier": "2.8.3",
+    "prettier": "2.8.4",
     "rimraf": "^4.0.0",
     "rollup": "^3.15.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
