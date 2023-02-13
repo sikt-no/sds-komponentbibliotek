@@ -17,7 +17,7 @@
     "prepare": "run-s build:icons build:sprite"
   },
   "dependencies": {
-    "@phosphor-icons/core": "^1.4.7"
+    "@phosphor-icons/core": "^1.4.9"
   },
   "devDependencies": {
     "cpy-cli": "^4.2.0",
