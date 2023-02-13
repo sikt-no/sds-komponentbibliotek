@@ -24,8 +24,12 @@ import "@sikt/sds-core/dist/index.css";
 ## Design Tokens
 
 Created using [Style Dictionary](https://github.com/amzn/style-dictionary) and exported as CSS & JavaScript variables.  
-Do not change these directly in the `/core/dist` output directory but rather in the `/core/tokens` source directory.  
+Do not edit these directly in the `/core/dist` output directory but rather in the `/core/tokens` source directory.  
 **Note** That Style Dictionary tokens follow a CTI (Category/Type/Item) naming pattern that may affect their outcome by what transforms are applied.
+
+### Tips
+
+- Relative size tokens should be used on user font size setting scalable things like `font-size`, `line-height`, etc. These are calculated from the root font-size so that for example `16px` is the same as `calc(16 * 1rem/16)`.
 
 ### Consume
 
