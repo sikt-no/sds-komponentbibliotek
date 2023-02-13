@@ -1,0 +1,27 @@
+.sds-badge {
+  background-color: var(--sds-color-base-background-light);
+  color: var(--sds-color-typography-dark-secondary);
+  border: 1px solid var(--sds-color-base-lilla-02);
+  border-radius: var(--sds-size-base-m);
+  padding: var(--sds-size-base-xxs) var(--sds-size-base-xs);
+  font-size: var(--sds-fontsize-base-s);
+  line-height: var(--sds-fontsize-base-s1);
+  display: inline-flex;
+  align-items: center;
+
+  &__icon {
+    align-items: center;
+    display: inline-flex;
+    font-size: var(--sds-fontsize-base-s1);
+    justify-content: center;
+    width: var(--sds-fontsize-base-s1);
+    height: var(--sds-fontsize-base-s1);
+    margin-right: var(--sds-size-base-xxs1);
+  }
+
+  &--active {
+    background-color: var(--sds-color-base-lilla-03);
+    border-color: var(--sds-color-typography-dark-primary);
+    color: var(--sds-color-typography-dark-primary);
+  }
+}
