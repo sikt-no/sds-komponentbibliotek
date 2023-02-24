@@ -1,0 +1,26 @@
+{
+  "name": "@sikt/sds-input",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.mjs"
+  },
+  "dependencies": {
+    "@sikt/sds-core": "^0.2.0",
+    "@sikt/sds-icons": "^0.2.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "clsx": "^1.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
