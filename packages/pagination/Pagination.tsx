@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from "react";
-import { Icon } from "@sikt/sds-icons/Icon";
+import { Icon } from "@sikt/sds-icons";
 import { clsx } from "clsx";
 import "./pagination.pcss";
 
