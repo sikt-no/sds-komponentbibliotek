@@ -7,7 +7,7 @@ _">0.1 ratio smileys to text"_ -developer @Sikt
 
 ## Feedback
 
-Please give us feedback.  
+Please give us feedback and submit feature requests.  
 Slack: [#komponentbibliotek](https://sikt-no.slack.com/archives/C04K82KES0J)  
 Gitlab: [Issues](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues)
 
@@ -25,7 +25,7 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issu
 
 Sikt Design System acronym `sds` is used as prefix for packages, classes and so on. It is used as a suffix for config packages since that is convention and a requirement for some configs.  
 Sikt scope `@sikt` is used on packages to link them to our organization on NPM.  
-Keep directory names lowercase while component names PascalCase.
+Keep directory names kebab-case while component names PascalCase.
 
 #### Monorepo
 
@@ -61,7 +61,7 @@ PostCSS is used to allow usage of future CSS specs, like [nesting modules](https
 
 #### React
 
-Write unit tests for component APIs & features to make it easier to make future changes.  
+Write unit tests for component APIs & features to make it easier to make future changes and build trust with consumers. Currently we have a [80% coverage rule](./jest.config.js). Make sure to test what is important!  
 _TODO: Screenshot testing with Playwright._
 
 #### Build
@@ -78,6 +78,8 @@ npm run storybook
 
 ### Creating a new component
 
+See [Example](./packages/__example__) component for base setup.
+
 Init package:
 
 ```sh
@@ -92,17 +94,23 @@ entry point: dist/index.js
 license: UNLICENSED
 ```
 
-Add build script to package `package.json`:
+Add the following to package `package.json`:
 
 ```json
+"module": "dist/index.js",
+"types": "dist/index.d.ts",
+"style": "dist/index.css",
+"files": [
+  "dist"
+],
 "scripts": {
   "build": "rollup -c ../../rollup.config.mjs"
 }
 ```
 
-If you have custom build need this script may vary.  
-Export component from `index.ts`.  
-Create a `README.md` for documentation.  
+If you have custom build need this build script may vary.  
+Export the component from `index.ts` as this is the input for the [build](./rollup.config.mjs).  
+Create a `README.md` for documentation both near code and for import in Storybook.  
 Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
 
 #### Tips

@@ -7,7 +7,7 @@ A component library for [Sikt designsystem](https://isikt.sharepoint.com/sites/I
 Install package to be consumed:
 
 ```sh
-npm i -s @sikt/sds-<package-name>
+npm i -s @sikt/sds-core @sikt/sds-<package-name>
 ```
 
 ### Core & Design Tokens
@@ -17,6 +17,8 @@ Import [@sikt/sds-core](./packages/core/) package which among other things conta
 ```css
 @import url("@sikt/sds-core");
 ```
+
+**Note** This package is always required whether you use the React components or other frameworks.
 
 ### React
 
