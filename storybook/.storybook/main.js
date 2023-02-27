@@ -21,6 +21,9 @@ module.exports = {
       },
     },
   ],
+  features: {
+    buildStoriesJson: true,
+  },
   framework: "@storybook/react",
   core: {
     builder: "@storybook/builder-webpack5",
