@@ -1,137 +1,67 @@
 .sds-typography {
   &-body {
-    &--normal {
-      font-size: var(--sds-fontsize-base-s1);
-      line-height: var(--sds-fontsize-base-m);
+    &--small {
+      font-size: calc(12rem / 16);
+      line-height: var(--sds-size-text-s1);
+    }
+
+    &--regular {
+      font-size: calc(16rem / 16);
+      line-height: var(--sds-size-text-m);
+    }
+
+    &--large {
+      font-size: calc(18rem / 16);
+      line-height: var(--sds-size-text-m);
     }
 
     &--lead {
-      font-size: var(--sds-fontsize-base-s2);
-      line-height: var(--sds-fontsize-base-m1);
-
-      @media (--sds-breakpoint-desktop) {
-        font-size: var(--sds-fontsize-base-s2);
-        line-height: var(--sds-fontsize-base-m);
-      }
-
-      @media (--sds-breakpoint-ultrawide) {
-        font-size: var(--sds-fontsize-base-m1);
-        line-height: var(--sds-fontsize-base-m1);
-      }
-    }
-
-    &--caption {
-      font-size: var(--sds-fontsize-base-s);
-      line-height: var(--sds-fontsize-base-s1);
+      font-size: calc(22rem / 16);
+      line-height: var(--sds-size-text-m1);
     }
   }
 
   &-heading {
-    &--page {
-      font-size: calc(var(--sds-fontsize-base-l) * var(--sds-fontsize-mod-m));
-      font-weight: 700;
-      line-height: var(--sds-fontsize-base-l);
-
-      @media (--sds-breakpoint-tablet) {
-        font-size: calc(
-          var(--sds-fontsize-base-l1) * var(--sds-fontsize-mod-l)
-        );
-        line-height: var(--sds-fontsize-base-l1);
-      }
-
-      @media (--sds-breakpoint-desktop) {
-        font-size: calc(
-          var(--sds-fontsize-base-l2) * var(--sds-fontsize-mod-l)
-        );
-        line-height: var(--sds-fontsize-base-l2);
-      }
-
-      @media (--sds-breakpoint-ultrawide) {
-        font-size: calc(
-          var(--sds-fontsize-base-xl) * var(--sds-fontsize-mod-l)
-        );
-        line-height: var(--sds-fontsize-base-xl);
-      }
+    &--small {
+      font-size: calc(26rem / 16);
+      font-weight: 400;
+      line-height: var(--sds-size-text-m1);
     }
 
-    &--section {
-      font-size: calc(var(--sds-fontsize-base-m2) * var(--sds-fontsize-mod-l));
+    &--medium {
+      font-size: calc(32rem / 16);
       font-weight: 400;
-      line-height: var(--sds-fontsize-base-m2);
-
-      @media (--sds-breakpoint-tablet) {
-        font-size: calc(var(--sds-fontsize-base-l) * var(--sds-fontsize-mod-m));
-        line-height: var(--sds-fontsize-base-l);
-      }
-
-      @media (--sds-breakpoint-desktop) {
-        font-size: calc(
-          var(--sds-fontsize-base-l1) * var(--sds-fontsize-mod-m)
-        );
-        line-height: var(--sds-fontsize-base-l1);
-      }
-
-      @media (--sds-breakpoint-ultrawide) {
-        font-size: calc(
-          var(--sds-fontsize-base-l2) * var(--sds-fontsize-mod-l)
-        );
-        line-height: var(--sds-fontsize-base-l2);
-      }
+      line-height: var(--sds-size-text-m2);
     }
 
-    &--component {
-      font-size: calc(var(--sds-fontsize-base-m1) * var(--sds-fontsize-mod-m));
-      font-weight: 400;
-      line-height: var(--sds-fontsize-base-m1);
-
-      @media (--sds-breakpoint-tablet) {
-        font-size: calc(
-          var(--sds-fontsize-base-m2) * var(--sds-fontsize-mod-m)
-        );
-        line-height: var(--sds-fontsize-base-m2);
-      }
-
-      @media (--sds-breakpoint-desktop) {
-        font-size: calc(var(--sds-fontsize-base-l) * var(--sds-fontsize-mod-m));
-        line-height: var(--sds-fontsize-base-l);
-      }
+    &--large {
+      font-size: calc(38rem / 16);
+      font-weight: 600;
+      line-height: var(--sds-size-text-l);
     }
 
-    &--group {
-      font-size: calc(var(--sds-fontsize-base-m) * var(--sds-fontsize-mod-m));
-      font-weight: 400;
-      line-height: var(--sds-fontsize-base-m);
+    &--xlarge {
+      font-size: calc(44rem / 16);
+      font-weight: 600;
+      line-height: 56px;
+    }
 
-      @media (--sds-breakpoint-tablet) {
-        font-size: calc(
-          var(--sds-fontsize-base-m1) * var(--sds-fontsize-mod-m)
-        );
-        line-height: var(--sds-fontsize-base-m1);
-      }
-
-      @media (--sds-breakpoint-desktop) {
-        font-size: calc(
-          var(--sds-fontsize-base-m2) * var(--sds-fontsize-mod-m)
-        );
-        line-height: var(--sds-fontsize-base-m2);
-      }
+    &--xxlarge {
+      font-size: calc(50rem / 16);
+      font-weight: 600;
+      line-height: var(--sds-size-text-l1);
     }
 
     &--paragraph {
-      font-size: calc(var(--sds-fontsize-base-s2) * var(--sds-fontsize-mod-m));
-      font-weight: 700;
-      line-height: var(--sds-fontsize-base-s2);
-
-      @media (--sds-breakpoint-tablet) {
-        font-size: calc(var(--sds-fontsize-base-m) * var(--sds-fontsize-mod-m));
-        line-height: var(--sds-fontsize-base-m);
-      }
+      font-size: calc(18rem / 16);
+      font-weight: 600;
+      line-height: var(--sds-size-text-m);
     }
 
     &--overline {
-      font-size: calc(var(--sds-fontsize-base-s1) * var(--sds-fontsize-mod-m));
-      font-weight: 700;
-      line-height: var(--sds-fontsize-base-s1);
+      font-size: calc(12rem / 16);
+      font-weight: 600;
+      line-height: var(--sds-size-text-s1);
       text-transform: uppercase;
     }
   }
@@ -141,7 +71,7 @@
   }
 
   &-strong {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   &-q {
@@ -149,16 +79,16 @@
   }
 
   &-blockquote {
-    font-size: calc(var(--sds-fontsize-base-m1) * var(--sds-fontsize-mod-m));
+    font-size: calc(var(--sds-size-text-m1));
     font-weight: 400;
-    line-height: var(--sds-fontsize-base-m1);
+    line-height: var(--sds-size-text-m1);
     margin: 0;
     padding-left: 48px;
     position: relative;
 
     &::before {
       content: open-quote;
-      font-size: var(--sds-fontsize-base-xl);
+      font-size: var(--sds-size-text-xl);
       position: absolute;
       top: calc(50% + 10px);
       margin-left: -48px;
@@ -171,23 +101,23 @@
 
   &-link {
     /* TODO: no design provided for element */
-    color: var(--sds-color-typography-dark-primary);
+    color: var(--sds-color-text-default);
     text-decoration: underline;
     text-underline-position: under;
 
     &::after,
     &::before {
-      background-color: var(--sds-color-typography-dark-primary);
+      background-color: var(--sds-color-text-default);
     }
 
     &:active,
     &:hover,
     &:focus-visible {
-      color: var(--sds-color-base-lilla-01);
+      color: var(--sds-color-text-default-active);
 
       &::after,
       &::before {
-        background-color: var(--sds-color-base-lilla-01);
+        background-color: var(--sds-color-text-default-active);
       }
     }
 
@@ -197,7 +127,7 @@
 
     &[target="_blank"],
     &--external {
-      padding-right: var(--sds-fontsize-base-m);
+      padding-right: var(--sds-size-text-m);
       position: relative;
 
       &::after {
@@ -206,18 +136,18 @@
         display: block;
         mask-position: center right;
         mask-repeat: no-repeat;
-        mask-size: var(--sds-fontsize-base-s2);
+        mask-size: var(--sds-size-text-s2);
         position: absolute;
         bottom: 0;
         right: 0;
-        width: var(--sds-fontsize-base-s2);
-        height: var(--sds-fontsize-base-s2);
+        width: var(--sds-size-text-s2);
+        height: var(--sds-size-text-s2);
       }
     }
 
     &[href^="mailto:"],
     &[href^="tel:"] {
-      padding-left: var(--sds-fontsize-base-m);
+      padding-left: var(--sds-size-text-m);
       position: relative;
 
       &::before {
@@ -225,12 +155,12 @@
         display: block;
         mask-position: center left;
         mask-repeat: no-repeat;
-        mask-size: var(--sds-fontsize-base-s2);
+        mask-size: var(--sds-size-text-s2);
         position: absolute;
         top: 0;
         left: 0;
-        width: var(--sds-fontsize-base-s2);
-        height: var(--sds-fontsize-base-s2);
+        width: var(--sds-size-text-s2);
+        height: var(--sds-size-text-s2);
       }
     }
 
@@ -255,15 +185,16 @@
 
     &:focus,
     &:hover {
-      color: var(--sds-color-base-lilla-01);
+      color: var(--sds-color-text-default-hover);
 
       &::after {
-        background-color: var(--sds-color-base-background-white);
+        background-color: var(--sds-color-surface-default);
+        color: var(--sds-color-text-default);
         content: attr(title);
         padding: 0 4px;
         position: absolute;
         left: -2px;
-        bottom: calc(calc(var(--sds-fontsize-base-m) * -1) - 2px);
+        bottom: calc(calc(var(--sds-size-text-m) * -1) - 2px);
         text-decoration: none;
         white-space: nowrap;
         width: auto;

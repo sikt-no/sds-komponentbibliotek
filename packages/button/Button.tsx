@@ -7,7 +7,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   icon?: ReactNode;
   iconType?: "right" | "left" | "only";
-  color?: "light" | "dark";
 }
 
 interface ButtonTypes {
@@ -21,18 +20,12 @@ const Button = ({
   onClick,
   icon,
   iconType = "right",
-  color = "dark",
   ...rest
 }: ButtonProps & ButtonTypes) => {
   const ariaLabel = typeof children === "string" ? children : undefined;
   return (
     <button
-      className={clsx(
-        "sds-button",
-        `sds-button--${buttonType}`,
-        buttonType === "primary" ? `sds-button--${color}` : null,
-        className
-      )}
+      className={clsx("sds-button", `sds-button--${buttonType}`, className)}
       onClick={onClick}
       {...rest}
     >
@@ -55,7 +48,7 @@ const Button = ({
 
 export const PrimaryButton = (props: ButtonProps) =>
   Button({ ...props, buttonType: "primary" });
-export const SecondaryButton = (props: Omit<ButtonProps, "color">) =>
+export const SecondaryButton = (props: ButtonProps) =>
   Button({ ...props, buttonType: "secondary" });
-export const TertiaryButton = (props: Omit<ButtonProps, "color">) =>
+export const TertiaryButton = (props: ButtonProps) =>
   Button({ ...props, buttonType: "tertiary" });

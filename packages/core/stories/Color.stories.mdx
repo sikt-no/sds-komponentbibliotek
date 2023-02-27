@@ -1,37 +1,65 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs";
 import * as tokens from "../../core/dist/tokens/js/tokens.js";
+import * as dark from "../../core/dist/tokens/js/color.dark.js";
 
 <Meta title="Core/Color" />
 
 # Color
 
-## Base
+## Background
 
 <ColorPalette>
-  {Object.entries(tokens.color.base).map((token) => {
-    const colors = {};
-    Object.entries(token[1]).map((item) => (colors[item[0]] = item[1].value));
+  {Object.entries(tokens.color.background).map((token, index) => {
+    const subtitle = token[1].path.join(".");
     return (
       <ColorItem
-        title={token[0]}
-        subtitle={`color.base.${token[0]}`}
-        colors={colors}
+        title={token[0].toUpperCase()}
+        subtitle={subtitle}
+        colors={{
+          Light: token[1].value,
+          Dark: dark.color.background[token[0]].value,
+        }}
+        key={index}
       />
     );
   })}
 </ColorPalette>
 
-## Typography
+## Surface/Border
 
 <ColorPalette>
-  {Object.entries(tokens.color.typography).map((token) => {
-    const colors = {};
-    Object.entries(token[1]).map((item) => (colors[item[0]] = item[1].value));
+  {Object.entries(tokens.color.surface).map((token, index) => {
+    if (!token[1].path) return;
+    const subtitle = token[1].path.join(".");
     return (
       <ColorItem
-        title={token[0]}
-        subtitle={`color.typography.${token[0]}`}
-        colors={colors}
+        title={token[0].toUpperCase()}
+        subtitle={subtitle}
+        colors={{
+          Light: token[1].value,
+          Dark: dark.color.surface[token[0]].value,
+        }}
+        key={index}
+      />
+    );
+  })}
+</ColorPalette>
+
+## Text
+
+<ColorPalette>
+  {Object.entries(tokens.color.text).map((token, index) => {
+    if (!token[1].path) return;
+    const subtitle = token[1].path.join(".");
+    return (
+      <ColorItem
+        title={token[0].toUpperCase()}
+        subtitle={subtitle}
+        colors={{
+          Light: token[1].value,
+          Dark: dark.color.text[token[0]].value,
+        }}
+        key={index}
       />
     );
   })}

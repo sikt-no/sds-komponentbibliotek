@@ -10,7 +10,6 @@ export default {
   subcomponents: { Icon },
   args: {
     children: "Primary Button",
-    disabled: false,
     onClick: () => {
       alert("click handler");
     },
@@ -36,9 +35,4 @@ export const IconOnly: Story<ButtonProps> = Template.bind({});
 IconOnly.args = {
   icon: <Icon icon="arrow-right" />,
   iconType: "only",
-};
-
-export const Light: Story<ButtonProps> = Template.bind({});
-Light.args = {
-  color: "light",
 };

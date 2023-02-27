@@ -5,20 +5,20 @@ import "./badge.pcss";
 export interface BadgeProps {
   className?: string;
   children: ReactNode;
-  active?: boolean;
+  badgeType?: "action" | "success" | "danger" | "warning" | "info";
   icon?: ReactNode;
 }
 
 export const Badge = ({
+  badgeType = "action",
   className,
   children,
-  active = false,
   icon,
   ...rest
 }: BadgeProps) => {
   return (
     <span
-      className={clsx("sds-badge", active && "sds-badge--active", className)}
+      className={clsx("sds-badge", `sds-badge--${badgeType}`, className)}
       {...rest}
     >
       {icon && <div className="sds-badge__icon">{icon}</div>}

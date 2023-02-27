@@ -6,7 +6,6 @@ import { ReactComponent as LogoSvg } from "./Logo.svg";
 export interface LogoProps {
   className?: string;
   lang?: "nb" | "nn" | "en" | "se" | "smj" | "sma" | "fkv";
-  color?: "light" | "dark";
 }
 
 interface LogoTypes {
@@ -27,18 +26,12 @@ const Logo = ({
   logoType,
   className,
   lang = "nb",
-  color = "dark",
   ...rest
 }: LogoProps & LogoTypes) => {
   const isSecondary = logoType === "secondary";
   return (
     <div
-      className={clsx(
-        "sds-logo",
-        `sds-logo--${logoType}`,
-        `sds-logo--${color}`,
-        className
-      )}
+      className={clsx("sds-logo", `sds-logo--${logoType}`, className)}
       {...rest}
     >
       <LogoSvg className="sds-logo__icon" aria-hidden />

@@ -1,7 +1,6 @@
 .sds-pagination {
-  &__list {
-    /* TODO */
-  }
+  --pagination-background-color: transparent;
+  --pagination-border-color: var(--sds-color-surface-action);
 
   &__list-item {
     align-items: center;
@@ -18,45 +17,47 @@
     align-items: center;
     display: inline-flex;
     justify-content: center;
-    background-color: var(--sds-color-base-background-white);
-    border: 1px solid var(--sds-color-base-lilla-02);
-    border-radius: 50%;
-    color: var(--sds-color-base-background-dark);
+    background-color: var(--pagination-background-color);
+    border: var(--sds-border-size-regular) solid var(--pagination-border-color);
+    border-radius: var(--sds-border-radius-full);
+    color: var(--sds-color-text-default);
     cursor: pointer;
-    font-size: var(--sds-fontsize-base-s2);
-    line-height: var(--sds-fontsize-base-m);
+    font-size: var(--sds-size-text-s2);
+    line-height: var(--sds-size-text-m);
     text-align: center;
-    width: var(--sds-fontsize-base-l);
-    height: var(--sds-fontsize-base-l);
+    width: var(--sds-size-text-l);
+    height: var(--sds-size-text-l);
     padding: 0;
 
     &:hover,
     &:focus-visible {
-      /* TODO: hover style */
+      --pagination-border-color: var(--sds-color-surface-action-hover);
     }
 
     &:focus-visible {
-      border-color: transparent;
-      outline: var(--sds-size-base-xxs) dashed var(--sds-color-base-bla-01);
+      outline: var(--sds-size-base-xxs) dashed var(--sds-color-text-info);
     }
 
     &:active {
-      /* TODO: hover style */
+      --pagination-border-color: var(--sds-color-surface-action-active);
     }
 
     &[aria-current] {
-      /* TODO: background-dark is not active color of other elements */
-      background-color: var(--sds-color-base-background-dark);
-      border-color: var(--sds-color-base-background-dark);
-      color: var(--sds-color-base-background-white);
+      --pagination-background-color: var(--sds-color-surface-action);
+
+      color: var(--sds-color-text-onsurface-action);
     }
 
-    &[disabled] {
-      cursor: inherit;
-    }
-
+    &[aria-current],
+    &[disabled],
     &--spacer {
       cursor: inherit;
+
+      &:active,
+      &:hover,
+      &:focus-visible {
+        --pagination-border-color: var(--sds-color-surface-action);
+      }
     }
   }
 }

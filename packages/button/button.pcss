@@ -1,121 +1,80 @@
 .sds-button {
-  /* TODO: how to handle local tokens */
-  --sds-color-base-purple-5: #050119;
-  --sds-color-base-purple-20: #160363;
-  --sds-color-base-purple-60: #5e39f9;
-  --sds-color-base-purple-75: #9b83fc;
-
   align-items: center;
   border: 0 none;
   border-radius: var(--sds-size-base-m);
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  font-size: var(--sds-fontsize-base-s2);
-  line-height: var(--sds-fontsize-base-m);
+  font-size: var(--sds-size-text-s2);
+  line-height: var(--sds-size-text-m);
   padding: var(--sds-size-base-s);
 
   &__label {
-    padding: 0 var(--sds-size-base-s1);
+    padding: 0 var(--sds-size-base-s);
   }
 
   &__icon {
     align-items: center;
     display: inline-flex;
-    font-size: var(--sds-fontsize-base-m);
+    font-size: var(--sds-size-text-m);
     justify-content: center;
-    width: var(--sds-fontsize-base-m);
-    height: var(--sds-fontsize-base-m);
+    width: var(--sds-size-text-m);
+    height: var(--sds-size-text-m);
   }
 
   &:focus-visible {
-    outline: var(--sds-size-base-xxs) dashed var(--sds-color-base-bla-01);
+    outline: var(--sds-size-base-xxs) dashed var(--sds-color-text-info);
   }
 
   &--primary {
-    color: var(--sds-color-typography-light-primary);
-    background-color: var(--sds-color-base-background-dark);
+    color: var(--sds-color-text-onsurface-action);
+    background-color: var(--sds-color-surface-action);
 
     &:hover,
     &:focus-visible {
-      background: var(--sds-color-base-purple-20);
+      background: var(--sds-color-surface-action-hover);
     }
 
     &:active {
-      background: var(--sds-color-base-purple-5);
-    }
-
-    &:disabled {
-      color: var(--sds-color-typography-light-disabled);
-      cursor: auto;
-      background-color: #0b013433;
-    }
-
-    &.sds-button--light {
-      background-color: var(--sds-color-base-lilla-01);
-
-      &:hover,
-      &:focus-visible {
-        background: var(--sds-color-base-purple-75);
-      }
-
-      &:active {
-        background: var(--sds-color-base-purple-60);
-      }
-
-      &:disabled {
-        color: var(--sds-color-typography-light-disabled);
-        cursor: auto;
-        background-color: #7351fa33; /* TODO: change to color-mix(in srgb, var(--sds-color-base-lilla-01) 20%, transparent) when browser support or postcss-plugin */
-      }
+      background: var(--sds-color-surface-action-active);
     }
   }
 
   &--secondary {
-    border: 1px solid;
-    padding: 11px;
-    color: var(--sds-color-typography-dark-primary);
-    background-color: var(--sds-color-base-background-white);
-    border-color: var(--sds-color-base-lilla-02);
-  }
+    border: var(--sds-border-size-regular) solid var(--sds-color-surface-action);
+    color: var(--sds-color-text-default);
+    padding: calc(
+      var(--sds-size-padding-small) - var(--sds-border-size-regular)
+    );
 
-  &--tertiary {
-    color: var(--sds-color-typography-dark-primary);
-
-    .sds-button__icon {
-      background-color: var(--sds-color-base-background-dark);
-      border-radius: 50%;
-      color: var(--sds-color-typography-light-primary);
-      font-size: var(--sds-fontsize-base-s2);
-    }
-  }
-
-  &--secondary,
-  &--tertiary {
     &:hover,
     &:focus-visible {
-      .sds-button__label {
-        text-decoration: underline;
-      }
-    }
-
-    &:focus-visible {
-      border-color: transparent;
+      border-color: var(--sds-color-surface-action-hover);
     }
 
     &:active {
-      .sds-button__label {
-        text-decoration: none;
-      }
+      border-color: var(--sds-color-surface-action-active);
+    }
+  }
+
+  &--tertiary {
+    color: var(--sds-color-text-action);
+
+    .sds-button__icon {
+      font-size: var(--sds-size-text-s2);
     }
 
-    &:disabled {
-      color: var(--sds-color-typography-dark-disabled);
-      cursor: auto;
-
-      .sds-button__label {
-        text-decoration: none;
-      }
+    &:hover,
+    &:focus-visible {
+      color: var(--sds-color-text-default-hover);
     }
+
+    &:active {
+      color: var(--sds-color-text-default-active);
+    }
+  }
+
+  &:disabled {
+    cursor: auto;
   }
 }

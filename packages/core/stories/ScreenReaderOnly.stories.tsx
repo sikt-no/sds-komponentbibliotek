@@ -8,7 +8,7 @@ export default {
   component: ScreenReaderOnly,
   args: {
     children: "ScreenReaderOnly",
-    focusable: true,
+    isFocusable: true,
   },
 } as Meta;
 
@@ -18,5 +18,9 @@ const Template: Story<ScreenReaderOnlyProps> = (args) => (
 
 export const Focusable: Story<ScreenReaderOnlyProps> = Template.bind({});
 Focusable.args = {
-  children: <a href="#abc">Skip Link</a>,
+  children: (
+    <a href="#abc" className="sds-typography-link">
+      Skip Link
+    </a>
+  ),
 };

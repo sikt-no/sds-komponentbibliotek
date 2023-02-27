@@ -52,10 +52,19 @@
       "xxl": {
         "value": "192px"
       }
-    }
-  },
-  "fontsize": {
-    "base": {
+    },
+    "padding": {
+      "small": {
+        "value": "{size.base.s.value}"
+      },
+      "medium": {
+        "value": "{size.base.m.value}"
+      },
+      "large": {
+        "value": "{size.base.l.value}"
+      }
+    },
+    "text": {
       "xxs": {
         "value": "calc(4rem / 16)"
       },
@@ -106,14 +115,6 @@
       },
       "xxl": {
         "value": "calc(192rem / 16)"
-      }
-    },
-    "mod": {
-      "m": {
-        "value": "0.75"
-      },
-      "l": {
-        "value": "0.875"
       }
     }
   }

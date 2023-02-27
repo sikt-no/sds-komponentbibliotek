@@ -1,0 +1,29 @@
+{
+  "border": {
+    "size": {
+      "thin": {
+        "value": "1px"
+      },
+      "regular": {
+        "value": "2px"
+      },
+      "bold": {
+        "value": "4px"
+      }
+    },
+    "radius": {
+      "small": {
+        "value": "{size.base.xs.value}"
+      },
+      "medium": {
+        "value": "{size.base.s.value}"
+      },
+      "large": {
+        "value": "{size.base.m.value}"
+      },
+      "full": {
+        "value": "100%"
+      }
+    }
+  }
+}

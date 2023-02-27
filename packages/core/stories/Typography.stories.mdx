@@ -12,7 +12,7 @@ export const sampleText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
 <Typeset
-  fontSizes={[12, 24, 48]}
+  fontSizes={[12, 16, 18, 22]}
   fontWeight={400}
   sampleText={sampleText}
   fontFamily={"Haffer, Arial, sans-serif"}
@@ -98,10 +98,22 @@ export const sampleText =
 
 ## Body
 
-### Normal
+### Small
 
 <Canvas>
   <p className="sds-typography-body--normal">{sampleText}</p>
+</Canvas>
+
+### Regular
+
+<Canvas>
+  <p className="sds-typography-body--regular">{sampleText}</p>
+</Canvas>
+
+### Large
+
+<Canvas>
+  <p className="sds-typography-body--large">{sampleText}</p>
 </Canvas>
 
 ### Lead
@@ -110,46 +122,46 @@ export const sampleText =
   <p className="sds-typography-body--lead">{sampleText}</p>
 </Canvas>
 
-### Caption
-
-<Canvas>
-  <p className="sds-typography-body--caption">{sampleText}</p>
-</Canvas>
-
 ## Heading
 
-### Page
+### Overline
 
 <Canvas>
-  <h1 className="sds-typography-heading--page">Heading 1</h1>
-</Canvas>
-
-### Section
-
-<Canvas>
-  <h2 className="sds-typography-heading--section">Heading 2</h2>
-</Canvas>
-
-### Component
-
-<Canvas>
-  <h3 className="sds-typography-heading--component">Heading 3</h3>
-</Canvas>
-
-### Group
-
-<Canvas>
-  <h4 className="sds-typography-heading--group">Heading 4</h4>
+  <h1 className="sds-typography-heading--overline">Heading</h1>
 </Canvas>
 
 ### Paragraph
 
 <Canvas>
-  <h5 className="sds-typography-heading--paragraph">Heading 5</h5>
+  <h1 className="sds-typography-heading--paragraph">Heading</h1>
 </Canvas>
 
-### Overline
+### Small
 
 <Canvas>
-  <h6 className="sds-typography-heading--overline">Heading 6</h6>
+  <h1 className="sds-typography-heading--small">Heading</h1>
+</Canvas>
+
+### Medium
+
+<Canvas>
+  <h1 className="sds-typography-heading--medium">Heading</h1>
+</Canvas>
+
+### Large
+
+<Canvas>
+  <h1 className="sds-typography-heading--large">Heading</h1>
+</Canvas>
+
+### XLarge
+
+<Canvas>
+  <h1 className="sds-typography-heading--xlarge">Heading</h1>
+</Canvas>
+
+### XXLarge
+
+<Canvas>
+  <h1 className="sds-typography-heading--xxlarge">Heading</h1>
 </Canvas>

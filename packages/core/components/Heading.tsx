@@ -3,10 +3,11 @@ import clsx from "clsx";
 
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   headingType:
-    | "page"
-    | "section"
-    | "component"
-    | "group"
+    | "small"
+    | "medium"
+    | "large"
+    | "xlarge"
+    | "xxlarge"
     | "paragraph"
     | "overline";
   className?: string;

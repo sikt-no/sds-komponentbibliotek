@@ -24,7 +24,9 @@ describe("Button", () => {
     headingLevels.map((headingLevel) => {
       it(`${headingLevel.name} should be accessible`, async () => {
         const { component: Heading } = headingLevel;
-        const { container } = render(<Heading headingType="page">Foo</Heading>);
+        const { container } = render(
+          <Heading headingType="medium">Foo</Heading>
+        );
 
         expect(await axe(container)).toHaveNoViolations();
       });
@@ -36,13 +38,13 @@ describe("Button", () => {
       it(`${headingLevel.name} should render`, async () => {
         const { name, component: Heading } = headingLevel;
         render(
-          <Heading headingType="page" data-testid={name}>
+          <Heading headingType="medium" data-testid={name}>
             {name}
           </Heading>
         );
 
         expect(screen.getByTestId(name)).toHaveClass(
-          "sds-typography-heading sds-typography-heading--page"
+          "sds-typography-heading sds-typography-heading--medium"
         );
         expect(screen.getByText(name)).toBeInTheDocument();
       });
@@ -51,7 +53,7 @@ describe("Button", () => {
     it("should have class name", async () => {
       render(
         <Heading1
-          headingType="page"
+          headingType="medium"
           data-testid="test"
           className="test-class-name"
         >
@@ -60,7 +62,7 @@ describe("Button", () => {
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-typography-heading sds-typography-heading--page test-class-name"
+        "sds-typography-heading sds-typography-heading--medium test-class-name"
       );
     });
   });
