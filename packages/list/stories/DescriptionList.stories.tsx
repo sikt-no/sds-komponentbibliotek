@@ -1,8 +1,8 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
-import { DescriptionList, ListProps } from "../";
-import { DescriptionTerm, DescriptionDetails } from "../";
+import { DescriptionList, ListProps } from "../index";
+import { DescriptionTerm, DescriptionDetails } from "../index";
 
 export default {
   title: "Components/List/Description",

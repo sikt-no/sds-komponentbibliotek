@@ -1,8 +1,8 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
-import { OrderedList, ListProps } from "../";
-import { ListItem } from "../";
+import { OrderedList, ListProps } from "../index";
+import { ListItem } from "../index";
 
 export default {
   title: "Components/List/Ordered",

@@ -1,7 +1,18 @@
 .sds-description-list {
-  /* TODO: no design provided for element */
+  margin-top: calc(var(--sds-size-base-s) * -1);
+
+  &__term,
+  &__details {
+    margin-top: var(--sds-size-base-s);
+  }
 }
 
 .sds-list {
-  /* TODO: no design provided for element */
+  .sds-list {
+    margin-top: var(--sds-size-base-s);
+  }
+
+  &__item:not(:first-of-type) {
+    margin-top: var(--sds-size-base-s);
+  }
 }
