@@ -8,6 +8,7 @@ export default {
   component: Link,
   args: {
     children: "Link",
+    href: "#",
   },
 } as Meta;
 
