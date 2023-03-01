@@ -4,20 +4,20 @@ import clsx from "clsx";
 export interface ScreenReaderOnlyProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;
   children: ReactNode;
-  focusable?: boolean;
+  isFocusable?: boolean;
 }
 
 export const ScreenReaderOnly = ({
   children,
   className,
-  focusable,
+  isFocusable,
   ...rest
 }: ScreenReaderOnlyProps) => {
   return (
     <span
       className={clsx(
         "sds-screen-reader-only",
-        focusable && "sds-screen-reader-only--focusable",
+        isFocusable && "sds-screen-reader-only--focusable",
         className
       )}
       {...rest}

@@ -31,5 +31,17 @@ describe("ScreenReaderOnly", () => {
         "sds-screen-reader-only test-class-name"
       );
     });
+
+    it("should have focusable modifier", async () => {
+      render(
+        <ScreenReaderOnly isFocusable data-testid="test">
+          Foo
+        </ScreenReaderOnly>
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-screen-reader-only sds-screen-reader-only--focusable"
+      );
+    });
   });
 });
