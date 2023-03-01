@@ -35,5 +35,17 @@ describe("Link", () => {
         "sds-typography-link test-class-name"
       );
     });
+
+    it("should have external modifier", async () => {
+      render(
+        <Link href="#" isExternal data-testid="test">
+          Foo
+        </Link>
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-typography-link sds-typography-link--external"
+      );
+    });
   });
 });

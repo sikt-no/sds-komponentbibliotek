@@ -4,11 +4,24 @@ import clsx from "clsx";
 export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
   children: ReactNode;
+  isExternal?: boolean;
 }
 
-export const Link = ({ children, className, ...rest }: LinkProps) => {
+export const Link = ({
+  children,
+  className,
+  isExternal,
+  ...rest
+}: LinkProps) => {
   return (
-    <a className={clsx("sds-typography-link", className)} {...rest}>
+    <a
+      className={clsx(
+        "sds-typography-link",
+        isExternal && "sds-typography-link--external",
+        className
+      )}
+      {...rest}
+    >
       {children}
     </a>
   );
