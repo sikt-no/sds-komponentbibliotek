@@ -1,0 +1,28 @@
+{
+  "name": "@sikt/sds-accordion",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "license": "UNLICENSED",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.sikt.no:designsystem/sds-komponentbibliotek.git"
+  },
+  "dependencies": {
+    "@sikt/sds-core": "^0.3.0",
+    "@sikt/sds-icons": "^0.2.0"
+  },
+  "peerDependencies": {
+    "clsx": "^1.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}

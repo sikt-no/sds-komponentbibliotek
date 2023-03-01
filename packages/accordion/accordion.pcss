@@ -1,0 +1,82 @@
+@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
+
+.sds-accordion {
+  border-radius: var(--sds-border-radius-large);
+  border: var(--sds-border-size-regular) solid var(--sds-color-surface-action);
+  background-color: var(--sds-color-surface-default);
+
+  &__title {
+    color: var(--sds-color-text-default);
+    font-weight: 400;
+    line-height: var(--sds-size-base-m1);
+  }
+
+  &__button {
+    font-size: var(--sds-size-base-m);
+    padding: var(--sds-size-base-m);
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      border-color: var(--sds-color-surface-action-hover);
+    }
+
+    &:focus-visible {
+      border-color: transparent;
+      outline: var(--sds-outline);
+    }
+
+    &:active {
+      border-color: var(--sds-color-surface-action-active);
+    }
+  }
+
+  &__content {
+    color: var(--sds-color-text-default);
+    padding: var(--sds-size-base-m);
+    padding-top: 0;
+  }
+
+  &--small {
+    border-radius: var(--sds-size-base-xs);
+  }
+
+  &--small &__button {
+    padding: var(--sds-size-base-s);
+    font-size: var(--sds-size-base-s2);
+  }
+
+  &--small &__content {
+    padding: var(--sds-size-base-s);
+    padding-top: 0;
+  }
+}
+
+@media (--sds-breakpoint-tablet) {
+  .sds-accordion {
+    &--large &__button,
+    &--large &__content {
+      padding: var(--sds-size-base-m1);
+    }
+
+    &--large &__content {
+      padding-top: 0;
+    }
+  }
+}
+
+@media (--sds-breakpoint-desktop) {
+  .sds-accordion {
+    &--large &__button,
+    &--large &__content {
+      padding: var(--sds-size-base-l);
+    }
+
+    &--large &__content {
+      padding-top: 0;
+    }
+  }
+}
