@@ -22,6 +22,7 @@ module.exports = /** @type {const} */ ({
     "chat",
     "check",
     "check-circle",
+    "circle",
     "clock",
     "copy",
     "dots-three",

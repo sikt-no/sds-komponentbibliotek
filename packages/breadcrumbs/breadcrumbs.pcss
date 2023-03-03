@@ -1,0 +1,77 @@
+.sds-breadcrumbs {
+  font-size: var(--sds-size-text-s);
+
+  &__list {
+    display: flex;
+    grid-gap: var(--sds-size-base-s);
+  }
+
+  &-item {
+    --sds-breadcrumbs-item-color: var(--sds-color-text-neutral);
+    --sds-breadcrumbs-item-icon-color: var(--sds-color-text-neutral);
+    --sds-breadcrumbs-item-border-color: transparent;
+
+    &__icon {
+      color: var(--sds-breadcrumbs-item-icon-color);
+      font-size: var(--sds-size-base-s1);
+
+      &--active {
+        display: none;
+      }
+    }
+
+    &__link {
+      align-items: center;
+      border-bottom: 1px solid var(--sds-breadcrumbs-item-border-color);
+      color: var(--sds-breadcrumbs-item-color);
+      display: flex;
+      grid-gap: var(--sds-size-base-xxs);
+      padding: var(--sds-size-base-xxs);
+      text-decoration: none;
+
+      &[aria-current="page"],
+      &:active,
+      &:hover,
+      &:focus-visible {
+        & .sds-breadcrumbs-item__icon {
+          &--active {
+            display: block;
+          }
+
+          &--inactive {
+            display: none;
+          }
+        }
+      }
+
+      &[aria-current="page"] {
+        --sds-breadcrumbs-item-border-color: var(--sds-color-surface-action);
+        --sds-breadcrumbs-item-icon-color: var(--sds-color-surface-action);
+      }
+
+      &:hover {
+        --sds-breadcrumbs-item-color: var(--sds-color-text-default-hover);
+        --sds-breadcrumbs-item-border-color: var(
+          --sds-color-surface-action-hover
+        );
+        --sds-breadcrumbs-item-icon-color: var(--sds-color-text-default-hover);
+      }
+
+      &:active {
+        --sds-breadcrumbs-item-color: var(--sds-color-text-default-active);
+        --sds-breadcrumbs-item-border-color: var(
+          --sds-color-surface-action-active
+        );
+        --sds-breadcrumbs-item-icon-color: var(--sds-color-text-default-active);
+      }
+
+      &:focus-visible {
+        --sds-breadcrumbs-item-color: var(--sds-color-text-default-hover);
+        --sds-breadcrumbs-item-icon-color: var(--sds-color-text-default-hover);
+
+        border-color: transparent;
+        outline: var(--sds-outline);
+      }
+    }
+  }
+}
