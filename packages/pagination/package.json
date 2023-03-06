@@ -13,8 +13,8 @@
     "build": "rollup -c ../../rollup.config.mjs"
   },
   "dependencies": {
-    "@sikt/sds-core": "^0.2.0",
-    "@sikt/sds-icons": "^0.1.0"
+    "@sikt/sds-core": "^0.3.0",
+    "@sikt/sds-icons": "^0.2.0"
   },
   "peerDependencies": {
     "@types/react": "^18.0.0",
