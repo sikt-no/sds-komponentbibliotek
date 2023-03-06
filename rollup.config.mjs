@@ -1,4 +1,5 @@
 import { defineConfig } from "rollup";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import url from "@rollup/plugin-url";
@@ -14,6 +15,7 @@ export default defineConfig({
     sourcemap: true,
   },
   plugins: [
+    nodeResolve(),
     peerDepsExternal(),
     postcss({
       extract: true,
