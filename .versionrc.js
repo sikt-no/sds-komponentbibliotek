@@ -1,6 +1,7 @@
 const packageName = process.env.npm_config_package;
 
 module.exports = {
+  "commit-all": true,
   bumpFiles: [
     `./packages/${packageName}/package.json`,
     `./packages/${packageName}/package-lock.json`,
@@ -10,5 +11,8 @@ module.exports = {
   packageFiles: [`./packages/${packageName}/package.json`],
   path: `./packages/${packageName}`,
   releaseCommitMessageFormat: `chore(${packageName}): release {{currentTag}}`,
+  scripts: {
+    postbump: "npm i && git add .",
+  },
   "tag-prefix": `@sikt/sds-${packageName}@`,
 };
