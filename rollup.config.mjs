@@ -1,5 +1,6 @@
 import { defineConfig } from "rollup";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import url from "@rollup/plugin-url";
@@ -17,6 +18,7 @@ export default defineConfig({
   plugins: [
     nodeResolve(),
     peerDepsExternal(),
+    commonjs(),
     postcss({
       extract: true,
       minimize: true,
@@ -24,6 +26,7 @@ export default defineConfig({
     }),
     url({
       fileName: "[name].[hash][extname]",
+      limit: 28682,
     }),
     svgr(),
     ts({
