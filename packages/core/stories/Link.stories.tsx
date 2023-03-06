@@ -16,6 +16,11 @@ const Template: Story<LinkProps> = (args) => <Link {...args} />;
 
 export const Default: Story<LinkProps> = Template.bind({});
 
+export const Navigation: Story<LinkProps> = Template.bind({});
+Navigation.args = {
+  className: "sds-typography-link--navigation",
+};
+
 export const External: Story<LinkProps> = Template.bind({});
 External.args = {
   target: "_blank",
