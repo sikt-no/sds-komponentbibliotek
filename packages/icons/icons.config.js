@@ -53,6 +53,7 @@ module.exports = /** @type {const} */ ({
     "shopping-cart",
     "sort-ascending",
     "sort-descending",
+    "spinner-gap",
     "trash",
     "upload-simple",
     "user-circle",
