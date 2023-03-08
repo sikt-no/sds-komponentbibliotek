@@ -1,5 +1,12 @@
 # Contributing
 
+**Table of contents**
+
+1. [Code of conduct](#code-of-conduct)
+1. [Feedback](#feedback)
+1. [Design](#design)
+1. [Development](#development) 2. [Architecture](#architecture) 2. [Setup](#setup) 2. [Change request](#change-request) 2. [Creating a new component](#creating-a-new-component) 2. [Workflow](#workflow)
+
 ## Code of conduct
 
 Be nice! 🙂  
@@ -76,6 +83,10 @@ npm ci
 npm run storybook
 ```
 
+### Change request
+
+Open an issue on Gitlab and/or talk to us. We are here to help!
+
 ### Creating a new component
 
 See [Example](./packages/__example__) component for base setup.
@@ -83,20 +94,15 @@ See [Example](./packages/__example__) component for base setup.
 Init package:
 
 ```sh
-npm init -w ./packages/<package-name>
-```
-
-Change input:
-
-```sh
-package name: @sikt/sds-<package-name>
-entry point: dist/index.js
-license: UNLICENSED
+npm init -y -w ./packages/<package-name>
 ```
 
 Add the following to package `package.json`:
 
 ```json
+"name": "@sikt/sds-<package-name>",
+"version": "0.1.0",
+"license": "UNLICENSED",
 "module": "dist/index.js",
 "types": "dist/index.d.ts",
 "style": "dist/index.css",
@@ -108,7 +114,8 @@ Add the following to package `package.json`:
 }
 ```
 
-If you have custom build need this build script may vary.  
+If you have custom build need this build script and entry points may vary.  
+Run `npm i` in root to hoist dependencies.  
 Export the component from `index.ts` as this is the input for the [build](./rollup.config.mjs).  
 Create a `README.md` for documentation both near code and for import in Storybook.  
 Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
@@ -117,32 +124,34 @@ Create a [Storybook](https://storybook.js.org/docs/react/get-started/introductio
 
 - Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link)
 
-### Branch
+### Workflow
+
+#### Branch
 
 Work on a feature branch named `<gitlab-user>/<conventional-commit-type>-<package-name>-<issue-description>`.
 
-### Commit
+#### Commit
 
 Commit with messages following [Conventional Commits](https://www.conventionalcommits.org/) & corresponding to [SemVer](https://semver.org/).  
 Keep the history clean with one single commit per feature.  
 **Note** How you commit while working is not important as long as you clean up before creating a merge request.  
 **Note** Package versions will be bumped based on commit types and commit messages will end up in the changelog.
 
-#### Tips
+##### Tips
 
 - Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 
-### Merge request
+#### Merge request
 
 Create a merge request & wait for a required code review before merging to `main`.  
 Review comments are closed by the reviewer & not the branch owner.  
 Rebase before merge so that your commits end up on top of the history.
 
-#### Tips
+##### Tips
 
 - Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
 
-### Publish
+#### Publish
 
 Create a release branch `<gitlab-user>/release-<package-name>-<version>`.  
 Bump package versions & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version):
