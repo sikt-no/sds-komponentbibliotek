@@ -12,7 +12,7 @@ module.exports = {
   path: `./packages/${packageName}`,
   releaseCommitMessageFormat: `chore(${packageName}): release {{currentTag}}`,
   scripts: {
-    postbump: "npm i && git add .",
+    precommit: "npm i && npm run format && git add .",
   },
   "tag-prefix": `@sikt/sds-${packageName}@`,
 };
