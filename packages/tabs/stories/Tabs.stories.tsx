@@ -1,0 +1,48 @@
+import React from "react";
+import { Meta } from "@storybook/react/types-6-0";
+import { Story } from "@storybook/react";
+import { Tabs, TabsProps, TabList, Tab, TabPanel } from "../index";
+import { Icon } from "../../icons/index";
+import { Badge } from "../../badge/index";
+
+export default {
+  title: "Components/Tabs",
+  component: Tabs,
+  subcomponents: { TabList, Tab, TabPanel, Icon, Badge },
+  args: {
+    children: [
+      <TabList key={0} aria-label="Sample Tabs">
+        <Tab>First Tab</Tab>
+        <Tab>Second Tab</Tab>
+        <Tab>Third Tab</Tab>
+      </TabList>,
+      <TabPanel key={1}>First Content</TabPanel>,
+      <TabPanel key={2}>Second Content</TabPanel>,
+      <TabPanel key={3}>Third Content</TabPanel>,
+    ],
+  },
+} as Meta;
+
+const Template: Story<TabsProps> = (args) => <Tabs {...args} />;
+
+export const Default: Story<TabsProps> = Template.bind({});
+
+export const WithIcon: Story<TabsProps> = Template.bind({});
+WithIcon.args = {
+  children: [
+    <TabList key={0} aria-label="Sample Tabs">
+      <Tab icon={<Icon icon="info" />}>First Tab</Tab>
+    </TabList>,
+    <TabPanel key={1}>First Content</TabPanel>,
+  ],
+};
+
+export const WidthBadge: Story<TabsProps> = Template.bind({});
+WidthBadge.args = {
+  children: [
+    <TabList key={0} aria-label="Sample Tabs">
+      <Tab badge={<Badge>Badge</Badge>}>First Tab</Tab>
+    </TabList>,
+    <TabPanel key={1}>First Content</TabPanel>,
+  ],
+};
