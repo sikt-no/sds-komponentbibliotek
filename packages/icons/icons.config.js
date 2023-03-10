@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = /** @type {const} */ ({
   icons: [
     "arrow-circle-left",
     "arrow-circle-right",
@@ -61,4 +61,4 @@ module.exports = {
     "x",
     "x-circle",
   ],
-};
+});

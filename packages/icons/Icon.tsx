@@ -1,6 +1,6 @@
 import React, { SVGAttributes } from "react";
 import clsx from "clsx";
-import config from "./icons.config";
+import * as config from "./icons.config";
 import SdsIcons from "./dist/sds-icons.svg";
 import "./icon.pcss";
 
