@@ -1,0 +1,38 @@
+.sds-content-block-inline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &--vertical {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &__img {
+    aspect-ratio: 1/1;
+    border-radius: var(--sds-size-base-m);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    grid-gap: var(--sds-size-base-m);
+    padding: var(--sds-size-base-m);
+  }
+
+  &__content--medium-vertical {
+    padding-top: var(--sds-size-base-l);
+  }
+
+  &__content--medium-horizontal {
+    padding-left: var(--sds-size-base-l);
+  }
+
+  &__content--large-vertical {
+    padding-top: var(--sds-size-base-l2);
+  }
+
+  &__content--large-horizontal {
+    padding-left: var(--sds-size-base-l2);
+  }
+}

@@ -1,0 +1,55 @@
+.sds-content-block-featured {
+  display: flex;
+  background-color: var(--sds-color-base-background-white);
+  border-radius: var(--sds-size-base-m);
+  overflow: hidden;
+
+  &--vertical {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &--right {
+    flex-direction: row-reverse;
+  }
+
+  &--bottom {
+    flex-direction: column-reverse;
+  }
+
+  &__img--horizontal {
+    width: 50%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  &__img {
+    aspect-ratio: 1/1;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 2;
+    padding: var(--sds-size-base-m1);
+  }
+
+  &__content--gap-small {
+    gap: var(--sds-size-base-m);
+  }
+
+  &__content--gap-large {
+    gap: var(--sds-size-base-l);
+  }
+
+  &__link {
+    width: fit-content;
+    text-decoration: none;
+
+    :hover,
+    :focus {
+      text-decoration: underline;
+    }
+  }
+}
