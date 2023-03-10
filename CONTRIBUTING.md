@@ -5,7 +5,12 @@
 1. [Code of conduct](#code-of-conduct)
 1. [Feedback](#feedback)
 1. [Design](#design)
-1. [Development](#development) 2. [Architecture](#architecture) 2. [Setup](#setup) 2. [Change request](#change-request) 2. [Creating a new component](#creating-a-new-component) 2. [Workflow](#workflow)
+1. [Development](#development)
+   1. [Architecture](#architecture)
+   1. [Setup](#setup)
+   1. [Change request](#change-request)
+   1. [Creating a new component](#creating-a-new-component)
+   1. [Workflow](#workflow)
 
 ## Code of conduct
 
