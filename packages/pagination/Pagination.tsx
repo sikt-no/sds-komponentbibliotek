@@ -4,20 +4,20 @@ import { clsx } from "clsx";
 import "./pagination.pcss";
 
 export interface PaginationProps extends HTMLAttributes<HTMLElement> {
-  className?: string;
-  ariaLabel: string;
+  "aria-label": string;
   ariaLabelPrevious?: string;
   ariaLabelNext?: string;
   ariaLabelItem?: string;
   count: number;
   currentIndex: number;
-  /** Total limit of elements, this includes previous/next/first/last. */
+  /** Total limit of elements, this includes previous/next/first/last. Minimum is 7 (previous/next/first/last/current/) */
   limit?: number;
   handleClick: (index: number) => void;
+  className?: string;
 }
 
 export const Pagination = ({
-  ariaLabel,
+  "aria-label": ariaLabel,
   ariaLabelNext = "Vis neste side",
   ariaLabelPrevious = "Vis forrige side",
   ariaLabelItem = "Vis side",

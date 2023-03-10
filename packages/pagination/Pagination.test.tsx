@@ -9,7 +9,7 @@ describe("Pagination", () => {
     it("should be accessible", async () => {
       const { container } = render(
         <Pagination
-          ariaLabel="foo"
+          aria-label="foo"
           count={10}
           currentIndex={0}
           handleClick={jest.fn()}
@@ -24,7 +24,7 @@ describe("Pagination", () => {
     it("should render", async () => {
       render(
         <Pagination
-          ariaLabel="foo"
+          aria-label="foo"
           count={10}
           currentIndex={0}
           handleClick={jest.fn()}
@@ -41,7 +41,7 @@ describe("Pagination", () => {
       const clickHandler = jest.fn();
       render(
         <Pagination
-          ariaLabel="foo"
+          aria-label="foo"
           count={10}
           currentIndex={0}
           handleClick={clickHandler}
@@ -59,7 +59,7 @@ describe("Pagination", () => {
       const clickHandler = jest.fn();
       render(
         <Pagination
-          ariaLabel="foo"
+          aria-label="foo"
           count={10}
           currentIndex={1}
           handleClick={clickHandler}
@@ -77,7 +77,7 @@ describe("Pagination", () => {
       const clickHandler = jest.fn();
       render(
         <Pagination
-          ariaLabel="foo"
+          aria-label="foo"
           count={10}
           currentIndex={0}
           handleClick={clickHandler}
@@ -93,7 +93,7 @@ describe("Pagination", () => {
     it("should have class name", async () => {
       render(
         <Pagination
-          ariaLabel="foo"
+          aria-label="foo"
           count={10}
           currentIndex={0}
           handleClick={jest.fn()}
