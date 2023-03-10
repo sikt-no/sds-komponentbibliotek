@@ -27,16 +27,13 @@ const Button = ({
     <button
       className={clsx("sds-button", `sds-button--${buttonType}`, className)}
       onClick={onClick}
+      aria-label={iconType === "only" ? ariaLabel : undefined}
       {...rest}
     >
-      {icon && iconType === "left" && (
+      {icon && (iconType === "left" || iconType === "only") && (
         <div className="sds-button__icon">{icon}</div>
       )}
-      {icon && iconType === "only" ? (
-        <div className="sds-button__icon" aria-label={ariaLabel}>
-          {icon}
-        </div>
-      ) : (
+      {(!icon || iconType !== "only") && (
         <span className="sds-button__label">{children}</span>
       )}
       {icon && iconType === "right" && (

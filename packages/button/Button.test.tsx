@@ -87,7 +87,7 @@ describe("Button", () => {
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
-      expect(screen.getByText("icon")).toHaveAccessibleName("Foo");
+      expect(screen.getByTestId("test")).toHaveAccessibleName("Foo");
       expect(screen.queryByText("Foo")).not.toBeInTheDocument();
     });
   });
