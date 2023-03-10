@@ -20,6 +20,7 @@ module.exports = {
         },
       },
     },
+    "@whitespace/storybook-addon-html",
   ],
   features: {
     buildStoriesJson: true,

@@ -18,6 +18,8 @@
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "@svgr/webpack": "^6.5.1",
-    "babel-loader": "^9.0.0"
+    "@whitespace/storybook-addon-html": "^5.1.1",
+    "babel-loader": "^9.0.0",
+    "react-syntax-highlighter": "^15.5.0"
   }
 }
