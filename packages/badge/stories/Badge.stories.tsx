@@ -10,6 +10,8 @@ export default {
   subcomponents: { Icon },
   args: {
     children: "Badge",
+    badgeType: "action",
+    visibility: "medium",
   },
 } as Meta;
 

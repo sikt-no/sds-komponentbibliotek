@@ -12,24 +12,58 @@
   display: inline-flex;
   align-items: center;
 
+  &--visibility-high {
+    --badge-background-color: var(--sds-color-surface-action);
+
+    color: var(--sds-color-text-onsurface-action);
+  }
+
   &--success {
     --badge-background-color: var(--sds-color-background-success);
     --badge-border-color: var(--sds-color-surface-success);
+
+    &.sds-badge--visibility-high {
+      --badge-background-color: var(--sds-color-surface-success);
+
+      color: var(--sds-color-text-onsurface-success);
+    }
   }
 
   &--danger {
     --badge-background-color: var(--sds-color-background-danger);
     --badge-border-color: var(--sds-color-surface-danger);
+
+    &.sds-badge--visibility-high {
+      --badge-background-color: var(--sds-color-surface-danger);
+
+      color: var(--sds-color-text-onsurface-danger);
+    }
   }
 
   &--warning {
     --badge-background-color: var(--sds-color-background-warning);
     --badge-border-color: var(--sds-color-surface-warning);
+
+    &.sds-badge--visibility-high {
+      --badge-background-color: var(--sds-color-surface-warning);
+
+      color: var(--sds-color-text-onsurface-warning);
+    }
   }
 
   &--info {
     --badge-background-color: var(--sds-color-background-info);
     --badge-border-color: var(--sds-color-surface-info);
+
+    &.sds-badge--visibility-high {
+      --badge-background-color: var(--sds-color-surface-info);
+
+      color: var(--sds-color-text-onsurface-info);
+    }
+  }
+
+  &--visibility-low {
+    --badge-background-color: transparent;
   }
 
   &__icon {
