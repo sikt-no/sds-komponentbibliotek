@@ -2,10 +2,10 @@ import React, { ReactNode } from "react";
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import { Tabs } from ".";
-import { TabList } from ".";
-import { Tab } from ".";
-import { TabPanel } from ".";
+import { Tabs } from "./Tabs";
+import { TabList } from "./TabList";
+import { Tab } from "./Tab";
+import { TabPanel } from "./TabPanel";
 
 const renderComponent = ({
   className,
