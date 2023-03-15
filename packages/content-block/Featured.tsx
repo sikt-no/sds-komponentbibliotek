@@ -1,80 +1,65 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import clsx from "clsx";
 import { Icon } from "@sikt/sds-icons";
 import "./featured.pcss";
 
-export interface FeaturedProps {
-  imgSrc: string;
-  altText: string;
-  imgPosition?: "first" | "last";
-  buttonLabel: string;
-  overline?: string;
-  heading: string;
-  text?: string;
-  padding?: "small" | "large";
-  linkTarget: string;
-  type?: "horizontal" | "vertical";
+export interface FeaturedProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
+  headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  imgSrc: string;
+  imgAlt: string;
+  imgPosition?: "first" | "last";
+  linkText: string;
+  linkHref: string;
+  overlineText?: string;
+  headingText: string;
+  text?: string;
 }
 
 export const Featured = ({
+  headingLevel = "h3",
   imgSrc,
-  imgPosition,
-  buttonLabel,
-  overline,
-  heading,
+  imgAlt,
+  imgPosition = "first",
+  linkText,
+  linkHref,
+  overlineText,
+  headingText,
   text,
-  padding = "small",
-  type = "horizontal",
-  linkTarget,
-  altText,
   className,
   ...rest
 }: FeaturedProps) => {
-  const imagePositionClassModifier =
-    (imgPosition == "last" && type == "horizontal" && "right") ||
-    (imgPosition == "first" && type == "horizontal" && "left") ||
-    (imgPosition == "first" && type == "vertical" && "top") ||
-    (imgPosition === "last" && type === "vertical" && "bottom");
+  const H: React.ElementType = `${headingLevel}`;
 
   return (
     <div
       className={clsx(
         "sds-content-block-featured",
-        `sds-content-block-featured--${type}`,
-        `sds-content-block-featured--${imagePositionClassModifier}`,
+        `sds-content-block-featured--image-${imgPosition}`,
         className
       )}
       {...rest}
     >
       <img
-        alt={altText}
+        alt={imgAlt}
         src={imgSrc}
-        className={clsx(
-          "sds-content-block-featured__img",
-          `sds-content-block-featured__img--${type}`
-        )}
+        className="sds-content-block-featured__image"
       />
-      <div
-        className={clsx(
-          "sds-content-block-featured__content",
-          `sds-content-block-featured__content--${type}`,
-          `sds-content-block-featured__content--gap-${padding}`
+      <div className="sds-content-block-featured__content">
+        {overlineText && (
+          <span className="sds-typography-heading--overline">
+            {overlineText}
+          </span>
         )}
-      >
-        <h6 className="sds-typography-heading--overline">{overline}</h6>
-        <h3 className="sds-typography-heading--component">{heading}</h3>
-        <p className="sds-typography-body--normal">{text}</p>
-        <div>
-          <a
-            href={linkTarget}
-            className="sds-button sds-button--secondary sds-content-block-featured__link"
-            rel="noreferrer"
-          >
-            <span className="sds-button__label">{buttonLabel}</span>
-            <Icon icon="arrow-right" />
-          </a>
-        </div>
+        <H className="sds-typography-heading--component">{headingText}</H>
+        {text && <p className="sds-typography-body--normal">{text}</p>}
+        <a
+          href={linkHref}
+          className="sds-button sds-button--secondary sds-content-block-featured__link"
+        >
+          <span className="sds-button__label">{linkText}</span>
+          <Icon icon="arrow-right" />
+        </a>
       </div>
     </div>
   );

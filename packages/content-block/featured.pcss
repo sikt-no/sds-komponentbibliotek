@@ -1,55 +1,67 @@
+@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
+
 .sds-content-block-featured {
-  display: flex;
-  background-color: var(--sds-color-base-background-white);
+  --content-block-spacing: var(--sds-size-base-m);
+
+  background-color: var(--sds-color-background-default);
   border-radius: var(--sds-size-base-m);
+  display: grid;
+  grid-gap: var(--content-block-spacing);
+  grid-template-rows: 1fr auto;
   overflow: hidden;
 
-  &--vertical {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+  &--image {
+    &-first {
+      grid-template-areas: "image" "content";
+    }
+
+    &-last {
+      grid-template-areas: "content" "image";
+    }
   }
 
-  &--right {
-    flex-direction: row-reverse;
-  }
-
-  &--bottom {
-    flex-direction: column-reverse;
-  }
-
-  &__img--horizontal {
-    width: 50%;
-    height: 100%;
+  &__image {
     aspect-ratio: 1/1;
-  }
-
-  &__img {
-    aspect-ratio: 1/1;
+    grid-area: image;
+    width: 100%;
   }
 
   &__content {
+    align-items: flex-start;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    flex-grow: 2;
-    padding: var(--sds-size-base-m1);
-  }
-
-  &__content--gap-small {
-    gap: var(--sds-size-base-m);
-  }
-
-  &__content--gap-large {
-    gap: var(--sds-size-base-l);
+    grid-area: content;
+    grid-gap: var(--sds-size-base-m);
+    padding: var(--content-block-spacing);
   }
 
   &__link {
-    width: fit-content;
+    outline-offset: unset;
     text-decoration: none;
+  }
 
-    :hover,
-    :focus {
-      text-decoration: underline;
+  @media (--sds-breakpoint-tablet) {
+    --content-block-spacing: var(--sds-size-base-m1);
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+
+    &__link {
+      margin-top: auto;
     }
+
+    &--image {
+      &-first {
+        grid-template-areas: "image content";
+      }
+
+      &-last {
+        grid-template-areas: "content image";
+      }
+    }
+  }
+
+  @media (--sds-breakpoint-desktop) {
+    --content-block-spacing: var(--sds-size-base-l);
   }
 }

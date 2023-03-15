@@ -1,23 +1,26 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import { Inline } from "./Inline";
+import { Inline, InlineProps } from "./Inline";
+
+const renderComponent = ({ className }: Partial<InlineProps>) =>
+  render(
+    <Inline
+      imgSrc="https://picsum.photos/600/600"
+      imgAlt="Image alt text"
+      linkText="Link"
+      linkHref="#"
+      headingText="Heading"
+      text="Text"
+      data-testid="test"
+      className={className}
+    />
+  );
 
 describe("inline", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
-      const { container } = render(
-        <Inline
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          heading="Heading"
-          text="Text"
-          padding="large"
-          type="horizontal"
-          linkTarget="#"
-          altText="This is an image"
-        />
-      );
+      const { container } = renderComponent({});
 
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -25,65 +28,20 @@ describe("inline", () => {
 
   describe("api", () => {
     it("should render", async () => {
-      render(
-        <Inline
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          heading="Heading"
-          text="Text"
-          padding="large"
-          type="horizontal"
-          linkTarget="#"
-          altText="This is an image"
-          data-testid="test"
-        />
-      );
+      renderComponent({});
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-inline sds-content-block-inline--horizontal"
+        "sds-content-block-inline"
       );
       expect(screen.getByTestId("test")).toBeInTheDocument();
       expect(screen.getByRole("link")).toHaveAttribute("href", "#");
     });
 
     it("should have a class name", () => {
-      render(
-        <Inline
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          heading="Heading"
-          text="Text"
-          padding="large"
-          type="horizontal"
-          linkTarget="#"
-          altText="This is an image"
-          className="test-class-name"
-          data-testid="test"
-        />
-      );
+      renderComponent({ className: "test-class-name" });
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-inline sds-content-block-inline--horizontal"
-      );
-    });
-    it("should have classname according to props", () => {
-      render(
-        <Inline
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          heading="Heading"
-          text="Text"
-          padding="medium"
-          type="vertical"
-          linkTarget="#"
-          altText="This is an image"
-          className="test-class-name"
-          data-testid="test"
-        />
-      );
-
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-inline sds-content-block-inline--vertical"
+        "sds-content-block-inline test-class-name"
       );
     });
   });

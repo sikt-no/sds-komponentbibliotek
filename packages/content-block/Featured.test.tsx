@@ -1,26 +1,28 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import { Featured } from "./Featured";
+import { Featured, FeaturedProps } from "./Featured";
+
+const renderComponent = ({ className, imgPosition }: Partial<FeaturedProps>) =>
+  render(
+    <Featured
+      imgSrc="https://picsum.photos/600/600"
+      imgAlt="Image alt text"
+      linkText="Link"
+      linkHref="#"
+      overlineText="Overline"
+      headingText="Heading"
+      text="Text"
+      imgPosition={imgPosition}
+      data-testid="test"
+      className={className}
+    />
+  );
 
 describe("Featured", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
-      const { container } = render(
-        <Featured
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          overline="overline"
-          heading="Heading"
-          text="Text"
-          imgPosition="first"
-          padding="large"
-          type="horizontal"
-          linkTarget="#"
-          altText="This is an image"
-          data-testid="test"
-        />
-      );
+      const { container } = renderComponent({});
 
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -28,115 +30,28 @@ describe("Featured", () => {
 
   describe("api", () => {
     it("should render", () => {
-      render(
-        <Featured
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          overline="overline"
-          heading="Heading"
-          text="Text"
-          imgPosition="first"
-          padding="large"
-          type="horizontal"
-          linkTarget="#"
-          altText="This is an image"
-          data-testid="test"
-        />
-      );
+      renderComponent({});
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-featured sds-content-block-featured--horizontal sds-content-block-featured--left"
+        "sds-content-block-featured sds-content-block-featured--image-first"
       );
       expect(screen.getByTestId("test")).toBeInTheDocument();
       expect(screen.getByRole("link")).toHaveAttribute("href", "#");
     });
 
     it("should have a class name", () => {
-      render(
-        <Featured
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          overline="overline"
-          heading="Heading"
-          text="Text"
-          imgPosition="first"
-          padding="large"
-          type="horizontal"
-          linkTarget="#"
-          altText="This is an image"
-          className="test-class-name"
-          data-testid="test"
-        />
-      );
+      renderComponent({ className: "test-class-name" });
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-featured sds-content-block-featured--horizontal sds-content-block-featured--left test-class-name"
+        "sds-content-block-featured sds-content-block-featured--image-first test-class-name"
       );
     });
 
-    it("should have classname according to imgPosition prop", () => {
-      render(
-        <Featured
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          overline="overline"
-          heading="Heading"
-          text="Text"
-          imgPosition="last"
-          padding="large"
-          type="horizontal"
-          linkTarget="#"
-          altText="This is an image"
-          data-testid="test"
-        />
-      );
+    it("should have classname according to imgPosition", () => {
+      renderComponent({ imgPosition: "last" });
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-featured sds-content-block-featured--horizontal sds-content-block-featured--right"
-      );
-    });
-
-    it("should have classname according to imgPosition and type prop", () => {
-      render(
-        <Featured
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          overline="overline"
-          heading="Heading"
-          text="Text"
-          imgPosition="first"
-          padding="large"
-          type="vertical"
-          linkTarget="#"
-          altText="This is an image"
-          data-testid="test"
-        />
-      );
-
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-featured sds-content-block-featured--vertical sds-content-block-featured--top"
-      );
-    });
-
-    it("should have classname according to imgPosition and type prop", () => {
-      render(
-        <Featured
-          imgSrc="https://picsum.photos/600/600"
-          buttonLabel="Label"
-          overline="overline"
-          heading="Heading"
-          text="Text"
-          imgPosition="last"
-          padding="large"
-          type="vertical"
-          linkTarget="#"
-          altText="This is an image"
-          data-testid="test"
-        />
-      );
-
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-featured sds-content-block-featured--vertical sds-content-block-featured--bottom"
+        "sds-content-block-featured sds-content-block-featured--image-last"
       );
     });
   });

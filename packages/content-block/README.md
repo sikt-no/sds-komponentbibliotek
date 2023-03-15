@@ -13,14 +13,14 @@ import { Featured } from "@sikt/sds-content-block";
 import "@sikt/sds-content-block/dist/index.css";
 
 <Featured
-  buttonLabel="Label"
-  heading="Heading"
-  imgPosition="first"
-  imgSrc="https://picsum.photos/600/400"
-  overline="overline"
-  paddingSize="large"
-  text="Text"
-  type="vertical"
+  headingLevel="h2"
+  imgSrc="https://url.to/image.type"
+  imgAlt="Descriptive image text"
+  linkText="Label"
+  linkHref="https://url.to/destination"
+  headingText="Heading"
+  overlineText="Overline"
+  text="Text content"
 />;
 ```
 
@@ -35,5 +35,5 @@ Import stylesheet:
 Create custom markup:
 
 ```html
-
+<div class="sds-content-block-featured">...</div>
 ```

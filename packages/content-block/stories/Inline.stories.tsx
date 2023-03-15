@@ -8,14 +8,17 @@ export default {
   component: Inline,
   args: {
     imgSrc: "https://picsum.photos/600/600",
-    buttonLabel: "Label",
-    heading: "Heading",
+    imgAlt: "Stock photo",
+    linkText: "Label",
+    linkHref: "#",
+    headingText: "Heading",
     text: "Text",
-    padding: "medium",
     type: "horizontal",
   },
 } as Meta;
 
-const Template: Story<InlineProps> = (args) => <Inline {...args} />;
+const Template: Story<InlineProps> = (args) => (
+  <Inline {...args} style={{ maxWidth: "500px" }} />
+);
 
 export const InlineBlock: Story<InlineProps> = Template.bind({});

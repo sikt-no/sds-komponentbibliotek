@@ -9,18 +9,18 @@ export default {
   component: Featured,
   args: {
     imgSrc: "https://picsum.photos/600/600",
-    buttonLabel: "Label",
-    overline: "overline",
-    heading: "Heading",
-    text: "Text",
+    imgAlt: "This is an image",
     imgPosition: "first",
-    padding: "large",
-    type: "horizontal",
-    linkTarget: "#",
-    altText: "This is an image",
+    linkText: "Label",
+    linkHref: "#",
+    overlineText: "overline",
+    headingText: "Heading",
+    text: "Text",
   },
 } as Meta;
 
-const Template: Story<FeaturedProps> = (args) => <Featured {...args} />;
+const Template: Story<FeaturedProps> = (args) => (
+  <Featured {...args} style={{ maxWidth: "500px" }} />
+);
 
 export const FeaturedBlock: Story<FeaturedProps> = Template.bind({});

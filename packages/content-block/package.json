@@ -1,7 +1,7 @@
 {
   "name": "@sikt/sds-content-block",
   "version": "0.1.0",
-  "description": "",
+  "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,15 +12,16 @@
   "scripts": {
     "build": "rollup -c ../../rollup.config.mjs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.sikt.no:designsystem/sds-komponentbibliotek.git"
-  },
-  "author": "kihol",
-  "license": "UNLICENSED",
   "dependencies": {
     "@sikt/sds-button": "^0.2.0",
     "@sikt/sds-core": "^0.2.0",
     "@sikt/sds-icons": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "clsx": "^1.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
