@@ -1,8 +1,8 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import clsx from "clsx";
 import "./example.pcss";
 
-export interface ExampleProps {
+export interface ExampleProps extends HTMLAttributes<HTMLDivElement> {
   /* props goes here */
   className?: string;
 }
