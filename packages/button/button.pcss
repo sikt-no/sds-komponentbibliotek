@@ -47,9 +47,12 @@
       var(--sds-size-padding-small) - var(--sds-border-size-regular)
     );
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       border-color: var(--sds-color-surface-action-hover);
+    }
+
+    &:focus-visible {
+      border-color: transparent;
     }
 
     &:active {
