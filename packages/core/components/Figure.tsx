@@ -1,13 +1,18 @@
-import React, { ReactElement } from "react";
+import React, { HTMLAttributes, ReactElement } from "react";
 import { clsx } from "clsx";
 
-export interface FigureProps {
+export interface FigureProps extends HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   aspectRatio?: "16x9";
   figCaption?: string;
 }
 
-export const Figure = ({ children, aspectRatio, figCaption }: FigureProps) => {
+export const Figure = ({
+  children,
+  aspectRatio,
+  figCaption,
+  ...rest
+}: FigureProps) => {
   const addClassToChildren = (child: ReactElement) => {
     const props = {
       className: clsx(
@@ -21,7 +26,7 @@ export const Figure = ({ children, aspectRatio, figCaption }: FigureProps) => {
   };
 
   return (
-    <figure className="sds-figure">
+    <figure className="sds-figure" {...rest}>
       {React.Children.map(children, (child) =>
         addClassToChildren(child as ReactElement)
       )}

@@ -14,7 +14,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<FigureProps> = (args) => <Figure {...args} />;
+const Template: Story<FigureProps> = (args) => (
+  <Figure {...args} style={{ maxWidth: "300px" }} />
+);
 
 export const Default: Story<FigureProps> = Template.bind({});
 
