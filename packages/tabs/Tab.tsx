@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactNode } from "react";
+import React, { KeyboardEvent, ReactElement, ReactNode } from "react";
 import clsx from "clsx";
 import { TabsContext, TabsContextType } from "./Tabs";
 
@@ -75,7 +75,13 @@ export const Tab = ({
     >
       {icon && <div className="sds-tabs__tab-icon">{icon}</div>}
       {children}
-      {badge && <div className="sds-tabs__tab-badge">{badge}</div>}
+      {badge && (
+        <div className="sds-tabs__tab-badge">
+          {isSelected
+            ? React.cloneElement(badge as ReactElement, { visibility: "high" })
+            : badge}
+        </div>
+      )}
     </button>
   );
 };

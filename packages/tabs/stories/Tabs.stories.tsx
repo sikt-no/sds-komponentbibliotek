@@ -32,8 +32,10 @@ WithIcon.args = {
   children: [
     <TabList key={0} aria-label="Sample Tabs">
       <Tab icon={<Icon icon="info" />}>First Tab</Tab>
+      <Tab icon={<Icon icon="info" />}>Second Tab</Tab>
     </TabList>,
     <TabPanel key={1}>First Content</TabPanel>,
+    <TabPanel key={2}>Second Content</TabPanel>,
   ],
 };
 
@@ -42,7 +44,9 @@ WidthBadge.args = {
   children: [
     <TabList key={0} aria-label="Sample Tabs">
       <Tab badge={<Badge>Badge</Badge>}>First Tab</Tab>
+      <Tab badge={<Badge>Badge</Badge>}>Second Tab</Tab>
     </TabList>,
     <TabPanel key={1}>First Content</TabPanel>,
+    <TabPanel key={2}>Second Content</TabPanel>,
   ],
 };
