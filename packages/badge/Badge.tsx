@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import React, { ReactNode } from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 import "./badge.pcss";
 
-export interface BadgeProps {
+export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;
   children: ReactNode;
   badgeType?: "action" | "success" | "danger" | "warning" | "info";
