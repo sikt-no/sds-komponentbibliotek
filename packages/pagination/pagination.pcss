@@ -29,12 +29,13 @@
     height: var(--sds-size-text-l);
     padding: 0;
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       --pagination-border-color: var(--sds-color-surface-action-hover);
     }
 
     &:focus-visible {
+      --pagination-border-color: transparent;
+
       outline: var(--sds-size-base-xxs) dashed var(--sds-color-text-info);
     }
 

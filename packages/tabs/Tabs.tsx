@@ -23,7 +23,7 @@ export interface TabsProps {
 
 export const Tabs = ({
   defaultIndex = 0,
-  isSelectOnFocus = true,
+  isSelectOnFocus = false,
   children,
   className,
   ...rest

@@ -113,60 +113,6 @@ describe("Tabs", () => {
       });
 
       expect(screen.getByText("Tab 2")).toHaveFocus();
-      expect(screen.getByText("Content 1")).not.toBeVisible();
-      expect(screen.getByText("Content 2")).toBeVisible();
-
-      await act(async () => {
-        await user.keyboard("[ArrowLeft]");
-      });
-
-      expect(screen.getByText("Tab 1")).toHaveFocus();
-      expect(screen.getByText("Content 1")).toBeVisible();
-      expect(screen.getByText("Content 2")).not.toBeVisible();
-
-      await act(async () => {
-        await user.keyboard("[End]");
-      });
-
-      expect(screen.getByText("Tab 3")).toHaveFocus();
-      expect(screen.getByText("Content 1")).not.toBeVisible();
-      expect(screen.getByText("Content 3")).toBeVisible();
-
-      await act(async () => {
-        await user.keyboard("[Home]");
-      });
-
-      expect(screen.getByText("Tab 1")).toHaveFocus();
-      expect(screen.getByText("Content 1")).toBeVisible();
-      expect(screen.getByText("Content 3")).not.toBeVisible();
-
-      await act(async () => {
-        await user.keyboard("[ArrowLeft]");
-      });
-
-      expect(screen.getByText("Tab 3")).toHaveFocus();
-      expect(screen.getByText("Content 1")).not.toBeVisible();
-      expect(screen.getByText("Content 3")).toBeVisible();
-
-      await act(async () => {
-        await user.keyboard("[ArrowRight]");
-      });
-
-      expect(screen.getByText("Tab 1")).toHaveFocus();
-      expect(screen.getByText("Content 1")).toBeVisible();
-      expect(screen.getByText("Content 3")).not.toBeVisible();
-    });
-
-    it("handles keyboard navigation when isSelectOnFocus is false", async () => {
-      const user = userEvent.setup();
-      renderComponent({ isSelectOnFocus: false });
-
-      await act(async () => {
-        await user.tab();
-        await user.keyboard("[ArrowRight]");
-      });
-
-      expect(screen.getByText("Tab 2")).toHaveFocus();
       expect(screen.getByText("Content 1")).toBeVisible();
       expect(screen.getByText("Content 2")).not.toBeVisible();
 
@@ -203,6 +149,60 @@ describe("Tabs", () => {
       expect(screen.getByText("Tab 1")).toHaveFocus();
       expect(screen.getByText("Content 1")).not.toBeVisible();
       expect(screen.getByText("Content 3")).toBeVisible();
+    });
+
+    it("handles keyboard navigation when isSelectOnFocus is true", async () => {
+      const user = userEvent.setup();
+      renderComponent({ isSelectOnFocus: true });
+
+      await act(async () => {
+        await user.tab();
+        await user.keyboard("[ArrowRight]");
+      });
+
+      expect(screen.getByText("Tab 2")).toHaveFocus();
+      expect(screen.getByText("Content 1")).not.toBeVisible();
+      expect(screen.getByText("Content 2")).toBeVisible();
+
+      await act(async () => {
+        await user.keyboard("[ArrowLeft]");
+      });
+
+      expect(screen.getByText("Tab 1")).toHaveFocus();
+      expect(screen.getByText("Content 1")).toBeVisible();
+      expect(screen.getByText("Content 2")).not.toBeVisible();
+
+      await act(async () => {
+        await user.keyboard("[End]");
+      });
+
+      expect(screen.getByText("Tab 3")).toHaveFocus();
+      expect(screen.getByText("Content 1")).not.toBeVisible();
+      expect(screen.getByText("Content 3")).toBeVisible();
+
+      await act(async () => {
+        await user.keyboard("[Home]");
+      });
+
+      expect(screen.getByText("Tab 1")).toHaveFocus();
+      expect(screen.getByText("Content 1")).toBeVisible();
+      expect(screen.getByText("Content 3")).not.toBeVisible();
+
+      await act(async () => {
+        await user.keyboard("[ArrowLeft]");
+      });
+
+      expect(screen.getByText("Tab 3")).toHaveFocus();
+      expect(screen.getByText("Content 1")).not.toBeVisible();
+      expect(screen.getByText("Content 3")).toBeVisible();
+
+      await act(async () => {
+        await user.keyboard("[ArrowRight]");
+      });
+
+      expect(screen.getByText("Tab 1")).toHaveFocus();
+      expect(screen.getByText("Content 1")).toBeVisible();
+      expect(screen.getByText("Content 3")).not.toBeVisible();
     });
   });
 });
