@@ -25,7 +25,8 @@ import "@sikt/sds-core/dist/index.css";
 
 Created using [Style Dictionary](https://github.com/amzn/style-dictionary) and exported as CSS & JavaScript variables. Colors are available in light and dark scheme.  
 Do not edit these directly in the `/core/dist` output directory but rather in the `/core/tokens` source directory.  
-**Note** That Style Dictionary tokens follow a CTI (Category/Type/Item) naming pattern that may affect their outcome by what transforms are applied.
+**Note** That Style Dictionary tokens follow a CTI (Category/Type/Item) naming pattern that may affect their outcome by what transforms are applied.  
+**Note** There is currently a bug in Figma that translates HSL to incorrect HEX color values. If you use the same name token you will get the correct HEX color value.
 
 ### Tips
 

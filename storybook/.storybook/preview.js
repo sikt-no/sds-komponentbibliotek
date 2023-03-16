@@ -12,11 +12,8 @@ export const parameters = {
     storySort: {
       order: [
         "Introduction",
-        "GettingStarted",
         "Core",
-        ["Core", "Color", "Spacing", "Typography", "Heading", "*"],
-        "Logotype",
-        "Iconography",
+        ["Core", "Color", "Spacing", "Apperance", "Typography", "Heading", "*"],
         "*",
         "Utils",
         "Config",

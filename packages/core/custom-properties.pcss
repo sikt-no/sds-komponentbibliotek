@@ -2,3 +2,15 @@
 @import url("./dist/tokens/css/tokens.css");
 @import url("./dist/tokens/css/color.light.css");
 @import url("./dist/tokens/css/color.dark.css");
+
+:root {
+  --sds-padding-dynamic: var(--sds-size-base-m);
+
+  @media (--sds-breakpoint-tablet) {
+    --sds-padding-dynamic: var(--sds-size-base-m1);
+  }
+
+  @media (--sds-breakpoint-desktop) {
+    --sds-padding-dynamic: var(--sds-size-base-l);
+  }
+}
