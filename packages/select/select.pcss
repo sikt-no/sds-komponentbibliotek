@@ -1,0 +1,110 @@
+.sds-select {
+  --sds-select-border-color: var(--sds-color-surface-neutral);
+  --sds-select-button-color: var(--sds-color-text-action);
+  --sds-select-border-width: var(--sds-border-size-regular);
+
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__label {
+    cursor: pointer;
+
+    &:hover {
+      --sds-select-button-color: var(--sds-color-text-default-hover);
+    }
+
+    &:active {
+      --sds-select-button-color: var(--sds-color-text-default-active);
+    }
+
+    &-text {
+      color: var(--sds-color-text-neutral);
+      font-size: var(--sds-size-text-s);
+      line-height: var(--sds-size-text-s1);
+      padding: var(--sds-size-base-xs);
+    }
+  }
+
+  &__select {
+    align-items: center;
+    display: flex;
+    position: relative;
+
+    &-input {
+      appearance: none;
+      background-image: none;
+      border: var(--sds-select-border-width) solid
+        var(--sds-select-border-color);
+      border-radius: var(--sds-border-radius-large);
+      color: var(--sds-color-text-default);
+      cursor: inherit;
+      flex: 1;
+      font-size: var(--sds-size-base-s1);
+      line-height: var(--sds-size-text-m);
+      padding: calc(
+          var(--sds-size-padding-small) - var(--sds-select-border-width)
+        )
+        var(--sds-size-padding-large)
+        calc(var(--sds-size-padding-small) - var(--sds-select-border-width))
+        var(--sds-size-base-s2);
+
+      &:focus-visible {
+        --sds-select-border-color: transparent;
+        --sds-select-button-color: var(--sds-color-text-default-hover);
+
+        outline: var(--sds-outline);
+      }
+    }
+
+    &-icon {
+      font-size: var(--sds-size-text-m);
+      position: absolute;
+      left: var(--sds-size-base-s);
+    }
+
+    &-button {
+      color: var(--sds-select-button-color);
+      font-size: var(--sds-size-text-m);
+      position: absolute;
+      right: var(--sds-size-base-s);
+    }
+  }
+
+  &__help {
+    &-text {
+      color: var(--sds-color-text-neutral);
+      font-size: var(--sds-size-text-s);
+      line-height: var(--sds-size-text-s1);
+      padding: var(--sds-size-padding-small);
+    }
+
+    &-icon {
+      margin-right: var(--sds-size-base-xs);
+    }
+  }
+
+  &--icon {
+    .sds-select {
+      &__select-input {
+        padding-left: var(--sds-size-base-m2);
+      }
+    }
+  }
+
+  &--invalid {
+    .sds-select {
+      &__select {
+        --sds-select-border-color: var(--sds-color-surface-danger);
+
+        &:focus-visible {
+          --sds-select-border-color: transparent;
+        }
+      }
+
+      &__help-text {
+        color: var(--sds-color-text-danger);
+      }
+    }
+  }
+}
