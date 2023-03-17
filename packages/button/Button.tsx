@@ -2,11 +2,20 @@ import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import "./button.pcss";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export type ButtonProps = ButtonChildrenProps | ButtonAriaLabelProps;
+
+interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  children: ReactNode;
   icon?: ReactNode;
   iconType?: "right" | "left" | "only";
+}
+
+interface ButtonAriaLabelProps extends ButtonBaseProps {
+  "aria-label": string;
+}
+
+interface ButtonChildrenProps extends ButtonBaseProps {
+  children: ReactNode;
 }
 
 interface ButtonTypes {
