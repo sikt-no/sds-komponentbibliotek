@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "prebuild": "npm run clean && npm run prebuild --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present --ignore-scripts",
     "clean": "rimraf packages/**/dist && rimraf storybook/storybook-static",
     "format": "prettier --write . --ignore-unknown",
     "lint": "run-p lint:*",
