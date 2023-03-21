@@ -100,6 +100,9 @@
   }
 
   &-link {
+    --sds-link-icon-size: var(--sds-size-text-s2);
+    --sds-link-icon-margin: var(--sds-size-text-xxs1);
+
     color: var(--sds-color-text-default);
     text-decoration: underline;
     text-underline-position: under;
@@ -138,13 +141,15 @@
     }
 
     &:focus-visible {
-      outline: var(--sds-size-base-xxs) dashed var(--sds-color-text-info);
+      outline: var(--sds-outline);
     }
 
     &[target="_blank"],
     &--external,
     &--navigation {
-      padding-right: calc(var(--sds-size-text-xs1) + var(--sds-size-text-s2));
+      padding-right: calc(
+        var(--sds-link-icon-margin) + var(--sds-link-icon-size)
+      );
       position: relative;
 
       &::after {
@@ -152,12 +157,12 @@
         display: block;
         mask-position: center right;
         mask-repeat: no-repeat;
-        mask-size: var(--sds-size-text-s2);
+        mask-size: var(--sds-link-icon-size);
         position: absolute;
         bottom: 0;
         right: 0;
-        width: var(--sds-size-text-s2);
-        height: var(--sds-size-text-s2);
+        width: var(--sds-link-icon-size);
+        height: var(--sds-link-icon-size);
       }
     }
 
@@ -176,7 +181,9 @@
 
     &[href^="mailto:"],
     &[href^="tel:"] {
-      padding-left: calc(var(--sds-size-text-xs1) + var(--sds-size-text-s2));
+      padding-left: calc(
+        var(--sds-link-icon-margin) + var(--sds-link-icon-size)
+      );
       position: relative;
 
       &::before {
@@ -184,12 +191,12 @@
         display: block;
         mask-position: center left;
         mask-repeat: no-repeat;
-        mask-size: var(--sds-size-text-s2);
+        mask-size: var(--sds-link-icon-size);
         position: absolute;
         top: 0;
         left: 0;
-        width: var(--sds-size-text-s2);
-        height: var(--sds-size-text-s2);
+        width: var(--sds-link-icon-size);
+        height: var(--sds-link-icon-size);
       }
     }
 
@@ -207,7 +214,6 @@
   }
 
   &-abbr {
-    /* TODO: no design provided for element */
     position: relative;
     text-decoration: underline dotted;
     text-underline-position: under;
@@ -223,7 +229,10 @@
         padding: 0 4px;
         position: absolute;
         left: -2px;
-        bottom: calc(calc(var(--sds-size-text-m) * -1) - 2px);
+        bottom: calc(
+          calc(calc(var(--sds-size-text-m) + var(--sds-size-base-xxs)) * -1) -
+            2px
+        );
         text-decoration: none;
         white-space: nowrap;
         width: auto;
@@ -231,7 +240,7 @@
     }
 
     &:focus-visible {
-      outline: none;
+      outline: var(--sds-outline);
     }
   }
 }
