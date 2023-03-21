@@ -1,6 +1,5 @@
-import React, { Children, cloneElement, useState } from "react";
+import React, { Children, cloneElement, useId, useState } from "react";
 import clsx from "clsx";
-import { nanoid } from "nanoid";
 import "./tabs.pcss";
 import { TabPanelProps } from "./TabPanel";
 
@@ -29,9 +28,9 @@ export const Tabs = ({
   ...rest
 }: TabsProps) => {
   const [selectedIndex, setSelectedIndex] = useState(defaultIndex);
+  const id = useId();
 
   const arrayChildren = Children.toArray(children);
-  const id = nanoid(8);
   const count = arrayChildren.length - 1;
 
   return (
