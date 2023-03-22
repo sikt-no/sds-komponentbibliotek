@@ -150,7 +150,8 @@ Keep the history clean with one single commit per feature.
 
 Create a merge request & wait for a required code review before merging to `main`.  
 Review comments are closed by the reviewer & not the branch owner.  
-Rebase before merge so that your commits end up on top of the history.
+Rebase before merge so that your commits end up on top of the history.  
+**Note** Storybook is published to URL `<review-environment>/komponenter/`
 
 ##### Tips
 

@@ -1,4 +1,3 @@
 FROM nginx:latest
-WORKDIR /usr/share/nginx/html
-
-COPY ./storybook/storybook-static ./komponenter
+COPY storybook/storybook-static /usr/share/nginx/html/komponenter
+COPY nginx.conf /etc/nginx/conf.d/default.conf
