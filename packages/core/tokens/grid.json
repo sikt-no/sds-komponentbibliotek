@@ -1,0 +1,15 @@
+{
+  "grid": {
+    "content": {
+      "full": {
+        "value": "100%"
+      },
+      "medium": {
+        "value": "960px"
+      },
+      "narrow": {
+        "value": "720px"
+      }
+    }
+  }
+}
