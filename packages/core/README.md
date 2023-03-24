@@ -53,3 +53,7 @@ import * as tokens from "@sikt/sds-core/dist/tokens/js/tokens";
   Hello, World!
 </Button>;
 ```
+
+### Color Scheme
+
+Color scheme is default light and can be changed by the users color scheme setting. If a web page or parts of a web page should be lock to one mode it can be done with the attribute `data-color-scheme="<scheme>"`, remember to set a background if used on a partial pages as the root background otherwise will affect your partial page.
