@@ -70,12 +70,12 @@ const Input = ({
       {...rest}
     >
       <label className="sds-input__label" htmlFor={id}>
-        <span className="sds-input__label-text">
+        <div className="sds-input__label-text">
           {errorText && (
             <Icon icon="warning" className="sds-input__label-error-icon" />
           )}{" "}
           {label}
-        </span>
+        </div>
         <div className="sds-input__wrapper">
           {iconPosition === "start" && icon && (
             <div className="sds-input__icon sds-input__icon--start">{icon}</div>
