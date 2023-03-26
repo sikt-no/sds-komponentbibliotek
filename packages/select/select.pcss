@@ -1,4 +1,5 @@
 .sds-select {
+  --sds-select-text-color: var(--sds-color-text-neutral);
   --sds-select-border-color: var(--sds-color-surface-neutral);
   --sds-select-button-color: var(--sds-color-text-action);
   --sds-select-border-width: var(--sds-border-size-regular);
@@ -19,7 +20,7 @@
     }
 
     &-text {
-      color: var(--sds-color-text-neutral);
+      color: var(--sds-select-text-color);
       font-size: var(--sds-size-text-s);
       line-height: var(--sds-size-text-s1);
       padding: var(--sds-size-base-xs);
@@ -80,6 +81,7 @@
     }
 
     &-icon {
+      font-size: var(--sds-size-text-s1);
       margin-right: var(--sds-size-base-xs);
     }
   }
@@ -93,6 +95,8 @@
   }
 
   &--invalid {
+    --sds-select-text-color: var(--sds-color-text-danger);
+
     .sds-select {
       &__select {
         --sds-select-border-color: var(--sds-color-surface-danger);

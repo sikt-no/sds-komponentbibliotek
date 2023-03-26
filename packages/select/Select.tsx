@@ -46,7 +46,12 @@ export const Select = ({
       {...rest}
     >
       <label htmlFor={id} className="sds-select__label">
-        <div className="sds-select__label-text">{label}</div>
+        <div className="sds-select__label-text">
+          {errorText && (
+            <Icon icon="warning" className="sds-select__help-icon" />
+          )}{" "}
+          {label}
+        </div>
         <div className="sds-select__select">
           {icon && <div className="sds-select__select-icon">{icon}</div>}
           <select
@@ -76,9 +81,6 @@ export const Select = ({
       </label>
       {(errorText ?? helpText) && (
         <div id={`${id}-described`} className="sds-select__help-text">
-          {errorText && (
-            <Icon icon="warning" className="sds-select__help-icon" />
-          )}{" "}
           {errorText ?? helpText}
         </div>
       )}
