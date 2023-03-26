@@ -9,6 +9,7 @@
   "addLabels": ["dependencies"],
   "automerge": true,
   "gitLabIgnoreApprovals": true,
+  "platformAutomerge": true,
   "major": {
     "automerge": false,
     "gitLabIgnoreApprovals": false
