@@ -59,21 +59,21 @@ test:
   needs:
     - install
 
-#packages:
-#  extends: .publish
-#  stage: build
-#  script:
-#    - npm run build
-#  artifacts:
-#    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
-#    untracked: true
-#    expire_in: 1 days
-#    paths:
-#      - packages/**/*
-#  dependencies:
-#    - install
-#  needs:
-#    - install
+packages:
+  #  extends: .publish
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+    untracked: true
+    expire_in: 1 days
+    paths:
+      - packages/**/*
+  dependencies:
+    - install
+  needs:
+    - install
 
 storybook:
   stage: build
@@ -90,13 +90,32 @@ storybook:
   needs:
     - install
 
+gatsby:
+  stage: build
+  script:
+    - npm run gatsby:build
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+    untracked: true
+    expire_in: 1 days
+    paths:
+      - gatsby/public
+  dependencies:
+    - install
+    - packages
+  needs:
+    - install
+    - packages
+
 docker:
   extends: .docker-build
   stage: build
   dependencies:
     - storybook
+    - gatsby
   needs:
     - storybook
+    - gatsby
 
 review:
   extends: .review

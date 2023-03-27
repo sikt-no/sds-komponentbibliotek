@@ -2,3 +2,6 @@ coverage
 build
 dist
 storybook-static
+gatsby/public
+.cache
+gatsby-types.d.ts

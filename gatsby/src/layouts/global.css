@@ -1,0 +1,25 @@
+@import url("@sikt/sds-core");
+@import url("@sikt/sds-button");
+@import url("@sikt/sds-logo");
+@import url("@sikt/sds-icons");
+@import url("@sikt/sds-list");
+@import url("@sikt/sds-tabs");
+@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
+
+.sds-sikt-header {
+  .sds-logo {
+    font-size: var(--sds-size-text-s2);
+
+    @media (--sds-breakpoint-tablet) {
+      font-size: calc(28rem / 16);
+    }
+
+    &__title {
+      display: none;
+
+      @media (min-width: 500px) {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+import React from "react";
+import { HeadFC } from "gatsby";
+import favicon32 from "@sikt/sds-logo/Favicon-Light@32px.png";
+import favicon180 from "@sikt/sds-logo/Favicon-Light@180px.png";
+import faviconSvg from "@sikt/sds-logo/Favicon-Light.svg";
+
+export const Head: HeadFC = () => {
+  return (
+    <>
+      <html lang="nb" />
+      <title>Sikt designsystem</title>
+      <link rel="icon" href={favicon32.src} sizes="any" />
+      <link rel="icon" href={faviconSvg} type="image/svg+xml" />
+      <link rel="apple-touch-icon" href={favicon180.src} />
+    </>
+  );
+};

@@ -1,0 +1,5 @@
+.sds-sikt-main {
+  margin: 0 auto;
+  max-width: var(--sds-grid-content-medium);
+  padding: var(--sds-size-base-l);
+}
