@@ -1,26 +1,32 @@
 .sds-logo {
+  align-items: center;
   display: flex;
   flex-direction: row;
   gap: var(--sds-size-base-s);
 
   &__icon {
-    width: calc(75rem / 16);
-    height: var(--sds-size-text-l);
+    width: 1.9em;
+    height: 1.9em;
   }
 
   &--primary {
-    font-size: calc(56rem / 16);
+    font-size: var(--sds-size-text-m2);
     font-weight: 400;
-    line-height: var(--sds-size-text-l);
+    line-height: 1em;
   }
 
   &--secondary {
     font-size: var(--sds-size-text-s1);
     font-weight: 600;
-    line-height: var(--sds-size-text-s1);
+    line-height: 1em;
 
     .sds-logo__subtitle {
       font-weight: 400;
+    }
+
+    .sds-logo__icon {
+      width: 4.7em;
+      height: 4.7em;
     }
   }
 }
