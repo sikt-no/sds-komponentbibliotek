@@ -9,49 +9,9 @@ const Footer = () => {
     <footer className={style.sdsSiktFooter} data-color-scheme="dark">
       <div className={style.sdsSiktFooter__content}>
         <div>
-          <a href="//sikt.no" className={style.sdsSiktFooter__logoLink}>
+          <Link href="//sikt.no" className={style.sdsSiktFooter__logoLink}>
             <SecondaryLogo />
-          </a>
-        </div>
-        <div>
-          <Heading2
-            headingType="overline"
-            className={style.sdsSiktFooter__linkHeading}
-          >
-            Resurser
-          </Heading2>
-          <UnorderedList>
-            <ListItem>
-              Skisser i{" "}
-              <Link
-                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v0.1"
-                target="_blank"
-                aria-label="Skisser i Figma"
-              >
-                Figma
-              </Link>
-            </ListItem>
-            <ListItem>
-              Kode på{" "}
-              <Link
-                href="https://gitlab.sikt.no/designsystem/sds-komponentbibliotek"
-                target="_blank"
-                aria-label="Kode på Gitlab"
-              >
-                Gitlab
-              </Link>
-            </ListItem>
-            <ListItem>
-              Pakker på{" "}
-              <Link
-                href="https://www.npmjs.com/search?q=%40sikt"
-                target="_blank"
-                aria-label="Pakker på npmjs"
-              >
-                npmjs
-              </Link>
-            </ListItem>
-          </UnorderedList>
+          </Link>
         </div>
         <div>
           <Heading2

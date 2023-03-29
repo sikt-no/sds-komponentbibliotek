@@ -10,6 +10,7 @@
     flex-flow: column-reverse;
     grid-gap: var(--sds-size-padding-large);
     grid-template-columns: auto;
+    justify-content: space-between;
     margin: 0 auto;
     max-width: var(--sds-grid-content-medium);
     padding: var(--sds-size-base-l);
@@ -20,8 +21,8 @@
   }
 
   &__logo-link {
-    color: inherit;
-    text-decoration: none;
+    color: inherit !important;
+    text-decoration: none !important;
   }
 
   &__link-heading {
