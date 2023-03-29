@@ -51,11 +51,16 @@ const IndexPage: React.FC<PageProps> = () => {
         <Heading1 headingType="xxlarge">Sikt designsystem</Heading1>
 
         <p className={style.sdsSiktIndex__paragraph}>
-          Sikt designsystem er under arbeid.
+          Sikt designsystem består av flere bestanddeler, derunder
+          komponentbiblioteket, som sammen bidrar til å definere hva opplevelsen
+          av Sikt skal være. Designsystemet er under arbeid, men vil etterhvert
+          tilgjengeliggjøres og dokumenteres på denne siden. Deler av
+          designsystemet (derunder typografi, fargepalett og ikoner) er per nå
+          dokumentert i komponentbiblioteket.
         </p>
 
         <section className={style.sdsSiktIndex__section}>
-          <Heading2 headingType="large">Sikt komponentbibliotek</Heading2>
+          <Heading2 headingType="large">Komponentbibliotek</Heading2>
 
           <p className={style.sdsSiktIndex__paragraph}>
             Sikt komponentbibliotek inneholder en rekke nyttige komponenter som
@@ -101,7 +106,7 @@ const IndexPage: React.FC<PageProps> = () => {
             seg på fremover!
           </p>
 
-          <section className={style.sdsSiktIndex__section}>
+          <section>
             <Heading3 headingType="paragraph">Med bidrag fra</Heading3>
             <div className={style.sdsSiktIndex__paragraph}>
               <Contributors />
