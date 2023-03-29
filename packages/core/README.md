@@ -30,7 +30,7 @@ Do not edit these directly in the `/core/dist` output directory but rather in th
 
 ### Tips
 
-- Relative size tokens should be used on user font size setting scalable things like `font-size`, `line-height`, etc. These are calculated from the root font-size so that for example `16px` is the same as `calc(16 * 1rem / 16)`.
+- Relative size tokens (`--sds-size-text-<size>`) should be used on user font size setting scalable properties like `font-size`, `line-height`, etc. These are calculated from the root font-size so that for example `16px` is the same as `calc(16 * 1rem / 16)`.
 - Custom media queries are transformed to valid CSS during build step and need to be imported into the PostCSS file that uses them.
 
 ### Consume
