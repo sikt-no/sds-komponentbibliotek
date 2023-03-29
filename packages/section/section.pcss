@@ -1,0 +1,58 @@
+@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
+
+.sds-section {
+  margin: var(--sds-size-base-s2);
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    border-bottom: solid var(--sds-color-text-action);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    padding-bottom: var(--sds-size-padding-medium);
+  }
+
+  &__link {
+    color: var(--sds-color-text-action);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: var(--sds-size-padding-medium);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--sds-color-text-default-hover);
+    }
+
+    &:focus-visible {
+      outline: var(--sds-outline);
+    }
+
+    &:active {
+      color: var(--sds-color-text-default-active);
+    }
+  }
+
+  &__icon {
+    margin-left: var(--sds-size-padding-small);
+  }
+
+  @media (--sds-breakpoint-tablet) {
+    &__header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: var(--sds-size-padding-medium);
+    }
+
+    &__heading,
+    &__link {
+      padding-bottom: 0;
+    }
+  }
+}
