@@ -26,11 +26,10 @@ export const Breadcrumbs = ({
           const isLastElement = index + 1 === numberOfChildren;
           return (
             <>
-              {React.isValidElement<BreadcrumbItemProps>(child)
-                ? cloneElement<BreadcrumbItemProps>(child, {
-                    isLastElement,
-                  })
-                : child}
+              {React.isValidElement<BreadcrumbItemProps>(child) &&
+                cloneElement<BreadcrumbItemProps>(child, {
+                  isLastElement,
+                })}
             </>
           );
         })}

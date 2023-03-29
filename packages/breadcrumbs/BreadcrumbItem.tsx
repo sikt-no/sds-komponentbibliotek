@@ -43,8 +43,6 @@ export const BreadcrumbItem = ({
             />,
             child.props.children
           );
-        } else {
-          return child;
         }
       })}
     </li>
