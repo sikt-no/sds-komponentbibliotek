@@ -2,6 +2,9 @@ const __colors = require("./color.base");
 
 module.exports = {
   color: {
+    theme: {
+      value: { ...__colors.purple["10"].value },
+    },
     background: {
       default: {
         value: { ...__colors.gray["0"].value },
