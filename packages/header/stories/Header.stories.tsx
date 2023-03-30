@@ -15,18 +15,18 @@ export const Default: Story<HeaderProps> = Template.bind({});
 
 export const WithLink: Story<HeaderProps> = Template.bind({});
 WithLink.args = {
-  logoHref: "#",
+  logoHref: "//sikt.no",
 };
 
 export const WithText: Story<HeaderProps> = Template.bind({});
 WithText.args = {
-  logoHref: "#",
+  logoHref: "//sikt.no",
   logoText: "Hello, World!",
 };
 
 export const WithContent: Story<HeaderProps> = Template.bind({});
 WithContent.args = {
-  logoHref: "#",
+  logoHref: "//sikt.no",
   children: [
     <div key={0}>
       <a href="#link" style={{ padding: "0 10px" }}>
