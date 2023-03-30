@@ -1,7 +1,12 @@
 module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ["./packages/**/*.tsx"],
-  coveragePathIgnorePatterns: ["/node_modules/", "/dist/", ".stories.tsx"],
+  coveragePathIgnorePatterns: [
+    "/node_modules/",
+    "/build/",
+    "/dist/",
+    ".stories.tsx",
+  ],
   coverageReporters: ["text", "cobertura"],
   coverageThreshold: {
     global: {

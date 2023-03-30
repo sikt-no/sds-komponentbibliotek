@@ -26,7 +26,6 @@ export default defineConfig({
     }),
     url({
       fileName: "[name].[hash][extname]",
-      limit: 28682,
     }),
     svgr(),
     ts({

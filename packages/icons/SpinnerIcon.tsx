@@ -1,13 +1,10 @@
-import clsx from "clsx";
 import React from "react";
-import { Icon, IconProps } from "./Icon";
+import clsx from "clsx";
+import { SpinnerGapIcon, IconProps } from "./build/index";
 
-export type SpinnerIconProps = Omit<IconProps, "icon">;
-
-export const SpinnerIcon = ({ className, ...rest }: SpinnerIconProps) => (
-  <Icon
-    icon="spinner-gap"
-    className={clsx("sds-icon--spinner", className)}
+export const SpinnerIcon = ({ className, ...rest }: IconProps) => (
+  <SpinnerGapIcon
+    className={clsx("sds-icon sds-icon--spinner", className)}
     {...rest}
   />
 );

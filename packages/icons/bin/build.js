@@ -8,16 +8,14 @@ icons.push(
   ...config.icons
     .filter((icon) => !icon.endsWith("-fill"))
     .map(
-      (icon) =>
-        `../../node_modules/@phosphor-icons/core/assets/regular/${icon}.svg`
+      (icon) => `./node_modules/@phosphor-icons/core/assets/regular/${icon}.svg`
     )
 );
 icons.push(
   ...config.icons
     .filter((icon) => icon.endsWith("-fill"))
     .map(
-      (icon) =>
-        `../../node_modules/@phosphor-icons/core/assets/fill/${icon}.svg`
+      (icon) => `./node_modules/@phosphor-icons/core/assets/fill/${icon}.svg`
     )
 );
 

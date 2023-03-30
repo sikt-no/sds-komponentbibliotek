@@ -1,5 +1,5 @@
 import { Meta, IconGallery, IconItem } from "@storybook/addon-docs";
-import { Icon } from "../index";
+import * as icons from "../build/index";
 import config from "../icons.config";
 import Readme from "../README.md";
 
@@ -11,9 +11,14 @@ import Readme from "../README.md";
 
 <IconGallery>
   {config.icons.map((icon) => {
+    const iconName = `${icon
+      .split("-")
+      .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+      .join("")}Icon`;
+    const I = icons[iconName];
     return (
       <IconItem key={icon} name={icon}>
-        <Icon icon={icon} />
+        <I />
       </IconItem>
     );
   })}

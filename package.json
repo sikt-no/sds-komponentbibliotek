@@ -20,7 +20,10 @@
   "scripts": {
     "prebuild": "npm run clean && npm run prebuild --workspaces --if-present",
     "build": "npm run build --workspaces --if-present --ignore-scripts",
-    "clean": "rimraf packages/**/dist && rimraf storybook/storybook-static && rimraf gatsby/public",
+    "clean": "run-p clean:*",
+    "clean:build": "rimraf packages/**/{build,dist}",
+    "clean:gatsby": "rimraf gatsby/public",
+    "clean:storybook": "rimraf storybook/storybook-static",
     "format": "prettier --write . --ignore-unknown",
     "lint": "run-p lint:*",
     "lint:css": "stylelint \"**/*.{css,pcss}\" --ignore-path .gitignore",
@@ -30,7 +33,7 @@
     "release": "standard-version",
     "storybook": "npm run storybook --workspace=storybook",
     "storybook:build": "npm run build-storybook --workspace=storybook",
-    "gatsby:develop": "npm run develop --workspace=gatsby",
+    "gatsby": "npm run develop --workspace=gatsby",
     "gatsby:build": "npm run build:prod --workspace=gatsby",
     "test": "jest"
   },
