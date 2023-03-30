@@ -48,7 +48,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <section className={style.sdsSiktIndex__section}>
-        <Heading1 headingType="xxlarge">Sikt designsystem</Heading1>
+        <Heading1 headingType="xxlarge">Sikt design&shy;system</Heading1>
 
         <p className={style.sdsSiktIndex__paragraph}>
           Sikt designsystem består av flere bestanddeler, derunder
@@ -60,7 +60,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </p>
 
         <section className={style.sdsSiktIndex__section}>
-          <Heading2 headingType="large">Komponentbibliotek</Heading2>
+          <Heading2 headingType="large">Komponent&shy;bibliotek</Heading2>
 
           <p className={style.sdsSiktIndex__paragraph}>
             Sikt komponentbibliotek inneholder en rekke nyttige komponenter som
