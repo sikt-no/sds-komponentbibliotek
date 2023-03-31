@@ -2,12 +2,12 @@ import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
 import { ButtonProps, PrimaryButton } from "../index";
-import { Icon } from "../../icons/index";
+import { ArrowRightIcon, ArrowLeftIcon } from "../../icons/index";
 
 export default {
   title: "Components/Button/Primary",
   component: PrimaryButton,
-  subcomponents: { Icon },
+  subcomponents: { ArrowRightIcon, ArrowLeftIcon },
   args: {
     children: "Primary Button",
     onClick: () => {
@@ -22,17 +22,17 @@ export const Button: Story<ButtonProps> = Template.bind({});
 
 export const IconRight: Story<ButtonProps> = Template.bind({});
 IconRight.args = {
-  icon: <Icon icon="arrow-right" />,
+  icon: <ArrowRightIcon />,
 };
 
 export const IconLeft: Story<ButtonProps> = Template.bind({});
 IconLeft.args = {
-  icon: <Icon icon="arrow-left" />,
+  icon: <ArrowLeftIcon />,
   iconType: "left",
 };
 
 export const IconOnly: Story<ButtonProps> = Template.bind({});
 IconOnly.args = {
-  icon: <Icon icon="arrow-right" />,
+  icon: <ArrowRightIcon />,
   iconType: "only",
 };
