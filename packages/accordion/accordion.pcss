@@ -1,9 +1,11 @@
 @import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
 
 .sds-accordion {
+  --sds-accordion-icon-color: var(--sds-color-surface-action);
   --sds-accordion-border-color: var(--sds-color-surface-action);
+  --sds-accordion-border-radius: var(--sds-border-radius-large);
 
-  border-radius: var(--sds-border-radius-large);
+  border-radius: var(--sds-accordion-border-radius);
   border: var(--sds-border-size-regular) solid var(--sds-accordion-border-color);
   background-color: var(--sds-color-surface-default);
 
@@ -14,7 +16,7 @@
   }
 
   &__button {
-    border-radius: var(--sds-border-radius-large);
+    border-radius: var(--sds-accordion-border-radius);
     font-size: var(--sds-size-base-m);
     padding: var(--sds-size-base-m);
     width: 100%;
@@ -24,6 +26,7 @@
     justify-content: space-between;
 
     &:hover {
+      --sds-accordion-icon-color: var(--sds-color-surface-action-hover);
       --sds-accordion-border-color: var(--sds-color-surface-action-hover);
     }
 
@@ -35,8 +38,13 @@
     }
 
     &:active {
+      --sds-accordion-icon-color: var(--sds-color-surface-action-active);
       --sds-accordion-border-color: var(--sds-color-surface-action-active);
     }
+  }
+
+  &__icon {
+    color: var(--sds-accordion-icon-color);
   }
 
   &__content {
@@ -46,7 +54,7 @@
   }
 
   &--small {
-    border-radius: var(--sds-size-base-xs);
+    --sds-accordion-border-radius: var(--sds-size-base-xs);
   }
 
   &--small &__button {

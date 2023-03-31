@@ -36,7 +36,11 @@ export const Accordion = ({
         onClick={() => setExpanded(!expanded)}
       >
         <Heading className="sds-accordion__title">{title}</Heading>
-        {expanded ? <CaretCircleUpIcon /> : <CaretCircleDownIcon />}
+        {expanded ? (
+          <CaretCircleUpIcon className="sds-accordion__icon" />
+        ) : (
+          <CaretCircleDownIcon className="sds-accordion__icon" />
+        )}
       </button>
 
       <div
