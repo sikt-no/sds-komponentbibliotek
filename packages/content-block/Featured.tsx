@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from "react";
 import clsx from "clsx";
-import { Icon } from "@sikt/sds-icons";
+import { ArrowRightIcon } from "@sikt/sds-icons";
 import "./featured.pcss";
 
 export interface FeaturedProps extends HTMLAttributes<HTMLDivElement> {
@@ -58,7 +58,7 @@ export const Featured = ({
           className="sds-button sds-button--secondary sds-content-block-featured__link"
         >
           <span className="sds-button__label">{linkText}</span>
-          <Icon icon="arrow-right" />
+          <ArrowRightIcon />
         </a>
       </div>
     </div>
