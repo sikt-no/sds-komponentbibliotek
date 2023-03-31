@@ -1,5 +1,3 @@
-import { Icon } from "@sikt/sds-icons";
-import clsx from "clsx";
 import React, {
   ChangeEvent,
   HTMLAttributes,
@@ -8,6 +6,13 @@ import React, {
   useCallback,
   useId,
 } from "react";
+import clsx from "clsx";
+import {
+  EnvelopeIcon,
+  MagnifyingGlassIcon,
+  PhoneIcon,
+  WarningIcon,
+} from "@sikt/sds-icons";
 import "./input.pcss";
 
 type InputTypes =
@@ -71,9 +76,7 @@ const Input = ({
     >
       <label className="sds-input__label" htmlFor={id}>
         <div className="sds-input__label-text">
-          {errorText && (
-            <Icon icon="warning" className="sds-input__label-error-icon" />
-          )}{" "}
+          {errorText && <WarningIcon className="sds-input__label-error-icon" />}{" "}
           {label}
         </div>
         <div className="sds-input__wrapper">
@@ -113,19 +116,19 @@ export const NumberInput = (props: InputProps) => (
   <Input type="number" {...props} />
 );
 export const EmailInput = (props: InputProps) => (
-  <Input type="email" icon={<Icon icon="envelope" />} {...props} />
+  <Input type="email" icon={<EnvelopeIcon />} {...props} />
 );
 export const PasswordInput = (props: InputProps) => (
   // TODO: Needs icon
   <Input type="password" {...props} />
 );
 export const TelInput = (props: InputProps) => (
-  <Input type="tel" icon={<Icon icon="phone" />} {...props} />
+  <Input type="tel" icon={<PhoneIcon />} {...props} />
 );
 export const SearchInput = (props: InputProps) => (
   <Input
     type="search"
-    icon={<Icon icon="magnifying-glass" />}
+    icon={<MagnifyingGlassIcon />}
     iconPosition="end"
     {...props}
   />

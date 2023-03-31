@@ -2,12 +2,12 @@ import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
 import { EmailInput, InputProps } from "../index";
-import { Icon } from "@sikt/sds-icons";
+import { GearIcon } from "@sikt/sds-icons";
 
 export default {
   title: "Components/Input/Email",
   component: EmailInput,
-  subcomponents: { Icon },
+  subcomponents: { GearIcon },
   args: {
     label: "Label",
     placeholder: "Placeholder",
@@ -20,7 +20,7 @@ export const Input: Story<InputProps> = Template.bind({});
 
 export const WithCustomIcon: Story<InputProps> = Template.bind({});
 WithCustomIcon.args = {
-  icon: <Icon icon="gear" />,
+  icon: <GearIcon />,
   iconPosition: "end",
 };
 

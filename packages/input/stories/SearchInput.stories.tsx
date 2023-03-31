@@ -2,12 +2,12 @@ import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
 import { SearchInput, InputProps } from "../index";
-import { Icon } from "@sikt/sds-icons";
+import { MapPinIcon } from "@sikt/sds-icons";
 
 export default {
   title: "Components/Input/Search",
   component: SearchInput,
-  subcomponents: { Icon },
+  subcomponents: { MapPinIcon },
   args: {
     label: "Label",
     placeholder: "Placeholder",
@@ -20,7 +20,7 @@ export const Default: Story<InputProps> = Template.bind({});
 
 export const WithCustomIcon: Story<InputProps> = Template.bind({});
 WithCustomIcon.args = {
-  icon: <Icon icon="map-pin" />,
+  icon: <MapPinIcon />,
   iconPosition: "start",
 };
 
