@@ -7,7 +7,7 @@ import React, {
   useId,
 } from "react";
 import clsx from "clsx";
-import { Icon } from "@sikt/sds-icons";
+import { CaretCircleDownIcon, WarningIcon } from "@sikt/sds-icons";
 import "./select.pcss";
 
 export interface SelectProps
@@ -47,9 +47,7 @@ export const Select = ({
     >
       <label htmlFor={id} className="sds-select__label">
         <div className="sds-select__label-text">
-          {errorText && (
-            <Icon icon="warning" className="sds-select__help-icon" />
-          )}{" "}
+          {errorText && <WarningIcon className="sds-select__help-icon" />}{" "}
           {label}
         </div>
         <div className="sds-select__select">
@@ -73,10 +71,7 @@ export const Select = ({
               </option>
             ))}
           </select>
-          <Icon
-            icon="caret-circle-down"
-            className="sds-select__select-button"
-          />
+          <CaretCircleDownIcon className="sds-select__select-button" />
         </div>
       </label>
       {(errorText ?? helpText) && (

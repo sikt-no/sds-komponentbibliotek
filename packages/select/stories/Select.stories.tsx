@@ -2,12 +2,12 @@ import React, { ChangeEvent } from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
 import { SelectProps, Select } from "../index";
-import { Icon } from "../../icons/index";
+import { ListIcon } from "../../icons/index";
 
 export default {
   title: "Components/Select",
   component: Select,
-  subcomponents: { Icon },
+  subcomponents: { ListIcon },
   args: {
     label: "Label",
     options: [
@@ -27,7 +27,7 @@ export const Default: Story<SelectProps> = Template.bind({});
 
 export const WithIcon: Story<SelectProps> = Template.bind({});
 WithIcon.args = {
-  icon: <Icon icon="list" />,
+  icon: <ListIcon />,
 };
 
 export const WithHelpText: Story<SelectProps> = Template.bind({});
