@@ -1,5 +1,5 @@
 import React, { ReactNode, cloneElement, AnchorHTMLAttributes } from "react";
-import { Icon } from "@sikt/sds-icons";
+import { CircleIcon, ArrowCircleRightIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
 
 export interface BreadcrumbItemProps {
@@ -27,15 +27,13 @@ export const BreadcrumbItem = ({
               className: clsx("sds-breadcrumbs-item__link", className),
               tabIndex: 0,
             },
-            <Icon
-              icon="circle"
+            <CircleIcon
               className={clsx(
                 "sds-breadcrumbs-item__icon",
                 "sds-breadcrumbs-item__icon--inactive"
               )}
             />,
-            <Icon
-              icon="arrow-circle-right"
+            <ArrowCircleRightIcon
               className={clsx(
                 "sds-breadcrumbs-item__icon",
                 "sds-breadcrumbs-item__icon--active"
