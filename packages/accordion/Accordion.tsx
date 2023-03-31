@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, ReactNode, useState, useId } from "react";
-import { Icon } from "@sikt/sds-icons";
+import { CaretCircleDownIcon, CaretCircleUpIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
 import "./accordion.pcss";
 
@@ -36,11 +36,7 @@ export const Accordion = ({
         onClick={() => setExpanded(!expanded)}
       >
         <Heading className="sds-accordion__title">{title}</Heading>
-        {expanded ? (
-          <Icon icon="caret-circle-up" />
-        ) : (
-          <Icon icon="caret-circle-down" />
-        )}
+        {expanded ? <CaretCircleUpIcon /> : <CaretCircleDownIcon />}
       </button>
 
       <div
