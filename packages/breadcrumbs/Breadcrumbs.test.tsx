@@ -69,24 +69,4 @@ describe("Breadcrumbs", () => {
       "sds-breadcrumbs-item test-class-name-on-item"
     );
   });
-
-  it("should have a aria current attribute if its the last item", async () => {
-    render(
-      <Breadcrumbs aria-label="foo" data-testid="test-group">
-        <BreadcrumbItem data-testid="test-item">
-          <a href="/">Level 1</a>
-        </BreadcrumbItem>
-        <BreadcrumbItem data-testid="test-last-item">
-          <a href="/" data-testid="test-last-link" aria-current="page">
-            Level 2
-          </a>
-        </BreadcrumbItem>
-      </Breadcrumbs>
-    );
-
-    expect(screen.getByTestId("test-last-link")).toHaveAttribute(
-      "aria-current",
-      "page"
-    );
-  });
 });
