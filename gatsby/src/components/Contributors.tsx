@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading4 } from "@sikt/sds-core";
-import { Icon } from "@sikt/sds-icons";
+import { UserCircleIcon } from "@sikt/sds-icons";
 import * as style from "./contributors.module.css";
 
 const Contributors = () => {
@@ -47,8 +47,7 @@ const Contributors = () => {
                     className={style.sdsSiktContributors__contributor}
                   >
                     {contributor.name === "Deg" && (
-                      <Icon
-                        icon="user-circle"
+                      <UserCircleIcon
                         className={`${style.sdsSiktContributors__contributorImage} ${style.sdsSiktContributors__contributorImageAnimation}`}
                       />
                     )}
