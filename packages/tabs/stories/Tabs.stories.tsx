@@ -2,13 +2,13 @@ import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
 import { Tabs, TabsProps, TabList, Tab, TabPanel } from "../index";
-import { Icon } from "../../icons/index";
+import { InfoIcon } from "../../icons/index";
 import { Badge } from "../../badge/index";
 
 export default {
   title: "Components/Tabs",
   component: Tabs,
-  subcomponents: { TabList, Tab, TabPanel, Icon, Badge },
+  subcomponents: { TabList, Tab, TabPanel, InfoIcon, Badge },
   args: {
     children: [
       <TabList key={0} aria-label="Sample Tabs">
@@ -31,8 +31,8 @@ export const WithIcon: Story<TabsProps> = Template.bind({});
 WithIcon.args = {
   children: [
     <TabList key={0} aria-label="Sample Tabs">
-      <Tab icon={<Icon icon="info" />}>First Tab</Tab>
-      <Tab icon={<Icon icon="info" />}>Second Tab</Tab>
+      <Tab icon={<InfoIcon />}>First Tab</Tab>
+      <Tab icon={<InfoIcon />}>Second Tab</Tab>
     </TabList>,
     <TabPanel key={1}>First Content</TabPanel>,
     <TabPanel key={2}>Second Content</TabPanel>,
