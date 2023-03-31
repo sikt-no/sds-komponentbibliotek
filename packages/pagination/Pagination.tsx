@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from "react";
-import { Icon } from "@sikt/sds-icons";
+import { CaretRightIcon, CaretLeftIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx";
 import "./pagination.pcss";
 
@@ -57,7 +57,7 @@ export const Pagination = ({
             disabled={currentIndex === 0}
             onClick={() => handleClick(currentIndex - 1)}
           >
-            <Icon icon="caret-left" />
+            <CaretLeftIcon />
           </button>
         </li>
         {[...Array(count).keys()].map((value) => {
@@ -96,7 +96,7 @@ export const Pagination = ({
             disabled={currentIndex === count - 1}
             onClick={() => handleClick(currentIndex + 1)}
           >
-            <Icon icon="caret-right" />
+            <CaretRightIcon />
           </button>
         </li>
       </ol>
