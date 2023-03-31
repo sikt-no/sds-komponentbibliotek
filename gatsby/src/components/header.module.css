@@ -1,29 +1,4 @@
-@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
-
 .sds-sikt-header {
-  align-items: center;
-  background-color: var(--sds-color-background-action);
-  border-bottom: var(--sds-border-size-thin) solid
-    var(--sds-color-surface-action);
-  display: grid;
-  grid-gap: var(--sds-size-padding-small);
-  grid-template-columns: 1fr auto 1fr;
-  padding: 0 var(--sds-size-padding-medium);
-
-  &__skip-link:focus-within {
-    position: absolute;
-  }
-
-  &__logo {
-    padding: var(--sds-size-padding-small) 0;
-  }
-
-  &__logo-link {
-    color: inherit;
-    display: inline-flex;
-    text-decoration: none;
-  }
-
   &__tab {
     display: flex;
   }
@@ -39,19 +14,5 @@
 
   .sds-sikt-header__tab-item {
     display: inline-flex;
-  }
-
-  @media (--sds-breakpoint-tablet) {
-    grid-gap: var(--sds-size-padding-large);
-    padding: 0 var(--sds-size-base-m1);
-
-    &__logo {
-      height: var(--sds-size-base-m1);
-      padding: var(--sds-size-base-s2) 0;
-    }
-  }
-
-  @media (--sds-breakpoint-desktop) {
-    padding: 0 var(--sds-size-padding-large);
   }
 }
