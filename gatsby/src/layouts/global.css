@@ -16,13 +16,5 @@
     @media (--sds-breakpoint-tablet) {
       font-size: calc(28rem / 16);
     }
-
-    &__title {
-      display: none;
-
-      @media (min-width: 500px) {
-        display: block;
-      }
-    }
   }
 }
