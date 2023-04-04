@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes, ElementType } from "react";
 import clsx from "clsx";
 import { ArrowRightIcon } from "@sikt/sds-icons";
 import "./featured.pcss";
@@ -29,7 +29,7 @@ export const Featured = ({
   className,
   ...rest
 }: FeaturedProps) => {
-  const H: React.ElementType = `${headingLevel}`;
+  const H: ElementType = `${headingLevel}`;
 
   return (
     <div

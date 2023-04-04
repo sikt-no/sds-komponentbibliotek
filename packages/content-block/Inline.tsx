@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes, ElementType } from "react";
 import clsx from "clsx";
 import { ArrowRightIcon } from "@sikt/sds-icons";
 import "./inline.pcss";
@@ -25,7 +25,7 @@ export const Inline = ({
   className,
   ...rest
 }: InlineProps) => {
-  const H: React.ElementType = `${headingLevel}`;
+  const H: ElementType = `${headingLevel}`;
   return (
     <div className={clsx("sds-content-block-inline", className)} {...rest}>
       <img

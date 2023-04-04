@@ -1,9 +1,15 @@
-import React, { KeyboardEvent, ReactElement, ReactNode } from "react";
+import React, {
+  cloneElement,
+  KeyboardEvent,
+  ReactElement,
+  ReactNode,
+  useContext,
+} from "react";
 import clsx from "clsx";
 import { TabsContext, TabsContextType } from "./Tabs";
 
 export interface TabProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   icon?: ReactNode;
   badge?: ReactNode;
@@ -18,7 +24,7 @@ export const Tab = ({
 }: TabProps) => {
   const { index } = rest as { index: number };
   const { id, count, isSelectOnFocus, selectedIndex, setSelectedIndex } =
-    React.useContext(TabsContext) as TabsContextType;
+    useContext(TabsContext) as TabsContextType;
   const isSelected = index === selectedIndex;
   const handleSelect = (index: number) => {
     if (isSelectOnFocus) {
@@ -78,7 +84,7 @@ export const Tab = ({
       {badge && (
         <div className="sds-tabs__tab-badge">
           {isSelected
-            ? React.cloneElement(badge as ReactElement, { visibility: "high" })
+            ? cloneElement(badge as ReactElement, { visibility: "high" })
             : badge}
         </div>
       )}

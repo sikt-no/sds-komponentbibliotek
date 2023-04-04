@@ -1,8 +1,8 @@
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 import { clsx } from "clsx";
 
 export interface ListItemProps extends HTMLAttributes<HTMLElement> {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 

@@ -1,9 +1,15 @@
-import React, { Children, cloneElement } from "react";
+import React, {
+  Children,
+  ReactNode,
+  ReactElement,
+  cloneElement,
+  isValidElement,
+} from "react";
 import clsx from "clsx";
 import { TabProps } from "./Tab";
 
 export interface TabListProps {
-  children: React.ReactNode;
+  children: ReactNode;
   "aria-label": string;
   className?: string;
 }
@@ -24,11 +30,11 @@ export const TabList = ({
       {...rest}
     >
       {Children.map(arrayChildren, (child, index) => {
-        if (React.isValidElement(child)) {
+        if (isValidElement(child)) {
           return (
             <>
               {cloneElement(
-                child as React.ReactElement<TabProps & { index: number }>,
+                child as ReactElement<TabProps & { index: number }>,
                 {
                   index,
                 }

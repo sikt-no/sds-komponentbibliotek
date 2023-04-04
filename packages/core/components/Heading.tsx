@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import React, { HTMLAttributes, ReactNode, ElementType } from "react";
 import clsx from "clsx";
 
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
@@ -25,7 +25,7 @@ const Heading = ({
   className,
   ...rest
 }: HeadingProps & HeadingLevels) => {
-  const H: React.ElementType = `h${headingLevel}`;
+  const H: ElementType = `h${headingLevel}`;
 
   return (
     <H

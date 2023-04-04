@@ -1,4 +1,10 @@
-import React, { HTMLAttributes, ReactNode, useState, useId } from "react";
+import React, {
+  HTMLAttributes,
+  ReactNode,
+  useState,
+  useId,
+  ElementType,
+} from "react";
 import { CaretCircleDownIcon, CaretCircleUpIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
 import "./accordion.pcss";
@@ -20,7 +26,7 @@ export const Accordion = ({
   ...rest
 }: AccordionProps) => {
   const [expanded, setExpanded] = useState(false);
-  const Heading: React.ElementType = `${headingLevel}`;
+  const Heading: ElementType = `${headingLevel}`;
   const id = useId();
 
   return (

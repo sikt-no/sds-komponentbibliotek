@@ -1,4 +1,13 @@
-import React, { Children, cloneElement, useId, useState } from "react";
+import React, {
+  Children,
+  ReactNode,
+  cloneElement,
+  useId,
+  useState,
+  isValidElement,
+  createContext,
+  ReactElement,
+} from "react";
 import clsx from "clsx";
 import "./tabs.pcss";
 import { TabPanelProps } from "./TabPanel";
@@ -11,12 +20,12 @@ export type TabsContextType = {
   setSelectedIndex: (index: number) => void;
 };
 
-export const TabsContext = React.createContext<TabsContextType | null>(null);
+export const TabsContext = createContext<TabsContextType | null>(null);
 
 export interface TabsProps {
   defaultIndex?: number;
   isSelectOnFocus?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -39,13 +48,11 @@ export const Tabs = ({
     >
       <div className={clsx("sds-tabs", className)} {...rest}>
         {Children.map(arrayChildren, (child, index) => {
-          if (React.isValidElement(child) && index > 0) {
+          if (isValidElement(child) && index > 0) {
             return (
               <>
                 {cloneElement(
-                  child as React.ReactElement<
-                    TabPanelProps & { index: number }
-                  >,
+                  child as ReactElement<TabPanelProps & { index: number }>,
                   {
                     index: index - 1,
                   }

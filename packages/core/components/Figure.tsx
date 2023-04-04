@@ -1,8 +1,14 @@
-import React, { HTMLAttributes, ReactElement } from "react";
+import React, {
+  Children,
+  cloneElement,
+  HTMLAttributes,
+  ReactElement,
+  ReactNode,
+} from "react";
 import { clsx } from "clsx";
 
 export interface FigureProps extends HTMLAttributes<HTMLElement> {
-  children: React.ReactNode;
+  children: ReactNode;
   aspectRatio?: "16x9";
   figCaption?: string;
 }
@@ -22,12 +28,12 @@ export const Figure = ({
       ),
     };
 
-    return React.cloneElement(child, props);
+    return cloneElement(child, props);
   };
 
   return (
     <figure className="sds-figure" {...rest}>
-      {React.Children.map(children, (child) =>
+      {Children.map(children, (child) =>
         addClassToChildren(child as ReactElement)
       )}
       {figCaption && (
