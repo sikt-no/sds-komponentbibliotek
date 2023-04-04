@@ -11,7 +11,7 @@ StyleDictionary.registerFormat({
     return dictionary.allProperties
       .map((prop) => {
         const { name, value } = prop;
-        return `@custom-media --${name} (min-width: ${value});`;
+        return `@custom-media --${name} (width >= ${value});`;
       })
       .join("\n");
   },
