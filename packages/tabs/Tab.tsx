@@ -23,11 +23,18 @@ export const Tab = ({
   ...rest
 }: TabProps) => {
   const { index } = rest as { index: number };
-  const { id, count, isSelectOnFocus, selectedIndex, setSelectedIndex } =
-    useContext(TabsContext) as TabsContextType;
+  const {
+    id,
+    count,
+    isSelectOnFocus,
+    selectedIndex,
+    setSelectedIndex,
+    setPreviousIndex,
+  } = useContext(TabsContext) as TabsContextType;
   const isSelected = index === selectedIndex;
   const handleSelect = (index: number) => {
     if (isSelectOnFocus) {
+      setPreviousIndex(selectedIndex);
       setSelectedIndex(index);
     }
   };
@@ -75,7 +82,10 @@ export const Tab = ({
       aria-controls={`panel-${id}-${index}`}
       id={`tab-${id}-${index}`}
       tabIndex={isSelected ? 0 : -1}
-      onClick={() => setSelectedIndex(index)}
+      onClick={() => {
+        setPreviousIndex(selectedIndex);
+        setSelectedIndex(index);
+      }}
       onKeyDown={handleKeyPress}
       {...rest}
     >

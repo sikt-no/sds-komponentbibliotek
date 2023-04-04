@@ -7,6 +7,7 @@ import React, {
   isValidElement,
   createContext,
   ReactElement,
+  useEffect,
 } from "react";
 import clsx from "clsx";
 import "./tabs.pcss";
@@ -18,6 +19,7 @@ export type TabsContextType = {
   isSelectOnFocus: boolean;
   selectedIndex: number;
   setSelectedIndex: (index: number) => void;
+  setPreviousIndex: (index: number) => void;
 };
 
 export const TabsContext = createContext<TabsContextType | null>(null);
@@ -25,26 +27,42 @@ export const TabsContext = createContext<TabsContextType | null>(null);
 export interface TabsProps {
   defaultIndex?: number;
   isSelectOnFocus?: boolean;
+  onChange?: (index: number) => void;
   children: ReactNode;
   className?: string;
 }
 
 export const Tabs = ({
   defaultIndex = 0,
+  onChange,
   isSelectOnFocus = false,
   children,
   className,
   ...rest
 }: TabsProps) => {
   const [selectedIndex, setSelectedIndex] = useState(defaultIndex);
+  const [previousIndex, setPreviousIndex] = useState(defaultIndex);
   const id = useId();
+
+  useEffect(() => {
+    if (onChange && previousIndex !== selectedIndex) {
+      onChange(selectedIndex);
+    }
+  }, [onChange, selectedIndex]);
 
   const arrayChildren = Children.toArray(children);
   const count = arrayChildren.length - 1;
 
   return (
     <TabsContext.Provider
-      value={{ id, count, isSelectOnFocus, selectedIndex, setSelectedIndex }}
+      value={{
+        id,
+        count,
+        isSelectOnFocus,
+        selectedIndex,
+        setSelectedIndex,
+        setPreviousIndex,
+      }}
     >
       <div className={clsx("sds-tabs", className)} {...rest}>
         {Children.map(arrayChildren, (child, index) => {

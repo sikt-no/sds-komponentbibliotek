@@ -1,10 +1,10 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import { Tabs } from "./Tabs";
+import { Tabs, TabsProps } from "./Tabs";
 import { TabList } from "./TabList";
-import { Tab } from "./Tab";
+import { Tab, TabProps } from "./Tab";
 import { TabPanel } from "./TabPanel";
 
 const renderComponent = ({
@@ -13,19 +13,15 @@ const renderComponent = ({
   badge,
   defaultIndex,
   isSelectOnFocus,
-}: {
-  className?: string;
-  icon?: ReactNode;
-  badge?: ReactNode;
-  defaultIndex?: number;
-  isSelectOnFocus?: boolean;
-}) =>
+  onChange,
+}: Partial<TabsProps> & Partial<TabProps>) =>
   render(
     <Tabs
       data-testid="test"
       className={className}
       defaultIndex={defaultIndex}
       isSelectOnFocus={isSelectOnFocus}
+      onChange={onChange}
     >
       <TabList aria-label="test-aria-label">
         <Tab icon={icon} badge={badge}>
@@ -101,6 +97,19 @@ describe("Tabs", () => {
 
       expect(screen.getByText("Content 1")).not.toBeVisible();
       expect(screen.getByText("Content 2")).toBeVisible();
+    });
+
+    it("calls change handler", async () => {
+      const user = userEvent.setup();
+      const changeHandler = jest.fn();
+      renderComponent({ onChange: changeHandler });
+
+      await act(async () => {
+        await user.click(screen.getByText("Tab 2"));
+      });
+
+      expect(changeHandler).toHaveBeenCalled();
+      expect(changeHandler).toHaveBeenCalledWith(1);
     });
 
     it("handles keyboard navigation", async () => {
