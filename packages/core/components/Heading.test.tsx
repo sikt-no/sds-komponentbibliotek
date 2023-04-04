@@ -19,7 +19,7 @@ const headingLevels = [
   { name: "h6", component: Heading6 },
 ];
 
-describe("Button", () => {
+describe("Heading", () => {
   describe("a11y", () => {
     headingLevels.map((headingLevel) => {
       it(`${headingLevel.name} should be accessible`, async () => {

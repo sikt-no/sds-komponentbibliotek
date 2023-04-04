@@ -16,6 +16,9 @@ export {
   Heading6,
 } from "./components/Heading";
 
+export type { ParagraphProps } from "./components/Paragraph";
+export { Paragraph } from "./components/Paragraph";
+
 export type { LinkProps } from "./components/Link";
 export { Link } from "./components/Link";
 
