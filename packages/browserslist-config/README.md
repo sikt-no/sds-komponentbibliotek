@@ -3,7 +3,7 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/browserslist-config-sds
+npm i -D @sikt/browserslist-config-sds
 ```
 
 ### Config

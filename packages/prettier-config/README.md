@@ -3,7 +3,7 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/prettier-config-sds
+npm i -D @sikt/prettier-config-sds
 ```
 
 ### Config

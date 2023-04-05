@@ -3,7 +3,7 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/eslint-config-sds
+npm i -D @sikt/eslint-config-sds
 ```
 
 ### Config
