@@ -1,6 +1,7 @@
 import React, {
   cloneElement,
   isValidElement,
+  HTMLAttributes,
   KeyboardEvent,
   ReactElement,
   ReactNode,
@@ -9,7 +10,7 @@ import React, {
 import clsx from "clsx";
 import { TabsContext, TabsContextType } from "./Tabs";
 
-export interface TabProps {
+export interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   className?: string;
   icon?: ReactNode;

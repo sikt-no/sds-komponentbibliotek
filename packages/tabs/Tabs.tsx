@@ -8,6 +8,7 @@ import React, {
   createContext,
   ReactElement,
   useEffect,
+  HTMLAttributes,
 } from "react";
 import clsx from "clsx";
 import "./tabs.pcss";
@@ -24,7 +25,8 @@ export type TabsContextType = {
 
 export const TabsContext = createContext<TabsContextType | null>(null);
 
-export interface TabsProps {
+export interface TabsProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
   defaultIndex?: number;
   isSelectOnFocus?: boolean;
   onChange?: (index: number) => void;

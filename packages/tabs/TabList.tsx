@@ -4,11 +4,12 @@ import React, {
   ReactElement,
   cloneElement,
   isValidElement,
+  HTMLAttributes,
 } from "react";
 import clsx from "clsx";
 import { TabProps } from "./Tab";
 
-export interface TabListProps {
+export interface TabListProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   "aria-label": string;
   className?: string;
