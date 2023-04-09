@@ -12,7 +12,7 @@
   "scripts": {
     "prebuild": "npm run prepare",
     "build": "rollup -c ../../rollup.config.mjs",
-    "build:icons": "node bin/build.js",
+    "build:icons": "node bin/build.mjs",
     "build:components": "npx @svgr/cli -- dist/assets",
     "build:sprite": "svgstore dist/assets/*.svg -o dist/sds-icons.svg",
     "prepare": "run-s build:icons build:sprite build:components"
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@svgr/cli": "^7.0.0",
-    "cpy-cli": "^4.2.0",
+    "cpy": "^9.0.1",
     "svgstore-cli": "^2.0.1"
   },
   "peerDependencies": {

@@ -1,18 +1,16 @@
-#!/usr/bin/env node
-
-const cpy = require("cpy");
-const config = require("../icons.config");
+import cpy from "cpy";
+import { config } from "../icons.config.mjs";
 
 let icons = [];
 icons.push(
-  ...config.icons
+  ...config
     .filter((icon) => !icon.endsWith("-fill"))
     .map(
       (icon) => `./node_modules/@phosphor-icons/core/assets/regular/${icon}.svg`
     )
 );
 icons.push(
-  ...config.icons
+  ...config
     .filter((icon) => icon.endsWith("-fill"))
     .map(
       (icon) => `./node_modules/@phosphor-icons/core/assets/fill/${icon}.svg`
