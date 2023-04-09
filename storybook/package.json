@@ -16,7 +16,7 @@
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^6.5.16",
-    "@storybook/testing-library": "^0.0.13",
+    "@storybook/testing-library": "^0.1.0",
     "@svgr/webpack": "^7.0.0",
     "@whitespace/storybook-addon-html": "^5.1.4",
     "babel-loader": "^9.0.0",
