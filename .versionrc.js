@@ -12,7 +12,8 @@ module.exports = {
   path: `./packages/${packageName}`,
   releaseCommitMessageFormat: `chore(${packageName}): release {{currentTag}}`,
   scripts: {
-    precommit: "npm i && npm run format && git add .",
+    precommit:
+      "npm install --silent --ignore-scripts && npm run format --silent -- --loglevel silent && git add .",
   },
   "tag-prefix": `@sikt/sds-${packageName}@`,
 };
