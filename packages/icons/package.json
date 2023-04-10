@@ -13,7 +13,7 @@
     "prebuild": "npm run prepare",
     "build": "rollup -c ../../rollup.config.mjs",
     "build:icons": "node bin/build.mjs",
-    "build:components": "npx @svgr/cli -- dist/assets",
+    "build:components": "svgr -- dist/assets",
     "build:sprite": "svgstore dist/assets/*.svg -o dist/sds-icons.svg",
     "prepare": "run-s build:icons build:sprite build:components"
   },
