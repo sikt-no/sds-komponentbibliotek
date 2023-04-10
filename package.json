@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-komponentbibliotek",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "license": "SEE LICENSE IN LICENSE.md",
   "description": "Sikt component library",
