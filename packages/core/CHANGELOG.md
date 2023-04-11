@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@0.3.0...@sikt/sds-core@1.0.0) (2023-04-11)
+
+### Features
+
+- **core:** add html attributes to figure component type ([f923b05](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f923b051bd4c59228c45e7d8b3d5d626a905d97b))
+- **core:** add outline css variable ([fb445ba](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fb445baa1f3b54092b3ce3e8060a92ad373488cd))
+- **core:** add paragraph component ([edb8ffd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/edb8ffdf88437801c84410d3f92254c6c047a3a4)), closes [#84](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/84)
+- **core:** add theme color token ([06498b2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/06498b207c89572697880da7727fdd15c0bb76da))
+- **core:** add tokens for grid width ([4687c12](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4687c12e2b05673e062e552c4f4685c09348ad6d))
+- **core:** change typography link icon margin ([e1a2f9e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e1a2f9e910b78b61af909fe3450a77cc56c19bab))
+
 ## [0.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@0.2.0...@sikt/sds-core@0.3.0) (2023-03-06)
 
 ### ⚠ BREAKING CHANGES
