@@ -44,6 +44,7 @@ export const config = [
   "minus",
   "minus-circle",
   "paperclip",
+  "password",
   "pencil",
   "plus",
   "plus-circle",
