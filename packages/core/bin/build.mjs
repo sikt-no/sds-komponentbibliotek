@@ -1,4 +1,4 @@
-const StyleDictionary = require("style-dictionary");
+import StyleDictionary from "style-dictionary";
 
 /**
  * Custom Format: Custom Media
