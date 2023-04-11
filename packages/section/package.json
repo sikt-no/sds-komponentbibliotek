@@ -11,6 +11,11 @@
   "scripts": {
     "build": "rollup -c ../../rollup.config.mjs"
   },
+  "dependencies": {
+    "@sikt/sds-button": "^1.0.1",
+    "@sikt/sds-core": "^1.0.0",
+    "@sikt/sds-icons": "^1.0.0"
+  },
   "peerDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",

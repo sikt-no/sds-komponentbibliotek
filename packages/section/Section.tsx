@@ -1,5 +1,6 @@
 import React, { HTMLAttributes, ReactNode, ElementType } from "react";
 import clsx from "clsx";
+import { ButtonLink } from "@sikt/sds-button";
 import { ArrowCircleRightIcon } from "@sikt/sds-icons";
 import "./section.pcss";
 
@@ -30,14 +31,14 @@ export const Section = ({
           {headingText}
         </H>
         {linkLabel && linkHref && (
-          /* TODO: replace with ButtonLink component when available #88 */
-          <a
+          <ButtonLink
+            buttonType="tertiary"
             href={linkHref}
-            className="sds-section__link sds-typography-body--large"
+            className="sds-section__link"
+            icon={<ArrowCircleRightIcon />}
           >
             {linkLabel}
-            <ArrowCircleRightIcon className="sds-section__icon" />
-          </a>
+          </ButtonLink>
         )}
       </header>
 
