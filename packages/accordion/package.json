@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@sikt/sds-core": "^1.0.0",
-    "@sikt/sds-icons": "^0.2.0"
+    "@sikt/sds-icons": "^1.0.0"
   },
   "peerDependencies": {
     "clsx": "^1.2.1",
