@@ -1,9 +1,9 @@
 import clsx from "clsx";
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import "./logo.pcss";
 import { ReactComponent as LogoSvg } from "./Logo.svg";
 
-export interface LogoProps {
+export interface LogoProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   lang?: "nb" | "nn" | "en" | "se" | "smj" | "sma" | "fkv";
 }
