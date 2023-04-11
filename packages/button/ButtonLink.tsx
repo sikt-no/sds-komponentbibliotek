@@ -2,20 +2,22 @@ import React, { AnchorHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import "./button-link.pcss";
 
-export type ButtonLinkProps = ButtonChildrenProps | ButtonAriaLabelProps;
+export type ButtonLinkProps =
+  | ButtonLinkChildrenProps
+  | ButtonLinkAriaLabelProps;
 
-interface ButtonBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
   icon?: ReactNode;
   iconType?: "right" | "left" | "only";
   buttonType?: "primary" | "secondary" | "tertiary";
 }
 
-interface ButtonAriaLabelProps extends ButtonBaseProps {
+interface ButtonLinkAriaLabelProps extends ButtonLinkBaseProps {
   "aria-label": string;
 }
 
-interface ButtonChildrenProps extends ButtonBaseProps {
+interface ButtonLinkChildrenProps extends ButtonLinkBaseProps {
   children: ReactNode;
 }
 
