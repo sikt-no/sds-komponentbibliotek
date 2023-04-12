@@ -1,5 +1,6 @@
 import React, {
   cloneElement,
+  isValidElement,
   KeyboardEvent,
   ReactElement,
   ReactNode,
@@ -94,7 +95,8 @@ export const Tab = ({
       {badge && (
         <div className="sds-tabs__tab-badge">
           {isSelected
-            ? cloneElement(badge as ReactElement, { visibility: "high" })
+            ? isValidElement(badge) &&
+              cloneElement(badge as ReactElement, { visibility: "high" })
             : badge}
         </div>
       )}

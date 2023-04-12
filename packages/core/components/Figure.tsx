@@ -2,6 +2,7 @@ import React, {
   Children,
   cloneElement,
   HTMLAttributes,
+  isValidElement,
   ReactElement,
   ReactNode,
 } from "react";
@@ -33,9 +34,11 @@ export const Figure = ({
 
   return (
     <figure className="sds-figure" {...rest}>
-      {Children.map(children, (child) =>
-        addClassToChildren(child as ReactElement)
-      )}
+      {Children.map(children, (child) => {
+        if (isValidElement(child)) {
+          return addClassToChildren(child as ReactElement);
+        }
+      })}
       {figCaption && (
         <figcaption className="sds-figure__caption">{figCaption}</figcaption>
       )}
