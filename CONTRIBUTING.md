@@ -1,20 +1,18 @@
 # Contributing
 
-**Table of contents**
-
-1. [Code of conduct](#code-of-conduct)
-1. [Feedback](#feedback)
-1. [Design](#design)
-1. [Development](#development)
-   1. [Architecture](#architecture)
-   1. [Setup](#setup)
-   1. [Change request](#change-request)
-   1. [Creating a new component](#creating-a-new-component)
-   1. [Workflow](#workflow)
+- [Code of conduct](#code-of-conduct)
+- [Feedback](#feedback)
+- [Design](#design)
+- [Development](#development)
+  - [Architecture](#architecture)
+  - [Setup](#setup)
+  - [Change request](#change-request)
+  - [Creating a new component](#creating-a-new-component)
+  - [Workflow](#workflow)
 
 ## Code of conduct
 
-Be nice! 🙂  
+Be nice! 😊  
 _">0.1 ratio smileys to text"_ -developer @Sikt
 
 ## Feedback
@@ -35,14 +33,14 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issu
 
 #### Naming
 
-Sikt Design System acronym `sds` is used as prefix for packages, classes and so on. It is used as a suffix for config packages since that is convention and a requirement for some configs.  
-Sikt scope `@sikt` is used on packages to link them to our organization on NPM.  
-Keep directory names kebab-case while component names PascalCase.
+- Sikt Design System's acronym, `sds`, is used as prefix for packages, classes and so on. It is used as a suffix for config packages since that is convention and a requirement for some configs.
+- Sikt scope `@sikt` is used on packages to link them to our organization on NPM.
+- Keep directory names kebab-case while component names PascalCase.
 
 #### Monorepo
 
 This is a monorepo where all directories in `/packages/*` are seperate packages with their own `package.json` & `README.md`.  
-The reasoning behind multiple packages is micro architecture. So that a breaking change to one package won't affect consumers of other packages.
+The reasoning behind multiple packages is rooted in micro architecture. This way, a single breaking change to one package won't affect consumers of other packages.
 
 #### Documentation
 
@@ -51,17 +49,19 @@ Create interactive examples with [Storybook](https://storybook.js.org/docs/react
 
 #### Accessibility
 
-[Accessibility](./docs/A11Y.md)
+See [Accessibility](./docs/A11Y.md)
 
 #### Stylesheets
 
-Do not use element selectors for styling since these effect global styles and elements used may change.  
-Follow [BEM](https://getbem.com/naming/) (Block, Element, Modifier) naming convention for style scoping to a specific component.  
-Use a prefix `sds` on selector class names to avoid collision with others selectors:
+- Do not use element selectors for styling since these affect global styles and elements used may change.
+- Follow [BEM](https://getbem.com/naming/) (Block, Element, Modifier) naming convention for style scoping to a specific component.
+- Use a prefix `sds` on selector class names to avoid collision with other selectors
+
+Example:
 
 ```css
 .sds-<package-name > {
-  /* styles */
+  /* styling */
   &__<element > {
   }
   &--<modifier > {
@@ -69,11 +69,12 @@ Use a prefix `sds` on selector class names to avoid collision with others select
 }
 ```
 
-PostCSS is used to allow usage of future CSS specs, like [nesting modules](https://www.w3.org/TR/css-nesting-1/) & [custom media queries](https://www.w3.org/TR/mediaqueries-5/#custom-mq).
+PostCSS is used to allow usage of future CSS specs, like [nesting modules](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting#readme) & [custom media queries](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media#readme).
 
 #### React
 
-Write unit tests for component APIs & features to make it easier to make future changes and build trust with consumers. Currently we have a [80% coverage rule](./jest.config.js). Make sure to test what is important!  
+Write unit tests for component APIs & features to make it easier to make future changes and build trust with consumers. Currently we have an [80% coverage rule](./jest.config.js). Make sure to test the important things!
+
 _TODO: Screenshot testing with Playwright._
 
 #### Build
@@ -96,18 +97,19 @@ Open an issue on Gitlab and/or talk to us. We are here to help!
 
 See [Example](./packages/__example__) component for base setup.
 
-Init package:
+Initialize a package:
 
 ```sh
 npm init -y -w ./packages/<package-name>
 ```
 
-Add the following to package `package.json`:
+Add the following to the package's `package.json`:
 
 ```json
 "name": "@sikt/sds-<package-name>",
 "version": "0.1.0",
 "license": "UNLICENSED",
+"main": "dist/index.js",
 "module": "dist/index.js",
 "types": "dist/index.d.ts",
 "style": "dist/index.css",
@@ -119,15 +121,13 @@ Add the following to package `package.json`:
 }
 ```
 
-If you have custom build need this build script and entry points may vary.  
+If you have custom build needs, the build script and entry points may vary.  
 Run `npm i` in root to hoist dependencies.  
 Export the component from `index.ts` as this is the input for the [build](./rollup.config.mjs).  
 Create a `README.md` for documentation both near code and for import in Storybook.  
 Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
 
-#### Tips
-
-- Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link)
+:information: _Tip:_ Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link)
 
 ### Workflow
 
@@ -142,9 +142,7 @@ Keep the history clean with one single commit per feature.
 **Note** How you commit while working is not important as long as you clean up before creating a merge request.  
 **Note** Package versions will be bumped based on commit types and commit messages will end up in the changelog.
 
-##### Tips
-
-- Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
+:information: _Tip:_ Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 
 #### Merge request
 
@@ -153,9 +151,7 @@ Review comments are closed by the reviewer & not the branch owner.
 Rebase before merge so that your commits end up on top of the history.  
 **Note** Storybook is published to URL `<review-environment>/komponenter/`
 
-##### Tips
-
-- Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
+:information: _Tip:_ Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
 
 #### Publish
 
@@ -166,22 +162,24 @@ Bump package versions & generate change log based on commit history with [Standa
 npm run release --package=<package-name>
 ```
 
-**Note** You can always edit the changelog and commit before pushing if need be.  
+**Note** You can always edit the changelog and commit before pushing if need be.
+
 Push tags:
 
 ```sh
 git push --follow-tags
 ```
 
-Open a merge request. When approved and merged publish package to registry:  
+Open a merge request. When approved and merged publish package to registry:
+
 _TODO: Add publish step to CI-pipeline._
 
 ```sh
 npm publish --workspace=packages/<package-name> --access public
 ```
 
-#### Tips
+:information: _Tips:_
 
-- Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link) before you publish to registry
-- Test the effect of scripts with the flag `-- --dry-run`
-- For a package first release skip version bump with the flag `-- --first-release`
+> - Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link) before you publish to registry
+> - Test the effect of scripts with the flag `-- --dry-run`
+> - For a package first release skip version bump with the flag `-- --first-release`

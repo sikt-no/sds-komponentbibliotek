@@ -12,7 +12,7 @@ npm i -s @sikt/sds-core @sikt/sds-<package-name>
 
 ### Core & Design Tokens
 
-Import [@sikt/sds-core](./packages/core/) package which among other things contain stylesheet reset, font family and [Design Tokens](./packages/core/README.md#design-tokens) from which other packages are based:
+Import the [@sikt/sds-core](./packages/core/) package. It contains, among other things, a stylesheet reset, font family and [Design Tokens](./packages/core/README.md#design-tokens), on which other packages are based.
 
 ```css
 @import url("@sikt/sds-core");
@@ -24,16 +24,18 @@ Import [@sikt/sds-core](./packages/core/) package which among other things conta
 
 Import component & stylesheet:
 
-```js
+```jsx
 import { PrimaryButton } from "@sikt/sds-button";
 import "@sikt/sds-button/dist/index.css";
 
-<PrimaryButton>Hello, World!</PrimaryButton>;
+return (
+  <PrimaryButton>Hello, World!</PrimaryButton>;
+);
 ```
 
 ### Vue
 
-See custom markup below or [Vue component example](./docs/VUE.md).
+See custom markup below or go to the [Vue component example](./docs/VUE.md).
 
 ### Stylesheets & custom markup
 
