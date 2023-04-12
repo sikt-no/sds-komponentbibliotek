@@ -1,18 +1,5 @@
 .sds-sikt-header {
-  &__tab {
-    display: flex;
-  }
-
-  &__tab-link {
-    color: inherit;
-    text-decoration: none;
-  }
-
   .sds-sikt-header__tab-list {
     margin: 0;
-  }
-
-  .sds-sikt-header__tab-item {
-    display: inline-flex;
   }
 }
