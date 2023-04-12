@@ -1,5 +1,6 @@
 import React, { HTMLAttributes, ElementType } from "react";
 import clsx from "clsx";
+import { ButtonLink } from "@sikt/sds-button";
 import { ArrowRightIcon } from "@sikt/sds-icons";
 import "./inline.pcss";
 
@@ -36,13 +37,14 @@ export const Inline = ({
       <div className="sds-content-block-inline__content">
         <H className="sds-typography-heading--small">{headingText}</H>
         {text && <p className="sds-typography-body--regular">{text}</p>}
-        <a
+        <ButtonLink
+          buttonType="secondary"
           href={linkHref}
-          className="sds-button sds-button--secondary sds-content-block-inline__link"
+          className="sds-content-block-inline__link"
+          icon={<ArrowRightIcon />}
         >
-          <span className="sds-button__label">{linkText}</span>
-          <ArrowRightIcon />
-        </a>
+          {linkText}
+        </ButtonLink>
       </div>
     </div>
   );

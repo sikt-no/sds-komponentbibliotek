@@ -1,5 +1,6 @@
 import React, { HTMLAttributes, ElementType } from "react";
 import clsx from "clsx";
+import { ButtonLink } from "@sikt/sds-button";
 import { ArrowRightIcon } from "@sikt/sds-icons";
 import "./featured.pcss";
 
@@ -53,13 +54,14 @@ export const Featured = ({
         )}
         <H className="sds-typography-heading--component">{headingText}</H>
         {text && <p className="sds-typography-body--normal">{text}</p>}
-        <a
+        <ButtonLink
+          buttonType="secondary"
           href={linkHref}
-          className="sds-button sds-button--secondary sds-content-block-featured__link"
+          className="sds-content-block-featured__link"
+          icon={<ArrowRightIcon />}
         >
-          <span className="sds-button__label">{linkText}</span>
-          <ArrowRightIcon />
-        </a>
+          {linkText}
+        </ButtonLink>
       </div>
     </div>
   );
