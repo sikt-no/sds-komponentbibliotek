@@ -19,7 +19,7 @@
     "@sikt/sds-icons": "^1.0.0",
     "@sikt/sds-list": "^1.0.0",
     "@sikt/sds-logo": "^1.0.0",
-    "@sikt/sds-tabs": "^0.1.0",
+    "@sikt/sds-tabs": "^1.0.0",
     "canvas-confetti": "^1.6.0",
     "gatsby": "^5.8.0",
     "gatsby-plugin-manifest": "^5.8.0",
