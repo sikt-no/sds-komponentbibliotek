@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@0.2.1...@sikt/sds-pagination@1.0.0) (2023-04-13)
+
+### ⚠ BREAKING CHANGES
+
+- **pagination:** change aria-label prop syntax
+
+### Features
+
+- **pagination:** update to new icons ([c9e70c6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c9e70c639552c7aa6d0118f29b43e107cf03fb0d))
+
+### Bug Fixes
+
+- **deps:** update sds-core to version 1 ([0e6e326](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0e6e3260dd1bd7cbfcfa35b708ffe921ac0bceef))
+- **tabs:** change default for select on focus to false ([228677f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/228677fb618020baf489e4bcd8986e75aaa484dc))
+
+- **pagination:** change aria-label prop syntax ([0dc8fd1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0dc8fd1a218549d1812143384e69877ca490cfe1))
+
 ### [0.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@0.2.0...@sikt/sds-pagination@0.2.1) (2023-03-07)
 
 ### Bug Fixes
