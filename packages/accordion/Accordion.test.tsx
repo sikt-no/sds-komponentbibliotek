@@ -1,5 +1,6 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { Accordion } from "./Accordion";
 
@@ -37,7 +38,8 @@ describe("Accordion", () => {
       expect(getByText("Content")).toBeInTheDocument();
     });
 
-    it("toggles the content when the accordion title is clicked", () => {
+    it("toggles the content when the accordion title is clicked", async () => {
+      const user = userEvent.setup();
       const label = "Accordion header";
       const content = "Accordion Content";
       const { getByText } = render(
@@ -45,11 +47,32 @@ describe("Accordion", () => {
       );
       const labelNode = getByText(label);
 
-      fireEvent.click(labelNode);
+      await act(async () => {
+        await user.click(labelNode);
+      });
       expect(getByText(content)).toBeVisible();
 
-      fireEvent.click(labelNode);
+      await act(async () => {
+        await user.click(labelNode);
+      });
       expect(getByText(content)).not.toBeVisible();
+    });
+
+    it("calls click handler", async () => {
+      const user = userEvent.setup();
+      const clickHandler = jest.fn();
+      const label = "Accordion header";
+      render(
+        <Accordion title={label} onClick={clickHandler}>
+          Accordion Content
+        </Accordion>
+      );
+
+      await act(async () => {
+        await user.click(screen.getByText(label));
+      });
+
+      expect(clickHandler).toHaveBeenCalled();
     });
   });
 });

@@ -4,28 +4,34 @@ import React, {
   useState,
   useId,
   ElementType,
+  MouseEvent,
 } from "react";
-import { CaretCircleDownIcon, CaretCircleUpIcon } from "@sikt/sds-icons";
+import { CaretCircleDownIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
 import "./accordion.pcss";
 
-export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
+export interface AccordionProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, "onClick"> {
   title: string;
   children: ReactNode;
   className?: string;
   size?: "small" | "large";
+  isExpanded?: boolean;
   headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  onClick?: (e: MouseEvent, isExpanded: boolean) => void;
 }
 
 export const Accordion = ({
   title,
   children,
   className,
+  isExpanded = false,
   size = "large",
   headingLevel = "h3",
+  onClick,
   ...rest
 }: AccordionProps) => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(isExpanded);
   const Heading: ElementType = `${headingLevel}`;
   const id = useId();
 
@@ -39,14 +45,21 @@ export const Accordion = ({
         aria-expanded={expanded}
         aria-controls={`${id}-content`}
         className="sds-accordion__button"
-        onClick={() => setExpanded(!expanded)}
+        onClick={(e) => {
+          const newValue = !expanded;
+          setExpanded(newValue);
+          if (onClick) {
+            onClick(e, newValue);
+          }
+        }}
       >
         <Heading className="sds-accordion__title">{title}</Heading>
-        {expanded ? (
-          <CaretCircleUpIcon className="sds-accordion__icon" />
-        ) : (
-          <CaretCircleDownIcon className="sds-accordion__icon" />
-        )}
+        <CaretCircleDownIcon
+          className={clsx(
+            "sds-accordion__icon",
+            expanded && "sds-accordion__icon--expanded"
+          )}
+        />
       </button>
 
       <div
