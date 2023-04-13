@@ -17,7 +17,7 @@
     "@sikt/sds-footer": "^1.0.0",
     "@sikt/sds-header": "^1.0.0",
     "@sikt/sds-icons": "^1.0.0",
-    "@sikt/sds-list": "^0.1.0",
+    "@sikt/sds-list": "^1.0.0",
     "@sikt/sds-logo": "^1.0.0",
     "@sikt/sds-tabs": "^0.1.0",
     "canvas-confetti": "^1.6.0",
