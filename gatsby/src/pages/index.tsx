@@ -8,7 +8,6 @@ import * as style from "./index.module.css";
 import Contributors from "../components/Contributors";
 import * as tokens from "@sikt/sds-core/dist/tokens/js/tokens.js";
 import { Link } from "@sikt/sds-core/components/Link";
-import { Breadcrumbs, BreadcrumbItem } from "@sikt/sds-breadcrumbs";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [showButton, setShowButton] = useState(false);
@@ -48,11 +47,13 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <>
+      {/*
       <Breadcrumbs aria-label="Brødsmulesti">
         <BreadcrumbItem>
-          <span>Produktutvikling</span>
+          <span>Utviklingsverktøy</span>
         </BreadcrumbItem>
       </Breadcrumbs>
+      */}
 
       <section className={style.sdsSiktIndex__section}>
         <Heading1 headingType="xxlarge">Sikt design&shy;system</Heading1>

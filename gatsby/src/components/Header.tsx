@@ -5,7 +5,7 @@ import * as style from "./header.module.css";
 
 const Header = () => {
   return (
-    <SdsHeader logoText="designsystem" className={style.sdsSiktHeader}>
+    <SdsHeader logoText="design&shy;system" className={style.sdsSiktHeader}>
       <nav aria-label="Navigajon" className="sds-tabs">
         <ul className={`sds-tabs__tab-list ${style.sdsSiktHeader__tabList}`}>
           <li>
