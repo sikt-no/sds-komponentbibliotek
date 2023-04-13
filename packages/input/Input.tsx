@@ -10,6 +10,7 @@ import clsx from "clsx";
 import {
   EnvelopeIcon,
   MagnifyingGlassIcon,
+  PasswordIcon,
   PhoneIcon,
   WarningIcon,
 } from "@sikt/sds-icons";
@@ -92,7 +93,7 @@ const Input = ({
             value={value}
             aria-describedby={`${id}-help-text`}
             aria-invalid={Boolean(errorText)}
-            aria-errormessage={`${id}-help-text`}
+            aria-errormessage={errorText && `${id}-help-text`}
             {...inputProps}
           />
           {iconPosition === "end" && icon && (
@@ -119,8 +120,7 @@ export const EmailInput = (props: InputProps) => (
   <Input type="email" icon={<EnvelopeIcon />} {...props} />
 );
 export const PasswordInput = (props: InputProps) => (
-  // TODO: Needs icon
-  <Input type="password" {...props} />
+  <Input type="password" icon={<PasswordIcon />} {...props} />
 );
 export const TelInput = (props: InputProps) => (
   <Input type="tel" icon={<PhoneIcon />} {...props} />
