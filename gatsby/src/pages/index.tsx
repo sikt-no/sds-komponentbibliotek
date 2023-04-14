@@ -107,11 +107,10 @@ const IndexPage: React.FC<PageProps> = () => {
             <Link href="https://www.npmjs.com/search?q=%40sikt" target="_blank">
               npmjs
             </Link>
-            . Linker til disse finner du nederst på denne siden. Å bygge et godt
-            komponentbibliotek for Sikt vil være en laginnsats, der alle team er
-            velkomne til å bidra inn. Det har allerede kommet inn mange gode
-            bidrag fra ulike team, og vi håper at enda flere team ønsker å koble
-            seg på fremover!
+            . Å bygge et godt komponentbibliotek for Sikt vil være en
+            laginnsats, der alle team er velkomne til å bidra inn. Det har
+            allerede kommet inn mange gode bidrag fra ulike team, og vi håper at
+            enda flere team ønsker å koble seg på fremover!
           </p>
 
           <section>
