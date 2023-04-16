@@ -84,7 +84,7 @@
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.1",
     "prettier": "2.8.7",
-    "rimraf": "^4.4.0",
+    "rimraf": "^5.0.0",
     "rollup": "^3.19.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
