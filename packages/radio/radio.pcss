@@ -2,8 +2,9 @@
   --sds-radio-border-color: var(--sds-color-surface-neutral);
   --sds-radio-background-color: var(--sds-color-surface-action);
 
-  display: flex;
   align-items: center;
+  cursor: pointer;
+  display: flex;
 
   &__input {
     appearance: none;
@@ -20,11 +21,6 @@
     &-label {
       padding: var(--sds-size-base-s) var(--sds-size-base-xs);
       line-height: var(--sds-size-text-m);
-      cursor: pointer;
-    }
-
-    &:disabled ~ &-label {
-      cursor: inherit;
     }
 
     &:checked {
@@ -78,5 +74,9 @@
       --sds-radio-border-color: var(--sds-color-surface-danger-active);
       --sds-radio-background-color: var(--sds-color-surface-danger-active);
     }
+  }
+
+  &:has(&__input:disabled) {
+    cursor: inherit;
   }
 }
