@@ -11,6 +11,7 @@ npm i -s @sikt/sds-content-block
 ```js
 import { Featured } from "@sikt/sds-content-block";
 import "@sikt/sds-content-block/dist/index.css";
+import "@sikt/sds-button/dist/index.css";
 
 <Featured
   headingLevel="h2"
@@ -30,6 +31,7 @@ Import stylesheet:
 
 ```css
 @import url("@sikt/sds-content-block");
+@import url("@sikt/sds-button");
 ```
 
 Create custom markup:

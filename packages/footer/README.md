@@ -11,6 +11,7 @@ npm i -s @sikt/sds-footer
 ```js
 import { Footer } from "@sikt/sds-footer";
 import "@sikt/sds-footer/dist/index.css";
+import "@sikt/sds-logo/dist/index.css";
 
 <Footer>{/*content goes here*/}</Footer>;
 ```
@@ -21,6 +22,7 @@ Import stylesheet:
 
 ```css
 @import url("@sikt/sds-footer");
+@import url("@sikt/sds-logo");
 ```
 
 Create custom markup:

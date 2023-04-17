@@ -11,6 +11,7 @@ npm i -s @sikt/sds-section
 ```js
 import { Section } from "@sikt/sds-section";
 import "@sikt/sds-section/dist/index.css";
+import "@sikt/sds-button/dist/index.css";
 
 <Section
   headingLevel="h2"
@@ -26,6 +27,7 @@ Import stylesheet:
 
 ```css
 @import url("@sikt/sds-section");
+@import url("@sikt/sds-button");
 ```
 
 Create custom markup:

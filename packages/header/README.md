@@ -11,6 +11,7 @@ npm i -s @sikt/sds-header
 ```js
 import { Header } from "@sikt/sds-header";
 import "@sikt/sds-header/dist/index.css";
+import "@sikt/sds-logo/dist/index.css";
 
 <Header>{/*content goes here*/}</Header>;
 ```
@@ -21,6 +22,7 @@ Import stylesheet:
 
 ```css
 @import url("@sikt/sds-header");
+@import url("@sikt/sds-logo");
 ```
 
 Create custom markup:
