@@ -1,0 +1,27 @@
+.sds-radio-fieldset {
+  --sds-radio-fieldset-label-color: var(--sds-color-text-neutral);
+
+  &__legend,
+  &__help-text {
+    font-size: var(--sds-size-text-s);
+    line-height: var(--sds-size-text-s1);
+    color: var(--sds-radio-fieldset-label-color);
+  }
+
+  &__legend {
+    padding: var(--sds-size-base-xs);
+  }
+
+  &__help-text {
+    padding: var(--sds-size-padding-small);
+  }
+
+  &--error {
+    --sds-radio-fieldset-label-color: var(--sds-color-text-danger);
+  }
+
+  &__legend-error-icon {
+    font-size: var(--sds-size-text-s1);
+    margin-right: var(--sds-size-base-xs);
+  }
+}

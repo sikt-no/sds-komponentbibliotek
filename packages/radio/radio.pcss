@@ -1,0 +1,82 @@
+.sds-radio {
+  --sds-radio-border-color: var(--sds-color-surface-neutral);
+  --sds-radio-background-color: var(--sds-color-surface-action);
+
+  display: flex;
+  align-items: center;
+
+  &__input {
+    appearance: none;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    width: var(--sds-size-base-m);
+    height: var(--sds-size-base-m);
+    background: var(--sds-color-surface-default);
+    border: var(--sds-border-size-regular) solid var(--sds-radio-border-color);
+    padding: 0;
+    margin: var(--sds-size-base-s);
+
+    &-label {
+      padding: var(--sds-size-base-s) var(--sds-size-base-xs);
+      line-height: var(--sds-size-text-m);
+      cursor: pointer;
+    }
+
+    &:disabled ~ &-label {
+      cursor: inherit;
+    }
+
+    &:checked {
+      border-color: transparent;
+      background: var(--sds-radio-background-color);
+
+      &::before {
+        content: "";
+        display: block;
+        border-radius: 50%;
+        width: var(--sds-size-base-s);
+        height: var(--sds-size-base-s);
+        background: var(--sds-color-text-onsurface-action);
+      }
+    }
+
+    &:hover {
+      --sds-radio-border-color: var(--sds-color-surface-neutral-hover);
+      --sds-radio-background-color: var(--sds-color-surface-action-hover);
+    }
+
+    &:active {
+      --sds-radio-border-color: var(--sds-color-surface-neutral-active);
+      --sds-radio-background-color: var(--sds-color-surface-action-active);
+    }
+
+    &:focus-visible {
+      --sds-radio-border-color: transparent;
+
+      outline-offset: 0;
+      outline: var(--sds-outline);
+    }
+  }
+
+  &-text {
+    font-size: var(--sds-size-text-s1);
+    line-height: var(--sds-size-text-m);
+    color: var(--sds-color-text-default);
+  }
+
+  &--error &__input {
+    --sds-radio-border-color: var(--sds-color-surface-danger);
+    --sds-radio-background-color: var(--sds-color-surface-danger);
+
+    &:hover {
+      --sds-radio-border-color: var(--sds-color-surface-danger-hover);
+      --sds-radio-background-color: var(--sds-color-surface-danger-hover);
+    }
+
+    &:active {
+      --sds-radio-border-color: var(--sds-color-surface-danger-active);
+      --sds-radio-background-color: var(--sds-color-surface-danger-active);
+    }
+  }
+}
