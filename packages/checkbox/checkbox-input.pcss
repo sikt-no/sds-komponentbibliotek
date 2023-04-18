@@ -1,0 +1,104 @@
+.sds-checkbox {
+  --sds-checkbox-background-color: var(--sds-color-background-default);
+  --sds-checkbox-border-color: var(--sds-color-surface-neutral);
+  --sds-checkbox-margin-space: var(--sds-size-base-s);
+  --sds-checkbox-label-padding: var(--sds-size-base-s) var(--sds-size-base-xs);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+
+  &:has(&__input:disabled) {
+    cursor: inherit;
+  }
+
+  &__label {
+    padding: var(--sds-checkbox-label-padding);
+    line-height: var(--sds-size-base-m);
+  }
+
+  &__input {
+    appearance: none;
+    box-sizing: border-box;
+    width: var(--sds-size-base-m);
+    height: var(--sds-size-base-m);
+    border-radius: var(--sds-border-radius-small);
+    border: var(--sds-border-size-regular) solid
+      var(--sds-checkbox-border-color);
+    outline: none;
+    background-color: var(--sds-checkbox-background-color);
+    transition: opacity 0.4s ease;
+    margin: var(--sds-checkbox-margin-space);
+
+    &:hover {
+      --sds-checkbox-border-color: var(--sds-color-surface-neutral-hover);
+    }
+
+    &:focus-visible {
+      outline: var(--sds-outline);
+      outline-offset: 0;
+    }
+
+    &:active {
+      --sds-checkbox-background-color: var(--sds-color-surface-action-active);
+      --sds-checkbox-border-color: var(--sds-color-surface-neutral-active);
+    }
+
+    &:checked {
+      --sds-checkbox-border-color: transparent;
+      --sds-checkbox-background-color: var(--sds-color-surface-action);
+
+      &:hover,
+      &:focus {
+        --sds-checkbox-border-color: transparent;
+        --sds-checkbox-background-color: var(--sds-color-surface-action-hover);
+      }
+
+      &.sds-checkbox__input--error {
+        --sds-checkbox-background-color: var(--sds-color-surface-danger);
+
+        &:hover,
+        &:active {
+          --sds-checkbox-background-color: var(--sds-color-surface-danger);
+        }
+      }
+    }
+
+    &--error {
+      --sds-checkbox-background-color: var(--sds-color-background-default);
+      --sds-checkbox-border-color: var(--sds-color-surface-danger);
+
+      &:hover {
+        --sds-checkbox-border-color: var(--sds-color-surface-danger);
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    place-content: center;
+    width: var(--sds-size-base-m);
+    height: var(--sds-size-base-m);
+    position: absolute;
+    margin: var(--sds-checkbox-margin-space);
+
+    &:focus-visible {
+      border-color: transparent;
+    }
+  }
+
+  &__icon {
+    pointer-events: none;
+    position: absolute;
+    margin-top: 2px;
+    color: var(--sds-color-background-default);
+    font-size: var(--sds-size-text-s2);
+    display: none;
+
+    &--checked {
+      display: block;
+    }
+  }
+}
