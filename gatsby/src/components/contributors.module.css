@@ -1,8 +1,14 @@
 .sds-sikt-contributors {
+  --sikt-animation-color: 204 0 112;
+
   display: flex;
   flex-flow: wrap;
   justify-content: center;
   text-align: center;
+
+  @media (prefers-color-scheme: dark) {
+    --sikt-animation-color: 255 0 140;
+  }
 
   &__contributor {
     padding: var(--sds-size-padding-medium);
@@ -29,15 +35,15 @@
 
   @keyframes pulse {
     0% {
-      box-shadow: 0 0 0 0 rgba(204 0 112 / 70%);
+      box-shadow: 0 0 0 0 rgb(var(--sikt-animation-color) / 100%);
     }
 
     70% {
-      box-shadow: 0 0 0 10px rgba(204 0 112 / 0%);
+      box-shadow: 0 0 0 10px rgb(var(--sikt-animation-color) / 0%);
     }
 
     100% {
-      box-shadow: 0 0 0 0 rgba(204 0 112 / 0%);
+      box-shadow: 0 0 0 0 rgb(var(--sikt-animation-color) / 0%);
     }
   }
 }
