@@ -1,4 +1,5 @@
 import "../../packages/core/index.pcss";
+import "./style.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
