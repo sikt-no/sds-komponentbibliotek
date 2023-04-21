@@ -9,8 +9,9 @@ npm i -s @sikt/sds-breadcrumbs
 ### React
 
 ```js
-import { Breadcrumbs } from "@sikt/sds-breadcrumbs";
+import { Breadcrumbs, BreadcrumbItem } from "@sikt/sds-breadcrumbs";
 import "@sikt/sds-breadcrumbs/dist/index.css";
+import "@sikt/sds-icons/dist/index.css";
 
 <Breadcrumbs />;
 ```
