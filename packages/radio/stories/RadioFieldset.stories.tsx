@@ -24,7 +24,7 @@ const Template: Story<RadioFieldsetProps> = (args) => {
     <RadioFieldset
       {...args}
       value={value}
-      onChange={(val) => setArgs({ value: val })}
+      onChange={(val) => setArgs({ value: val.target.value })}
     />
   );
 };
