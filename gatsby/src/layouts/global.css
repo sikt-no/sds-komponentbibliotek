@@ -8,13 +8,3 @@
 @import url("@sikt/sds-tabs");
 @import url("@sikt/sds-breadcrumbs");
 @import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
-
-.sds-sikt-header {
-  .sds-logo {
-    font-size: var(--sds-size-text-s2);
-
-    @media (--sds-breakpoint-tablet) {
-      font-size: calc(28rem / 16);
-    }
-  }
-}
