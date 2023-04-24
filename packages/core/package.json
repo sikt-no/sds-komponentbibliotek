@@ -2,7 +2,7 @@
   "name": "@sikt/sds-core",
   "version": "1.0.0",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "style": "dist/index.css",

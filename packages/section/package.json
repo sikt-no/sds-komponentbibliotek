@@ -2,6 +2,7 @@
   "name": "@sikt/sds-section",
   "version": "1.0.0",
   "license": "UNLICENSED",
+  "main": "dist/cjs/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "style": "dist/index.css",

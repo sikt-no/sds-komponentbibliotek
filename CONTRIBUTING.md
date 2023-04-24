@@ -109,7 +109,7 @@ Add the following to the package's `package.json`:
 "name": "@sikt/sds-<package-name>",
 "version": "0.1.0",
 "license": "UNLICENSED",
-"main": "dist/index.js",
+"main": "dist/cjs/index.js",
 "module": "dist/index.js",
 "types": "dist/index.d.ts",
 "style": "dist/index.css",

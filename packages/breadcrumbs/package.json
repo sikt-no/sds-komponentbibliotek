@@ -1,7 +1,7 @@
 {
   "name": "@sikt/sds-breadcrumbs",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "style": "dist/index.css",

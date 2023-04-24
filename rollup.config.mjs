@@ -10,11 +10,18 @@ import terser from "@rollup/plugin-terser";
 
 export default defineConfig({
   input: "index.ts",
-  output: {
-    dir: "dist",
-    format: "esm",
-    sourcemap: true,
-  },
+  output: [
+    {
+      dir: "dist",
+      format: "esm",
+      sourcemap: true,
+    },
+    {
+      dir: "dist/cjs",
+      format: "cjs",
+      sourcemap: true,
+    },
+  ],
   plugins: [
     nodeResolve(),
     peerDepsExternal(),
