@@ -49,7 +49,7 @@ export const RadioInputBase = ({
         type="radio"
         onChange={onChange}
         value={value}
-        checked={checked}
+        checked={checked ?? undefined}
         {...inputProps}
       />
       <div className="sds-radio__input-label">{label}</div>

@@ -21,7 +21,7 @@ describe("RadioGroup", () => {
   });
 
   describe("api", () => {
-    it(`radio group should render`, async () => {
+    it("radio group should render", async () => {
       render(
         <RadioFieldset legend="Foo" data-testid="test">
           <RadioInput label="Radio 1" value="1" />
@@ -34,9 +34,9 @@ describe("RadioGroup", () => {
       expect(screen.getByTestId("test")).toBeInTheDocument();
     });
 
-    it(`selected radio button should be checked`, async () => {
+    it("selected radio button should be checked", async () => {
       render(
-        <RadioFieldset legend="Foo" value="2">
+        <RadioFieldset legend="Foo" value="2" onChange={jest.fn()}>
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />

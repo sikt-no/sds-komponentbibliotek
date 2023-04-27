@@ -13,7 +13,8 @@ export interface RadioInputProps
 export const RadioInput = (props: RadioInputProps) => {
   const { value: valueContext, ...context } = useRadioFieldset() ?? {};
 
-  const checked = valueContext ? valueContext === props.value : false;
+  const checked =
+    valueContext && valueContext === props.value ? true : undefined;
 
   return <RadioInputBase {...context} {...props} checked={checked} />;
 };

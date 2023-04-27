@@ -21,8 +21,8 @@ describe("CheckboxFieldset", () => {
 
   describe("api", () => {
     it("checkbox fieldset should render", async () => {
-      const { container } = render(
-        <CheckboxFieldset legend="Foo" data-testId="test">
+      render(
+        <CheckboxFieldset legend="Foo" data-testid="test">
           <CheckboxInput label="checkbox 1" />
           <CheckboxInput label="checkbox 2" />
           <CheckboxInput label="checkbox 3" />
