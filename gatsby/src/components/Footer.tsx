@@ -25,16 +25,6 @@ const Footer = () => {
               #komponenter
             </Link>
           </ListItem>
-          <ListItem>
-            Teams{" "}
-            <Link
-              href="https://teams.microsoft.com/l/channel/19%3a82f3200166fe4d478fcbbdf601156a04%40thread.tacv2/Designsystem?groupId=df522351-7400-437c-8afb-110611f841fa&tenantId=cb342146-7965-425e-83ab-88f8ecb99e0d"
-              target="_blank"
-              aria-label="Teams Designsystem"
-            >
-              Designsystem
-            </Link>
-          </ListItem>
         </UnorderedList>
       </div>
     </SdsFooter>
