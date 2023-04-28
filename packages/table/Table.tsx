@@ -28,13 +28,18 @@ export const Table = ({
       {...wrapperProps}
     >
       <table className="sds-table__table" {...rest}>
-        {hideCaption ? (
-          <ScreenReaderOnly>{caption}</ScreenReaderOnly>
-        ) : (
-          <caption className="sds-table__caption sds-typography-heading--paragraph">
-            {caption}
-          </caption>
-        )}
+        <caption
+          className={clsx(
+            !hideCaption &&
+              "sds-table__caption sds-typography-heading--paragraph"
+          )}
+        >
+          {hideCaption ? (
+            <ScreenReaderOnly>{caption}</ScreenReaderOnly>
+          ) : (
+            caption
+          )}
+        </caption>
 
         {children}
       </table>

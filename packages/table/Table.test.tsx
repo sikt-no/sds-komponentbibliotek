@@ -1,12 +1,13 @@
 import { render, screen, within } from "@testing-library/react";
 import { axe } from "jest-axe";
 import React from "react";
-import { Table } from "./Table";
+import { InlineTable, Table } from "./Table";
 import { TableHead } from "./TableHead";
 import { TableBody } from "./TableBody";
 import { TableRow } from "./TableRow";
 import { TableHeader } from "./TableHeader";
 import { TableCell } from "./TableCell";
+import { TableFoot } from "./TableFoot";
 
 describe("Table", () => {
   describe("a11y", () => {
@@ -33,6 +34,12 @@ describe("Table", () => {
               <TableCell>21</TableCell>
             </TableRow>
           </TableBody>
+          <TableFoot>
+            <TableRow>
+              <TableCell>Summary</TableCell>
+              <TableCell>98</TableCell>
+            </TableRow>
+          </TableFoot>
         </Table>
       );
 
@@ -41,12 +48,20 @@ describe("Table", () => {
   });
 
   describe("api", () => {
-    it(`should render`, async () => {
+    it("should render", async () => {
       render(<Table caption="Caption" />);
 
       const table = screen.getByRole("table");
-      expect(table.parentElement).toHaveClass(`sds-table`);
-      expect(table).toHaveClass(`sds-table__table`);
+      expect(table.parentElement).toHaveClass("sds-table");
+      expect(table).toHaveClass("sds-table__table");
+    });
+
+    it("should render", async () => {
+      render(<InlineTable caption="Caption" />);
+
+      const table = screen.getByRole("table");
+      expect(table.parentElement).toHaveClass("sds-table sds-table--inline");
+      expect(table).toHaveClass("sds-table__table");
     });
 
     it("should have class name", async () => {
