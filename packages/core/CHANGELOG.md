@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@1.0.0...@sikt/sds-core@1.0.1) (2023-04-28)
+
+### Bug Fixes
+
+- validate element before cloning ([d108acf](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d108acf790e8a932fb668469788976b3627d3ab4)), closes [#94](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/94)
+
 ## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@0.3.0...@sikt/sds-core@1.0.0) (2023-04-11)
 
 ### Features
