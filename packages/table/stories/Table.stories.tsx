@@ -16,7 +16,11 @@ export default {
   title: "Components/Table",
   component: Table,
   subcomponents: { TableHead, TableHeader, TableFoot, TableCell, TableRow },
-  args: { caption: "Table title", footerText: "Viser 2 av 248 linjer" },
+  args: {
+    caption: "Table title",
+    footerText: "Viser 2 av 248 linjer",
+    "aria-rowcount": "248",
+  },
 } as Meta;
 
 export const Default: Story<TableProps> = (args) => (
