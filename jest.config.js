@@ -15,6 +15,12 @@ module.exports = {
       lines: 80,
       statements: 80,
     },
+    "./packages/**/*.tsx": {
+      branches: 65,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   moduleNameMapper: {
