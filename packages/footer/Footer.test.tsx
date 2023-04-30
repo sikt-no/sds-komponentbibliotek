@@ -46,5 +46,15 @@ describe("Footer", () => {
         })
       ).toBeInTheDocument();
     });
+
+    it("should not have link", async () => {
+      render(<Footer logoHref="">Foo</Footer>);
+
+      expect(
+        screen.queryByRole("link", {
+          name: "Sikt Kunnskapssektorens tjenesteleverandør",
+        })
+      ).not.toBeInTheDocument();
+    });
   });
 });
