@@ -12,6 +12,7 @@ export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
     | "overline";
   className?: string;
   children: ReactNode;
+  isDynamic?: boolean;
 }
 
 interface HeadingLevels {
@@ -23,6 +24,7 @@ const Heading = ({
   headingLevel,
   headingType,
   className,
+  isDynamic = false,
   ...rest
 }: HeadingProps & HeadingLevels) => {
   const H: ElementType = `h${headingLevel}`;
@@ -33,6 +35,7 @@ const Heading = ({
       className={clsx(
         "sds-typography-heading",
         `sds-typography-heading--${headingType}`,
+        isDynamic && "sds-typography-heading--dynamic",
         className
       )}
     >
