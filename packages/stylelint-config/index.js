@@ -12,6 +12,7 @@ module.exports = {
       "^(?<block>(?:[a-z][a-z0-9]*)(?:-[a-z0-9]+)*)(?<element>(?:__[a-z][a-z0-9]*(?:-[a-z0-9]+)*))?(?<modifier>(?:--[a-z][a-z0-9]*)(?:-[a-z0-9]+)*)?$",
       {
         resolveNestedSelectors: true,
+        message: "selector should be written in BEM format",
       },
     ],
   },
