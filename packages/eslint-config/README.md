@@ -6,9 +6,9 @@
 npm i -D @sikt/eslint-config-sds
 ```
 
-### Config
+### Extend
 
-`.eslintrc.js`
+In `.eslintrc.js`:
 
 ```json
 "eslintConfig": {

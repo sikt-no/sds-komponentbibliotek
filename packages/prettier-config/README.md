@@ -6,19 +6,19 @@
 npm i -D @sikt/prettier-config-sds
 ```
 
-### Config
+### Extend
 
-`prettier.config.js`
+In `prettier.config.js`:
 
 ```js
 module.exports = "@sikt/prettier-config-sds";
 ```
 
-#### Extend
+#### Custom rules
 
 ```js
 module.exports = {
-  ...require("packages/prettier-config"),
-  // product custom rules
+  ...require("@sikt/prettier-config-sds"),
+  // custom rules
 };
 ```

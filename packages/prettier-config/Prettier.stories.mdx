@@ -1,5 +1,12 @@
 import Readme from "./README.md";
+import * as config from "!!raw-loader!./index";
 
 <Meta title="Config/Prettier" />
 
 <Readme />
+
+## Config
+
+<Canvas>
+  <code className="language-js">{config.default}</code>
+</Canvas>

@@ -6,9 +6,9 @@
 npm i -D @sikt/browserslist-config-sds
 ```
 
-### Config
+### Extend
 
-`package.json`
+In `package.json`:
 
 ```json
 "browserslist": ["extends @sikt/browserslist-config-sds"]

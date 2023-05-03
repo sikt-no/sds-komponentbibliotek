@@ -6,9 +6,9 @@
 npm i -D @sikt/stylelint-config-sds
 ```
 
-### Config
+### Extend
 
-`stylelint.config.js`
+In `stylelint.config.js`:
 
 ```js
 module.exports = {
