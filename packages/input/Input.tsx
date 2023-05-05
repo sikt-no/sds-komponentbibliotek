@@ -60,7 +60,7 @@ const Input = ({
   const id = useId();
   const changeHandler = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
-      onChange?.(event.target.value, event);
+      onChange && onChange(event.target.value, event);
     },
     [onChange]
   );
@@ -82,7 +82,7 @@ const Input = ({
         </div>
         <div className="sds-input__wrapper">
           {iconPosition === "start" && icon && (
-            <div className="sds-input__icon sds-input__icon--start">{icon}</div>
+            <div className="sds-input__icon">{icon}</div>
           )}
           <input
             className="sds-input__input"
@@ -97,7 +97,7 @@ const Input = ({
             {...inputProps}
           />
           {iconPosition === "end" && icon && (
-            <div className="sds-input__icon sds-input__icon--end">{icon}</div>
+            <div className="sds-input__icon">{icon}</div>
           )}
         </div>
       </label>

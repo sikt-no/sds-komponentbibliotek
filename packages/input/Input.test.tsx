@@ -66,6 +66,38 @@ describe("Input", () => {
       );
     });
 
+    it("should show error text", async () => {
+      render(
+        <TextInput
+          label="Foo"
+          data-testid="test"
+          className="test-class-name"
+          errorText="Bar"
+        />
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass("sds-input--error");
+
+      const errorEl = screen.getByText("Bar");
+      expect(errorEl).toBeInTheDocument();
+      expect(errorEl).toHaveClass("sds-input__help-text");
+    });
+
+    it("should show help text", async () => {
+      render(
+        <TextInput
+          label="Foo"
+          data-testid="test"
+          className="test-class-name"
+          helpText="Bar"
+        />
+      );
+
+      const errorEl = screen.getByText("Bar");
+      expect(errorEl).toBeInTheDocument();
+      expect(errorEl).toHaveClass("sds-input__help-text");
+    });
+
     it("should have left icon element", async () => {
       render(
         <TextInput
@@ -76,9 +108,11 @@ describe("Input", () => {
         />
       );
 
-      expect(screen.getByText("icon")).toHaveClass(
-        "sds-input__icon",
-        "sds-input__icon--start"
+      const container = screen.getByTestId("test");
+      const icon = container.getElementsByClassName("sds-input__icon")[0];
+      const input = container.getElementsByClassName("sds-input__input")[0];
+      expect(icon.compareDocumentPosition(input)).toBe(
+        Node.DOCUMENT_POSITION_FOLLOWING
       );
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
@@ -93,9 +127,11 @@ describe("Input", () => {
         />
       );
 
-      expect(screen.getByText("icon")).toHaveClass(
-        "sds-input__icon",
-        "sds-input__icon--end"
+      const container = screen.getByTestId("test");
+      const icon = container.getElementsByClassName("sds-input__icon")[0];
+      const input = container.getElementsByClassName("sds-input__input")[0];
+      expect(icon.compareDocumentPosition(input)).toBe(
+        Node.DOCUMENT_POSITION_PRECEDING
       );
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
