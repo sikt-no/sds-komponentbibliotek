@@ -24,7 +24,10 @@ const Contributors = () => {
       { name: "Patrick", role: "Dev", team: "Opptak Søknadsbehandling" },
       { name: "An", role: "Dev" },
     ],
-    [{ name: "Christian", role: "Design", team: "Studentportal" }],
+    [
+      { name: "Christian", role: "Design", team: "Studentportal" },
+      { name: "Lasse", role: "Dev" },
+    ],
     [{ name: "Sondre", role: "Dev", team: "Opptak Kjerne" }],
   ];
 
