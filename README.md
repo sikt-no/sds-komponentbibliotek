@@ -69,4 +69,4 @@ Create custom markup:
 
 ---
 
-Made with ♥ at [Sikt](https://www.sikt.no/)
+Made with 💜 at [Sikt](https://www.sikt.no/)

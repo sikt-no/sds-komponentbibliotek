@@ -127,7 +127,7 @@ Export the component from `index.ts` as this is the input for the [build](./roll
 Create a `README.md` for documentation both near code and for import in Storybook.  
 Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
 
-:information: _Tip:_ Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link)
+ℹ️ _Tip:_ Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link)
 
 ### Workflow
 
@@ -142,7 +142,7 @@ Keep the history clean with one single commit per feature.
 **Note** How you commit while working is not important as long as you clean up before creating a merge request.  
 **Note** Package versions will be bumped based on commit types and commit messages will end up in the changelog.
 
-:information: _Tip:_ Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
+ℹ️ _Tip:_ Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 
 #### Merge request
 
@@ -151,7 +151,7 @@ Review comments are closed by the reviewer & not the branch owner.
 Rebase before merge so that your commits end up on top of the history.  
 **Note** Storybook is published to URL `<review-environment>/komponenter/`
 
-:information: _Tip:_ Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
+ℹ️ _Tip:_ Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
 
 #### Publish
 
@@ -178,7 +178,7 @@ _TODO: Add publish step to CI-pipeline._
 npm publish --workspace=packages/<package-name> --access public
 ```
 
-:information: _Tips:_
+ℹ️ _Tips:_
 
 > - Test your package locally with [npm-link](https://docs.npmjs.com/cli/v8/commands/npm-link) before you publish to registry
 > - Test the effect of scripts with the flag `-- --dry-run`
