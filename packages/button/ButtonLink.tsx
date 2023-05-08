@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, ReactNode } from "react";
+import React, { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
 import clsx from "clsx";
 import "./button-link.pcss";
 
@@ -21,37 +21,45 @@ interface ButtonLinkChildrenProps extends ButtonLinkBaseProps {
   children: ReactNode;
 }
 
-export const ButtonLink = ({
-  buttonType = "primary",
-  children,
-  className,
-  href,
-  icon,
-  iconType = "right",
-  ...rest
-}: ButtonLinkProps) => {
-  const ariaLabel = typeof children === "string" ? children : undefined;
-  return (
-    <a
-      className={clsx(
-        "sds-button-link",
-        "sds-button",
-        `sds-button--${buttonType}`,
-        className
-      )}
-      href={href}
-      aria-label={iconType === "only" ? ariaLabel : undefined}
-      {...rest}
-    >
-      {icon && (iconType === "left" || iconType === "only") && (
-        <div className="sds-button__icon">{icon}</div>
-      )}
-      {(!icon || iconType !== "only") && (
-        <span className="sds-button__label">{children}</span>
-      )}
-      {icon && iconType === "right" && (
-        <div className="sds-button__icon">{icon}</div>
-      )}
-    </a>
-  );
-};
+export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
+  (
+    {
+      buttonType = "primary",
+      children,
+      className,
+      href,
+      icon,
+      iconType = "right",
+      ...rest
+    }: ButtonLinkProps,
+    ref
+  ) => {
+    const ariaLabel = typeof children === "string" ? children : undefined;
+    return (
+      <a
+        ref={ref}
+        className={clsx(
+          "sds-button-link",
+          "sds-button",
+          `sds-button--${buttonType}`,
+          className
+        )}
+        href={href}
+        aria-label={iconType === "only" ? ariaLabel : undefined}
+        {...rest}
+      >
+        {icon && (iconType === "left" || iconType === "only") && (
+          <div className="sds-button__icon">{icon}</div>
+        )}
+        {(!icon || iconType !== "only") && (
+          <span className="sds-button__label">{children}</span>
+        )}
+        {icon && iconType === "right" && (
+          <div className="sds-button__icon">{icon}</div>
+        )}
+      </a>
+    );
+  }
+);
+
+ButtonLink.displayName = "ButtonLink";
