@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@1.0.2...@sikt/sds-button@2.0.0) (2023-05-09)
+
+### ⚠ BREAKING CHANGES
+
+- **button:** add forwardref to ButtonLink
+
+### Features
+
+- **button:** add forwardref to ButtonLink ([6c76481](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6c76481e4379b40021f7a8a13714627e604c26a9))
+
 ### [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@1.0.1...@sikt/sds-button@1.0.2) (2023-04-29)
 
 ## [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@0.3.0...@sikt/sds-button@1.0.1) (2023-04-11)
