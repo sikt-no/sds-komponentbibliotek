@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-core",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",

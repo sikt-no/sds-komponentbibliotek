@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@1.0.1...@sikt/sds-core@2.0.0) (2023-05-09)
+
+### ⚠ BREAKING CHANGES
+
+- **core:** add forwardref to Link
+
+### Features
+
+- **core:** add forwardref to Link ([e066d3f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e066d3fbba8517d57500e629dc7448141ecbf401))
+- **heading:** add dynamic heading ([5c41533](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5c41533f2a8211bed35a3fd245b51e2ef99eeb7b)), closes [#98](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/98)
+
+### Bug Fixes
+
+- **heading:** heading xlarge line height ([7ca3199](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7ca319918785bc9d1d14289e50b41afc06eff3bd))
+
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@1.0.0...@sikt/sds-core@1.0.1) (2023-04-28)
 
 ### Bug Fixes
