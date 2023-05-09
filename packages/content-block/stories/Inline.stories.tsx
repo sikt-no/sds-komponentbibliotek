@@ -1,7 +1,6 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
-import { Inline, InlineProps } from "../Inline";
+import { Meta, Story } from "@storybook/react";
+import { Inline, InlineProps } from "../index";
 
 export default {
   title: "Components/ContentBlock/Inline",
@@ -15,6 +14,7 @@ export default {
     text: "Text",
     type: "horizontal",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<InlineProps> = (args) => (

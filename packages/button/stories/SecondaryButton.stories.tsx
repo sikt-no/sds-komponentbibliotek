@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { ButtonProps, SecondaryButton } from "../index";
 import { ArrowRightIcon, ArrowLeftIcon } from "../../icons/index";
 
@@ -15,6 +14,7 @@ export default {
       alert("click handler");
     },
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => <SecondaryButton {...args} />;

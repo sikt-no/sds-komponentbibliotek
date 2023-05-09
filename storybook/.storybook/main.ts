@@ -1,9 +1,16 @@
-module.exports = {
-  stories: [
-    "../**/*.stories.mdx",
-    "../../packages/!(__example__)**/*.stories.mdx",
-    "../../packages/**/*.stories.@(js|jsx|ts|tsx)",
-  ],
+import type { StorybookConfig } from "@storybook/react-webpack5";
+// TODO: remove globby when fixed https://github.com/storybookjs/storybook/pull/22110
+import { globbySync } from "globby";
+
+const config: StorybookConfig = {
+  stories: globbySync(
+    [
+      "../**/*.stories.mdx",
+      "../../packages/!(__example__)**/*.stories.mdx",
+      "../../packages/**/*.stories.@(js|jsx|ts|tsx)",
+    ],
+    { cwd: "./.storybook" }
+  ),
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -22,20 +29,20 @@ module.exports = {
     },
     "@whitespace/storybook-addon-html",
   ],
-  features: {
-    buildStoriesJson: true,
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
   },
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-webpack5",
+  docs: {
+    autodocs: "tag",
   },
   webpackFinal: async (config, { configType }) => {
-    config.module.rules.push({
+    config?.module?.rules?.push({
       test: /\.pcss$/,
       use: ["style-loader", "css-loader", "postcss-loader"],
     });
 
-    config.module.rules.push({
+    config?.module?.rules?.push({
       test: /\.svg$/,
       use: [
         {
@@ -57,3 +64,5 @@ module.exports = {
     return config;
   },
 };
+
+export default config;

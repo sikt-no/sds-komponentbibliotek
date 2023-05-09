@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { PaginationProps, Pagination } from "../index";
 
 export default {
@@ -12,6 +11,7 @@ export default {
     currentIndex: 0,
     handleClick: (index: number) => alert(`click handler index ${index}`),
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<PaginationProps> = (args) => <Pagination {...args} />;

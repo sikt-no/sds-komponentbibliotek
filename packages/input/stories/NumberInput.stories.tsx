@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { NumberInput, InputProps } from "../index";
 import { CalendarBlankIcon } from "@sikt/sds-icons";
 
@@ -12,6 +11,7 @@ export default {
     label: "Label",
     placeholder: "Placeholder",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<InputProps> = (args) => <NumberInput {...args} />;

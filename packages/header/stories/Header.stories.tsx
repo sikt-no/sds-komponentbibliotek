@@ -1,12 +1,12 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { HeaderProps, Header } from "../index";
 
 export default {
   title: "Components/Header",
   component: Header,
   args: {},
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<HeaderProps> = (args) => <Header {...args} />;

@@ -1,11 +1,11 @@
-import { Meta, IconGallery, IconItem } from "@storybook/addon-docs";
+import { Markdown, Meta, IconGallery, IconItem } from "@storybook/blocks";
+import Readme from "../README.md?raw";
 import * as icons from "../build/index";
 import { config } from "../icons.config";
-import Readme from "../README.md";
 
 <Meta title="Components/Icons/Iconography" />
 
-<Readme />
+<Markdown>{Readme}</Markdown>
 
 ## Icons
 

@@ -1,8 +1,7 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
-import { Featured } from "../Featured";
-import { FeaturedProps } from "../Featured";
+import { Meta, Story } from "@storybook/react";
+import { Featured } from "../index";
+import { FeaturedProps } from "../index";
 
 export default {
   title: "Components/ContentBlock/Featured",
@@ -17,6 +16,7 @@ export default {
     headingText: "Heading",
     text: "Text",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<FeaturedProps> = (args) => (

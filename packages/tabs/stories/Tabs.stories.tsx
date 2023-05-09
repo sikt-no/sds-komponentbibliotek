@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { Tabs, TabsProps, TabList, Tab, TabPanel } from "../index";
 import { InfoIcon } from "../../icons/index";
 import { Badge } from "../../badge/index";
@@ -21,6 +20,7 @@ export default {
       <TabPanel key={3}>Third Content</TabPanel>,
     ],
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<TabsProps> = (args) => <Tabs {...args} />;

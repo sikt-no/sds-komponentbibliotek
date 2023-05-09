@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { TabLink, TabLinkProps } from "../index";
 import { InfoIcon } from "../../icons/index";
 import { Badge } from "../../badge/index";
@@ -14,6 +13,7 @@ export default {
     href: "#link",
     isSelected: true,
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<TabLinkProps> = (args) => <TabLink {...args} />;

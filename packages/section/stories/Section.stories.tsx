@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { Section, SectionProps } from "../Section";
 
 export default {
@@ -11,6 +10,7 @@ export default {
     children: "",
     link: "internet.com",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<SectionProps> = (args) => <Section {...args} />;

@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { DescriptionList, ListProps } from "../index";
 import { DescriptionTerm, DescriptionDetails } from "../index";
 
@@ -8,6 +7,7 @@ export default {
   title: "Components/List/Description",
   component: DescriptionList,
   subcomponents: { DescriptionTerm, DescriptionDetails },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<ListProps> = (args) => <DescriptionList {...args} />;

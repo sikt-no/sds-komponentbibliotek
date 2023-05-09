@@ -1,7 +1,6 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
-import { useArgs } from "@storybook/client-api";
+import { Meta, Story } from "@storybook/react";
+import { useArgs } from "@storybook/preview-api";
 import { RadioInput, RadioFieldset, RadioFieldsetProps } from "../index";
 
 export default {
@@ -16,6 +15,7 @@ export default {
     ],
     value: "1",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<RadioFieldsetProps> = (args) => {

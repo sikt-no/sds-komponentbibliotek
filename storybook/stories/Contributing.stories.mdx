@@ -1,5 +1,6 @@
-import Readme from "../../CONTRIBUTING.md";
+import { Markdown, Meta } from "@storybook/blocks";
+import Readme from "../../CONTRIBUTING.md?raw";
 
 <Meta title="Contributing" />
 
-<Readme />
+<Markdown>{Readme}</Markdown>

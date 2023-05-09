@@ -1,12 +1,12 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
-import { SpinnerIcon } from "../SpinnerIcon";
-import { IconProps } from "../build/index";
+import { Meta, Story } from "@storybook/react";
+import { SpinnerIcon } from "../index";
+import { IconProps } from "../index";
 
 export default {
   title: "Components/Icons/SpinnerIcon",
   component: SpinnerIcon,
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<IconProps> = (args) => (

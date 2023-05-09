@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { ParagraphProps, Paragraph } from "../index";
 
 export default {
@@ -10,6 +9,7 @@ export default {
     children: "Paragraph",
     typographyType: "regular",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<ParagraphProps> = (args) => <Paragraph {...args} />;

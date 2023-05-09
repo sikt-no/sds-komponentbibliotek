@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { FooterProps, Footer } from "../index";
 
 export default {
@@ -9,6 +8,7 @@ export default {
   args: {
     lang: "nb",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<FooterProps> = (args) => <Footer {...args} />;

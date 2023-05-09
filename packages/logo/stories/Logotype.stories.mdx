@@ -1,10 +1,11 @@
-import Readme from "../README.md";
+import { Markdown, Meta } from "@storybook/blocks";
+import Readme from "../README.md?raw";
 import faviconDarkSvg from "../Favicon-Dark.svg";
 import faviconLightSvg from "../Favicon-Light.svg";
 
 <Meta title="Components/Logo/Logotype" />
 
-<Readme />
+<Markdown>{Readme}</Markdown>
 
 #### Light
 

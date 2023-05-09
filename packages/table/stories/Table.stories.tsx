@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import {
   Table,
   TableCell,
@@ -21,6 +20,7 @@ export default {
     footerText: "Viser 2 av 248 linjer",
     "aria-rowcount": "248",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 export const Default: Story<TableProps> = (args) => (

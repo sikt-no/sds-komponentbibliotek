@@ -1,9 +1,8 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
-import { Breadcrumbs } from "../Breadcrumbs";
-import type { BreadcrumbsProps } from "../Breadcrumbs";
-import { BreadcrumbItem } from "../BreadcrumbItem";
+import { Meta, Story } from "@storybook/react";
+import { Breadcrumbs } from "../index";
+import type { BreadcrumbsProps } from "../index";
+import { BreadcrumbItem } from "../index";
 
 export default {
   title: "Components/Breadcrumbs",
@@ -12,6 +11,7 @@ export default {
   args: {
     "aria-label": "Navigation path",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<BreadcrumbsProps> = (args) => (

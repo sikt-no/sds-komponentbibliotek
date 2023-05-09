@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { OrderedList, ListProps } from "../index";
 import { ListItem } from "../index";
 
@@ -8,6 +7,7 @@ export default {
   title: "Components/List/Ordered",
   component: OrderedList,
   subcomponents: { ListItem },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<ListProps> = (args) => <OrderedList {...args} />;

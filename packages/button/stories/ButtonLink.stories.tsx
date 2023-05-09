@@ -1,6 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import { ButtonLinkProps, ButtonLink } from "../index";
 import { ArrowRightIcon, ArrowLeftIcon } from "../../icons/index";
 
@@ -12,6 +11,7 @@ export default {
     children: "Button Link",
     href: "#link",
   },
+  tags: ["autodocs"],
 } as Meta;
 
 const Template: Story<ButtonLinkProps> = (args) => <ButtonLink {...args} />;

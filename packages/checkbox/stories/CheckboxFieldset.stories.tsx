@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import {
   CheckboxFieldset,
   CheckboxInput,
@@ -20,6 +19,7 @@ export default {
     errorText: { control: "text", defaultValue: undefined },
     helpText: { control: "text", defaultValue: "Helper text" },
   },
+  tags: ["autodocs"],
 } as Meta;
 
 type TemplateProps = CheckboxInputProps & CheckboxFieldsetProps;
