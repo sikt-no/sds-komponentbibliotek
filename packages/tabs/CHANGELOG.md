@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@1.0.1...@sikt/sds-tabs@2.0.0) (2023-05-09)
+
+### ⚠ BREAKING CHANGES
+
+- **tabs:** add forwardref to TabLink
+
+### Features
+
+- **tabs:** add forwardref to TabLink ([fe976ec](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fe976ece5460d431a6fe70b6c23ee432103e8a08))
+
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@1.0.0...@sikt/sds-tabs@1.0.1) (2023-04-29)
 
 ## 1.0.0 (2023-04-13)
