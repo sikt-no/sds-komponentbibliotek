@@ -1,37 +1,48 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { LinkProps, Link } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/Core/Link",
   component: Link,
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryObj<LinkProps>;
+
+export const Default: Story = {
   args: {
     children: "Link",
     href: "#",
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<LinkProps> = (args) => <Link {...args} />;
-
-export const Default: Story<LinkProps> = Template.bind({});
-
-export const Navigation: Story<LinkProps> = Template.bind({});
-Navigation.args = {
-  className: "sds-typography-link--navigation",
 };
 
-export const External: Story<LinkProps> = Template.bind({});
-External.args = {
-  target: "_blank",
+export const Navigation: Story = {
+  args: {
+    ...Default.args,
+    className: "sds-typography-link--navigation",
+  },
 };
 
-export const Phone: Story<LinkProps> = Template.bind({});
-Phone.args = {
-  href: "tel:#",
+export const External: Story = {
+  args: {
+    ...Default.args,
+    target: "_blank",
+  },
 };
 
-export const Mail: Story<LinkProps> = Template.bind({});
-Mail.args = {
-  href: "mailto:#",
+export const Phone: Story = {
+  args: {
+    ...Default.args,
+    href: "tel:#",
+  },
+};
+
+export const Mail: Story = {
+  args: {
+    ...Default.args,
+    href: "mailto:#",
+  },
 };

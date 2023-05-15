@@ -1,15 +1,27 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
-import { IconProps, ArrowRightIcon } from "../index";
+import { Meta, StoryObj } from "@storybook/react";
+import { IconProps, ArrowRightIcon, SpinnerIcon } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/Icons/Icon",
   component: ArrowRightIcon,
   tags: ["autodocs"],
-} as Meta;
+};
 
-const Template: Story<IconProps> = (args) => (
-  <ArrowRightIcon {...args} style={{ fontSize: "calc(32rem / 16)" }} />
-);
+export default meta;
 
-export const ArrowRight: Story<IconProps> = Template.bind({});
+type Story = StoryObj<IconProps>;
+
+export const ArrowRight: Story = {
+  render: (args) => (
+    <ArrowRightIcon {...args} style={{ fontSize: "calc(32rem / 16)" }} />
+  ),
+  args: {},
+};
+
+export const Spinner: Story = {
+  render: (args) => (
+    <SpinnerIcon {...args} style={{ fontSize: "calc(32rem / 16)" }} />
+  ),
+  args: {},
+};

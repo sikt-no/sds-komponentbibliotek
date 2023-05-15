@@ -1,22 +1,27 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { ParagraphProps, Paragraph } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/Core/Paragraph",
   component: Paragraph,
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryObj<ParagraphProps>;
+
+export const Regular: Story = {
   args: {
     children: "Paragraph",
     typographyType: "regular",
   },
-  tags: ["autodocs"],
-} as Meta;
+};
 
-const Template: Story<ParagraphProps> = (args) => <Paragraph {...args} />;
-
-export const Small: Story<ParagraphProps> = Template.bind({});
-
-export const AsSpan: Story<ParagraphProps> = Template.bind({});
-AsSpan.args = {
-  as: "span",
+export const AsSpan: Story = {
+  args: {
+    ...Regular.args,
+    as: "span",
+  },
 };

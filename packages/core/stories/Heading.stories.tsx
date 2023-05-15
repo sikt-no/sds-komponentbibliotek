@@ -2,15 +2,18 @@ import React from "react";
 import { Meta, Story } from "@storybook/react";
 import { HeadingProps, Heading1 } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/Core/Heading",
   component: Heading1,
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryObj<HeadingProps>;
+
+export const Heading: Story = {
   args: {
     children: "Heading",
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<HeadingProps> = (args) => <Heading1 {...args} />;
-
-export const Heading: Story<HeadingProps> = Template.bind({});
+};

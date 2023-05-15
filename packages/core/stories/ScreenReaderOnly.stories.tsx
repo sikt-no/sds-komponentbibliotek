@@ -1,26 +1,24 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { ScreenReaderOnlyProps, ScreenReaderOnly } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/Core/ScreenReaderOnly",
   component: ScreenReaderOnly,
-  args: {
-    children: "ScreenReaderOnly",
-    isFocusable: true,
-  },
   tags: ["autodocs"],
-} as Meta;
+};
 
-const Template: Story<ScreenReaderOnlyProps> = (args) => (
-  <ScreenReaderOnly {...args} />
-);
+export default meta;
 
-export const Focusable: Story<ScreenReaderOnlyProps> = Template.bind({});
-Focusable.args = {
-  children: (
-    <a href="#abc" className="sds-typography-link">
-      Skip Link
-    </a>
-  ),
+type Story = StoryObj<ScreenReaderOnlyProps>;
+
+export const Focusable: Story = {
+  args: {
+    isFocusable: true,
+    children: (
+      <a href="#abc" className="sds-typography-link">
+        Skip Link
+      </a>
+    ),
+  },
 };
