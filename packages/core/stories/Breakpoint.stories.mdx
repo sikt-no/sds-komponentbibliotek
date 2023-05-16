@@ -1,0 +1,65 @@
+import { Meta } from "@storybook/blocks";
+import * as tokens from "../../core/dist/tokens/js/tokens.js";
+
+<Meta title="Core/Breakpoint" />
+
+# Breakpoint
+
+<div
+  style={{
+    display: "grid",
+    gridColumnGap: "24px",
+    gridRowGap: "24px",
+    gridTemplateColumns: "120px 150px auto",
+  }}
+>
+  <div
+    style={{
+      fontSize: "14px",
+      fontWeight: "700",
+      color: "rgba(51,51,51,0.6)",
+    }}
+  >
+    Name
+  </div>
+  <div
+    style={{
+      fontSize: "14px",
+      fontWeight: "700",
+      color: "rgba(51,51,51,0.6)",
+    }}
+  >
+    Token
+  </div>
+  <div
+    style={{
+      fontSize: "14px",
+      fontWeight: "700",
+      color: "rgba(51,51,51,0.6)",
+    }}
+  >
+    Value
+  </div>
+  {Object.entries(tokens.breakpoint).map((token) => {
+    return (
+      <>
+        <div
+          style={{
+            fontSize: "14px",
+            fontWeight: "700",
+            color: "#333",
+            textTransform: "uppercase",
+          }}
+        >
+          {token[0]}
+        </div>
+        <div style={{ color: "rgba(51,51,51,0.8)", fontSize: "14px" }}>
+          {token[1].attributes.category}.{token[1].attributes.type}
+        </div>
+        <div style={{ color: "rgba(51,51,51,0.8)", fontSize: "14px" }}>
+          {token[1].value}
+        </div>
+      </>
+    );
+  })}
+</div>

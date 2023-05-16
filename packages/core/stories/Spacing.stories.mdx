@@ -20,7 +20,6 @@ import * as tokens from "../../core/dist/tokens/js/tokens.js";
       fontSize: "14px",
       fontWeight: "700",
       color: "rgba(51,51,51,0.6)",
-      paddingBottom: "20px",
     }}
   >
     Name
@@ -30,7 +29,6 @@ import * as tokens from "../../core/dist/tokens/js/tokens.js";
       fontSize: "14px",
       fontWeight: "700",
       color: "rgba(51,51,51,0.6)",
-      paddingBottom: "20px",
     }}
   >
     Token
@@ -40,7 +38,6 @@ import * as tokens from "../../core/dist/tokens/js/tokens.js";
       fontSize: "14px",
       fontWeight: "700",
       color: "rgba(51,51,51,0.6)",
-      paddingBottom: "20px",
     }}
   >
     Value
@@ -50,7 +47,6 @@ import * as tokens from "../../core/dist/tokens/js/tokens.js";
       fontSize: "14px",
       fontWeight: "700",
       color: "rgba(51,51,51,0.6)",
-      paddingBottom: "20px",
     }}
   >
     Size
@@ -143,7 +139,6 @@ import * as tokens from "../../core/dist/tokens/js/tokens.js";
   </div>
   {Object.entries(tokens.size.padding).map((token) => {
     const size = token[1].value;
-    const isPrimary = !/\d/.test(token[1].attributes.item);
     return (
       <>
         <div
