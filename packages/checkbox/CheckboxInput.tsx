@@ -1,7 +1,7 @@
 import React, { ChangeEvent, HTMLAttributes, useId } from "react";
 import clsx from "clsx";
 import "./checkbox-input.pcss";
-import { CheckIcon, MinusIcon } from "@sikt/sds-icons";
+import { CheckIcon } from "@sikt/sds-icons";
 
 export interface CheckboxInputProps extends HTMLAttributes<HTMLInputElement> {
   isChecked?: boolean;
@@ -28,7 +28,7 @@ export const CheckboxInput = ({
 }: CheckboxInputProps) => {
   const id = useId();
   return (
-    <label htmlFor={id} className={"sds-checkbox"}>
+    <label htmlFor={id} className="sds-checkbox">
       <input
         id={id}
         name={name}
