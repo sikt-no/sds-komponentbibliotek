@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import "../../packages/core/index.pcss";
+import "../../packages/icons/icon.pcss";
 import "./style.css";
 
 const preview: Preview = {
