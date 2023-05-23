@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { HeadingProps, Heading1 } from "../index";
 
 const meta: Meta = {
