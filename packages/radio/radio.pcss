@@ -1,6 +1,6 @@
 .sds-radio {
-  --sds-radio-border-color: var(--sds-color-surface-neutral);
-  --sds-radio-background-color: var(--sds-color-surface-action);
+  --radio-border-color: var(--sds-color-surface-neutral);
+  --radio-background-color: var(--sds-color-surface-action);
 
   align-items: center;
   cursor: pointer;
@@ -8,13 +8,14 @@
 
   &__input {
     appearance: none;
+    background: var(--sds-color-surface-default);
+    border: var(--sds-border-size-regular) solid var(--radio-border-color);
+    border-radius: var(--sds-border-radius-full);
     display: grid;
     place-content: center;
-    border-radius: 50%;
+    pointer-events: none;
     width: var(--sds-size-base-m);
     height: var(--sds-size-base-m);
-    background: var(--sds-color-surface-default);
-    border: var(--sds-border-size-regular) solid var(--sds-radio-border-color);
     padding: 0;
     margin: var(--sds-size-base-s);
 
@@ -25,7 +26,7 @@
 
     &:checked {
       border-color: transparent;
-      background: var(--sds-radio-background-color);
+      background: var(--radio-background-color);
 
       &::before {
         content: "";
@@ -38,17 +39,17 @@
     }
 
     &:hover {
-      --sds-radio-border-color: var(--sds-color-surface-neutral-hover);
-      --sds-radio-background-color: var(--sds-color-surface-action-hover);
+      --radio-border-color: var(--sds-color-surface-neutral-hover);
+      --radio-background-color: var(--sds-color-surface-action-hover);
     }
 
     &:active {
-      --sds-radio-border-color: var(--sds-color-surface-neutral-active);
-      --sds-radio-background-color: var(--sds-color-surface-action-active);
+      --radio-border-color: var(--sds-color-surface-neutral-active);
+      --radio-background-color: var(--sds-color-surface-action-active);
     }
 
     &:focus-visible {
-      --sds-radio-border-color: transparent;
+      --radio-border-color: transparent;
 
       outline-offset: 0;
       outline: var(--sds-outline);
@@ -62,17 +63,17 @@
   }
 
   &--error &__input {
-    --sds-radio-border-color: var(--sds-color-surface-danger);
-    --sds-radio-background-color: var(--sds-color-surface-danger);
+    --radio-border-color: var(--sds-color-surface-danger);
+    --radio-background-color: var(--sds-color-surface-danger);
 
     &:hover {
-      --sds-radio-border-color: var(--sds-color-surface-danger-hover);
-      --sds-radio-background-color: var(--sds-color-surface-danger-hover);
+      --radio-border-color: var(--sds-color-surface-danger-hover);
+      --radio-background-color: var(--sds-color-surface-danger-hover);
     }
 
     &:active {
-      --sds-radio-border-color: var(--sds-color-surface-danger-active);
-      --sds-radio-background-color: var(--sds-color-surface-danger-active);
+      --radio-border-color: var(--sds-color-surface-danger-active);
+      --radio-background-color: var(--sds-color-surface-danger-active);
     }
   }
 

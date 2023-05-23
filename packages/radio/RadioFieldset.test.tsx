@@ -85,6 +85,16 @@ describe("RadioGroup", () => {
       );
     });
 
+    it("should render help text", async () => {
+      render(
+        <RadioFieldset legend="Foo" helpText="Help message">
+          <RadioInput label="Radio 1" value="1" />
+        </RadioFieldset>
+      );
+
+      expect(screen.getByText("Help message")).toBeInTheDocument();
+    });
+
     it("should show error message and mark with aria-invalid", async () => {
       render(
         <RadioFieldset
