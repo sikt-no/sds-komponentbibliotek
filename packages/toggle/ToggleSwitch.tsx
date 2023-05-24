@@ -6,9 +6,9 @@ import React, {
 } from "react";
 import clsx from "clsx";
 import { CheckIcon, WarningIcon, XIcon } from "@sikt/sds-icons";
-import "./toggle-input.pcss";
+import "./toggle-switch.pcss";
 
-export type ToggleInputProps = {
+export type ToggleSwitchProps = {
   checked?: boolean;
   label: ReactNode;
   labelFirst?: boolean;
@@ -18,7 +18,7 @@ export type ToggleInputProps = {
   onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
-export const ToggleInput = ({
+export const ToggleSwitch = ({
   checked = false,
   label,
   labelFirst = false,
@@ -27,10 +27,10 @@ export const ToggleInput = ({
   onChange,
   inputProps = {},
   ...rest
-}: ToggleInputProps) => {
+}: ToggleSwitchProps) => {
   const id = useId();
   const labelElement = (
-    <div className="sds-toggle__label">
+    <div className="sds-toggle-switch__label">
       {errorText && <WarningIcon />} {label}
     </div>
   );
@@ -38,18 +38,18 @@ export const ToggleInput = ({
   return (
     <div
       className={clsx(
-        "sds-toggle",
-        checked && "sds-toggle--checked",
-        errorText && "sds-toggle--error"
+        "sds-toggle-switch",
+        checked && "sds-toggle-switch--checked",
+        errorText && "sds-toggle-switch--error"
       )}
       {...rest}
     >
-      <label className="sds-toggle__main-label">
+      <label className="sds-toggle-switch__main-label">
         {labelFirst && labelElement}
-        <div className="sds-toggle__inner">
+        <div className="sds-toggle-switch__inner">
           <input
             type="checkbox"
-            className="sds-toggle__track"
+            className="sds-toggle-switch__track"
             checked={checked}
             aria-describedby={errorText && `${id}-help-text`}
             aria-invalid={Boolean(errorText)}
@@ -58,7 +58,7 @@ export const ToggleInput = ({
             readOnly={!onChange}
             {...inputProps}
           />
-          <div className="sds-toggle__thumb">
+          <div className="sds-toggle-switch__thumb">
             {showIcons && checked && <CheckIcon />}
             {showIcons && !checked && <XIcon />}
           </div>
@@ -66,7 +66,7 @@ export const ToggleInput = ({
         {!labelFirst && labelElement}
       </label>
       {errorText && (
-        <div className="sds-toggle__help-text" id={`${id}-help-text`}>
+        <div className="sds-toggle-switch__help-text" id={`${id}-help-text`}>
           {errorText}
         </div>
       )}

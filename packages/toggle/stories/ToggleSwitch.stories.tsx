@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { ToggleInput, ToggleInputProps } from "../index";
+import { ToggleSwitch, ToggleSwitchProps } from "../index";
 
 const meta: Meta = {
   title: "Components/Toggle",
-  component: ToggleInput,
+  component: ToggleSwitch,
 };
 
 export default meta;
 
-type Story = StoryObj<ToggleInputProps>;
+type Story = StoryObj<ToggleSwitchProps>;
 
 const Template: Story = {
   render: (args) => {
@@ -26,7 +26,7 @@ const Template: Story = {
     }, [args.checked]);
 
     return (
-      <ToggleInput {...args} onChange={handleChange} checked={isChecked} />
+      <ToggleSwitch {...args} onChange={handleChange} checked={isChecked} />
     );
   },
 };

@@ -2,12 +2,12 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import { ToggleInput } from "./ToggleInput";
+import { ToggleSwitch } from "./ToggleSwitch";
 
-describe("Toggle", () => {
+describe("Toggle Switch", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
-      const { container } = render(<ToggleInput label="Foo" />);
+      const { container } = render(<ToggleSwitch label="Foo" />);
 
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -15,9 +15,9 @@ describe("Toggle", () => {
 
   describe("api", () => {
     it(`toggle should render`, async () => {
-      render(<ToggleInput data-testid="test" label="Foo" />);
+      render(<ToggleSwitch data-testid="test" label="Foo" />);
 
-      expect(screen.getByTestId("test")).toHaveClass("sds-toggle");
+      expect(screen.getByTestId("test")).toHaveClass("sds-toggle-switch");
       expect(screen.getByTestId("test")).toBeInTheDocument();
     });
 
@@ -25,7 +25,7 @@ describe("Toggle", () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
       render(
-        <ToggleInput onChange={(val) => changeHandler(val)} label="Foo" />
+        <ToggleSwitch onChange={(val) => changeHandler(val)} label="Foo" />
       );
 
       const label = screen.getByLabelText("Foo");
@@ -35,41 +35,49 @@ describe("Toggle", () => {
     });
 
     it("should not be checked", async () => {
-      render(<ToggleInput label="Foo" />);
+      render(<ToggleSwitch label="Foo" />);
 
       expect(screen.getByLabelText("Foo")).not.toBeChecked();
     });
 
     it("should be checked", async () => {
-      render(<ToggleInput checked label="Foo" />);
+      render(<ToggleSwitch checked label="Foo" />);
 
       expect(screen.getByLabelText("Foo")).toBeChecked();
     });
 
     it("should render the label after the control", async () => {
-      render(<ToggleInput data-testid="test" label="Foo" />);
+      render(<ToggleSwitch data-testid="test" label="Foo" />);
 
       const container = screen.getByTestId("test");
-      const label = container.getElementsByClassName("sds-toggle__label")[0];
-      const control = container.getElementsByClassName("sds-toggle__inner")[0];
+      const label = container.getElementsByClassName(
+        "sds-toggle-switch__label"
+      )[0];
+      const control = container.getElementsByClassName(
+        "sds-toggle-switch__inner"
+      )[0];
       expect(label.compareDocumentPosition(control)).toBe(
         Node.DOCUMENT_POSITION_PRECEDING
       );
     });
 
     it("should render the label in front of the control", async () => {
-      render(<ToggleInput labelFirst data-testid="test" label="Foo" />);
+      render(<ToggleSwitch labelFirst data-testid="test" label="Foo" />);
 
       const container = screen.getByTestId("test");
-      const label = container.getElementsByClassName("sds-toggle__label")[0];
-      const control = container.getElementsByClassName("sds-toggle__inner")[0];
+      const label = container.getElementsByClassName(
+        "sds-toggle-switch__label"
+      )[0];
+      const control = container.getElementsByClassName(
+        "sds-toggle-switch__inner"
+      )[0];
       expect(label.compareDocumentPosition(control)).toBe(
         Node.DOCUMENT_POSITION_FOLLOWING
       );
     });
 
     it("should show an error", async () => {
-      render(<ToggleInput checked errorText="Error" label="Foo" />);
+      render(<ToggleSwitch checked errorText="Error" label="Foo" />);
 
       expect(screen.getByText("Error")).toBeInTheDocument();
     });

@@ -1,2 +1,2 @@
-export type { ToggleInputProps } from "./ToggleInput";
-export { ToggleInput } from "./ToggleInput";
+export type { ToggleSwitchProps } from "./ToggleSwitch";
+export { ToggleSwitch } from "./ToggleSwitch";
