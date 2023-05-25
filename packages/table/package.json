@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "UNLICENSED",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
