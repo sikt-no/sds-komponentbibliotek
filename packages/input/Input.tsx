@@ -23,7 +23,8 @@ type InputTypes =
   | "search"
   | "tel"
   | "text"
-  | "url";
+  | "url"
+  | "textarea";
 
 interface InputTypesProp {
   type: InputTypes;
@@ -34,13 +35,17 @@ export interface InputProps
   className?: string;
   label: string;
   placeholder?: string;
-  onChange?: (newValue: string, event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (
+    newValue: string,
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   value?: string;
   icon?: ReactNode;
   iconPosition?: "start" | "end";
   errorText?: string;
   helpText?: string;
-  inputProps?: InputHTMLAttributes<HTMLInputElement>;
+  inputProps?: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>;
+  rows?: number;
 }
 
 const Input = ({
@@ -59,18 +64,20 @@ const Input = ({
 }: InputProps & InputTypesProp) => {
   const id = useId();
   const changeHandler = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      onChange && onChange(event.target.value, event);
+    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      onChange?.(event.target.value, event);
     },
     [onChange]
   );
+
+  const C = type === "textarea" ? "textarea" : "input";
 
   return (
     <div
       className={clsx(
         "sds-input",
         `sds-input--${type}`,
-        errorText ? `sds-input--error` : null,
+        errorText && `sds-input--error`,
         className
       )}
       {...rest}
@@ -84,7 +91,7 @@ const Input = ({
           {iconPosition === "start" && icon && (
             <div className="sds-input__icon">{icon}</div>
           )}
-          <input
+          <C
             className="sds-input__input"
             id={id}
             type={type}
@@ -110,6 +117,9 @@ const Input = ({
   );
 };
 
+export const TextArea = (props: InputProps) => (
+  <Input type="textarea" {...props} />
+);
 export const TextInput = (props: InputProps) => (
   <Input type="text" {...props} />
 );

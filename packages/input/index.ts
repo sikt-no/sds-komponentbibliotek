@@ -1,5 +1,6 @@
 export type { InputProps } from "./Input";
 export {
+  TextArea,
   TextInput,
   NumberInput,
   EmailInput,

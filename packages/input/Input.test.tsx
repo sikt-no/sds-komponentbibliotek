@@ -8,6 +8,7 @@ import {
   PasswordInput,
   SearchInput,
   TelInput,
+  TextArea,
   TextInput,
 } from "./Input";
 
@@ -18,6 +19,7 @@ const inputTypes = [
   { name: "search", component: SearchInput },
   { name: "tel", component: TelInput },
   { name: "text", component: TextInput },
+  { name: "textarea", component: TextArea },
 ];
 
 describe("Input", () => {
