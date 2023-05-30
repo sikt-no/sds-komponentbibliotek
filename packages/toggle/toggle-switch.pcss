@@ -1,15 +1,16 @@
 .sds-toggle-switch {
   --sds-toggle-transition-duration: 400ms;
-  --sds-toggle-track-width: var(--sds-size-base-l1);
-  --sds-toggle-thumb-size: var(--sds-size-base-m);
+  --sds-toggle-track-width: var(--sds-size-base-l);
+  --sds-toggle-thumb-size: var(--sds-size-base-s1);
   --sds-toggle-border-width: var(--sds-border-size-regular);
   --sds-toggle-padding: var(--sds-border-size-regular);
   --sds-toggle-thumb-offset: calc(
     var(--sds-toggle-border-width) + var(--sds-toggle-padding)
   );
-  --sds-toggle-track-bg-color: var(--sds-color-background-neutral);
+  --sds-toggle-track-bg-color: var(--sds-color-background-default);
   --sds-toggle-track-border-color: var(--sds-color-surface-neutral);
   --sds-toggle-thumb-bg-color: var(--sds-color-surface-neutral);
+  --sds-toggle-thumb-text-color: var(--sds-color-text-onsurface-action);
   --sds-toggle-thumb-position: 0;
   --sds-toggle-label-color: var(--sds-color-text-default);
 
@@ -22,20 +23,35 @@
   }
 
   &:hover {
+    --sds-toggle-track-border-color: var(--sds-color-surface-neutral-hover);
     --sds-toggle-thumb-bg-color: var(--sds-color-surface-neutral-hover);
   }
 
+  &:active {
+    --sds-toggle-track-border-color: var(--sds-color-surface-neutral-active);
+    --sds-toggle-thumb-bg-color: var(--sds-color-surface-neutral-active);
+  }
+
   &--checked {
-    --sds-toggle-track-bg-color: var(--sds-color-background-action);
+    --sds-toggle-track-bg-color: var(--sds-color-surface-action);
     --sds-toggle-track-border-color: var(--sds-color-surface-action);
-    --sds-toggle-thumb-bg-color: var(--sds-color-surface-action);
+    --sds-toggle-thumb-bg-color: var(--sds-color-text-onsurface-action);
+    --sds-toggle-thumb-text-color: var(--sds-color-text-action);
     --sds-toggle-thumb-position: calc(
       var(--sds-toggle-track-width) - var(--sds-toggle-thumb-size) - 2 *
         var(--sds-toggle-thumb-offset)
     );
 
     &:hover {
-      --sds-toggle-thumb-bg-color: var(--sds-color-surface-action-hover);
+      --sds-toggle-track-bg-color: var(--sds-color-surface-action-hover);
+      --sds-toggle-track-border-color: var(--sds-color-surface-action-hover);
+      --sds-toggle-thumb-bg-color: var(--sds-color-text-onsurface-action);
+    }
+
+    &:active {
+      --sds-toggle-track-bg-color: var(--sds-color-surface-action-active);
+      --sds-toggle-track-border-color: var(--sds-color-surface-action-active);
+      --sds-toggle-thumb-bg-color: var(--sds-color-text-onsurface-action);
     }
   }
 
@@ -90,7 +106,8 @@
 
     > * {
       transition: all var(--sds-toggle-transition-duration);
-      color: var(--sds-color-text-onsurface-action);
+      color: var(--sds-toggle-thumb-text-color);
+      font-size: var(--sds-size-base-s);
     }
   }
 
@@ -102,13 +119,26 @@
   }
 
   &--error {
-    --sds-toggle-track-border-color: var(--sds-color-surface-danger);
     --sds-toggle-label-color: var(--sds-color-text-danger);
-    --sds-toggle-track-bg-color: var(--sds-color-background-danger);
+    --sds-toggle-track-border-color: var(--sds-color-surface-danger);
+    --sds-toggle-track-bg-color: var(--sds-color-background-default);
     --sds-toggle-thumb-bg-color: var(--sds-color-surface-danger);
+
+    &:hover {
+      --sds-toggle-track-border-color: var(--sds-color-surface-danger-hover);
+      --sds-toggle-thumb-bg-color: var(--sds-color-surface-danger-hover);
+    }
   }
 
-  &--error&:hover {
-    --sds-toggle-thumb-bg-color: var(--sds-color-surface-danger-hover);
+  &--error&--checked {
+    --sds-toggle-track-border-color: var(--sds-color-surface-danger);
+    --sds-toggle-track-bg-color: var(--sds-color-surface-danger);
+    --sds-toggle-thumb-bg-color: var(--sds-color-text-onsurface-danger);
+    --sds-toggle-thumb-text-color: var(--sds-color-text-danger);
+
+    &:hover {
+      --sds-toggle-track-border-color: var(--sds-color-surface-danger-hover);
+      --sds-toggle-track-bg-color: var(--sds-color-surface-danger-hover);
+    }
   }
 }
