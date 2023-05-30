@@ -10,9 +10,9 @@ export const Head: HeadFC = () => {
     <>
       <html lang="nb" />
       <title>Sikt designsystem</title>
-      <link rel="icon" href={favicon32.src} sizes="any" />
+      <link rel="icon" href={favicon32} sizes="any" />
       <link rel="icon" href={faviconSvg} type="image/svg+xml" />
-      <link rel="apple-touch-icon" href={favicon180.src} />
+      <link rel="apple-touch-icon" href={favicon180} />
       <meta name="theme-color" content={tokens.default.color.theme.value} />
     </>
   );

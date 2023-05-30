@@ -5,13 +5,13 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Sikt designsystem`,
-    siteUrl: `https://designsystem.sikt.no`,
+    title: "Sikt designsystem",
+    siteUrl: "https://designsystem.sikt.no",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
-  graphqlTypegen: true,
+  //graphqlTypegen: true,
   plugins: [
     {
       resolve: "gatsby-plugin-postcss",
@@ -24,6 +24,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    "gatsby-plugin-force-file-loader",
     "gatsby-plugin-layout",
     /*{
       resolve: "gatsby-plugin-manifest",
@@ -34,12 +35,12 @@ const config: GatsbyConfig = {
         theme_color: tokens.default.color.background.action.value,
         icons: [
           {
-            src: favicon192.src,
+            src: favicon192,
             type: "image/png",
             sizes: "192x192",
           },
           {
-            src: favicon512.src,
+            src: favicon512,
             type: "image/png",
             sizes: "512x512",
           },
