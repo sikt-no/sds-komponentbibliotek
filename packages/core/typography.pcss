@@ -263,11 +263,14 @@
       &::after {
         background-color: var(--sds-color-surface-default);
         color: var(--sds-color-text-default);
-        content: attr(title);
-        padding: 0 4px;
+        border: solid var(--sds-border-size-thin)
+          var(--sds-color-surface-neutral);
+        border-radius: var(--sds-border-radius-small);
+        content: attr(data-title);
+        padding: 2px var(--sds-size-base-xs);
         position: absolute;
         left: -2px;
-        bottom: calc(
+        top: calc(
           calc(calc(var(--sds-size-text-m) + var(--sds-size-base-xxs)) * -1) -
             2px
         );

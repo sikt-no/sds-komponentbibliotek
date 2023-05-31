@@ -18,7 +18,8 @@ export const Abbreviation = ({
     <abbr
       className={clsx("sds-typography-abbr", className)}
       tabIndex={0}
-      title={title}
+      data-title={title}
+      aria-label={title}
       {...rest}
     >
       {children}
