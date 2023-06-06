@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@1.0.1...@sikt/sds-select@1.0.2) (2023-06-06)
+
+### Bug Fixes
+
+- **select:** make caret clickable + fix bg color ([bb4c9e6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bb4c9e6d7e31890bd25943fb30308590407cefe2))
+
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@1.0.0...@sikt/sds-select@1.0.1) (2023-04-29)
 
 ## 1.0.0 (2023-04-17)
