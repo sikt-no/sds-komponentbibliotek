@@ -1,0 +1,21 @@
+# Tutorial
+
+## Workshop
+
+### 7. Write tests
+
+#### Create unit test file
+
+- Create `ConfettiButton.test.tsx`
+
+#### Add tests for component API
+
+#### Add tests for component accessibility
+
+#### Run tests
+
+```sh
+npm t -- ConfettiButton.test.tsx --collectCoverageFrom=./packages/confetti-button/ConfettiButton.tsx
+```
+
+💡️ _Hint:_ See `./packages/__example__/` for Example component

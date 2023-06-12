@@ -1,0 +1,29 @@
+# Tutorial
+
+## Workshop
+
+### 5. Create component
+
+#### Install dependencies
+
+```sh
+npm i -D react react-dom @types/react @types/react-dom clsx -w packages/confetti-button
+```
+
+Then move them to `peerDependencies`
+
+#### Create component files
+
+- Create `ConfettiButton.tsx` & `index.ts`
+
+#### Create component
+
+#### Export component & type from `index.ts`
+
+#### Create component story
+
+- Create `stories/ConfettiButton.stories.tsx`
+
+#### Add component documentation
+
+💡️ _Hint:_ See `./packages/__example__/` for Example component
