@@ -140,6 +140,8 @@ prod:
     - docker
   needs:
     - docker
+  variables:
+    REPLICAS: "2"
 #release:
 #  extends: .publish
 #  stage: release
