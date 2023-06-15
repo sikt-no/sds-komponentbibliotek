@@ -1,6 +1,8 @@
 import type { Preview } from "@storybook/react";
 import "../../packages/core/index.pcss";
 import "../../packages/icons/icon.pcss";
+import "../../packages/button/button.pcss";
+import "../../packages/button/button-link.pcss";
 import "./style.css";
 
 const preview: Preview = {
