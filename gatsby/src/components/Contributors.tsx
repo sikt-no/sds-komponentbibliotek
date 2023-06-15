@@ -7,7 +7,7 @@ const Contributors = () => {
   const contributors = [
     [{ name: "Deg", role: "Din rolle", team: "Ditt team" }],
     [
-      { name: "Kine", role: "Dev", team: "Komponentbibliotektet" },
+      { name: "Kine", role: "Dev", team: "Komponentbiblioteket" },
       { name: "Sondre Ek", role: "Design" },
       { name: "Kristoffer", role: "Dev" },
       { name: "Petter", role: "Design" },
