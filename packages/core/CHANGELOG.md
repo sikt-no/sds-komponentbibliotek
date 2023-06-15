@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@2.0.0...@sikt/sds-core@2.1.0) (2023-06-15)
+
+### Features
+
+- **core:** implement design for Abbreviation ([6eae219](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6eae219b1b6909f5bc21be6c52ecabbadf40d140))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@1.0.1...@sikt/sds-core@2.0.0) (2023-05-09)
 
 ### ⚠ BREAKING CHANGES
