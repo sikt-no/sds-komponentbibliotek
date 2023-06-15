@@ -1,35 +1,42 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { TelInput, InputProps } from "../index";
 import { SlidersIcon } from "@sikt/sds-icons";
 
-export default {
+const meta: Meta = {
   title: "Components/Input/Tel",
   component: TelInput,
-  subcomponents: { SlidersIcon },
+};
+
+export default meta;
+
+type Story = StoryObj<InputProps>;
+
+export const Default: Story = {
   args: {
     label: "Label",
     placeholder: "Placeholder",
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<InputProps> = (args) => <TelInput {...args} />;
-
-export const Default: Story<InputProps> = Template.bind({});
-
-export const WithCustomIcon: Story<InputProps> = Template.bind({});
-WithCustomIcon.args = {
-  icon: <SlidersIcon />,
-  iconPosition: "end",
 };
 
-export const WithHelpText: Story<InputProps> = Template.bind({});
-WithHelpText.args = {
-  helpText: "Text",
+export const WithCustomIcon: Story = {
+  args: {
+    ...Default.args,
+    icon: <SlidersIcon />,
+    iconPosition: "end",
+  },
 };
 
-export const WithError: Story<InputProps> = Template.bind({});
-WithError.args = {
-  errorText: "Error!",
+export const WithHelpText: Story = {
+  args: {
+    ...Default.args,
+    helpText: "Text",
+  },
+};
+
+export const WithError: Story = {
+  args: {
+    ...Default.args,
+    errorText: "Error!",
+  },
 };

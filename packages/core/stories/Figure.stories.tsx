@@ -5,7 +5,6 @@ import { FigureProps, Figure } from "../index";
 const meta: Meta = {
   title: "Components/Core/Figure",
   component: Figure,
-  tags: ["autodocs"],
 };
 
 export default meta;

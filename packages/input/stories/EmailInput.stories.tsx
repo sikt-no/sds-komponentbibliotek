@@ -1,35 +1,42 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { EmailInput, InputProps } from "../index";
 import { GearIcon } from "@sikt/sds-icons";
 
-export default {
+const meta: Meta = {
   title: "Components/Input/Email",
   component: EmailInput,
-  subcomponents: { GearIcon },
+};
+
+export default meta;
+
+type Story = StoryObj<InputProps>;
+
+export const Input: Story = {
   args: {
     label: "Label",
     placeholder: "Placeholder",
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<InputProps> = (args) => <EmailInput {...args} />;
-
-export const Input: Story<InputProps> = Template.bind({});
-
-export const WithCustomIcon: Story<InputProps> = Template.bind({});
-WithCustomIcon.args = {
-  icon: <GearIcon />,
-  iconPosition: "end",
 };
 
-export const WithHelpText: Story<InputProps> = Template.bind({});
-WithHelpText.args = {
-  helpText: "Text",
+export const WithCustomIcon: Story = {
+  args: {
+    ...Input.args,
+    icon: <GearIcon />,
+    iconPosition: "end",
+  },
 };
 
-export const WithError: Story<InputProps> = Template.bind({});
-WithError.args = {
-  errorText: "Error!",
+export const WithHelpText: Story = {
+  args: {
+    ...Input.args,
+    helpText: "Text",
+  },
+};
+
+export const WithError: Story = {
+  args: {
+    ...Input.args,
+    errorText: "Error!",
+  },
 };

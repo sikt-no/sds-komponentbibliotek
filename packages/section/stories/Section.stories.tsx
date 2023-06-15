@@ -1,35 +1,44 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Section, SectionProps } from "../Section";
 
-export default {
+const meta: Meta = {
   title: "Components/Section",
   component: Section,
+};
+
+export default meta;
+
+type Story = StoryObj<SectionProps>;
+
+export const Default: Story = {
   args: {
     headingText: "Header",
     children: "",
     link: "internet.com",
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<SectionProps> = (args) => <Section {...args} />;
-
-export const Default: Story<SectionProps> = Template.bind({});
-export const WithLink: Story<SectionProps> = Template.bind({});
-WithLink.args = {
-  linkLabel: "Clickable label",
-  linkHref: "www.internet.com",
 };
 
-export const WithChildren: Story<SectionProps> = Template.bind({});
-WithChildren.args = {
-  children: "Section content",
+export const WithLink: Story = {
+  args: {
+    ...Default.args,
+    linkLabel: "Clickable label",
+    linkHref: "www.internet.com",
+  },
 };
 
-export const WithLinkAndChildren: Story<SectionProps> = Template.bind({});
-WithLinkAndChildren.args = {
-  linkLabel: "Clickable label",
-  linkHref: "www.internet.com",
-  children: "Section content",
+export const WithChildren: Story = {
+  args: {
+    ...Default.args,
+    children: "Section content",
+  },
+};
+
+export const WithLinkAndChildren: Story = {
+  args: {
+    ...Default.args,
+    linkLabel: "Clickable label",
+    linkHref: "www.internet.com",
+    children: "Section content",
+  },
 };

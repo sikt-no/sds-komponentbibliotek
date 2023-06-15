@@ -5,7 +5,6 @@ import { AbbreviationProps, Abbreviation } from "../index";
 const meta: Meta = {
   title: "Components/Core/Abbreviation",
   component: Abbreviation,
-  tags: ["autodocs"],
 };
 
 export default meta;

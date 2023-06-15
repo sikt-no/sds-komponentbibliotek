@@ -1,35 +1,36 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { SearchInput, InputProps } from "../index";
 import { MapPinIcon } from "@sikt/sds-icons";
 
-export default {
+const meta: Meta = {
   title: "Components/Input/Search",
   component: SearchInput,
-  subcomponents: { MapPinIcon },
+};
+
+export default meta;
+
+type Story = StoryObj<InputProps>;
+
+export const Default: Story = {
   args: {
     label: "Label",
     placeholder: "Placeholder",
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<InputProps> = (args) => <SearchInput {...args} />;
-
-export const Default: Story<InputProps> = Template.bind({});
-
-export const WithCustomIcon: Story<InputProps> = Template.bind({});
-WithCustomIcon.args = {
-  icon: <MapPinIcon />,
-  iconPosition: "start",
 };
 
-export const WithHelpText: Story<InputProps> = Template.bind({});
-WithHelpText.args = {
-  helpText: "Text",
+export const WithCustomIcon: Story = {
+  args: {
+    ...Default.args,
+    icon: <MapPinIcon />,
+    iconPosition: "start",
+  },
 };
 
-export const WithError: Story<InputProps> = Template.bind({});
-WithError.args = {
-  errorText: "Error!",
+export const WithHelpText: Story = {
+  args: { ...Default.args, helpText: "Text" },
+};
+
+export const WithError: Story = {
+  args: { ...Default.args, errorText: "Error!" },
 };

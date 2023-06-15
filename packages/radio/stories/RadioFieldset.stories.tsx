@@ -1,11 +1,17 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
-import { useArgs } from "@storybook/preview-api";
+import { Meta, StoryObj } from "@storybook/react";
 import { RadioInput, RadioFieldset, RadioFieldsetProps } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/Radio/RadioFieldset",
   component: RadioFieldset,
+};
+
+export default meta;
+
+type Story = StoryObj<RadioFieldsetProps>;
+
+export const Default: Story = {
   args: {
     label: "Label",
     children: [
@@ -15,36 +21,30 @@ export default {
     ],
     value: "1",
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<RadioFieldsetProps> = (args) => {
-  const [{ value }, setArgs] = useArgs();
-  return (
-    <RadioFieldset
-      {...args}
-      value={value}
-      onChange={(val) => setArgs({ value: val.target.value })}
-    />
-  );
 };
 
-export const WithLegend: Story<RadioFieldsetProps> = Template.bind({});
-WithLegend.args = {
-  legend: "Legend",
-  value: "2",
+export const WithLegend: Story = {
+  args: {
+    ...Default.args,
+    legend: "Legend",
+    value: "2",
+  },
 };
 
-export const WithHelpText: Story<RadioFieldsetProps> = Template.bind({});
-WithHelpText.args = {
-  legend: "Legend",
-  helpText: "Text",
-  value: "2",
+export const WithHelpText: Story = {
+  args: {
+    ...Default.args,
+    legend: "Legend",
+    helpText: "Text",
+    value: "2",
+  },
 };
 
-export const WithError: Story<RadioFieldsetProps> = Template.bind({});
-WithError.args = {
-  legend: "Legend",
-  errorText: "Error!",
-  value: "3",
+export const WithError: Story = {
+  args: {
+    ...Default.args,
+    legend: "Legend",
+    errorText: "Error!",
+    value: "3",
+  },
 };

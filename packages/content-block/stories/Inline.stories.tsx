@@ -1,10 +1,21 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Inline, InlineProps } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/ContentBlock/Inline",
   component: Inline,
+};
+
+export default meta;
+
+type Story = StoryObj<InlineProps>;
+
+const Template: Story = {
+  render: (args) => <Inline {...args} style={{ maxWidth: "500px" }} />,
+};
+export const InlineBlock: Story = {
+  ...Template,
   args: {
     imgSrc: "https://picsum.photos/600/600",
     imgAlt: "Stock photo",
@@ -12,13 +23,5 @@ export default {
     linkHref: "#",
     headingText: "Heading",
     text: "Text",
-    type: "horizontal",
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<InlineProps> = (args) => (
-  <Inline {...args} style={{ maxWidth: "500px" }} />
-);
-
-export const InlineBlock: Story<InlineProps> = Template.bind({});
+};

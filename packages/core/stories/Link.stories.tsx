@@ -5,7 +5,6 @@ import { LinkProps, Link } from "../index";
 const meta: Meta = {
   title: "Components/Core/Link",
   component: Link,
-  tags: ["autodocs"],
 };
 
 export default meta;

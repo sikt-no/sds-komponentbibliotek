@@ -1,31 +1,36 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { TabLink, TabLinkProps } from "../index";
 import { InfoIcon } from "../../icons/index";
 import { Badge } from "../../badge/index";
 
-export default {
+const meta: Meta = {
   title: "Components/Tabs/TabLink",
   component: TabLink,
-  subcomponents: { InfoIcon, Badge },
+};
+
+export default meta;
+
+type Story = StoryObj<TabLinkProps>;
+
+export const Default: Story = {
   args: {
     children: "Tab Link",
     href: "#link",
     isSelected: true,
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<TabLinkProps> = (args) => <TabLink {...args} />;
-
-export const Default: Story<TabLinkProps> = Template.bind({});
-
-export const WithIcon: Story<TabLinkProps> = Template.bind({});
-WithIcon.args = {
-  icon: <InfoIcon />,
 };
 
-export const WidthBadge: Story<TabLinkProps> = Template.bind({});
-WidthBadge.args = {
-  badge: <Badge>Badge</Badge>,
+export const WithIcon: Story = {
+  args: {
+    ...Default.args,
+    icon: <InfoIcon />,
+  },
+};
+
+export const WidthBadge: Story = {
+  args: {
+    ...Default.args,
+    icon: <Badge>Bagde</Badge>,
+  },
 };

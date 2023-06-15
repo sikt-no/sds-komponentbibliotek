@@ -1,34 +1,41 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { NumberInput, InputProps } from "../index";
 import { CalendarBlankIcon } from "@sikt/sds-icons";
 
-export default {
+const meta: Meta = {
   title: "Components/Input/Number",
   component: NumberInput,
-  subcomponents: { CalendarBlankIcon },
+};
+
+export default meta;
+
+type Story = StoryObj<InputProps>;
+
+export const Default: Story = {
   args: {
     label: "Label",
     placeholder: "Placeholder",
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<InputProps> = (args) => <NumberInput {...args} />;
-
-export const Default: Story<InputProps> = Template.bind({});
-
-export const WithCustomIcon: Story<InputProps> = Template.bind({});
-WithCustomIcon.args = {
-  icon: <CalendarBlankIcon />,
 };
 
-export const WithHelpText: Story<InputProps> = Template.bind({});
-WithHelpText.args = {
-  helpText: "Text",
+export const WithCustomIcon: Story = {
+  args: {
+    ...Default.args,
+    icon: <CalendarBlankIcon />,
+  },
 };
 
-export const WithError: Story<InputProps> = Template.bind({});
-WithError.args = {
-  errorText: "Error!",
+export const WithHelpText: Story = {
+  args: {
+    ...Default.args,
+    helpText: "Text",
+  },
+};
+
+export const WithError: Story = {
+  args: {
+    ...Default.args,
+    errorText: "Error!",
+  },
 };

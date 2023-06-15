@@ -5,7 +5,6 @@ import { IconProps, ArrowRightIcon, SpinnerIcon } from "../index";
 const meta: Meta = {
   title: "Components/Icons/Icon",
   component: ArrowRightIcon,
-  tags: ["autodocs"],
 };
 
 export default meta;

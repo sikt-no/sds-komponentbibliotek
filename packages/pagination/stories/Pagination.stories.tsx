@@ -1,19 +1,21 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { PaginationProps, Pagination } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/Pagination",
   component: Pagination,
+};
+
+export default meta;
+
+type Story = StoryObj<PaginationProps>;
+
+export const Default: Story = {
   args: {
     "aria-label": "Sample pagination",
     count: 10,
     currentIndex: 0,
     handleClick: (index: number) => alert(`click handler index ${index}`),
   },
-  tags: ["autodocs"],
-} as Meta;
-
-const Template: Story<PaginationProps> = (args) => <Pagination {...args} />;
-
-export const Default: Story<PaginationProps> = Template.bind({});
+};

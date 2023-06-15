@@ -5,7 +5,6 @@ import { ScreenReaderOnlyProps, ScreenReaderOnly } from "../index";
 const meta: Meta = {
   title: "Components/Core/ScreenReaderOnly",
   component: ScreenReaderOnly,
-  tags: ["autodocs"],
 };
 
 export default meta;

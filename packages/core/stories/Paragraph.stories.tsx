@@ -5,7 +5,6 @@ import { ParagraphProps, Paragraph } from "../index";
 const meta: Meta = {
   title: "Components/Core/Paragraph",
   component: Paragraph,
-  tags: ["autodocs"],
 };
 
 export default meta;

@@ -1,35 +1,42 @@
-import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import React, { InputHTMLAttributes } from "react";
+import { Meta, StoryObj } from "@storybook/react";
 import { TextArea, InputProps } from "../index";
 import { InfoIcon } from "@sikt/sds-icons";
 
-export default {
+const meta: Meta = {
   title: "Components/Input/TextArea",
   component: TextArea,
-  subcomponents: { InfoIcon },
+};
+
+export default meta;
+
+type Story = StoryObj<InputProps>;
+
+export const Default: Story = {
   args: {
     label: "Label",
     placeholder: "Placeholder",
-    inputProps: { rows: 2 },
+    inputProps: { rows: 2 } as InputHTMLAttributes<HTMLTextAreaElement>,
   },
-} as Meta;
-
-const Template: Story<InputProps> = (args) => <TextArea {...args} />;
-
-export const Default: Story<InputProps> = Template.bind({});
-
-export const WithCustomIcon: Story<InputProps> = Template.bind({});
-WithCustomIcon.args = {
-  icon: <InfoIcon />,
 };
 
-export const WithHelpText: Story<InputProps> = Template.bind({});
-WithHelpText.args = {
-  helpText: "Text",
+export const WithCustomIcon: Story = {
+  args: {
+    ...Default.args,
+    icon: <InfoIcon />,
+  },
 };
 
-export const WithError: Story<InputProps> = Template.bind({});
-WithError.args = {
-  errorText: "Error!",
+export const WithHelpText: Story = {
+  args: {
+    ...Default.args,
+    helpText: "Text",
+  },
+};
+
+export const WithError: Story = {
+  args: {
+    ...Default.args,
+    errorText: "Error!",
+  },
 };

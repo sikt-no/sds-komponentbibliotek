@@ -1,56 +1,60 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { FooterProps, Footer } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/Footer",
   component: Footer,
+};
+
+export default meta;
+
+type Story = StoryObj<FooterProps>;
+
+export const Default: Story = {
   args: {
     lang: "nb",
   },
-  tags: ["autodocs"],
-} as Meta;
+};
 
-const Template: Story<FooterProps> = (args) => <Footer {...args} />;
-
-export const Default: Story<FooterProps> = Template.bind({});
-
-export const WithContent: Story<FooterProps> = Template.bind({});
-WithContent.args = {
-  children: [
-    <div key={0}>
-      <h3>Header</h3>
-      <ul>
-        <li>
-          <a href="#link">Link</a>
-        </li>
-        <li>
-          <a href="#link">Link</a>
-        </li>
-        <li>
-          <a href="#link">Link</a>
-        </li>
-        <li>
-          <a href="#link">Link</a>
-        </li>
-        <li>
-          <a href="#link">Link</a>
-        </li>
-        <li>
-          <a href="#link">Link</a>
-        </li>
-        <li>
-          <a href="#link">Link</a>
-        </li>
-      </ul>
-    </div>,
-    <div key={1}>
-      <h3>Header</h3>
-      <ul>
-        <li>
-          <a href="#link">Link</a>
-        </li>
-      </ul>
-    </div>,
-  ],
+export const WithContent: Story = {
+  args: {
+    ...Default.args,
+    children: [
+      <div key={0}>
+        <h3>Header</h3>
+        <ul>
+          <li>
+            <a href="#link">Link</a>
+          </li>
+          <li>
+            <a href="#link">Link</a>
+          </li>
+          <li>
+            <a href="#link">Link</a>
+          </li>
+          <li>
+            <a href="#link">Link</a>
+          </li>
+          <li>
+            <a href="#link">Link</a>
+          </li>
+          <li>
+            <a href="#link">Link</a>
+          </li>
+          <li>
+            <a href="#link">Link</a>
+          </li>
+        </ul>
+      </div>,
+      <div key={1}>
+        <h3>Header</h3>
+        <ul>
+          <li>
+            <a href="#link">Link</a>
+          </li>
+        </ul>
+      </div>,
+    ],
+  },
 };

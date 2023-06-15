@@ -1,13 +1,14 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { LogoProps, PrimaryLogo } from "../index";
 
-export default {
+const meta: Meta = {
   title: "Components/Logo/Primary",
   component: PrimaryLogo,
-  tags: ["autodocs"],
-} as Meta;
+};
 
-const Template: Story<LogoProps> = (args) => <PrimaryLogo {...args} />;
+export default meta;
 
-export const Logo: Story<LogoProps> = Template.bind({});
+type Story = StoryObj<LogoProps>;
+
+export const Logo: Story = {};
