@@ -49,6 +49,7 @@ export const ToggleSwitch = ({
         <div className="sds-toggle-switch__inner">
           <input
             type="checkbox"
+            role="switch"
             className="sds-toggle-switch__track"
             checked={checked}
             aria-describedby={errorText && `${id}-help-text`}
