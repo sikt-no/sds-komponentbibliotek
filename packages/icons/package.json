@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@svgr/cli": "^8.0.1",
-    "cpy": "^10.0.0",
+    "cpy": "^10.1.0",
     "svgstore-cli": "^2.0.1"
   },
   "peerDependencies": {
