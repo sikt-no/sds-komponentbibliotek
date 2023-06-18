@@ -1,23 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base",
-    ":disableDependencyDashboard",
-    ":preserveSemverRanges",
-    ":rebaseStalePrs"
-  ],
+  "extends": ["config:base", ":disableDependencyDashboard", ":rebaseStalePrs"],
   "addLabels": ["dependencies"],
   "automerge": true,
   "gitLabIgnoreApprovals": true,
   "platformAutomerge": true,
   "major": {
     "automerge": false,
-    "gitLabIgnoreApprovals": false
+    "gitLabIgnoreApprovals": false,
+    "platformAutomerge": false
   },
   "updateLockFiles": true,
+  "rangeStrategy": "bump",
   "packageRules": [
     {
-      "matchPackageNames": ["react", "@types/react", "react-dom"],
+      "matchPackagePatterns": ["react"],
       "groupName": "react"
     },
     {
@@ -25,11 +22,15 @@
       "groupName": "rollup"
     },
     {
+      "matchPackagePatterns": ["typescript"],
+      "groupName": "typescript"
+    },
+    {
       "matchPackagePatterns": ["^postcss"],
       "groupName": "postcss"
     },
     {
-      "matchPackagePatterns": ["@commitlint"],
+      "matchPackagePatterns": ["^@commitlint"],
       "groupName": "commitlint"
     },
     {
@@ -45,8 +46,20 @@
       "groupName": "jest"
     },
     {
-      "matchPackagePatterns": ["@storybook"],
+      "matchPackagePatterns": ["^@storybook", "storybook"],
       "groupName": "storybook"
+    },
+    {
+      "matchPackagePatterns": ["^@babel"],
+      "groupName": "babel"
+    },
+    {
+      "matchPackagePatterns": ["^gatsby"],
+      "groupName": "gatsby"
+    },
+    {
+      "matchPackagePatterns": ["^@sikt"],
+      "groupName": "sikt"
     }
   ]
 }
