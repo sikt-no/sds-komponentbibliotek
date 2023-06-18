@@ -37,7 +37,7 @@
     "gatsby-plugin-layout": "^4.8.0",
     "gatsby-plugin-manifest": "^5.10.0",
     "gatsby-plugin-postcss": "^6.8.0",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.24",
     "typescript": "^5.0.0"
   }
 }
