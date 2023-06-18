@@ -8,6 +8,6 @@
     "stylelint-config-standard": "^33.0.0"
   },
   "peerDependencies": {
-    "stylelint": "^15.5.0"
+    "stylelint": "^15.8.0"
   }
 }
