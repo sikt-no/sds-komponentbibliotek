@@ -19,7 +19,7 @@
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
-    "style-dictionary": "^3.7.2"
+    "style-dictionary": "^3.8.0"
   },
   "peerDependencies": {
     "@types/react": "^18.0.0",
