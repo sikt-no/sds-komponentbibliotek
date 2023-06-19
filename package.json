@@ -32,7 +32,7 @@
     "prerelease": "cross-var npm run build --workspace=packages/$npm_config_package --if-present",
     "release": "standard-version",
     "storybook": "npm run dev --workspace=storybook",
-    "storybook:build": "npm run build --workspace=storybook",
+    "storybook:build": "npm run build:prod --workspace=storybook",
     "gatsby": "npm run develop --workspace=gatsby",
     "gatsby:build": "npm run build:prod --workspace=gatsby",
     "test": "jest"

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "storybook build"
+    "build:prod": "storybook build"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.5",
