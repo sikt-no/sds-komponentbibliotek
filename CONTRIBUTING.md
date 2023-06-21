@@ -101,25 +101,7 @@ See [Example](./packages/__example__) component for base setup.
 Initialize a package:
 
 ```sh
-npm init -y -w ./packages/<package-name>
-```
-
-Add the following to the package's `package.json`:
-
-```json
-"name": "@sikt/sds-<package-name>",
-"version": "0.1.0",
-"license": "UNLICENSED",
-"main": "dist/cjs/index.js",
-"module": "dist/index.js",
-"types": "dist/index.d.ts",
-"style": "dist/index.css",
-"files": [
-  "dist"
-],
-"scripts": {
-  "build": "rollup -c ../../rollup.config.mjs"
-}
+npm run init --package=<package-name>
 ```
 
 If you have custom build needs, the build script and entry points may vary.  
