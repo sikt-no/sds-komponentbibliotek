@@ -2,6 +2,7 @@ import React, {
   ChangeEvent,
   HTMLAttributes,
   InputHTMLAttributes,
+  forwardRef,
   useId,
 } from "react";
 import clsx from "clsx";
@@ -19,40 +20,47 @@ export interface RadioInputBaseProps
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
 }
 
-export const RadioInputBase = ({
-  className,
-  label,
-  name,
-  onChange,
-  checked,
-  value,
-  error,
-  inputProps,
-  ...rest
-}: RadioInputBaseProps) => {
-  const id = useId();
+export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
+  (
+    {
+      className,
+      label,
+      name,
+      onChange,
+      checked,
+      value,
+      error,
+      inputProps,
+      ...rest
+    },
+    ref
+  ) => {
+    const id = useId();
 
-  return (
-    <label
-      className={clsx(
-        "sds-radio",
-        error ? `sds-radio--error` : null,
-        className
-      )}
-      htmlFor={id}
-      {...rest}
-    >
-      <input
-        className="sds-radio__input"
-        id={id}
-        name={name}
-        type="radio"
-        onChange={onChange}
-        value={value}
-        checked={checked ?? undefined}
-        {...inputProps}
-      />
-      <div className="sds-radio__input-label">{label}</div>
-    </label>
-  );
-};
+    return (
+      <label
+        className={clsx(
+          "sds-radio",
+          error ? `sds-radio--error` : null,
+          className
+        )}
+        htmlFor={id}
+        {...rest}
+      >
+        <input
+          ref={ref}
+          className="sds-radio__input"
+          id={id}
+          name={name}
+          type="radio"
+          onChange={onChange}
+          value={value}
+          checked={checked ?? undefined}
+          {...inputProps}
+        />
+        <div className="sds-radio__input-label">{label}</div>
+      </label>
+    );
+  }
+);
+RadioInputBase.displayName = "RadioInputBase";

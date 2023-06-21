@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, InputHTMLAttributes } from "react";
+import React, { HTMLAttributes, InputHTMLAttributes, forwardRef } from "react";
 import useRadioFieldset from "./RadioFieldsetContext";
 import { RadioInputBase } from "./RadioInputBase";
 
@@ -10,11 +10,16 @@ export interface RadioInputProps
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
 }
 
-export const RadioInput = (props: RadioInputProps) => {
-  const { value: valueContext, ...context } = useRadioFieldset() ?? {};
+export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
+  (props, ref) => {
+    const { value: valueContext, ...context } = useRadioFieldset() ?? {};
 
-  const checked =
-    valueContext && valueContext === props.value ? true : undefined;
+    const checked =
+      valueContext && valueContext === props.value ? true : undefined;
 
-  return <RadioInputBase {...context} {...props} checked={checked} />;
-};
+    return (
+      <RadioInputBase {...context} {...props} ref={ref} checked={checked} />
+    );
+  }
+);
+RadioInput.displayName = "RadioInput";

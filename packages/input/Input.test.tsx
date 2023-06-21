@@ -50,7 +50,9 @@ describe("Input", () => {
     it("calls change handler", async () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
-      render(<TextInput label="Foo" onChange={(val) => changeHandler(val)} />);
+      render(
+        <TextInput label="Foo" onChange={(e, val) => changeHandler(val)} />
+      );
 
       await user.type(screen.getByText("Foo"), "text");
 

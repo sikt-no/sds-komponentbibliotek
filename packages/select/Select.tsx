@@ -4,6 +4,7 @@ import React, {
   OptionHTMLAttributes,
   ReactNode,
   SelectHTMLAttributes,
+  forwardRef,
   useId,
 } from "react";
 import clsx from "clsx";
@@ -22,63 +23,70 @@ export interface SelectProps
   onChange?: ChangeEventHandler<HTMLSelectElement>;
 }
 
-export const Select = ({
-  className,
-  label,
-  options,
-  errorText,
-  helpText,
-  icon,
-  selectProps,
-  onChange,
-  ...rest
-}: SelectProps) => {
-  const id = useId();
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(
+  (
+    {
+      className,
+      label,
+      options,
+      errorText,
+      helpText,
+      icon,
+      selectProps,
+      onChange,
+      ...rest
+    },
+    ref
+  ) => {
+    const id = useId();
 
-  return (
-    <div
-      className={clsx(
-        "sds-select",
-        icon && "sds-select--icon",
-        errorText && "sds-select--invalid",
-        className
-      )}
-      {...rest}
-    >
-      <label htmlFor={id} className="sds-select__label">
-        <div className="sds-select__label-text">
-          {errorText && <WarningIcon className="sds-select__help-icon" />}{" "}
-          {label}
-        </div>
-        <div className="sds-select__select">
-          {icon && <div className="sds-select__select-icon">{icon}</div>}
-          <select
-            id={id}
-            className="sds-select__select-input"
-            aria-describedby={`${id}-described`}
-            aria-invalid={Boolean(errorText) && true}
-            onChange={(e) => onChange && onChange(e)}
-            {...selectProps}
-          >
-            {options.map((option) => (
-              <option
-                key={option.value && option.value.toString()}
-                value={option.value}
-                selected={option.selected}
-                disabled={option.disabled}
-              >
-                {option.label}
-              </option>
-            ))}
-          </select>
-          <CaretCircleDownIcon className="sds-select__select-button" />
-        </div>
-      </label>
-      {(errorText ?? helpText) && (
-        <div id={`${id}-described`} className="sds-select__help-text">
-          {errorText ?? helpText}
-        </div>
-      )}
-    </div>
-  );
-};
+    return (
+      <div
+        className={clsx(
+          "sds-select",
+          icon && "sds-select--icon",
+          errorText && "sds-select--invalid",
+          className
+        )}
+        {...rest}
+      >
+        <label htmlFor={id} className="sds-select__label">
+          <div className="sds-select__label-text">
+            {errorText && <WarningIcon className="sds-select__help-icon" />}{" "}
+            {label}
+          </div>
+          <div className="sds-select__select">
+            {icon && <div className="sds-select__select-icon">{icon}</div>}
+            <select
+              ref={ref}
+              id={id}
+              className="sds-select__select-input"
+              aria-describedby={`${id}-described`}
+              aria-invalid={Boolean(errorText) && true}
+              onChange={(e) => onChange && onChange(e)}
+              {...selectProps}
+            >
+              {options.map((option) => (
+                <option
+                  key={option.value && option.value.toString()}
+                  value={option.value}
+                  selected={option.selected}
+                  disabled={option.disabled}
+                >
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <CaretCircleDownIcon className="sds-select__select-button" />
+          </div>
+        </label>
+        {(errorText ?? helpText) && (
+          <div id={`${id}-described`} className="sds-select__help-text">
+            {errorText ?? helpText}
+          </div>
+        )}
+      </div>
+    );
+  }
+);
+Select.displayName = "Select";
