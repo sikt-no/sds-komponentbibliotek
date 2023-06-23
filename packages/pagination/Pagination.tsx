@@ -82,9 +82,7 @@ export const Pagination = ({
           } else if (value == maxLimit + 1 || value == minLimit - 1) {
             return (
               <li className="sds-pagination__list-item" key={value}>
-                <div className="sds-pagination__button sds-pagination__button--spacer">
-                  &hellip;
-                </div>
+                <div className="sds-pagination__button--spacer">&hellip;</div>
               </li>
             );
           }
