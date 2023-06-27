@@ -23,7 +23,6 @@ export const WithCustomIcon: Story = {
   args: {
     ...Input.args,
     icon: <GearIcon />,
-    iconPosition: "end",
   },
 };
 

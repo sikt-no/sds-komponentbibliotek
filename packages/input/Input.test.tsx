@@ -102,15 +102,8 @@ describe("Input", () => {
       expect(errorEl).toHaveClass("sds-input__help-text");
     });
 
-    it("should have left icon element", async () => {
-      render(
-        <TextInput
-          label="Foo"
-          data-testid="test"
-          icon="icon"
-          iconPosition="start"
-        />
-      );
+    it("should have icon element", async () => {
+      render(<TextInput label="Foo" data-testid="test" icon="icon" />);
 
       const container = screen.getByTestId("test");
       const icon = container.getElementsByClassName("sds-input__icon")[0];
@@ -121,23 +114,23 @@ describe("Input", () => {
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
 
-    it("should have right icon element", async () => {
+    it("should have action element", async () => {
       render(
-        <TextInput
+        <SearchInput
           label="Foo"
           data-testid="test"
-          icon="icon"
-          iconPosition="end"
+          actionProps={{ label: "Test label" }}
         />
       );
 
       const container = screen.getByTestId("test");
-      const icon = container.getElementsByClassName("sds-input__icon")[0];
+      const action = container.getElementsByClassName("sds-input__action")[0];
       const input = container.getElementsByClassName("sds-input__input")[0];
-      expect(icon.compareDocumentPosition(input)).toBe(
+      expect(action.compareDocumentPosition(input)).toBe(
         Node.DOCUMENT_POSITION_PRECEDING
       );
       expect(screen.getByText("Foo")).toBeInTheDocument();
+      expect(action).toHaveAccessibleName("Test label");
     });
   });
 });

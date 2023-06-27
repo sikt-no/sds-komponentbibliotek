@@ -23,7 +23,6 @@ export const WithCustomIcon: Story = {
   args: {
     ...Default.args,
     icon: <SlidersIcon />,
-    iconPosition: "end",
   },
 };
 

@@ -16,6 +16,7 @@ import {
   PhoneIcon,
   WarningIcon,
 } from "@sikt/sds-icons";
+import { InputActionButton, InputActionButtonProps } from "./InputActionButton";
 import "./input.pcss";
 
 type InputTypes =
@@ -43,7 +44,7 @@ export interface InputProps
   ) => void;
   value?: string;
   icon?: ReactNode;
-  iconPosition?: "start" | "end";
+  actionProps?: Omit<InputActionButtonProps, "icon">;
   errorText?: string;
   helpText?: string;
   inputProps?: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>;
@@ -62,7 +63,7 @@ const Input = forwardRef<
       onChange,
       value,
       icon,
-      iconPosition = "start",
+      actionProps,
       type,
       errorText,
       helpText,
@@ -97,9 +98,7 @@ const Input = forwardRef<
             {label}
           </div>
           <div className="sds-input__wrapper">
-            {iconPosition === "start" && icon && (
-              <div className="sds-input__icon">{icon}</div>
-            )}
+            {icon && <div className="sds-input__icon">{icon}</div>}
             {type === "textarea" ? (
               <textarea
                 ref={ref as ForwardedRef<HTMLTextAreaElement>}
@@ -129,8 +128,14 @@ const Input = forwardRef<
                 {...inputProps}
               />
             )}
-            {iconPosition === "end" && icon && (
-              <div className="sds-input__icon">{icon}</div>
+            {type === "search" && (
+              <InputActionButton
+                type="submit"
+                className="sds-input__action"
+                label="Søk"
+                icon={<MagnifyingGlassIcon />}
+                {...actionProps}
+              />
             )}
           </div>
         </label>
@@ -175,14 +180,6 @@ export const TelInput = forwardRef<HTMLInputElement, InputProps>(
 );
 TelInput.displayName = "TelInput";
 export const SearchInput = forwardRef<HTMLInputElement, InputProps>(
-  (props, ref) => (
-    <Input
-      type="search"
-      icon={<MagnifyingGlassIcon />}
-      iconPosition="end"
-      ref={ref}
-      {...props}
-    />
-  )
+  (props, ref) => <Input type="search" ref={ref} {...props} />
 );
 SearchInput.displayName = "SearchInput";

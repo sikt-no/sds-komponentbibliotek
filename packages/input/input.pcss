@@ -52,6 +52,11 @@
       &:focus-visible {
         outline: none;
       }
+
+      /* Hide native clear search button in Chrome and Safari */
+      &::-webkit-search-cancel-button {
+        appearance: none;
+      }
     }
 
     &:hover {
@@ -78,13 +83,21 @@
     }
   }
 
-  &__icon {
+  &__icon,
+  &__action {
     align-items: center;
     display: inline-flex;
     font-size: var(--sds-size-text-m);
     justify-content: center;
-    width: var(--sds-size-text-m);
     height: 100%;
+  }
+
+  &__icon {
+    width: var(--sds-size-text-m);
+  }
+
+  &__action {
+    margin-right: calc(-1 * var(--sds-size-base-s));
   }
 
   &--error {

@@ -23,7 +23,6 @@ export const WithCustomIcon: Story = {
   args: {
     ...Default.args,
     icon: <MapPinIcon />,
-    iconPosition: "start",
   },
 };
 
@@ -33,4 +32,8 @@ export const WithHelpText: Story = {
 
 export const WithError: Story = {
   args: { ...Default.args, errorText: "Error!" },
+};
+
+export const WithCustomActionLabel: Story = {
+  args: { ...Default.args, actionProps: { label: "Finn resultater" } },
 };
