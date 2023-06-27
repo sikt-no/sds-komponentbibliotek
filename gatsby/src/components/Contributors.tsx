@@ -7,28 +7,33 @@ const Contributors = () => {
   const contributors = [
     [{ name: "Deg", role: "Din rolle", team: "Ditt team" }],
     [
-      { name: "Kine", role: "Dev", team: "Komponentbiblioteket" },
-      { name: "Sondre Ek", role: "Design" },
-      { name: "Kristoffer", role: "Dev" },
-      { name: "Petter", role: "Design" },
+      { name: "Eivind", role: "Inkludering", team: "Komponentbiblioteket" },
+      { name: "Kine", role: "Teknologi", team: "Komponentbiblioteket" },
+      { name: "Sondre Ek", role: "Design", team: "Komponentbiblioteket" },
+      { name: "Kristoffer", role: "Teknologi", team: "Komponentbiblioteket" },
+      { name: "Petter", role: "Design", team: "Komponentbiblioteket" },
     ],
     [
+      { name: "Erik", role: "Teknologi", team: "Opptak Søker" },
+      { name: "Vegard", role: "Teknologi", team: "Opptak Søker" },
       { name: "Hilde", role: "Design", team: "Opptak Søker" },
-      { name: "Jakob", role: "Dev" },
+      { name: "Jakob", role: "Teknologi", team: "Opptak Søker" },
     ],
     [
       { name: "Rolf Anders", role: "Design", team: "Kudaf" },
-      { name: "Glaysa", role: "Dev" },
+      { name: "Glaysa", role: "Teknologi", team: "Kudaf" },
     ],
     [
-      { name: "Patrick", role: "Dev", team: "Opptak Søknadsbehandling" },
-      { name: "An", role: "Dev" },
+      /*{ name: "Marius", role: "Teknologi", team: "Opptak Søknadsbehandling" },*/
+      { name: "Patrick", role: "Teknologi", team: "Opptak Søknadsbehandling" },
+      { name: "An", role: "Teknologi", team: "Opptak Søknadsbehandling" },
     ],
     [
-      { name: "Christian", role: "Design", team: "Studentportal" },
-      { name: "Lasse", role: "Dev" },
+      { name: "Jonas", role: "Teknologi", team: "FS Studentportal" },
+      { name: "Christian", role: "Design", team: "FS Studentportal" },
+      { name: "Lasse", role: "Teknologi", team: "FS Studentportal" },
     ],
-    [{ name: "Sondre", role: "Dev", team: "Opptak Kjerne" }],
+    [{ name: "Sondre", role: "Teknologi", team: "Opptak Kjerne" }],
   ];
 
   return (
@@ -37,12 +42,7 @@ const Contributors = () => {
         return (
           <div key={team[0].team}>
             <Heading4 headingType="overline">{team[0].team}</Heading4>
-            <div
-              className={`${style.sdsSiktContributors__contributorGroup} ${
-                team.length === 1 &&
-                style.sdsSiktContributors__contributorGroupOne
-              }`}
-            >
+            <div className={style.sdsSiktContributors__contributorGroup}>
               {team.map((contributor) => {
                 return (
                   <div
