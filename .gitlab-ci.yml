@@ -131,8 +131,8 @@ stop_review:
   extends: .stop_review
   stage: deploy
 
-prod:
-  extends: .production
+staging:
+  extends: .staging
   stage: deploy
   script:
     - deploy deployment.yml
@@ -140,8 +140,18 @@ prod:
     - docker
   needs:
     - docker
+
+prod:
+  extends: .production
+  stage: deploy
   variables:
-    REPLICAS: "2"
+    REPLICAS: "3"
+  script:
+    - deploy deployment.yml
+  dependencies:
+    - docker
+  needs:
+    - docker
 #release:
 #  extends: .publish
 #  stage: release
