@@ -59,6 +59,19 @@ test:
   needs:
     - install
 
+vulnerability:
+  extends: .imagescan
+  stage: test
+  allow_failure: true
+  script:
+    - trivy fs -f json -o gl-container-scanning-report.json ./
+    - trivy fs --dependency-tree ./
+  artifacts:
+    when: always
+    reports:
+      container_scanning: gl-container-scanning-report.json
+  needs: []
+
 packages:
   #  extends: .publish
   stage: build
