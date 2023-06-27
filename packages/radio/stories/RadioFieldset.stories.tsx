@@ -13,7 +13,7 @@ type Story = StoryObj<RadioFieldsetProps>;
 
 export const Default: Story = {
   args: {
-    label: "Label",
+    legend: "Legend",
     children: [
       <RadioInput key={1} label="Radio 1" value="1" />,
       <RadioInput key={2} label="Radio 2" value="2" />,
@@ -26,7 +26,6 @@ export const Default: Story = {
 export const WithLegend: Story = {
   args: {
     ...Default.args,
-    legend: "Legend",
     value: "2",
   },
 };
@@ -34,7 +33,6 @@ export const WithLegend: Story = {
 export const WithHelpText: Story = {
   args: {
     ...Default.args,
-    legend: "Legend",
     helpText: "Text",
     value: "2",
   },
@@ -43,7 +41,6 @@ export const WithHelpText: Story = {
 export const WithError: Story = {
   args: {
     ...Default.args,
-    legend: "Legend",
     errorText: "Error!",
     value: "3",
   },
