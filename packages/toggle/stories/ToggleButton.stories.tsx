@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { ToggleSwitch, ToggleSwitchProps } from "../index";
+import { ToggleButton, ToggleButtonProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Toggle/ToggleSwitch",
-  component: ToggleSwitch,
+  title: "Components/Toggle/ToggleButton",
+  component: ToggleButton,
 };
 
 export default meta;
 
-type Story = StoryObj<ToggleSwitchProps>;
+type Story = StoryObj<ToggleButtonProps>;
 
 const Template: Story = {
   render: (args) => {
@@ -26,7 +26,7 @@ const Template: Story = {
     }, [args.checked]);
 
     return (
-      <ToggleSwitch {...args} onChange={handleChange} checked={isChecked} />
+      <ToggleButton {...args} onChange={handleChange} checked={isChecked} />
     );
   },
 };
@@ -34,28 +34,7 @@ const Template: Story = {
 export const Default: Story = {
   ...Template,
   args: {
+    checked: false,
     label: "Label",
-    checked: true,
   },
-};
-
-export const WithoutIcon: Story = {
-  ...Template,
-  args: {
-    ...Default.args,
-    showIcons: false,
-  },
-};
-
-export const WithLabelFirst: Story = {
-  ...Template,
-  args: {
-    ...Default.args,
-    labelFirst: true,
-  },
-};
-
-export const WithError: Story = {
-  ...Template,
-  args: { ...Default.args, errorText: "Error" },
 };
