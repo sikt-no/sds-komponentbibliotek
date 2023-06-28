@@ -3,6 +3,7 @@ import type { Preview } from "@storybook/react";
 import "../../packages/core/index.pcss";
 import "../../packages/logo/logo.pcss";
 import "../../packages/icons/icon.pcss";
+import "../../packages/input/input.pcss";
 import "../../packages/button/button.pcss";
 import "../../packages/button/button-link.pcss";
 import "../../packages/form/fieldset.pcss";
