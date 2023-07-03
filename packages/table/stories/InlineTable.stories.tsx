@@ -30,18 +30,80 @@ export const Default: Story = {
     <InlineTable {...args}>
       <TableHead>
         <TableRow>
-          <TableHeader>1abc</TableHeader>
-          <TableHeader>2def</TableHeader>
+          <TableHeader>Id</TableHeader>
+          <TableHeader>Navn</TableHeader>
+          <TableHeader>Telefon</TableHeader>
+          <TableHeader>Adresse</TableHeader>
+          <TableHeader>Benhandlingsstatus</TableHeader>
+          <TableHeader>CTA</TableHeader>
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell>A</TableCell>
-          <TableCell>B</TableCell>
+          <TableCell>1</TableCell>
+          <TableCell>Ola Nordmann</TableCell>
+          <TableCell>
+            <a href="tel:" style={{ whiteSpace: "nowrap" }}>
+              90 90 90 90
+            </a>
+          </TableCell>
+          <TableCell>
+            <address>
+              <span style={{ whiteSpace: "nowrap" }}>
+                Fridtjof Nansens vei 19
+              </span>
+              <br />
+              <span>0369 Oslo</span>
+            </address>
+          </TableCell>
+          <TableCell>Behandlet</TableCell>
+          <TableCell>
+            <button style={{ whiteSpace: "nowrap" }}>Klikk meg</button>
+          </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>C</TableCell>
-          <TableCell>D</TableCell>
+          <TableCell>2</TableCell>
+          <TableCell>Kari Nordmann</TableCell>
+          <TableCell>
+            <a href="tel:" style={{ whiteSpace: "nowrap" }}>
+              90 90 90 90
+            </a>
+          </TableCell>
+          <TableCell>
+            <address>
+              <span style={{ whiteSpace: "nowrap" }}>
+                Fridtjof Nansens vei 19
+              </span>
+              <br />
+              <span>0369 Oslo</span>
+            </address>
+          </TableCell>
+          <TableCell>Ubehandlet</TableCell>
+          <TableCell>
+            <button style={{ whiteSpace: "nowrap" }}>Klikk meg</button>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>3</TableCell>
+          <TableCell>Odd Even Nordmann</TableCell>
+          <TableCell>
+            <a href="tel:" style={{ whiteSpace: "nowrap" }}>
+              90 90 90 90
+            </a>
+          </TableCell>
+          <TableCell>
+            <address>
+              <span style={{ whiteSpace: "nowrap" }}>
+                Fridtjof Nansens vei 19
+              </span>
+              <br />
+              <span>0369 Oslo</span>
+            </address>
+          </TableCell>
+          <TableCell>Ubehandlet</TableCell>
+          <TableCell>
+            <button style={{ whiteSpace: "nowrap" }}>Klikk meg</button>
+          </TableCell>
         </TableRow>
       </TableBody>
     </InlineTable>
