@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@1.0.1...@sikt/sds-pagination@1.0.2) (2023-07-04)
+
+### Bug Fixes
+
+- **pagination:** remove circle around ellipsis ([40bd406](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/40bd40648ad44208d2305e721246951636277519))
+
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@1.0.0...@sikt/sds-pagination@1.0.1) (2023-04-29)
 
 ## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@0.2.1...@sikt/sds-pagination@1.0.0) (2023-04-13)
