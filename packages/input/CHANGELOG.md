@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@1.0.1...@sikt/sds-input@2.0.0) (2023-07-05)
+
+### ⚠ BREAKING CHANGES
+
+- implement action button for input field
+- add forwardRef to input components
+
+### Features
+
+- add forwardRef to input components ([e45c950](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e45c950944d15eac649b6f0755b95be99077b2c1))
+- implement action button for input field ([1eb9fa1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1eb9fa19a889294ac9f43b1af421085522a5d69b))
+- **textarea:** add textarea type to input component ([20c4610](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/20c46101cb997d3916b7c3648430ecdd030ed37b))
+
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@1.0.0...@sikt/sds-input@1.0.1) (2023-04-29)
 
 ## 1.0.0 (2023-04-17)
