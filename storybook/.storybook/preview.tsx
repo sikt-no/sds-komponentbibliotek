@@ -48,7 +48,7 @@ const preview: Preview = {
           "Introduction",
           "Core",
           [
-            "Core",
+            "Readme",
             "Color",
             "Spacing",
             "Apperance",
@@ -57,6 +57,7 @@ const preview: Preview = {
             "*",
           ],
           "*",
+          ["*", ["Readme", "Changelog"]],
           "Utils",
           "Config",
         ],
