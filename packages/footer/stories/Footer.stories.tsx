@@ -25,35 +25,26 @@ export const WithContent: Story = {
         <h3>Header</h3>
         <ul>
           <li>
-            <a href="#link">Link</a>
+            <a className="sds-typography-link" href="#link">
+              Link
+            </a>
           </li>
           <li>
-            <a href="#link">Link</a>
+            <a className="sds-typography-link" href="#link">
+              Link
+            </a>
           </li>
           <li>
-            <a href="#link">Link</a>
-          </li>
-          <li>
-            <a href="#link">Link</a>
-          </li>
-          <li>
-            <a href="#link">Link</a>
-          </li>
-          <li>
-            <a href="#link">Link</a>
-          </li>
-          <li>
-            <a href="#link">Link</a>
+            <a className="sds-typography-link" href="#link">
+              Link
+            </a>
           </li>
         </ul>
       </div>,
       <div key={1}>
-        <h3>Header</h3>
-        <ul>
-          <li>
-            <a href="#link">Link</a>
-          </li>
-        </ul>
+        <button className="sds-button sds-button--secondary" href="#link">
+          Button
+        </button>
       </div>,
     ],
   },
