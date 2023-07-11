@@ -97,7 +97,10 @@
   }
 
   &__action {
-    margin-right: calc(-1 * var(--sds-size-base-s));
+    --action-border-margin: calc(var(--sds-input-border-width) * -1);
+
+    margin: var(--action-border-margin) calc(-1 * var(--sds-size-base-s))
+      var(--action-border-margin) 0;
   }
 
   &--error {
