@@ -2,6 +2,18 @@
   "zindex": {
     "default": {
       "value": "auto"
+    },
+    "drawer": {
+      "value": 2000
+    },
+    "menu": {
+      "value": 1000
+    },
+    "modal": {
+      "value": 3000
+    },
+    "overlay": {
+      "value": 2900
     }
   }
 }
