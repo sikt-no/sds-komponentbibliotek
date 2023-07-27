@@ -54,6 +54,9 @@
       }
     },
     "padding": {
+      "tiny": {
+        "value": "{size.base.xs.value}"
+        },
       "small": {
         "value": "{size.base.s.value}"
       },
@@ -62,6 +65,9 @@
       },
       "large": {
         "value": "{size.base.l.value}"
+      },
+      "huge": {
+        "value": "{size.base.xl.value}"
       }
     },
     "text": {
