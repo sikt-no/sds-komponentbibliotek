@@ -2,6 +2,7 @@ import { Markdown, Meta, IconGallery, IconItem } from "@storybook/blocks";
 import Readme from "../README.md?raw";
 import * as icons from "../build/index";
 import { config } from "../icons.config";
+import { LinkedInLogo, XLogo } from "../ThirdPartyIcons";
 
 <Meta title="Components/Icons/Readme" />
 
@@ -14,12 +15,23 @@ import { config } from "../icons.config";
     const iconName = `${icon
       .split("-")
       .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
-      .join("")}Icon`;
+      .join("")}Icon`; 
     const I = icons[iconName];
+
     return (
       <IconItem key={icon} name={icon}>
         <I />
       </IconItem>
     );
-  })}
+
+})}
+
+<IconItem name="linkedin">
+  <LinkedInLogo />
+</IconItem>
+
+<IconItem name="x-logo">
+  <XLogo />
+</IconItem>
+
 </IconGallery>
