@@ -1,0 +1,17 @@
+@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
+
+.sds-progress-indicator {
+  padding-left: 0;
+  display: flex;
+  flex-flow: column;
+  gap: var(--sds-size-padding-tiny);
+
+  @media (--sds-breakpoint-tablet) {
+    flex-flow: row wrap;
+  }
+
+  &__list-element {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,36 @@
+@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
+
+.sds-progress-step {
+  --progress-indicator-size: var(--sds-size-base-m1);
+
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-padding-tiny);
+
+  &__number {
+    background-color: var(--sds-color-background-default);
+    border: var(--sds-border-size-regular) solid var(--sds-color-surface-action);
+    border-radius: var(--sds-border-radius-full);
+    width: var(--progress-indicator-size);
+    min-width: var(--progress-indicator-size);
+    height: var(--progress-indicator-size);
+    display: grid;
+    place-items: center;
+
+    &--selected {
+      font-weight: 600;
+      background-color: var(--sds-color-surface-action);
+      color: var(--sds-color-text-onsurface-action);
+    }
+  }
+
+  &__separator-icon {
+    display: none;
+  }
+
+  & + .sds-progress-step &__separator-icon {
+    @media (--sds-breakpoint-tablet) {
+      display: unset;
+    }
+  }
+}
