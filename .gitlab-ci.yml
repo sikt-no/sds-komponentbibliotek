@@ -9,6 +9,8 @@ variables:
   KUBE_TEST_ID: komponentbibliotek
   HTTP_PORT: "80"
   REPLICAS: "1"
+  # Remove and replace with fallback_keys after GitLab 16
+  CACHE_FALLBACK_KEY: cache-turborepo-$CI_DEFAULT_BRANCH
 
 stages:
   - prepare
@@ -83,6 +85,13 @@ packages:
     expire_in: 1 days
     paths:
       - packages/**/*
+  cache:
+    - key: cache-turborepo-$CI_COMMIT_BRANCH
+      # Needs GitLab 16
+      # fallback_keys:
+      #   - cache-turborepo-$CI_DEFAULT_BRANCH
+      paths:
+        - node_modules/.cache/turbo
   dependencies:
     - install
   needs:

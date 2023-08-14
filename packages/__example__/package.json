@@ -1,7 +1,7 @@
 {
   "name": "@sikt/sds-example",
   "version": "0.1.0",
-  "private": "true",
+  "private": true,
   "license": "UNLICENSED",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
