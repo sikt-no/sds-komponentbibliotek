@@ -185,22 +185,17 @@
     &[target="_blank"],
     &--external,
     &--navigation {
-      padding-right: calc(
-        var(--sds-link-icon-margin) + var(--sds-link-icon-size)
-      );
-      position: relative;
-
       &::after {
         content: "";
-        display: block;
+        display: inline-block;
         mask-position: center right;
         mask-repeat: no-repeat;
         mask-size: var(--sds-link-icon-size);
-        position: absolute;
-        bottom: 0;
-        right: 0;
         width: var(--sds-link-icon-size);
         height: var(--sds-link-icon-size);
+        position: relative;
+        margin-left: var(--sds-link-icon-margin);
+        vertical-align: middle;
       }
     }
 
