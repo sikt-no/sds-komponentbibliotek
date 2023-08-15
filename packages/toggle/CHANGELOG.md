@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@1.1.0...@sikt/sds-toggle@1.1.1) (2023-08-15)
+
+### Bug Fixes
+
+- **toggle-button:** fix flash of white on click ([5d920a6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5d920a61b6f57df699915779e249030bae1193ec))
+
 ## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@1.0.0...@sikt/sds-toggle@1.1.0) (2023-07-06)
 
 ### Features
