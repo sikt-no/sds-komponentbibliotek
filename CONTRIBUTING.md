@@ -35,7 +35,7 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issu
 
 - Sikt Design System's acronym, `sds`, is used as prefix for packages, classes and so on. It is used as a suffix for config packages since that is convention and a requirement for some configs.
 - Sikt scope `@sikt` is used on packages to link them to our organization on NPM.
-- Keep directory names kebab-case while component names PascalCase.
+- Keep directory, style class selectors & stylesheets names kebab-case while component names PascalCase.
 
 #### Monorepo
 
