@@ -56,7 +56,7 @@
     "padding": {
       "tiny": {
         "value": "{size.base.xs.value}"
-        },
+      },
       "small": {
         "value": "{size.base.s.value}"
       },

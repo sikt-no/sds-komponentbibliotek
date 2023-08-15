@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@2.1.0...@sikt/sds-core@2.2.0) (2023-08-15)
+
+### Features
+
+- **core:** add tiny and huge padding tokens ([edd0508](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/edd0508665f38037e5048abb9da1ff88ab66bac6))
+- **tokens:** add z-index tokens ([520c415](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/520c4156c4f220f802943a54630220f0a55197e0))
+
+### Bug Fixes
+
+- **core:** fix icon positioning on link in firefox ([88c44bf](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/88c44bf211622ba3ee55302ac8a74a1cdb1a3761))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@2.0.0...@sikt/sds-core@2.1.0) (2023-06-15)
 
 ### Features
