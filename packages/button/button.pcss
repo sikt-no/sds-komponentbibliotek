@@ -40,6 +40,20 @@
     }
   }
 
+  &--danger {
+    color: var(--sds-color-text-onsurface-danger);
+    background-color: var(--sds-color-surface-danger);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--sds-color-surface-danger-hover);
+    }
+
+    &:active {
+      background: var(--sds-color-surface-danger-active);
+    }
+  }
+
   &--secondary {
     border: var(--sds-border-size-regular) solid var(--sds-color-surface-action);
     color: var(--sds-color-text-default);

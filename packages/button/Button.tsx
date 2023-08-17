@@ -19,7 +19,7 @@ interface ButtonChildrenProps extends ButtonBaseProps {
 }
 
 interface ButtonTypes {
-  buttonType: "primary" | "secondary" | "tertiary";
+  buttonType: "danger" | "primary" | "secondary" | "tertiary";
 }
 
 const Button = ({
@@ -52,6 +52,8 @@ const Button = ({
   );
 };
 
+export const DangerButton = (props: ButtonProps) =>
+  Button({ ...props, buttonType: "danger" });
 export const PrimaryButton = (props: ButtonProps) =>
   Button({ ...props, buttonType: "primary" });
 export const SecondaryButton = (props: ButtonProps) =>

@@ -2,9 +2,15 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import { PrimaryButton, SecondaryButton, TertiaryButton } from "./Button";
+import {
+  DangerButton,
+  PrimaryButton,
+  SecondaryButton,
+  TertiaryButton,
+} from "./Button";
 
 const buttonTypes = [
+  { name: "danger", component: DangerButton },
   { name: "primary", component: PrimaryButton },
   { name: "secondary", component: SecondaryButton },
   { name: "tertiary", component: TertiaryButton },
