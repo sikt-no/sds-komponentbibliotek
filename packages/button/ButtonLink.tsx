@@ -10,7 +10,7 @@ interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
   icon?: ReactNode;
   iconType?: "right" | "left" | "only";
-  buttonType?: "primary" | "secondary" | "tertiary";
+  buttonType?: "primary" | "secondary" | "tertiary" | "danger";
 }
 
 interface ButtonLinkAriaLabelProps extends ButtonLinkBaseProps {
