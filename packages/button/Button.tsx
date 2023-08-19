@@ -40,13 +40,13 @@ const Button = ({
       {...rest}
     >
       {icon && (iconType === "left" || iconType === "only") && (
-        <div className="sds-button__icon">{icon}</div>
+        <span className="sds-button__icon">{icon}</span>
       )}
       {(!icon || iconType !== "only") && (
         <span className="sds-button__label">{children}</span>
       )}
       {icon && iconType === "right" && (
-        <div className="sds-button__icon">{icon}</div>
+        <span className="sds-button__icon">{icon}</span>
       )}
     </button>
   );
