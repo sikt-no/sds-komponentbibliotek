@@ -28,7 +28,7 @@ export const Badge = ({
       )}
       {...rest}
     >
-      {icon && <div className="sds-badge__icon">{icon}</div>}
+      {icon && <span className="sds-badge__icon">{icon}</span>}
       {children}
     </span>
   );
