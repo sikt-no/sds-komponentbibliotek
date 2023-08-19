@@ -91,15 +91,15 @@ export const Tab = ({
       onKeyDown={handleKeyPress}
       {...rest}
     >
-      {icon && <div className="sds-tabs__tab-icon">{icon}</div>}
+      {icon && <span className="sds-tabs__tab-icon">{icon}</span>}
       {children}
       {badge && (
-        <div className="sds-tabs__tab-badge">
+        <span className="sds-tabs__tab-badge">
           {isSelected
             ? isValidElement(badge) &&
               cloneElement(badge as ReactElement, { visibility: "high" })
             : badge}
-        </div>
+        </span>
       )}
     </button>
   );
