@@ -39,7 +39,9 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issu
 
 #### Monorepo
 
-This is a monorepo where all directories in `/packages/*` are seperate packages with their own `package.json` & `README.md`.  
+This is a monorepo built with [npm workspaces](https://docs.npmjs.com/cli/v9/using-npm/workspaces) where all directories in `/packages/*` are seperate packages with their own `package.json` & `README.md`.  
+All commands should be able to run from the project root, for example dependency installs (`npm i -s @sikt/sds-core -w packages/button`) or package builds (`npm run build` / `npm run build -w packages/button`).
+
 The reasoning behind multiple packages is rooted in micro architecture. This way, a single breaking change to one package won't affect consumers of other packages.
 
 #### Documentation
@@ -55,12 +57,17 @@ See [Accessibility](./docs/A11Y.md)
 
 - Do not use element selectors for styling since these affect global styles and elements used may change.
 - Follow [BEM](https://getbem.com/naming/) (Block, Element, Modifier) naming convention for style scoping to a specific component.
-- Use a prefix `sds` on selector class names to avoid collision with other selectors
+- Use a `sds` prefix on selector class names to avoid collision with other selectors.
+- Use a `sds` prefix on global variables and avoid it on local variables to differentiate.
 
 Example:
 
 ```css
+--sds-variable: value;
+
 .sds-<package-name > {
+  --package-name-variable: value;
+
   /* styling */
   &__<element > {
   }
@@ -69,7 +76,7 @@ Example:
 }
 ```
 
-PostCSS is used to allow usage of future CSS specs, like [nesting modules](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting#readme) & [custom media queries](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media#readme).
+PostCSS is used to allow usage of future CSS specs, like [nesting modules](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting#readme) & [custom media queries](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media#readme). New plugins can be added when needed.
 
 #### React
 
