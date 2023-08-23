@@ -3,5 +3,10 @@
   "version": "1.0.0",
   "license": "UNLICENSED",
   "main": "index.js",
+  "files": [
+    "CHANGELOG.md",
+    "index.js",
+    "README.md"
+  ],
   "scripts": {}
 }

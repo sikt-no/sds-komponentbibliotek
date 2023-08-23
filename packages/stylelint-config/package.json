@@ -4,6 +4,11 @@
   "license": "UNLICENSED",
   "main": "index.js",
   "scripts": {},
+  "files": [
+    "CHANGELOG.md",
+    "index.js",
+    "README.md"
+  ],
   "dependencies": {
     "stylelint-config-standard": "^34.0.0"
   },

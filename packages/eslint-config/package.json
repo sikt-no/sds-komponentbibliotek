@@ -4,6 +4,11 @@
   "license": "UNLICENSED",
   "main": "index.js",
   "scripts": {},
+  "files": [
+    "CHANGELOG.md",
+    "index.js",
+    "README.md"
+  ],
   "dependencies": {
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
