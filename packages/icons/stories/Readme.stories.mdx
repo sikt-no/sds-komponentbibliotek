@@ -2,7 +2,7 @@ import { Markdown, Meta, IconGallery, IconItem } from "@storybook/blocks";
 import Readme from "../README.md?raw";
 import * as icons from "../build/index";
 import { config } from "../icons.config";
-import { LinkedInLogo, XLogo } from "../ThirdPartyIcons";
+import { LinkedInLogo, XLogo } from "../index";
 
 <Meta title="Components/Icons/Readme" />
 
@@ -26,12 +26,12 @@ import { LinkedInLogo, XLogo } from "../ThirdPartyIcons";
 
 })}
 
-<IconItem name="linkedin">
-  <LinkedInLogo />
+<IconItem name="linked-in-logo">
+  <LinkedInLogo color="black" />
 </IconItem>
 
 <IconItem name="x-logo">
-  <XLogo />
+  <XLogo color="black" />
 </IconItem>
 
 </IconGallery>

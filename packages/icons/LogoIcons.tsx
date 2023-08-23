@@ -1,16 +1,21 @@
 import React from "react";
 import clsx from "clsx";
+import { IconProps } from "./build/index";
 
-export interface ThirdPartyIconsProps {
+export interface LogoIconsProps extends IconProps {
   className?: string;
-  color: "black" | "white";
+  color?: "black" | "white";
 }
 
-export const XLogo = ({ color, className, ...rest }: ThirdPartyIconsProps) => (
+export const XLogo = ({
+  color = "white",
+  className,
+  ...rest
+}: LogoIconsProps) => (
   <svg
     viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
-    className={clsx("sds-icon", `sds-icon__custom--${color}`, className)}
+    className={clsx("sds-icon", `sds-icon--color-${color}`, className)}
     {...rest}
     aria-hidden="true"
   >
@@ -19,14 +24,14 @@ export const XLogo = ({ color, className, ...rest }: ThirdPartyIconsProps) => (
 );
 
 export const LinkedInLogo = ({
-  color,
+  color = "white",
   className,
   ...rest
-}: ThirdPartyIconsProps) => (
+}: LogoIconsProps) => (
   <svg
     viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
-    className={clsx("sds-icon", `sds-icon__custom--${color}`, className)}
+    className={clsx("sds-icon", `sds-icon--color-${color}`, className)}
     {...rest}
     aria-hidden="true"
   >
