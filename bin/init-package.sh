@@ -22,12 +22,12 @@ echo "{
     \"build\": \"rollup -c ../../rollup.config.mjs\"
   },
   \"dependencies\": {
-    \"@sikt/sds-core\": \"^2.1.0\"
+    \"@sikt/sds-core\": \"^2.2.0\"
   },
   \"peerDependencies\": {
     \"@types/react\": \"^18.0.0\",
     \"@types/react-dom\": \"^18.0.0\",
-    \"clsx\": \"^1.2.1\",
+    \"clsx\": \"^1.0.0 || ^2.0.0\",
     \"react\": \"^18.0.0\",
     \"react-dom\": \"^18.0.0\"
   }

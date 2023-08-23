@@ -31,7 +31,6 @@ export const IconRight: Story = {
 export const IconLeft: Story = {
   args: {
     ...Button.args,
-
     icon: <ArrowLeftIcon />,
     iconType: "left",
   },
@@ -40,7 +39,6 @@ export const IconLeft: Story = {
 export const IconOnly: Story = {
   args: {
     ...Button.args,
-
     icon: <ArrowRightIcon />,
     iconType: "only",
   },

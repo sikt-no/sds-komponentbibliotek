@@ -21,7 +21,7 @@
     "@sikt/sds-icons": "^1.0.1"
   },
   "peerDependencies": {
-    "clsx": "^1.2.1",
+    "clsx": "^1.0.0 || ^2.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }
