@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@1.1.0...@sikt/sds-icons@1.2.0) (2023-08-24)
+
+### Features
+
+- **icons:** add LinkedinLogo and XLogo ([cd237dd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cd237ddc35eb438312178438140c7784f57e5bd6))
+
 ## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@1.0.1...@sikt/sds-icons@1.1.0) (2023-08-15)
 
 ### Features
