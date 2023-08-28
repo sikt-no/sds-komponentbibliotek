@@ -71,35 +71,24 @@ describe("Input", () => {
     });
 
     it("should show error text", async () => {
-      render(
-        <TextInput
-          label="Foo"
-          data-testid="test"
-          className="test-class-name"
-          errorText="Bar"
-        />
-      );
+      render(<TextInput label="Foo" data-testid="test" errorText="Bar" />);
 
       expect(screen.getByTestId("test")).toHaveClass("sds-input--error");
+      expect(screen.getByRole("textbox")).toBeInvalid();
 
       const errorEl = screen.getByText("Bar");
       expect(errorEl).toBeInTheDocument();
-      expect(errorEl).toHaveClass("sds-input__help-text");
+      expect(errorEl).toHaveClass("sds-form-field__help-text");
     });
 
     it("should show help text", async () => {
-      render(
-        <TextInput
-          label="Foo"
-          data-testid="test"
-          className="test-class-name"
-          helpText="Bar"
-        />
-      );
+      render(<TextInput label="Foo" data-testid="test" helpText="Bar" />);
 
-      const errorEl = screen.getByText("Bar");
-      expect(errorEl).toBeInTheDocument();
-      expect(errorEl).toHaveClass("sds-input__help-text");
+      expect(screen.getByRole("textbox")).not.toBeInvalid();
+
+      const helpEl = screen.getByText("Bar");
+      expect(helpEl).toBeInTheDocument();
+      expect(helpEl).toHaveClass("sds-form-field__help-text");
     });
 
     it("should have icon element", async () => {

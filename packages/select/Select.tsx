@@ -8,7 +8,8 @@ import React, {
   useId,
 } from "react";
 import clsx from "clsx";
-import { CaretCircleDownIcon, WarningIcon } from "@sikt/sds-icons";
+import { CaretCircleDownIcon } from "@sikt/sds-icons";
+import { FormField } from "@sikt/sds-form";
 import "./select.pcss";
 
 export interface SelectProps
@@ -39,53 +40,48 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     ref
   ) => {
     const id = useId();
+    const helpTextId = `${id}-help-text`;
 
     return (
-      <div
+      <FormField
         className={clsx(
           "sds-select",
           icon && "sds-select--icon",
           errorText && "sds-select--invalid",
           className
         )}
+        label={label}
+        errorText={errorText}
+        helpText={helpText}
+        htmlFor={id}
+        helpTextId={helpTextId}
         {...rest}
       >
-        <label htmlFor={id} className="sds-select__label">
-          <div className="sds-select__label-text">
-            {errorText && <WarningIcon className="sds-select__help-icon" />}{" "}
-            {label}
-          </div>
-          <div className="sds-select__select">
-            {icon && <div className="sds-select__select-icon">{icon}</div>}
-            <select
-              ref={ref}
-              id={id}
-              className="sds-select__select-input"
-              aria-describedby={`${id}-described`}
-              aria-invalid={Boolean(errorText) && true}
-              onChange={(e) => onChange && onChange(e)}
-              {...selectProps}
-            >
-              {options.map((option) => (
-                <option
-                  key={option.value && option.value.toString()}
-                  value={option.value}
-                  selected={option.selected}
-                  disabled={option.disabled}
-                >
-                  {option.label}
-                </option>
-              ))}
-            </select>
-            <CaretCircleDownIcon className="sds-select__select-button" />
-          </div>
-        </label>
-        {(errorText ?? helpText) && (
-          <div id={`${id}-described`} className="sds-select__help-text">
-            {errorText ?? helpText}
-          </div>
-        )}
-      </div>
+        <div className="sds-select__select">
+          {icon && <div className="sds-select__select-icon">{icon}</div>}
+          <select
+            ref={ref}
+            id={id}
+            className="sds-select__select-input"
+            aria-describedby={helpTextId}
+            aria-invalid={Boolean(errorText) && true}
+            onChange={(e) => onChange && onChange(e)}
+            {...selectProps}
+          >
+            {options.map((option) => (
+              <option
+                key={option.value && option.value.toString()}
+                value={option.value}
+                selected={option.selected}
+                disabled={option.disabled}
+              >
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <CaretCircleDownIcon className="sds-select__select-button" />
+        </div>
+      </FormField>
     );
   }
 );

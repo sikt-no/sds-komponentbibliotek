@@ -1,26 +1,10 @@
 .sds-input {
   --sds-input-border-color: var(--sds-color-surface-neutral);
   --sds-input-border-width: var(--sds-border-size-regular);
-  --sds-input-label-color: var(--sds-color-text-neutral);
 
   display: inline-flex;
   flex-direction: column;
   width: 100%;
-
-  &__label-text,
-  &__help-text {
-    font-size: var(--sds-size-text-s);
-    line-height: var(--sds-size-text-s1);
-    color: var(--sds-input-label-color);
-  }
-
-  &__label-text {
-    padding: var(--sds-size-base-xs);
-  }
-
-  &__help-text {
-    padding: var(--sds-size-base-s);
-  }
 
   &__wrapper {
     display: flex;
@@ -105,7 +89,6 @@
 
   &--error {
     --sds-input-border-color: var(--sds-color-surface-danger);
-    --sds-input-label-color: var(--sds-color-text-danger);
 
     & .sds-input__wrapper {
       &:hover {

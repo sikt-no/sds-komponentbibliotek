@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { CheckboxInput } from "../index";
-import { Fieldset, FieldsetProps } from "../../form";
+import { Fieldset, FieldsetProps } from "../index";
+import { CheckboxInput } from "../../checkbox";
 
 const meta: Meta = {
-  title: "Components/Checkbox/CheckboxFieldset",
+  title: "Components/Fieldset/Fieldset",
   component: Fieldset,
 };
 
@@ -16,9 +16,12 @@ const Template: Story = {
   args: {
     legend: "Legend",
     children: [
-      <CheckboxInput key={1} isChecked label="Checkbox label 1" />,
-      <CheckboxInput key={2} label="Checkbox label 2" />,
-      <CheckboxInput key={3} isChecked label="Checkbox label 3" />,
+      <CheckboxInput
+        key={1}
+        isChecked={true}
+        label="Checkbox label"
+        onChange={() => null}
+      />,
     ],
   },
 };
@@ -46,16 +49,9 @@ export const WithHelpText: Story = {
 export const WithError: Story = {
   ...Template,
   args: {
-    children: [
-      <CheckboxInput
-        key={1}
-        isChecked={true}
-        label="Checkbox label"
-        error={true}
-        onChange={() => null}
-      />,
-    ],
-    legend: "Legend with error icon",
+    ...Template.args,
+    legend: "Legend",
     errorText: "Error text",
+    helpText: undefined,
   },
 };

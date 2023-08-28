@@ -1,77 +1,78 @@
 .sds-checkbox {
-  --sds-checkbox-background-color: var(--sds-color-background-default);
-  --sds-checkbox-border-color: var(--sds-color-surface-neutral);
-  --sds-checkbox-margin-space: var(--sds-size-base-s);
-  --sds-checkbox-label-padding: var(--sds-size-base-s) var(--sds-size-base-xs);
+  --checkbox-border-color: var(--sds-color-surface-neutral);
+  --checkbox-background-color: var(--sds-color-surface-default);
 
-  position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  user-select: none;
   cursor: pointer;
-
-  &:has(&__input:disabled) {
-    cursor: inherit;
-  }
-
-  &__label {
-    padding: var(--sds-checkbox-label-padding);
-    line-height: var(--sds-size-base-m);
-  }
 
   &__input {
     appearance: none;
-    box-sizing: border-box;
+    background: var(--checkbox-background-color);
+    border: var(--sds-border-size-regular) solid var(--checkbox-border-color);
+    border-radius: var(--sds-border-radius-small);
+    cursor: pointer;
     width: var(--sds-size-base-m);
     height: var(--sds-size-base-m);
-    border-radius: var(--sds-border-radius-small);
-    border: var(--sds-border-size-regular) solid
-      var(--sds-checkbox-border-color);
-    outline: none;
-    background-color: var(--sds-checkbox-background-color);
     transition: opacity 0.4s ease;
-    margin: var(--sds-checkbox-margin-space);
+    padding: 0;
+    margin: var(--sds-size-base-s);
+
+    &-label {
+      padding: var(--sds-size-base-s) var(--sds-size-base-xs);
+      line-height: var(--sds-size-text-m);
+    }
 
     &:hover {
-      --sds-checkbox-border-color: var(--sds-color-surface-neutral-hover);
+      --checkbox-border-color: var(--sds-color-surface-neutral-hover);
+    }
+
+    &:active {
+      --checkbox-border-color: var(--sds-color-surface-neutral-active);
     }
 
     &:focus-visible {
+      --checkbox-border-color: transparent;
+
       outline: var(--sds-outline);
       outline-offset: 0;
     }
 
+    &:checked {
+      --checkbox-border-color: transparent;
+      --checkbox-background-color: var(--sds-color-surface-action);
+
+      &:hover {
+        --checkbox-background-color: var(--sds-color-surface-action-hover);
+      }
+
+      &:active {
+        --checkbox-background-color: var(--sds-color-surface-action-active);
+      }
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &--error &__input {
+    --checkbox-border-color: var(--sds-color-surface-danger);
+
+    &:hover {
+      --checkbox-border-color: var(--sds-color-surface-danger-hover);
+    }
+
     &:active {
-      --sds-checkbox-background-color: var(--sds-color-surface-action-active);
-      --sds-checkbox-border-color: var(--sds-color-surface-neutral-active);
+      --checkbox-border-color: var(--sds-color-surface-danger-active);
     }
 
     &:checked {
-      --sds-checkbox-border-color: transparent;
-      --sds-checkbox-background-color: var(--sds-color-surface-action);
-
-      &:hover,
-      &:focus {
-        --sds-checkbox-border-color: transparent;
-        --sds-checkbox-background-color: var(--sds-color-surface-action-hover);
-      }
-
-      &.sds-checkbox__input--error {
-        --sds-checkbox-background-color: var(--sds-color-surface-danger);
-
-        &:hover,
-        &:active {
-          --sds-checkbox-background-color: var(--sds-color-surface-danger);
-        }
-      }
-    }
-
-    &--error {
-      --sds-checkbox-background-color: var(--sds-color-background-default);
-      --sds-checkbox-border-color: var(--sds-color-surface-danger);
+      --checkbox-background-color: var(--sds-color-surface-danger);
 
       &:hover {
-        --sds-checkbox-border-color: var(--sds-color-surface-danger);
+        --checkbox-background-color: var(--sds-color-surface-danger-hover);
+      }
+
+      &:active {
+        --checkbox-background-color: var(--sds-color-surface-danger-active);
       }
     }
   }
@@ -82,23 +83,23 @@
     width: var(--sds-size-base-m);
     height: var(--sds-size-base-m);
     position: absolute;
-    margin: var(--sds-checkbox-margin-space);
-
-    &:focus-visible {
-      border-color: transparent;
-    }
+    margin: var(--sds-size-base-s);
+    pointer-events: none;
   }
 
   &__icon {
-    pointer-events: none;
     position: absolute;
     margin-top: 2px;
     color: var(--sds-color-background-default);
     font-size: var(--sds-size-text-s2);
     display: none;
+  }
 
-    &--checked {
-      display: block;
-    }
+  &__input:checked ~ &__icon-wrapper &__icon {
+    display: block;
+  }
+
+  &:has(&__input:disabled) {
+    cursor: inherit;
   }
 }

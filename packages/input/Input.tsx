@@ -14,8 +14,8 @@ import {
   MagnifyingGlassIcon,
   PasswordIcon,
   PhoneIcon,
-  WarningIcon,
 } from "@sikt/sds-icons";
+import { FormField } from "@sikt/sds-form";
 import { InputActionButton, InputActionButtonProps } from "./InputActionButton";
 import "./input.pcss";
 
@@ -79,72 +79,65 @@ const Input = forwardRef<
       },
       [onChange]
     );
+    const helpTextId = `${id}-help-text`;
 
     return (
-      <div
+      <FormField
         className={clsx(
           "sds-input",
           `sds-input--${type}`,
           errorText && `sds-input--error`,
           className
         )}
+        label={label}
+        errorText={errorText}
+        helpText={helpText}
+        htmlFor={id}
+        helpTextId={helpTextId}
         {...rest}
       >
-        <label className="sds-input__label" htmlFor={id}>
-          <div className="sds-input__label-text">
-            {errorText && (
-              <WarningIcon className="sds-input__label-error-icon" />
-            )}{" "}
-            {label}
-          </div>
-          <div className="sds-input__wrapper">
-            {icon && <div className="sds-input__icon">{icon}</div>}
-            {type === "textarea" ? (
-              <textarea
-                ref={ref as ForwardedRef<HTMLTextAreaElement>}
-                className="sds-input__input"
-                id={id}
-                type={type}
-                placeholder={placeholder}
-                onChange={onChange && changeHandler}
-                value={value}
-                aria-describedby={`${id}-help-text`}
-                aria-invalid={Boolean(errorText)}
-                aria-errormessage={errorText && `${id}-help-text`}
-                {...inputProps}
-              />
-            ) : (
-              <input
-                ref={ref as ForwardedRef<HTMLInputElement>}
-                className="sds-input__input"
-                id={id}
-                type={type}
-                placeholder={placeholder}
-                onChange={onChange && changeHandler}
-                value={value}
-                aria-describedby={`${id}-help-text`}
-                aria-invalid={Boolean(errorText)}
-                aria-errormessage={errorText && `${id}-help-text`}
-                {...inputProps}
-              />
-            )}
-            {type === "search" && (
-              <InputActionButton
-                type="submit"
-                className="sds-input__action"
-                label="Søk"
-                icon={<MagnifyingGlassIcon />}
-                {...actionProps}
-              />
-            )}
-          </div>
-        </label>
-        {(errorText ?? helpText) && (
-          <div className="sds-input__help-text" id={`${id}-help-text`}>
-            {errorText ?? helpText}
-          </div>
-        )}
-      </div>
+        <div className="sds-input__wrapper">
+          {icon && <div className="sds-input__icon">{icon}</div>}
+          {type === "textarea" ? (
+            <textarea
+              ref={ref as ForwardedRef<HTMLTextAreaElement>}
+              className="sds-input__input"
+              id={id}
+              type={type}
+              placeholder={placeholder}
+              onChange={onChange && changeHandler}
+              value={value}
+              aria-describedby={helpTextId}
+              aria-invalid={Boolean(errorText)}
+              aria-errormessage={errorText && helpTextId}
+              {...inputProps}
+            />
+          ) : (
+            <input
+              ref={ref as ForwardedRef<HTMLInputElement>}
+              className="sds-input__input"
+              id={id}
+              type={type}
+              placeholder={placeholder}
+              onChange={onChange && changeHandler}
+              value={value}
+              aria-describedby={helpTextId}
+              aria-invalid={Boolean(errorText)}
+              aria-errormessage={errorText && helpTextId}
+              {...inputProps}
+            />
+          )}
+          {type === "search" && (
+            <InputActionButton
+              type="submit"
+              className="sds-input__action"
+              label="Søk"
+              icon={<MagnifyingGlassIcon />}
+              {...actionProps}
+            />
+          )}
+        </div>
+      </FormField>
     );
   }
 );

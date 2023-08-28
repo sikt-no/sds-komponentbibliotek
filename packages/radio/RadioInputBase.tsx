@@ -39,11 +39,7 @@ export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
 
     return (
       <label
-        className={clsx(
-          "sds-radio",
-          error ? `sds-radio--error` : null,
-          className
-        )}
+        className={clsx("sds-radio", error && "sds-radio--error", className)}
         htmlFor={id}
         {...rest}
       >

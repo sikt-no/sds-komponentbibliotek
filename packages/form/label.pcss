@@ -1,0 +1,19 @@
+.sds-form-field__label {
+  --label-color: var(--sds-color-text-neutral);
+
+  &-text {
+    font-size: var(--sds-size-text-s);
+    line-height: var(--sds-size-text-s1);
+    color: var(--label-color);
+    padding: var(--sds-size-base-xs);
+  }
+
+  &--error {
+    --label-color: var(--sds-color-text-danger);
+  }
+
+  &-error-icon {
+    font-size: var(--sds-size-text-s1);
+    margin-right: var(--sds-size-base-xs);
+  }
+}

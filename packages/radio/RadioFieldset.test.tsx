@@ -5,7 +5,7 @@ import React from "react";
 import { RadioFieldset } from "./RadioFieldset";
 import { RadioInput } from "./RadioInput";
 
-describe("RadioGroup", () => {
+describe("RadioFieldset", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
@@ -21,7 +21,7 @@ describe("RadioGroup", () => {
   });
 
   describe("api", () => {
-    it("radio group should render", async () => {
+    it("radio fieldset should render", async () => {
       render(
         <RadioFieldset legend="Foo" data-testid="test">
           <RadioInput label="Radio 1" value="1" />
@@ -30,7 +30,7 @@ describe("RadioGroup", () => {
         </RadioFieldset>
       );
 
-      expect(screen.getByTestId("test")).toHaveClass("sds-radio-fieldset");
+      expect(screen.getByTestId("test")).toHaveClass("sds-form-fieldset");
       expect(screen.getByTestId("test")).toBeInTheDocument();
     });
 
@@ -81,7 +81,7 @@ describe("RadioGroup", () => {
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-radio-fieldset test-class-name"
+        "sds-form-fieldset test-class-name"
       );
     });
 

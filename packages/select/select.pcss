@@ -8,25 +8,6 @@
   flex-direction: column;
   width: 100%;
 
-  &__label {
-    cursor: pointer;
-
-    &:hover {
-      --sds-select-button-color: var(--sds-color-text-default-hover);
-    }
-
-    &:active {
-      --sds-select-button-color: var(--sds-color-text-default-active);
-    }
-
-    &-text {
-      color: var(--sds-select-text-color);
-      font-size: var(--sds-size-text-s);
-      line-height: var(--sds-size-text-s1);
-      padding: var(--sds-size-base-xs);
-    }
-  }
-
   &__select {
     align-items: center;
     display: flex;
@@ -74,20 +55,6 @@
     }
   }
 
-  &__help {
-    &-text {
-      color: var(--sds-color-text-neutral);
-      font-size: var(--sds-size-text-s);
-      line-height: var(--sds-size-text-s1);
-      padding: var(--sds-size-padding-small);
-    }
-
-    &-icon {
-      font-size: var(--sds-size-text-s1);
-      margin-right: var(--sds-size-base-xs);
-    }
-  }
-
   &--icon {
     .sds-select {
       &__select-input {
@@ -106,10 +73,6 @@
         &:focus-visible {
           --sds-select-border-color: transparent;
         }
-      }
-
-      &__help-text {
-        color: var(--sds-color-text-danger);
       }
     }
   }

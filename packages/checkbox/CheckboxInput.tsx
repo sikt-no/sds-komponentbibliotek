@@ -2,6 +2,7 @@ import React, { ChangeEvent, HTMLAttributes, forwardRef, useId } from "react";
 import clsx from "clsx";
 import "./checkbox-input.pcss";
 import { CheckIcon } from "@sikt/sds-icons";
+import { useFieldset } from "@sikt/sds-form";
 
 export interface CheckboxInputProps extends HTMLAttributes<HTMLInputElement> {
   isChecked?: boolean;
@@ -31,35 +32,33 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
     ref
   ) => {
     const id = useId();
+    const context = useFieldset() ?? {};
     return (
-      <label htmlFor={id} className="sds-checkbox">
+      <label
+        className={clsx(
+          "sds-checkbox",
+          (error ?? context.error) && "sds-checkbox--error",
+          className
+        )}
+        htmlFor={id}
+      >
         <input
           ref={ref}
+          className="sds-checkbox__input"
           id={id}
-          name={name}
+          name={name ?? context.name}
           type="checkbox"
-          value={value}
-          checked={isChecked ?? undefined}
-          disabled={disabled}
-          aria-invalid={error ? true : false}
           onChange={onChange}
-          className={clsx(
-            "sds-checkbox__input",
-            error && "sds-checkbox__input--error",
-            className
-          )}
+          value={value}
+          checked={isChecked ?? false}
+          disabled={disabled}
+          aria-invalid={error ?? context.error ? true : false}
           {...rest}
         />
         <div className="sds-checkbox__icon-wrapper">
-          <CheckIcon
-            className={clsx(
-              "sds-checkbox__icon",
-              isChecked && "sds-checkbox__icon--checked"
-            )}
-          />
+          <CheckIcon className="sds-checkbox__icon" />
         </div>
-
-        <span className="sds-checkbox__label">{label}</span>
+        <div className="sds-checkbox__input-label">{label}</div>
       </label>
     );
   }

@@ -14,8 +14,7 @@ export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
   (props, ref) => {
     const { value: valueContext, ...context } = useRadioFieldset() ?? {};
 
-    const checked =
-      valueContext && valueContext === props.value ? true : undefined;
+    const checked = valueContext && valueContext === props.value ? true : false;
 
     return (
       <RadioInputBase {...context} {...props} ref={ref} checked={checked} />

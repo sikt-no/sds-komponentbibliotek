@@ -59,8 +59,8 @@ describe("api", () => {
       />
     );
 
-    expect(screen.getByTestId("test")).toHaveClass(
-      "sds-checkbox__input sds-checkbox__input--error"
+    expect(screen.getByTestId("test").parentElement).toHaveClass(
+      "sds-checkbox sds-checkbox--error"
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
   });
@@ -77,8 +77,8 @@ describe("api", () => {
       />
     );
 
-    expect(screen.getByTestId("test")).toHaveClass(
-      "sds-checkbox__input--error"
+    expect(screen.getByTestId("test").parentElement).toHaveClass(
+      "sds-checkbox--error"
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
   });
@@ -95,8 +95,8 @@ describe("api", () => {
       />
     );
 
-    expect(screen.getByTestId("test")).toHaveClass(
-      "sds-checkbox__input test-class-name"
+    expect(screen.getByTestId("test").parentElement).toHaveClass(
+      "sds-checkbox test-class-name"
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
   });
@@ -116,14 +116,5 @@ describe("api", () => {
     await user.click(checkbox);
 
     expect(changeHandler).toHaveBeenCalled();
-  });
-
-  it("should apply the correct CSS classes based error value prop", () => {
-    render(<CheckboxInput error={true} data-testid="test" />);
-
-    expect(screen.getByTestId("test")).toHaveClass(
-      "sds-checkbox__input--error"
-    );
-    expect(screen.getByTestId("test")).toBeInTheDocument();
   });
 });

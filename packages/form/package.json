@@ -1,6 +1,6 @@
 {
-  "name": "@sikt/sds-checkbox",
-  "version": "1.0.0",
+  "name": "@sikt/sds-form",
+  "version": "0.1.0",
   "license": "UNLICENSED",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
@@ -13,14 +13,12 @@
     "build": "rollup -c ../../rollup.config.mjs"
   },
   "dependencies": {
-    "@sikt/sds-core": "^1.0.1",
-    "@sikt/sds-form": "^0.1.0",
-    "@sikt/sds-icons": "^1.0.0"
+    "@sikt/sds-core": "^2.1.0"
   },
   "peerDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "clsx": "^1.0.0 || ^2.0.0",
+    "clsx": "^1.2.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }

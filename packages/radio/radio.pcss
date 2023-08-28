@@ -1,19 +1,19 @@
 .sds-radio {
   --radio-border-color: var(--sds-color-surface-neutral);
-  --radio-background-color: var(--sds-color-surface-action);
+  --radio-background-color: var(--sds-color-surface-default);
 
+  display: flex;
   align-items: center;
   cursor: pointer;
-  display: flex;
 
   &__input {
     appearance: none;
-    background: var(--sds-color-surface-default);
+    background: var(--radio-background-color);
     border: var(--sds-border-size-regular) solid var(--radio-border-color);
     border-radius: var(--sds-border-radius-full);
     display: grid;
     place-content: center;
-    pointer-events: none;
+    cursor: pointer;
     width: var(--sds-size-base-m);
     height: var(--sds-size-base-m);
     padding: 0;
@@ -24,9 +24,24 @@
       line-height: var(--sds-size-text-m);
     }
 
+    &:hover {
+      --radio-border-color: var(--sds-color-surface-neutral-hover);
+    }
+
+    &:active {
+      --radio-border-color: var(--sds-color-surface-neutral-active);
+    }
+
+    &:focus-visible {
+      --radio-border-color: transparent;
+
+      outline: var(--sds-outline);
+      outline-offset: 0;
+    }
+
     &:checked {
-      border-color: transparent;
-      background: var(--radio-background-color);
+      --radio-border-color: transparent;
+      --radio-background-color: var(--sds-color-surface-action);
 
       &::before {
         content: "";
@@ -36,23 +51,14 @@
         height: var(--sds-size-base-s);
         background: var(--sds-color-text-onsurface-action);
       }
-    }
 
-    &:hover {
-      --radio-border-color: var(--sds-color-surface-neutral-hover);
-      --radio-background-color: var(--sds-color-surface-action-hover);
-    }
+      &:hover {
+        --radio-background-color: var(--sds-color-surface-action-hover);
+      }
 
-    &:active {
-      --radio-border-color: var(--sds-color-surface-neutral-active);
-      --radio-background-color: var(--sds-color-surface-action-active);
-    }
-
-    &:focus-visible {
-      --radio-border-color: transparent;
-
-      outline-offset: 0;
-      outline: var(--sds-outline);
+      &:active {
+        --radio-background-color: var(--sds-color-surface-action-active);
+      }
     }
   }
 
@@ -62,18 +68,28 @@
     color: var(--sds-color-text-default);
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   &--error &__input {
     --radio-border-color: var(--sds-color-surface-danger);
-    --radio-background-color: var(--sds-color-surface-danger);
 
     &:hover {
       --radio-border-color: var(--sds-color-surface-danger-hover);
-      --radio-background-color: var(--sds-color-surface-danger-hover);
     }
 
     &:active {
       --radio-border-color: var(--sds-color-surface-danger-active);
-      --radio-background-color: var(--sds-color-surface-danger-active);
+    }
+
+    &:checked {
+      --radio-background-color: var(--sds-color-surface-danger);
+
+      &:hover {
+        --radio-background-color: var(--sds-color-surface-danger-hover);
+      }
+
+      &:active {
+        --radio-background-color: var(--sds-color-surface-danger-active);
+      }
     }
   }
 
