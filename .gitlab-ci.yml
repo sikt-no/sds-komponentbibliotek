@@ -22,6 +22,8 @@ stages:
 #    - if: $CI_COMMIT_TAG
 #  only:
 #    - main
+#  except:
+#    - schedules
 
 install:
   stage: prepare
@@ -34,6 +36,8 @@ install:
     expire_in: 30 mins
     paths:
       - node_modules
+  except:
+    - schedules
 
 lint:
   stage: test
@@ -43,6 +47,8 @@ lint:
     - install
   needs:
     - install
+  except:
+    - schedules
 
 test:
   stage: test
@@ -58,11 +64,12 @@ test:
     - install
   needs:
     - install
+  except:
+    - schedules
 
-vulnerability:
+.vuln:
   extends: .imagescan
   stage: test
-  allow_failure: true
   script:
     - trivy fs -f json -o gl-container-scanning-report.json ./
     - trivy fs --dependency-tree ./
@@ -71,6 +78,18 @@ vulnerability:
     reports:
       container_scanning: gl-container-scanning-report.json
   needs: []
+
+vuln:
+  extends: .vuln
+  allow_failure: true
+  except:
+    - schedules
+
+vuln-schedule:
+  extends: .vuln
+  allow_failure: false
+  only:
+    - schedules
 
 packages:
   #  extends: .publish
@@ -93,6 +112,8 @@ packages:
     - install
   needs:
     - install
+  except:
+    - schedules
 
 storybook:
   stage: build
@@ -108,6 +129,8 @@ storybook:
     - install
   needs:
     - install
+  except:
+    - schedules
 
 gatsby:
   stage: build
@@ -125,6 +148,8 @@ gatsby:
   needs:
     - install
     - packages
+  except:
+    - schedules
 
 docker:
   extends: .docker-build
@@ -135,6 +160,8 @@ docker:
   needs:
     - storybook
     - gatsby
+  except:
+    - schedules
 
 review:
   extends: .review
@@ -145,10 +172,14 @@ review:
     - docker
   needs:
     - docker
+  except:
+    - schedules
 
 stop_review:
   extends: .stop_review
   stage: deploy
+  except:
+    - schedules
 
 staging:
   extends: .staging
@@ -159,6 +190,8 @@ staging:
     - docker
   needs:
     - docker
+  except:
+    - schedules
 
 prod:
   extends: .production
@@ -171,6 +204,8 @@ prod:
     - docker
   needs:
     - docker
+  except:
+    - schedules
 #release:
 #  extends: .publish
 #  stage: release
