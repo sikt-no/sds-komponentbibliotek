@@ -73,6 +73,7 @@ test:
   script:
     - trivy fs -f json -o gl-container-scanning-report.json ./
     - trivy fs --dependency-tree ./
+    - trivy fs --severity MEDIUM,HIGH,CRITICAL --exit-code 1 ./
   artifacts:
     when: always
     reports:
