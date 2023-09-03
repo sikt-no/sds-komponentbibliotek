@@ -7,15 +7,15 @@ import { axe } from "jest-axe";
 describe("CheckboxInput,", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
-      const { container } = render(<CheckboxInput label="Foo" value="foo" />);
+      const { container } = render(
+        <CheckboxInput label="Foo" value="foo" onChange={() => {}} />
+      );
       expect(await axe(container)).toHaveNoViolations();
     });
   });
 });
 
 describe("api", () => {
-  const changeHandler = jest.fn();
-
   it("checked checkbox should render", async () => {
     render(
       <CheckboxInput
@@ -23,7 +23,7 @@ describe("api", () => {
         value="foo"
         data-testid="test"
         isChecked
-        onChange={changeHandler}
+        onChange={() => {}}
       />
     );
     expect(screen.getByTestId("test")).toHaveClass("sds-checkbox__input");
@@ -38,7 +38,7 @@ describe("api", () => {
         value="foo"
         data-testid="test"
         isChecked={false}
-        onChange={changeHandler}
+        onChange={() => {}}
         disabled={true}
       />
     );
@@ -55,7 +55,7 @@ describe("api", () => {
         error={true}
         data-testid="test"
         isChecked
-        onChange={changeHandler}
+        onChange={() => {}}
       />
     );
 
@@ -73,7 +73,7 @@ describe("api", () => {
         error={true}
         data-testid="test"
         isChecked={false}
-        onChange={changeHandler}
+        onChange={() => {}}
       />
     );
 
@@ -91,7 +91,7 @@ describe("api", () => {
         data-testid="test"
         className="test-class-name"
         isChecked
-        onChange={changeHandler}
+        onChange={() => {}}
       />
     );
 
@@ -102,6 +102,7 @@ describe("api", () => {
   });
 
   it("calls change handler", async () => {
+    const changeHandler = jest.fn();
     const user = userEvent.setup();
 
     render(

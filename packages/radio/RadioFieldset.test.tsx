@@ -9,7 +9,7 @@ describe("RadioFieldset", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <RadioFieldset legend="Foo">
+        <RadioFieldset legend="Foo" onChange={() => {}}>
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
@@ -23,7 +23,7 @@ describe("RadioFieldset", () => {
   describe("api", () => {
     it("radio fieldset should render", async () => {
       render(
-        <RadioFieldset legend="Foo" data-testid="test">
+        <RadioFieldset legend="Foo" onChange={() => {}} data-testid="test">
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
@@ -36,7 +36,7 @@ describe("RadioFieldset", () => {
 
     it("selected radio button should be checked", async () => {
       render(
-        <RadioFieldset legend="Foo" value="2" onChange={jest.fn()}>
+        <RadioFieldset legend="Foo" onChange={() => {}} value="2">
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
@@ -71,6 +71,7 @@ describe("RadioFieldset", () => {
       render(
         <RadioFieldset
           legend="Foo"
+          onChange={() => {}}
           data-testid="test"
           className="test-class-name"
         >
@@ -87,7 +88,7 @@ describe("RadioFieldset", () => {
 
     it("should render help text", async () => {
       render(
-        <RadioFieldset legend="Foo" helpText="Help message">
+        <RadioFieldset legend="Foo" onChange={() => {}} helpText="Help message">
           <RadioInput label="Radio 1" value="1" />
         </RadioFieldset>
       );
@@ -99,6 +100,7 @@ describe("RadioFieldset", () => {
       render(
         <RadioFieldset
           legend="Foo"
+          onChange={() => {}}
           data-testid="test"
           errorText="Error message"
         >
