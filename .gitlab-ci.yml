@@ -204,12 +204,14 @@ review:
   needs:
     - docker
   except:
+    - main
     - schedules
 
 stop_review:
   stage: .post
   extends: .stop_review
   except:
+    - main
     - schedules
 
 staging:
