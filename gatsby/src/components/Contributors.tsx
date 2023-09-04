@@ -7,6 +7,7 @@ const Contributors = () => {
   const contributors = [
     [{ name: "Deg", role: "Din rolle", team: "Ditt team" }],
     [
+      { name: "Hanne", role: "Design", team: "Komponentbiblioteket" },
       { name: "Eivind", role: "Inkludering", team: "Komponentbiblioteket" },
       { name: "Kine", role: "Teknologi", team: "Komponentbiblioteket" },
       { name: "Sondre Ek", role: "Design", team: "Komponentbiblioteket" },
@@ -57,7 +58,7 @@ const Contributors = () => {
                     {contributor.name !== "Deg" && (
                       <img
                         className={style.sdsSiktContributors__contributorImage}
-                        src={`./images/${contributor.name
+                        src={`/images/${contributor.name
                           .toLowerCase()
                           .replaceAll(" ", "-")}.png`}
                         alt={contributor.name}
