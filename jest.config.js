@@ -7,7 +7,9 @@ module.exports = {
     "/dist/",
     ".stories.tsx",
   ],
+  coverageDirectory: "./coverage",
   coverageReporters: ["text", "cobertura"],
+  reporters: ["default", "jest-junit"],
   coverageThreshold: {
     global: {
       branches: 80,
