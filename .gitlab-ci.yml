@@ -129,17 +129,17 @@ packages:
     exclude:
       - packages/__example__/*
   cache:
-    - key: cache-turborepo-$CI_COMMIT_BRANCH
-      fallback_keys:
-        - cache-turborepo-$CI_DEFAULT_BRANCH
-      paths:
-        - node_modules/.cache/turbo
     - key:
         files:
           - package-lock.json
       paths:
         - .npm
       policy: pull
+    - key: cache-turborepo-$CI_COMMIT_BRANCH
+      fallback_keys:
+        - cache-turborepo-$CI_DEFAULT_BRANCH
+      paths:
+        - node_modules/.cache/turbo
   needs:
     - install
   except:
