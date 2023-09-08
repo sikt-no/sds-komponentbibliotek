@@ -18,10 +18,5 @@
     "jsx": "react-jsx"
   },
   "include": ["packages", "types", "jest"],
-  "exclude": [
-    "node_modules",
-    "packages/**/dist",
-    "packages/**/*.stories.tsx",
-    "packages/**/*.test.tsx"
-  ]
+  "exclude": ["node_modules", "packages/**/dist", "packages/**/*.stories.tsx"]
 }
