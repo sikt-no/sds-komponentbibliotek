@@ -21,7 +21,7 @@
     "@sikt/sds-logo": "^1.0.1",
     "@sikt/sds-tabs": "^2.0.0",
     "canvas-confetti": "^1.6.0",
-    "gatsby": "^5.12.3",
+    "gatsby": "^5.12.4",
     "gatsby-plugin-matomo": "^0.16.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -34,9 +34,9 @@
     "@types/react-dom": "^18.2.7",
     "eslint-config-react-app": "^7.0.1",
     "gatsby-plugin-force-file-loader": "^5.0.1",
-    "gatsby-plugin-layout": "^4.11.0",
-    "gatsby-plugin-manifest": "^5.11.0",
-    "gatsby-plugin-postcss": "^6.11.0",
+    "gatsby-plugin-layout": "^4.12.0",
+    "gatsby-plugin-manifest": "^5.12.0",
+    "gatsby-plugin-postcss": "^6.12.0",
     "postcss": "^8.4.28",
     "typescript": "^5.2.2"
   }
