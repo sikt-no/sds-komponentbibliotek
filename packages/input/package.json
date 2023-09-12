@@ -15,7 +15,7 @@
   "dependencies": {
     "@sikt/sds-button": "^2.0.0",
     "@sikt/sds-core": "^1.0.1",
-    "@sikt/sds-form": "^0.1.0",
+    "@sikt/sds-form": "^1.0.0",
     "@sikt/sds-icons": "^1.0.0"
   },
   "peerDependencies": {

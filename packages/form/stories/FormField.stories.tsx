@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { FormField, FormFieldProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Fieldset/FormField",
+  title: "Components/Form/FormField",
   component: FormField,
 };
 

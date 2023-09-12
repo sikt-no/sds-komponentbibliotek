@@ -4,7 +4,7 @@ import { Fieldset, FieldsetProps } from "../index";
 import { CheckboxInput } from "../../checkbox";
 
 const meta: Meta = {
-  title: "Components/Fieldset/Fieldset",
+  title: "Components/Form/Fieldset",
   component: Fieldset,
 };
 

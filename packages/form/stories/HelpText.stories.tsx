@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { HelpText, HelpTextProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Fieldset/HelpText",
+  title: "Components/Form/HelpText",
   component: HelpText,
 };
 
