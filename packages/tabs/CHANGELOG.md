@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@2.0.0...@sikt/sds-tabs@2.0.1) (2023-09-12)
+
+### Bug Fixes
+
+- update invalid html markup ([8f84172](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8f841725de404171c31c6c043bc29f43dbe0ef45))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@1.0.1...@sikt/sds-tabs@2.0.0) (2023-05-09)
 
 ### ⚠ BREAKING CHANGES
