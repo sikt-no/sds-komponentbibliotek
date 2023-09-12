@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@2.1.0...@sikt/sds-button@2.2.0) (2023-09-12)
+
+### Features
+
+- **button-link:** add type danger ([a509b9b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a509b9b07809d18492b7a11f16e12d7ff7688af2))
+
+### Bug Fixes
+
+- update invalid html markup ([7cb31e7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7cb31e758589758e3b9befcf07f158c245883158))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@2.0.0...@sikt/sds-button@2.1.0) (2023-08-17)
 
 ### Features
