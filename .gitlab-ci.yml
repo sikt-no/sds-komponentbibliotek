@@ -258,7 +258,7 @@ prod:
 #      aud: vault.sikt.no
 #  secrets:
 #    NPM_TOKEN:
-#      vault: gitlab/$CI_PROJECT_PATH/npm-token@secret2
+#      vault: gitlab/$CI_PROJECT_PATH/npm-token@secret
 #      file: false
 #  before_script:
 #    - PACKAGE_NAME=$(echo "$CI_COMMIT_TAG" | sed -e "s/^@sikt\/sds-//" -e "s/^@sikt\///" -e "s/-sds@[0-9]*.[0-9]*.[0-9]*$//" -e "s/@[0-9]*.[0-9]*.[0-9]*$//")
