@@ -1,0 +1,20 @@
+{
+  "name": "@sikt/sds-tokens",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "style": "dist/css/tokens.css",
+  "files": [
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "prebuild": "npm run prepare",
+    "build": "",
+    "build:tokens": "node bin/build.mjs",
+    "prepare": "npm run build:tokens"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.8.0"
+  }
+}

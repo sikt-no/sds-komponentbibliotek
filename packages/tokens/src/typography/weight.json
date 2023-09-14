@@ -1,0 +1,12 @@
+{
+  "typography": {
+    "weight": {
+      "regular": {
+        "value": "400"
+      },
+      "bold": {
+        "value": "600"
+      }
+    }
+  }
+}

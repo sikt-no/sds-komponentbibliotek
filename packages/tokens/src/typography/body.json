@@ -1,0 +1,30 @@
+{
+  "typography": {
+    "body": {
+      "fontsize-small": {
+        "value": "{base.size-relative.s.value}"
+      },
+      "lineheight-small": {
+        "value": "{base.size-relative.s1.value}"
+      },
+      "fontsize-regular": {
+        "value": "{base.size-relative.s1.value}"
+      },
+      "lineheight-regular": {
+        "value": "{base.size-relative.m.value}"
+      },
+      "fontsize-large": {
+        "value": "calc(18rem / 16)"
+      },
+      "lineheight-large": {
+        "value": "{base.size-relative.m.value}"
+      },
+      "fontsize-lead": {
+        "value": "calc(22rem / 16)"
+      },
+      "lineheight-lead": {
+        "value": "{base.size-relative.m1.value}"
+      }
+    }
+  }
+}

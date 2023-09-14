@@ -1,0 +1,18 @@
+{
+  "effect": {
+    "animation": {
+      "duration-short": {
+        "value": "100ms"
+      },
+      "duration-medium": {
+        "value": "250ms"
+      },
+      "duration-long": {
+        "value": "500ms"
+      },
+      "easing-default": {
+        "value": "ease-in-out"
+      }
+    }
+  }
+}

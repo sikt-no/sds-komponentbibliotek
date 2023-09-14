@@ -1,0 +1,12 @@
+{
+  "effect": {
+    "shadow": {
+      "elevated-default": {
+        "value": "0 4px 24px hsl(0 0% 0% / .1)"
+      },
+      "elevated-hover": {
+        "value": "0 4px 12px hsl(0 0% 0% / .25)"
+      }
+    }
+  }
+}

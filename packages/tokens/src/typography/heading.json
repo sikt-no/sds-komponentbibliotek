@@ -1,0 +1,55 @@
+{
+  "_typography": {
+    "heading": {
+      "lineheight": {
+        "value": "1.25"
+      }
+    }
+  },
+  "typography": {
+    "heading": {
+      "fontsize-overline": {
+        "value": "calc(12.8rem / 16)"
+      },
+      "lineheight-overline": {
+        "value": "calc({typography.heading.fontsize-overline.value} * {_typography.heading.lineheight.value})"
+      },
+      "fontsize-paragraph": {
+        "value": "calc(19.2rem / 16)"
+      },
+      "lineheight-paragraph": {
+        "value": "calc({typography.heading.fontsize-paragraph.value} * {_typography.heading.lineheight.value})"
+      },
+      "fontsize-small": {
+        "value": "calc(25.6rem / 16)"
+      },
+      "lineheight-small": {
+        "value": "calc({typography.heading.fontsize-small.value} * {_typography.heading.lineheight.value})"
+      },
+      "fontsize-medium": {
+        "value": "calc(32rem / 16)"
+      },
+      "lineheight-medium": {
+        "value": "calc({typography.heading.fontsize-medium.value} * {_typography.heading.lineheight.value})"
+      },
+      "fontsize-large": {
+        "value": "calc(38.4rem / 16)"
+      },
+      "lineheight-large": {
+        "value": "calc({typography.heading.fontsize-large.value} * {_typography.heading.lineheight.value})"
+      },
+      "fontsize-xlarge": {
+        "value": "calc(44.8rem / 16)"
+      },
+      "lineheight-xlarge": {
+        "value": "calc({typography.heading.fontsize-xlarge.value} * {_typography.heading.lineheight.value})"
+      },
+      "fontsize-huge": {
+        "value": "calc(51.2rem / 16)"
+      },
+      "lineheight-huge": {
+        "value": "calc({typography.heading.fontsize-huge.value} * {_typography.heading.lineheight.value})"
+      }
+    }
+  }
+}

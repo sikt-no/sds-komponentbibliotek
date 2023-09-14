@@ -1,0 +1,115 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+import * as tokens from "../dist/js/tokens.js";
+import * as dark from "../dist/js/color.dark.js";
+
+<Meta title="Tokens/Color" />
+
+# Color
+
+## Brand
+
+<ColorPalette>
+  {Object.entries(tokens.color.brand).map((token, index) => {
+    return Object.entries(token[1]).map((subtoken, subindex) => {
+      return (
+        <ColorItem
+          title={`${token[0]} / ${subtoken[0]}`}
+          subtitle={`--sds-${Object.values(subtoken[1].path).join("-")}`}
+          colors={{
+            "light-mode": subtoken[1].value,
+            "dark-mode": Object.entries(
+              Object.entries(dark.color.brand)[index][1]
+            )[subindex][1].value,
+          }}
+          key={`${index}-${subindex}`}
+        />
+      );
+    });
+  })}
+</ColorPalette>
+
+## Interaction
+
+<ColorPalette>
+  {Object.entries(tokens.color.interaction).map((token, index) => {
+    return Object.entries(token[1]).map((subtoken, subindex) => {
+      return Object.entries(subtoken[1]).map((subsubtoken, subsubindex) => {
+        return (
+          <ColorItem
+            title={`${token[0]} / ${subtoken[0]} / ${subsubtoken[0]}`}
+            subtitle={`--sds-${Object.values(subsubtoken[1].path).join("-")}`}
+            colors={{
+              "light-mode": subsubtoken[1].value,
+              "dark-mode": Object.entries(
+                Object.entries(
+                  Object.entries(dark.color.interaction)[index][1]
+                )[subindex][1]
+              )[subsubindex][1].value,
+            }}
+            key={`${index}-${subindex}-${subsubindex}`}
+          />
+        );
+      });
+    });
+  })}
+</ColorPalette>
+
+## Support
+
+<ColorPalette>
+  {Object.entries(tokens.color.support).map((token, index) => {
+    return Object.entries(token[1]).map((subtoken, subindex) => {
+      return (
+        <ColorItem
+          title={`${token[0]} / ${subtoken[0]}`}
+          subtitle={`--sds-${Object.values(subtoken[1].path).join("-")}`}
+          colors={{
+            "light-mode": subtoken[1].value,
+            "dark-mode":
+              dark.color.support?.[token[0]]?.[subtoken[0]].value ?? "",
+          }}
+          key={`${index}-${subindex}`}
+        />
+      );
+    });
+  })}
+</ColorPalette>
+
+## Layout
+
+<ColorPalette>
+  {Object.entries(tokens.color.layout).map((token, index) => {
+    return Object.entries(token[1]).map((subtoken, subindex) => {
+      return (
+        <ColorItem
+          title={`${token[0]} / ${subtoken[0]}`}
+          subtitle={`--sds-${Object.values(subtoken[1].path).join("-")}`}
+          colors={{
+            "light-mode": subtoken[1].value,
+            "dark-mode":
+              dark.color.layout?.[token[0]]?.[subtoken[0]].value ?? "",
+          }}
+          key={`${index}-${subindex}`}
+        />
+      );
+    });
+  })}
+</ColorPalette>
+
+## Text
+
+<ColorPalette>
+  {Object.entries(tokens.color.text).map((token, index) => {
+    return (
+      <ColorItem
+        title={token[0]}
+        subtitle={`--sds-${Object.values(token[1].path).join("-")}`}
+        colors={{
+          "light-mode": token[1].value,
+          "dark-mode": Object.entries(dark.color.text)[index][1].value,
+        }}
+        key={index}
+      />
+    );
+  })}
+</ColorPalette>

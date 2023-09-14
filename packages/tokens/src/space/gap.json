@@ -1,0 +1,21 @@
+{
+  "space": {
+    "gap": {
+      "minimal": {
+        "value": "{base.size.xxs.value}"
+      },
+      "tiny": {
+        "value": "{base.size.xs.value}"
+      },
+      "small": {
+        "value": "{base.size.s.value}"
+      },
+      "medium": {
+        "value": "{base.size.m.value}"
+      },
+      "large": {
+        "value": "{base.size.l.value}"
+      }
+    }
+  }
+}

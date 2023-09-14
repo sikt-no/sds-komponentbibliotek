@@ -17,6 +17,10 @@ StyleDictionary.registerFormat({
   },
 });
 
+/**
+ * Custom Format: Color
+ * This adds `prefers-color-scheme` & `[data-color-scheme]` to color tokens.
+ */
 StyleDictionary.registerFormat({
   name: "custom/format/color",
   formatter: function (dictionary) {
@@ -41,10 +45,11 @@ StyleDictionary.registerFormat({
 });
 
 const prefix = "sds";
+const sourcePath = "tokens/";
 const buildPath = "dist/tokens/";
 
 StyleDictionary.extend({
-  source: ["tokens/**/*.json", "tokens/**/!(*.base|*.dark).js"],
+  source: [`${sourcePath}**/*.json`, `${sourcePath}**/!(*.base|*.dark).js`],
   platforms: {
     css: {
       transforms: [
@@ -94,7 +99,7 @@ StyleDictionary.extend({
 }).buildAllPlatforms();
 
 StyleDictionary.extend({
-  source: ["tokens/**/*.dark.js"],
+  source: [`${sourcePath}**/*.dark.js`],
   platforms: {
     css: {
       transforms: [

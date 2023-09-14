@@ -1,0 +1,15 @@
+{
+  "space": {
+    "padding": {
+      "medium": {
+        "value": "{base.size.m.value}"
+      },
+      "large": {
+        "value": "{base.size.l.value}"
+      },
+      "huge": {
+        "value": "{base.size.xl.value}"
+      }
+    }
+  }
+}

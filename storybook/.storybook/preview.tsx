@@ -49,6 +49,8 @@ const preview: Preview = {
       storySort: {
         order: [
           "Introduction",
+          "Tokens",
+          ["Readme", "Changelog", "Size", "Layout", "Color", "Typography", "*"],
           "Core",
           [
             "Readme",

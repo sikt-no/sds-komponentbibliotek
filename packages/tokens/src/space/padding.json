@@ -1,0 +1,24 @@
+{
+  "space": {
+    "padding": {
+      "minimal": {
+        "value": "{base.size.xxs.value}"
+      },
+      "tiny": {
+        "value": "{base.size.xs.value}"
+      },
+      "small": {
+        "value": "{base.size.s.value}"
+      },
+      "medium": {
+        "value": "{base.size.s.value}"
+      },
+      "large": {
+        "value": "{base.size.m.value}"
+      },
+      "huge": {
+        "value": "{base.size.m1.value}"
+      }
+    }
+  }
+}
