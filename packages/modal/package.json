@@ -1,0 +1,31 @@
+{
+  "name": "@sikt/sds-modal",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "main": "dist/cjs/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.mjs"
+  },
+  "dependencies": {
+    "@sikt/sds-button": "^1.0.2",
+    "@sikt/sds-core": "^1.0.1",
+    "@sikt/sds-icons": "^1.0.0",
+    "react-modal": "^3.16.1"
+  },
+  "devDependencies": {
+    "@types/react-modal": "^3.16.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.2.13",
+    "@types/react-dom": "^18.2.6",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
