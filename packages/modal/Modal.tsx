@@ -1,12 +1,11 @@
 import React, { ReactNode, useEffect, useId, useRef, useState } from "react";
 import ReactModal from "react-modal";
 import clsx from "clsx";
-import "./modal.pcss";
 import { TertiaryButton } from "@sikt/sds-button";
 import { XIcon } from "@sikt/sds-icons";
-
 import { Heading1, Paragraph } from "@sikt/sds-core";
 import useWindowResize from "./useWindowResize";
+import "./modal.pcss";
 
 export interface ModalProps {
   /**
