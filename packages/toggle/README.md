@@ -8,12 +8,37 @@ npm i -s @sikt/sds-toggle
 
 ### React
 
+#### Toggle Switch
+
 ```js
 import { ToggleSwitch } from "@sikt/sds-toggle";
 import "@sikt/sds-toggle/dist/index.css";
 import "@sikt/sds-icons/dist/index.css";
 
 <ToggleSwitch label="Label" />;
+```
+
+#### Toggle Button
+
+```js
+import { ToggleButton } from "@sikt/sds-toggle";
+import "@sikt/sds-toggle/dist/index.css";
+import "@sikt/sds-icons/dist/index.css";
+
+<ToggleButton label="Label" checked={false} onClick={() => {}} />;
+```
+
+#### Toggle Segment
+
+```js
+import { ToggleSegment } from "@sikt/sds-toggle";
+import "@sikt/sds-toggle/dist/index.css";
+import "@sikt/sds-icons/dist/index.css";
+
+<ToggleSegment legend="Legend">
+  <ToggleSegmentOption label="Label 1" value="1" checked onChange={() => {}} />
+  <ToggleSegmentOption label="Label 2" value="2" checked onChange={() => {}} />
+</ToggleSegment>;
 ```
 
 ### Stylesheets & custom markup
@@ -25,6 +50,8 @@ Import stylesheet:
 ```
 
 Create custom markup:
+
+#### Toggle Switch
 
 ```html
 <div class="sds-toggle-switch">

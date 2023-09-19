@@ -1,0 +1,72 @@
+.sds-toggle-segment {
+  .sds-form-fieldset {
+    display: flex;
+    align-items: center;
+
+    &__legend {
+      float: left;
+    }
+  }
+
+  &__group {
+    border-radius: var(--sds-border-radius-small);
+    outline: var(--sds-border-size-regular) solid
+      var(--sds-color-surface-action);
+    outline-offset: -1px;
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  &__label {
+    position: relative;
+    line-height: var(--sds-size-text-m);
+    border-radius: var(--sds-border-radius-small);
+    padding: var(--sds-size-padding-small) var(--sds-size-padding-medium);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(115 81 251 / 10%);
+    }
+
+    &:active {
+      background-color: rgba(114 81 251 / 25%);
+    }
+
+    &--checked {
+      background-color: var(--sds-color-surface-action);
+      color: var(--sds-color-text-onsurface-action);
+
+      &:hover {
+        background-color: var(--sds-color-surface-action-hover);
+      }
+
+      &:active {
+        background-color: var(--sds-color-surface-action-active);
+      }
+
+      &:focus-within {
+        background-color: var(--sds-color-surface-action-hover);
+      }
+    }
+
+    &:focus-within {
+      outline: var(--sds-outline);
+    }
+  }
+
+  &__input {
+    border: none;
+    opacity: 0;
+    position: absolute;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
