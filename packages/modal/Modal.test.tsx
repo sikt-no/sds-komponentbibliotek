@@ -106,9 +106,7 @@ describe("Modal", () => {
     expect(closeButton).toBeInTheDocument();
 
     // Simulate a click on the close button
-    await act(async () => {
-      await user.click(closeButton);
-    });
+    await user.click(closeButton);
 
     // Check if the onClose function is called
     expect(handleClose).toHaveBeenCalledTimes(1);

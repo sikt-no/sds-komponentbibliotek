@@ -118,9 +118,7 @@ export const Modal = ({
           data-testid="headings"
           className="sds-modal__headings"
         >
-          <Heading1 id={headingId} headingType="medium">
-            {heading}
-          </Heading1>
+          <Heading1 headingType="medium">{heading}</Heading1>
           {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
         </div>
 
