@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@1.1.1...@sikt/sds-toggle@1.2.0) (2023-09-19)
+
+### Features
+
+- **toggle-segment:** add toggle-segment component ([a95fe4a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a95fe4ad21ef014cc0c79085117f46b6f7a8fd6a))
+
 ### [1.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@1.1.0...@sikt/sds-toggle@1.1.1) (2023-08-15)
 
 ### Bug Fixes
