@@ -1,246 +1,68 @@
-import { Meta, Typeset, Canvas } from "@storybook/blocks";
-import * as tokens from "../../core/dist/tokens/js/tokens.js";
+import { Meta, Typeset } from "@storybook/blocks";
 
 <Meta title="Core/Typography" />
 
 # Typography
 
-## Font family
+## Heading
 
-**Font:** Haffer, Arial, sans-serif
-
-export const sampleText =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-
-## Sizes
-
-<div
-  style={{
-    display: "grid",
-    gridColumnGap: "24px",
-    gridRowGap: "24px",
-    gridTemplateColumns: "120px 150px 120px auto",
-    alignItems: "center",
-  }}
->
-  <div
-    style={{
-      fontSize: "14px",
-      fontWeight: "700",
-      color: "rgba(51,51,51,0.6)",
-    }}
-  >
-    Name
-  </div>
-  <div
-    style={{
-      fontSize: "14px",
-      fontWeight: "700",
-      color: "rgba(51,51,51,0.6)",
-    }}
-  >
-    Token
-  </div>
-  <div
-    style={{
-      fontSize: "14px",
-      fontWeight: "700",
-      color: "rgba(51,51,51,0.6)",
-    }}
-  >
-    Value
-  </div>
-  <div
-    style={{
-      fontSize: "14px",
-      fontWeight: "700",
-      color: "rgba(51,51,51,0.6)",
-    }}
-  >
-    Size
-  </div>
-  {Object.entries(tokens.size.text).map((token) => {
-    const size = token[1].value;
-    return (
-      <>
-        <div
-          style={{
-            fontSize: "14px",
-            fontWeight: "700",
-            color: "#333",
-            textTransform: "uppercase",
-          }}
-        >
-          {token[0]}
-        </div>
-        <div style={{ color: "rgba(51,51,51,0.8)", fontSize: "14px" }}>
-          {token[1].attributes.category}.{token[1].attributes.type}.
-          {token[1].attributes.item}
-        </div>
-        <div style={{ color: "rgba(51,51,51,0.8)", fontSize: "14px" }}>
-          {size}
-        </div>
-        <div
-          style={{
-            fontSize: size,
-            lineHeight: size,
-            whiteSpace: "nowrap",
-            textOverflow: "ellipsis",
-            overflow: "hidden",
-            maxWidth: "400px",
-          }}
-        >
-          {sampleText}
-        </div>
-      </>
-    );
-  })}
-</div>
-
-## Emphasis
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <em className="sds-typography-em">{sampleText}</em>
-</Canvas>
-
-## Strong
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <strong className="sds-typography-strong">{sampleText}</strong>
-</Canvas>
-
-## Abbreviation
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <abbr className="sds-typography-abbr" title="Sikt Design System" tabIndex={0}>
-    SDS
-  </abbr>
-</Canvas>
-
-## Quote
-
-### Inline Quotation
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <q className="sds-typography-q" cite="//path/to/quote">
-    {sampleText}
-  </q>
-</Canvas>
-
-### Block Quotation
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <figure className="sds-typography-blockquote">
-    <blockquote
-      className="sds-typography-blockquote__quote"
-      cite="//path/to/quote"
-    >
-      <p>{sampleText}</p>
-    </blockquote>
-    <figcaption className="sds-typography-blockquote__caption">
-      —Platon, <cite>Sikt component library</cite>
-    </figcaption>
-  </figure>
-</Canvas>
-
-## Link
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <a className="sds-typography-link" href="//path/to/link">
-    {sampleText}
-  </a>
-</Canvas>
-
-### External
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <a className="sds-typography-link" href="//path/to/link" target="_blank">
-    {sampleText}
-  </a>
-</Canvas>
-
-### Phone
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <a className="sds-typography-link" href="tel://path/to/link">
-    {sampleText}
-  </a>
-</Canvas>
-
-### E-mail
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <a className="sds-typography-link" href="mailto://path/to/link">
-    {sampleText}
-  </a>
-</Canvas>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Example</th>
+    <th>Variable</th>
+  </thead>
+  <tbody>
+    {[
+      "huge",
+      "xlarge",
+      "large",
+      "medium",
+      "small",
+      "paragraph",
+      "overline",
+    ].map((item) => {
+      return (
+        <tr key={item}>
+          <th scope="row">heading / {item}</th>
+          <td className={`sds-typography-heading--${item}`}>Aa</td>
+          <td>--sds-typography-heading--{item}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
 
 ## Body
 
-### Small
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <p className="sds-typography-body--normal">{sampleText}</p>
-</Canvas>
-
-### Regular
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <p className="sds-typography-body--regular">{sampleText}</p>
-</Canvas>
-
-### Large
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <p className="sds-typography-body--large">{sampleText}</p>
-</Canvas>
-
-### Lead
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <p className="sds-typography-body--lead">{sampleText}</p>
-</Canvas>
-
-## Heading
-
-### Overline
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <h1 className="sds-typography-heading--overline">Heading</h1>
-</Canvas>
-
-### Paragraph
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <h1 className="sds-typography-heading--paragraph">Heading</h1>
-</Canvas>
-
-### Small
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <h1 className="sds-typography-heading--small">Heading</h1>
-</Canvas>
-
-### Medium
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <h1 className="sds-typography-heading--medium">Heading</h1>
-</Canvas>
-
-### Large
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <h1 className="sds-typography-heading--large">Heading</h1>
-</Canvas>
-
-### XLarge
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <h1 className="sds-typography-heading--xlarge">Heading</h1>
-</Canvas>
-
-### XXLarge
-
-<Canvas style={{ backgroundColor: "var(--sds-color-background-default)" }}>
-  <h1 className="sds-typography-heading--xxlarge">Heading</h1>
-</Canvas>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Example</th>
+    <th>Variable</th>
+  </thead>
+  <tbody>
+    {["lead", "large", "regular", "small"].map((item) => {
+      return (
+        <tr key={item}>
+          <th scope="row">body / {item}</th>
+          <td className={`sds-typography-body--${item}`}>Aa</td>
+          <td>--sds-typography-body--{item}</td>
+        </tr>
+      );
+    })}
+    {["emphasis", "strong", "quote", "code"].map((item) => {
+      return (
+        <tr key={item}>
+          <th scope="row">body / {item}</th>
+          <td
+            className={`sds-typography-body--regular sds-typography-body--${item}`}
+          >
+            Aa
+          </td>
+          <td>--sds-typography-body--{item}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>

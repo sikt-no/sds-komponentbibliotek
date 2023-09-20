@@ -38,13 +38,13 @@ describe("Heading", () => {
       it(`${headingLevel.name} should render`, async () => {
         const { name, component: Heading } = headingLevel;
         render(
-          <Heading headingType="medium" isDynamic data-testid={name}>
+          <Heading headingType="medium" data-testid={name}>
             {name}
           </Heading>
         );
 
         expect(screen.getByTestId(name)).toHaveClass(
-          "sds-typography-heading sds-typography-heading--medium sds-typography-heading--dynamic"
+          "sds-typography-heading sds-typography-heading--medium"
         );
         expect(screen.getByText(name)).toBeInTheDocument();
       });

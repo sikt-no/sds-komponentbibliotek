@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { ParagraphProps, Paragraph } from "../index";
 
 const meta: Meta = {
-  title: "Components/Core/Paragraph",
+  title: "Core/Components/Paragraph",
   component: Paragraph,
 };
 

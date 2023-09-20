@@ -12,13 +12,15 @@ npm i -s @sikt/sds-core @sikt/sds-<package-name>
 
 ### Core & Design Tokens
 
-Import the [@sikt/sds-core](./packages/core/) package. It contains, among other things, a stylesheet reset, font family and [Design Tokens](./packages/core/README.md#design-tokens), on which other packages are based.
+Import the [@sikt/sds-core](./packages/core/) package. It contains, among other things, a base stylesheet with reset, font family and [Design Tokens](./packages/tokens/README.md#design-tokens), on which other packages are based.
 
 ```css
 @import url("@sikt/sds-core");
 ```
 
-**Note** This package is always required whether you use the React components or other frameworks.
+**Note** This package may be required whether you use the React components or not. Unless you import design tokens directly and make the setup yourself.
+
+**Note** Design Tokens can be imported in the needed format directly from [@sikt/sds-tokens](./packages/tokens/).
 
 ### React
 

@@ -47,5 +47,17 @@ describe("Link", () => {
         "sds-typography-link sds-typography-link--external"
       );
     });
+
+    it("should have no icon modifier", async () => {
+      render(
+        <Link href="#" noIcon data-testid="test">
+          Foo
+        </Link>
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-typography-link sds-typography-link--no-icon"
+      );
+    });
   });
 });

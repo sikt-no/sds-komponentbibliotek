@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { HeadingProps, Heading1 } from "../index";
 
 const meta: Meta = {
-  title: "Components/Core/Heading",
+  title: "Core/Components/Heading",
   component: Heading1,
 };
 

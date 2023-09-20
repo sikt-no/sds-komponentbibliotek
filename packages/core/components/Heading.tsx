@@ -7,7 +7,7 @@ export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
     | "medium"
     | "large"
     | "xlarge"
-    | "xxlarge"
+    | "huge"
     | "paragraph"
     | "overline";
   className?: string;
@@ -24,20 +24,18 @@ const Heading = ({
   headingLevel,
   headingType,
   className,
-  isDynamic = false,
   ...rest
 }: HeadingProps & HeadingLevels) => {
   const H: ElementType = `h${headingLevel}`;
 
   return (
     <H
-      {...rest}
       className={clsx(
         "sds-typography-heading",
         `sds-typography-heading--${headingType}`,
-        isDynamic && "sds-typography-heading--dynamic",
         className
       )}
+      {...rest}
     >
       {children}
     </H>

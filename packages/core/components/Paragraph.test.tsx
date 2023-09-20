@@ -24,13 +24,17 @@ describe("Paragraph", () => {
 
     it("should have class name", async () => {
       render(
-        <Paragraph typographyType="small" className="test-class-name">
+        <Paragraph
+          typographyType="small"
+          modifierType="strong"
+          className="test-class-name"
+        >
           Foo
         </Paragraph>
       );
 
       expect(screen.getByText("Foo")).toHaveClass(
-        "sds-typography-body sds-typography-body--small test-class-name"
+        "sds-typography-body sds-typography-body--small sds-typography-body--strong test-class-name"
       );
     });
 

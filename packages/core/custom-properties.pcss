@@ -1,17 +1,12 @@
-@import url("./dist/tokens/css/custom-media.css");
-@import url("./dist/tokens/css/tokens.css");
-@import url("./dist/tokens/css/color.light.css");
-@import url("./dist/tokens/css/color.dark.css");
+@import url("@sikt/sds-tokens/dist/css/custom-media.css");
+@import url("@sikt/sds-tokens/dist/css/tokens.css");
+@import url("@sikt/sds-tokens/dist/css/tokens.tablet.css");
+@import url("@sikt/sds-tokens/dist/css/tokens.desktop.css");
+@import url("@sikt/sds-tokens/dist/css/color.light.css");
+@import url("@sikt/sds-tokens/dist/css/color.dark.css");
 
 :root {
-  --sds-padding-dynamic: var(--sds-size-base-m);
-  --sds-outline: var(--sds-size-base-xxs) dashed var(--sds-color-text-info);
-
-  @media (--sds-breakpoint-tablet) {
-    --sds-padding-dynamic: var(--sds-size-base-m1);
-  }
-
-  @media (--sds-breakpoint-desktop) {
-    --sds-padding-dynamic: var(--sds-size-base-l);
-  }
+  --sds-focus-outline-width: var(--sds-base-size-xxs);
+  --sds-focus-outline: var(--sds-focus-outline-width) dashed
+    var(--sds-color-layout-focus-border);
 }

@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   typographyType?: "small" | "regular" | "large" | "lead";
+  modifierType?: "emphasis" | "strong" | "code" | "quote";
   className?: string;
   children: ReactNode;
   as?: ElementType;
@@ -11,6 +12,7 @@ export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
 export const Paragraph = ({
   children,
   typographyType = "regular",
+  modifierType,
   className,
   as = "p",
   ...rest
@@ -19,12 +21,13 @@ export const Paragraph = ({
 
   return (
     <Component
-      {...rest}
       className={clsx(
         "sds-typography-body",
         `sds-typography-body--${typographyType}`,
+        modifierType && `sds-typography-body--${modifierType}`,
         className
       )}
+      {...rest}
     >
       {children}
     </Component>

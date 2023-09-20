@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { ScreenReaderOnlyProps, ScreenReaderOnly } from "../index";
 
 const meta: Meta = {
-  title: "Components/Core/ScreenReaderOnly",
+  title: "Core/Components/ScreenReaderOnly",
   component: ScreenReaderOnly,
 };
 
