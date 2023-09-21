@@ -1,0 +1,43 @@
+.sds-drawer-item-group {
+  --sds-drawer-item-group-padding: var(--sds-size-padding-small);
+
+  padding: var(--sds-drawer-item-group-padding);
+  border-top: var(--sds-border-size-regular) solid rgb(115 115 115 / 25%);
+
+  &__heading {
+    display: flex;
+    place-items: center;
+    font-size: var(--sds-size-text-s);
+    white-space: nowrap;
+    color: var(--sds-color-text-neutral);
+    height: var(--sds-size-base-l);
+  }
+
+  &__heading-title {
+    display: flex;
+    padding: var(--sds-drawer-item-group-padding);
+    align-items: center;
+  }
+
+  &__heading-title-icon {
+    margin-left: 1px;
+    font-size: var(--sds-size-text-s2);
+  }
+
+  &--expanded &__heading-title {
+    padding: 0;
+  }
+
+  &--expanded &__heading-title-icon {
+    margin-right: var(--sds-size-base-s1);
+  }
+
+  &--expanded &__heading {
+    padding: var(--sds-drawer-item-group-padding);
+  }
+
+  &--expanded &__heading-title-text {
+    font-size: var(--sds-size-text-s);
+    animation: var(--sds-drawer-fade-in);
+  }
+}

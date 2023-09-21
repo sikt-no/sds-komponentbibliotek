@@ -1,0 +1,61 @@
+.sds-drawer-header {
+  --sds-drawer-header-padding: var(--sds-size-padding-small);
+
+  display: flex;
+  padding: var(--sds-drawer-header-padding);
+  align-items: center;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    animation: var(--sds-drawer-fade-in);
+    padding: var(--sds-drawer-header-padding);
+  }
+
+  &__title {
+    font-size: var(--sds-size-text-s2);
+  }
+
+  &__icon {
+    display: flex;
+  }
+
+  &__icon > * + * {
+    padding-left: var(--sds-drawer-header-padding);
+  }
+
+  &__button {
+    color: var(--sds-color-text-default);
+    width: var(--sds-size-base-l);
+    height: var(--sds-size-base-l);
+    border-radius: 50%;
+    border: none;
+    display: grid;
+    font-size: var(--sds-size-text-m);
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+
+    &--expanded {
+      margin-left: auto;
+      transform: rotate(180deg);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover,
+    &:focus {
+      background: var(--sds-color-background-neutral);
+    }
+
+    &:focus-visible {
+      outline: var(--sds-outline);
+    }
+
+    &:active {
+      background: none;
+    }
+  }
+}
