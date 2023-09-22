@@ -1,15 +1,15 @@
 .sds-sikt-index {
   &__section {
-    padding: var(--sds-size-padding-large) 0;
+    padding: var(--sds-space-gap-large) 0;
   }
 
   &__paragraph {
-    padding: var(--sds-size-padding-small) 0;
+    padding: var(--sds-space-gap-small) 0;
   }
 
   &__cta {
     display: flex;
     justify-content: center;
-    padding: var(--sds-size-padding-medium);
+    padding: var(--sds-space-padding-medium);
   }
 }

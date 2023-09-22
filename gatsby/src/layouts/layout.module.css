@@ -6,8 +6,8 @@
 
 .sds-sikt-main {
   margin: 0 auto;
-  max-width: var(--sds-grid-content-medium);
-  padding: var(--sds-size-base-l);
+  max-width: var(--sds-space-grid-max-width);
+  padding: var(--sds-space-padding-huge) var(--sds-space-padding-large);
 }
 
 .sds-sikt-footer {

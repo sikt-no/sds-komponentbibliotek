@@ -6,7 +6,7 @@ import { PrimaryButton } from "@sikt/sds-button";
 import useKonami from "react-use-konami";
 import * as style from "./index.module.css";
 import Contributors from "../components/Contributors";
-import * as tokens from "@sikt/sds-core/dist/tokens/js/tokens.js";
+import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
 import { Link } from "@sikt/sds-core/components/Link";
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -56,7 +56,7 @@ const IndexPage: React.FC<PageProps> = () => {
       */}
 
       <section className={style.sdsSiktIndex__section}>
-        <Heading1 headingType="xxlarge">Sikt design&shy;system</Heading1>
+        <Heading1 headingType="huge">Sikt design&shy;system</Heading1>
 
         <p className={style.sdsSiktIndex__paragraph}>
           Sikt designsystem består av flere bestanddeler, derunder

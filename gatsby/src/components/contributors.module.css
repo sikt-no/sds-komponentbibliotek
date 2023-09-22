@@ -11,10 +11,10 @@
   }
 
   &__contributor {
-    padding: var(--sds-size-padding-medium);
+    padding: var(--sds-space-gap-medium);
 
     &-image {
-      border-radius: var(--sds-border-radius-full);
+      border-radius: var(--sds-space-border-radius-full);
       width: 60px;
       height: 60px;
 

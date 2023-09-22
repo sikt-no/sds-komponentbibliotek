@@ -1,5 +1,5 @@
 .sds-sikt-footer {
   &__link-heading {
-    padding-bottom: var(--sds-size-padding-small);
+    padding-bottom: var(--sds-space-padding-small);
   }
 }

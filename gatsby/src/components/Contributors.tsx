@@ -67,9 +67,7 @@ const Contributors = () => {
                         alt={contributor.name}
                       />
                     )}
-                    <div className="sds-typography-strong">
-                      {contributor.name}
-                    </div>
+                    <div>{contributor.name}</div>
                     <div className="sds-typography-body--small">
                       {contributor.role}
                     </div>
