@@ -35,6 +35,7 @@ const Contributors = () => {
       { name: "Lasse", role: "Teknologi", team: "FS Studentportal" },
     ],
     [{ name: "Sondre", role: "Teknologi", team: "Opptak Kjerne" }],
+    [{ name: "John-Magne", role: "Teknologi", team: "Feide Kundeportal" }],
   ];
 
   return (
