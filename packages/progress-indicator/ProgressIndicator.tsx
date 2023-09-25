@@ -6,7 +6,6 @@ export interface ProgressIndicatorProps
   extends HTMLAttributes<HTMLUListElement> {
   children: ReactNode;
   className?: string;
-  accessibleCompleteString?: string;
 }
 
 export const ProgressIndicator = ({

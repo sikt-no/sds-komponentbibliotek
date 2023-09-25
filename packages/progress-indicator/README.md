@@ -11,12 +11,12 @@ npm i -s @sikt/sds-progress-indicator
 The state of each `<ProgressStep>`-component is set by its `status`-prop. `"complete"` and `"current"` steps are visibly identical but have important accessibility differences.
 
 ```js
-import { Example } from "@sikt/sds-progress-indicator";
+import { ProgressIndicator, ProgressStep } from "@sikt/sds-progress-indicator";
 import "@sikt/sds-progress-indicator/dist/index.css";
 
 <ProgressIndicator>
-  <ProgressStep value={1} label="First step" selected="complete" />
-  <ProgressStep value={2} label="Second step" selected="current" />
+  <ProgressStep value={1} label="First step" status="complete" />
+  <ProgressStep value={2} label="Second step" status="current" />
   <ProgressStep value={3} label="Third step" />
   <ProgressStep value={4} label="Fourth step" />
 </ProgressIndicator>;
