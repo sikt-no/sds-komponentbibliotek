@@ -23,9 +23,9 @@ export const Header = ({
   ...rest
 }: HeaderProps) => {
   const logoElement = logoText ? (
-    <div className="sds-header__logo-text sds-typography-body--large">
+    <span className="sds-header__logo-text sds-typography-body--large">
       {logoText}
-    </div>
+    </span>
   ) : (
     <PrimaryLogo className="sds-header__logo" />
   );
@@ -36,15 +36,13 @@ export const Header = ({
         <Link href={`#${skipLinkId}`}>{skipLinkText}</Link>
       </ScreenReaderOnly>
       <header className={clsx("sds-header", className)} {...rest}>
-        <div>
-          {logoHref ? (
-            <Link href={logoHref} className="sds-header__logo-link">
-              {logoElement}
-            </Link>
-          ) : (
-            logoElement
-          )}
-        </div>
+        {logoHref ? (
+          <Link href={logoHref} className="sds-header__logo-link">
+            {logoElement}
+          </Link>
+        ) : (
+          logoElement
+        )}
         {children}
       </header>
     </>

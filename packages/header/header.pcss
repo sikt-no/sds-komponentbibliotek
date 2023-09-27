@@ -1,50 +1,32 @@
-@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
+@import url("@sikt/sds-tokens/dist/css/custom-media.css");
 
 .sds-header {
   align-items: center;
-  background-color: var(--sds-color-background-action);
-  border-bottom: var(--sds-border-size-thin) solid
-    var(--sds-color-surface-action);
-  display: grid;
-  grid-gap: var(--sds-size-padding-small);
-  grid-template-columns: 1fr auto 1fr;
+  background-color: var(--sds-color-layout-background-primary);
+  display: flex;
+  justify-content: space-between;
   min-height: 48px;
-  padding: 0 var(--sds-size-padding-medium);
+  padding: 0 var(--sds-space-padding-huge);
 
   &__skip-link:focus-within {
     position: absolute;
   }
 
   .sds-header__logo {
-    font-size: var(--sds-size-text-s2);
-    padding: var(--sds-size-padding-small) 0;
+    font-size: var(--sds-base-size-relative-m);
 
-    &-link.sds-typography-link {
+    &-link {
+      background-color: unset;
       color: inherit;
-      display: inline-flex;
       text-decoration: none;
     }
-
-    &-text {
-      padding: var(--sds-size-padding-small) 0;
-    }
   }
 
-  @media (--sds-breakpoint-tablet) {
+  @media (--sds-base-breakpoint-tablet) {
+    min-height: 56px;
+  }
+
+  @media (--sds-base-breakpoint-desktop) {
     min-height: 72px;
-    padding: 0 var(--sds-size-base-m1);
-
-    .sds-header__logo {
-      font-size: calc(28rem / 16);
-      padding: var(--sds-size-base-s2) 0;
-
-      &-text {
-        padding: var(--sds-size-base-m) 0;
-      }
-    }
-  }
-
-  @media (--sds-breakpoint-desktop) {
-    padding: 0 var(--sds-size-padding-large);
   }
 }
