@@ -1,2 +1,2 @@
 /assign me  
-/assign_reviewer @eivinri @42tte @jobre @vesve @lakra @patsle @jakie
+/assign_reviewer @eivinri @krnor @jobre @vesve @lakra @patsle @jakie
