@@ -85,11 +85,15 @@ test:
   stage: test
   extends: .imagescan
   script:
-    - trivy fs -f json -o gl-container-scanning-report.json ./
-    - trivy fs --dependency-tree ./
-    - trivy fs --severity MEDIUM,HIGH,CRITICAL --exit-code 1 ./
+    - trivy fs --cache-dir .trivycache/ --dependency-tree ./
+    - trivy fs --cache-dir .trivycache/ -f json -o gl-container-scanning-report.json ./
+    - trivy fs --cache-dir .trivycache/ --severity MEDIUM,HIGH,CRITICAL --exit-code 1 ./
+  cache:
+    paths:
+      - .trivycache/
   artifacts:
     expire_in: 1 days
+    when: always
     reports:
       container_scanning: gl-container-scanning-report.json
   needs: []
