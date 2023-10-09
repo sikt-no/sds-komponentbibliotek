@@ -218,21 +218,10 @@ stop_review:
     - main
     - schedules
 
-staging:
-  stage: deploy
-  extends: .staging
-  script:
-    - deploy deployment.yml
-  dependencies:
-    - docker
-  needs:
-    - docker
-  except:
-    - schedules
-
 prod:
   stage: deploy
   extends: .production
+  when: on_success
   variables:
     REPLICAS: "3"
   script:
