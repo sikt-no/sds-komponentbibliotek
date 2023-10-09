@@ -110,6 +110,17 @@ vuln-schedule:
   only:
     - schedules
 
+vuln-schedule-report:
+  stage: .post
+  script:
+    - >
+      curl --request POST --header "Content-Type: application/json" --data "{\"text\":\"Vulnerability audit failed on $CI_COMMIT_BRANCH <$CI_PIPELINE_URL|$CI_PIPELINE_ID>\"}" "${SLACK_WEBHOOK_URL_VULN_AUDIT}"
+  needs:
+    - vuln-schedule
+  when: on_failure
+  only:
+    - schedules
+
 packages:
   stage: build
   extends:
