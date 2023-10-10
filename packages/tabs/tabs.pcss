@@ -1,53 +1,56 @@
 .sds-tabs {
-  --tab-list-border-bottom: var(--sds-border-size-thin);
+  --tab-list-border-bottom: var(--sds-space-border-weight-regular);
 
   &__tab-list {
     border-bottom: var(--tab-list-border-bottom) solid
-      var(--sds-color-background-action);
+      var(--sds-color-layout-divider-subtle);
     display: flex;
-    margin-bottom: var(--sds-size-base-xxs);
+    margin-bottom: var(--sds-space-gap-small);
   }
 
   &__tab {
     align-items: center;
     border: 0 none;
-    border-bottom: var(--sds-border-size-bold) solid transparent;
-    color: var(--sds-color-text-default);
+    border-bottom: var(--sds-space-border-weight-bold) solid transparent;
+    color: var(--sds-color-text-primary);
     display: flex;
-    font-size: var(--sds-size-text-s2);
-    line-height: var(--sds-size-text-m);
+    gap: var(--sds-space-gap-small);
+    font-size: var(--sds-typography-body-fontsize-large);
+    line-height: var(--sds-typography-body-lineheight-large);
+    padding: var(--sds-space-padding-medium) var(--sds-space-padding-small);
     margin-bottom: calc(var(--tab-list-border-bottom) * -1);
-    padding: var(--sds-size-base-m) var(--sds-size-base-s);
 
     &-icon {
-      padding-right: var(--sds-size-base-s);
-    }
-
-    &-badge {
-      padding-left: var(--sds-size-base-s);
+      font-size: var(--sds-base-size-m);
     }
 
     &[aria-selected="true"] {
-      border-color: var(--sds-color-surface-action);
+      border-color: var(--sds-color-interaction-primary-strong-default);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+      border-color: var(--sds-color-interaction-primary-strong-highlight);
     }
 
     &:active {
-      border-color: var(--sds-color-surface-action-active);
-    }
-
-    &:hover {
-      border-color: var(--sds-color-surface-action-hover);
+      background-color: var(
+        --sds-color-interaction-primary-transparent-pressed
+      );
+      border-color: var(--sds-color-interaction-primary-strong-pressed);
     }
 
     &:focus-visible {
-      border-color: transparent;
-      outline: var(--sds-size-base-xxs) dashed var(--sds-color-text-info);
+      outline: var(--sds-focus-outline);
     }
   }
 
   &__tab-panel {
     &:focus-visible {
-      outline: var(--sds-size-base-xxs) dashed var(--sds-color-text-info);
+      outline: var(--sds-focus-outline);
     }
   }
 }

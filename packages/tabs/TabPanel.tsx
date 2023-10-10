@@ -16,7 +16,7 @@ export const TabPanel = ({ children, className, ...rest }: TabPanelProps) => {
       className={clsx("sds-tabs__tab-panel", className)}
       id={`panel-${id}-${index}`}
       role="tabpanel"
-      tabIndex={isSelected ? 0 : -1}
+      tabIndex={isSelected ? undefined : -1}
       aria-labelledby={`tab-${id}-${index}`}
       hidden={!isSelected}
       {...rest}

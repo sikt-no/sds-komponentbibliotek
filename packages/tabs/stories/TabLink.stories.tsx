@@ -31,6 +31,6 @@ export const WithIcon: Story = {
 export const WidthBadge: Story = {
   args: {
     ...Default.args,
-    icon: <Badge>Bagde</Badge>,
+    badge: <Badge>Badge</Badge>,
   },
 };
