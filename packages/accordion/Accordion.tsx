@@ -54,12 +54,14 @@ export const Accordion = ({
         }}
       >
         <Heading className="sds-accordion__title">{title}</Heading>
-        <CaretCircleDownIcon
-          className={clsx(
-            "sds-accordion__icon",
-            expanded && "sds-accordion__icon--expanded"
-          )}
-        />
+        <span className="sds-accordion__icon">
+          <CaretCircleDownIcon
+            className={clsx(
+              "sds-accordion__icon-icon",
+              expanded && "sds-accordion__icon-icon--expanded"
+            )}
+          />
+        </span>
       </button>
 
       <div

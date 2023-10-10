@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-accordion",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "license": "UNLICENSED",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
@@ -17,8 +17,9 @@
     "url": "git@gitlab.sikt.no:designsystem/sds-komponentbibliotek.git"
   },
   "dependencies": {
-    "@sikt/sds-core": "^1.0.1",
-    "@sikt/sds-icons": "^1.0.0"
+    "@sikt/sds-core": "^3.0.0",
+    "@sikt/sds-icons": "^1.0.0",
+    "@sikt/sds-tokens": "^1.0.0"
   },
   "peerDependencies": {
     "clsx": "^1.0.0 || ^2.0.0",

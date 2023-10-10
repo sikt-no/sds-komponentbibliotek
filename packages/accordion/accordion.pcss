@@ -1,95 +1,80 @@
-@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
-
 .sds-accordion {
-  --sds-accordion-icon-color: var(--sds-color-surface-action);
-  --sds-accordion-border-color: var(--sds-color-surface-action);
-  --sds-accordion-border-radius: var(--sds-border-radius-large);
-
-  border-radius: var(--sds-accordion-border-radius);
-  border: var(--sds-border-size-regular) solid var(--sds-accordion-border-color);
-  background-color: var(--sds-color-surface-default);
+  --accordion-border-radius: var(--sds-space-border-radius-large);
+  --accordion-icon-padding: var(--sds-space-padding-small);
 
   &__title {
-    color: var(--sds-color-text-default);
-    font-weight: 400;
-    line-height: var(--sds-size-base-m1);
-  }
-
-  &__button {
-    border-radius: var(--sds-accordion-border-radius);
-    font-size: var(--sds-size-base-m);
-    padding: var(--sds-size-base-m);
-    width: 100%;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    &:hover {
-      --sds-accordion-icon-color: var(--sds-color-surface-action-hover);
-      --sds-accordion-border-color: var(--sds-color-surface-action-hover);
-    }
-
-    &:focus-visible {
-      --sds-accordion-border-color: transparent;
-
-      outline: var(--sds-outline);
-      outline-offset: var(--sds-border-size-regular);
-    }
-
-    &:active {
-      --sds-accordion-icon-color: var(--sds-color-surface-action-active);
-      --sds-accordion-border-color: var(--sds-color-surface-action-active);
-    }
+    color: var(--sds-color-text-primary);
+    font-size: var(--sds-typography-heading-fontsize-small);
+    font-weight: var(--sds-typography-weight-regular);
+    line-height: var(--sds-typography-heading-lineheight-small);
   }
 
   &__icon {
-    color: var(--sds-accordion-icon-color);
+    border-radius: var(--accordion-border-radius);
+    font-size: var(--sds-base-size-m);
+    padding: var(--accordion-icon-padding);
 
-    &--expanded {
-      rotate: 180deg;
+    &-icon {
+      transition: rotate var(--sds-effect-animation-duration-medium)
+        var(--sds-effect-animation-easing-default);
+
+      &--expanded {
+        rotate: 180deg;
+      }
+    }
+  }
+
+  &__button {
+    align-items: center;
+    border: none;
+    border-radius: var(--accordion-border-radius);
+    display: flex;
+    gap: var(--sds-space-gap-medium);
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+
+    &:hover,
+    &:focus-visible {
+      .sds-accordion__icon {
+        background-color: var(
+          --sds-color-interaction-primary-transparent-highlight
+        );
+      }
+    }
+
+    &:focus-visible {
+      outline: var(--sds-focus-outline);
+    }
+
+    &:active {
+      .sds-accordion__icon {
+        background-color: var(
+          --sds-color-interaction-primary-transparent-pressed
+        );
+      }
     }
   }
 
   &__content {
-    color: var(--sds-color-text-default);
-    padding: var(--sds-size-base-m);
-    padding-top: 0;
+    color: var(--sds-color-text-primary);
+    padding-top: var(--sds-space-gap-medium);
+  }
+
+  &--large &__content {
+    border-top: var(--sds-space-border-weight-regular) solid
+      var(--sds-color-layout-divider-subtle);
+    margin-top: var(--sds-space-gap-medium);
   }
 
   &--small {
-    --sds-accordion-border-radius: var(--sds-size-base-xs);
+    --accordion-border-radius: var(--sds-space-border-radius-minimal);
+    --accordion-icon-padding: var(--sds-space-padding-minimal);
   }
 
-  &--small &__button {
-    padding: var(--sds-size-base-s);
-    font-size: var(--sds-size-base-s2);
-  }
-
-  &--small &__content {
-    padding: var(--sds-size-base-s);
-    padding-top: 0;
-  }
-
-  @media (--sds-breakpoint-tablet) {
-    &--large &__button,
-    &--large &__content {
-      padding: var(--sds-size-base-m1);
-    }
-
-    &--large &__content {
-      padding-top: 0;
-    }
-  }
-
-  @media (--sds-breakpoint-desktop) {
-    &--large &__button,
-    &--large &__content {
-      padding: var(--sds-size-base-l);
-    }
-
-    &--large &__content {
-      padding-top: 0;
-    }
+  &--small &__title {
+    font-size: var(--sds-typography-heading-fontsize-paragraph);
+    font-weight: var(--sds-typography-weight-bold);
+    line-height: var(--sds-typography-heading-lineheight-paragraph);
   }
 }
