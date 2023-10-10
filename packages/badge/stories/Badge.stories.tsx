@@ -15,8 +15,8 @@ type Story = StoryObj<BadgeProps>;
 export const Default: Story = {
   args: {
     children: "Badge",
-    badgeType: "action",
-    visibility: "medium",
+    badgeType: "primary",
+    visibility: "subtle",
   },
 };
 

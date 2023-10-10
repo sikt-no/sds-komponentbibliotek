@@ -5,14 +5,14 @@ import "./badge.pcss";
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;
   children: ReactNode;
-  badgeType?: "action" | "success" | "danger" | "warning" | "info";
-  visibility?: "high" | "medium" | "low";
+  badgeType?: "primary" | "success" | "critical" | "warning" | "info";
+  visibility?: "strong" | "subtle";
   icon?: ReactNode;
 }
 
 export const Badge = ({
-  badgeType = "action",
-  visibility = "medium",
+  badgeType = "primary",
+  visibility = "subtle",
   className,
   children,
   icon,

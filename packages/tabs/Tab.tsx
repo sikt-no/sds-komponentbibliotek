@@ -97,7 +97,7 @@ export const Tab = ({
         <span className="sds-tabs__tab-badge">
           {isSelected
             ? isValidElement(badge) &&
-              cloneElement(badge as ReactElement, { visibility: "high" })
+              cloneElement(badge as ReactElement, { visibility: "strong" })
             : badge}
         </span>
       )}
