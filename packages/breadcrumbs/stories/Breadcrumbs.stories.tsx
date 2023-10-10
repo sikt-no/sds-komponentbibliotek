@@ -20,13 +20,19 @@ const Template: Story = {
   render: (args) => (
     <Breadcrumbs {...args}>
       <BreadcrumbItem>
-        <a href="/">Level 1</a>
+        <a className="sds-typography-link" href="/">
+          Level 1
+        </a>
       </BreadcrumbItem>
       <BreadcrumbItem>
-        <a href="/">Level 2</a>
+        <a className="sds-typography-link" href="/">
+          Level 2
+        </a>
       </BreadcrumbItem>
       <BreadcrumbItem>
-        <a href="/">Level 3</a>
+        <a className="sds-typography-link" href="/">
+          Level 3
+        </a>
       </BreadcrumbItem>
     </Breadcrumbs>
   ),

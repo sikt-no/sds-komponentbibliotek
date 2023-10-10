@@ -6,7 +6,6 @@ import React, {
   isValidElement,
   ReactElement,
 } from "react";
-import { CircleIcon, ArrowCircleRightIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
 
 export interface BreadcrumbItemProps {
@@ -27,29 +26,7 @@ export const BreadcrumbItem = ({
           const childElement = child as ReactElement<
             AnchorHTMLAttributes<HTMLAnchorElement>
           >;
-          return (
-            <>
-              {cloneElement(
-                childElement,
-                {
-                  className: clsx("sds-breadcrumbs-item__link", className),
-                },
-                <CircleIcon
-                  className={clsx(
-                    "sds-breadcrumbs-item__icon",
-                    "sds-breadcrumbs-item__icon--inactive"
-                  )}
-                />,
-                <ArrowCircleRightIcon
-                  className={clsx(
-                    "sds-breadcrumbs-item__icon",
-                    "sds-breadcrumbs-item__icon--active"
-                  )}
-                />,
-                childElement.props.children
-              )}
-            </>
-          );
+          return <>{cloneElement(childElement, childElement.props)}</>;
         }
       })}
     </li>
