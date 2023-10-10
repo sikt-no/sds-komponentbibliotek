@@ -1,18 +1,31 @@
 .sds-description-list {
-  margin-top: calc(var(--sds-size-base-s) * -1);
+  margin-top: calc(var(--sds-space-gap-small) * -1);
+
+  &__term {
+    color: var(--sds-color-text-secondary);
+    font-size: var(--sds-typography-body-fontsize-small);
+    font-weight: var(--sds-typography-weight-regular);
+    line-height: var(--sds-typography-body-lineheight-small);
+  }
+
+  &__details {
+    margin: 0;
+  }
 
   &__term,
   &__details {
-    margin-top: var(--sds-size-base-s);
+    &:not(:first-child) {
+      margin-top: var(--sds-space-gap-tiny);
+    }
   }
 }
 
 .sds-list {
   .sds-list {
-    margin-top: var(--sds-size-base-s);
+    margin-top: var(--sds-space-gap-small);
   }
 
   &__item:not(:first-of-type) {
-    margin-top: var(--sds-size-base-s);
+    margin-top: var(--sds-space-gap-small);
   }
 }
