@@ -1,67 +1,84 @@
 .sds-pagination {
-  --pagination-background-color: transparent;
-  --pagination-border-color: var(--sds-color-surface-action);
+  --pagination-background-color: var(
+    --sds-color-interaction-primary-subtle-default
+  );
+  --pagination-color: var(--sds-color-text-primary);
 
   &__list-item {
     align-items: center;
     display: inline-flex;
+    gap: var(--sds-space-gap-small);
     justify-content: center;
-    margin-right: var(--sds-size-base-s);
-
-    &:last-of-type {
-      margin-right: 0;
-    }
   }
 
   &__button {
     align-items: center;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     background-color: var(--pagination-background-color);
-    border: var(--sds-border-size-regular) solid var(--pagination-border-color);
-    border-radius: var(--sds-border-radius-full);
-    color: var(--sds-color-text-default);
+    border: none;
+    border-radius: var(--sds-space-border-radius-full);
+    color: var(--pagination-color);
     cursor: pointer;
-    font-size: var(--sds-size-text-s2);
-    line-height: var(--sds-size-text-m);
+    font-size: var(--sds-typography-body-fontsize-large);
+    line-height: var(--sds-typography-body-lineheight-large);
     text-align: center;
-    width: var(--sds-size-text-l);
-    height: var(--sds-size-text-l);
+    width: var(--sds-base-size-l);
+    height: var(--sds-base-size-l);
     padding: 0;
 
-    &:hover {
-      --pagination-border-color: var(--sds-color-surface-action-hover);
+    &:hover,
+    &:focus-visible {
+      --pagination-background-color: var(
+        --sds-color-interaction-primary-subtle-highlight
+      );
     }
 
     &:focus-visible {
-      --pagination-border-color: transparent;
-
-      outline: var(--sds-size-base-xxs) dashed var(--sds-color-text-info);
+      outline: var(--sds-focus-outline);
     }
 
     &:active {
-      --pagination-border-color: var(--sds-color-surface-action-active);
-    }
-
-    &[aria-current] {
-      --pagination-background-color: var(--sds-color-surface-action);
-
-      color: var(--sds-color-text-onsurface-action);
+      --pagination-background-color: var(
+        --sds-color-interaction-primary-subtle-pressed
+      );
     }
 
     &--spacer {
-      padding: var(--sds-size-padding-small);
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: var(--sds-base-size-m);
+      height: var(--sds-base-size-m);
     }
 
-    &[aria-current],
     &[disabled],
     &--spacer {
+      --pagination-background-color: initial;
+
       cursor: inherit;
 
       &:active,
       &:hover,
       &:focus-visible {
-        --pagination-border-color: var(--sds-color-surface-action);
+        --pagination-background-color: initial;
+      }
+    }
+
+    &[aria-current] {
+      --pagination-background-color: var(
+        --sds-color-interaction-primary-strong-default
+      );
+      --pagination-color: var(--sds-color-text-on-strong);
+
+      cursor: inherit;
+
+      &:active,
+      &:hover,
+      &:focus-visible {
+        --pagination-background-color: var(
+          --sds-color-interaction-primary-strong-default
+        );
       }
     }
   }
