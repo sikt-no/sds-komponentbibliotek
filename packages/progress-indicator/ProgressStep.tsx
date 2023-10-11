@@ -44,7 +44,7 @@ export const ProgressStep = ({
       )}
       <span
         className={clsx(
-          "sds-typography-body--small",
+          "sds-progress-step__label",
           !showLabel && "sds-screen-reader-only"
         )}
       >

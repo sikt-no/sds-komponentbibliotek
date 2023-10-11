@@ -1,35 +1,41 @@
-@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
+@import url("@sikt/sds-tokens/dist/css/custom-media.css");
 
 .sds-progress-step {
-  --progress-indicator-size: var(--sds-size-base-m1);
+  --progress-indicator-size: var(--sds-base-size-m1);
 
   display: flex;
   align-items: center;
-  gap: var(--sds-size-padding-tiny);
+  gap: var(--sds-space-gap-tiny);
+
+  &__label {
+    font-size: var(--sds-typography-body-fontsize-small);
+    line-height: var(--sds-typography-body-lineheight-small);
+  }
 
   &__number {
-    background-color: var(--sds-color-background-default);
-    border: var(--sds-border-size-regular) solid var(--sds-color-surface-action);
-    border-radius: var(--sds-border-radius-full);
+    background-color: var(--sds-color-interaction-primary-subtle-default);
+    border-radius: var(--sds-space-border-radius-full);
+    font-size: var(--sds-typography-body-fontsize-regular);
+    line-height: var(--sds-typography-body-lineheight-regular);
     width: var(--progress-indicator-size);
-    min-width: var(--progress-indicator-size);
     height: var(--progress-indicator-size);
     display: grid;
     place-items: center;
 
     &--selected {
-      font-weight: 600;
-      background-color: var(--sds-color-surface-action);
-      color: var(--sds-color-text-onsurface-action);
+      background-color: var(--sds-color-interaction-primary-strong-default);
+      font-weight: var(--sds-typography-weight-bold);
+      color: var(--sds-color-text-on-strong);
     }
   }
 
   &__separator-icon {
     display: none;
+    font-size: var(--sds-base-size-m);
   }
 
   & + .sds-progress-step &__separator-icon {
-    @media (--sds-breakpoint-tablet) {
+    @media (--sds-base-breakpoint-tablet) {
       display: unset;
     }
   }
