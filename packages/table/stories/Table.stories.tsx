@@ -22,8 +22,7 @@ type Story = StoryObj<TableProps>;
 
 export const Default: Story = {
   args: {
-    caption: "Table title",
-    footerText: "Viser 2 av 248 linjer",
+    caption: "Table caption",
     "aria-rowcount": 248,
   },
   render: (args) => (

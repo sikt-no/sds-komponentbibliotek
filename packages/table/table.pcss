@@ -1,99 +1,40 @@
-@import url("@sikt/sds-core/dist/tokens/css/custom-media.css");
-
 .sds-table {
-  --sds-table-padding-size: var(--sds-size-base-m);
-
-  @media (--sds-breakpoint-tablet) {
-    --sds-table-padding-size: var(--sds-size-base-m1);
-  }
-
-  @media (--sds-breakpoint-desktop) {
-    --sds-table-padding-size: var(--sds-size-base-l);
-  }
-
-  --sds-table-padding: calc(
-    var(--sds-table-padding-size) + var(--sds-size-base-s)
-  );
-  --sds-table-cell-border-neutral: var(--sds-border-size-regular) solid
-    var(--sds-color-background-neutral);
-  --sds-table-cell-border-action: var(--sds-border-size-regular) solid
-    var(--sds-color-background-action);
-
   overflow-x: auto;
   width: 100%;
-
-  &--full {
-    background: var(--sds-color-background-default);
-    border-radius: var(--sds-border-radius-large);
-    box-shadow: 0 var(--sds-size-base-xxs) var(--sds-size-base-m)
-      rgb(0 0 0 / 10%);
-  }
-
-  &--inline {
-    --sds-table-padding-size: var(--sds-size-base-s2);
-    --sds-table-padding: var(--sds-size-base-s2);
-  }
 
   &__table {
     width: 100%;
   }
 
   &__caption {
-    text-align: start;
-    padding: var(--sds-table-padding-size) var(--sds-table-padding)
-      var(--sds-size-base-m);
+    caption-side: bottom;
+    font-size: var(--sds-typography-body-fontsize-small);
+    font-weight: var(--sds-typography-weight-regular);
+    line-height: var(--sds-typography-body-lineheight-small);
   }
 
-  &__header {
-    border-bottom: var(--sds-table-cell-border-action);
-
-    &[scope="row"] {
-      border-bottom: var(--sds-table-cell-border-neutral);
-      border-right: var(--sds-table-cell-border-action);
-    }
-  }
-
+  &__header,
   &__cell {
-    font-size: var(--sds-size-text-s1);
-    line-height: var(--sds-size-text-m);
-    padding: var(--sds-size-base-s);
-    border-bottom: var(--sds-table-cell-border-neutral);
+    padding: var(--sds-base-size-m);
+  }
+
+  &__foot &__row {
+    border-top: var(--sds-space-border-weight-regular) solid
+      var(--sds-color-layout-divider-subtle);
+  }
+
+  &__head &__row,
+  &__body &__row:not(:last-child) {
+    border-bottom: var(--sds-space-border-weight-regular) solid
+      var(--sds-color-layout-divider-subtle);
   }
 
   &__header,
   &__foot &__cell {
+    font-size: var(--sds-typography-heading-fontsize-overline);
+    font-weight: var(--sds-typography-weight-bold);
+    line-height: var(--sds-typography-heading-lineheight-overline);
     text-transform: uppercase;
     text-align: start;
-    font-size: var(--sds-size-text-s);
-    font-weight: 600;
-    line-height: var(--sds-size-text-s2);
-    padding: var(--sds-size-base-s1) var(--sds-size-base-s);
-  }
-
-  /* stylelint-disable-next-line no-descending-specificity -- Seems impossible to satisfy in this case */
-  &__header,
-  &__cell {
-    &:first-child {
-      padding-left: var(--sds-table-padding);
-    }
-
-    &:last-child {
-      padding-right: var(--sds-table-padding);
-    }
-  }
-
-  &__foot &__cell {
-    border-top: var(--sds-table-cell-border-action);
-    border-bottom: none;
-  }
-
-  &:has(&__foot) &__body &__row:last-child &__cell {
-    border-bottom: none;
-  }
-
-  &__footer-text {
-    color: var(--sds-color-text-neutral);
-    padding: var(--sds-size-base-m) var(--sds-table-padding)
-      var(--sds-table-padding-size);
   }
 }

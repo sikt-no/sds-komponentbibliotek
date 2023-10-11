@@ -1,5 +1,5 @@
-export type { TableProps, InlineTableProps } from "./Table";
-export { Table, InlineTable } from "./Table";
+export type { TableProps } from "./Table";
+export { Table } from "./Table";
 
 export type { TableHeadProps } from "./TableHead";
 export { TableHead } from "./TableHead";

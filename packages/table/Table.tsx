@@ -5,55 +5,31 @@ import "./table.pcss";
 
 export interface TableProps extends TableHTMLAttributes<HTMLTableElement> {
   className?: string;
-  tableType?: "full" | "inline";
-  hideCaption?: boolean;
+  showCaption?: boolean;
   caption: ReactNode;
-  footerText?: ReactNode;
   wrapperProps?: HTMLAttributes<HTMLDivElement>;
 }
 
 export const Table = ({
   className,
-  tableType = "full",
-  hideCaption,
+  showCaption,
   caption,
   children,
-  footerText,
   wrapperProps,
   ...rest
 }: TableProps) => {
   return (
-    <div
-      className={clsx("sds-table", `sds-table--${tableType}`, className)}
-      {...wrapperProps}
-    >
+    <div className={clsx("sds-table", className)} {...wrapperProps}>
       <table className="sds-table__table" {...rest}>
-        <caption
-          className={clsx(
-            !hideCaption &&
-              "sds-table__caption sds-typography-heading--paragraph"
-          )}
-        >
-          {hideCaption ? (
-            <ScreenReaderOnly>{caption}</ScreenReaderOnly>
-          ) : (
+        <caption className={clsx(showCaption && "sds-table__caption")}>
+          {showCaption ? (
             caption
+          ) : (
+            <ScreenReaderOnly>{caption}</ScreenReaderOnly>
           )}
         </caption>
-
         {children}
       </table>
-      {footerText && (
-        <div className="sds-table__footer-text sds-typography-body--small">
-          {footerText}
-        </div>
-      )}
     </div>
   );
 };
-
-export type InlineTableProps = Omit<TableProps, "tableType">;
-
-export const InlineTable = (props: InlineTableProps) => (
-  <Table tableType="inline" hideCaption {...props} />
-);

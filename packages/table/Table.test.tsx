@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import { axe } from "jest-axe";
 import React from "react";
-import { InlineTable, Table } from "./Table";
+import { Table } from "./Table";
 import { TableHead } from "./TableHead";
 import { TableBody } from "./TableBody";
 import { TableRow } from "./TableRow";
@@ -13,7 +13,7 @@ describe("Table", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <Table caption="Caption" footerText="Footer text">
+        <Table caption="Caption">
           <TableHead>
             <TableRow>
               <TableHeader>Name</TableHeader>
@@ -56,14 +56,6 @@ describe("Table", () => {
       expect(table).toHaveClass("sds-table__table");
     });
 
-    it("should render", async () => {
-      render(<InlineTable caption="Caption" />);
-
-      const table = screen.getByRole("table");
-      expect(table.parentElement).toHaveClass("sds-table sds-table--inline");
-      expect(table).toHaveClass("sds-table__table");
-    });
-
     it("should have class name", async () => {
       render(
         <Table
@@ -79,15 +71,10 @@ describe("Table", () => {
     });
 
     it("should have caption", async () => {
-      render(<Table caption="Caption" />);
+      render(<Table caption="Caption" showCaption />);
 
       expect(screen.getByRole("table")).toHaveAccessibleName("Caption");
-    });
-
-    it("should have footer text", async () => {
-      render(<Table caption="Caption" footerText="Footer text" />);
-
-      expect(screen.getByText("Footer text")).toBeInTheDocument();
+      expect(screen.getByText("Caption")).toBeVisible();
     });
 
     it("should have table head with column headers", async () => {
