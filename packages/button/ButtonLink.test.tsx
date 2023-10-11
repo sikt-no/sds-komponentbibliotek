@@ -36,6 +36,18 @@ describe("ButtonLink", () => {
       );
     });
 
+    it("should have size modifier class name", async () => {
+      render(
+        <ButtonLink href="#" buttonSize="small" data-testid="test">
+          Foo
+        </ButtonLink>
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-button-link sds-button--small"
+      );
+    });
+
     it("should have left icon element", async () => {
       render(
         <ButtonLink data-testid="test" icon="icon" iconType="left">

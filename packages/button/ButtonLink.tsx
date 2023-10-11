@@ -7,10 +7,12 @@ export type ButtonLinkProps =
   | ButtonLinkAriaLabelProps;
 
 interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  children: ReactNode;
   className?: string;
   icon?: ReactNode;
   iconType?: "right" | "left" | "only";
-  buttonType?: "primary" | "secondary" | "tertiary" | "danger";
+  buttonType?: "strong" | "subtle" | "transparent" | "critical";
+  buttonSize?: "default" | "small";
 }
 
 interface ButtonLinkAriaLabelProps extends ButtonLinkBaseProps {
@@ -24,7 +26,8 @@ interface ButtonLinkChildrenProps extends ButtonLinkBaseProps {
 export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   (
     {
-      buttonType = "primary",
+      buttonType = "subtle",
+      buttonSize = "default",
       children,
       className,
       href,
@@ -42,6 +45,7 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
           "sds-button-link",
           "sds-button",
           `sds-button--${buttonType}`,
+          buttonSize !== "default" && `sds-button--${buttonSize}`,
           className
         )}
         href={href}

@@ -1,94 +1,96 @@
 .sds-button {
+  --button-border-radius: var(--sds-space-border-radius-full);
+  --button-padding: var(--sds-space-padding-small);
+
   align-items: center;
+  background-color: transparent;
   border: 0 none;
-  border-radius: var(--sds-size-base-m);
+  border-radius: var(--button-border-radius);
+  color: var(--sds-color-text-primary);
   cursor: pointer;
-  display: inline-flex;
-  flex-direction: row;
-  font-size: var(--sds-size-text-s2);
-  line-height: var(--sds-size-text-m);
-  padding: var(--sds-size-base-s);
+  display: flex;
+  font-size: var(--sds-typography-body-fontsize-large);
+  font-weight: var(--sds-typography-weight-regular);
+  line-height: var(--sds-typography-body-lineheight-large);
+  padding: var(--button-padding);
 
   &__label {
-    padding: 0 var(--sds-size-base-s);
+    padding: 0 var(--button-padding);
   }
 
   &__icon {
     align-items: center;
-    display: inline-flex;
-    font-size: var(--sds-size-text-m);
+    display: flex;
+    font-size: var(--sds-base-size-m);
     justify-content: center;
-    width: var(--sds-size-text-m);
-    height: var(--sds-size-text-m);
+    width: var(--sds-base-size-m);
+    height: var(--sds-base-size-m);
   }
 
   &:focus-visible {
-    outline: var(--sds-outline);
+    outline: var(--sds-focus-outline);
   }
 
-  &--primary {
-    color: var(--sds-color-text-onsurface-action);
-    background-color: var(--sds-color-surface-action);
+  &--strong {
+    background-color: var(--sds-color-interaction-primary-strong-default);
+    color: var(--sds-color-text-on-strong);
 
     &:hover,
     &:focus-visible {
-      background: var(--sds-color-surface-action-hover);
+      background: var(--sds-color-interaction-primary-strong-highlight);
     }
 
     &:active {
-      background: var(--sds-color-surface-action-active);
+      background: var(--sds-color-interaction-primary-strong-pressed);
     }
   }
 
-  &--danger {
-    color: var(--sds-color-text-onsurface-danger);
-    background-color: var(--sds-color-surface-danger);
+  &--subtle {
+    background-color: var(--sds-color-interaction-primary-subtle-default);
 
     &:hover,
     &:focus-visible {
-      background: var(--sds-color-surface-danger-hover);
+      background: var(--sds-color-interaction-primary-subtle-highlight);
     }
 
     &:active {
-      background: var(--sds-color-surface-danger-active);
+      background: var(--sds-color-interaction-primary-subtle-pressed);
     }
   }
 
-  &--secondary {
-    border: var(--sds-border-size-regular) solid var(--sds-color-surface-action);
-    color: var(--sds-color-text-default);
-    padding: calc(
-      var(--sds-size-padding-small) - var(--sds-border-size-regular)
-    );
-
-    &:hover {
-      border-color: var(--sds-color-surface-action-hover);
-    }
-
+  &--transparent {
+    &:hover,
     &:focus-visible {
-      border-color: transparent;
+      background: var(--sds-color-interaction-primary-transparent-highlight);
     }
 
     &:active {
-      border-color: var(--sds-color-surface-action-active);
+      background: var(--sds-color-interaction-primary-transparent-pressed);
     }
   }
 
-  &--tertiary {
-    color: var(--sds-color-text-action);
-
-    .sds-button__icon {
-      font-size: var(--sds-size-text-s2);
-    }
+  &--critical {
+    background-color: var(--sds-color-interaction-danger-strong-default);
+    color: var(--sds-color-text-on-strong);
 
     &:hover,
     &:focus-visible {
-      color: var(--sds-color-text-default-hover);
+      background: var(--sds-color-interaction-danger-strong-highlight);
     }
 
     &:active {
-      color: var(--sds-color-text-default-active);
+      background: var(--sds-color-interaction-danger-strong-pressed);
     }
+  }
+
+  &--small {
+    --button-border-radius: var(--sds-space-border-radius-minimal);
+    --button-padding: var(--sds-space-padding-minimal);
+
+    font-size: var(--sds-typography-body-fontsize-regular);
+    font-weight: var(--sds-typography-weight-regular);
+    line-height: var(--sds-typography-body-lineheight-regular);
+    padding: var(--sds-space-padding-minimal);
   }
 
   &:disabled {

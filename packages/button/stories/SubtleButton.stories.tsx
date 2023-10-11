@@ -1,11 +1,11 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { ButtonProps, TertiaryButton } from "../index";
+import { ButtonProps, SubtleButton } from "../index";
 import { ArrowRightIcon, ArrowLeftIcon } from "../../icons/index";
 
 const meta: Meta = {
-  title: "Components/Button/Tertiary",
-  component: TertiaryButton,
+  title: "Components/Button/Subtle",
+  component: SubtleButton,
 };
 
 export default meta;
@@ -14,7 +14,7 @@ type Story = StoryObj<ButtonProps>;
 
 export const Button: Story = {
   args: {
-    children: "Tertiary Button",
+    children: "Subtle Button",
     disabled: false,
     onClick: () => {
       alert("click handler");
@@ -25,6 +25,7 @@ export const Button: Story = {
 export const IconRight: Story = {
   args: {
     ...Button.args,
+
     icon: <ArrowRightIcon />,
   },
 };
@@ -42,5 +43,12 @@ export const IconOnly: Story = {
     ...Button.args,
     icon: <ArrowRightIcon />,
     iconType: "only",
+  },
+};
+
+export const Small: Story = {
+  args: {
+    ...Button.args,
+    buttonSize: "small",
   },
 };

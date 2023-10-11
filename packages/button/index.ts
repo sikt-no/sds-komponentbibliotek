@@ -1,9 +1,9 @@
 export type { ButtonProps } from "./Button";
 export {
-  DangerButton,
-  PrimaryButton,
-  SecondaryButton,
-  TertiaryButton,
+  StrongButton,
+  SubtleButton,
+  TransparentButton,
+  CriticalButton,
 } from "./Button";
 
 export type { ButtonLinkProps } from "./ButtonLink";

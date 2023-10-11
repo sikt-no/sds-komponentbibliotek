@@ -3,17 +3,17 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import {
-  DangerButton,
-  PrimaryButton,
-  SecondaryButton,
-  TertiaryButton,
+  StrongButton,
+  SubtleButton,
+  TransparentButton,
+  CriticalButton,
 } from "./Button";
 
 const buttonTypes = [
-  { name: "danger", component: DangerButton },
-  { name: "primary", component: PrimaryButton },
-  { name: "secondary", component: SecondaryButton },
-  { name: "tertiary", component: TertiaryButton },
+  { name: "strong", component: StrongButton },
+  { name: "subtle", component: SubtleButton },
+  { name: "transparent", component: TransparentButton },
+  { name: "critical", component: CriticalButton },
 ];
 
 describe("Button", () => {
@@ -44,7 +44,7 @@ describe("Button", () => {
     it("calls click handler", async () => {
       const user = userEvent.setup();
       const clickHandler = jest.fn();
-      render(<PrimaryButton onClick={clickHandler}>Foo</PrimaryButton>);
+      render(<SubtleButton onClick={clickHandler}>Foo</SubtleButton>);
 
       await user.click(screen.getByText("Foo"));
 
@@ -53,9 +53,9 @@ describe("Button", () => {
 
     it("should have class name", async () => {
       render(
-        <PrimaryButton data-testid="test" className="test-class-name">
+        <SubtleButton data-testid="test" className="test-class-name">
           Foo
-        </PrimaryButton>
+        </SubtleButton>
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
@@ -63,11 +63,23 @@ describe("Button", () => {
       );
     });
 
+    it("should have size modifier class name", async () => {
+      render(
+        <SubtleButton data-testid="test" buttonSize="small">
+          Foo
+        </SubtleButton>
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-button sds-button--small"
+      );
+    });
+
     it("should have left icon element", async () => {
       render(
-        <PrimaryButton data-testid="test" icon="icon" iconType="left">
+        <SubtleButton data-testid="test" icon="icon" iconType="left">
           Foo
-        </PrimaryButton>
+        </SubtleButton>
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
@@ -76,9 +88,9 @@ describe("Button", () => {
 
     it("should have right icon element", async () => {
       render(
-        <PrimaryButton data-testid="test" icon="icon" iconType="right">
+        <SubtleButton data-testid="test" icon="icon" iconType="right">
           Foo
-        </PrimaryButton>
+        </SubtleButton>
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
@@ -87,9 +99,9 @@ describe("Button", () => {
 
     it("should have icon element", async () => {
       render(
-        <PrimaryButton data-testid="test" icon="icon" iconType="only">
+        <SubtleButton data-testid="test" icon="icon" iconType="only">
           Foo
-        </PrimaryButton>
+        </SubtleButton>
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");

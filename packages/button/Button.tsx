@@ -8,6 +8,7 @@ interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   icon?: ReactNode;
   iconType?: "right" | "left" | "only";
+  buttonSize?: "default" | "small";
 }
 
 interface ButtonAriaLabelProps extends ButtonBaseProps {
@@ -19,11 +20,12 @@ interface ButtonChildrenProps extends ButtonBaseProps {
 }
 
 interface ButtonTypes {
-  buttonType: "danger" | "primary" | "secondary" | "tertiary";
+  buttonType: "strong" | "subtle" | "transparent" | "critical";
 }
 
 const Button = ({
   buttonType,
+  buttonSize = "default",
   children,
   className,
   onClick,
@@ -34,7 +36,12 @@ const Button = ({
   const ariaLabel = typeof children === "string" ? children : undefined;
   return (
     <button
-      className={clsx("sds-button", `sds-button--${buttonType}`, className)}
+      className={clsx(
+        "sds-button",
+        `sds-button--${buttonType}`,
+        buttonSize !== "default" && `sds-button--${buttonSize}`,
+        className
+      )}
       onClick={onClick}
       aria-label={iconType === "only" ? ariaLabel : undefined}
       {...rest}
@@ -52,11 +59,11 @@ const Button = ({
   );
 };
 
-export const DangerButton = (props: ButtonProps) =>
-  Button({ ...props, buttonType: "danger" });
-export const PrimaryButton = (props: ButtonProps) =>
-  Button({ ...props, buttonType: "primary" });
-export const SecondaryButton = (props: ButtonProps) =>
-  Button({ ...props, buttonType: "secondary" });
-export const TertiaryButton = (props: ButtonProps) =>
-  Button({ ...props, buttonType: "tertiary" });
+export const StrongButton = (props: ButtonProps) =>
+  Button({ ...props, buttonType: "strong" });
+export const SubtleButton = (props: ButtonProps) =>
+  Button({ ...props, buttonType: "subtle" });
+export const TransparentButton = (props: ButtonProps) =>
+  Button({ ...props, buttonType: "transparent" });
+export const CriticalButton = (props: ButtonProps) =>
+  Button({ ...props, buttonType: "critical" });

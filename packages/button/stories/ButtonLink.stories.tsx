@@ -38,3 +38,10 @@ export const IconOnly: Story = {
     iconType: "only",
   },
 };
+
+export const Small: Story = {
+  args: {
+    ...Button.args,
+    buttonSize: "small",
+  },
+};
