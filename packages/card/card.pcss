@@ -1,0 +1,24 @@
+.sds-card {
+  background-color: var(--sds-color-layout-background-default);
+  border-radius: var(--sds-space-border-radius-large);
+  color: var(--sds-color-text-primary);
+  display: grid;
+  grid-template-areas: "image" "content";
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+
+  &__image {
+    aspect-ratio: 1/1;
+    grid-area: image;
+    width: 100%;
+  }
+
+  &__content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    grid-area: content;
+    grid-gap: var(--sds-space-gap-medium);
+    padding: var(--sds-space-padding-large);
+  }
+}

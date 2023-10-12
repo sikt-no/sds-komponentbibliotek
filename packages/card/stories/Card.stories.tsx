@@ -1,26 +1,29 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { Inline, InlineProps } from "../index";
+import { Card } from "../index";
+import { CardProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/ContentBlock/Inline",
-  component: Inline,
+  title: "Components/Card",
+  component: Card,
 };
 
 export default meta;
 
-type Story = StoryObj<InlineProps>;
+type Story = StoryObj<CardProps>;
 
 const Template: Story = {
-  render: (args) => <Inline {...args} style={{ maxWidth: "500px" }} />,
+  render: (args) => <Card {...args} style={{ maxWidth: "500px" }} />,
 };
-export const InlineBlock: Story = {
+
+export const Default: Story = {
   ...Template,
   args: {
     imgSrc: "https://picsum.photos/600/600",
-    imgAlt: "Stock photo",
+    imgAlt: "This is an image",
     linkText: "Label",
     linkHref: "#",
+    overlineText: "overline",
     headingText: "Heading",
     text: "Text",
   },

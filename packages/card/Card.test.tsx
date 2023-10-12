@@ -1,25 +1,24 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import { Featured, FeaturedProps } from "./Featured";
+import { Card, CardProps } from "./Card";
 
-const renderComponent = ({ className, imgPosition }: Partial<FeaturedProps>) =>
+const renderComponent = ({ className, imgAlt }: Partial<CardProps>) =>
   render(
-    <Featured
+    <Card
       imgSrc="https://picsum.photos/600/600"
-      imgAlt="Image alt text"
+      imgAlt={imgAlt}
       linkText="Link"
       linkHref="#"
       overlineText="Overline"
       headingText="Heading"
       text="Text"
-      imgPosition={imgPosition}
       data-testid="test"
       className={className}
     />
   );
 
-describe("Featured", () => {
+describe("Card", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = renderComponent({});
@@ -32,9 +31,7 @@ describe("Featured", () => {
     it("should render", () => {
       renderComponent({});
 
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-featured sds-content-block-featured--image-first"
-      );
+      expect(screen.getByTestId("test")).toHaveClass("sds-card");
       expect(screen.getByTestId("test")).toBeInTheDocument();
       expect(screen.getByRole("link")).toHaveAttribute("href", "#");
     });
@@ -43,16 +40,20 @@ describe("Featured", () => {
       renderComponent({ className: "test-class-name" });
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-featured sds-content-block-featured--image-first test-class-name"
+        "sds-card test-class-name"
       );
     });
 
-    it("should have classname according to imgPosition", () => {
-      renderComponent({ imgPosition: "last" });
+    it("should render image when alt text", () => {
+      renderComponent({ imgAlt: "Foo" });
 
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-content-block-featured sds-content-block-featured--image-last"
-      );
+      expect(screen.getByRole("img")).toBeInTheDocument();
+    });
+
+    it("should not render image when missing alt text", () => {
+      renderComponent({});
+
+      expect(screen.queryByRole("img")).not.toBeInTheDocument();
     });
   });
 });

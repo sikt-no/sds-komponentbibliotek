@@ -1,23 +1,23 @@
-# `@sikt/sds-content-block`
+# `@sikt/sds-card`
 
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-content-block
+npm i -s @sikt/sds-card
 ```
 
 ### React
 
 ```js
-import { Featured } from "@sikt/sds-content-block";
-import "@sikt/sds-content-block/dist/index.css";
+import { Card } from "@sikt/sds-card";
+import "@sikt/sds-card/dist/index.css";
 import "@sikt/sds-button/dist/index.css";
 
-<Featured
+<Card
   headingLevel="h2"
   imgSrc="https://url.to/image.type"
-  imgAlt="Descriptive image text"
-  linkText="Label"
+  imgAlt="A descriptive text of what is shown in the image"
+  linkText="Call to action text"
   linkHref="https://url.to/destination"
   headingText="Heading"
   overlineText="Overline"
@@ -30,12 +30,12 @@ import "@sikt/sds-button/dist/index.css";
 Import stylesheet:
 
 ```css
-@import url("@sikt/sds-content-block");
+@import url("@sikt/sds-card");
 @import url("@sikt/sds-button");
 ```
 
 Create custom markup:
 
 ```html
-<div class="sds-content-block-featured">...</div>
+<div class="sds-card">...</div>
 ```
