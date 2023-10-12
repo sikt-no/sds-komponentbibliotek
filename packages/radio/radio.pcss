@@ -1,6 +1,7 @@
 .sds-radio {
-  --radio-border-color: var(--sds-color-surface-neutral);
-  --radio-background-color: var(--sds-color-surface-default);
+  --radio-background-color: var(--sds-color-layout-background-default);
+  --radio-border-color: var(--sds-color-interaction-neutral-strong-default);
+  --radio-size: var(--sds-base-size-m);
 
   display: flex;
   align-items: center;
@@ -9,86 +10,101 @@
   &__input {
     appearance: none;
     background: var(--radio-background-color);
-    border: var(--sds-border-size-regular) solid var(--radio-border-color);
-    border-radius: var(--sds-border-radius-full);
+    border: var(--sds-space-border-weight-regular) solid
+      var(--radio-border-color);
+    border-radius: var(--sds-space-border-radius-medium);
     display: grid;
     place-content: center;
     cursor: pointer;
-    width: var(--sds-size-base-m);
-    height: var(--sds-size-base-m);
+    width: var(--radio-size);
+    height: var(--radio-size);
     padding: 0;
-    margin: var(--sds-size-base-s);
+    margin: var(--sds-space-padding-small);
 
     &-label {
-      padding: var(--sds-size-base-s) var(--sds-size-base-xs);
-      line-height: var(--sds-size-text-m);
+      font-size: var(--sds-typography-body-fontsize-regular);
+      font-weight: var(--sds-typography-weight-regular);
+      line-height: var(--sds-typography-body-lineheight-regular);
+      padding: var(--sds-space-padding-small) var(--sds-space-padding-tiny);
     }
 
-    &:hover {
-      --radio-border-color: var(--sds-color-surface-neutral-hover);
+    &:hover,
+    &:focus-visible {
+      --radio-border-color: var(
+        --sds-color-interaction-neutral-strong-highlight
+      );
     }
 
     &:active {
-      --radio-border-color: var(--sds-color-surface-neutral-active);
+      --radio-border-color: var(--sds-color-interaction-neutral-strong-pressed);
     }
 
     &:focus-visible {
-      --radio-border-color: transparent;
-
-      outline: var(--sds-outline);
+      outline: var(--sds-focus-outline);
       outline-offset: 0;
     }
 
     &:checked {
+      --radio-background-color: var(
+        --sds-color-interaction-primary-strong-default
+      );
       --radio-border-color: transparent;
-      --radio-background-color: var(--sds-color-surface-action);
 
       &::before {
         content: "";
         display: block;
-        border-radius: 50%;
-        width: var(--sds-size-base-s);
-        height: var(--sds-size-base-s);
-        background: var(--sds-color-text-onsurface-action);
+        border-radius: var(--sds-space-border-radius-full);
+        width: var(--sds-base-size-s);
+        height: var(--sds-base-size-s);
+        background: var(--sds-color-text-on-strong);
       }
 
-      &:hover {
-        --radio-background-color: var(--sds-color-surface-action-hover);
+      &:hover,
+      &:focus-visible {
+        --radio-background-color: var(
+          --sds-color-interaction-primary-strong-highlight
+        );
       }
 
       &:active {
-        --radio-background-color: var(--sds-color-surface-action-active);
+        --radio-background-color: var(
+          --sds-color-interaction-primary-strong-pressed
+        );
       }
     }
-  }
-
-  &-text {
-    font-size: var(--sds-size-text-s1);
-    line-height: var(--sds-size-text-m);
-    color: var(--sds-color-text-default);
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
   &--error &__input {
-    --radio-border-color: var(--sds-color-surface-danger);
+    --radio-border-color: var(--sds-color-interaction-danger-strong-default);
 
-    &:hover {
-      --radio-border-color: var(--sds-color-surface-danger-hover);
+    &:hover,
+    &:focus-visible {
+      --radio-border-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
     }
 
     &:active {
-      --radio-border-color: var(--sds-color-surface-danger-active);
+      --radio-border-color: var(--sds-color-interaction-danger-strong-pressed);
     }
 
     &:checked {
-      --radio-background-color: var(--sds-color-surface-danger);
+      --radio-background-color: var(
+        --sds-color-interaction-danger-strong-default
+      );
 
-      &:hover {
-        --radio-background-color: var(--sds-color-surface-danger-hover);
+      &:hover,
+      &:focus-visible {
+        --radio-background-color: var(
+          --sds-color-interaction-danger-strong-highlight
+        );
       }
 
       &:active {
-        --radio-background-color: var(--sds-color-surface-danger-active);
+        --radio-background-color: var(
+          --sds-color-interaction-danger-strong-pressed
+        );
       }
     }
   }
