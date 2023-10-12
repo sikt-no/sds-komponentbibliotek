@@ -4,7 +4,7 @@ import { Modal, ModalProps } from "../Modal";
 import { Meta, StoryObj } from "@storybook/react";
 import { useArgs } from "@storybook/client-api";
 
-import { PrimaryButton, SecondaryButton } from "@sikt/sds-button";
+import { StrongButton, SubtleButton } from "@sikt/sds-button";
 import { Paragraph } from "@sikt/sds-core";
 
 const meta: Meta = {
@@ -35,30 +35,30 @@ export const Default: Story = {
     const [, setArgs] = useArgs();
     return (
       <>
-        <PrimaryButton onClick={() => setArgs({ ...args, open: true })}>
+        <StrongButton onClick={() => setArgs({ ...args, open: true })}>
           Open modal
-        </PrimaryButton>
+        </StrongButton>
         <Modal
           {...args}
           footer={[
-            <SecondaryButton
+            <SubtleButton
               onClick={() => setArgs({ ...args, children: shortContent })}
               key="1"
             >
               Show short content
-            </SecondaryButton>,
-            <SecondaryButton
+            </SubtleButton>,
+            <SubtleButton
               onClick={() => setArgs({ ...args, children: longContent })}
               key="1"
             >
               Change content length
-            </SecondaryButton>,
-            <PrimaryButton
+            </SubtleButton>,
+            <StrongButton
               key="2"
               onClick={() => setArgs({ ...args, open: false })}
             >
               Close
-            </PrimaryButton>,
+            </StrongButton>,
           ]}
           onClose={() => {
             setArgs({ ...args, open: false });
