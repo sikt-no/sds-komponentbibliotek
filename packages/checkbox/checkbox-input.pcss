@@ -1,6 +1,7 @@
 .sds-checkbox {
-  --checkbox-border-color: var(--sds-color-surface-neutral);
-  --checkbox-background-color: var(--sds-color-surface-default);
+  --checkbox-background-color: var(--sds-color-layout-background-default);
+  --checkbox-border-color: var(--sds-color-interaction-neutral-strong-default);
+  --checkbox-size: var(--sds-base-size-m);
 
   display: flex;
   align-items: center;
@@ -9,70 +10,96 @@
   &__input {
     appearance: none;
     background: var(--checkbox-background-color);
-    border: var(--sds-border-size-regular) solid var(--checkbox-border-color);
-    border-radius: var(--sds-border-radius-small);
+    border: var(--sds-space-border-weight-regular) solid
+      var(--checkbox-border-color);
+    border-radius: var(--sds-space-border-radius-minimal);
     cursor: pointer;
-    width: var(--sds-size-base-m);
-    height: var(--sds-size-base-m);
-    transition: opacity 0.4s ease;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    transition: opacity var(--sds-effect-animation-duration-medium)
+      var(--sds-effect-animation-easing-default);
     padding: 0;
-    margin: var(--sds-size-base-s);
+    margin: var(--sds-space-padding-small);
 
     &-label {
-      padding: var(--sds-size-base-s) var(--sds-size-base-xs);
-      line-height: var(--sds-size-text-m);
+      font-size: var(--sds-typography-body-fontsize-regular);
+      font-weight: var(--sds-typography-weight-regular);
+      line-height: var(--sds-typography-body-lineheight-regular);
+      padding: var(--sds-space-padding-small) var(--sds-space-padding-tiny);
     }
 
-    &:hover {
-      --checkbox-border-color: var(--sds-color-surface-neutral-hover);
+    &:hover,
+    &:focus-visible {
+      --checkbox-border-color: var(
+        --sds-color-interaction-neutral-strong-highlight
+      );
     }
 
     &:active {
-      --checkbox-border-color: var(--sds-color-surface-neutral-active);
+      --checkbox-border-color: var(
+        --sds-color-interaction-neutral-strong-pressed
+      );
     }
 
     &:focus-visible {
-      --checkbox-border-color: transparent;
-
-      outline: var(--sds-outline);
+      outline: var(--sds-focus-outline);
       outline-offset: 0;
     }
 
     &:checked {
+      --checkbox-background-color: var(
+        --sds-color-interaction-primary-strong-default
+      );
       --checkbox-border-color: transparent;
-      --checkbox-background-color: var(--sds-color-surface-action);
 
-      &:hover {
-        --checkbox-background-color: var(--sds-color-surface-action-hover);
+      &:hover,
+      &:focus-visible {
+        --checkbox-background-color: var(
+          --sds-color-interaction-primary-strong-highlight
+        );
       }
 
       &:active {
-        --checkbox-background-color: var(--sds-color-surface-action-active);
+        --checkbox-background-color: var(
+          --sds-color-interaction-primary-strong-pressed
+        );
       }
     }
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
   &--error &__input {
-    --checkbox-border-color: var(--sds-color-surface-danger);
+    --checkbox-border-color: var(--sds-color-interaction-danger-strong-default);
 
-    &:hover {
-      --checkbox-border-color: var(--sds-color-surface-danger-hover);
+    &:hover,
+    &:focus-visible {
+      --checkbox-border-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
     }
 
     &:active {
-      --checkbox-border-color: var(--sds-color-surface-danger-active);
+      --checkbox-border-color: var(
+        --sds-color-interaction-danger-strong-pressed
+      );
     }
 
     &:checked {
-      --checkbox-background-color: var(--sds-color-surface-danger);
+      --checkbox-background-color: var(
+        --sds-color-interaction-danger-strong-default
+      );
 
-      &:hover {
-        --checkbox-background-color: var(--sds-color-surface-danger-hover);
+      &:hover,
+      &:focus-visible {
+        --checkbox-background-color: var(
+          --sds-color-interaction-danger-strong-highlight
+        );
       }
 
       &:active {
-        --checkbox-background-color: var(--sds-color-surface-danger-active);
+        --checkbox-background-color: var(
+          --sds-color-interaction-danger-strong-pressed
+        );
       }
     }
   }
@@ -80,19 +107,19 @@
   &__icon-wrapper {
     display: flex;
     place-content: center;
-    width: var(--sds-size-base-m);
-    height: var(--sds-size-base-m);
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
     position: absolute;
-    margin: var(--sds-size-base-s);
+    margin: var(--sds-base-size-s);
     pointer-events: none;
   }
 
   &__icon {
-    position: absolute;
-    margin-top: 2px;
-    color: var(--sds-color-background-default);
-    font-size: var(--sds-size-text-s2);
+    color: var(--sds-color-text-on-strong);
     display: none;
+    font-size: var(--checkbox-size);
+    padding: 2px;
+    position: absolute;
   }
 
   &__input:checked ~ &__icon-wrapper &__icon {
