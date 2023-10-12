@@ -58,7 +58,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         {...rest}
       >
         <div className="sds-select__select">
-          {icon && <div className="sds-select__select-icon">{icon}</div>}
           <select
             ref={ref}
             id={id}

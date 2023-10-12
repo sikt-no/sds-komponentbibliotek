@@ -1,8 +1,12 @@
 .sds-select {
-  --sds-select-text-color: var(--sds-color-text-neutral);
-  --sds-select-border-color: var(--sds-color-surface-neutral);
-  --sds-select-button-color: var(--sds-color-text-action);
-  --sds-select-border-width: var(--sds-border-size-regular);
+  --select-border-color: var(--sds-color-interaction-neutral-strong-default);
+  --select-border-width: var(--sds-space-border-weight-regular);
+  --select-button-color: var(--sds-color-text-primary);
+  --select-button-background-color: transparent;
+  --select-padding: calc(
+    var(--sds-space-padding-tiny) + var(--sds-space-padding-minimal) -
+      var(--select-border-width)
+  );
 
   display: inline-flex;
   flex-direction: column;
@@ -16,64 +20,75 @@
     &-input {
       appearance: none;
       background-image: none;
-      background-color: var(--sds-color-surface-default);
-      border: var(--sds-select-border-width) solid
-        var(--sds-select-border-color);
-      border-radius: var(--sds-border-radius-large);
-      color: var(--sds-color-text-default);
-      cursor: inherit;
+      background-color: var(--sds-color-layout-background-default);
+      border: var(--select-border-width) solid var(--select-border-color);
+      border-radius: var(--sds-space-border-radius-medium);
+      color: var(--sds-color-text-primary);
+      cursor: pointer;
       flex: 1;
-      font-size: var(--sds-size-base-s1);
-      line-height: var(--sds-size-text-m);
-      padding: calc(
-          var(--sds-size-padding-small) - var(--sds-select-border-width)
-        )
-        var(--sds-size-padding-large)
-        calc(var(--sds-size-padding-small) - var(--sds-select-border-width))
-        var(--sds-size-base-s2);
+      font-size: var(--sds-typography-body-fontsize-regular);
+      font-weight: var(--sds-typography-weight-regular);
+      line-height: var(--sds-typography-body-lineheight-regular);
+      padding: var(--select-padding);
+
+      &:hover,
+      &:focus-visible {
+        --select-border-color: var(
+          --sds-color-interaction-neutral-strong-highlight
+        );
+      }
+
+      &:active {
+        --select-border-color: var(
+          --sds-color-interaction-neutral-strong-pressed
+        );
+      }
 
       &:focus-visible {
-        --sds-select-border-color: transparent;
-        --sds-select-button-color: var(--sds-color-text-default-hover);
-
-        outline: var(--sds-outline);
+        outline: var(--sds-focus-outline);
       }
-    }
-
-    &-icon {
-      font-size: var(--sds-size-text-m);
-      position: absolute;
-      left: var(--sds-size-base-s);
     }
 
     &-button {
-      color: var(--sds-select-button-color);
-      font-size: var(--sds-size-text-m);
+      --select-button-size: calc(
+        var(--sds-base-size-m) + calc(var(--sds-space-padding-minimal) * 2)
+      );
+
+      background-color: var(--select-button-background-color);
+      border-radius: var(--sds-space-border-radius-minimal);
+      color: var(--select-button-color);
+      font-size: var(--sds-base-size-m);
+      padding: var(--sds-space-padding-minimal);
       position: absolute;
-      right: var(--sds-size-base-s);
+      right: var(--select-padding);
       pointer-events: none;
+      width: var(--select-button-size);
+      height: var(--select-button-size);
     }
   }
 
-  &--icon {
-    .sds-select {
-      &__select-input {
-        padding-left: var(--sds-size-base-m2);
-      }
+  &--invalid &__select {
+    --select-border-color: var(--sds-color-interaction-danger-strong-default);
+    --select-button-color: var(--sds-color-text-on-strong);
+    --select-button-background-color: var(
+      --sds-color-interaction-danger-strong-default
+    );
+
+    &:hover,
+    &:focus-within {
+      --select-border-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
+      --select-button-background-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
     }
-  }
 
-  &--invalid {
-    --sds-select-text-color: var(--sds-color-text-danger);
-
-    .sds-select {
-      &__select {
-        --sds-select-border-color: var(--sds-color-surface-danger);
-
-        &:focus-visible {
-          --sds-select-border-color: transparent;
-        }
-      }
+    &:active {
+      --select-border-color: var(--sds-color-interaction-danger-strong-pressed);
+      --select-button-background-color: var(
+        --sds-color-interaction-danger-strong-pressed
+      );
     }
   }
 }

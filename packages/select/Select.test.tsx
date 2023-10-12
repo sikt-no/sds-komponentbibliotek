@@ -85,17 +85,5 @@ describe("Select", () => {
       expect(screen.queryByText("Baz")).not.toBeInTheDocument();
       expect(screen.getByText("Qux")).toBeInTheDocument();
     });
-
-    it("should render icon", async () => {
-      render(
-        <Select
-          label="Foo"
-          options={[{ label: "Bar", value: "bar" }]}
-          icon="icon"
-        />
-      );
-
-      expect(screen.getByText("icon")).toBeInTheDocument();
-    });
   });
 });
