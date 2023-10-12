@@ -5,13 +5,13 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerItem,
+  DrawerItemGroup,
   DrawerButton,
   DrawerButtonLink,
   useKeyPress,
 } from "../index";
 import { InfoIcon } from "@sikt/sds-icons";
 import { PrimaryLogo } from "@sikt/sds-logo";
-import { DrawerItemGroup } from "../DrawerItemGroup";
 
 const meta: Meta = {
   title: "Components/Drawer",

@@ -7,6 +7,9 @@ export { DrawerHeader } from "./DrawerHeader";
 export type { DrawerContentProps } from "./DrawerContent";
 export { DrawerContent } from "./DrawerContent";
 
+export type { DrawerItemGroupProps } from "./DrawerItemGroup";
+export { DrawerItemGroup } from "./DrawerItemGroup";
+
 export type { DrawerItemProps } from "./DrawerItem";
 export { DrawerItem } from "./DrawerItem";
 
