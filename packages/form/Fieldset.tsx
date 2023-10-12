@@ -6,7 +6,6 @@ import React, {
   useMemo,
 } from "react";
 import clsx from "clsx";
-import { WarningIcon } from "@sikt/sds-icons";
 import { FieldsetContext } from "./FieldsetContext";
 import "./fieldset.pcss";
 
@@ -45,12 +44,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
           aria-errormessage={errorText ? `${id}-help-text` : undefined}
           {...rest}
         >
-          <legend className="sds-form-fieldset__legend">
-            {errorText && (
-              <WarningIcon className="sds-form-fieldset__legend-error-icon" />
-            )}
-            {legend}
-          </legend>
+          <legend className="sds-form-fieldset__legend">{legend}</legend>
           {children}
           {(errorText ?? helpText) && (
             <div

@@ -1,6 +1,5 @@
 import React, { LabelHTMLAttributes } from "react";
 import clsx from "clsx";
-import { WarningIcon } from "@sikt/sds-icons";
 import "./label.pcss";
 
 export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
@@ -25,10 +24,7 @@ export const Label = ({
       )}
       {...rest}
     >
-      <div className="sds-form-field__label-text">
-        {error && <WarningIcon className="sds-form-field__label-error-icon" />}{" "}
-        {text}
-      </div>
+      <div className="sds-form-field__label-text">{text}</div>
       {children}
     </label>
   );

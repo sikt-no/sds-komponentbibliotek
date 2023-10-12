@@ -1,19 +1,16 @@
 .sds-form-field__label {
-  --label-color: var(--sds-color-text-neutral);
+  --label-color: var(--sds-color-text-secondary);
 
   &-text {
-    font-size: var(--sds-size-text-s);
-    line-height: var(--sds-size-text-s1);
     color: var(--label-color);
-    padding: var(--sds-size-base-xs);
+    cursor: pointer;
+    font-size: var(--sds-typography-body-fontsize-small);
+    font-weight: var(--sds-typography-weight-regular);
+    line-height: var(--sds-typography-body-lineheight-small);
+    padding: var(--sds-space-padding-tiny);
   }
 
   &--error {
-    --label-color: var(--sds-color-text-danger);
-  }
-
-  &-error-icon {
-    font-size: var(--sds-size-text-s1);
-    margin-right: var(--sds-size-base-xs);
+    --label-color: var(--sds-color-text-warning);
   }
 }
