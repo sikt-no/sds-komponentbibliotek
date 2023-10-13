@@ -4,6 +4,7 @@ import React, {
   InputHTMLAttributes,
   ReactNode,
   forwardRef,
+  useId,
 } from "react";
 import "./toggle-segment.pcss";
 import clsx from "clsx";
@@ -24,25 +25,30 @@ export const ToggleSegmentOption = forwardRef<
   ToggleSegmentOptionProps
 >(({ value, inputProps, label, checked, onChange, ...rest }, ref) => {
   const { name } = useFieldset() ?? {};
+  const generatedId = useId();
+  const { id: inputPropsId, ...propsForInput } = inputProps ?? {};
+  const htmlForId = inputPropsId ?? generatedId;
 
   return (
-    <div {...rest}>
+    <div className="sds-toggle-segment__option" {...rest}>
+      <input
+        {...propsForInput}
+        id={htmlForId}
+        name={name}
+        ref={ref}
+        type="radio"
+        onChange={onChange}
+        className="sds-toggle-segment__input"
+        value={value}
+        checked={checked}
+      />
       <label
         className={clsx(
           "sds-toggle-segment__label",
           checked && "sds-toggle-segment__label--checked"
         )}
+        htmlFor={htmlForId}
       >
-        <input
-          name={name}
-          ref={ref}
-          type="radio"
-          onChange={onChange}
-          className="sds-toggle-segment__input"
-          value={value}
-          checked={checked}
-          {...inputProps}
-        />
         {label}
       </label>
     </div>

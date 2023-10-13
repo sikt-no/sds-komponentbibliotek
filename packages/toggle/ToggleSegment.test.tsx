@@ -81,4 +81,49 @@ describe("Toggle Segment", () => {
       expect(screen.getByLabelText("Label 2")).toBeChecked();
     });
   });
+
+  describe("ToggleSegmentOption", () => {
+    it("should have automatically set input id", () => {
+      const label = "Label";
+
+      const { container } = render(
+        <ToggleSegment legend="Legend" data-testid="test">
+          <ToggleSegmentOption
+            value={0}
+            checked
+            onChange={() => {}}
+            label={label}
+          />
+        </ToggleSegment>
+      );
+
+      const htmlFor = screen.getByText(label).getAttribute("for");
+      expect(
+        container.querySelector(`#${CSS.escape(htmlFor!)}`)
+      ).toBeInTheDocument();
+    });
+
+    it("should use specified input id", () => {
+      const label = "Label";
+      const inputId = "input-id";
+
+      const { container } = render(
+        <ToggleSegment legend="Legend" data-testid="test">
+          <ToggleSegmentOption
+            value={0}
+            checked
+            onChange={() => {}}
+            label={label}
+            inputProps={{ id: inputId }}
+          />
+        </ToggleSegment>
+      );
+
+      const htmlFor = screen.getByText(label).getAttribute("for");
+      expect(htmlFor).toBe(inputId);
+      expect(
+        container.querySelector(`#${CSS.escape(htmlFor!)}`)
+      ).toBeInTheDocument();
+    });
+  });
 });

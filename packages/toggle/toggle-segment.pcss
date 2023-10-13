@@ -18,16 +18,17 @@
     grid-auto-columns: 1fr;
   }
 
+  &__option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__label {
     position: relative;
     line-height: var(--sds-size-text-m);
     border-radius: var(--sds-border-radius-small);
     padding: var(--sds-size-padding-small) var(--sds-size-padding-medium);
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    height: 100%;
 
     &:hover {
       cursor: pointer;
@@ -49,24 +50,17 @@
       &:active {
         background-color: var(--sds-color-surface-action-active);
       }
-
-      &:focus-within {
-        background-color: var(--sds-color-surface-action-hover);
-      }
-    }
-
-    &:focus-within {
-      outline: var(--sds-outline);
     }
   }
 
   &__input {
-    border: none;
     opacity: 0;
     position: absolute;
+    pointer-events: none;
 
-    &:hover {
-      cursor: pointer;
+    &:focus-visible + .sds-toggle-segment__label {
+      outline: var(--sds-outline);
+      background-color: var(--sds-color-surface-action-hover);
     }
   }
 }
