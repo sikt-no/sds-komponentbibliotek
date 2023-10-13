@@ -15,6 +15,7 @@ const Contributors = () => {
       { name: "Petter", role: "Design", team: "Komponentbiblioteket" },
     ],
     [
+      { name: "Sondre S.", role: "Teknologi", team: "Opptak Søker" },
       { name: "Erik", role: "Teknologi", team: "Opptak Søker" },
       { name: "Vegard", role: "Teknologi", team: "Opptak Søker" },
       { name: "Hilde", role: "Design", team: "Opptak Søker" },
@@ -61,7 +62,8 @@ const Contributors = () => {
                         className={style.sdsSiktContributors__contributorImage}
                         src={`/images/${contributor.name
                           .toLowerCase()
-                          .replaceAll(" ", "-")}.png`}
+                          .replaceAll(" ", "-")
+                          .replaceAll(".", "")}.png`}
                         alt={contributor.name}
                       />
                     )}
