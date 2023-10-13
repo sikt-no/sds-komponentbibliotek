@@ -1,93 +1,117 @@
 .sds-toggle-switch {
-  --sds-toggle-transition-duration: 400ms;
-  --sds-toggle-track-width: var(--sds-size-base-l);
-  --sds-toggle-thumb-size: var(--sds-size-base-s1);
-  --sds-toggle-border-width: var(--sds-border-size-regular);
-  --sds-toggle-padding: var(--sds-border-size-regular);
-  --sds-toggle-thumb-offset: calc(
-    var(--sds-toggle-border-width) + var(--sds-toggle-padding)
+  --toggle-transition-duration: var(--sds-effect-animation-duration-medium);
+  --toggle-track-width: var(--sds-base-size-l);
+  --toggle-thumb-size: var(--sds-base-size-s1);
+  --toggle-border-width: var(--sds-space-border-weight-regular);
+  --toggle-padding: var(--sds-space-padding-minimal);
+  --toggle-thumb-offset: var(--toggle-padding);
+  --toggle-track-background-color: var(--sds-color-layout-background-default);
+  --toggle-track-border-color: var(
+    --sds-color-interaction-neutral-strong-default
   );
-  --sds-toggle-track-bg-color: var(--sds-color-background-default);
-  --sds-toggle-track-border-color: var(--sds-color-surface-neutral);
-  --sds-toggle-thumb-bg-color: var(--sds-color-surface-neutral);
-  --sds-toggle-thumb-text-color: var(--sds-color-text-onsurface-action);
-  --sds-toggle-thumb-position: 0;
-  --sds-toggle-label-color: var(--sds-color-text-default);
+  --toggle-thumb-background-color: var(
+    --sds-color-interaction-neutral-strong-default
+  );
+  --toggle-thumb-color: var(--sds-color-text-on-strong);
+  --toggle-thumb-position: 0;
 
-  &__main-label {
-    display: inline-flex;
+  &__label {
     align-items: center;
-    vertical-align: bottom;
-    column-gap: var(--sds-size-base-xs);
     cursor: pointer;
+    display: inline-flex;
+    gap: var(--sds-space-padding-small);
   }
 
   &:hover {
-    --sds-toggle-track-border-color: var(--sds-color-surface-neutral-hover);
-    --sds-toggle-thumb-bg-color: var(--sds-color-surface-neutral-hover);
+    --toggle-track-border-color: var(
+      --sds-color-interaction-neutral-strong-highlight
+    );
+    --toggle-thumb-background-color: var(
+      --sds-color-interaction-neutral-strong-highlight
+    );
   }
 
   &:active {
-    --sds-toggle-track-border-color: var(--sds-color-surface-neutral-active);
-    --sds-toggle-thumb-bg-color: var(--sds-color-surface-neutral-active);
+    --toggle-track-border-color: var(
+      --sds-color-interaction-neutral-strong-pressed
+    );
+    --toggle-thumb-background-color: var(
+      --sds-color-interaction-neutral-strong-pressed
+    );
   }
 
   &--checked {
-    --sds-toggle-track-bg-color: var(--sds-color-surface-action);
-    --sds-toggle-track-border-color: var(--sds-color-surface-action);
-    --sds-toggle-thumb-bg-color: var(--sds-color-text-onsurface-action);
-    --sds-toggle-thumb-text-color: var(--sds-color-text-action);
-    --sds-toggle-thumb-position: calc(
-      var(--sds-toggle-track-width) - var(--sds-toggle-thumb-size) - 2 *
-        var(--sds-toggle-thumb-offset)
+    --toggle-track-background-color: var(
+      --sds-color-interaction-primary-strong-default
+    );
+    --toggle-track-border-color: var(--toggle-track-background-color);
+    --toggle-thumb-background-color: var(--sds-color-layout-background-default);
+    --toggle-thumb-color: var(--sds-color-text-primary);
+    --toggle-thumb-position: calc(
+      var(--toggle-track-width) - var(--toggle-thumb-size) - 2 *
+        var(--toggle-thumb-offset)
     );
 
+    &:hover,
+    &:active {
+      --toggle-thumb-background-color: var(
+        --sds-color-layout-background-default
+      );
+    }
+
     &:hover {
-      --sds-toggle-track-bg-color: var(--sds-color-surface-action-hover);
-      --sds-toggle-track-border-color: var(--sds-color-surface-action-hover);
-      --sds-toggle-thumb-bg-color: var(--sds-color-text-onsurface-action);
+      --toggle-track-background-color: var(
+        --sds-color-interaction-primary-strong-highlight
+      );
+      --toggle-track-border-color: var(
+        --sds-color-interaction-primary-strong-highlight
+      );
     }
 
     &:active {
-      --sds-toggle-track-bg-color: var(--sds-color-surface-action-active);
-      --sds-toggle-track-border-color: var(--sds-color-surface-action-active);
-      --sds-toggle-thumb-bg-color: var(--sds-color-text-onsurface-action);
+      --toggle-track-background-color: var(
+        --sds-color-interaction-primary-strong-pressed
+      );
+      --toggle-track-border-color: var(
+        --sds-color-interaction-primary-strong-pressed
+      );
     }
   }
 
   &__inner {
-    display: inline-flex;
     align-items: center;
+    display: inline-flex;
+    padding: calc(var(--sds-space-padding-small) - var(--toggle-border-width)) 0;
     position: relative;
   }
 
-  &__label {
-    display: flex;
+  &__label-text {
     align-items: center;
-    color: var(--sds-toggle-label-color);
-    font-size: var(--sds-size-text-s1);
-    column-gap: var(--sds-size-base-xs);
+    color: var(--sds-color-text-primary);
+    display: flex;
+    font-size: var(--sds-typography-body-fontsize-regular);
+    font-weight: var(--sds-typography-weight-regular);
+    line-height: var(--sds-typography-body-lineheight-regular);
+    padding: var(--sds-space-padding-tiny);
   }
 
   &__track {
     appearance: none;
     cursor: pointer;
-    border-radius: var(--sds-toggle-thumb-size);
+    background-color: var(--toggle-track-background-color);
+    border: var(--toggle-border-width) solid var(--toggle-track-border-color);
+    border-radius: var(--toggle-thumb-size);
     height: calc(
-      var(--sds-toggle-thumb-size) + calc(2 * var(--sds-toggle-thumb-offset))
+      var(--toggle-thumb-size) + calc(2 * var(--toggle-thumb-offset))
     );
-    width: var(--sds-toggle-track-width);
-    padding: var(--sds-toggle-padding);
-    background-color: var(--sds-toggle-track-bg-color);
-    transition: background-color var(--sds-toggle-transition-duration),
-      border-color var(--sds-toggle-transition-duration);
-    border: var(--sds-toggle-border-width) solid
-      var(--sds-toggle-track-border-color);
+    width: var(--toggle-track-width);
+    padding: var(--toggle-padding);
+    transition: background-color var(--toggle-transition-duration),
+      border-color var(--toggle-transition-duration);
 
     &:focus-visible {
-      outline: var(--sds-outline);
+      outline: var(--sds-focus-outline);
       outline-offset: 0;
-      border-color: transparent;
     }
   }
 
@@ -96,49 +120,69 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: var(--sds-toggle-thumb-offset);
-    height: var(--sds-toggle-thumb-size);
-    width: var(--sds-toggle-thumb-size);
-    border-radius: var(--sds-border-radius-full);
-    transition: all var(--sds-toggle-transition-duration);
-    background-color: var(--sds-toggle-thumb-bg-color);
-    transform: translateX(var(--sds-toggle-thumb-position));
+    left: var(--toggle-thumb-offset);
+    height: var(--toggle-thumb-size);
+    width: var(--toggle-thumb-size);
+    border-radius: var(--sds-space-border-radius-full);
+    transition: all var(--toggle-transition-duration);
+    background-color: var(--toggle-thumb-background-color);
+    transform: translateX(var(--toggle-thumb-position));
+    padding: var(--sds-space-border-weight-regular);
 
     > * {
-      transition: all var(--sds-toggle-transition-duration);
-      color: var(--sds-toggle-thumb-text-color);
-      font-size: var(--sds-size-base-s);
+      transition: all var(--toggle-transition-duration);
+      color: var(--toggle-thumb-color);
+      font-size: var(--sds-base-size-s);
     }
   }
 
-  &__help-text {
-    font-size: var(--sds-size-text-s);
-    line-height: var(--sds-size-text-s1);
-    color: var(--sds-toggle-label-color);
-    padding: var(--sds-size-padding-small);
-  }
-
-  &--error {
-    --sds-toggle-label-color: var(--sds-color-text-danger);
-    --sds-toggle-track-border-color: var(--sds-color-surface-danger);
-    --sds-toggle-track-bg-color: var(--sds-color-background-default);
-    --sds-toggle-thumb-bg-color: var(--sds-color-surface-danger);
-
-    &:hover {
-      --sds-toggle-track-border-color: var(--sds-color-surface-danger-hover);
-      --sds-toggle-thumb-bg-color: var(--sds-color-surface-danger-hover);
-    }
-  }
-
+  &--error,
   &--error&--checked {
-    --sds-toggle-track-border-color: var(--sds-color-surface-danger);
-    --sds-toggle-track-bg-color: var(--sds-color-surface-danger);
-    --sds-toggle-thumb-bg-color: var(--sds-color-text-onsurface-danger);
-    --sds-toggle-thumb-text-color: var(--sds-color-text-danger);
+    --toggle-track-border-color: var(
+      --sds-color-interaction-danger-strong-default
+    );
+    --toggle-thumb-background-color: var(
+      --sds-color-interaction-danger-strong-default
+    );
 
     &:hover {
-      --sds-toggle-track-border-color: var(--sds-color-surface-danger-hover);
-      --sds-toggle-track-bg-color: var(--sds-color-surface-danger-hover);
+      --toggle-track-border-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
+      --toggle-thumb-background-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
+    }
+
+    &:active {
+      --toggle-track-border-color: var(
+        --sds-color-interaction-danger-strong-pressed
+      );
+      --toggle-thumb-background-color: var(
+        --sds-color-interaction-danger-strong-pressed
+      );
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &--error&--checked {
+    --toggle-track-background-color: var(
+      --sds-color-interaction-danger-strong-default
+    );
+    --toggle-thumb-background-color: var(--sds-color-text-on-strong);
+
+    &:hover {
+      --toggle-track-background-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
+      --toggle-thumb-background-color: var(--sds-color-text-on-strong);
+    }
+
+    &:active {
+      --toggle-track-background-color: var(
+        --sds-color-interaction-danger-strong-pressed
+      );
+      --toggle-thumb-background-color: var(--sds-color-text-on-strong);
     }
   }
 }

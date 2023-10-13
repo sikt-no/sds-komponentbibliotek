@@ -51,7 +51,7 @@ describe("Toggle Switch", () => {
 
       const container = screen.getByTestId("test");
       const label = container.getElementsByClassName(
-        "sds-toggle-switch__label"
+        "sds-toggle-switch__label-text"
       )[0];
       const control = container.getElementsByClassName(
         "sds-toggle-switch__inner"
@@ -66,7 +66,7 @@ describe("Toggle Switch", () => {
 
       const container = screen.getByTestId("test");
       const label = container.getElementsByClassName(
-        "sds-toggle-switch__label"
+        "sds-toggle-switch__label-text"
       )[0];
       const control = container.getElementsByClassName(
         "sds-toggle-switch__inner"
@@ -76,10 +76,12 @@ describe("Toggle Switch", () => {
       );
     });
 
-    it("should show an error", async () => {
-      render(<ToggleSwitch checked errorText="Error" label="Foo" />);
+    it("should have error class modifier", async () => {
+      render(<ToggleSwitch data-testid="test" checked error label="Foo" />);
 
-      expect(screen.getByText("Error")).toBeInTheDocument();
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-toggle-switch--error"
+      );
     });
   });
 });

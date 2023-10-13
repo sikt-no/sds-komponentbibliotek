@@ -12,7 +12,7 @@ export const ToggleSegment = forwardRef<
 >(({ children, ...rest }, ref) => {
   return (
     <div className="sds-toggle-segment">
-      <Fieldset {...rest} ref={ref}>
+      <Fieldset className="sds-toggle-segment__fieldset" {...rest} ref={ref}>
         <div className="sds-toggle-segment__group">{children}</div>
       </Fieldset>
     </div>

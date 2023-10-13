@@ -11,7 +11,7 @@ import clsx from "clsx";
 import { useFieldset } from "@sikt/sds-form";
 
 export interface ToggleSegmentOptionProps
-  extends HTMLAttributes<HTMLDivElement> {
+  extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
   value: string | number;
   label: string;
   children?: ReactNode;

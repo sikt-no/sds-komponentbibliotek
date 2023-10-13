@@ -57,5 +57,5 @@ export const WithLabelFirst: Story = {
 
 export const WithError: Story = {
   ...Template,
-  args: { ...Default.args, errorText: "Error" },
+  args: { ...Default.args, error: true },
 };

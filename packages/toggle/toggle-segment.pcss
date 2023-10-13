@@ -1,21 +1,21 @@
 .sds-toggle-segment {
-  .sds-form-fieldset {
+  &__fieldset {
     display: flex;
     align-items: center;
 
-    &__legend {
+    .sds-form-fieldset__legend {
       float: left;
     }
   }
 
   &__group {
-    border-radius: var(--sds-border-radius-small);
-    outline: var(--sds-border-size-regular) solid
-      var(--sds-color-surface-action);
-    outline-offset: -1px;
+    border-radius: var(--sds-space-border-radius-small);
     display: inline-grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
+    outline: var(--sds-space-border-weight-regular) solid
+      var(--sds-color-interaction-primary-strong-default);
+    outline-offset: calc(var(--sds-space-border-weight-regular) * -1);
   }
 
   &__option {
@@ -25,30 +25,32 @@
   }
 
   &__label {
+    border-radius: var(--sds-space-border-radius-small);
+    cursor: pointer;
+    font-size: var(--sds-typography-body-fontsize-small);
+    font-weight: var(--sds-typography-weight-regular);
+    line-height: var(--sds-typography-body-lineheight-small);
+    padding: var(--sds-space-padding-tiny);
     position: relative;
-    line-height: var(--sds-size-text-m);
-    border-radius: var(--sds-border-radius-small);
-    padding: var(--sds-size-padding-small) var(--sds-size-padding-medium);
 
     &:hover {
-      cursor: pointer;
-      background-color: rgba(115 81 251 / 10%);
+      background: var(--sds-color-interaction-primary-transparent-highlight);
     }
 
     &:active {
-      background-color: rgba(114 81 251 / 25%);
+      background: var(--sds-color-interaction-primary-transparent-pressed);
     }
 
     &--checked {
-      background-color: var(--sds-color-surface-action);
-      color: var(--sds-color-text-onsurface-action);
+      background-color: var(--sds-color-interaction-primary-strong-default);
+      color: var(--sds-color-text-on-strong);
 
       &:hover {
-        background-color: var(--sds-color-surface-action-hover);
+        background-color: var(--sds-color-interaction-primary-strong-highlight);
       }
 
       &:active {
-        background-color: var(--sds-color-surface-action-active);
+        background-color: var(--sds-color-interaction-primary-strong-pressed);
       }
     }
   }
@@ -59,8 +61,14 @@
     pointer-events: none;
 
     &:focus-visible + .sds-toggle-segment__label {
-      outline: var(--sds-outline);
-      background-color: var(--sds-color-surface-action-hover);
+      background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+      outline: var(--sds-focus-outline);
+
+      &--checked {
+        background-color: var(--sds-color-interaction-primary-strong-highlight);
+      }
     }
   }
 }
