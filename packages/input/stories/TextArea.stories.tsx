@@ -16,7 +16,7 @@ export const Default: Story = {
   args: {
     label: "Label",
     placeholder: "Placeholder",
-    inputProps: { rows: 2 } as InputHTMLAttributes<HTMLTextAreaElement>,
+    inputProps: { rows: "2" } as InputHTMLAttributes<HTMLTextAreaElement>,
   },
 };
 

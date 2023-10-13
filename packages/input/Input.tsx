@@ -48,7 +48,6 @@ export interface InputProps
   errorText?: string;
   helpText?: string;
   inputProps?: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>;
-  rows?: number;
 }
 
 const Input = forwardRef<
@@ -133,6 +132,7 @@ const Input = forwardRef<
               className="sds-input__action"
               label="Søk"
               icon={<MagnifyingGlassIcon />}
+              errorText={errorText}
               {...actionProps}
             />
           )}

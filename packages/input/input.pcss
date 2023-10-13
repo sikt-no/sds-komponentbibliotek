@@ -1,6 +1,9 @@
 .sds-input {
-  --sds-input-border-color: var(--sds-color-surface-neutral);
-  --sds-input-border-width: var(--sds-border-size-regular);
+  --input-border-color: var(--sds-color-interaction-neutral-strong-default);
+  --input-border-width: var(--sds-space-border-weight-regular);
+  --input-padding: calc(
+    var(--sds-space-padding-tiny) - var(--input-border-width)
+  );
 
   display: inline-flex;
   flex-direction: column;
@@ -9,104 +12,82 @@
   &__wrapper {
     display: flex;
     align-items: center;
-    border-radius: var(--sds-border-radius-large);
-    border: var(--sds-input-border-width) solid var(--sds-input-border-color);
-    padding-right: var(--sds-size-base-xs);
-    padding-left: var(--sds-size-base-s);
-    background: var(--sds-color-surface-default);
+    background-color: var(--sds-color-layout-background-default);
+    border: var(--input-border-width) solid var(--input-border-color);
+    border-radius: var(--sds-space-border-radius-medium);
     cursor: text;
+    padding: var(--input-padding);
 
-    & .sds-input__input {
-      width: 100%;
-      border: none;
-      color: var(--sds-color-text-default);
-      padding: calc(
-          var(--sds-size-padding-small) - var(--sds-input-border-width)
-        )
-        0 calc(var(--sds-size-padding-small) - var(--sds-input-border-width))
-        var(--sds-size-base-xs);
-      font-size: var(--sds-size-text-s1);
-      line-height: var(--sds-size-text-m);
-
-      &::placeholder {
-        color: var(--sds-color-surface-neutral);
-        opacity: 1;
-      }
-
-      &:focus-visible {
-        outline: none;
-      }
-
-      /* Hide native clear search button in Chrome and Safari */
-      &::-webkit-search-cancel-button {
-        appearance: none;
-      }
-    }
-
-    &:hover {
-      --sds-input-border-color: var(--sds-color-surface-neutral);
+    &:hover,
+    &:focus-visible {
+      --input-border-color: var(
+        --sds-color-interaction-neutral-strong-highlight
+      );
     }
 
     &:active {
-      --sds-input-border-color: var(--sds-color-surface-neutral-active);
+      --input-border-color: var(--sds-color-interaction-neutral-strong-pressed);
     }
 
     &:has(:focus-visible) {
-      --sds-input-border-color: transparent;
+      outline: var(--sds-focus-outline);
+    }
+  }
 
-      outline: var(--sds-outline);
+  &__input {
+    border: none;
+    color: var(--sds-color-text-primary);
+    font-size: var(--sds-typography-body-fontsize-regular);
+    font-weight: var(--sds-typography-weight-regular);
+    line-height: var(--sds-typography-body-lineheight-regular);
+    padding: var(--sds-space-padding-minimal);
+    width: 100%;
+
+    &::placeholder {
+      color: var(--sds-color-text-secondary);
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    /* Hide native clear search button in Chrome and Safari */
+    &::-webkit-search-cancel-button {
+      appearance: none;
     }
   }
 
   &--textarea &__wrapper {
     align-items: flex-start;
-    padding: var(--sds-size-padding-small);
-
-    & .sds-input__input {
-      padding-top: 0;
-    }
   }
 
   &__icon,
   &__action {
+    --input-icon-size: calc(
+      var(--sds-base-size-m) + calc(var(--sds-space-padding-minimal) * 2)
+    );
+
     align-items: center;
     display: inline-flex;
-    font-size: var(--sds-size-text-m);
+    font-size: var(--sds-base-size-m);
     justify-content: center;
-    height: 100%;
+    width: var(--input-icon-size);
+    height: var(--input-icon-size);
   }
 
-  &__icon {
-    width: var(--sds-size-text-m);
-  }
+  &--error &__wrapper {
+    --input-border-color: var(--sds-color-interaction-danger-strong-default);
 
-  &__action {
-    --action-border-margin: calc(var(--sds-input-border-width) * -1);
-
-    margin: var(--action-border-margin) calc(-1 * var(--sds-size-base-s))
-      var(--action-border-margin) 0;
-  }
-
-  &--error {
-    --sds-input-border-color: var(--sds-color-surface-danger);
-
-    & .sds-input__wrapper {
-      &:hover {
-        --sds-input-border-color: var(--sds-color-surface-danger-hover);
-      }
-
-      &:active {
-        --sds-input-border-color: var(--sds-color-surface-danger-active);
-      }
-
-      &:has(:focus-visible) {
-        --sds-input-border-color: transparent;
-      }
+    &:hover,
+    &:focus-visible {
+      --input-border-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
     }
-  }
 
-  &__label-error-icon {
-    font-size: var(--sds-size-text-s1);
-    margin-right: var(--sds-size-base-xs);
+    &:active {
+      --input-border-color: var(--sds-color-interaction-danger-strong-pressed);
+    }
   }
 }

@@ -26,7 +26,9 @@ describe("InputActionButton", () => {
         />
       );
 
-      expect(screen.getByTestId("test")).toHaveClass("sds-input-action");
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-button--transparent sds-input-action"
+      );
       expect(screen.getByTestId("test")).toHaveAccessibleName("Foo");
     });
 
@@ -59,6 +61,21 @@ describe("InputActionButton", () => {
 
       expect(screen.getByTestId("test")).toHaveClass(
         "sds-input-action test-class-name"
+      );
+    });
+
+    it("renders error button", async () => {
+      render(
+        <InputActionButton
+          label="Foo"
+          icon={<MagnifyingGlassIcon />}
+          data-testid="test"
+          errorText="Bar"
+        />
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-button--critical sds-input-action"
       );
     });
   });
