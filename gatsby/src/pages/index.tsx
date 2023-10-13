@@ -19,8 +19,8 @@ const IndexPage: React.FC<PageProps> = () => {
   const handleLaunchClick = () => {
     const end = Date.now() + 10 * 1000;
     const colors = [
-      tokens.default.color.surface.info.value,
-      tokens.default.color.surface.warning.value,
+      tokens.default.color.support.warning.default.value,
+      tokens.default.color.support.critical.strong.value,
     ];
 
     (function frame() {

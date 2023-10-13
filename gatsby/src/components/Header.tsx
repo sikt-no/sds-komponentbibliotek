@@ -16,6 +16,8 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <div />
+      <div />
     </SdsHeader>
   );
 };
