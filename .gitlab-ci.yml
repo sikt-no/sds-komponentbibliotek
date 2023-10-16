@@ -130,6 +130,16 @@ packages:
     - npm pkg delete scripts.prepare
     - npm ci
     - npm run build
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - .npm
+      policy: pull
+    - key: "$CI_JOB_NAME-$CI_COMMIT_BRANCH"
+      paths:
+        - node_modules/.cache/turbo
   artifacts:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
     expire_in: 1 days
@@ -143,18 +153,6 @@ packages:
       - packages/**/index.js
     exclude:
       - packages/__example__/*
-  cache:
-    - key:
-        files:
-          - package-lock.json
-      paths:
-        - .npm
-      policy: pull
-    - key: cache-turborepo-$CI_COMMIT_BRANCH
-      fallback_keys:
-        - cache-turborepo-$CI_DEFAULT_BRANCH
-      paths:
-        - node_modules/.cache/turbo
   needs:
     - install
   except:
@@ -167,6 +165,13 @@ storybook:
     - npm pkg delete scripts.prepare
     - npm ci
     - npm run storybook:build
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - .npm
+      policy: pull
   artifacts:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
     expire_in: 1 days
@@ -180,10 +185,23 @@ storybook:
 gatsby:
   stage: build
   extends: .npm_cache
+  variables:
+    GATSBY_TELEMETRY_DISABLED: 1
   script:
     - npm pkg delete scripts.prepare
     - npm ci
     - npm run gatsby:build
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - .npm
+      policy: pull
+    - key: "$CI_JOB_NAME-$CI_COMMIT_BRANCH"
+      paths:
+        - gatsby/.cache/
+        - gatsby/public/
   artifacts:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
     expire_in: 1 days

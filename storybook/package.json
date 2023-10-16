@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build:prod": "storybook build"
+    "build:prod": "storybook build --disable-telemetry"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.2",
