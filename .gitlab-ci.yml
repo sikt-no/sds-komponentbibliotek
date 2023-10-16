@@ -227,15 +227,17 @@ docker:
   except:
     - schedules
 
-review:
-  stage: deploy
-  extends: .review
+.deploy:
   script:
     - deploy deployment.yml
   dependencies:
     - docker
-  needs:
-    - docker
+
+review:
+  stage: deploy
+  extends:
+    - .review
+    - .deploy
   except:
     - main
     - schedules
@@ -249,16 +251,12 @@ stop_review:
 
 prod:
   stage: deploy
-  extends: .production
+  extends:
+    - .production
+    - .deploy
   when: on_success
   variables:
     REPLICAS: "3"
-  script:
-    - deploy deployment.yml
-  dependencies:
-    - docker
-  needs:
-    - docker
   except:
     - schedules
 #release:
