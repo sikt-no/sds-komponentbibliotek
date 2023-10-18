@@ -13,7 +13,7 @@ module.exports = {
       secondary: {
         value: { ..._color.purple["10"].value, a: "0.75" },
       },
-      warning: {
+      critical: {
         value: { ..._color.red["35"].value },
       },
     },
