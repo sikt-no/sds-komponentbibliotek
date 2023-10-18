@@ -1,0 +1,52 @@
+import { Meta } from "@storybook/blocks";
+import * as tokens from "../dist/js/tokens.js";
+
+<Meta title="Tokens/Effects" />
+
+# Effects
+
+## Shadow
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(tokens.effect.shadow).map((token) => {
+      return (
+        <tr key={token[1].name}>
+          <td>{token[0]}</td>
+          <td>{token[1].value}</td>
+          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
+
+## Animation
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(tokens.effect.animation).map((token) => {
+      return (
+        <tr key={token[1].name}>
+          <td>{token[0]}</td>
+          <td>{token[1].value}</td>
+          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
