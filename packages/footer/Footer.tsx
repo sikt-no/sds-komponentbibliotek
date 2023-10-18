@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import { Link } from "@sikt/sds-core";
-import { SecondaryLogo, LogoProps } from "@sikt/sds-logo";
+import { Logo, LogoProps } from "@sikt/sds-logo";
 import "./footer.pcss";
 
 export interface FooterProps extends HTMLAttributes<HTMLElement> {
@@ -18,7 +18,7 @@ export const Footer = ({
   logoHref = "//sikt.no",
   ...rest
 }: FooterProps) => {
-  const logoElement = <SecondaryLogo lang={lang} />;
+  const logoElement = <Logo variant="secondary" lang={lang} />;
 
   return (
     <footer

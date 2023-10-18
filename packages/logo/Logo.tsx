@@ -3,13 +3,12 @@ import React, { HTMLAttributes } from "react";
 import "./logo.pcss";
 import { ReactComponent as LogoSvg } from "./Logo.svg";
 
+export type LogoVariant = "primary" | "secondary";
+
 export interface LogoProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   lang?: "nb" | "nn" | "en" | "se" | "smj" | "sma" | "fkv";
-}
-
-interface LogoTypes {
-  logoType: "primary" | "secondary";
+  variant?: LogoVariant;
 }
 
 const i18n = {
@@ -22,16 +21,16 @@ const i18n = {
   fkv: "Tietosektorin<br /> palvelu",
 };
 
-const Logo = ({
-  logoType,
+export const Logo = ({
+  variant = "primary",
   className,
   lang = "nb",
   ...rest
-}: LogoProps & LogoTypes) => {
-  const isSecondary = logoType === "secondary";
+}: LogoProps) => {
+  const isSecondary = variant === "secondary";
   return (
     <div
-      className={clsx("sds-logo", `sds-logo--${logoType}`, className)}
+      className={clsx("sds-logo", `sds-logo--${variant}`, className)}
       {...rest}
     >
       <LogoSvg className="sds-logo__icon" aria-hidden />
@@ -47,8 +46,3 @@ const Logo = ({
     </div>
   );
 };
-
-export const PrimaryLogo = (props: Omit<LogoProps, "lang">) =>
-  Logo({ ...props, logoType: "primary" });
-export const SecondaryLogo = (props: LogoProps) =>
-  Logo({ ...props, logoType: "secondary" });

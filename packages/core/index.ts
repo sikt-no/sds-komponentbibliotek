@@ -8,6 +8,7 @@ export { Figure } from "./components/Figure";
 
 export type { HeadingProps } from "./components/Heading";
 export {
+  Heading,
   Heading1,
   Heading2,
   Heading3,

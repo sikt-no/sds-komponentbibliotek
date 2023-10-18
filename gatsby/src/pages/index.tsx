@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import type { PageProps } from "gatsby";
 import confetti from "canvas-confetti";
 import { Heading1, Heading2, Heading3 } from "@sikt/sds-core";
-import { PrimaryButton } from "@sikt/sds-button";
+import { Button } from "@sikt/sds-button";
 import useKonami from "react-use-konami";
 import * as style from "./index.module.css";
 import Contributors from "../components/Contributors";
@@ -56,7 +56,7 @@ const IndexPage: React.FC<PageProps> = () => {
       */}
 
       <section className={style.sdsSiktIndex__section}>
-        <Heading1 headingType="huge">Sikt design&shy;system</Heading1>
+        <Heading1 variant="huge">Sikt design&shy;system</Heading1>
 
         <p className={style.sdsSiktIndex__paragraph}>
           Sikt designsystem består av flere bestanddeler, derunder
@@ -68,7 +68,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </p>
 
         <section className={style.sdsSiktIndex__section}>
-          <Heading2 headingType="large">Komponent&shy;bibliotek</Heading2>
+          <Heading2 variant="large">Komponent&shy;bibliotek</Heading2>
 
           <p className={style.sdsSiktIndex__paragraph}>
             Sikt komponentbibliotek inneholder en rekke nyttige komponenter som
@@ -114,7 +114,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </p>
 
           <section>
-            <Heading3 headingType="paragraph">Med bidrag fra</Heading3>
+            <Heading3 variant="paragraph">Med bidrag fra</Heading3>
             <div className={style.sdsSiktIndex__paragraph}>
               <Contributors />
             </div>
@@ -122,9 +122,9 @@ const IndexPage: React.FC<PageProps> = () => {
 
           {showButton && (
             <div className={style.sdsSiktIndex__cta}>
-              <PrimaryButton onClick={handleLaunchClick} icon="🚀">
+              <Button variant="strong" onClick={handleLaunchClick} icon="🚀">
                 Lansere komponentbibliotek v1
-              </PrimaryButton>
+              </Button>
             </div>
           )}
         </section>

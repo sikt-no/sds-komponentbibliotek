@@ -3,12 +3,16 @@ import clsx from "clsx";
 import "./button.pcss";
 
 export type ButtonProps = ButtonChildrenProps | ButtonAriaLabelProps;
+export type ButtonVariant = "strong" | "subtle" | "transparent" | "critical";
+export type ButtonSize = "default" | "small";
+export type ButtonIconVariant = "right" | "left" | "only";
 
 interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   icon?: ReactNode;
-  iconType?: "right" | "left" | "only";
-  buttonSize?: "default" | "small";
+  iconVariant?: "right" | "left" | "only";
+  variant?: ButtonVariant;
+  size?: ButtonSize;
 }
 
 interface ButtonAriaLabelProps extends ButtonBaseProps {
@@ -19,51 +23,38 @@ interface ButtonChildrenProps extends ButtonBaseProps {
   children: ReactNode;
 }
 
-interface ButtonTypes {
-  buttonType: "strong" | "subtle" | "transparent" | "critical";
-}
-
-const Button = ({
-  buttonType,
-  buttonSize = "default",
+export const Button = ({
+  variant = "subtle",
+  size = "default",
   children,
   className,
   onClick,
   icon,
-  iconType = "right",
+  iconVariant = "right",
   ...rest
-}: ButtonProps & ButtonTypes) => {
+}: ButtonProps) => {
   const ariaLabel = typeof children === "string" ? children : undefined;
   return (
     <button
       className={clsx(
         "sds-button",
-        `sds-button--${buttonType}`,
-        buttonSize !== "default" && `sds-button--${buttonSize}`,
+        `sds-button--${variant}`,
+        size !== "default" && `sds-button--${size}`,
         className
       )}
       onClick={onClick}
-      aria-label={iconType === "only" ? ariaLabel : undefined}
+      aria-label={iconVariant === "only" ? ariaLabel : undefined}
       {...rest}
     >
-      {icon && (iconType === "left" || iconType === "only") && (
+      {icon && (iconVariant === "left" || iconVariant === "only") && (
         <span className="sds-button__icon">{icon}</span>
       )}
-      {(!icon || iconType !== "only") && (
+      {(!icon || iconVariant !== "only") && (
         <span className="sds-button__label">{children}</span>
       )}
-      {icon && iconType === "right" && (
+      {icon && iconVariant === "right" && (
         <span className="sds-button__icon">{icon}</span>
       )}
     </button>
   );
 };
-
-export const StrongButton = (props: ButtonProps) =>
-  Button({ ...props, buttonType: "strong" });
-export const SubtleButton = (props: ButtonProps) =>
-  Button({ ...props, buttonType: "subtle" });
-export const TransparentButton = (props: ButtonProps) =>
-  Button({ ...props, buttonType: "transparent" });
-export const CriticalButton = (props: ButtonProps) =>
-  Button({ ...props, buttonType: "critical" });

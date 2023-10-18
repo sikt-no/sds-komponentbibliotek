@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import { Link, ScreenReaderOnly } from "@sikt/sds-core";
-import { PrimaryLogo } from "@sikt/sds-logo";
+import { Logo } from "@sikt/sds-logo";
 import "./header.pcss";
 
 export interface HeaderProps extends HTMLAttributes<HTMLElement> {
@@ -27,7 +27,7 @@ export const Header = ({
       {logoText}
     </span>
   ) : (
-    <PrimaryLogo className="sds-header__logo" />
+    <Logo className="sds-header__logo" />
   );
 
   return (

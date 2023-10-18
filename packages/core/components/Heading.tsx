@@ -2,7 +2,7 @@ import React, { HTMLAttributes, ReactNode, ElementType } from "react";
 import clsx from "clsx";
 
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
-  headingType:
+  variant:
     | "small"
     | "medium"
     | "large"
@@ -16,23 +16,23 @@ export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
 }
 
 interface HeadingLevels {
-  headingLevel: "1" | "2" | "3" | "4" | "5" | "6";
+  level: "1" | "2" | "3" | "4" | "5" | "6";
 }
 
-const Heading = ({
+export const Heading = ({
   children,
-  headingLevel,
-  headingType,
+  level,
+  variant,
   className,
   ...rest
 }: HeadingProps & HeadingLevels) => {
-  const H: ElementType = `h${headingLevel}`;
+  const H: ElementType = `h${level}`;
 
   return (
     <H
       className={clsx(
         "sds-typography-heading",
-        `sds-typography-heading--${headingType}`,
+        `sds-typography-heading--${variant}`,
         className
       )}
       {...rest}
@@ -43,14 +43,14 @@ const Heading = ({
 };
 
 export const Heading1 = (props: HeadingProps) =>
-  Heading({ ...props, headingLevel: "1" });
+  Heading({ ...props, level: "1" });
 export const Heading2 = (props: HeadingProps) =>
-  Heading({ ...props, headingLevel: "2" });
+  Heading({ ...props, level: "2" });
 export const Heading3 = (props: HeadingProps) =>
-  Heading({ ...props, headingLevel: "3" });
+  Heading({ ...props, level: "3" });
 export const Heading4 = (props: HeadingProps) =>
-  Heading({ ...props, headingLevel: "4" });
+  Heading({ ...props, level: "4" });
 export const Heading5 = (props: HeadingProps) =>
-  Heading({ ...props, headingLevel: "5" });
+  Heading({ ...props, level: "5" });
 export const Heading6 = (props: HeadingProps) =>
-  Heading({ ...props, headingLevel: "6" });
+  Heading({ ...props, level: "6" });

@@ -1,2 +1,2 @@
 export type { LogoProps } from "./Logo";
-export { PrimaryLogo, SecondaryLogo } from "./Logo";
+export { Logo } from "./Logo";

@@ -25,8 +25,8 @@ describe("Paragraph", () => {
     it("should have class name", async () => {
       render(
         <Paragraph
-          typographyType="small"
-          modifierType="strong"
+          variant="small"
+          modifier="strong"
           className="test-class-name"
         >
           Foo

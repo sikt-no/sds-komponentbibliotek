@@ -9,7 +9,7 @@ const Footer = ({ className }: { className?: string }) => {
     <SdsFooter className={className}>
       <div>
         <Heading2
-          headingType="overline"
+          variant="overline"
           className={style.sdsSiktFooter__linkHeading}
         >
           Kontakt oss

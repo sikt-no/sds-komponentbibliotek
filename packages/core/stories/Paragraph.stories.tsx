@@ -13,7 +13,7 @@ type Story = StoryObj<ParagraphProps>;
 export const Regular: Story = {
   args: {
     children: "Paragraph",
-    typographyType: "regular",
+    variant: "regular",
   },
 };
 

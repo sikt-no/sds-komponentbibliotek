@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
-import { CriticalButton, TransparentButton } from "@sikt/sds-button";
+import { Button } from "@sikt/sds-button";
 import "./input-action-button.pcss";
 
 export interface InputActionButtonProps
@@ -17,15 +17,15 @@ export const InputActionButton = ({
   errorText,
   ...rest
 }: InputActionButtonProps) => {
-  const B = errorText ? CriticalButton : TransparentButton;
   return (
-    <B
-      buttonSize="small"
+    <Button
+      variant={errorText ? "critical" : "transparent"}
+      size="small"
       className={clsx("sds-input-action", className)}
       aria-label={label}
       title={label}
       icon={icon}
-      iconType="only"
+      iconVariant="only"
       {...rest}
     />
   );

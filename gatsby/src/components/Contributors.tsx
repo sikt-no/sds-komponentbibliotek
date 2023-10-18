@@ -44,7 +44,7 @@ const Contributors = () => {
       {contributors.reverse().map((team) => {
         return (
           <div key={team[0].team}>
-            <Heading4 headingType="overline">{team[0].team}</Heading4>
+            <Heading4 variant="overline">{team[0].team}</Heading4>
             <div className={style.sdsSiktContributors__contributorGroup}>
               {team.map((contributor) => {
                 return (

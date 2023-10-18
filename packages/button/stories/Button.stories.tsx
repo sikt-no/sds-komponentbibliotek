@@ -1,20 +1,22 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { ButtonProps, CriticalButton } from "../index";
+import { ButtonProps, Button } from "../index";
 import { ArrowRightIcon, ArrowLeftIcon } from "../../icons/index";
 
 const meta: Meta = {
-  title: "Components/Button/Critical",
-  component: CriticalButton,
+  title: "Components/Button/Button",
+  component: Button,
 };
 
 export default meta;
 
 type Story = StoryObj<ButtonProps>;
 
-export const Button: Story = {
+export const Default: Story = {
   args: {
-    children: "Critical Button",
+    children: "Button",
+    variant: "subtle",
+    disabled: false,
     onClick: () => {
       alert("click handler");
     },
@@ -32,7 +34,7 @@ export const IconLeft: Story = {
   args: {
     ...Button.args,
     icon: <ArrowLeftIcon />,
-    iconType: "left",
+    iconVariant: "left",
   },
 };
 
@@ -40,13 +42,13 @@ export const IconOnly: Story = {
   args: {
     ...Button.args,
     icon: <ArrowRightIcon />,
-    iconType: "only",
+    iconVariant: "only",
   },
 };
 
 export const Small: Story = {
   args: {
     ...Button.args,
-    buttonSize: "small",
+    size: "small",
   },
 };

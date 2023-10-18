@@ -5,13 +5,13 @@ import "./badge.pcss";
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;
   children: ReactNode;
-  badgeType?: "primary" | "success" | "critical" | "warning" | "info";
+  variant?: "primary" | "success" | "critical" | "warning" | "info";
   visibility?: "strong" | "subtle";
   icon?: ReactNode;
 }
 
 export const Badge = ({
-  badgeType = "primary",
+  variant = "primary",
   visibility = "subtle",
   className,
   children,
@@ -22,7 +22,7 @@ export const Badge = ({
     <span
       className={clsx(
         "sds-badge",
-        `sds-badge--${badgeType}`,
+        `sds-badge--${variant}`,
         `sds-badge--visibility-${visibility}`,
         className
       )}

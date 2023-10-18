@@ -49,7 +49,7 @@ export const Card = forwardRef<HTMLAnchorElement, CardProps>(
           {text && <p className="sds-typography-body--regular">{text}</p>}
           <ButtonLink
             ref={ref}
-            buttonType="strong"
+            variant="strong"
             href={linkHref}
             className="sds-card__link"
             icon={<ArrowRightIcon />}

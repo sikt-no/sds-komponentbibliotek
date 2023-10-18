@@ -1,5 +1,6 @@
 import React, { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
 import clsx from "clsx";
+import type { ButtonVariant, ButtonSize, ButtonIconVariant } from "./Button";
 import "./button-link.pcss";
 
 export type ButtonLinkProps =
@@ -10,9 +11,9 @@ interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
   className?: string;
   icon?: ReactNode;
-  iconType?: "right" | "left" | "only";
-  buttonType?: "strong" | "subtle" | "transparent" | "critical";
-  buttonSize?: "default" | "small";
+  iconVariant?: ButtonIconVariant;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
 }
 
 interface ButtonLinkAriaLabelProps extends ButtonLinkBaseProps {
@@ -26,13 +27,13 @@ interface ButtonLinkChildrenProps extends ButtonLinkBaseProps {
 export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   (
     {
-      buttonType = "subtle",
-      buttonSize = "default",
+      variant = "subtle",
+      size = "default",
       children,
       className,
       href,
       icon,
-      iconType = "right",
+      iconVariant = "right",
       ...rest
     }: ButtonLinkProps,
     ref
@@ -44,21 +45,21 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
         className={clsx(
           "sds-button-link",
           "sds-button",
-          `sds-button--${buttonType}`,
-          buttonSize !== "default" && `sds-button--${buttonSize}`,
+          `sds-button--${variant}`,
+          size !== "default" && `sds-button--${size}`,
           className
         )}
         href={href}
-        aria-label={iconType === "only" ? ariaLabel : undefined}
+        aria-label={iconVariant === "only" ? ariaLabel : undefined}
         {...rest}
       >
-        {icon && (iconType === "left" || iconType === "only") && (
+        {icon && (iconVariant === "left" || iconVariant === "only") && (
           <span className="sds-button__icon">{icon}</span>
         )}
-        {(!icon || iconType !== "only") && (
+        {(!icon || iconVariant !== "only") && (
           <span className="sds-button__label">{children}</span>
         )}
-        {icon && iconType === "right" && (
+        {icon && iconVariant === "right" && (
           <span className="sds-button__icon">{icon}</span>
         )}
       </a>

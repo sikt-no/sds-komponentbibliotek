@@ -10,7 +10,7 @@ import {
   Heading6,
 } from "./Heading";
 
-const headingLevels = [
+const levels = [
   { name: "h1", component: Heading1 },
   { name: "h2", component: Heading2 },
   { name: "h3", component: Heading3 },
@@ -21,12 +21,10 @@ const headingLevels = [
 
 describe("Heading", () => {
   describe("a11y", () => {
-    headingLevels.map((headingLevel) => {
-      it(`${headingLevel.name} should be accessible`, async () => {
-        const { component: Heading } = headingLevel;
-        const { container } = render(
-          <Heading headingType="medium">Foo</Heading>
-        );
+    levels.map((level) => {
+      it(`${level.name} should be accessible`, async () => {
+        const { component: Heading } = level;
+        const { container } = render(<Heading variant="medium">Foo</Heading>);
 
         expect(await axe(container)).toHaveNoViolations();
       });
@@ -34,11 +32,11 @@ describe("Heading", () => {
   });
 
   describe("api", () => {
-    headingLevels.map((headingLevel) => {
-      it(`${headingLevel.name} should render`, async () => {
-        const { name, component: Heading } = headingLevel;
+    levels.map((level) => {
+      it(`${level.name} should render`, async () => {
+        const { name, component: Heading } = level;
         render(
-          <Heading headingType="medium" data-testid={name}>
+          <Heading variant="medium" data-testid={name}>
             {name}
           </Heading>
         );
@@ -53,7 +51,7 @@ describe("Heading", () => {
     it("should have class name", async () => {
       render(
         <Heading1
-          headingType="medium"
+          variant="medium"
           data-testid="test"
           className="test-class-name"
         >

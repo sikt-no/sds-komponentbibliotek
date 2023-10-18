@@ -38,7 +38,7 @@ describe("ButtonLink", () => {
 
     it("should have size modifier class name", async () => {
       render(
-        <ButtonLink href="#" buttonSize="small" data-testid="test">
+        <ButtonLink href="#" size="small" data-testid="test">
           Foo
         </ButtonLink>
       );
@@ -50,7 +50,7 @@ describe("ButtonLink", () => {
 
     it("should have left icon element", async () => {
       render(
-        <ButtonLink data-testid="test" icon="icon" iconType="left">
+        <ButtonLink data-testid="test" icon="icon" iconVariant="left">
           Foo
         </ButtonLink>
       );
@@ -61,7 +61,7 @@ describe("ButtonLink", () => {
 
     it("should have right icon element", async () => {
       render(
-        <ButtonLink data-testid="test" icon="icon" iconType="right">
+        <ButtonLink data-testid="test" icon="icon" iconVariant="right">
           Foo
         </ButtonLink>
       );
@@ -72,7 +72,7 @@ describe("ButtonLink", () => {
 
     it("should have icon element", async () => {
       render(
-        <ButtonLink data-testid="test" icon="icon" iconType="only">
+        <ButtonLink data-testid="test" icon="icon" iconVariant="only">
           Foo
         </ButtonLink>
       );

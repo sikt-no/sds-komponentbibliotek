@@ -10,7 +10,7 @@ import { ArrowCircleRightIcon } from "@sikt/sds-icons";
 import "./section.pcss";
 
 export interface SectionProps extends HTMLAttributes<HTMLElement> {
-  headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   headingText: string;
   linkHref?: string;
   linkLabel?: string;
@@ -21,7 +21,7 @@ export interface SectionProps extends HTMLAttributes<HTMLElement> {
 export const Section = forwardRef<HTMLAnchorElement, SectionProps>(
   (
     {
-      headingLevel = "h2",
+      level = "h2",
       headingText,
       linkHref,
       linkLabel,
@@ -31,7 +31,7 @@ export const Section = forwardRef<HTMLAnchorElement, SectionProps>(
     },
     ref
   ) => {
-    const H: ElementType = `${headingLevel}`;
+    const H: ElementType = `${level}`;
 
     return (
       <section className={clsx("sds-section", className)} {...rest}>
@@ -43,7 +43,7 @@ export const Section = forwardRef<HTMLAnchorElement, SectionProps>(
             <div className="sds-section__link">
               <ButtonLink
                 ref={ref}
-                buttonType="subtle"
+                variant="subtle"
                 href={linkHref}
                 icon={<ArrowCircleRightIcon />}
               >

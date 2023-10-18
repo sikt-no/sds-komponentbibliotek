@@ -6,7 +6,7 @@ import { Heading1 } from "@sikt/sds-core/components/Heading";
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <section>
-      <Heading1 headingType="large">Siden finnes ikke</Heading1>
+      <Heading1 variant="large">Siden finnes ikke</Heading1>
       <p>
         <Link href="/">Tilbake til forsiden</Link>
       </p>

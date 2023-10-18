@@ -2,26 +2,20 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import {
-  StrongButton,
-  SubtleButton,
-  TransparentButton,
-  CriticalButton,
-} from "./Button";
+import { Button, ButtonVariant } from "./Button";
 
-const buttonTypes = [
-  { name: "strong", component: StrongButton },
-  { name: "subtle", component: SubtleButton },
-  { name: "transparent", component: TransparentButton },
-  { name: "critical", component: CriticalButton },
+const variants: ButtonVariant[] = [
+  "strong",
+  "subtle",
+  "transparent",
+  "critical",
 ];
 
 describe("Button", () => {
   describe("a11y", () => {
-    buttonTypes.map((buttonType) => {
-      it(`${buttonType.name} should be accessible`, async () => {
-        const { component: Button } = buttonType;
-        const { container } = render(<Button>Foo</Button>);
+    variants.map((variant) => {
+      it(`${variant} should be accessible`, async () => {
+        const { container } = render(<Button variant={variant}>Foo</Button>);
 
         expect(await axe(container)).toHaveNoViolations();
       });
@@ -29,22 +23,25 @@ describe("Button", () => {
   });
 
   describe("api", () => {
-    buttonTypes.map((buttonType) => {
-      it(`${buttonType.name} should render`, async () => {
-        const { name, component: Button } = buttonType;
-        render(<Button data-testid={name}>{name}</Button>);
-
-        expect(screen.getByTestId(name)).toHaveClass(
-          `sds-button sds-button--${name}`
+    variants.map((variant) => {
+      it(`${variant} should render`, async () => {
+        render(
+          <Button variant={variant} data-testid={variant}>
+            {variant}
+          </Button>
         );
-        expect(screen.getByText(name)).toBeInTheDocument();
+
+        expect(screen.getByTestId(variant)).toHaveClass(
+          `sds-button sds-button--${variant}`
+        );
+        expect(screen.getByText(variant)).toBeInTheDocument();
       });
     });
 
     it("calls click handler", async () => {
       const user = userEvent.setup();
       const clickHandler = jest.fn();
-      render(<SubtleButton onClick={clickHandler}>Foo</SubtleButton>);
+      render(<Button onClick={clickHandler}>Foo</Button>);
 
       await user.click(screen.getByText("Foo"));
 
@@ -53,9 +50,9 @@ describe("Button", () => {
 
     it("should have class name", async () => {
       render(
-        <SubtleButton data-testid="test" className="test-class-name">
+        <Button data-testid="test" className="test-class-name">
           Foo
-        </SubtleButton>
+        </Button>
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
@@ -65,9 +62,9 @@ describe("Button", () => {
 
     it("should have size modifier class name", async () => {
       render(
-        <SubtleButton data-testid="test" buttonSize="small">
+        <Button data-testid="test" size="small">
           Foo
-        </SubtleButton>
+        </Button>
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
@@ -77,9 +74,9 @@ describe("Button", () => {
 
     it("should have left icon element", async () => {
       render(
-        <SubtleButton data-testid="test" icon="icon" iconType="left">
+        <Button data-testid="test" icon="icon" iconVariant="left">
           Foo
-        </SubtleButton>
+        </Button>
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
@@ -88,9 +85,9 @@ describe("Button", () => {
 
     it("should have right icon element", async () => {
       render(
-        <SubtleButton data-testid="test" icon="icon" iconType="right">
+        <Button data-testid="test" icon="icon" iconVariant="right">
           Foo
-        </SubtleButton>
+        </Button>
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
@@ -99,9 +96,9 @@ describe("Button", () => {
 
     it("should have icon element", async () => {
       render(
-        <SubtleButton data-testid="test" icon="icon" iconType="only">
+        <Button data-testid="test" icon="icon" iconVariant="only">
           Foo
-        </SubtleButton>
+        </Button>
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");

@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useId, useRef, useState } from "react";
 import ReactModal from "react-modal";
 import clsx from "clsx";
-import { TransparentButton } from "@sikt/sds-button";
+import { Button } from "@sikt/sds-button";
 import { XIcon } from "@sikt/sds-icons";
 import { Heading1, Paragraph } from "@sikt/sds-core";
 import useWindowResize from "./useWindowResize";
@@ -118,18 +118,19 @@ export const Modal = ({
           data-testid="headings"
           className="sds-modal__heading"
         >
-          <Heading1 headingType="medium">{heading}</Heading1>
+          <Heading1 variant="medium">{heading}</Heading1>
           {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
         </div>
 
         {dismissable && (
-          <TransparentButton
+          <Button
+            variant="transparent"
             icon={<XIcon />}
             className="sds-modal__close-button"
             onClick={onClose}
           >
             {closeButtonLabel}
-          </TransparentButton>
+          </Button>
         )}
       </header>
       <div className="sds-modal__content-wrapper" ref={contentRef}>
