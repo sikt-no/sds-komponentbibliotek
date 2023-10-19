@@ -3,7 +3,6 @@ import React, {
   HTMLAttributes,
   OptionHTMLAttributes,
   ReactNode,
-  SelectHTMLAttributes,
   forwardRef,
   useId,
 } from "react";
@@ -12,31 +11,19 @@ import { CaretCircleDownIcon } from "@sikt/sds-icons";
 import { FormField } from "@sikt/sds-form";
 import "./select.pcss";
 
-export interface SelectProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface SelectProps extends HTMLAttributes<HTMLSelectElement> {
   className?: string;
   label: string;
   options: OptionHTMLAttributes<HTMLOptionElement>[];
   errorText?: string;
   helpText?: string;
   icon?: ReactNode;
-  selectProps?: SelectHTMLAttributes<HTMLSelectElement>;
   onChange?: ChangeEventHandler<HTMLSelectElement>;
 }
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
-    {
-      className,
-      label,
-      options,
-      errorText,
-      helpText,
-      icon,
-      selectProps,
-      onChange,
-      ...rest
-    },
+    { className, label, options, errorText, helpText, icon, onChange, ...rest },
     ref
   ) => {
     const id = useId();
@@ -55,7 +42,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         helpText={helpText}
         htmlFor={id}
         helpTextId={helpTextId}
-        {...rest}
       >
         <div className="sds-select__select">
           <select
@@ -65,7 +51,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             aria-describedby={helpTextId}
             aria-invalid={Boolean(errorText) && true}
             onChange={(e) => onChange && onChange(e)}
-            {...selectProps}
+            {...rest}
           >
             {options.map((option) => (
               <option

@@ -17,16 +17,13 @@ describe("Select", () => {
 
   describe("api", () => {
     it("should render", async () => {
-      render(
-        <Select
-          label="Foo"
-          options={[{ label: "Bar", value: "bar" }]}
-          data-testid="test"
-        />
+      const { container } = render(
+        <Select label="Foo" options={[{ label: "Bar", value: "bar" }]} />
       );
 
-      expect(screen.getByTestId("test")).toHaveClass("sds-select");
-      expect(screen.getByTestId("test")).toBeInTheDocument();
+      expect(
+        container.getElementsByClassName("sds-select")[0]
+      ).toBeInTheDocument();
     });
 
     it("calls change handler", async () => {
@@ -46,18 +43,17 @@ describe("Select", () => {
     });
 
     it("should have class name", async () => {
-      render(
+      const { container } = render(
         <Select
           label="Foo"
           options={[{ label: "Bar", value: "bar" }]}
-          data-testid="test"
           className="test-class-name"
         />
       );
 
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-select test-class-name"
-      );
+      expect(
+        container.getElementsByClassName("sds-select  test-class-name")[0]
+      ).toBeInTheDocument();
     });
 
     it("should render help text", async () => {
