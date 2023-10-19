@@ -1,6 +1,5 @@
 import React, {
   ChangeEvent,
-  HTMLAttributes,
   InputHTMLAttributes,
   forwardRef,
   useId,
@@ -9,7 +8,7 @@ import clsx from "clsx";
 import "./radio.pcss";
 
 export interface RadioInputBaseProps
-  extends Omit<HTMLAttributes<HTMLElement>, "onChange"> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   className?: string;
   label: string;
   name?: string;
@@ -17,22 +16,11 @@ export interface RadioInputBaseProps
   value: string;
   checked?: boolean;
   error?: boolean;
-  inputProps?: InputHTMLAttributes<HTMLInputElement>;
 }
 
 export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
   (
-    {
-      className,
-      label,
-      name,
-      onChange,
-      checked,
-      value,
-      error,
-      inputProps,
-      ...rest
-    },
+    { className, label, name, onChange, checked, value, error, ...rest },
     ref
   ) => {
     const id = useId();
@@ -41,7 +29,6 @@ export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
       <label
         className={clsx("sds-radio", error && "sds-radio--error", className)}
         htmlFor={id}
-        {...rest}
       >
         <input
           ref={ref}
@@ -52,7 +39,7 @@ export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
           onChange={onChange}
           value={value}
           checked={checked ?? undefined}
-          {...inputProps}
+          {...rest}
         />
         <div className="sds-radio__input-label">{label}</div>
       </label>

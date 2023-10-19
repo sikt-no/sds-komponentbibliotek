@@ -1,13 +1,12 @@
-import React, { HTMLAttributes, InputHTMLAttributes, forwardRef } from "react";
+import React, { InputHTMLAttributes, forwardRef } from "react";
 import useRadioFieldset from "./RadioFieldsetContext";
 import { RadioInputBase } from "./RadioInputBase";
 
 export interface RadioInputProps
-  extends Omit<HTMLAttributes<HTMLElement>, "onChange"> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   className?: string;
   label: string;
   value: string;
-  inputProps?: InputHTMLAttributes<HTMLInputElement>;
 }
 
 export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
