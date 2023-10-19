@@ -21,12 +21,12 @@
     height: var(--progress-indicator-size);
     display: grid;
     place-items: center;
+  }
 
-    &--selected {
-      background-color: var(--sds-color-interaction-primary-strong-default);
-      font-weight: var(--sds-typography-weight-bold);
-      color: var(--sds-color-text-on-strong);
-    }
+  &--selected &__number {
+    background-color: var(--sds-color-interaction-primary-strong-default);
+    font-weight: var(--sds-typography-weight-bold);
+    color: var(--sds-color-text-on-strong);
   }
 
   &__separator-icon {
