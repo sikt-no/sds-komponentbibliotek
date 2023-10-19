@@ -1,10 +1,4 @@
-import React, {
-  ReactNode,
-  ChangeEventHandler,
-  useId,
-  InputHTMLAttributes,
-  forwardRef,
-} from "react";
+import React, { ReactNode, ChangeEventHandler, useId, forwardRef } from "react";
 import clsx from "clsx";
 import { CheckIcon, XIcon } from "@sikt/sds-icons";
 import "./toggle-switch.pcss";
@@ -15,7 +9,6 @@ export type ToggleSwitchProps = {
   labelFirst?: boolean;
   showIcons?: boolean;
   error?: boolean;
-  inputProps?: InputHTMLAttributes<HTMLInputElement>;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
@@ -28,7 +21,6 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
       showIcons = true,
       error = false,
       onChange,
-      inputProps = {},
       ...rest
     },
     ref
@@ -45,7 +37,7 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
           checked && "sds-toggle-switch--checked",
           error && "sds-toggle-switch--error"
         )}
-        {...rest}
+        data-testid="sds-toggle-switch"
       >
         <label className="sds-toggle-switch__label" htmlFor={id}>
           {labelFirst && labelElement}
@@ -60,7 +52,7 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
               aria-invalid={error}
               onChange={onChange}
               readOnly={!onChange}
-              {...inputProps}
+              {...rest}
             />
             <div className="sds-toggle-switch__thumb">
               {showIcons && checked && <CheckIcon />}

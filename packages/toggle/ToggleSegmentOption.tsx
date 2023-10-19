@@ -1,6 +1,5 @@
 import React, {
   ChangeEvent,
-  HTMLAttributes,
   InputHTMLAttributes,
   ReactNode,
   forwardRef,
@@ -11,28 +10,25 @@ import clsx from "clsx";
 import { useFieldset } from "@sikt/sds-form";
 
 export interface ToggleSegmentOptionProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   value: string | number;
   label: string;
   children?: ReactNode;
   checked?: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  inputProps?: InputHTMLAttributes<HTMLInputElement>;
 }
 
 export const ToggleSegmentOption = forwardRef<
   HTMLInputElement,
   ToggleSegmentOptionProps
->(({ value, inputProps, label, checked, onChange, ...rest }, ref) => {
+>(({ value, label, checked, onChange, children, ...rest }, ref) => {
   const { name } = useFieldset() ?? {};
   const generatedId = useId();
-  const { id: inputPropsId, ...propsForInput } = inputProps ?? {};
-  const htmlForId = inputPropsId ?? generatedId;
+  const htmlForId = rest.id ?? generatedId;
 
   return (
-    <div className="sds-toggle-segment__option" {...rest}>
+    <div className="sds-toggle-segment__option">
       <input
-        {...propsForInput}
         id={htmlForId}
         name={name}
         ref={ref}
@@ -41,6 +37,7 @@ export const ToggleSegmentOption = forwardRef<
         className="sds-toggle-segment__input"
         value={value}
         checked={checked}
+        {...rest}
       />
       <label
         className={clsx(
@@ -50,6 +47,7 @@ export const ToggleSegmentOption = forwardRef<
         htmlFor={htmlForId}
       >
         {label}
+        {children}
       </label>
     </div>
   );

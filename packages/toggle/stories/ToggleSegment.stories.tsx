@@ -17,7 +17,7 @@ export const Default: Story = {
     const [checkedOption, setCheckedOption] = useState("1");
 
     return (
-      <ToggleSegment legend={"Toggle segment"}>
+      <ToggleSegment legend="Toggle segment">
         <ToggleSegmentOption
           key={0}
           value="1"

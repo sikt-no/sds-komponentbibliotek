@@ -55,9 +55,7 @@ describe("Toggle Segment", () => {
               checked={value === 2}
               onChange={() => changeHandler(value)}
               label={`Label ${value}`}
-            >
-              {value}
-            </ToggleSegmentOption>
+            />
           ))}
         </ToggleSegment>
       );
@@ -114,7 +112,7 @@ describe("Toggle Segment", () => {
             checked
             onChange={() => {}}
             label={label}
-            inputProps={{ id: inputId }}
+            id={inputId}
           />
         </ToggleSegment>
       );

@@ -15,10 +15,12 @@ describe("Toggle Switch", () => {
 
   describe("api", () => {
     it(`toggle should render`, async () => {
-      render(<ToggleSwitch data-testid="test" label="Foo" />);
+      render(<ToggleSwitch label="Foo" />);
 
-      expect(screen.getByTestId("test")).toHaveClass("sds-toggle-switch");
-      expect(screen.getByTestId("test")).toBeInTheDocument();
+      expect(screen.getByTestId("sds-toggle-switch")).toHaveClass(
+        "sds-toggle-switch"
+      );
+      expect(screen.getByTestId("sds-toggle-switch")).toBeInTheDocument();
     });
 
     it("calls change handler", async () => {
@@ -47,9 +49,9 @@ describe("Toggle Switch", () => {
     });
 
     it("should render the label after the control", async () => {
-      render(<ToggleSwitch data-testid="test" label="Foo" />);
+      render(<ToggleSwitch label="Foo" />);
 
-      const container = screen.getByTestId("test");
+      const container = screen.getByTestId("sds-toggle-switch");
       const label = container.getElementsByClassName(
         "sds-toggle-switch__label-text"
       )[0];
@@ -62,9 +64,9 @@ describe("Toggle Switch", () => {
     });
 
     it("should render the label in front of the control", async () => {
-      render(<ToggleSwitch labelFirst data-testid="test" label="Foo" />);
+      render(<ToggleSwitch labelFirst label="Foo" />);
 
-      const container = screen.getByTestId("test");
+      const container = screen.getByTestId("sds-toggle-switch");
       const label = container.getElementsByClassName(
         "sds-toggle-switch__label-text"
       )[0];
@@ -77,9 +79,9 @@ describe("Toggle Switch", () => {
     });
 
     it("should have error class modifier", async () => {
-      render(<ToggleSwitch data-testid="test" checked error label="Foo" />);
+      render(<ToggleSwitch checked error label="Foo" />);
 
-      expect(screen.getByTestId("test")).toHaveClass(
+      expect(screen.getByTestId("sds-toggle-switch")).toHaveClass(
         "sds-toggle-switch--error"
       );
     });
