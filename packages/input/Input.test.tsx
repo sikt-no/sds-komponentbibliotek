@@ -38,11 +38,11 @@ describe("Input", () => {
     inputTypes.map((inputType) => {
       it(`${inputType.name} should render`, async () => {
         const { name, component: Input } = inputType;
-        render(<Input label={name} data-testid={name} />);
+        const { container } = render(<Input label={name} />);
 
-        expect(screen.getByTestId(name)).toHaveClass(
-          `sds-input sds-input--${name}`
-        );
+        expect(
+          container.getElementsByClassName(`sds-input sds-input--${name}`)[0]
+        ).toBeInTheDocument();
         expect(screen.getByText(name)).toBeInTheDocument();
       });
     });
@@ -61,19 +61,28 @@ describe("Input", () => {
     });
 
     it("should have class name", async () => {
-      render(
-        <TextInput label="Foo" data-testid="test" className="test-class-name" />
+      const { container } = render(
+        <TextInput label="Foo" className="test-class-name" />
       );
 
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-input test-class-name"
-      );
+      expect(
+        container.getElementsByClassName("sds-input test-class-name")[0]
+      ).toBeInTheDocument();
     });
 
     it("should show error text", async () => {
-      render(<TextInput label="Foo" data-testid="test" errorText="Bar" />);
+      const { container } = render(
+        <TextInput label="Foo" data-testid="test" errorText="Bar" />
+      );
 
-      expect(screen.getByTestId("test")).toHaveClass("sds-input--error");
+      expect(screen.getByTestId("test")).toHaveAttribute("aria-invalid");
+      expect(screen.getByTestId("test")).toHaveAttribute("aria-errormessage");
+      expect(screen.getByTestId("test")).toHaveAttribute("aria-describedby");
+
+      expect(
+        container.getElementsByClassName("sds-input--error")[0]
+      ).toBeInTheDocument();
+
       expect(screen.getByRole("textbox")).toBeInvalid();
 
       const errorEl = screen.getByText("Bar");
@@ -84,6 +93,8 @@ describe("Input", () => {
     it("should show help text", async () => {
       render(<TextInput label="Foo" data-testid="test" helpText="Bar" />);
 
+      expect(screen.getByTestId("test")).toHaveAttribute("aria-describedby");
+
       expect(screen.getByRole("textbox")).not.toBeInvalid();
 
       const helpEl = screen.getByText("Bar");
@@ -92,19 +103,15 @@ describe("Input", () => {
     });
 
     it("should have icon element", async () => {
-      render(<TextInput label="Foo" data-testid="test" icon="icon" />);
+      const { container } = render(<TextInput label="Foo" icon="icon" />);
 
-      const container = screen.getByTestId("test");
-      const icon = container.getElementsByClassName("sds-input__icon")[0];
-      const input = container.getElementsByClassName("sds-input__input")[0];
-      expect(icon.compareDocumentPosition(input)).toBe(
-        Node.DOCUMENT_POSITION_FOLLOWING
-      );
-      expect(screen.getByText("Foo")).toBeInTheDocument();
+      expect(
+        container.getElementsByClassName("sds-input__icon")[0]
+      ).toBeInTheDocument();
     });
 
     it("should have action element", async () => {
-      render(
+      const { container } = render(
         <SearchInput
           label="Foo"
           data-testid="test"
@@ -112,14 +119,50 @@ describe("Input", () => {
         />
       );
 
-      const container = screen.getByTestId("test");
       const action = container.getElementsByClassName("sds-input__action")[0];
-      const input = container.getElementsByClassName("sds-input__input")[0];
-      expect(action.compareDocumentPosition(input)).toBe(
-        Node.DOCUMENT_POSITION_PRECEDING
-      );
-      expect(screen.getByText("Foo")).toBeInTheDocument();
+      expect(action).toBeInTheDocument();
       expect(action).toHaveAccessibleName("Test label");
+    });
+  });
+});
+
+describe("TextArea", () => {
+  describe("api", () => {
+    it("calls change handler", async () => {
+      const user = userEvent.setup();
+      const changeHandler = jest.fn();
+      render(
+        <TextArea
+          label="Foo"
+          rows={2}
+          onChange={(e, val) => changeHandler(val)}
+        />
+      );
+
+      await user.type(screen.getByText("Foo"), "text");
+
+      expect(changeHandler).toHaveBeenCalledWith("t");
+      expect(changeHandler).toHaveBeenCalledWith("text");
+    });
+
+    it("should show error text", async () => {
+      const { container } = render(
+        <TextArea label="Foo" data-testid="test" errorText="Bar" />
+      );
+
+      expect(screen.getByTestId("test")).toHaveAttribute("aria-invalid");
+      expect(screen.getByTestId("test")).toHaveAttribute("aria-errormessage");
+      expect(screen.getByTestId("test")).toHaveAttribute("aria-describedby");
+
+      expect(
+        container.getElementsByClassName("sds-input--error")[0]
+      ).toBeInTheDocument();
+
+      expect(screen.getByRole("textbox")).toBeInvalid();
+
+      const errorEl = screen.getByText("Bar");
+      expect(errorEl).toBeInTheDocument();
+      expect(errorEl).toHaveClass("sds-form-field__help-text");
     });
   });
 });

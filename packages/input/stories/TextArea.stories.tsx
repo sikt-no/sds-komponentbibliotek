@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from "react";
+import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { TextArea, InputProps } from "../index";
 import { InfoIcon } from "@sikt/sds-icons";
@@ -16,7 +16,7 @@ export const Default: Story = {
   args: {
     label: "Label",
     placeholder: "Placeholder",
-    inputProps: { rows: "2" } as InputHTMLAttributes<HTMLTextAreaElement>,
+    rows: 2,
   },
 };
 
@@ -37,6 +37,6 @@ export const WithHelpText: Story = {
 export const WithError: Story = {
   args: {
     ...Default.args,
-    errorText: "Error!",
+    errorText: "Error",
   },
 };

@@ -7,19 +7,19 @@ export interface InputActionButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   icon: ReactNode;
-  errorText?: string;
+  error?: boolean;
 }
 
 export const InputActionButton = ({
   className,
   label,
   icon,
-  errorText,
+  error = false,
   ...rest
 }: InputActionButtonProps) => {
   return (
     <Button
-      variant={errorText ? "critical" : "transparent"}
+      variant={error ? "critical" : "transparent"}
       size="small"
       className={clsx("sds-input-action", className)}
       aria-label={label}

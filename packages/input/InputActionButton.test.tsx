@@ -70,7 +70,7 @@ describe("InputActionButton", () => {
           label="Foo"
           icon={<MagnifyingGlassIcon />}
           data-testid="test"
-          errorText="Bar"
+          error
         />
       );
 

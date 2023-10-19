@@ -1,12 +1,11 @@
 import React, {
   ChangeEvent,
   ForwardedRef,
-  HTMLAttributes,
-  InputHTMLAttributes,
   ReactNode,
   forwardRef,
   useCallback,
   useId,
+  InputHTMLAttributes,
 } from "react";
 import clsx from "clsx";
 import {
@@ -19,22 +18,11 @@ import { FormField } from "@sikt/sds-form";
 import { InputActionButton, InputActionButtonProps } from "./InputActionButton";
 import "./input.pcss";
 
-type InputTypes =
-  | "email"
-  | "number"
-  | "password"
-  | "search"
-  | "tel"
-  | "text"
-  | "url"
-  | "textarea";
-
-interface InputTypesProp {
-  type: InputTypes;
-}
-
 export interface InputProps
-  extends Omit<HTMLAttributes<HTMLElement>, "onChange"> {
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
+    "onChange"
+  > {
   className?: string;
   label: string;
   placeholder?: string;
@@ -47,13 +35,10 @@ export interface InputProps
   actionProps?: Omit<InputActionButtonProps, "icon">;
   errorText?: string;
   helpText?: string;
-  inputProps?: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>;
+  rows?: number;
 }
 
-const Input = forwardRef<
-  HTMLInputElement | HTMLTextAreaElement,
-  InputProps & InputTypesProp
->(
+const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
   (
     {
       className,
@@ -66,7 +51,7 @@ const Input = forwardRef<
       type,
       errorText,
       helpText,
-      inputProps,
+      rows,
       ...rest
     },
     ref
@@ -93,7 +78,6 @@ const Input = forwardRef<
         helpText={helpText}
         htmlFor={id}
         helpTextId={helpTextId}
-        {...rest}
       >
         <div className="sds-input__wrapper">
           {icon && <div className="sds-input__icon">{icon}</div>}
@@ -102,14 +86,14 @@ const Input = forwardRef<
               ref={ref as ForwardedRef<HTMLTextAreaElement>}
               className="sds-input__input"
               id={id}
-              type={type}
               placeholder={placeholder}
               onChange={onChange && changeHandler}
               value={value}
               aria-describedby={helpTextId}
               aria-invalid={Boolean(errorText)}
               aria-errormessage={errorText && helpTextId}
-              {...inputProps}
+              rows={rows}
+              {...rest}
             />
           ) : (
             <input
@@ -123,7 +107,7 @@ const Input = forwardRef<
               aria-describedby={helpTextId}
               aria-invalid={Boolean(errorText)}
               aria-errormessage={errorText && helpTextId}
-              {...inputProps}
+              {...rest}
             />
           )}
           {type === "search" && (
@@ -132,7 +116,7 @@ const Input = forwardRef<
               className="sds-input__action"
               label="Søk"
               icon={<MagnifyingGlassIcon />}
-              errorText={errorText}
+              error={Boolean(errorText)}
               {...actionProps}
             />
           )}
