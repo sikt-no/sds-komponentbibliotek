@@ -6,7 +6,7 @@ import { HelpText } from "./HelpText";
 import "./form-field.pcss";
 
 export interface FormFieldProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
+  extends Omit<HTMLAttributes<HTMLLabelElement>, "onChange"> {
   className?: string;
   label: string;
   errorText?: string;
@@ -38,9 +38,13 @@ export const FormField = ({
         errorText && "sds-form-field--error",
         className
       )}
-      {...rest}
     >
-      <Label text={label} error={Boolean(errorText)} htmlFor={htmlFor}>
+      <Label
+        text={label}
+        error={Boolean(errorText)}
+        htmlFor={htmlFor}
+        {...rest}
+      >
         {children}
       </Label>
       {(errorText ?? helpText) && (
