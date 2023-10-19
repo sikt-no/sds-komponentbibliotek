@@ -31,22 +31,12 @@ export const Drawer = ({
       )}
       {...rest}
     >
+      <div className="sds-drawer__content">{children}</div>
       <div
-        className={clsx(
-          "sds-drawer__wrapper",
-          expanded && "sds-drawer__wrapper--expanded"
-        )}
-      >
-        {children}
-      </div>
-      <div
-        role={"none"}
-        onClick={handleOverlayClick}
         ref={drawerRef}
-        className={clsx(
-          "sds-drawer__overlay",
-          expanded && "sds-drawer__overlay--visible"
-        )}
+        className="sds-drawer__overlay"
+        role="none"
+        onClick={handleOverlayClick}
       ></div>
     </div>
   );

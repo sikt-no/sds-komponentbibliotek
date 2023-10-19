@@ -25,10 +25,12 @@ export const DrawerButton = ({
       onClick={onClick}
       {...rest}
     >
-      {icon && <span className="sds-drawer-button__label-icon">{icon}</span>}
-      <span className="sds-drawer-button__label-primary">{label}</span>
+      {icon && <span className="sds-drawer-button__icon">{icon}</span>}
+      <span className="sds-drawer-button__label-primary sds-typography-body--regular">
+        {label}
+      </span>
       {secondaryLabel && (
-        <span className="sds-drawer-button__label-secondary">
+        <span className="sds-drawer-button__label-secondary sds-typography-body--small">
           {secondaryLabel}
         </span>
       )}

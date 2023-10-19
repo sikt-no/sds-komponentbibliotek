@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-drawer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "UNLICENSED",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
@@ -13,8 +13,10 @@
     "build": "rollup -c ../../rollup.config.mjs"
   },
   "dependencies": {
-    "@sikt/sds-core": "^1.0.1",
-    "@sikt/sds-icons": "^1.0.0"
+    "@sikt/sds-button": "^3.0.0",
+    "@sikt/sds-core": "^3.0.0",
+    "@sikt/sds-icons": "^1.2.0",
+    "@sikt/sds-tokens": "^1.0.0"
   },
   "peerDependencies": {
     "@types/react": "^18.0.0",

@@ -1,7 +1,8 @@
-import { ArrowRightIcon } from "@sikt/sds-icons";
 import React, { ReactNode } from "react";
-import "./drawer-header.pcss";
 import clsx from "clsx";
+import { ArrowRightIcon } from "@sikt/sds-icons";
+import { Button } from "@sikt/sds-button";
+import "./drawer-header.pcss";
 
 export interface DrawerHeaderProps {
   ariaLabelExpanded?: string;
@@ -26,26 +27,31 @@ export const DrawerHeader = ({
   const ariaLabel = expanded ? ariaLabelCollapsed : ariaLabelExpanded;
 
   return (
-    <div className={clsx("sds-drawer-header", className)} {...rest}>
+    <div
+      className={clsx(
+        "sds-drawer-header",
+        expanded && "sds-drawer-header--expanded",
+        className
+      )}
+      {...rest}
+    >
       {expanded && (
-        <div className="sds-drawer-header__label">
-          <div className="sds-drawer-header__icon">
-            {icon && icon}
-            {title && <span className="sds-drawer-header__title">{title}</span>}
-          </div>
+        <div className="sds-drawer-header__heading">
+          {icon}
+          {title && (
+            <span className="sds-typography-heading--paragraph">{title}</span>
+          )}
         </div>
       )}
-      <button
-        aria-expanded={expanded}
-        className={clsx(
-          "sds-drawer-header__button",
-          expanded && "sds-drawer-header__button--expanded"
-        )}
+      <Button
+        variant="transparent"
+        iconVariant="only"
+        icon={<ArrowRightIcon />}
+        className="sds-drawer-header__button"
         aria-label={ariaLabel}
+        aria-expanded={expanded}
         onClick={handleToggleDrawer}
-      >
-        <ArrowRightIcon />
-      </button>
+      />
     </div>
   );
 };

@@ -26,19 +26,21 @@ export const DrawerItemGroup = ({
       )}
       {...rest}
     >
-      {heading && (
-        <div className={clsx("sds-drawer-item-group__heading", className)}>
-          <span className="sds-drawer-item-group__heading-title">
-            <ListIcon className="sds-drawer-item-group__heading-title-icon" />
+      <figure className="sds-drawer-item-group__figure">
+        {heading && (
+          <figcaption
+            className={clsx("sds-drawer-item-group__heading", className)}
+          >
+            <ListIcon className="sds-drawer-item-group__heading-icon" />
             {expanded && (
-              <h2 className="sds-drawer-item-group__heading-title-text">
+              <span className="sds-drawer-item-group__heading-title sds-typography-body--small">
                 {heading}
-              </h2>
+              </span>
             )}
-          </span>
-        </div>
-      )}
-      <ul>{children}</ul>
+          </figcaption>
+        )}
+        <ul>{children}</ul>
+      </figure>
     </nav>
   );
 };

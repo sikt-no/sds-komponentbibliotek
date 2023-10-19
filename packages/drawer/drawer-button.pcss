@@ -1,61 +1,47 @@
 .sds-drawer-button {
-  --sds-drawer-item-button-padding: var(--sds-size-padding-small);
-
-  text-decoration: none;
-  display: flex;
-  width: 100%;
-  padding: var(--sds-drawer-item-button-padding);
-  border-radius: var(--sds-border-radius-small);
-  color: unset;
   align-items: center;
-  border: none;
-
-  &:hover {
-    cursor: pointer;
-  }
+  background-color: transparent;
+  border: 0 none;
+  border-radius: var(--sds-space-border-radius-small);
+  color: var(--sds-color-text-primary);
+  cursor: pointer;
+  display: flex;
+  gap: var(--sds-space-gap-small);
+  font-size: var(--sds-typography-body-fontsize-large);
+  font-weight: var(--sds-typography-weight-regular);
+  line-height: var(--sds-typography-body-lineheight-large);
+  padding: var(--sds-space-padding-small);
+  text-decoration: none;
+  width: 100%;
 
   &:hover,
   &:focus-visible {
-    background: #dcd3fe;
+    background: var(--sds-color-interaction-primary-transparent-highlight);
   }
 
   &:active {
-    background: var(--sds-color-surface-action);
+    background: var(--sds-color-interaction-primary-transparent-pressed);
   }
 
   &:focus-visible {
-    outline: var(--sds-outline);
+    outline: var(--sds-focus-outline);
   }
 
-  &__label {
-    &-icon {
-      font-size: var(--sds-size-text-m);
-    }
+  &__icon {
+    align-items: center;
+    display: flex;
+    font-size: var(--sds-base-size-m);
+    justify-content: center;
+    width: var(--sds-base-size-m);
+    height: var(--sds-base-size-m);
   }
 
   &__label-primary {
     display: none;
-    font-size: var(--sds-size-text-s1);
-    padding-left: var(--sds-drawer-item-button-padding);
-    line-height: var(--sds-size-base-m);
   }
 
   &__label-secondary {
     display: none;
-    font-size: var(--sds-size-text-s);
-    color: var(--sds-color-text-neutral);
-    padding-left: var(--sds-drawer-item-button-padding);
     margin-left: auto;
-    line-height: var(--sds-size-base-s1);
-  }
-}
-
-.sds-drawer--expanded {
-  & .sds-drawer-button {
-    &__label-primary,
-    &__label-secondary {
-      display: inline;
-      animation: var(--sds-drawer-fade-in);
-    }
   }
 }
