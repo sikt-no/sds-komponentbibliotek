@@ -19,7 +19,7 @@
     "react-modal": "^3.16.1"
   },
   "devDependencies": {
-    "@types/react-modal": "^3.16.1"
+    "@types/react-modal": "^3.16.2"
   },
   "peerDependencies": {
     "@types/react": "^18.2.13",
