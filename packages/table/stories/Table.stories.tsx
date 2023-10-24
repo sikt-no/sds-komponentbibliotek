@@ -33,20 +33,20 @@ export const Default: Story = {
           <TableHeader>Navn</TableHeader>
           <TableHeader>Telefon</TableHeader>
           <TableHeader>Adresse</TableHeader>
-          <TableHeader>Benhandlingsstatus</TableHeader>
+          <TableHeader>Behandlingsstatus</TableHeader>
           <TableHeader>CTA</TableHeader>
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell>1</TableCell>
-          <TableCell>Ola Nordmann</TableCell>
-          <TableCell>
+          <TableCell data-th="Id">1</TableCell>
+          <TableCell data-th="Navn">Ola Nordmann</TableCell>
+          <TableCell data-th="Telefon">
             <a href="tel:" style={{ whiteSpace: "nowrap" }}>
               90 90 90 90
             </a>
           </TableCell>
-          <TableCell>
+          <TableCell data-th="Adresse">
             <address>
               <span style={{ whiteSpace: "nowrap" }}>
                 Fridtjof Nansens vei 19
@@ -55,20 +55,20 @@ export const Default: Story = {
               <span>0369 Oslo</span>
             </address>
           </TableCell>
-          <TableCell>Behandlet</TableCell>
-          <TableCell>
+          <TableCell data-th="Behandlingsstatus">Behandlet</TableCell>
+          <TableCell data-th="CTA">
             <button style={{ whiteSpace: "nowrap" }}>Klikk meg</button>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>2</TableCell>
-          <TableCell>Kari Nordmann</TableCell>
-          <TableCell>
+          <TableCell data-th="Id">2</TableCell>
+          <TableCell data-th="Navn">Kari Nordmann</TableCell>
+          <TableCell data-th="Telefon">
             <a href="tel:" style={{ whiteSpace: "nowrap" }}>
               90 90 90 90
             </a>
           </TableCell>
-          <TableCell>
+          <TableCell data-th="Adresse">
             <address>
               <span style={{ whiteSpace: "nowrap" }}>
                 Fridtjof Nansens vei 19
@@ -77,20 +77,20 @@ export const Default: Story = {
               <span>0369 Oslo</span>
             </address>
           </TableCell>
-          <TableCell>Ubehandlet</TableCell>
-          <TableCell>
+          <TableCell data-th="Behandlingsstatus">Ubehandlet</TableCell>
+          <TableCell data-th="CTA">
             <button style={{ whiteSpace: "nowrap" }}>Klikk meg</button>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>3</TableCell>
-          <TableCell>Odd Even Nordmann</TableCell>
-          <TableCell>
+          <TableCell data-th="Id">3</TableCell>
+          <TableCell data-th="Navn">Odd Even Nordmann</TableCell>
+          <TableCell data-th="Telefon">
             <a href="tel:" style={{ whiteSpace: "nowrap" }}>
               90 90 90 90
             </a>
           </TableCell>
-          <TableCell>
+          <TableCell data-th="Adresse">
             <address>
               <span style={{ whiteSpace: "nowrap" }}>
                 Fridtjof Nansens vei 19
@@ -99,8 +99,8 @@ export const Default: Story = {
               <span>0369 Oslo</span>
             </address>
           </TableCell>
-          <TableCell>Ubehandlet</TableCell>
-          <TableCell>
+          <TableCell data-th="Behandlingsstatus">Ubehandlet</TableCell>
+          <TableCell data-th="CTA">
             <button style={{ whiteSpace: "nowrap" }}>Klikk meg</button>
           </TableCell>
         </TableRow>
@@ -117,24 +117,24 @@ export const WithFooter: Story = {
     <Table {...args}>
       <TableHead>
         <TableRow>
-          <TableHeader>1abc</TableHeader>
-          <TableHeader>2def</TableHeader>
+          <TableHeader>Header</TableHeader>
+          <TableHeader>Header</TableHeader>
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell>A</TableCell>
-          <TableCell>B</TableCell>
+          <TableCell data-th="Header">A</TableCell>
+          <TableCell data-th="Header">B</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>C</TableCell>
-          <TableCell>D</TableCell>
+          <TableCell data-th="Header">C</TableCell>
+          <TableCell data-th="Header">D</TableCell>
         </TableRow>
       </TableBody>
       <TableFoot>
         <TableRow>
-          <TableCell>E456</TableCell>
-          <TableCell>F789</TableCell>
+          <TableCell data-th="Header">E456</TableCell>
+          <TableCell data-th="Header">F789</TableCell>
         </TableRow>
       </TableFoot>
     </Table>

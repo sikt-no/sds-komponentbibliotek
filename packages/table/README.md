@@ -12,8 +12,21 @@ npm i -s @sikt/sds-table
 import { Table } from "@sikt/sds-table";
 import "@sikt/sds-table/dist/index.css";
 
-<Table />;
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableHeader>Header</TableHeader>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell data-th="Header">Cell</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>;
 ```
+
+**Note:** That you need to add the `data-th` to all cells of the body for the mobile view to work.
 
 ### Stylesheets & custom markup
 

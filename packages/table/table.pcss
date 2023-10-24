@@ -3,7 +3,42 @@
   width: 100%;
 
   &__table {
+    --table-padding-cell: var(--sds-base-size-m);
+
     width: 100%;
+
+    /* stylelint-disable selector-max-type */
+    @media (width < 720px) {
+      --table-padding-cell: var(--sds-base-size-s);
+
+      display: block;
+
+      & > thead,
+      & > thead > tr,
+      & > thead > tr > th {
+        display: none;
+      }
+
+      & > tbody,
+      & > tbody > tr,
+      & > tfoot,
+      & > tfoot > tr {
+        display: block;
+      }
+
+      & > tbody > tr > td,
+      & > tfoot > tr > td {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      [data-th]::before {
+        content: attr(data-th);
+        display: block;
+      }
+    }
+    /* stylelint-enable selector-max-type */
   }
 
   &__caption {
@@ -15,7 +50,7 @@
 
   &__header,
   &__cell {
-    padding: var(--sds-base-size-m);
+    padding: var(--table-padding-cell);
   }
 
   &__foot &__row {
@@ -30,6 +65,7 @@
   }
 
   &__header,
+  [data-th]::before,
   &__foot &__cell {
     font-size: var(--sds-typography-heading-fontsize-overline);
     font-weight: var(--sds-typography-weight-bold);
