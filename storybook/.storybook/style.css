@@ -1,5 +1,6 @@
 /* stylelint-disable */
-.docs-story {
+.docs-story,
+.docblock-icongallery > div > div:first-of-type {
   background-color: var(--sds-color-layout-page-default);
 }
 /* stylelint-enable */
