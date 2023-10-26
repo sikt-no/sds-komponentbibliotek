@@ -1,8 +1,8 @@
 import React, {
   ChangeEventHandler,
-  HTMLAttributes,
   OptionHTMLAttributes,
   ReactNode,
+  SelectHTMLAttributes,
   forwardRef,
   useId,
 } from "react";
@@ -11,10 +11,10 @@ import { CaretCircleDownIcon } from "@sikt/sds-icons";
 import { FormField } from "@sikt/sds-form";
 import "./select.pcss";
 
-export interface SelectProps extends HTMLAttributes<HTMLSelectElement> {
+export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   className?: string;
   label: string;
-  options: OptionHTMLAttributes<HTMLOptionElement>[];
+  options: Omit<OptionHTMLAttributes<HTMLOptionElement>, "selected">[];
   errorText?: string;
   helpText?: string;
   icon?: ReactNode;
@@ -57,7 +57,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
               <option
                 key={option.value && option.value.toString()}
                 value={option.value}
-                selected={option.selected}
                 disabled={option.disabled}
               >
                 {option.label}

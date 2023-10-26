@@ -1,5 +1,6 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
+import { useArgs } from "@storybook/client-api";
 import { SelectProps, Select } from "../index";
 import { ListIcon } from "../../icons/index";
 
@@ -20,9 +21,16 @@ export const Default: Story = {
       { label: "Second item", value: "2" },
       { label: "Third item", value: "3" },
     ],
-    onChange: (event: ChangeEvent<HTMLSelectElement>) => {
-      console.log(event.target.value);
-    },
+    value: "2",
+  },
+  render: (args) => {
+    const [, setArgs] = useArgs();
+    return (
+      <Select
+        {...args}
+        onChange={(event) => setArgs({ value: event.target.value })}
+      />
+    );
   },
 };
 

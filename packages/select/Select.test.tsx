@@ -26,6 +26,24 @@ describe("Select", () => {
       ).toBeInTheDocument();
     });
 
+    it("should have set value", async () => {
+      const { container } = render(
+        <Select
+          label="Foo"
+          options={[
+            { label: "Test", value: "test" },
+            { label: "Bar", value: "bar" },
+          ]}
+          value="bar"
+        />
+      );
+
+      const select = container.getElementsByClassName("sds-select")[0];
+
+      expect(select).toBeInTheDocument();
+      expect(select.querySelector("select")?.value).toBe("bar");
+    });
+
     it("calls change handler", async () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
