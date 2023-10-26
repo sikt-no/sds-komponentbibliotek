@@ -25,14 +25,14 @@ export const Default: Story = {
 
 export const IconRight: Story = {
   args: {
-    ...Button.args,
+    ...Default.args,
     icon: <ArrowRightIcon />,
   },
 };
 
 export const IconLeft: Story = {
   args: {
-    ...Button.args,
+    ...Default.args,
     icon: <ArrowLeftIcon />,
     iconVariant: "left",
   },
@@ -40,7 +40,7 @@ export const IconLeft: Story = {
 
 export const IconOnly: Story = {
   args: {
-    ...Button.args,
+    ...Default.args,
     icon: <ArrowRightIcon />,
     iconVariant: "only",
   },
@@ -48,7 +48,7 @@ export const IconOnly: Story = {
 
 export const Small: Story = {
   args: {
-    ...Button.args,
+    ...Default.args,
     size: "small",
   },
 };
