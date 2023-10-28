@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 2.0.0 (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- rename componentType & componentSize props to variant & size for consistency
+- **tokens:** add new tokens to card package
+
+### Features
+
+- rename componentType & componentSize props to variant & size for consistency ([e598ec8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e598ec84d3351f2ecdaa679bdddbf947a9949f13))
+- **tokens:** add new tokens to card package ([f2281d1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f2281d1b33387c675854d3b6d712f7f7887623c9))
+
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-content-block@1.0.0...@sikt/sds-content-block@1.0.1) (2023-04-29)
 
 ## 1.0.0 (2023-04-13)
