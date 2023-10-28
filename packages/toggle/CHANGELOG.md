@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@1.2.0...@sikt/sds-toggle@2.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- move ...props to input element
+- **tokens:** add new tokens to toggle package
+- **toggle-segment:** The change might be breaking in cases where one
+  has selected elements in custom css, as the semantics of the
+  component are changed, or one has made use of custom html markup.
+
+### Features
+
+- move ...props to input element ([1488289](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1488289d882cd77515e720228180690ac2138c73))
+- **tokens:** add new tokens to toggle package ([083ff67](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/083ff674c4334ff9f4c7ad0701642a92d0a32dfb))
+
+### Bug Fixes
+
+- **toggle-segment:** tweak focus to be :focus-visible ([20baa9a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/20baa9a7f9a45d484c5b8a29cf3f8713e3f1fbf1))
+
 ## [1.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@1.1.1...@sikt/sds-toggle@1.2.0) (2023-09-19)
 
 ### Features
