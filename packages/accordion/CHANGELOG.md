@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-accordion@1.0.1...@sikt/sds-accordion@2.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- **tokens:** add new tokens to accordion package
+
+### Features
+
+- **tokens:** add new tokens to accordion package ([6423d59](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6423d590b72fb3f9c4df28c3b89fe722aa084993))
+
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-accordion@1.0.0...@sikt/sds-accordion@1.0.1) (2023-04-29)
 
 ## 1.0.0 (2023-04-13)
