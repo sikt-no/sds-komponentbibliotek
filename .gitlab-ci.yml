@@ -26,16 +26,7 @@ stages:
   - build
   - test
   - deploy
-  #  - release
   - .post
-
-#.publish:
-#  rules:
-#    - if: $CI_COMMIT_TAG
-#  only:
-#    - main
-#  except:
-#    - schedules
 
 install:
   stage: .pre
@@ -114,7 +105,7 @@ vuln-schedule-report:
   stage: .post
   script:
     - >
-      curl --request POST --header "Content-Type: application/json" --data "{\"text\":\"Vulnerability audit failed on $CI_COMMIT_BRANCH <$CI_PIPELINE_URL|$CI_PIPELINE_ID>\"}" "${SLACK_WEBHOOK_URL_VULN_AUDIT}"
+      curl --request POST --header "Content-Type: application/json" --data "{\"text\":\"Vulnerability audit failed on $CI_COMMIT_BRANCH <$CI_PIPELINE_URL|$CI_PIPELINE_ID>\"}" "${SLACK_WEBHOOK_URL_PRIVATE}"
   needs:
     - vuln-schedule
   when: on_failure
@@ -125,7 +116,7 @@ packages:
   stage: build
   extends:
     - .npm_cache
-  #  - .publish
+  #  - .tag
   script:
     - npm pkg delete scripts.prepare
     - npm ci
@@ -259,9 +250,23 @@ prod:
     REPLICAS: "3"
   except:
     - schedules
+
+.tag:
+  only:
+    - tags
+  except:
+    - schedules
+
+tag-report:
+  stage: .post
+  extends: .tag
+  script:
+    - >
+      curl --request POST --header "Content-Type: application/json" --data "{\"text\":\"Tag $CI_COMMIT_TAG succeeded on $CI_COMMIT_BRANCH <$CI_PIPELINE_URL|$CI_PIPELINE_ID>\"}" "${SLACK_WEBHOOK_URL_PUBLIC}"
+
 #release:
 #  stage: release
-#  extends: .publish
+#  extends: .tag
 #  image: registry.gitlab.com/gitlab-org/release-cli
 #  script:
 #    - echo "Release $CI_COMMIT_TAG"
@@ -271,7 +276,7 @@ prod:
 
 #publish:
 #  stage: release
-#  extends: .publish
+#  extends: .tag
 #  when: manual
 #  id_tokens:
 #    VAULT_ID_TOKEN:
