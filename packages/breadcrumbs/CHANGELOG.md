@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-breadcrumbs@1.0.1...@sikt/sds-breadcrumbs@2.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- **tokens:** add new tokens to breadcrumbs package
+
+### Features
+
+- **tokens:** add new tokens to breadcrumbs package ([bf083de](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bf083de67967a1a21694c32ea34135508d36ceca))
+
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-breadcrumbs@1.0.0...@sikt/sds-breadcrumbs@1.0.1) (2023-04-29)
 
 ## 1.0.0 (2023-04-13)
