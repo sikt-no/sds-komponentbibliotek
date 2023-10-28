@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@2.2.0...@sikt/sds-core@3.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- rename componentType & componentSize props to variant & size for consistency
+- **tokens:** add new tokens to core package
+- **tokens:** new token system
+
+#### Migration
+
+Partial upgrade to latest packages can be done by installing & using the new `@sikt/sds-tokens@1.0.0` & `@sikt/sds-core@3.0.0` while saving the old core tokens (which you will find in `@sikt/sds-core/dist/tokens/`) in you application.
+
+Example:
+
+```css
+:root {
+  --sds-border-size-thin: 1px;
+  --sds-border-size-regular: 2px;
+  ...;
+}
+
+:root,
+[data-color-scheme="light"],
+[data-color-scheme="light"]:root {
+  --sds-color-theme: #0b0132;
+  --sds-color-background-default: #fff;
+  ...;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --sds-color-theme: #0b0132;
+    --sds-color-background-default: #fff;
+    ...;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sds-color-theme: #0b0132;
+    --sds-color-background-default: #000;
+    ...;
+  }
+}
+```
+
+### Features
+
+- rename componentType & componentSize props to variant & size for consistency ([e598ec8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e598ec84d3351f2ecdaa679bdddbf947a9949f13))
+- **tokens:** add new tokens to core package ([0d302a8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0d302a83aee39358f2e42f1daf35dba52f056f81))
+- **tokens:** new token system ([435f71e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/435f71e14552f5fd2aae12807ebb43b0b268acfa))
+
 ## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@2.1.0...@sikt/sds-core@2.2.0) (2023-08-15)
 
 ### Features
