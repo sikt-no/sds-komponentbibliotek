@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@2.0.1...@sikt/sds-tabs@3.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- **tokens:** add new tokens to badge package
+- **tokens:** add new tokens to tabs package
+
+### Features
+
+- **tokens:** add new tokens to badge package ([e7f9921](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e7f9921f2c7bf24b5bbf5d49c26cf81c5dedc0f8))
+- **tokens:** add new tokens to tabs package ([1be525d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1be525d97835dd20d7196f5f07fa66aed4b688ca))
+
 ### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@2.0.0...@sikt/sds-tabs@2.0.1) (2023-09-12)
 
 ### Bug Fixes
