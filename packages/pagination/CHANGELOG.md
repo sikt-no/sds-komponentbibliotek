@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@1.0.2...@sikt/sds-pagination@2.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- **tokens:** add new tokens to pagination package
+
+### Features
+
+- **tokens:** add new tokens to pagination package ([62500ff](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/62500ff8b6ecd471c20e5e2e5e479c24b29b5bee))
+
 ### [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@1.0.1...@sikt/sds-pagination@1.0.2) (2023-07-04)
 
 ### Bug Fixes
