@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-footer@1.1.0...@sikt/sds-footer@2.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- rename componentType & componentSize props to variant & size for consistency
+- **tokens:** add new tokens to footer package
+
+### Features
+
+- rename componentType & componentSize props to variant & size for consistency ([e598ec8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e598ec84d3351f2ecdaa679bdddbf947a9949f13))
+- **tokens:** add new tokens to footer package ([d50a15a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d50a15a484aa6f62abf6b485374ab443bc7337af))
+
 ## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-footer@1.0.1...@sikt/sds-footer@1.1.0) (2023-07-07)
 
 ### Features
