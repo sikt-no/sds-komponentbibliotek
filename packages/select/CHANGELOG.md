@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@1.0.2...@sikt/sds-select@2.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- move ...props to select element
+- **tokens:** add new tokens to select package
+- **form:** add fieldset, form-field, label & help-text components
+- add forwardRef to input components
+
+### Features
+
+- add forwardRef to input components ([e45c950](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e45c950944d15eac649b6f0755b95be99077b2c1))
+- **form:** add fieldset, form-field, label & help-text components ([b2c2cc5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b2c2cc5f6b4d264b3f4c517912e35d4021d1eadb))
+- move ...props to select element ([7755190](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7755190a6c266160ee240075de30df2aaf8dc985))
+- **tokens:** add new tokens to select package ([73cc04b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/73cc04ba7bffc7f69441d684f4658404f7e121e5))
+
+### Bug Fixes
+
+- **select:** extend correct props to support controlled Select component ([3eceb64](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3eceb643a6088b3771b0915257f0fc4fce5debf5))
+
 ### [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@1.0.1...@sikt/sds-select@1.0.2) (2023-06-06)
 
 ### Bug Fixes
