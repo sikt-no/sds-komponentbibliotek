@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-logo@1.0.1...@sikt/sds-logo@2.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- rename componentType & componentSize props to variant & size for consistency
+- **tokens:** add new tokens to logo package
+
+### Features
+
+- rename componentType & componentSize props to variant & size for consistency ([e598ec8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e598ec84d3351f2ecdaa679bdddbf947a9949f13))
+- **tokens:** add new tokens to logo package ([dc9c019](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/dc9c019f2c6208fab787e34ba9b2c3d5db8eaaf7))
+
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-logo@1.0.0...@sikt/sds-logo@1.0.1) (2023-04-29)
 
 ## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-logo@0.2.0...@sikt/sds-logo@1.0.0) (2023-04-11)
