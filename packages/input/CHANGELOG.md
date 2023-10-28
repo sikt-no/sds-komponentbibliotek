@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@2.0.0...@sikt/sds-input@3.0.0) (2023-10-28)
+
+### ⚠ BREAKING CHANGES
+
+- move ...props to input element
+- rename componentType & componentSize props to variant & size for consistency
+- **tokens:** add new tokens to input package
+- **form:** add fieldset, form-field, label & help-text components
+
+### Features
+
+- **form:** add fieldset, form-field, label & help-text components ([b2c2cc5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b2c2cc5f6b4d264b3f4c517912e35d4021d1eadb))
+- move ...props to input element ([5164a6b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5164a6b136a03d8978f8139fdb29e1f000e1d878))
+- rename componentType & componentSize props to variant & size for consistency ([e598ec8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e598ec84d3351f2ecdaa679bdddbf947a9949f13))
+- **tokens:** add new tokens to input package ([410cb6d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/410cb6d8e4e8c816061a035c255e87ffd7ec5bd6))
+
+### Bug Fixes
+
+- **input-action:** correct input element height ([4a41a53](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4a41a53bc190ff01cd3da300a1a887750999d0cd))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@1.0.1...@sikt/sds-input@2.0.0) (2023-07-05)
 
 ### ⚠ BREAKING CHANGES
