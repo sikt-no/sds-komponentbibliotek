@@ -46,6 +46,14 @@
       outline-offset: 0;
     }
 
+    &:disabled {
+      --checkbox-background-color: var(
+        --sds-color-interaction-neutral-subtle-default
+      );
+
+      cursor: not-allowed;
+    }
+
     &:checked {
       --checkbox-background-color: var(
         --sds-color-interaction-primary-strong-default

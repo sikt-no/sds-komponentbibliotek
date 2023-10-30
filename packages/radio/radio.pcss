@@ -44,6 +44,14 @@
       outline-offset: 0;
     }
 
+    &:disabled {
+      --radio-background-color: var(
+        --sds-color-interaction-neutral-subtle-default
+      );
+
+      cursor: not-allowed;
+    }
+
     &:checked {
       --radio-background-color: var(
         --sds-color-interaction-primary-strong-default
