@@ -47,14 +47,6 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <>
-      {/*
-      <Breadcrumbs aria-label="Brødsmulesti">
-        <BreadcrumbItem>
-          <span>Utviklingsverktøy</span>
-        </BreadcrumbItem>
-      </Breadcrumbs>
-      */}
-
       <section className={style.sdsSiktIndex__section}>
         <Heading1 variant="huge">Sikt design&shy;system</Heading1>
 
