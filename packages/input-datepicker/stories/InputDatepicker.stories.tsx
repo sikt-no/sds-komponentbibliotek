@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<InputDatepickerProps>;
 
-export const DatePickerInput: Story = {
+export const Default: Story = {
   args: {
     label: "Label",
     onChange: (e) => console.log(e),
@@ -20,21 +20,21 @@ export const DatePickerInput: Story = {
 
 export const WithDate: Story = {
   args: {
-    ...DatePickerInput.args,
+    ...Default.args,
     value: parseDate(new Date().toISOString().substring(0, 10)),
   },
 };
 
 export const WithHelpText: Story = {
   args: {
-    ...DatePickerInput.args,
+    ...Default.args,
     helpText: "Text",
   },
 };
 
 export const WithError: Story = {
   args: {
-    ...DatePickerInput.args,
+    ...Default.args,
     errorText: "Error!",
   },
 };

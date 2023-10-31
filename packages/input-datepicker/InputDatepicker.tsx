@@ -3,7 +3,7 @@ import clsx from "clsx";
 import {
   DatePickerProps,
   DatePicker as ReactAriaDatePicker,
-  Button,
+  Button as ReactAriaButton,
   Calendar,
   CalendarCell,
   CalendarGrid,
@@ -21,7 +21,7 @@ import {
   CaretRightIcon,
 } from "@sikt/sds-icons";
 import { Label, HelpText } from "@sikt/sds-form";
-import { TertiaryButton } from "@sikt/sds-button";
+import { Button } from "@sikt/sds-button";
 import "./input-datepicker.pcss";
 
 export interface InputDatepickerProps extends DatePickerProps<DateValue> {
@@ -31,6 +31,7 @@ export interface InputDatepickerProps extends DatePickerProps<DateValue> {
   className?: string;
   nextMonthLabel?: string;
   previousMonthLabel?: string;
+  openCalendarLabel?: string;
   lang?: string;
   value?: DateValue;
   onChange?: (newValue: DateValue) => void;
@@ -45,6 +46,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
       className,
       nextMonthLabel = "Neste måned",
       previousMonthLabel = "Forrige måned",
+      openCalendarLabel = "Åpne kalender",
       value,
       ...rest
     },
@@ -82,23 +84,15 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
               />
             )}
           </DateInput>
-          <TertiaryButton
+          <Button
+            variant={errorText ? "critical" : "transparent"}
+            size="small"
             onClick={() => setCalendarOpen(!calendarOpen)}
-            className={clsx(
-              errorText ? "sds-input-datepicker__button--error" : null
-            )}
-            iconType="only"
-            icon={
-              <CalendarBlankIcon
-                className={clsx(
-                  "sds-input-datepicker__calendar-icon",
-                  errorText && "sds-input-datepicker__calendar-icon--error"
-                )}
-              />
-            }
+            iconVariant="only"
+            icon={<CalendarBlankIcon />}
           >
-            Open calendar
-          </TertiaryButton>
+            {openCalendarLabel}
+          </Button>
         </Group>
 
         {(errorText ?? helpText) && (
@@ -116,21 +110,21 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
             className="sds-input-datepicker__calendar"
           >
             <header className="sds-input-datepicker__calendar-header">
-              <Button
+              <ReactAriaButton
                 className="sds-input-datepicker__calendar-button"
                 slot="previous"
                 aria-label={previousMonthLabel}
               >
                 <CaretLeftIcon />
-              </Button>
-              <Heading className="sds-input-datepicker__calendar-heading sds-typography-strong"></Heading>
-              <Button
+              </ReactAriaButton>
+              <Heading className="sds-input-datepicker__calendar-heading"></Heading>
+              <ReactAriaButton
                 className="sds-input-datepicker__calendar-button"
                 slot="next"
                 aria-label={nextMonthLabel}
               >
                 <CaretRightIcon />
-              </Button>
+              </ReactAriaButton>
             </header>
             <CalendarGrid weekdayStyle="short">
               {(date) => (
