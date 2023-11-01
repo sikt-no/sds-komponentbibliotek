@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### ⚠ BREAKING CHANGES
 
 - rename componentType & componentSize props to variant & size for consistency
+  - Removes Primary & Secondary component
 - **tokens:** add new tokens to logo package
 
 ### Features
