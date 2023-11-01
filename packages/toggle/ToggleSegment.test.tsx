@@ -1,13 +1,13 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import { ToggleSegment } from "./ToggleSegment";
+import { ToggleSegment, ToggleSegmentProps } from "./ToggleSegment";
 import { ToggleSegmentOption } from "./ToggleSegmentOption";
 import userEvent from "@testing-library/user-event";
 
-const Template = () => {
+const Template = (props: Partial<ToggleSegmentProps>) => {
   return (
-    <ToggleSegment legend="Legend" data-testid="test">
+    <ToggleSegment legend="Legend" data-testid="test" {...props}>
       {[1, 2, 3].map((value, index) => (
         <ToggleSegmentOption
           label={`Label ${value}`}
@@ -77,6 +77,16 @@ describe("Toggle Segment", () => {
       render(<Template />);
 
       expect(screen.getByLabelText("Label 2")).toBeChecked();
+    });
+
+    it("should have variant modifier class name", async () => {
+      const { container } = render(<Template variant="fixed" />);
+
+      expect(
+        container.getElementsByClassName(
+          "sds-toggle-segment sds-toggle-segment--fixed"
+        )[0]
+      ).toBeInTheDocument();
     });
   });
 
