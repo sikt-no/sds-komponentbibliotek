@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file. See [standa
 
 - rename componentType & componentSize props to variant & size for consistency
 - **tokens:** add new tokens to card package
+  - Rename package to Card
+  - Rename Featured component to Card
+  - Remove Inline component
+  - Remove prop imgPosition
+  - Make props imgSrc & imgAlt optional
+  - Add forwarRef
 
 ### Features
 

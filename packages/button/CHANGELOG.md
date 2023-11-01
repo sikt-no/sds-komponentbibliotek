@@ -8,6 +8,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 - rename componentType & componentSize props to variant & size for consistency
 - **tokens:** add new tokens to button package
+  - Rename Primary component to Strong
+  - Rename Secondary component to Subtle
+  - Rename Tertiary component to Transparent
+  - Rename Danger component to Critical
+  - Add prop buttonSize
 
 ### Features
 

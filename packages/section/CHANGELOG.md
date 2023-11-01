@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 - rename componentType & componentSize props to variant & size for consistency
 - **tokens:** add new tokens to section package
+  - Remove margin
+  - Add forwarRef
 
 ### Features
 

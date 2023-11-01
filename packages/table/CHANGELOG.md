@@ -7,7 +7,11 @@ All notable changes to this project will be documented in this file. See [standa
 ### ⚠ BREAKING CHANGES
 
 - **table:** add mobile design
+  - TableCell now requries `data-th` to have visible column header on mobile
 - **tokens:** add new tokens to table package
+  - Remove InlineTable component
+  - Remove prop footerText
+  - Alter prop hideCaption to showCaption, default is false
 
 ### Features
 
