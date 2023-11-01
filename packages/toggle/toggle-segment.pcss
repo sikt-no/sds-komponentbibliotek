@@ -12,10 +12,13 @@
     border-radius: var(--sds-space-border-radius-small);
     display: inline-grid;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
     outline: var(--sds-space-border-weight-regular) solid
       var(--sds-color-interaction-primary-strong-default);
     outline-offset: calc(var(--sds-space-border-weight-regular) * -1);
+  }
+
+  &--fixed &__group {
+    grid-auto-columns: 1fr;
   }
 
   &__option {
@@ -30,8 +33,11 @@
     font-size: var(--sds-typography-body-fontsize-small);
     font-weight: var(--sds-typography-weight-regular);
     line-height: var(--sds-typography-body-lineheight-small);
-    padding: var(--sds-space-padding-tiny);
+    min-width: 44px;
+    padding: var(--sds-space-padding-small);
     position: relative;
+    text-align: center;
+    width: 100%;
 
     &:hover {
       background: var(--sds-color-interaction-primary-transparent-highlight);

@@ -13,15 +13,15 @@ export default meta;
 type Story = StoryObj<ToggleSegmentProps>;
 
 export const Default: Story = {
-  render: () => {
+  render: (args) => {
     const [checkedOption, setCheckedOption] = useState("1");
 
     return (
-      <ToggleSegment legend="Toggle segment">
+      <ToggleSegment legend="Toggle segment" {...args}>
         <ToggleSegmentOption
           key={0}
           value="1"
-          label="Label"
+          label="L"
           onChange={(e) => setCheckedOption(e.target.value)}
           checked={checkedOption === "1"}
         />
@@ -35,11 +35,19 @@ export const Default: Story = {
         <ToggleSegmentOption
           key={2}
           value="3"
-          label="Label"
+          label="Very long long label"
           onChange={(e) => setCheckedOption(e.target.value)}
           checked={checkedOption === "3"}
         />
       </ToggleSegment>
     );
+  },
+};
+
+export const WithFixedWidth: Story = {
+  ...Default,
+  args: {
+    ...Default.args,
+    variant: "fixed",
   },
 };
