@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@2.0.0...@sikt/sds-toggle@2.1.0) (2023-11-02)
+
+### Features
+
+- **toggle-segment:** fixed width variant & accessibility fix ([2efd3c5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2efd3c527bbc73a70fe521eeeb954448e90053dc))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@1.2.0...@sikt/sds-toggle@2.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
