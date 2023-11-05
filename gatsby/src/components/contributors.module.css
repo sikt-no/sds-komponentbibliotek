@@ -1,5 +1,5 @@
 .sds-sikt-contributors {
-  --sikt-animation-color: 204 0 112;
+  --sikt-animation-color: 95 56 250; /* --sds-color-interaction-primary-strong-highlight */
 
   display: flex;
   flex-flow: wrap;
@@ -7,7 +7,7 @@
   text-align: center;
 
   @media (prefers-color-scheme: dark) {
-    --sikt-animation-color: 255 0 140;
+    --sikt-animation-color: 155 131 252; /* --sds-color-interaction-primary-strong-highlight (dark-mode) */
   }
 
   &__contributor {

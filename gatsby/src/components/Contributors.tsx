@@ -1,16 +1,15 @@
 import React from "react";
-import { Heading4 } from "@sikt/sds-core";
+import { Heading3 } from "@sikt/sds-core";
 import { UserCircleIcon } from "@sikt/sds-icons";
 import * as style from "./contributors.module.css";
 
 const Contributors = () => {
   const contributors = [
-    [{ name: "Deg", role: "Din rolle", team: "Ditt team" }],
     [
       { name: "Hanne", role: "Design", team: "Komponentbiblioteket" },
       { name: "Eivind", role: "Inkludering", team: "Komponentbiblioteket" },
       { name: "Kine", role: "Teknologi", team: "Komponentbiblioteket" },
-      { name: "Sondre Ek", role: "Design", team: "Komponentbiblioteket" },
+      { name: "Sondre E.", role: "Design", team: "Komponentbiblioteket" },
       { name: "Kristoffer", role: "Teknologi", team: "Komponentbiblioteket" },
       { name: "Petter", role: "Design", team: "Komponentbiblioteket" },
     ],
@@ -35,8 +34,9 @@ const Contributors = () => {
       { name: "Christian", role: "Design", team: "FS Studentportal" },
       { name: "Lasse", role: "Teknologi", team: "FS Studentportal" },
     ],
-    [{ name: "Sondre", role: "Teknologi", team: "Opptak Kjerne" }],
+    [{ name: "Sondre L.", role: "Teknologi", team: "Opptak Kjerne" }],
     [{ name: "John-Magne", role: "Teknologi", team: "Feide Kundeportal" }],
+    [{ name: "Deg", role: "Din rolle", team: "Ditt team" }],
   ];
 
   return (
@@ -44,7 +44,7 @@ const Contributors = () => {
       {contributors.reverse().map((team) => {
         return (
           <div key={team[0].team}>
-            <Heading4 variant="overline">{team[0].team}</Heading4>
+            <Heading3 variant="overline">{team[0].team}</Heading3>
             <div className={style.sdsSiktContributors__contributorGroup}>
               {team.map((contributor) => {
                 return (
@@ -60,7 +60,7 @@ const Contributors = () => {
                     {contributor.name !== "Deg" && (
                       <img
                         className={style.sdsSiktContributors__contributorImage}
-                        src={`/images/${contributor.name
+                        src={`/images/contributors/${contributor.name
                           .toLowerCase()
                           .replaceAll(" ", "-")
                           .replaceAll(".", "")}.png`}

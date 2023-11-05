@@ -4,12 +4,6 @@
   min-height: 100vh;
 }
 
-.sds-sikt-main {
-  margin: 0 auto;
-  max-width: var(--sds-space-grid-max-width);
-  padding: var(--sds-space-padding-huge) var(--sds-space-padding-large);
-}
-
 .sds-sikt-footer {
   margin-top: auto;
 }

@@ -1,125 +1,186 @@
 import React, { useState } from "react";
 import type { PageProps } from "gatsby";
+import clsx from "clsx";
 import confetti from "canvas-confetti";
-import { Heading1, Heading2, Heading3 } from "@sikt/sds-core";
-import { Button } from "@sikt/sds-button";
+import { FigmaLogo, GitlabLogo, SlackLogo } from "@phosphor-icons/react";
+import { Heading1, Heading2, Paragraph } from "@sikt/sds-core";
+import { Button, ButtonLink } from "@sikt/sds-button";
 import useKonami from "react-use-konami";
 import * as style from "./index.module.css";
 import Contributors from "../components/Contributors";
-import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
-import { Link } from "@sikt/sds-core/components/Link";
+import { Card } from "@sikt/sds-card";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [showButton, setShowButton] = useState(false);
+  const [disableButton, setDisableButton] = useState(false);
 
   useKonami(() => {
     setShowButton(true);
   });
 
   const handleLaunchClick = () => {
-    const end = Date.now() + 10 * 1000;
-    const colors = [
-      tokens.default.color.support.warning.default.value,
-      tokens.default.color.support.critical.strong.value,
-    ];
+    setDisableButton(true);
+    const scalar = 2;
+    const unicorn = confetti.shapeFromText({ text: "🦄", scalar });
 
-    (function frame() {
+    const defaults = {
+      spread: 360,
+      ticks: 120,
+      gravity: 0,
+      decay: 0.96,
+      startVelocity: 20,
+      shapes: [unicorn],
+      scalar,
+    };
+
+    const shoot = () => {
       confetti({
-        particleCount: 2,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: colors,
-      });
-      confetti({
-        particleCount: 2,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: colors,
+        ...defaults,
+        particleCount: 30,
       });
 
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
+      confetti({
+        ...defaults,
+        particleCount: 5,
+        flat: true,
+      });
+
+      confetti({
+        ...defaults,
+        particleCount: 15,
+        scalar: scalar / 2,
+        shapes: ["circle"],
+      });
+    };
+
+    setTimeout(shoot, 0);
+    setTimeout(shoot, 200);
+    setTimeout(shoot, 400);
+    setTimeout(shoot, 600);
+    setTimeout(shoot, 800);
+    setTimeout(() => {
+      setDisableButton(false);
+    }, 1000);
   };
 
   return (
     <>
-      <section className={style.sdsSiktIndex__section}>
-        <Heading1 variant="huge">Sikt design&shy;system</Heading1>
+      <section
+        className={clsx(
+          style.sdsSiktIndex__section,
+          style.sdsSiktIndex__sectionPrimary,
+          style.sdsSiktIndex__sectionTabletGrid2,
+          style.sdsSiktIndex__sectionTabletReverse
+        )}
+      >
+        <div>
+          <img src="/images/index/sikt.png" alt="Sikt logotype" />
+        </div>
 
-        <p className={style.sdsSiktIndex__paragraph}>
-          Sikt designsystem består av flere bestanddeler, derunder
-          komponentbiblioteket, som sammen bidrar til å definere hva opplevelsen
-          av Sikt skal være. Designsystemet er under arbeid, men vil etterhvert
-          tilgjengeliggjøres og dokumenteres på denne siden. Deler av
-          designsystemet (derunder typografi, fargepalett og ikoner) er per nå
-          dokumentert i komponentbiblioteket.
-        </p>
-
-        <section className={style.sdsSiktIndex__section}>
-          <Heading2 variant="large">Komponent&shy;bibliotek</Heading2>
-
-          <p className={style.sdsSiktIndex__paragraph}>
-            Sikt komponentbibliotek inneholder en rekke nyttige komponenter som
-            kan brukes i design og utvikling av nettsider og applikasjoner. Det
-            er flere fordeler ved å ta i bruk komponentbiblioteket. For det
-            første vil utviklingsprosessen kunne gå raskere, ettersom man ikke
-            trenger å bygge alt fra bunnen av hver gang. For det andre vil bruk
-            av komponentene sannsynligvis redusere risiko for bugs og manglende
-            universell utforming, siden komponentene er grundig testet i
-            forkant. For det andre vil komponentene gjøre det mulig å skape en
-            mer helhetlig opplevelse på tvers av Sikt sine
-            nettsider/applikasjoner, da det visuelle uttrykket og
-            interaksjonsmønstrene vil være gjenkjennbart for brukeren.
+        <div className={style.sdsSiktIndex__sectionContent}>
+          <Heading1 variant="huge">Komponent&shy;biblioteket</Heading1>
+          <p>
+            Velkommen til Sikts komponentbibliotek. Dette er en sammensetning av
+            komponenter og retningslinjer du kan bruke når du designer og
+            utvikler digitale løsninger og tjenester.
           </p>
+          <div>
+            {showButton && (
+              <div className="sds-sikt__button-group">
+                <Button
+                  variant="strong"
+                  onClick={handleLaunchClick}
+                  disabled={disableButton}
+                  icon="🦄"
+                >
+                  Lansere komponentbibliotek v2
+                </Button>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
 
-          <p className={style.sdsSiktIndex__paragraph}>
-            Komponentbiblioteket vil være en kombinasjon av enkeltstående
-            komponenter, samt retningslinjer for hvordan ulike komponenter kan
-            settes sammen til en mer helhetlig side (se "Guidelines" og
-            "Patterns" i Figma). Per i dag er komponentbiblioteket tilgjengelig
-            i{" "}
-            <Link
-              href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v0.1"
-              target="_blank"
+      <section
+        className={clsx(
+          style.sdsSiktIndex__section,
+          style.sdsSiktIndex__sectionTabletGrid2,
+          style.sdsSiktIndex__sectionDesktopGrid3
+        )}
+      >
+        <Card
+          headingLevel="h2"
+          headingText="Grunnleggende"
+          imgSrc="/images/index/grunnleggende.png"
+          imgAlt="Portfølje"
+          linkHref="/grunnleggende/"
+          linkText="Les om bestanddelene"
+          text="Les deg opp på hva komponent-biblioteket er og hva det består av"
+        />
+        <Card
+          headingLevel="h2"
+          headingText="Komponenter"
+          imgSrc="/images/index/komponenter.png"
+          imgAlt="Pusslebit"
+          linkHref="/komponenter/"
+          linkText="Se alle komponentene"
+          text="Se oversikten over de ferdige komponentene som kan tas i bruk"
+        />
+        <Card
+          headingLevel="h2"
+          headingText="Mønstre"
+          imgSrc="/images/index/monstre.png"
+          imgAlt="Tavle"
+          linkHref="/monstre/"
+          linkText="Se mønster og eksempler"
+          text="Se eksempler på hvordan du kan sette opp ofte brukte interaksjoner og sider"
+        />
+      </section>
+
+      <section
+        className={clsx(
+          style.sdsSiktIndex__section,
+          style.sdsSiktIndex__sectionPrimary,
+          style.sdsSiktIndex__sectionTabletGrid2,
+          style.sdsSiktIndex__sectionTabletReverse
+        )}
+      >
+        <div className={style.sdsSiktIndex__sectionContent}>
+          <Heading2 variant="medium">Samarbeid</Heading2>
+          <Paragraph variant="lead">
+            Å bygge et godt komponentbibliotek for Sikt vil være en laginnsats,
+            der alle team er velkomne til å bidra inn. Det har allerede kommet
+            inn mange gode bidrag fra ulike team, og vi håper at enda flere team
+            ønsker å koble seg på fremover!
+          </Paragraph>
+          <div className="sds-sikt__button-group">
+            <ButtonLink
+              iconVariant="left"
+              icon={<FigmaLogo />}
+              href="https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem"
             >
-              Figma
-            </Link>
-            ,{" "}
-            <Link
+              Se prosjektet i Figma
+            </ButtonLink>
+            <ButtonLink
+              iconVariant="left"
+              icon={<GitlabLogo />}
               href="https://gitlab.sikt.no/designsystem/sds-komponentbibliotek"
-              target="_blank"
             >
-              Gitlab
-            </Link>{" "}
-            og{" "}
-            <Link href="https://www.npmjs.com/search?q=%40sikt" target="_blank">
-              npmjs
-            </Link>
-            . Å bygge et godt komponentbibliotek for Sikt vil være en
-            laginnsats, der alle team er velkomne til å bidra inn. Det har
-            allerede kommet inn mange gode bidrag fra ulike team, og vi håper at
-            enda flere team ønsker å koble seg på fremover!
-          </p>
-
-          <section>
-            <Heading3 variant="paragraph">Med bidrag fra</Heading3>
-            <div className={style.sdsSiktIndex__paragraph}>
-              <Contributors />
-            </div>
-          </section>
-
-          {showButton && (
-            <div className={style.sdsSiktIndex__cta}>
-              <Button variant="strong" onClick={handleLaunchClick} icon="🚀">
-                Lansere komponentbibliotek v1
-              </Button>
-            </div>
-          )}
-        </section>
+              Se prosjektet på GitLab
+            </ButtonLink>
+            <ButtonLink
+              variant="strong"
+              iconVariant="left"
+              icon={<SlackLogo />}
+              href="https://sikt-no.slack.com/archives/C04K82KES0J"
+            >
+              Bli med i Slack-kanalen
+            </ButtonLink>
+          </div>
+        </div>
+        <div>
+          <Contributors />
+        </div>
       </section>
     </>
   );

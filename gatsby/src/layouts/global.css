@@ -4,5 +4,15 @@
 @import url("@sikt/sds-footer");
 @import url("@sikt/sds-logo");
 @import url("@sikt/sds-icons");
-@import url("@sikt/sds-list");
 @import url("@sikt/sds-tabs");
+@import url("@sikt/sds-card");
+
+.sds-sikt {
+  &__button-group {
+    display: flex;
+    gap: var(--sds-space-gap-small);
+    flex-wrap: wrap;
+    justify-content: right;
+    padding: var(--sds-space-padding-medium);
+  }
+}

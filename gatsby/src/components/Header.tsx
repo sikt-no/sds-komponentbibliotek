@@ -9,14 +9,16 @@ const Header = () => {
       <nav aria-label="Navigasjon" className="sds-tabs">
         <ul className={`sds-tabs__tab-list ${style.sdsSiktHeader__tabList}`}>
           <li>
-            <TabLink href="/retningslinjer/">Retningslinjer</TabLink>
+            <TabLink href="/grunnleggende/">Grunnleggende</TabLink>
           </li>
           <li>
             <TabLink href="/komponenter/">Komponenter</TabLink>
           </li>
+          <li>
+            <TabLink href="/monstre/">Mønstre</TabLink>
+          </li>
         </ul>
       </nav>
-      <div />
       <div />
     </SdsHeader>
   );
