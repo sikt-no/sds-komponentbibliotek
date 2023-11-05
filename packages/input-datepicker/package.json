@@ -19,7 +19,7 @@
     "@sikt/sds-icons": "^1.2.0",
     "@sikt/sds-input": "^3.0.0",
     "@sikt/sds-tokens": "^1.0.0",
-    "react-aria-components": "^1.0.0-beta.0"
+    "react-aria-components": "^1.0.0-beta.2"
   },
   "peerDependencies": {
     "@types/react": "^18.0.0",
