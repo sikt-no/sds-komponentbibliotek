@@ -19,6 +19,12 @@
       gap: var(--sds-space-gap-medium);
     }
 
+    &-image {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
     @media (--sds-base-breakpoint-tablet) {
       &-tablet-grid-2 {
         grid-template-columns: 1fr 1fr;

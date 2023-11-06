@@ -73,8 +73,8 @@ const IndexPage: React.FC<PageProps> = () => {
           style.sdsSiktIndex__sectionTabletReverse
         )}
       >
-        <div>
-          <img src="/images/index/sikt.png" alt="Sikt logotype" />
+        <div className={style.sdsSiktIndex__sectionImage}>
+          <img src="/images/index/sikt-icon.png" alt="Sikt logotype" />
         </div>
 
         <div className={style.sdsSiktIndex__sectionContent}>

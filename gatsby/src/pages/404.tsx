@@ -1,7 +1,6 @@
 import * as React from "react";
 import { HeadFC, PageProps } from "gatsby";
-import { Link } from "@sikt/sds-core/components/Link";
-import { Heading1 } from "@sikt/sds-core/components/Heading";
+import { Heading1, Link } from "@sikt/sds-core";
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
