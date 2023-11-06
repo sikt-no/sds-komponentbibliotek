@@ -187,5 +187,3 @@ const IndexPage: React.FC<PageProps> = () => {
 };
 
 export default IndexPage;
-
-export { Head } from "../components/Head";
