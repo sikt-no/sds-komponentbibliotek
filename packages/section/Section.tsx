@@ -53,7 +53,7 @@ export const Section = forwardRef<HTMLAnchorElement, SectionProps>(
           )}
         </header>
 
-        {children}
+        <div className="sds-section__content">{children}</div>
       </section>
     );
   }
