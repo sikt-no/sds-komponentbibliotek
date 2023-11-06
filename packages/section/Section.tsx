@@ -1,62 +1,35 @@
-import React, {
-  HTMLAttributes,
-  ReactNode,
-  ElementType,
-  forwardRef,
-} from "react";
+import React, { HTMLAttributes, ReactNode, ElementType } from "react";
 import clsx from "clsx";
-import { ButtonLink } from "@sikt/sds-button";
-import { ArrowCircleRightIcon } from "@sikt/sds-icons";
 import "./section.pcss";
 
 export interface SectionProps extends HTMLAttributes<HTMLElement> {
-  level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   headingText: string;
-  linkHref?: string;
-  linkLabel?: string;
   children?: ReactNode;
   className?: string;
+  callToAction?: ReactNode;
 }
 
-export const Section = forwardRef<HTMLAnchorElement, SectionProps>(
-  (
-    {
-      level = "h2",
-      headingText,
-      linkHref,
-      linkLabel,
-      children,
-      className,
-      ...rest
-    },
-    ref
-  ) => {
-    const H: ElementType = `${level}`;
+export const Section = ({
+  headingLevel = "h2",
+  headingText,
+  children,
+  className,
+  callToAction,
+  ...rest
+}: SectionProps) => {
+  const H: ElementType = `${headingLevel}`;
 
-    return (
-      <section className={clsx("sds-section", className)} {...rest}>
-        <header className="sds-section__header">
-          <H className="sds-typography-heading--medium sds-section__heading">
-            {headingText}
-          </H>
-          {linkLabel && linkHref && (
-            <div className="sds-section__link">
-              <ButtonLink
-                ref={ref}
-                variant="subtle"
-                href={linkHref}
-                icon={<ArrowCircleRightIcon />}
-              >
-                {linkLabel}
-              </ButtonLink>
-            </div>
-          )}
-        </header>
+  return (
+    <section className={clsx("sds-section", className)} {...rest}>
+      <header className="sds-section__header">
+        <H className="sds-section__heading sds-typography-heading--medium">
+          {headingText}
+        </H>
+        {callToAction && <div className="sds-section__cta">{callToAction}</div>}
+      </header>
 
-        <div className="sds-section__content">{children}</div>
-      </section>
-    );
-  }
-);
-
-Section.displayName = "Section";
+      {children && <div className="sds-section__content">{children}</div>}
+    </section>
+  );
+};

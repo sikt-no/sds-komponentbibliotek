@@ -1,5 +1,8 @@
+import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { Section, SectionProps } from "../Section";
+import { Section, SectionProps } from "../index";
+import { ButtonLink } from "../../button/index";
+import { ArrowCircleRightIcon } from "../../icons/index";
 
 const meta: Meta = {
   title: "Components/Section",
@@ -14,15 +17,6 @@ export const Default: Story = {
   args: {
     headingText: "Header",
     children: "",
-    link: "internet.com",
-  },
-};
-
-export const WithLink: Story = {
-  args: {
-    ...Default.args,
-    linkLabel: "Clickable label",
-    linkHref: "www.internet.com",
   },
 };
 
@@ -33,11 +27,13 @@ export const WithChildren: Story = {
   },
 };
 
-export const WithLinkAndChildren: Story = {
+export const WithCallToAction: Story = {
   args: {
     ...Default.args,
-    linkLabel: "Clickable label",
-    linkHref: "www.internet.com",
-    children: "Section content",
+    callToAction: (
+      <ButtonLink variant="subtle" href="#" icon={<ArrowCircleRightIcon />}>
+        Clickable label
+      </ButtonLink>
+    ),
   },
 };

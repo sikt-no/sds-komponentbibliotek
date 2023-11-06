@@ -7,11 +7,12 @@ const renderComponent = ({ className }: Partial<SectionProps>) =>
   render(
     <Section
       headingText="Header"
-      linkLabel="Label"
-      linkHref="www.internet.com"
       className={className}
+      callToAction={<>CTA</>}
       data-testid="test"
-    />
+    >
+      Children
+    </Section>
   );
 
 describe("section", () => {
@@ -29,10 +30,8 @@ describe("section", () => {
 
       expect(screen.getByTestId("test")).toHaveClass("sds-section");
       expect(screen.getByTestId("test")).toBeInTheDocument();
-      expect(screen.getByRole("link")).toHaveAttribute(
-        "href",
-        "www.internet.com"
-      );
+      expect(screen.getByText("Children")).toBeInTheDocument();
+      expect(screen.getByText("CTA")).toBeInTheDocument();
     });
 
     it("should have a class name", () => {
