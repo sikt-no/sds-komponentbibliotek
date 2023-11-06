@@ -6,16 +6,16 @@ import { Card, CardProps } from "./Card";
 const renderComponent = ({ className, imgAlt }: Partial<CardProps>) =>
   render(
     <Card
-      imgSrc="https://picsum.photos/600/600"
+      imgSrc="/path/to/image"
       imgAlt={imgAlt}
-      linkText="Link"
-      linkHref="#"
       overlineText="Overline"
       headingText="Heading"
-      text="Text"
       data-testid="test"
       className={className}
-    />
+      callToAction={<>CTA</>}
+    >
+      Children
+    </Card>
   );
 
 describe("Card", () => {
@@ -33,7 +33,8 @@ describe("Card", () => {
 
       expect(screen.getByTestId("test")).toHaveClass("sds-card");
       expect(screen.getByTestId("test")).toBeInTheDocument();
-      expect(screen.getByRole("link")).toHaveAttribute("href", "#");
+      expect(screen.getByText("Children")).toBeInTheDocument();
+      expect(screen.getByText("CTA")).toBeInTheDocument();
     });
 
     it("should have a class name", () => {

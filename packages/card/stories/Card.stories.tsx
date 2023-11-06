@@ -2,6 +2,8 @@ import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Card } from "../index";
 import { CardProps } from "../index";
+import { ButtonLink } from "../../button/ButtonLink";
+import { ArrowCircleRightIcon } from "../../icons/index";
 
 const meta: Meta = {
   title: "Components/Card",
@@ -19,12 +21,15 @@ const Template: Story = {
 export const Default: Story = {
   ...Template,
   args: {
-    imgSrc: "https://picsum.photos/600/600",
+    imgSrc: "https://picsum.photos/600/300",
     imgAlt: "This is an image",
-    linkText: "Label",
-    linkHref: "#",
     overlineText: "overline",
     headingText: "Heading",
-    text: "Text",
+    children: <>Text</>,
+    callToAction: (
+      <ButtonLink variant="subtle" href="#" icon={<ArrowCircleRightIcon />}>
+        Clickable label
+      </ButtonLink>
+    ),
   },
 };
