@@ -8,4 +8,12 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ["**/*.module.css"],
+      rules: {
+        "selector-class-pattern": "",
+      },
+    },
+  ],
 };
