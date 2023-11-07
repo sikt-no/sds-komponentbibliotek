@@ -1,7 +1,6 @@
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import { Button } from "@sikt/sds-button";
-import "./input-action-button.pcss";
 
 export interface InputActionButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -23,7 +22,6 @@ export const InputActionButton = ({
       size="small"
       className={clsx("sds-input-action", className)}
       aria-label={label}
-      title={label}
       icon={icon}
       iconVariant="only"
       {...rest}
