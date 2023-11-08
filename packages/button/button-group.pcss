@@ -1,0 +1,40 @@
+@import url("@sikt/sds-tokens/dist/css/custom-media.css");
+
+.sds-button-group {
+  display: flex;
+  gap: var(--sds-space-gap-small);
+
+  &--vertical {
+    flex-direction: column;
+  }
+
+  &--horizontal {
+    flex-direction: row;
+  }
+
+  &--auto {
+    flex-direction: column;
+
+    @media (--sds-base-breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &--split {
+    justify-content: flex-end;
+
+    @media (--sds-base-breakpoint-tablet) {
+      & > :first-child {
+        margin-right: auto;
+      }
+    }
+  }
+}
