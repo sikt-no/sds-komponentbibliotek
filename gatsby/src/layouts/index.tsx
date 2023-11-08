@@ -10,12 +10,10 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className={style.sdsSiktWrapper}>
+    <div className={style.layoutWrapper}>
       <Header />
-      <main id="main" className={style.sdsSiktMain}>
-        {children}
-      </main>
-      <Footer className={style.sdsSiktFooter} />
+      <main id="main">{children}</main>
+      <Footer className={style.layoutFooter} />
     </div>
   );
 };

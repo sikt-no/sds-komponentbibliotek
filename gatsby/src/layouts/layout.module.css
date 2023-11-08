@@ -1,9 +1,11 @@
-.sds-sikt-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+.layout {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-.sds-sikt-footer {
-  margin-top: auto;
+  &-footer {
+    margin-top: auto;
+  }
 }

@@ -1,13 +1,15 @@
 import * as React from "react";
-import { HeadFC, PageProps } from "gatsby";
-import { Heading1, Link } from "@sikt/sds-core";
+import { HeadFC, PageProps, Link as GatsbyLink } from "gatsby";
+import { Heading1 } from "@sikt/sds-core";
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <section>
       <Heading1 variant="large">Siden finnes ikke</Heading1>
       <p>
-        <Link href="/">Tilbake til forsiden</Link>
+        <GatsbyLink className="sds-typography-link" to="/">
+          Tilbake til forsiden
+        </GatsbyLink>
       </p>
     </section>
   );

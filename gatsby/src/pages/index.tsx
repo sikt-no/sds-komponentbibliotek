@@ -67,45 +67,31 @@ const IndexPage: React.FC<PageProps> = () => {
     <>
       <section
         className={clsx(
-          style.sdsSiktIndex__section,
-          style.sdsSiktIndex__sectionPrimary,
-          style.sdsSiktIndex__sectionTabletGrid2,
-          style.sdsSiktIndex__sectionTabletReverse
+          style.index__section,
+          style.index__sectionPrimary,
+          style.index__sectionTabletGrid2,
+          style.index__sectionTabletReverse
         )}
       >
-        <div className={style.sdsSiktIndex__sectionImage}>
+        <div className={style.index__sectionImage}>
           <img src="/images/index/sikt-icon.png" alt="Sikt logotype" />
         </div>
 
-        <div className={style.sdsSiktIndex__sectionContent}>
+        <div className={style.index__sectionContent}>
           <Heading1 variant="huge">Komponent&shy;biblioteket</Heading1>
           <p>
             Velkommen til Sikts komponentbibliotek. Dette er en sammensetning av
             komponenter og retningslinjer du kan bruke når du designer og
             utvikler digitale løsninger og tjenester.
           </p>
-          <div>
-            {showButton && (
-              <div className="sds-sikt__button-group">
-                <Button
-                  variant="strong"
-                  onClick={handleLaunchClick}
-                  disabled={disableButton}
-                  icon="🦄"
-                >
-                  Lansere komponentbibliotek v2
-                </Button>
-              </div>
-            )}
-          </div>
         </div>
       </section>
 
       <section
         className={clsx(
-          style.sdsSiktIndex__section,
-          style.sdsSiktIndex__sectionTabletGrid2,
-          style.sdsSiktIndex__sectionDesktopGrid3
+          style.index__section,
+          style.index__sectionTabletGrid2,
+          style.index__sectionDesktopGrid3
         )}
       >
         <Card
@@ -139,13 +125,13 @@ const IndexPage: React.FC<PageProps> = () => {
 
       <section
         className={clsx(
-          style.sdsSiktIndex__section,
-          style.sdsSiktIndex__sectionPrimary,
-          style.sdsSiktIndex__sectionTabletGrid2,
-          style.sdsSiktIndex__sectionTabletReverse
+          style.index__section,
+          style.index__sectionPrimary,
+          style.index__sectionTabletGrid2,
+          style.index__sectionTabletReverse
         )}
       >
-        <div className={style.sdsSiktIndex__sectionContent}>
+        <div className={style.index__sectionContent}>
           <Heading2 variant="medium">Samarbeid</Heading2>
           <Paragraph variant="lead">
             Å bygge et godt komponentbibliotek for Sikt vil være en laginnsats,
@@ -153,7 +139,7 @@ const IndexPage: React.FC<PageProps> = () => {
             inn mange gode bidrag fra ulike team, og vi håper at enda flere team
             ønsker å koble seg på fremover!
           </Paragraph>
-          <div className="sds-sikt__button-group">
+          <div className="sds-button-group">
             <ButtonLink
               iconVariant="left"
               icon={<FigmaLogo />}
@@ -180,6 +166,18 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
         <div>
           <Contributors />
+          {showButton && (
+            <div className="sds-button-group">
+              <Button
+                variant="strong"
+                onClick={handleLaunchClick}
+                disabled={disableButton}
+                icon="🦄"
+              >
+                Lansere komponentbibliotek v2
+              </Button>
+            </div>
+          )}
         </div>
       </section>
     </>

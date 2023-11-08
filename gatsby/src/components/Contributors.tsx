@@ -40,26 +40,26 @@ const Contributors = () => {
   ];
 
   return (
-    <div className={style.sdsSiktContributors}>
+    <div className={style.contributors}>
       {contributors.reverse().map((team) => {
         return (
           <div key={team[0].team}>
             <Heading3 variant="overline">{team[0].team}</Heading3>
-            <div className={style.sdsSiktContributors__contributorGroup}>
+            <div className={style.contributors__contributorGroup}>
               {team.map((contributor) => {
                 return (
                   <div
                     key={contributor.name}
-                    className={style.sdsSiktContributors__contributor}
+                    className={style.contributors__contributor}
                   >
                     {contributor.name === "Deg" && (
                       <UserCircleIcon
-                        className={`${style.sdsSiktContributors__contributorImage} ${style.sdsSiktContributors__contributorImageAnimation}`}
+                        className={`${style.contributors__contributorImage} ${style.contributors__contributorImageAnimation}`}
                       />
                     )}
                     {contributor.name !== "Deg" && (
                       <img
-                        className={style.sdsSiktContributors__contributorImage}
+                        className={style.contributors__contributorImage}
                         src={`/images/contributors/${contributor.name
                           .toLowerCase()
                           .replaceAll(" ", "-")

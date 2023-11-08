@@ -1,6 +1,6 @@
 @import url("@sikt/sds-tokens/dist/css/custom-media.css");
 
-.sds-sikt-index {
+.index {
   &__section {
     background-color: var(--sds-color-layout-page-default);
     display: grid;

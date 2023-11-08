@@ -8,7 +8,7 @@ const Footer = ({ className }: { className?: string }) => {
   return (
     <SdsFooter className={className}>
       <div>
-        <ul className={style.sdsSiktFooter__list}>
+        <ul className={style.footer__list}>
           <li>
             <ButtonLink
               variant="transparent"

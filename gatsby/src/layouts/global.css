@@ -6,13 +6,13 @@
 @import url("@sikt/sds-icons");
 @import url("@sikt/sds-tabs");
 @import url("@sikt/sds-card");
+@import url("@sikt/sds-breadcrumbs");
+@import url("@sikt/sds-section");
 
-.sds-sikt {
-  &__button-group {
-    display: flex;
-    gap: var(--sds-space-gap-small);
-    flex-wrap: wrap;
-    justify-content: right;
-    padding: var(--sds-space-padding-medium);
-  }
+.sds-button-group {
+  display: flex;
+  gap: var(--sds-space-gap-small);
+  flex-wrap: wrap;
+  justify-content: right;
+  padding: var(--sds-space-padding-medium);
 }

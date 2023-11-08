@@ -1,5 +1,5 @@
-.sds-sikt-header {
-  .sds-sikt-header__tab-list {
+.header {
+  .header__tab-list {
     border-bottom-color: transparent;
     margin: 0;
   }
