@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 export interface TableCellProps extends TdHTMLAttributes<HTMLTableCellElement> {
   className?: string;
+  "data-th": string;
 }
 
 export const TableCell = ({ className, ...rest }: TableCellProps) => {
