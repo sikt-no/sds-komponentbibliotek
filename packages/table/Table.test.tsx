@@ -22,22 +22,22 @@ describe("Table", () => {
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell>Bill</TableCell>
-              <TableCell>37</TableCell>
+              <TableCell data-th="Name">Bill</TableCell>
+              <TableCell data-th="Age">37</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>John</TableCell>
-              <TableCell>40</TableCell>
+              <TableCell data-th="Name">John</TableCell>
+              <TableCell data-th="Age">40</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Aaron</TableCell>
-              <TableCell>21</TableCell>
+              <TableCell data-th="Name">Aaron</TableCell>
+              <TableCell data-th="Age">21</TableCell>
             </TableRow>
           </TableBody>
           <TableFoot>
             <TableRow>
-              <TableCell>Summary</TableCell>
-              <TableCell>98</TableCell>
+              <TableCell data-th="Name">Summary</TableCell>
+              <TableCell data-th="Age">98</TableCell>
             </TableRow>
           </TableFoot>
         </Table>
@@ -102,16 +102,16 @@ describe("Table", () => {
         <Table caption="Caption">
           <TableBody>
             <TableRow>
-              <TableCell>Bill</TableCell>
-              <TableCell>37</TableCell>
+              <TableCell data-th="Name">Bill</TableCell>
+              <TableCell data-th="Age">37</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>John</TableCell>
-              <TableCell>40</TableCell>
+              <TableCell data-th="Name">John</TableCell>
+              <TableCell data-th="Age">40</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Aaron</TableCell>
-              <TableCell>21</TableCell>
+              <TableCell data-th="Name">Aaron</TableCell>
+              <TableCell data-th="Age">21</TableCell>
             </TableRow>
           </TableBody>
         </Table>
