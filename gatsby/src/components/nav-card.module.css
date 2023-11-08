@@ -30,6 +30,8 @@
   }
 
   &:not([href]) {
+    cursor: not-allowed;
+
     .nav-card__button {
       opacity: 0.2;
     }

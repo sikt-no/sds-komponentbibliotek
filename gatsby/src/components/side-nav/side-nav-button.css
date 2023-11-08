@@ -29,6 +29,19 @@
     outline: var(--sds-focus-outline);
   }
 
+  &[aria-current="page"] {
+    background-color: var(--sds-color-interaction-primary-subtle-default);
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--sds-color-interaction-primary-subtle-highlight);
+    }
+
+    &:active {
+      background-color: var(--sds-color-interaction-primary-subtle-pressed);
+    }
+  }
+
   &--disabled {
     background-color: var(--sds-color-interaction-primary-transparent-default);
     color: var(--sds-color-text-primary);

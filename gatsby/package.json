@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.14",
+    "@sikt/sds-badge": "^2.0.0",
     "@sikt/sds-breadcrumbs": "^2.0.0",
     "@sikt/sds-button": "^3.0.0",
     "@sikt/sds-card": "^2.0.0",
@@ -21,6 +22,7 @@
     "@sikt/sds-icons": "^1.2.0",
     "@sikt/sds-logo": "^2.0.0",
     "@sikt/sds-section": "^2.0.0",
+    "@sikt/sds-table": "^2.0.0",
     "@sikt/sds-tabs": "^3.0.0",
     "@sikt/sds-tokens": "^1.0.0",
     "canvas-confetti": "^1.9.0",

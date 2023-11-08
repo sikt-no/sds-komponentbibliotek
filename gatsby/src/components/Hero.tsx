@@ -15,8 +15,6 @@ interface HeroProps {
   heading: ReactNode;
   leadParagraph?: string;
   breadcrumbs?: BreadcrumbProps[];
-  imgAlt?: string;
-  imgSrc?: string;
 }
 
 export const Hero = ({
@@ -24,8 +22,6 @@ export const Hero = ({
   breadcrumbs,
   heading,
   leadParagraph,
-  imgAlt,
-  imgSrc,
 }: HeroProps) => {
   return (
     <>
@@ -50,12 +46,7 @@ export const Hero = ({
             <p className={style.hero__paragraph}>{leadParagraph}</p>
           )}
         </div>
-
-        {imgSrc && imgAlt && (
-          <div className={style.hero__sectionImage}>
-            <img src={imgSrc} alt={imgAlt} />
-          </div>
-        )}
+        <div className={style.hero__sectionImage}></div>
       </section>
     </>
   );

@@ -1,0 +1,5 @@
+.ikoner {
+  &__hero {
+    background-image: url("/images/grunnleggende/ikoner/hero.png");
+  }
+}

@@ -1,0 +1,23 @@
+.tokens {
+  &__hero {
+    background-image: url("/images/grunnleggende/designtokens/hero.png");
+  }
+
+  &__tag {
+    background-color: var(--sds-color-interaction-primary-subtle-default);
+    border-radius: var(--sds-space-border-radius-medium);
+    padding: var(--sds-space-padding-tiny) var(--sds-space-padding-small);
+
+    &-list {
+      display: flex;
+      gap: var(--sds-space-gap-small);
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sds-space-gap-small);
+      text-align: center;
+    }
+  }
+}

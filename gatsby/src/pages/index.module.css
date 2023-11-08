@@ -19,12 +19,6 @@
       gap: var(--sds-space-gap-medium);
     }
 
-    &-image {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-    }
-
     @media (--sds-base-breakpoint-tablet) {
       &-tablet-grid-2 {
         grid-template-columns: 1fr 1fr;
@@ -43,6 +37,20 @@
       &-desktop-grid-3 {
         grid-template-columns: 1fr 1fr 1fr;
       }
+    }
+  }
+
+  &__hero {
+    background-image: url("/images/index/hero.png");
+    background-position: 500px;
+    background-repeat: no-repeat;
+
+    @media (--sds-base-breakpoint-tablet) {
+      background-position: 300px;
+    }
+
+    @media (--sds-base-breakpoint-desktop) {
+      background-position: right;
     }
   }
 }

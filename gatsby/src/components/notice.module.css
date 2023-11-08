@@ -1,0 +1,16 @@
+.notice {
+  align-items: center;
+  background-color: var(--sds-color-support-warning-subtle);
+  color: var(--sds-color-text-primary);
+  display: flex;
+  gap: var(--sds-space-gap-small);
+  padding: var(--sds-space-padding-small);
+
+  &__icon {
+    font-size: var(--sds-base-size-m);
+  }
+
+  &__heading {
+    text-transform: uppercase;
+  }
+}

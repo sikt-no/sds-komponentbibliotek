@@ -3,12 +3,14 @@ import type { PageProps } from "gatsby";
 import clsx from "clsx";
 import confetti from "canvas-confetti";
 import { FigmaLogo, GitlabLogo, SlackLogo } from "@phosphor-icons/react";
-import { Heading1, Heading2, Paragraph } from "@sikt/sds-core";
+import { Heading2, Paragraph } from "@sikt/sds-core";
 import { Button, ButtonLink } from "@sikt/sds-button";
 import useKonami from "react-use-konami";
 import * as style from "./index.module.css";
 import Contributors from "../components/Contributors";
 import { Card } from "@sikt/sds-card";
+import { Hero } from "../components/Hero";
+import { ArrowCircleRightIcon } from "@sikt/sds-icons/build";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [showButton, setShowButton] = useState(false);
@@ -65,27 +67,13 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <>
-      <section
-        className={clsx(
-          style.index__section,
-          style.index__sectionPrimary,
-          style.index__sectionTabletGrid2,
-          style.index__sectionTabletReverse
-        )}
-      >
-        <div className={style.index__sectionImage}>
-          <img src="/images/index/sikt-icon.png" alt="Sikt logotype" />
-        </div>
-
-        <div className={style.index__sectionContent}>
-          <Heading1 variant="huge">Komponent&shy;biblioteket</Heading1>
-          <p>
-            Velkommen til Sikts komponentbibliotek. Dette er en sammensetning av
+      <Hero
+        heading={<>Komponent&shy;biblioteket</>}
+        leadParagraph="Velkommen til Sikts komponentbibliotek. Dette er en sammensetning av
             komponenter og retningslinjer du kan bruke når du designer og
-            utvikler digitale løsninger og tjenester.
-          </p>
-        </div>
-      </section>
+            utvikler digitale løsninger og tjenester."
+        className={style.index__hero}
+      />
 
       <section
         className={clsx(
@@ -99,28 +87,53 @@ const IndexPage: React.FC<PageProps> = () => {
           headingText="Grunnleggende"
           imgSrc="/images/index/grunnleggende.png"
           imgAlt="Portfølje"
-          linkHref="/grunnleggende/"
-          linkText="Les om bestanddelene"
-          text="Les deg opp på hva komponent-biblioteket er og hva det består av"
-        />
+          callToAction={
+            <ButtonLink
+              variant="strong"
+              href="/grunnleggende/"
+              icon={<ArrowCircleRightIcon />}
+            >
+              Les alle bestanddelene
+            </ButtonLink>
+          }
+        >
+          Les deg opp på hva komponent-biblioteket er og hva det består av
+        </Card>
         <Card
           headingLevel="h2"
           headingText="Komponenter"
           imgSrc="/images/index/komponenter.png"
           imgAlt="Pusslebit"
-          linkHref="/komponenter/"
-          linkText="Se alle komponentene"
-          text="Se oversikten over de ferdige komponentene som kan tas i bruk"
-        />
+          callToAction={
+            <ButtonLink
+              variant="strong"
+              href="/komponenter/"
+              icon={<ArrowCircleRightIcon />}
+            >
+              Se alle komponentene
+            </ButtonLink>
+          }
+        >
+          Se oversikten over de ferdige komponentene som kan tas i bruk
+        </Card>
         <Card
           headingLevel="h2"
           headingText="Mønstre"
           imgSrc="/images/index/monstre.png"
           imgAlt="Tavle"
-          linkHref="/monstre/"
-          linkText="Se mønster og eksempler"
-          text="Se eksempler på hvordan du kan sette opp ofte brukte interaksjoner og sider"
-        />
+          callToAction={
+            <ButtonLink
+              variant="strong"
+              href="/monstre/"
+              icon={<ArrowCircleRightIcon />}
+            >
+              Se mønster og eksempler
+            </ButtonLink>
+          }
+        >
+          Se eksempler på hvordan du kan sette opp ofte brukte interaksjoner og
+          sider
+        </Card>
       </section>
 
       <section

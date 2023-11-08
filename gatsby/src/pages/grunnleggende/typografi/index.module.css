@@ -1,0 +1,16 @@
+.typografi {
+  &__hero {
+    background-image: url("/images/grunnleggende/typografi/hero.png");
+  }
+
+  &__font {
+    &--arial {
+      font-family: Arial, sans-serif;
+    }
+
+    &--courier {
+      font-family: "Courier New", serif;
+      font-weight: var(--sds-typography-weight-regular);
+    }
+  }
+}
