@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-card@2.0.0...@sikt/sds-card@3.0.0) (2023-11-10)
+
+### ⚠ BREAKING CHANGES
+
+- **card:** change text & link prop to react nodes
+
+### Features
+
+- **card:** change text & link prop to react nodes ([95c1211](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/95c1211e9170c4ff96cc57ae0cfa56e06ecccef3))
+
+### Bug Fixes
+
+- **card:** remove image aspect ratio ([6af2467](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6af246786596b432401c4f75da14683b69d828be))
+
 ## 2.0.0 (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
