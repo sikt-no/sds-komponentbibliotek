@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@2.0.0...@sikt/sds-section@3.0.0) (2023-11-10)
+
+### ⚠ BREAKING CHANGES
+
+- **section:** change text & link prop to react nodes
+
+### Features
+
+- **section:** change text & link prop to react nodes ([5e3d948](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5e3d948f099607b407a58ba920dab10f309184fe))
+
+### Bug Fixes
+
+- **section:** correct border width ([7fd5eaa](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7fd5eaa005b978ed9fd832009a073783c2808381))
+- **section:** padding-top for content ([128ac40](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/128ac40d64bbde528077dc039c46a8c3b9a7959b))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@1.0.1...@sikt/sds-section@2.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
