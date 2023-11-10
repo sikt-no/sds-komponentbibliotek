@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@3.0.0...@sikt/sds-input@3.0.1) (2023-11-10)
+
+### Bug Fixes
+
+- add disabled style ([1006f0b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1006f0be57ecf1e31e0cef40a0c5f8675d224b65))
+- **input-button:** change icon size ([86e90ef](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/86e90efbab6d56ac61f650c85d08a5cc49844b6f)), closes [#142](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/142)
+
 ## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@2.0.0...@sikt/sds-input@3.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
