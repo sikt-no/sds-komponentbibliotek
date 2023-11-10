@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-table@2.0.0...@sikt/sds-table@2.0.1) (2023-11-10)
+
+### Bug Fixes
+
+- **table-cell:** add required prop to type for cell heading on mobile ([62b7865](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/62b786519dff7984d745f679b05e9a0416878d1d))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-table@1.0.2...@sikt/sds-table@2.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
