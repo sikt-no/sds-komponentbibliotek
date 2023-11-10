@@ -105,11 +105,10 @@
   }
 
   &-link {
-    --link-icon-size: var(--sds-base-size-m);
+    --link-icon-size: 1.5em;
     --link-icon-margin: var(--sds-space-gap-minimal);
 
     color: var(--sds-color-text-primary);
-    display: inline-flex;
     gap: var(--link-icon-margin);
     text-decoration: underline;
     text-underline-position: under;
@@ -150,6 +149,8 @@
         min-height: var(--link-icon-size);
         width: var(--link-icon-size);
         height: var(--link-icon-size);
+        margin-left: var(--link-icon-margin);
+        vertical-align: sub;
       }
     }
 
@@ -178,6 +179,8 @@
         min-height: var(--link-icon-size);
         width: var(--link-icon-size);
         height: var(--link-icon-size);
+        margin-right: var(--link-icon-margin);
+        vertical-align: sub;
       }
     }
 
@@ -201,6 +204,7 @@
           margin: unset;
           min-width: unset;
           min-height: unset;
+          vertical-align: unset;
           width: unset;
           height: unset;
         }
@@ -214,6 +218,7 @@
           margin: unset;
           min-width: unset;
           min-height: unset;
+          vertical-align: unset;
           width: unset;
           height: unset;
         }
