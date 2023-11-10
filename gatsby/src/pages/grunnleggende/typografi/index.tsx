@@ -18,6 +18,8 @@ import {
   TableCell,
 } from "@sikt/sds-table";
 
+export { Head } from "../../../components/Head";
+
 const DesignTokensPage: React.FC<PageProps> = () => {
   return (
     <>

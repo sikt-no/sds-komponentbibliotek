@@ -11,6 +11,8 @@ import { Badge } from "@sikt/sds-badge";
 import { Nut } from "@phosphor-icons/react";
 import { SubNav } from "../../../components/SubNav";
 
+export { Head } from "../../../components/Head";
+
 const LayoutPage: React.FC<PageProps> = () => {
   return (
     <>

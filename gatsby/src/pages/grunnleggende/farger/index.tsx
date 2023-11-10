@@ -24,6 +24,8 @@ import * as dark from "@sikt/sds-tokens/dist/js/color.dark.js";
 import { Swatch } from "../../../components/Swatch";
 import { SubNav } from "../../../components/SubNav";
 
+export { Head } from "../../../components/Head";
+
 const DesignTokensPage: React.FC<PageProps> = () => {
   return (
     <>

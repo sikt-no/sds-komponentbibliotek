@@ -16,6 +16,8 @@ import {
   typographyHref,
 } from "../../components/SubNav";
 
+export { Head } from "../../components/Head";
+
 const BasicsPage: React.FC<PageProps> = () => {
   return (
     <>

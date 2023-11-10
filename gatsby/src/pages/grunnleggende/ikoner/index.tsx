@@ -9,6 +9,8 @@ import { Section } from "@sikt/sds-section";
 import { Heading3, Link, Paragraph } from "@sikt/sds-core";
 import { colorsHref, SubNav } from "../../../components/SubNav";
 
+export { Head } from "../../../components/Head";
+
 const DesignTokensPage: React.FC<PageProps> = () => {
   return (
     <>

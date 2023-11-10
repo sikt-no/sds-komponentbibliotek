@@ -21,6 +21,8 @@ import { Badge } from "@sikt/sds-badge";
 import { Token } from "../../../components/Token";
 import { SubNav } from "../../../components/SubNav";
 
+export { Head } from "../../../components/Head";
+
 const StorrelserPage: React.FC<PageProps> = () => {
   return (
     <>

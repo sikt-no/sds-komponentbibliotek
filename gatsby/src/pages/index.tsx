@@ -12,6 +12,8 @@ import { Card } from "@sikt/sds-card";
 import { Hero } from "../components/Hero";
 import { ArrowCircleRightIcon } from "@sikt/sds-icons/build";
 
+export { Head } from "../components/Head";
+
 const IndexPage: React.FC<PageProps> = () => {
   const [showButton, setShowButton] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
