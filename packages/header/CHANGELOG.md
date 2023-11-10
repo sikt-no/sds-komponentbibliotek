@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@2.0.0...@sikt/sds-header@2.0.1) (2023-11-10)
+
+### Bug Fixes
+
+- **header:** align main content to center ([df5e1a3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/df5e1a38e84baf85b00be3d93106682956d24605))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@1.0.1...@sikt/sds-header@2.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
