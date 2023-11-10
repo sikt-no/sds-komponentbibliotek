@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@3.0.1...@sikt/sds-button@3.1.0) (2023-11-10)
+
+### Features
+
+- **button:** add ButtonGroup component ([dd58000](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/dd58000c62b0a4a933f44f1d81a2a4847532c0c7))
+
+### Bug Fixes
+
+- **button:** change display from flex to inline-flex ([c8c4d48](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c8c4d484f5558e479449975e66eabb51c926abb8))
+
 ### [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@3.0.0...@sikt/sds-button@3.0.1) (2023-11-02)
 
 ### Bug Fixes
