@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-radio@2.0.0...@sikt/sds-radio@2.0.1) (2023-11-10)
+
+### Bug Fixes
+
+- add disabled style ([1006f0b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1006f0be57ecf1e31e0cef40a0c5f8675d224b65))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-radio@1.0.2...@sikt/sds-radio@2.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
