@@ -79,7 +79,12 @@ const BasicsPage: React.FC<PageProps> = () => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <NavCard headingText="Design tokens" href={tokensHref}>
+              <NavCard
+                headingText="Design tokens"
+                imgSrc="/images/grunnleggende/designtokens.png"
+                imgAlt="Bilde på designtokens i Figma"
+                href={tokensHref}
+              >
                 Design tokens er verdier koblet til et navn, og sørger for at
                 ting blir likt på tvers av design, utvikling, og tjenester.
               </NavCard>

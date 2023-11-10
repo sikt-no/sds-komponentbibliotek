@@ -18,11 +18,12 @@ import {
   TableRow,
 } from "@sikt/sds-table";
 import { Badge } from "@sikt/sds-badge";
-import { Nut } from "@phosphor-icons/react";
+import { FigmaLogo, Nut } from "@phosphor-icons/react";
 import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
 import * as dark from "@sikt/sds-tokens/dist/js/color.dark.js";
 import { Swatch } from "../../../components/Swatch";
 import { SubNav } from "../../../components/SubNav";
+import { ButtonLink } from "@sikt/sds-button";
 
 export { Head } from "../../../components/Head";
 
@@ -115,7 +116,7 @@ const DesignTokensPage: React.FC<PageProps> = () => {
                 colorname-lightness-alpha
               </Paragraph>
 
-              <Notice heading="Note!">
+              <Notice heading="NB!">
                 Dette er kun et utdrag for å illustrere hvordan skalaene er satt
                 opp.
               </Notice>
@@ -486,8 +487,23 @@ const DesignTokensPage: React.FC<PageProps> = () => {
           <Section
             headingText="Merkevare (Color / Brand)"
             className={style.grunnleggende__sdsSection}
+            callToAction={
+              <ButtonLink
+                variant="transparent"
+                icon={<FigmaLogo />}
+                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7849-9188&mode=design&t=luqGyDtXZMLzJTFV-4"
+              >
+                Vis i Figma
+              </ButtonLink>
+            }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
+              <Paragraph className="sds-paragraph--max-width">
+                Merkevarefargene er basert på Sikt sin visuelle profil og
+                merkevare, og fungerer som basis for andre farger i
+                komponentbiblioteket.
+              </Paragraph>
+
               <Table
                 caption="Designtokens for tilleggsfarger"
                 className={moduleStyle.farger__swatchTable}
@@ -556,6 +572,15 @@ const DesignTokensPage: React.FC<PageProps> = () => {
           <Section
             headingText="Interaksjoner (Color / Interaction)"
             className={style.grunnleggende__sdsSection}
+            callToAction={
+              <ButtonLink
+                variant="transparent"
+                icon={<FigmaLogo />}
+                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7968-8516&mode=design&t=luqGyDtXZMLzJTFV-4"
+              >
+                Vis i Figma
+              </ButtonLink>
+            }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
               <Paragraph className="sds-paragraph--max-width">
@@ -656,6 +681,15 @@ const DesignTokensPage: React.FC<PageProps> = () => {
           <Section
             headingText="Tilleggsfarger (Color / Support)"
             className={style.grunnleggende__sdsSection}
+            callToAction={
+              <ButtonLink
+                variant="transparent"
+                icon={<FigmaLogo />}
+                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7899-5888&mode=design&t=luqGyDtXZMLzJTFV-4"
+              >
+                Vis i Figma
+              </ButtonLink>
+            }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
               <Paragraph className="sds-paragraph--max-width">
@@ -731,6 +765,15 @@ const DesignTokensPage: React.FC<PageProps> = () => {
           <Section
             headingText="Layout (Color / Layout)"
             className={style.grunnleggende__sdsSection}
+            callToAction={
+              <ButtonLink
+                variant="transparent"
+                icon={<FigmaLogo />}
+                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7849-9513&mode=design&t=luqGyDtXZMLzJTFV-4"
+              >
+                Vis i Figma
+              </ButtonLink>
+            }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
               <Paragraph className="sds-paragraph--max-width">
@@ -807,6 +850,15 @@ const DesignTokensPage: React.FC<PageProps> = () => {
           <Section
             headingText="Tekstfarger (Color / Text)"
             className={style.grunnleggende__sdsSection}
+            callToAction={
+              <ButtonLink
+                variant="transparent"
+                icon={<FigmaLogo />}
+                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7863-9761&mode=design&t=luqGyDtXZMLzJTFV-4"
+              >
+                Vis i Figma
+              </ButtonLink>
+            }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
               <Paragraph className="sds-paragraph--max-width">

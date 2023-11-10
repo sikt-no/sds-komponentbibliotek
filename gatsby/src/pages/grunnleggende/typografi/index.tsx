@@ -86,7 +86,7 @@ const DesignTokensPage: React.FC<PageProps> = () => {
                 New
               </Paragraph>
 
-              <Notice heading="Note!">
+              <Notice heading="NB!">
                 Dette er ikke avgjort, bare valgt ut ifra dekningsgrad.
               </Notice>
 
