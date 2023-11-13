@@ -11,15 +11,15 @@ echo "{
   \"name\": \"@sikt/sds-$1\",
   \"version\": \"0.1.0\",
   \"license\": \"UNLICENSED\",
-  \"main\": \"dist/cjs/index.js\",
-  \"module\": \"dist/index.js\",
+  \"main\": \"dist/index.js\",
+  \"module\": \"dist/index.mjs\",
   \"types\": \"dist/index.d.ts\",
   \"style\": \"dist/index.css\",
   \"files\": [
     \"dist\"
   ],
   \"scripts\": {
-    \"build\": \"rollup -c ../../rollup.config.mjs\"
+    \"build\": \"tsup\"
   },
   \"dependencies\": {
     \"@sikt/sds-core\": \"^2.2.0\"

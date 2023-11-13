@@ -23,8 +23,8 @@
       "groupName": "react"
     },
     {
-      "matchPackagePatterns": ["rollup"],
-      "groupName": "rollup"
+      "matchPackagePatterns": ["tsup", "esbuild"],
+      "groupName": "esbuild"
     },
     {
       "matchPackagePatterns": ["typescript"],

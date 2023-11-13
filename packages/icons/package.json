@@ -2,8 +2,8 @@
   "name": "@sikt/sds-icons",
   "version": "1.2.0",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "dist/cjs/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "style": "dist/index.css",
   "files": [
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "prebuild": "npm run prepare",
-    "build": "rollup -c ../../rollup.config.mjs",
+    "build": "tsup",
     "build:icons": "node bin/build.mjs",
     "build:components": "svgr -- dist/assets",
     "build:sprite": "svgstore dist/assets/*.svg -o dist/sds-icons.svg",
