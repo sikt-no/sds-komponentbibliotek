@@ -23,7 +23,7 @@ import { SubNav } from "../../../components/SubNav";
 
 export { Head } from "../../../components/Head";
 
-const StorrelserPage: React.FC<PageProps> = () => {
+const StorrelserPage: React.FC<PageProps> = ({ location }) => {
   return (
     <>
       <Hero
@@ -44,7 +44,7 @@ const StorrelserPage: React.FC<PageProps> = () => {
         )}
       >
         <div className={style.grunnleggende__sideNavWrapper}>
-          <SubNav currentHref="/grunnleggende/storrelser/" />
+          <SubNav currentHref={location.pathname} />
         </div>
 
         <div>

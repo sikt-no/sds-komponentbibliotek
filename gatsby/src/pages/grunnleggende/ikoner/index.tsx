@@ -11,7 +11,7 @@ import { colorsHref, SubNav } from "../../../components/SubNav";
 
 export { Head } from "../../../components/Head";
 
-const DesignTokensPage: React.FC<PageProps> = () => {
+const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
   return (
     <>
       <Hero
@@ -32,7 +32,7 @@ const DesignTokensPage: React.FC<PageProps> = () => {
         )}
       >
         <div className={style.grunnleggende__sideNavWrapper}>
-          <SubNav currentHref="/grunnleggende/ikoner/" />
+          <SubNav currentHref={location.pathname} />
         </div>
 
         <div>

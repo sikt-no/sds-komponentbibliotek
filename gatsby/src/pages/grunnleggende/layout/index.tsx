@@ -13,7 +13,7 @@ import { SubNav } from "../../../components/SubNav";
 
 export { Head } from "../../../components/Head";
 
-const LayoutPage: React.FC<PageProps> = () => {
+const LayoutPage: React.FC<PageProps> = ({ location }) => {
   return (
     <>
       <Hero
@@ -34,7 +34,7 @@ const LayoutPage: React.FC<PageProps> = () => {
         )}
       >
         <div className={style.grunnleggende__sideNavWrapper}>
-          <SubNav currentHref="/grunnleggende/layout/" />
+          <SubNav currentHref={location.pathname} />
         </div>
 
         <div>
