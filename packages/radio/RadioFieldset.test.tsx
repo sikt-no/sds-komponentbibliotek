@@ -44,8 +44,11 @@ describe("RadioFieldset", () => {
       );
 
       expect(screen.getByLabelText("Radio 1")).not.toBeChecked();
+      expect(screen.getByLabelText("Radio 1")).not.toHaveAttribute("checked");
       expect(screen.getByLabelText("Radio 2")).toBeChecked();
+      expect(screen.getByLabelText("Radio 2")).toHaveAttribute("checked");
       expect(screen.getByLabelText("Radio 3")).not.toBeChecked();
+      expect(screen.getByLabelText("Radio 3")).not.toHaveAttribute("checked");
     });
 
     it("calls change handler", async () => {
