@@ -3,6 +3,7 @@ import type { StorybookConfig } from "@storybook/react-webpack5";
 import { globbySync } from "globby";
 
 const config: StorybookConfig = {
+  framework: "@storybook/react-webpack5",
   stories: globbySync(
     [
       "../**/*.stories.mdx",
@@ -29,9 +30,8 @@ const config: StorybookConfig = {
     },
     "@whitespace/storybook-addon-html",
   ],
-  framework: {
-    name: "@storybook/react-webpack5",
-    options: {},
+  core: {
+    disableTelemetry: true,
   },
   docs: {
     autodocs: true,
