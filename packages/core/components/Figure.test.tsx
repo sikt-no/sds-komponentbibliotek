@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { Figure } from "./Figure";
 
@@ -18,13 +18,13 @@ describe("Figure", () => {
 
   describe("api", () => {
     it("should have aspect ratio class modifier", async () => {
-      const { container } = render(
+      render(
         <Figure figCaption="foo" aspectRatio="16x9">
           <img src="https://picsum.photos/400/300" alt="bar" />
         </Figure>
       );
 
-      expect(container.querySelector("img")).toHaveClass(
+      expect(screen.getByRole("img")).toHaveClass(
         "sds-figure__figure--ratio-16x9"
       );
     });

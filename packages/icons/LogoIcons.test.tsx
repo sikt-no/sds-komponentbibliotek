@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { XLogo, LinkedInLogo } from "./LogoIcons";
 
@@ -13,9 +13,9 @@ describe("LogoIcons", () => {
     logoIcons.map((logoIcon) => {
       it(`${logoIcon.name} should be accessible`, async () => {
         const { component: Logo } = logoIcon;
-        const { container } = render(<Logo />);
+        const { container } = render(<Logo data-testid="test" />);
 
-        expect(container.querySelector("svg")).toHaveAttribute(
+        expect(screen.getByTestId("test")).toHaveAttribute(
           "aria-hidden",
           "true"
         );
@@ -28,20 +28,18 @@ describe("LogoIcons", () => {
     logoIcons.map((logoIcon) => {
       it(`${logoIcon.name} has variant className`, async () => {
         const { component: Logo } = logoIcon;
-        const { container } = render(<Logo />);
+        render(<Logo data-testid="test" />);
 
-        expect(container.querySelector("svg")).toHaveClass(
-          "sds-icon--color-white"
-        );
+        expect(screen.getByTestId("test")).toHaveClass("sds-icon--color-white");
       });
 
       it(`${logoIcon.name} has custom className`, async () => {
         const { component: Logo } = logoIcon;
-        const { container } = render(
-          <Logo color="black" className="test-class" />
+        render(
+          <Logo color="black" className="test-class" data-testid="test" />
         );
 
-        expect(container.querySelector("svg")).toHaveClass(
+        expect(screen.getByTestId("test")).toHaveClass(
           "sds-icon--color-black test-class"
         );
       });

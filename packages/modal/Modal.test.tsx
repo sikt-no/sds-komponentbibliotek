@@ -163,7 +163,7 @@ describe("Modal", () => {
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 
-  test("setting appElement with Modal.setAppElement will hide it from screen readers ", () => {
+  test("setting appElement with Modal.setAppElement will hide it from screen readers", () => {
     const appElement = document.createElement("div");
     appElement.setAttribute("id", "app");
     document.body.appendChild(appElement);

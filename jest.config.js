@@ -38,6 +38,6 @@ module.exports = {
       "<rootDir>/jest/__mocks__/fileTransformer.js",
   },
   transformIgnorePatterns: ["node_modules/(?!@sikt/*)"],
-  setupFilesAfterEnv: ["<rootDir>/jest/setupTests.ts"],
+  setupFilesAfterEnv: ["<rootDir>/jest/jest.setup.ts"],
   moduleDirectories: ["node_modules", "<rootDir>/"],
 };

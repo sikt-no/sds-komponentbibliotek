@@ -17,13 +17,15 @@ describe("Select", () => {
 
   describe("api", () => {
     it("should render", async () => {
-      const { container } = render(
-        <Select label="Foo" options={[{ label: "Bar", value: "bar" }]} />
+      render(
+        <Select
+          label="Foo"
+          options={[{ label: "Bar", value: "bar" }]}
+          data-testid="test"
+        />
       );
 
-      expect(
-        container.getElementsByClassName("sds-select")[0]
-      ).toBeInTheDocument();
+      expect(screen.getByTestId("test")).toBeInTheDocument();
     });
 
     it("should have set value", async () => {
@@ -35,12 +37,13 @@ describe("Select", () => {
             { label: "Bar", value: "bar" },
           ]}
           value="bar"
+          data-testid="test"
         />
       );
 
       const select = container.getElementsByClassName("sds-select")[0];
 
-      expect(select).toBeInTheDocument();
+      expect(screen.getByTestId("test")).toBeInTheDocument();
       expect(select.querySelector("select")?.value).toBe("bar");
     });
 
@@ -66,11 +69,12 @@ describe("Select", () => {
           label="Foo"
           options={[{ label: "Bar", value: "bar" }]}
           className="test-class-name"
+          data-testid="test"
         />
       );
 
       expect(
-        container.getElementsByClassName("sds-select  test-class-name")[0]
+        container.getElementsByClassName("sds-select test-class-name")[0]
       ).toBeInTheDocument();
     });
 

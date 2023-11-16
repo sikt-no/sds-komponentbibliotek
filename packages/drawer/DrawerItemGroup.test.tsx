@@ -18,13 +18,9 @@ describe("DrawerItemGroup", () => {
   });
 
   describe("api", () => {
-    it("it should render", () => {
+    it("should render", () => {
       render(
-        <DrawerItemGroup
-          expanded
-          data-testid={"test"}
-          heading={"Group heading"}
-        >
+        <DrawerItemGroup expanded data-testid="test" heading="Group heading">
           <DrawerItem>content</DrawerItem>
         </DrawerItemGroup>
       );

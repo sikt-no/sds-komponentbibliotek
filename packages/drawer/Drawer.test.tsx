@@ -14,7 +14,7 @@ describe("Drawer,", () => {
     });
   });
 
-  describe("api ", () => {
+  describe("api", () => {
     it("drawer should render", () => {
       render(
         <Drawer expanded={false} data-testid="test" onOverlayClick={() => {}} />

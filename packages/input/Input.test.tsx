@@ -38,11 +38,9 @@ describe("Input", () => {
     inputTypes.map((inputType) => {
       it(`${inputType.name} should render`, async () => {
         const { name, component: Input } = inputType;
-        const { container } = render(<Input label={name} />);
+        render(<Input label={name} data-testid="test" />);
 
-        expect(
-          container.getElementsByClassName(`sds-input sds-input--${name}`)[0]
-        ).toBeInTheDocument();
+        expect(screen.getByTestId("test")).toBeInTheDocument();
         expect(screen.getByText(name)).toBeInTheDocument();
       });
     });
@@ -62,7 +60,7 @@ describe("Input", () => {
 
     it("should have class name", async () => {
       const { container } = render(
-        <TextInput label="Foo" className="test-class-name" />
+        <TextInput label="Foo" className="test-class-name" data-testid="test" />
       );
 
       expect(
@@ -103,25 +101,21 @@ describe("Input", () => {
     });
 
     it("should have icon element", async () => {
-      const { container } = render(<TextInput label="Foo" icon="icon" />);
+      render(<TextInput label="Foo" icon="icon" />);
 
-      expect(
-        container.getElementsByClassName("sds-input__icon")[0]
-      ).toBeInTheDocument();
+      expect(screen.getByText("icon")).toBeInTheDocument();
     });
 
     it("should have action element", async () => {
-      const { container } = render(
+      render(
         <SearchInput
           label="Foo"
           data-testid="test"
-          actionProps={{ label: "Test label" }}
+          actionProps={{ label: "action" }}
         />
       );
 
-      const action = container.getElementsByClassName("sds-input__action")[0];
-      expect(action).toBeInTheDocument();
-      expect(action).toHaveAccessibleName("Test label");
+      expect(screen.getByLabelText("action")).toBeInTheDocument();
     });
   });
 });

@@ -31,31 +31,27 @@ describe("Accordion", () => {
     });
 
     it("renders the component with the given title and content", () => {
-      const { getByText } = render(
-        <Accordion title="Accordion header">Content</Accordion>
-      );
-      expect(getByText("Accordion header")).toBeInTheDocument();
-      expect(getByText("Content")).toBeInTheDocument();
+      render(<Accordion title="Accordion header">Content</Accordion>);
+      expect(screen.getByText("Accordion header")).toBeInTheDocument();
+      expect(screen.getByText("Content")).toBeInTheDocument();
     });
 
     it("toggles the content when the accordion title is clicked", async () => {
       const user = userEvent.setup();
       const label = "Accordion header";
       const content = "Accordion Content";
-      const { getByText } = render(
-        <Accordion title={label}>{content}</Accordion>
-      );
-      const labelNode = getByText(label);
+      render(<Accordion title={label}>{content}</Accordion>);
+      const labelNode = screen.getByText(label);
 
       await act(async () => {
         await user.click(labelNode);
       });
-      expect(getByText(content)).toBeVisible();
+      expect(screen.getByText(content)).toBeVisible();
 
       await act(async () => {
         await user.click(labelNode);
       });
-      expect(getByText(content)).not.toBeVisible();
+      expect(screen.getByText(content)).not.toBeVisible();
     });
 
     it("calls click handler", async () => {

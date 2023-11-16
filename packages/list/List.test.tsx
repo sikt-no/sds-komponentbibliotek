@@ -61,8 +61,8 @@ describe("List", () => {
     });
 
     it("description list should render", async () => {
-      const { container } = render(
-        <DescriptionList>
+      render(
+        <DescriptionList data-testid="test">
           <DescriptionTerm>Foo</DescriptionTerm>
           <DescriptionDetails>Bar</DescriptionDetails>
         </DescriptionList>
@@ -70,37 +70,33 @@ describe("List", () => {
 
       expect(screen.getByText("Foo")).toBeInTheDocument();
       expect(screen.getByText("Bar")).toBeInTheDocument();
-      expect(container.querySelector("dl")).toHaveClass("sds-description-list");
+      expect(screen.getByTestId("test")).toHaveClass("sds-description-list");
     });
 
     it("unordered list should have element & modifier class", async () => {
-      const { container } = render(
-        <UnorderedList>
+      render(
+        <UnorderedList data-testid="test">
           <ListItem>Foo</ListItem>
           <ListItem>Bar</ListItem>
           <ListItem>Baz</ListItem>
         </UnorderedList>
       );
 
-      expect(container.querySelector("ul")).toHaveClass("sds-list--unordered");
-      expect(container.querySelector("ul")).not.toHaveClass(
-        "sds-list--ordered"
-      );
+      expect(screen.getByTestId("test")).toHaveClass("sds-list--unordered");
+      expect(screen.getByTestId("test")).not.toHaveClass("sds-list--ordered");
     });
 
     it("ordered list should have element & modifier class", async () => {
-      const { container } = render(
-        <OrderedList>
+      render(
+        <OrderedList data-testid="test">
           <ListItem>Foo</ListItem>
           <ListItem>Bar</ListItem>
           <ListItem>Baz</ListItem>
         </OrderedList>
       );
 
-      expect(container.querySelector("ol")).toHaveClass("sds-list--ordered");
-      expect(container.querySelector("ol")).not.toHaveClass(
-        "sds-list--unordered"
-      );
+      expect(screen.getByTestId("test")).toHaveClass("sds-list--ordered");
+      expect(screen.getByTestId("test")).not.toHaveClass("sds-list--unordered");
     });
   });
 });
