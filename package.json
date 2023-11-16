@@ -36,7 +36,9 @@
     "storybook:build": "npm run build:prod --workspace=storybook",
     "gatsby": "npm run develop --workspace=gatsby",
     "gatsby:build": "npm run build:prod --workspace=gatsby",
-    "test": "jest"
+    "test": "npm run test:unit",
+    "test:unit": "jest",
+    "test:e2e": "playwright test"
   },
   "browserslist": [
     ">0.2% in NO",
@@ -53,8 +55,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.8.1",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@playwright/test": "^1.40.0",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.1",

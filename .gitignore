@@ -1,16 +1,33 @@
+# ide
 .vscode
 .idea
 .iml
+
+# file system
 .DS_Store
 
+# dependencies
 node_modules
 .npm
-*.log
-.env.local
 
+# logs
+*.log
+
+# local env files
+.env*.local
+
+# testing
 coverage
 junit.xml
+/playwright
+**/playwright/**/*-snapshots/*
+!**/playwright/**/*-snapshots/*-linux.*
+
+# cache
+.cache
+.turbo
+
+# build
 build
 dist
 storybook-static
-.turbo

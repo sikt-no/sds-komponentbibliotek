@@ -82,11 +82,11 @@ PostCSS is used to allow usage of future CSS specs, like [nesting modules](https
 
 Write unit tests for component APIs & features to make it easier to make future changes and build trust with consumers. Currently we have an [80% coverage rule](./jest.config.js). Make sure to test the important things!
 
-_TODO: Screenshot testing with Playwright._
+Write visual regression tests for components with [Playwright](https://playwright.dev/).
 
 #### Build
 
-Export components as both CSS & React components, with [Rollup](https://rollupjs.org/), to allow use of both custom markup & React.  
+Export components as both CSS & React components, with [tsup](https://tsup.egoist.dev/), to allow use of both custom markup & React.  
 Build all packages with `npm run build` from root.
 
 ### Setup
@@ -113,7 +113,7 @@ npm run init --package=<package-name>
 
 If you have custom build needs, the build script and entry points may vary.  
 Run `npm i` in root to hoist dependencies.  
-Export the component from `index.ts` as this is the input for the [build](./rollup.config.mjs).  
+Export the component from `index.ts` as this is the input for the [build](./tsup.config.mjs).  
 Create a `README.md` for documentation both near code and for import in Storybook.  
 Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
 
@@ -134,6 +134,25 @@ Keep the history clean with one single commit per feature.
 
 ℹ️ _Tip:_ Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 
+#### Test
+
+To generate local visual regression test screenshots before you begin working run:
+
+```sh
+npm run test:e2e
+```
+
+To generate baseline screenshot for the CI environment after you are done working run:
+
+```sh
+docker run --rm --network host -v $(pwd):/work/ -w /work/ -it node:20 /bin/bash
+npm install
+npx playwright install --with-deps
+CI=true npx playwright test --update-snapshots
+```
+
+**Note** This should only be done when you add new components or you have made changes to existing ones and have verified everything is correct!
+
 #### Merge request
 
 Create a merge request & wait for a required code review before merging to `main`.  
@@ -152,7 +171,7 @@ Bump package versions & generate change log based on commit history with [Standa
 npm run release --package=<package-name>
 ```
 
-**Note** You can always edit the changelog and commit before pushing if need be.
+**Note** You can always edit the changelog and commit before pushing if need be. Just remember to delete the generated tag and create a new one since it will be pointing to the wrong commit hash.
 
 Push tags:
 

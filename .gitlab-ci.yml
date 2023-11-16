@@ -51,7 +51,7 @@ lint:
   except:
     - schedules
 
-test:
+test-unit:
   stage: test
   extends: .npm_cache
   script:
@@ -67,6 +67,25 @@ test:
       coverage_report:
         coverage_format: cobertura
         path: coverage/cobertura-coverage.xml
+  needs:
+    - install
+  except:
+    - schedules
+
+test-e2e:
+  stage: test
+  #  image: mcr.microsoft.com/playwright:v1.40.0-jammy
+  extends: .npm_cache
+  script:
+    - npm pkg delete scripts.prepare
+    - npm ci
+    - npx playwright install --with-deps
+    - npm run test:e2e
+  artifacts:
+    paths:
+      - playwright/
+    expire_in: 1 days
+    when: on_failure
   needs:
     - install
   except:

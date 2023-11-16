@@ -90,3 +90,20 @@ import Readme from \"../README.md?raw\";
 <Meta title=\"Components/$capitalName/$capitalName\" />
 
 <Markdown>{Readme}</Markdown>" >> stories/$capitalName.stories.mdx
+
+mkdir playwright
+touch playwright/$capitalName.spec.ts
+echo "import { test, expect } from \"@playwright/test\";
+import AxeBuilder from \"@axe-core/playwright\";
+
+test.describe(\"$capitalName\", () => {
+  const componentSelector = \".sds-$1\";
+
+  test.describe(\"a11y\", () => {
+    /* tests goes here */
+  });
+
+  test.describe(\"visual\", () => {
+    /* tests goes here */
+  });
+});" >> playwright/$capitalName.spec.ts
