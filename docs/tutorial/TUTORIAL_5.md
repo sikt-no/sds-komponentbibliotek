@@ -26,4 +26,4 @@ Then move them to `peerDependencies`
 
 #### Add component documentation
 
-💡️ _Hint:_ See `./packages/__example__/` for Example component
+💡️ _Hint:_ See `./docs/tutorial/__example__/` for Example component

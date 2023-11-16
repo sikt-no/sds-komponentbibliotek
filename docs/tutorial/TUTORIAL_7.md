@@ -18,4 +18,4 @@
 npm t -- ConfettiButton.test.tsx --collectCoverageFrom=./packages/confetti-button/ConfettiButton.tsx
 ```
 
-💡️ _Hint:_ See `./packages/__example__/` for Example component
+💡️ _Hint:_ See `./docs/tutorial/__example__/` for Example component

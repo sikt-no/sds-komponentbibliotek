@@ -6,7 +6,7 @@ const config: StorybookConfig = {
   stories: globbySync(
     [
       "../**/*.stories.mdx",
-      "../../packages/!(__example__)**/*.stories.mdx",
+      "../../packages/**/*.stories.mdx",
       "../../packages/**/*.stories.@(js|jsx|ts|tsx)",
     ],
     { cwd: "./.storybook" }

@@ -103,7 +103,7 @@ Open an issue on Gitlab and/or talk to us. We are here to help!
 ### Creating a new component
 
 See [Tutorial](./docs/tutorial/TUTORIAL.md) for a interactive tutorial on how to build your own component.  
-See [Example](./packages/__example__) component for base setup.
+See [Example](./docs/tutorial/__example__) component for base setup.
 
 Initialize a package:
 

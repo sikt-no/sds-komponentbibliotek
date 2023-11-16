@@ -142,8 +142,6 @@ packages:
       - packages/**/*.png
       - packages/**/*.svg
       - packages/**/index.js
-    exclude:
-      - packages/__example__/*
   needs:
     - install
   except:

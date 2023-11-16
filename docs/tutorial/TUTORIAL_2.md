@@ -21,4 +21,4 @@ npm run storybook
 - [Readme](README.md)
 - [Contributing](CONTRIBUTING.md)
 
-💡️ _Hint:_ See `./packages/__example__/` for Example component
+💡️ _Hint:_ See `./docs/tutorial/__example__/` for Example component
