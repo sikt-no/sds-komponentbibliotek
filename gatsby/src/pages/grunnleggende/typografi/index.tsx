@@ -157,6 +157,9 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                       : tokens.typography.weight.bold.value;
                     const lineHeight =
                       tokens.typography.heading[`lineheight-${item}`].value;
+                    const textTransform = ["overline"].includes(item)
+                      ? "uppercase"
+                      : "unset";
 
                     const tabletFontSize =
                       tablet.typography.heading[`fontsize-${item}`]?.value ??
@@ -181,6 +184,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                             fontSize,
                             fontWeight,
                             lineHeight,
+                            textTransform,
                           }}
                         >
                           Aa
@@ -192,6 +196,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                             fontSize: tabletFontSize,
                             fontWeight,
                             lineHeight: tabletLineHeight,
+                            textTransform,
                           }}
                         >
                           Aa
@@ -203,6 +208,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                             fontSize: desktopFontSize,
                             fontWeight,
                             lineHeight: desktopLineHeight,
+                            textTransform,
                           }}
                         >
                           Aa
