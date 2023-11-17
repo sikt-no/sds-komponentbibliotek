@@ -3,6 +3,13 @@
     background-image: url("/images/grunnleggende/typografi/hero.png");
   }
 
+  &__font-table {
+    [data-color-scheme] {
+      background-color: var(--sds-color-layout-background-default);
+      color: var(--sds-color-text-primary);
+    }
+  }
+
   &__font {
     &--arial {
       font-family: Arial, sans-serif;

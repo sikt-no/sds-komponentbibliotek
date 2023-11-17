@@ -17,6 +17,9 @@ import {
   TableBody,
   TableCell,
 } from "@sikt/sds-table";
+import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
+import * as tablet from "@sikt/sds-tokens/dist/js/tokens.tablet.js";
+import * as desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.js";
 
 export { Head } from "../../../components/Head";
 
@@ -119,11 +122,22 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                 skjermstørrelsen.
               </Paragraph>
 
-              <Table caption="Typografi for overskrifter">
+              <Table
+                caption="Typografi for overskrifter"
+                className={moduleStyle.typografi__fontTable}
+              >
                 <TableHead>
                   <TableRow>
                     <TableHeader>Navn</TableHeader>
-                    <TableHeader>Verdi</TableHeader>
+                    <TableHeader data-color-scheme="light">
+                      Verdi @ mobil
+                    </TableHeader>
+                    <TableHeader data-color-scheme="light">
+                      Verdi @ nettbrett
+                    </TableHeader>
+                    <TableHeader data-color-scheme="light">
+                      Verdi @ datamaskin
+                    </TableHeader>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -136,12 +150,60 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                     "paragraph",
                     "overline",
                   ].map((item) => {
+                    const fontSize =
+                      tokens.typography.heading[`fontsize-${item}`].value;
+                    const fontWeight = ["medium", "small"].includes(item)
+                      ? tokens.typography.weight.regular.value
+                      : tokens.typography.weight.bold.value;
+                    const lineHeight =
+                      tokens.typography.heading[`lineheight-${item}`].value;
+
+                    const tabletFontSize =
+                      tablet.typography.heading[`fontsize-${item}`]?.value ??
+                      fontSize;
+                    const tabletLineHeight =
+                      tablet.typography.heading[`lineheight-${item}`]?.value ??
+                      lineHeight;
+
+                    const desktopFontSize =
+                      desktop.typography.heading[`fontsize-${item}`]?.value ??
+                      tabletFontSize;
+                    const desktopLineHeight =
+                      desktop.typography.heading[`lineheight-${item}`]?.value ??
+                      tabletLineHeight;
                     return (
                       <TableRow key={item}>
                         <TableCell data-th="Navn">{item}</TableCell>
                         <TableCell
-                          data-th="Verdi"
-                          className={`sds-typography-heading--${item}`}
+                          data-th="Verdi @ mobil"
+                          data-color-scheme="light"
+                          style={{
+                            fontSize,
+                            fontWeight,
+                            lineHeight,
+                          }}
+                        >
+                          Aa
+                        </TableCell>
+                        <TableCell
+                          data-th="Verdi @ nettbrett"
+                          data-color-scheme="light"
+                          style={{
+                            fontSize: tabletFontSize,
+                            fontWeight,
+                            lineHeight: tabletLineHeight,
+                          }}
+                        >
+                          Aa
+                        </TableCell>
+                        <TableCell
+                          data-th="Verdi @ datamaskin"
+                          data-color-scheme="light"
+                          style={{
+                            fontSize: desktopFontSize,
+                            fontWeight,
+                            lineHeight: desktopLineHeight,
+                          }}
                         >
                           Aa
                         </TableCell>
@@ -162,11 +224,14 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                 Brødtekst er den vanlige løpende teksten.
               </Paragraph>
 
-              <Table caption="Typografi for brødtekst">
+              <Table
+                caption="Typografi for brødtekst"
+                className={moduleStyle.typografi__fontTable}
+              >
                 <TableHead>
                   <TableRow>
                     <TableHeader>Navn</TableHeader>
-                    <TableHeader>Verdi</TableHeader>
+                    <TableHeader data-color-scheme="light">Verdi</TableHeader>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -186,6 +251,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                         <TableCell
                           data-th="Verdi"
                           className={`sds-typography-body--${item}`}
+                          data-color-scheme="light"
                         >
                           Aa
                         </TableCell>

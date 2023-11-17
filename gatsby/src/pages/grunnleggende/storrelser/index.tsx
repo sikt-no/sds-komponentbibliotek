@@ -16,6 +16,8 @@ import {
   TableCell,
 } from "@sikt/sds-table";
 import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
+import * as tablet from "@sikt/sds-tokens/dist/js/tokens.tablet.js";
+import * as desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.js";
 import { Nut } from "@phosphor-icons/react";
 import { Badge } from "@sikt/sds-badge";
 import { Token } from "../../../components/Token";
@@ -69,9 +71,7 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                 <TableHead>
                   <TableRow>
                     <TableHeader>Navn</TableHeader>
-                    <TableHeader>Verdi @ mobile</TableHeader>
-                    <TableHeader>Verdi @ tablet</TableHeader>
-                    <TableHeader>Verdi @ desktop</TableHeader>
+                    <TableHeader>Verdi</TableHeader>
                     <TableHeader>Token</TableHeader>
                   </TableRow>
                 </TableHead>
@@ -80,13 +80,7 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                     return (
                       <TableRow key={token[1].name}>
                         <TableCell data-th="Navn">{token[0]}</TableCell>
-                        <TableCell data-th="Verdi @ mobile">
-                          <Token token={token[1]} />
-                        </TableCell>
-                        <TableCell data-th="Verdi @ tablet">
-                          <Token token={token[1]} />
-                        </TableCell>
-                        <TableCell data-th="Verdi @ desktop">
+                        <TableCell data-th="Verdi">
                           <Token token={token[1]} />
                         </TableCell>
                         <TableCell data-th="Token">
@@ -136,10 +130,16 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                           <Token token={token[1]} />
                         </TableCell>
                         <TableCell data-th="Verdi @ tablet">
-                          <Token token={token[1]} />
+                          <Token
+                            token={tablet.space.padding?.[token[0]] ?? token[1]}
+                          />
                         </TableCell>
                         <TableCell data-th="Verdi @ desktop">
-                          <Token token={token[1]} />
+                          <Token
+                            token={
+                              desktop.space.padding?.[token[0]] ?? token[1]
+                            }
+                          />
                         </TableCell>
                         <TableCell data-th="Token">
                           <Badge visibility="strong" icon={<Nut />}>
@@ -187,10 +187,14 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                           <Token token={token[1]} />
                         </TableCell>
                         <TableCell data-th="Verdi @ tablet">
-                          <Token token={token[1]} />
+                          <Token
+                            token={tablet.space.gap?.[token[0]] ?? token[1]}
+                          />
                         </TableCell>
                         <TableCell data-th="Verdi @ desktop">
-                          <Token token={token[1]} />
+                          <Token
+                            token={desktop.space.gap?.[token[0]] ?? token[1]}
+                          />
                         </TableCell>
                         <TableCell data-th="Token">
                           <Badge visibility="strong" icon={<Nut />}>
@@ -234,10 +238,20 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                           <Token token={token[1]} />
                         </TableCell>
                         <TableCell data-th="Verdi @ tablet">
-                          <Token token={token[1]} />
+                          <Token
+                            token={
+                              tablet.space.border?.weight?.[token[0]] ??
+                              token[1]
+                            }
+                          />
                         </TableCell>
                         <TableCell data-th="Verdi @ desktop">
-                          <Token token={token[1]} />
+                          <Token
+                            token={
+                              desktop.space.border?.weight?.[token[0]] ??
+                              token[1]
+                            }
+                          />
                         </TableCell>
                         <TableCell data-th="Token">
                           <Badge visibility="strong" icon={<Nut />}>
@@ -280,10 +294,20 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                           <Token token={token[1]} />
                         </TableCell>
                         <TableCell data-th="Verdi @ tablet">
-                          <Token token={token[1]} />
+                          <Token
+                            token={
+                              tablet.space.border?.radius?.[token[0]] ??
+                              token[1]
+                            }
+                          />
                         </TableCell>
                         <TableCell data-th="Verdi @ desktop">
-                          <Token token={token[1]} />
+                          <Token
+                            token={
+                              desktop.space.border?.radius?.[token[0]] ??
+                              token[1]
+                            }
+                          />
                         </TableCell>
                         <TableCell data-th="Token">
                           <Badge visibility="strong" icon={<Nut />}>
