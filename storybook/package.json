@@ -20,7 +20,7 @@
     "@storybook/testing-library": "^0.2.2",
     "@svgr/webpack": "^8.1.0",
     "@whitespace/storybook-addon-html": "^5.1.6",
-    "globby": "^13.2.2",
+    "globby": "^14.0.0",
     "prop-types": "^15.8.1",
     "react-syntax-highlighter": "^15.5.0",
     "storybook": "^7.5.2"
