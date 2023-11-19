@@ -152,14 +152,8 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   ].map((item) => {
                     const fontSize =
                       tokens.typography.heading[`fontsize-${item}`].value;
-                    const fontWeight = ["medium", "small"].includes(item)
-                      ? tokens.typography.weight.regular.value
-                      : tokens.typography.weight.bold.value;
                     const lineHeight =
                       tokens.typography.heading[`lineheight-${item}`].value;
-                    const textTransform = ["overline"].includes(item)
-                      ? "uppercase"
-                      : "unset";
 
                     const tabletFontSize =
                       tablet.typography.heading[`fontsize-${item}`]?.value ??
@@ -179,36 +173,33 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                         <TableCell data-th="Navn">{item}</TableCell>
                         <TableCell
                           data-th="Verdi @ mobil"
+                          className={`sds-typography-heading--${item}`}
                           data-color-scheme="light"
                           style={{
                             fontSize,
-                            fontWeight,
                             lineHeight,
-                            textTransform,
                           }}
                         >
                           Aa
                         </TableCell>
                         <TableCell
                           data-th="Verdi @ nettbrett"
+                          className={`sds-typography-heading--${item}`}
                           data-color-scheme="light"
                           style={{
                             fontSize: tabletFontSize,
-                            fontWeight,
                             lineHeight: tabletLineHeight,
-                            textTransform,
                           }}
                         >
                           Aa
                         </TableCell>
                         <TableCell
                           data-th="Verdi @ datamaskin"
+                          className={`sds-typography-heading--${item}`}
                           data-color-scheme="light"
                           style={{
                             fontSize: desktopFontSize,
-                            fontWeight,
                             lineHeight: desktopLineHeight,
-                            textTransform,
                           }}
                         >
                           Aa
