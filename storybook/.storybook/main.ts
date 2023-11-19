@@ -10,7 +10,7 @@ const config: StorybookConfig = {
       "../../packages/**/*.stories.mdx",
       "../../packages/**/*.stories.@(js|jsx|ts|tsx)",
     ],
-    { cwd: "./.storybook" }
+    { cwd: "./.storybook" },
   ),
   addons: [
     "@storybook/addon-links",
@@ -28,7 +28,8 @@ const config: StorybookConfig = {
         },
       },
     },
-    "@whitespace/storybook-addon-html",
+    // TODO: add agian when issue is fixed https://github.com/whitespace-se/storybook-addon-html/issues/104
+    // "@whitespace/storybook-addon-html",
   ],
   core: {
     disableTelemetry: true,
