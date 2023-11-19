@@ -24,11 +24,11 @@ describe("ScreenReaderOnly", () => {
       render(
         <ScreenReaderOnly className="test-class-name" data-testid="test">
           Foo
-        </ScreenReaderOnly>
+        </ScreenReaderOnly>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-screen-reader-only test-class-name"
+        "sds-screen-reader-only test-class-name",
       );
     });
 
@@ -36,11 +36,11 @@ describe("ScreenReaderOnly", () => {
       render(
         <ScreenReaderOnly isFocusable data-testid="test">
           Foo
-        </ScreenReaderOnly>
+        </ScreenReaderOnly>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-screen-reader-only sds-screen-reader-only--focusable"
+        "sds-screen-reader-only sds-screen-reader-only--focusable",
       );
     });
   });

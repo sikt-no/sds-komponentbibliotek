@@ -24,7 +24,7 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
     { className, label, options, errorText, helpText, icon, onChange, ...rest },
-    ref
+    ref,
   ) => {
     const id = useId();
     const helpTextId = `${id}-help-text`;
@@ -35,7 +35,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           "sds-select",
           icon && "sds-select--icon",
           errorText && "sds-select--invalid",
-          className
+          className,
         )}
         label={label}
         errorText={errorText}
@@ -67,6 +67,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         </div>
       </FormField>
     );
-  }
+  },
 );
 Select.displayName = "Select";

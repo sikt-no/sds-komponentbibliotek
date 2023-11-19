@@ -75,7 +75,7 @@ export const Tabs = ({
                   child as ReactElement<TabPanelProps & { index: number }>,
                   {
                     index: index - 1,
-                  }
+                  },
                 )}
               </>
             );

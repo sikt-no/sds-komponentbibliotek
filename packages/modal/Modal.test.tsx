@@ -19,7 +19,7 @@ describe("Modal", () => {
           footer={<button key="primary">Click me!</button>}
         >
           <p>Modal content</p>
-        </Modal>
+        </Modal>,
       );
       await act(async () => {
         expect(await axe(container)).toHaveNoViolations();
@@ -39,7 +39,7 @@ describe("Modal", () => {
         aria-label={ariaLabel}
       >
         <p>Modal content</p>
-      </Modal>
+      </Modal>,
     );
     const modalElement = screen.getByRole("dialog");
     expect(modalElement).toHaveAttribute("aria-label", ariaLabel);
@@ -61,7 +61,7 @@ describe("Modal", () => {
         open
       >
         <p>Modal content</p>
-      </Modal>
+      </Modal>,
     );
     const modalElement = screen.getByRole("dialog");
     const headingsId = screen.getByTestId("headings").id;
@@ -86,7 +86,7 @@ describe("Modal", () => {
         footer={[<button key="primary">Click me!</button>]}
       >
         <p>Modal Content</p>
-      </Modal>
+      </Modal>,
     );
 
     // Check if the heading is rendered correctly
@@ -127,7 +127,7 @@ describe("Modal", () => {
         footer={[<button key="primary">Click me!</button>]}
       >
         <p>Modal Content</p>
-      </Modal>
+      </Modal>,
     );
 
     // Check that close button is not rendered
@@ -153,7 +153,7 @@ describe("Modal", () => {
         heading="Test heading"
       >
         <p>Modal Content</p>
-      </Modal>
+      </Modal>,
     );
 
     await act(async () => {
@@ -178,7 +178,7 @@ describe("Modal", () => {
         heading="Example heading"
       >
         <p>Modal content</p>
-      </Modal>
+      </Modal>,
     );
 
     expect(appElement).toHaveAttribute("aria-hidden", "true");

@@ -81,7 +81,7 @@ const IndexPage: React.FC<PageProps> = () => {
         className={clsx(
           style.index__section,
           style.index__sectionTabletGrid2,
-          style.index__sectionDesktopGrid3
+          style.index__sectionDesktopGrid3,
         )}
       >
         <Card
@@ -143,7 +143,7 @@ const IndexPage: React.FC<PageProps> = () => {
           style.index__section,
           style.index__sectionPrimary,
           style.index__sectionTabletGrid2,
-          style.index__sectionTabletReverse
+          style.index__sectionTabletReverse,
         )}
       >
         <div className={style.index__sectionContent}>

@@ -16,7 +16,7 @@ describe("HelpText", () => {
     it("help text should render", async () => {
       render(<HelpText data-testid="test">Foo</HelpText>);
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__help-text"
+        "sds-form-field__help-text",
       );
       expect(screen.getByTestId("test")).toBeInTheDocument();
       expect(screen.getByText("Foo")).toBeInTheDocument();
@@ -26,11 +26,11 @@ describe("HelpText", () => {
       render(
         <HelpText data-testid="test" className="test-class-name">
           Foo
-        </HelpText>
+        </HelpText>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__help-text test-class-name"
+        "sds-form-field__help-text test-class-name",
       );
     });
 
@@ -38,12 +38,12 @@ describe("HelpText", () => {
       render(
         <HelpText error data-testid="test">
           Error
-        </HelpText>
+        </HelpText>,
       );
 
       expect(screen.getByText("Error")).toBeInTheDocument();
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__help-text--error"
+        "sds-form-field__help-text--error",
       );
     });
   });

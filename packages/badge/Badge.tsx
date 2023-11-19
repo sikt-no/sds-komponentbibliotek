@@ -24,7 +24,7 @@ export const Badge = ({
         "sds-badge",
         `sds-badge--${variant}`,
         `sds-badge--visibility-${visibility}`,
-        className
+        className,
       )}
       {...rest}
     >

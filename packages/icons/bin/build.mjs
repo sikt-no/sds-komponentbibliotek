@@ -7,16 +7,16 @@ icons.push(
     .filter((icon) => !icon.endsWith("-fill"))
     .map(
       (icon) =>
-        `../../node_modules/@phosphor-icons/core/assets/regular/${icon}.svg`
-    )
+        `../../node_modules/@phosphor-icons/core/assets/regular/${icon}.svg`,
+    ),
 );
 icons.push(
   ...config
     .filter((icon) => icon.endsWith("-fill"))
     .map(
       (icon) =>
-        `../../node_modules/@phosphor-icons/core/assets/fill/${icon}.svg`
-    )
+        `../../node_modules/@phosphor-icons/core/assets/fill/${icon}.svg`,
+    ),
 );
 
 cpy(icons, "dist/assets", { flat: true });

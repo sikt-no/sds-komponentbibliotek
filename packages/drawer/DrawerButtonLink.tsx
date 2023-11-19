@@ -22,7 +22,7 @@ export const DrawerButtonLink = forwardRef<
       children,
       ...rest
     }: DrawerButtonLinkProps,
-    ref
+    ref,
   ) => {
     return (
       <a
@@ -40,7 +40,7 @@ export const DrawerButtonLink = forwardRef<
         )}
       </a>
     );
-  }
+  },
 );
 
 DrawerButtonLink.displayName = "DrawerButtonLink";

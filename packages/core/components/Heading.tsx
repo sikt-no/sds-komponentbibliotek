@@ -33,7 +33,7 @@ export const Heading = ({
       className={clsx(
         "sds-typography-heading",
         `sds-typography-heading--${variant}`,
-        className
+        className,
       )}
       {...rest}
     >

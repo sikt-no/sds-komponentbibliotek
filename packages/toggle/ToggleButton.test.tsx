@@ -25,7 +25,7 @@ describe("Toggle Switch", () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
       render(
-        <ToggleButton onChange={(val) => changeHandler(val)} label="Foo" />
+        <ToggleButton onChange={(val) => changeHandler(val)} label="Foo" />,
       );
 
       const label = screen.getByLabelText("Foo");

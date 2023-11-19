@@ -21,7 +21,7 @@ describe("List", () => {
             <ListItem>Foo</ListItem>
             <ListItem>Bar</ListItem>
             <ListItem>Baz</ListItem>
-          </List>
+          </List>,
         );
 
         expect(await axe(container)).toHaveNoViolations();
@@ -33,7 +33,7 @@ describe("List", () => {
         <DescriptionList>
           <DescriptionTerm>Foo</DescriptionTerm>
           <DescriptionDetails>Bar</DescriptionDetails>
-        </DescriptionList>
+        </DescriptionList>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -49,7 +49,7 @@ describe("List", () => {
             <ListItem>Foo</ListItem>
             <ListItem>Bar</ListItem>
             <ListItem>Baz</ListItem>
-          </List>
+          </List>,
         );
 
         expect(screen.getByText("Foo")).toBeInTheDocument();
@@ -65,7 +65,7 @@ describe("List", () => {
         <DescriptionList data-testid="test">
           <DescriptionTerm>Foo</DescriptionTerm>
           <DescriptionDetails>Bar</DescriptionDetails>
-        </DescriptionList>
+        </DescriptionList>,
       );
 
       expect(screen.getByText("Foo")).toBeInTheDocument();
@@ -79,7 +79,7 @@ describe("List", () => {
           <ListItem>Foo</ListItem>
           <ListItem>Bar</ListItem>
           <ListItem>Baz</ListItem>
-        </UnorderedList>
+        </UnorderedList>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass("sds-list--unordered");
@@ -92,7 +92,7 @@ describe("List", () => {
           <ListItem>Foo</ListItem>
           <ListItem>Bar</ListItem>
           <ListItem>Baz</ListItem>
-        </OrderedList>
+        </OrderedList>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass("sds-list--ordered");

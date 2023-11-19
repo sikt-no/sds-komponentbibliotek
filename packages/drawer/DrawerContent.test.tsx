@@ -9,7 +9,7 @@ describe("DrawerContent,", () => {
       const { container } = render(
         <DrawerContent>
           <p>content</p>
-        </DrawerContent>
+        </DrawerContent>,
       );
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -19,7 +19,7 @@ describe("DrawerContent,", () => {
       render(
         <DrawerContent data-testid={"test"}>
           <p>content</p>
-        </DrawerContent>
+        </DrawerContent>,
       );
       expect(screen.getByTestId("test")).toHaveClass("sds-drawer-content");
     });

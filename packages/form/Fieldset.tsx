@@ -21,13 +21,13 @@ export interface FieldsetProps extends HTMLAttributes<HTMLFieldSetElement> {
 export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
   (
     { className, legend, name, errorText, helpText, children, ...rest },
-    ref
+    ref,
   ) => {
     const id = useId();
 
     const context = useMemo(
       () => ({ name: name ?? id, error: Boolean(errorText) }),
-      [name, errorText]
+      [name, errorText],
     );
 
     return (
@@ -37,7 +37,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
           className={clsx(
             "sds-form-fieldset",
             errorText && "sds-form-fieldset--error",
-            className
+            className,
           )}
           aria-describedby={`${id}-help-text`}
           aria-invalid={Boolean(errorText)}
@@ -57,6 +57,6 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
         </fieldset>
       </FieldsetContext.Provider>
     );
-  }
+  },
 );
 Fieldset.displayName = "Fieldset";

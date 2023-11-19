@@ -29,7 +29,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
       error,
       ...rest
     },
-    ref
+    ref,
   ) => {
     const id = useId();
     const context = useFieldset() ?? {};
@@ -38,7 +38,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
         className={clsx(
           "sds-checkbox",
           (error ?? context.error) && "sds-checkbox--error",
-          className
+          className,
         )}
         htmlFor={id}
       >
@@ -61,6 +61,6 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
         <div className="sds-checkbox__input-label">{label}</div>
       </label>
     );
-  }
+  },
 );
 CheckboxInput.displayName = "CheckboxInput";

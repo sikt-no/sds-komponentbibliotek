@@ -32,7 +32,7 @@ const BasicsPage: React.FC<PageProps> = () => {
       <section
         className={clsx(
           style.grunnleggende__section,
-          style.grunnleggende__sectionDesktop1x4
+          style.grunnleggende__sectionDesktop1x4,
         )}
       >
         <div className={style.grunnleggende__sideNavWrapper}>

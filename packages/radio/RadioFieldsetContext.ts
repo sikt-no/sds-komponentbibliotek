@@ -18,6 +18,6 @@ export default function useRadioFieldset():
 
   return useMemo(
     () => ({ ...fieldsetContext, ...radioFieldsetContext }),
-    [fieldsetContext, radioFieldsetContext]
+    [fieldsetContext, radioFieldsetContext],
   );
 }

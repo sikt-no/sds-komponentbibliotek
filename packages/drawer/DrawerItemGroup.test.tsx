@@ -10,7 +10,7 @@ describe("DrawerItemGroup", () => {
       const { container } = render(
         <DrawerItemGroup expanded>
           <DrawerItem>content</DrawerItem>
-        </DrawerItemGroup>
+        </DrawerItemGroup>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -22,7 +22,7 @@ describe("DrawerItemGroup", () => {
       render(
         <DrawerItemGroup expanded data-testid="test" heading="Group heading">
           <DrawerItem>content</DrawerItem>
-        </DrawerItemGroup>
+        </DrawerItemGroup>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass("sds-drawer-item-group");

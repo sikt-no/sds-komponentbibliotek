@@ -17,14 +17,14 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
           "sds-typography-link",
           isExternal && "sds-typography-link--external",
           noIcon && "sds-typography-link--no-icon",
-          className
+          className,
         )}
         {...rest}
       >
         {children}
       </a>
     );
-  }
+  },
 );
 
 Link.displayName = "Link";

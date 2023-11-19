@@ -20,7 +20,7 @@ export const Label = ({
       className={clsx(
         "sds-form-field__label",
         error && "sds-form-field__label--error",
-        className
+        className,
       )}
       {...rest}
     >

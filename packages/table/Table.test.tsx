@@ -40,7 +40,7 @@ describe("Table", () => {
               <TableCell data-th="Age">98</TableCell>
             </TableRow>
           </TableFoot>
-        </Table>
+        </Table>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -62,11 +62,11 @@ describe("Table", () => {
           caption="Caption"
           data-testid="test"
           className="test-class-name"
-        />
+        />,
       );
 
       expect(screen.getByTestId("test").parentElement).toHaveClass(
-        "sds-table test-class-name"
+        "sds-table test-class-name",
       );
     });
 
@@ -86,11 +86,11 @@ describe("Table", () => {
               <TableHeader>Age</TableHeader>
             </TableRow>
           </TableHead>
-        </Table>
+        </Table>,
       );
 
       const headers = within(screen.getByRole("rowgroup")).getAllByRole(
-        "columnheader"
+        "columnheader",
       );
       expect(headers.length).toBe(2);
       expect(headers[0]).toHaveTextContent("Name");
@@ -114,7 +114,7 @@ describe("Table", () => {
               <TableCell data-th="Age">21</TableCell>
             </TableRow>
           </TableBody>
-        </Table>
+        </Table>,
       );
 
       const rows = within(screen.getByRole("rowgroup")).getAllByRole("row");

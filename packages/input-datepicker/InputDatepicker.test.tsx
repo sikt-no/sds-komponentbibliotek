@@ -18,7 +18,7 @@ describe("DatePicker", () => {
       render(<InputDatepicker label="Foo" data-testid="test" />);
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-input sds-input-datepicker"
+        "sds-input sds-input-datepicker",
       );
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
@@ -29,7 +29,7 @@ describe("DatePicker", () => {
           label="test-label"
           errorText="Error"
           data-testid="test"
-        />
+        />,
       );
       const errorEl = screen.getByText("Error");
       expect(errorEl).toBeInTheDocument();
@@ -42,7 +42,7 @@ describe("DatePicker", () => {
           label="test-label"
           helpText="Help"
           data-testid="test"
-        />
+        />,
       );
       const helpElement = screen.getByText("Help");
       expect(helpElement).toBeInTheDocument();
@@ -53,7 +53,7 @@ describe("DatePicker", () => {
       const user = userEvent.setup();
 
       const { container } = render(
-        <InputDatepicker label="Foo" data-testid="test" />
+        <InputDatepicker label="Foo" data-testid="test" />,
       );
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
@@ -66,10 +66,10 @@ describe("DatePicker", () => {
       expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
 
       const calendarDateCells = container.getElementsByClassName(
-        "sds-input-datepicker__calendar-cell"
+        "sds-input-datepicker__calendar-cell",
       );
       const calendarDateCell = Array.from(calendarDateCells).filter(
-        (element) => element.getAttribute("aria-disabled") !== "true"
+        (element) => element.getAttribute("aria-disabled") !== "true",
       )[0];
 
       await act(async () => {

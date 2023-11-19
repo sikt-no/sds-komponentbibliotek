@@ -7,7 +7,7 @@ describe("Abbreviation", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <Abbreviation title="Bar">Foo</Abbreviation>
+        <Abbreviation title="Bar">Foo</Abbreviation>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -19,7 +19,7 @@ describe("Abbreviation", () => {
       render(
         <Abbreviation title="Bar" data-testid="test">
           Foo
-        </Abbreviation>
+        </Abbreviation>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass("sds-typography-abbr");
@@ -34,11 +34,11 @@ describe("Abbreviation", () => {
           data-testid="test"
         >
           Foo
-        </Abbreviation>
+        </Abbreviation>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-typography-abbr test-class-name"
+        "sds-typography-abbr test-class-name",
       );
     });
   });

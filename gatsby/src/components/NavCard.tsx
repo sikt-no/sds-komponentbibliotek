@@ -14,7 +14,7 @@ interface NavCardProps {
 export const NavCard = forwardRef<HTMLAnchorElement, NavCardProps>(
   (
     { href, imgSrc, imgAlt, headingText, children, className, ...rest },
-    ref
+    ref,
   ) => {
     const Component: ElementType = href ? "a" : "div";
 
@@ -34,7 +34,7 @@ export const NavCard = forwardRef<HTMLAnchorElement, NavCardProps>(
             <span
               className={clsx(
                 "sds-button sds-button--subtle",
-                style.navCard__button
+                style.navCard__button,
               )}
             >
               <span className="sds-button__icon">
@@ -46,14 +46,14 @@ export const NavCard = forwardRef<HTMLAnchorElement, NavCardProps>(
         <div
           className={clsx(
             style.navCard__children,
-            "sds-typography-body--large"
+            "sds-typography-body--large",
           )}
         >
           {children}
         </div>
       </Component>
     );
-  }
+  },
 );
 
 NavCard.displayName = "NavCard";

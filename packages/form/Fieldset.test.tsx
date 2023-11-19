@@ -12,7 +12,7 @@ describe("Fieldset", () => {
             Label
             <input />
           </label>
-        </Fieldset>
+        </Fieldset>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -27,7 +27,7 @@ describe("Fieldset", () => {
             Label
             <input />
           </label>
-        </Fieldset>
+        </Fieldset>,
       );
       expect(screen.getByTestId("test")).toHaveClass("sds-form-fieldset");
       expect(screen.getByTestId("test")).toBeInTheDocument();
@@ -40,11 +40,11 @@ describe("Fieldset", () => {
             Label
             <input />
           </label>
-        </Fieldset>
+        </Fieldset>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-fieldset test-class-name"
+        "sds-form-fieldset test-class-name",
       );
     });
 
@@ -55,7 +55,7 @@ describe("Fieldset", () => {
             Label
             <input />
           </label>
-        </Fieldset>
+        </Fieldset>,
       );
 
       expect(screen.getByText("Error message")).toBeInTheDocument();

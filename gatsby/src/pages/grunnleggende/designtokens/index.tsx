@@ -30,7 +30,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
       <section
         className={clsx(
           style.grunnleggende__section,
-          style.grunnleggende__sectionDesktop1x4
+          style.grunnleggende__sectionDesktop1x4,
         )}
       >
         <div className={style.grunnleggende__sideNavWrapper}>
@@ -118,7 +118,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   <div
                     className={clsx(
                       moduleStyle.tokens__tag,
-                      "sds-typography-body--code"
+                      "sds-typography-body--code",
                     )}
                   >
                     sds
@@ -130,7 +130,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   <div
                     className={clsx(
                       moduleStyle.tokens__tag,
-                      "sds-typography-body--code"
+                      "sds-typography-body--code",
                     )}
                   >
                     color
@@ -142,7 +142,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   <div
                     className={clsx(
                       moduleStyle.tokens__tag,
-                      "sds-typography-body--code"
+                      "sds-typography-body--code",
                     )}
                   >
                     brand
@@ -154,7 +154,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   <div
                     className={clsx(
                       moduleStyle.tokens__tag,
-                      "sds-typography-body--code"
+                      "sds-typography-body--code",
                     )}
                   >
                     primary
@@ -166,7 +166,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   <div
                     className={clsx(
                       moduleStyle.tokens__tag,
-                      "sds-typography-body--code"
+                      "sds-typography-body--code",
                     )}
                   >
                     subtle

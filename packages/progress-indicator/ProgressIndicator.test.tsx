@@ -11,7 +11,7 @@ describe("Progress indicator", () => {
         <ProgressIndicator>
           <ProgressStep value={1} label="First step" status="complete" />
           <ProgressStep value={2} label="Second step" status="current" />
-        </ProgressIndicator>
+        </ProgressIndicator>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -39,7 +39,7 @@ describe("Progress indicator", () => {
             value={3}
             label="Third step"
           />
-        </ProgressIndicator>
+        </ProgressIndicator>,
       );
 
       const step1 = screen.getByTestId("progress-step-1");
@@ -73,7 +73,7 @@ describe("Progress indicator", () => {
             value={3}
             label="Third step"
           />
-        </ProgressIndicator>
+        </ProgressIndicator>,
       );
 
       const step1 = screen.getByTestId("progress-step-1");

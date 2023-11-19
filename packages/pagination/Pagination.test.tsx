@@ -13,7 +13,7 @@ describe("Pagination", () => {
           count={10}
           currentIndex={0}
           handleClick={jest.fn()}
-        />
+        />,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -29,7 +29,7 @@ describe("Pagination", () => {
           currentIndex={0}
           handleClick={jest.fn()}
           data-testid="test"
-        />
+        />,
       );
 
       expect(screen.getByTestId("test")).toHaveClass("sds-pagination");
@@ -45,7 +45,7 @@ describe("Pagination", () => {
           count={10}
           currentIndex={0}
           handleClick={clickHandler}
-        />
+        />,
       );
 
       await user.click(screen.getByText("2"));
@@ -63,7 +63,7 @@ describe("Pagination", () => {
           count={10}
           currentIndex={1}
           handleClick={clickHandler}
-        />
+        />,
       );
 
       await user.click(screen.getByLabelText("Vis forrige side 1"));
@@ -81,7 +81,7 @@ describe("Pagination", () => {
           count={10}
           currentIndex={0}
           handleClick={clickHandler}
-        />
+        />,
       );
 
       await user.click(screen.getByLabelText("Vis neste side 2"));
@@ -99,11 +99,11 @@ describe("Pagination", () => {
           handleClick={jest.fn()}
           className="test-class-name"
           data-testid="test"
-        />
+        />,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-pagination test-class-name"
+        "sds-pagination test-class-name",
       );
     });
   });

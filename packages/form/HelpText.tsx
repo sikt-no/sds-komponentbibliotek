@@ -12,7 +12,7 @@ export const HelpText = ({ className, error, ...rest }: HelpTextProps) => {
       className={clsx(
         "sds-form-field__help-text",
         error && "sds-form-field__help-text--error",
-        className
+        className,
       )}
       {...rest}
     />

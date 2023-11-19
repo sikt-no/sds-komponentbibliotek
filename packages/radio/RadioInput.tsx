@@ -18,6 +18,6 @@ export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
     return (
       <RadioInputBase {...context} {...props} ref={ref} checked={checked} />
     );
-  }
+  },
 );
 RadioInput.displayName = "RadioInput";

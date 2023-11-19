@@ -36,7 +36,7 @@ export const FormField = ({
       className={clsx(
         "sds-form-field",
         errorText && "sds-form-field--error",
-        className
+        className,
       )}
     >
       <Label

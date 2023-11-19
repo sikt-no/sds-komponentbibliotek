@@ -16,7 +16,7 @@ export const ToggleSegment = forwardRef<
     <div
       className={clsx(
         "sds-toggle-segment",
-        variant !== "default" && `sds-toggle-segment--${variant}`
+        variant !== "default" && `sds-toggle-segment--${variant}`,
       )}
     >
       <Fieldset className="sds-toggle-segment__fieldset" {...rest} ref={ref}>

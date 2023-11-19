@@ -44,7 +44,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
       <section
         className={clsx(
           style.grunnleggende__section,
-          style.grunnleggende__sectionDesktop1x4
+          style.grunnleggende__sectionDesktop1x4,
         )}
       >
         <div className={style.grunnleggende__sideNavWrapper}>
@@ -528,7 +528,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                             <TableCell data-th="Token">
                               <Badge visibility="strong" icon={<Nut />}>
                                 {`--sds-${Object.values(subtoken[1].path).join(
-                                  "-"
+                                  "-",
                                 )}`}
                               </Badge>
                             </TableCell>
@@ -561,7 +561,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                             </TableCell>
                           </TableRow>
                         );
-                      }
+                      },
                     );
                   })}
                 </TableBody>
@@ -623,7 +623,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                                   <TableCell data-th="Token">
                                     <Badge visibility="strong" icon={<Nut />}>
                                       {`--sds-${Object.values(
-                                        subsubtoken[1].path
+                                        subsubtoken[1].path,
                                       ).join("-")}`}
                                     </Badge>
                                   </TableCell>
@@ -646,9 +646,9 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                                           Object.entries(
                                             Object.entries(
                                               Object.entries(
-                                                dark.color.interaction
-                                              )[index][1]
-                                            )[subindex][1]
+                                                dark.color.interaction,
+                                              )[index][1],
+                                            )[subindex][1],
                                           )[subsubindex][1].value ??
                                           subsubtoken[1].value
                                         }
@@ -657,9 +657,9 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                                         {Object.entries(
                                           Object.entries(
                                             Object.entries(
-                                              dark.color.interaction
-                                            )[index][1]
-                                          )[subindex][1]
+                                              dark.color.interaction,
+                                            )[index][1],
+                                          )[subindex][1],
                                         )[subsubindex][1].value ??
                                           subsubtoken[1].value}
                                       </Badge>
@@ -667,11 +667,11 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                                   </TableCell>
                                 </TableRow>
                               );
-                            }
+                            },
                           );
-                        }
+                        },
                       );
-                    }
+                    },
                   )}
                 </TableBody>
               </Table>
@@ -721,7 +721,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                             <TableCell data-th="Token">
                               <Badge visibility="strong" icon={<Nut />}>
                                 {`--sds-${Object.values(subtoken[1].path).join(
-                                  "-"
+                                  "-",
                                 )}`}
                               </Badge>
                             </TableCell>
@@ -754,7 +754,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                             </TableCell>
                           </TableRow>
                         );
-                      }
+                      },
                     );
                   })}
                 </TableBody>
@@ -805,7 +805,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                             <TableCell data-th="Token">
                               <Badge visibility="strong" icon={<Nut />}>
                                 {`--sds-${Object.values(subtoken[1].path).join(
-                                  "-"
+                                  "-",
                                 )}`}
                               </Badge>
                             </TableCell>
@@ -839,7 +839,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                             </TableCell>
                           </TableRow>
                         );
-                      }
+                      },
                     );
                   })}
                 </TableBody>

@@ -33,7 +33,7 @@ const renderComponent = ({
       <TabPanel>Content 1</TabPanel>
       <TabPanel>Content 2</TabPanel>
       <TabPanel>Content 3</TabPanel>
-    </Tabs>
+    </Tabs>,
   );
 
 describe("Tabs", () => {
@@ -61,7 +61,7 @@ describe("Tabs", () => {
       renderComponent({ className: "test-class-name" });
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-tabs test-class-name"
+        "sds-tabs test-class-name",
       );
     });
 
@@ -75,7 +75,7 @@ describe("Tabs", () => {
       renderComponent({ badge: <span>badge</span> });
 
       expect(screen.getByText("badge").parentNode).toHaveClass(
-        "sds-tabs__tab-badge"
+        "sds-tabs__tab-badge",
       );
     });
 

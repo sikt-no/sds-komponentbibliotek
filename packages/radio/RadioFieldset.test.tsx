@@ -13,7 +13,7 @@ describe("RadioFieldset", () => {
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
-        </RadioFieldset>
+        </RadioFieldset>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -27,7 +27,7 @@ describe("RadioFieldset", () => {
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
-        </RadioFieldset>
+        </RadioFieldset>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass("sds-form-fieldset");
@@ -40,7 +40,7 @@ describe("RadioFieldset", () => {
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
-        </RadioFieldset>
+        </RadioFieldset>,
       );
 
       expect(screen.getByLabelText("Radio 1")).not.toBeChecked();
@@ -62,7 +62,7 @@ describe("RadioFieldset", () => {
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
-        </RadioFieldset>
+        </RadioFieldset>,
       );
 
       await user.click(screen.getByText("Radio 2"));
@@ -81,11 +81,11 @@ describe("RadioFieldset", () => {
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
-        </RadioFieldset>
+        </RadioFieldset>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-fieldset test-class-name"
+        "sds-form-fieldset test-class-name",
       );
     });
 
@@ -93,7 +93,7 @@ describe("RadioFieldset", () => {
       render(
         <RadioFieldset legend="Foo" onChange={() => {}} helpText="Help message">
           <RadioInput label="Radio 1" value="1" />
-        </RadioFieldset>
+        </RadioFieldset>,
       );
 
       expect(screen.getByText("Help message")).toBeInTheDocument();
@@ -110,7 +110,7 @@ describe("RadioFieldset", () => {
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
-        </RadioFieldset>
+        </RadioFieldset>,
       );
 
       expect(screen.getByText("Error message")).toBeInTheDocument();

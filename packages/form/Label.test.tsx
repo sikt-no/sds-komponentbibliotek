@@ -9,7 +9,7 @@ describe("Label", () => {
       const { container } = render(
         <Label text="Foo" htmlFor="id">
           <input id="id" />
-        </Label>
+        </Label>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -21,7 +21,7 @@ describe("Label", () => {
       render(
         <Label text="Foo" htmlFor="id" data-testid="test">
           <input id="id" />
-        </Label>
+        </Label>,
       );
       expect(screen.getByTestId("test")).toHaveClass("sds-form-field__label");
       expect(screen.getByTestId("test")).toBeInTheDocument();
@@ -36,11 +36,11 @@ describe("Label", () => {
           className="test-class-name"
         >
           <input id="id" />
-        </Label>
+        </Label>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__label test-class-name"
+        "sds-form-field__label test-class-name",
       );
     });
 
@@ -48,7 +48,7 @@ describe("Label", () => {
       render(
         <Label text="Foo" error htmlFor="id" data-testid="test">
           <input id="id" />
-        </Label>
+        </Label>,
       );
 
       expect(screen.getByText("Foo")).toBeInTheDocument();
@@ -58,12 +58,12 @@ describe("Label", () => {
       render(
         <Label text="Foo" error htmlFor="id" data-testid="test">
           <input id="id" />
-        </Label>
+        </Label>,
       );
 
       expect(screen.getByText("Foo")).toBeInTheDocument();
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__label--error"
+        "sds-form-field__label--error",
       );
     });
   });

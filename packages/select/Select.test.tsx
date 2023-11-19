@@ -8,7 +8,7 @@ describe("Select", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <Select label="Foo" options={[{ label: "Bar", value: "bar" }]} />
+        <Select label="Foo" options={[{ label: "Bar", value: "bar" }]} />,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -22,7 +22,7 @@ describe("Select", () => {
           label="Foo"
           options={[{ label: "Bar", value: "bar" }]}
           data-testid="test"
-        />
+        />,
       );
 
       expect(screen.getByTestId("test")).toBeInTheDocument();
@@ -38,7 +38,7 @@ describe("Select", () => {
           ]}
           value="bar"
           data-testid="test"
-        />
+        />,
       );
 
       const select = container.getElementsByClassName("sds-select")[0];
@@ -55,7 +55,7 @@ describe("Select", () => {
           label="Foo"
           options={[{ label: "Bar", value: "bar" }]}
           onChange={changeHandler}
-        />
+        />,
       );
 
       await user.selectOptions(screen.getByRole("combobox"), "Bar");
@@ -70,11 +70,11 @@ describe("Select", () => {
           options={[{ label: "Bar", value: "bar" }]}
           className="test-class-name"
           data-testid="test"
-        />
+        />,
       );
 
       expect(
-        container.getElementsByClassName("sds-select test-class-name")[0]
+        container.getElementsByClassName("sds-select test-class-name")[0],
       ).toBeInTheDocument();
     });
 
@@ -84,7 +84,7 @@ describe("Select", () => {
           label="Foo"
           options={[{ label: "Bar", value: "bar" }]}
           helpText="Baz"
-        />
+        />,
       );
 
       expect(screen.getByText("Baz")).toBeInTheDocument();
@@ -97,7 +97,7 @@ describe("Select", () => {
           options={[{ label: "Bar", value: "bar" }]}
           helpText="Baz"
           errorText="Qux"
-        />
+        />,
       );
 
       expect(screen.queryByText("Baz")).not.toBeInTheDocument();

@@ -40,7 +40,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
       <section
         className={clsx(
           style.grunnleggende__section,
-          style.grunnleggende__sectionDesktop1x4
+          style.grunnleggende__sectionDesktop1x4,
         )}
       >
         <div className={style.grunnleggende__sideNavWrapper}>
@@ -62,7 +62,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
               <Paragraph
                 className={clsx(
                   "sds-typography-heading--huge",
-                  "sds-paragraph--max-width"
+                  "sds-paragraph--max-width",
                 )}
               >
                 Haffer Hamburgefonstiv
@@ -78,7 +78,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                 className={clsx(
                   moduleStyle.typografi__fontArial,
                   "sds-typography-heading--huge",
-                  "sds-paragraph--max-width"
+                  "sds-paragraph--max-width",
                 )}
               >
                 Arial Hamburgefonstiv
@@ -97,7 +97,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                 className={clsx(
                   moduleStyle.typografi__fontCourier,
                   "sds-typography-heading--huge",
-                  "sds-paragraph--max-width"
+                  "sds-paragraph--max-width",
                 )}
               >
                 Courier New Hamburgefonstiv

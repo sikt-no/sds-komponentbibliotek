@@ -27,7 +27,7 @@ export const SideNavButtonLink = forwardRef<
       disabled = false,
       ...rest
     }: SideNavButtonLinkProps,
-    ref
+    ref,
   ) => {
     const Component: ElementType = href ? "a" : "div";
 
@@ -38,7 +38,7 @@ export const SideNavButtonLink = forwardRef<
         className={clsx(
           "sds-side-nav-button",
           !href && "sds-side-nav-button--disabled",
-          className
+          className,
         )}
         {...rest}
       >
@@ -46,7 +46,7 @@ export const SideNavButtonLink = forwardRef<
         <span className="sds-side-nav__label">{children}</span>
       </Component>
     );
-  }
+  },
 );
 
 SideNavButtonLink.displayName = "SideNavButtonLink";

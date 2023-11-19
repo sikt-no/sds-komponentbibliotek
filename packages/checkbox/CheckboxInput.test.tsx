@@ -8,7 +8,7 @@ describe("CheckboxInput,", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <CheckboxInput label="Foo" value="foo" onChange={() => {}} />
+        <CheckboxInput label="Foo" value="foo" onChange={() => {}} />,
       );
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -24,7 +24,7 @@ describe("api", () => {
         data-testid="test"
         isChecked
         onChange={() => {}}
-      />
+      />,
     );
     expect(screen.getByTestId("test")).toHaveClass("sds-checkbox__input");
     expect(screen.getByTestId("test")).toBeInTheDocument();
@@ -40,7 +40,7 @@ describe("api", () => {
         isChecked={false}
         onChange={() => {}}
         disabled={true}
-      />
+      />,
     );
     expect(screen.getByTestId("test")).toHaveClass("sds-checkbox__input");
     expect(screen.getByTestId("test")).toBeInTheDocument();
@@ -56,11 +56,11 @@ describe("api", () => {
         data-testid="test"
         isChecked
         onChange={() => {}}
-      />
+      />,
     );
 
     expect(screen.getByTestId("test").parentElement).toHaveClass(
-      "sds-checkbox sds-checkbox--error"
+      "sds-checkbox sds-checkbox--error",
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
   });
@@ -74,11 +74,11 @@ describe("api", () => {
         data-testid="test"
         isChecked={false}
         onChange={() => {}}
-      />
+      />,
     );
 
     expect(screen.getByTestId("test").parentElement).toHaveClass(
-      "sds-checkbox--error"
+      "sds-checkbox--error",
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
   });
@@ -92,11 +92,11 @@ describe("api", () => {
         className="test-class-name"
         isChecked
         onChange={() => {}}
-      />
+      />,
     );
 
     expect(screen.getByTestId("test").parentElement).toHaveClass(
-      "sds-checkbox test-class-name"
+      "sds-checkbox test-class-name",
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
   });
@@ -110,7 +110,7 @@ describe("api", () => {
         label="Foo"
         value="foo"
         onChange={(val) => changeHandler(val)}
-      />
+      />,
     );
 
     const checkbox = screen.getByText("Foo");

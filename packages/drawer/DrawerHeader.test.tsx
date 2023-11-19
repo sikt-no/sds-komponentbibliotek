@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 
 describe("DrawerHeader,", () => {
   let mockHandler: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => void;
 
   beforeEach(() => {
@@ -16,7 +16,11 @@ describe("DrawerHeader,", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <DrawerHeader title="title" handleToggleDrawer={mockHandler} expanded />
+        <DrawerHeader
+          title="title"
+          handleToggleDrawer={mockHandler}
+          expanded
+        />,
       );
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -31,10 +35,10 @@ describe("DrawerHeader,", () => {
           title="title"
           expanded
           handleToggleDrawer={mockHandler}
-        />
+        />,
       );
       expect(
-        screen.getByRole("button", { name: "Lukk skuff" })
+        screen.getByRole("button", { name: "Lukk skuff" }),
       ).toBeInTheDocument();
       expect(screen.getByTestId("iconElement")).toBeInTheDocument();
       expect(screen.getByText("title")).toBeInTheDocument();
@@ -49,14 +53,14 @@ describe("DrawerHeader,", () => {
           title="title"
           expanded={false}
           handleToggleDrawer={mockHandler}
-        />
+        />,
       );
 
       expect(
-        screen.getByRole("button", { name: "Åpne skuff" })
+        screen.getByRole("button", { name: "Åpne skuff" }),
       ).toBeInTheDocument();
       expect(screen.getByTestId("test")).not.toHaveClass(
-        "sds-drawer-header__label"
+        "sds-drawer-header__label",
       );
       expect(screen.getByTestId("test")).toBeInTheDocument();
     });
@@ -69,7 +73,7 @@ describe("DrawerHeader,", () => {
           title="title"
           expanded={false}
           handleToggleDrawer={mockHandler}
-        />
+        />,
       );
 
       const button = screen.getByRole("button", { name: "Åpne skuff" });

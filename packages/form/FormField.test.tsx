@@ -9,7 +9,7 @@ describe("FormField", () => {
       const { container } = render(
         <FormField label="Foo" htmlFor="input">
           <input id="input" />
-        </FormField>
+        </FormField>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -21,11 +21,11 @@ describe("FormField", () => {
       const { container } = render(
         <FormField label="Foo" htmlFor="input">
           <input id="input" />
-        </FormField>
+        </FormField>,
       );
 
       expect(
-        container.getElementsByClassName("sds-form-field")[0]
+        container.getElementsByClassName("sds-form-field")[0],
       ).toBeInTheDocument();
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
@@ -34,11 +34,11 @@ describe("FormField", () => {
       const { container } = render(
         <FormField label="Foo" htmlFor="input" className="test-class-name">
           <input id="input" />
-        </FormField>
+        </FormField>,
       );
 
       expect(
-        container.getElementsByClassName("sds-form-field test-class-name")[0]
+        container.getElementsByClassName("sds-form-field test-class-name")[0],
       ).toBeInTheDocument();
     });
 
@@ -46,11 +46,11 @@ describe("FormField", () => {
       const { container } = render(
         <FormField label="Foo" htmlFor="input" errorText="Bar">
           <input id="input" />
-        </FormField>
+        </FormField>,
       );
 
       expect(
-        container.getElementsByClassName("sds-form-field--error")[0]
+        container.getElementsByClassName("sds-form-field--error")[0],
       ).toBeInTheDocument();
 
       const errorEl = screen.getByText("Bar");
@@ -67,7 +67,7 @@ describe("FormField", () => {
           helpText="Bar"
         >
           <input id="input" />
-        </FormField>
+        </FormField>,
       );
 
       const errorEl = screen.getByText("Bar");

@@ -23,7 +23,7 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
       onChange,
       ...rest
     },
-    ref
+    ref,
   ) => {
     const id = useId();
     const labelElement = (
@@ -35,7 +35,7 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
         className={clsx(
           "sds-toggle-switch",
           checked && "sds-toggle-switch--checked",
-          error && "sds-toggle-switch--error"
+          error && "sds-toggle-switch--error",
         )}
         data-testid="sds-toggle-switch"
       >
@@ -63,6 +63,6 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
         </label>
       </div>
     );
-  }
+  },
 );
 ToggleSwitch.displayName = "ToggleSwitch";

@@ -38,11 +38,11 @@ describe("Heading", () => {
         render(
           <Heading variant="medium" data-testid={name}>
             {name}
-          </Heading>
+          </Heading>,
         );
 
         expect(screen.getByTestId(name)).toHaveClass(
-          "sds-typography-heading sds-typography-heading--medium"
+          "sds-typography-heading sds-typography-heading--medium",
         );
         expect(screen.getByText(name)).toBeInTheDocument();
       });
@@ -56,11 +56,11 @@ describe("Heading", () => {
           className="test-class-name"
         >
           Foo
-        </Heading1>
+        </Heading1>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-typography-heading sds-typography-heading--medium test-class-name"
+        "sds-typography-heading sds-typography-heading--medium test-class-name",
       );
     });
   });

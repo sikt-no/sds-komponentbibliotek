@@ -17,7 +17,7 @@ describe("ButtonLink", () => {
       render(
         <ButtonLink href="#" data-testid="test">
           Foo
-        </ButtonLink>
+        </ButtonLink>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass("sds-button-link");
@@ -28,11 +28,11 @@ describe("ButtonLink", () => {
       render(
         <ButtonLink href="#" className="test-class-name" data-testid="test">
           Foo
-        </ButtonLink>
+        </ButtonLink>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-button-link test-class-name"
+        "sds-button-link test-class-name",
       );
     });
 
@@ -40,11 +40,11 @@ describe("ButtonLink", () => {
       render(
         <ButtonLink href="#" size="small" data-testid="test">
           Foo
-        </ButtonLink>
+        </ButtonLink>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-button-link sds-button--small"
+        "sds-button-link sds-button--small",
       );
     });
 
@@ -52,7 +52,7 @@ describe("ButtonLink", () => {
       render(
         <ButtonLink data-testid="test" icon="icon" iconVariant="left">
           Foo
-        </ButtonLink>
+        </ButtonLink>,
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
@@ -63,7 +63,7 @@ describe("ButtonLink", () => {
       render(
         <ButtonLink data-testid="test" icon="icon" iconVariant="right">
           Foo
-        </ButtonLink>
+        </ButtonLink>,
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
@@ -74,7 +74,7 @@ describe("ButtonLink", () => {
       render(
         <ButtonLink data-testid="test" icon="icon" iconVariant="only">
           Foo
-        </ButtonLink>
+        </ButtonLink>,
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");

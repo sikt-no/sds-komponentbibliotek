@@ -21,7 +21,7 @@ export interface RadioInputBaseProps
 export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
   (
     { className, label, name, onChange, checked, value, error, ...rest },
-    ref
+    ref,
   ) => {
     const id = useId();
 
@@ -44,6 +44,6 @@ export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
         <div className="sds-radio__input-label">{label}</div>
       </label>
     );
-  }
+  },
 );
 RadioInputBase.displayName = "RadioInputBase";

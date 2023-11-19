@@ -30,7 +30,7 @@ const LayoutPage: React.FC<PageProps> = ({ location }) => {
       <section
         className={clsx(
           style.grunnleggende__section,
-          style.grunnleggende__sectionDesktop1x4
+          style.grunnleggende__sectionDesktop1x4,
         )}
       >
         <div className={style.grunnleggende__sideNavWrapper}>

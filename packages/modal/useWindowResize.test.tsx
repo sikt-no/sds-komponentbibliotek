@@ -47,17 +47,17 @@ describe("useWindowResize", () => {
     const callback = jest.fn();
     const throttleTime = 200;
     const { unmount } = renderHook(() =>
-      useWindowResize(callback, { throttleTime })
+      useWindowResize(callback, { throttleTime }),
     );
 
     expect(window.addEventListener).toHaveBeenCalledWith(
       "resize",
-      expect.any(Function)
+      expect.any(Function),
     );
     unmount();
     expect(window.removeEventListener).toHaveBeenCalledWith(
       "resize",
-      expect.any(Function)
+      expect.any(Function),
     );
   });
 });

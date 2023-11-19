@@ -40,7 +40,7 @@ export const Button = ({
         "sds-button",
         `sds-button--${variant}`,
         size !== "default" && `sds-button--${size}`,
-        className
+        className,
       )}
       onClick={onClick}
       aria-label={iconVariant === "only" ? ariaLabel : undefined}

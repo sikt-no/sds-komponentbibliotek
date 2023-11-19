@@ -24,11 +24,11 @@ describe("Footer", () => {
       render(
         <Footer className="test-class-name" data-testid="test">
           Foo
-        </Footer>
+        </Footer>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-footer test-class-name"
+        "sds-footer test-class-name",
       );
     });
 
@@ -38,12 +38,12 @@ describe("Footer", () => {
       expect(
         screen.getByRole("link", {
           name: "Sikt Kunnskapssektorens tjenesteleverandør",
-        })
+        }),
       ).toHaveClass("sds-footer__logo-link");
       expect(
         screen.getByRole("link", {
           name: "Sikt Kunnskapssektorens tjenesteleverandør",
-        })
+        }),
       ).toBeInTheDocument();
     });
 
@@ -53,7 +53,7 @@ describe("Footer", () => {
       expect(
         screen.queryByRole("link", {
           name: "Sikt Kunnskapssektorens tjenesteleverandør",
-        })
+        }),
       ).not.toBeInTheDocument();
     });
   });

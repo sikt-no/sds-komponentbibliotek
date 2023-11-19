@@ -18,7 +18,7 @@ export const ScreenReaderOnly = ({
       className={clsx(
         "sds-screen-reader-only",
         isFocusable && "sds-screen-reader-only--focusable",
-        className
+        className,
       )}
       {...rest}
     >

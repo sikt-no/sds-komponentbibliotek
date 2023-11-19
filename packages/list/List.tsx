@@ -25,7 +25,7 @@ const List = ({
         listType === "description"
           ? "sds-description-list"
           : `sds-list sds-list--${listType}`,
-        className
+        className,
       )}
       {...rest}
     >

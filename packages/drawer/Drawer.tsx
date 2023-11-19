@@ -27,7 +27,7 @@ export const Drawer = ({
       className={clsx(
         "sds-drawer",
         expanded && "sds-drawer--expanded",
-        className
+        className,
       )}
       {...rest}
     >

@@ -28,11 +28,11 @@ describe("Button", () => {
         render(
           <Button variant={variant} data-testid={variant}>
             {variant}
-          </Button>
+          </Button>,
         );
 
         expect(screen.getByTestId(variant)).toHaveClass(
-          `sds-button sds-button--${variant}`
+          `sds-button sds-button--${variant}`,
         );
         expect(screen.getByText(variant)).toBeInTheDocument();
       });
@@ -52,11 +52,11 @@ describe("Button", () => {
       render(
         <Button data-testid="test" className="test-class-name">
           Foo
-        </Button>
+        </Button>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-button test-class-name"
+        "sds-button test-class-name",
       );
     });
 
@@ -64,11 +64,11 @@ describe("Button", () => {
       render(
         <Button data-testid="test" size="small">
           Foo
-        </Button>
+        </Button>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-button sds-button--small"
+        "sds-button sds-button--small",
       );
     });
 
@@ -76,7 +76,7 @@ describe("Button", () => {
       render(
         <Button data-testid="test" icon="icon" iconVariant="left">
           Foo
-        </Button>
+        </Button>,
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
@@ -87,7 +87,7 @@ describe("Button", () => {
       render(
         <Button data-testid="test" icon="icon" iconVariant="right">
           Foo
-        </Button>
+        </Button>,
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
@@ -98,7 +98,7 @@ describe("Button", () => {
       render(
         <Button data-testid="test" icon="icon" iconVariant="only">
           Foo
-        </Button>
+        </Button>,
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");

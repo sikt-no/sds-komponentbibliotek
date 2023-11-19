@@ -28,7 +28,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
       <section
         className={clsx(
           style.grunnleggende__section,
-          style.grunnleggende__sectionDesktop1x4
+          style.grunnleggende__sectionDesktop1x4,
         )}
       >
         <div className={style.grunnleggende__sideNavWrapper}>
@@ -43,7 +43,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
             <div
               className={clsx(
                 style.grunnleggende__sdsSectionContent,
-                style.grunnleggende__sdsSectionContentGapLarge
+                style.grunnleggende__sdsSectionContentGapLarge,
               )}
             >
               <div className={style.grunnleggende__sdsSectionContent}>

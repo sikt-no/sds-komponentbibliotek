@@ -7,7 +7,7 @@ describe("DrawerButton,", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <DrawerButton label={"Label"} icon={<span>⚙️</span>} />
+        <DrawerButton label={"Label"} icon={<span>⚙️</span>} />,
       );
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -21,7 +21,7 @@ describe("DrawerButton,", () => {
           icon={<span data-testid="iconElement">⚙️</span>}
           label={"label"}
           secondaryLabel={"secondaryLabel"}
-        />
+        />,
       );
 
       expect(screen.getByTestId("test")).toBeInTheDocument();

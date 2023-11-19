@@ -24,7 +24,7 @@ describe("api", () => {
     render(
       <Badge data-testid="test" className="test-class-name">
         Foo
-      </Badge>
+      </Badge>,
     );
 
     expect(screen.getByTestId("test")).toHaveClass("sds-badge test-class-name");

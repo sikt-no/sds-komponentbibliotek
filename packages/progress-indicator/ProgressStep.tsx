@@ -29,7 +29,7 @@ export const ProgressStep = ({
         "sds-progress-step",
         (status === "complete" || status === "current") &&
           "sds-progress-step--selected",
-        className
+        className,
       )}
       aria-current={status === "current" ? "step" : "false"}
       {...rest}
@@ -40,7 +40,7 @@ export const ProgressStep = ({
       <span
         className={clsx(
           "sds-progress-step__label",
-          !showLabel && "sds-screen-reader-only"
+          !showLabel && "sds-screen-reader-only",
         )}
       >
         {label}

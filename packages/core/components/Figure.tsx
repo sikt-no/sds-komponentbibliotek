@@ -25,7 +25,7 @@ export const Figure = ({
       className: clsx(
         "sds-figure__figure",
         aspectRatio === "16x9" && "sds-figure__figure--ratio-16x9",
-        child.props.className
+        child.props.className,
       ),
     };
 

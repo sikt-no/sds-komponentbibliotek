@@ -17,7 +17,7 @@ describe("TabLink", () => {
       render(
         <TabLink href="#" data-testid="test">
           Foo
-        </TabLink>
+        </TabLink>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass("sds-tab-link");
@@ -28,11 +28,11 @@ describe("TabLink", () => {
       render(
         <TabLink href="#" className="test-class-name" data-testid="test">
           Foo
-        </TabLink>
+        </TabLink>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-tab-link test-class-name"
+        "sds-tab-link test-class-name",
       );
     });
 
@@ -45,11 +45,11 @@ describe("TabLink", () => {
           data-testid="test"
         >
           Foo
-        </TabLink>
+        </TabLink>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-tab-link sds-tab-link--selected"
+        "sds-tab-link sds-tab-link--selected",
       );
       expect(screen.getByText("badge")).toHaveAttribute("visibility", "high");
     });
@@ -58,7 +58,7 @@ describe("TabLink", () => {
       render(
         <TabLink data-testid="test" icon="icon">
           Foo
-        </TabLink>
+        </TabLink>,
       );
 
       expect(screen.getByText("icon")).toHaveClass("sds-tabs__tab-icon");
@@ -69,7 +69,7 @@ describe("TabLink", () => {
       render(
         <TabLink data-testid="test" badge="badge">
           Foo
-        </TabLink>
+        </TabLink>,
       );
 
       expect(screen.getByText("badge")).toHaveClass("sds-tabs__tab-badge");

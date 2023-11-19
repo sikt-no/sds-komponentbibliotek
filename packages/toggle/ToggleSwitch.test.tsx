@@ -18,7 +18,7 @@ describe("Toggle Switch", () => {
       render(<ToggleSwitch label="Foo" />);
 
       expect(screen.getByTestId("sds-toggle-switch")).toHaveClass(
-        "sds-toggle-switch"
+        "sds-toggle-switch",
       );
       expect(screen.getByTestId("sds-toggle-switch")).toBeInTheDocument();
     });
@@ -27,7 +27,7 @@ describe("Toggle Switch", () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
       render(
-        <ToggleSwitch onChange={(val) => changeHandler(val)} label="Foo" />
+        <ToggleSwitch onChange={(val) => changeHandler(val)} label="Foo" />,
       );
 
       const label = screen.getByLabelText("Foo");
@@ -53,13 +53,13 @@ describe("Toggle Switch", () => {
 
       const container = screen.getByTestId("sds-toggle-switch");
       const label = container.getElementsByClassName(
-        "sds-toggle-switch__label-text"
+        "sds-toggle-switch__label-text",
       )[0];
       const control = container.getElementsByClassName(
-        "sds-toggle-switch__inner"
+        "sds-toggle-switch__inner",
       )[0];
       expect(label.compareDocumentPosition(control)).toBe(
-        Node.DOCUMENT_POSITION_PRECEDING
+        Node.DOCUMENT_POSITION_PRECEDING,
       );
     });
 
@@ -68,13 +68,13 @@ describe("Toggle Switch", () => {
 
       const container = screen.getByTestId("sds-toggle-switch");
       const label = container.getElementsByClassName(
-        "sds-toggle-switch__label-text"
+        "sds-toggle-switch__label-text",
       )[0];
       const control = container.getElementsByClassName(
-        "sds-toggle-switch__inner"
+        "sds-toggle-switch__inner",
       )[0];
       expect(label.compareDocumentPosition(control)).toBe(
-        Node.DOCUMENT_POSITION_FOLLOWING
+        Node.DOCUMENT_POSITION_FOLLOWING,
       );
     });
 
@@ -82,7 +82,7 @@ describe("Toggle Switch", () => {
       render(<ToggleSwitch checked error label="Foo" />);
 
       expect(screen.getByTestId("sds-toggle-switch")).toHaveClass(
-        "sds-toggle-switch--error"
+        "sds-toggle-switch--error",
       );
     });
   });

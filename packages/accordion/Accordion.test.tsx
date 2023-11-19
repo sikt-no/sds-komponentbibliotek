@@ -8,7 +8,7 @@ describe("Accordion", () => {
   describe("a11y", () => {
     it("Accordion should be accessible", async () => {
       const { container } = render(
-        <Accordion title="Accordion header">Foo</Accordion>
+        <Accordion title="Accordion header">Foo</Accordion>,
       );
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -23,10 +23,10 @@ describe("Accordion", () => {
           title="Accordion header"
         >
           Foo
-        </Accordion>
+        </Accordion>,
       );
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-accordion test-class-name"
+        "sds-accordion test-class-name",
       );
     });
 
@@ -61,7 +61,7 @@ describe("Accordion", () => {
       render(
         <Accordion title={label} onClick={clickHandler}>
           Accordion Content
-        </Accordion>
+        </Accordion>,
       );
 
       await act(async () => {

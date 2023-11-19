@@ -17,7 +17,7 @@ describe("Link", () => {
       render(
         <Link href="#" data-testid="test">
           Foo
-        </Link>
+        </Link>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass("sds-typography-link");
@@ -28,11 +28,11 @@ describe("Link", () => {
       render(
         <Link href="#" className="test-class-name" data-testid="test">
           Foo
-        </Link>
+        </Link>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-typography-link test-class-name"
+        "sds-typography-link test-class-name",
       );
     });
 
@@ -40,11 +40,11 @@ describe("Link", () => {
       render(
         <Link href="#" isExternal data-testid="test">
           Foo
-        </Link>
+        </Link>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-typography-link sds-typography-link--external"
+        "sds-typography-link sds-typography-link--external",
       );
     });
 
@@ -52,11 +52,11 @@ describe("Link", () => {
       render(
         <Link href="#" noIcon data-testid="test">
           Foo
-        </Link>
+        </Link>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-typography-link sds-typography-link--no-icon"
+        "sds-typography-link sds-typography-link--no-icon",
       );
     });
   });

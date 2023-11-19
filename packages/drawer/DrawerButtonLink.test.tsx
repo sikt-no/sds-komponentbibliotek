@@ -9,7 +9,7 @@ describe("DrawerButtonLink,", () => {
       const { container } = render(
         <DrawerButtonLink href={"https://www.samordnaopptak.no"}>
           Lenketekst
-        </DrawerButtonLink>
+        </DrawerButtonLink>,
       );
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -25,7 +25,7 @@ describe("DrawerButtonLink,", () => {
           secondaryLabel={"secondaryLabel"}
         >
           Lenketekst
-        </DrawerButtonLink>
+        </DrawerButtonLink>,
       );
 
       expect(screen.getByTestId("test")).toBeInTheDocument();

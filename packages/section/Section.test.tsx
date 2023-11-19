@@ -12,7 +12,7 @@ const renderComponent = ({ className }: Partial<SectionProps>) =>
       data-testid="test"
     >
       Children
-    </Section>
+    </Section>,
   );
 
 describe("section", () => {
@@ -38,7 +38,7 @@ describe("section", () => {
       renderComponent({ className: "test-class-name" });
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-section test-class-name"
+        "sds-section test-class-name",
       );
     });
   });

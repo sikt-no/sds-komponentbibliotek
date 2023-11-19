@@ -17,7 +17,7 @@ describe("Paragraph", () => {
       render(<Paragraph>Foo</Paragraph>);
 
       expect(screen.getByText("Foo")).toHaveClass(
-        "sds-typography-body sds-typography-body--regular"
+        "sds-typography-body sds-typography-body--regular",
       );
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
@@ -30,11 +30,11 @@ describe("Paragraph", () => {
           className="test-class-name"
         >
           Foo
-        </Paragraph>
+        </Paragraph>,
       );
 
       expect(screen.getByText("Foo")).toHaveClass(
-        "sds-typography-body sds-typography-body--small sds-typography-body--strong test-class-name"
+        "sds-typography-body sds-typography-body--small sds-typography-body--strong test-class-name",
       );
     });
 

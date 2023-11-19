@@ -50,7 +50,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
       value,
       ...rest
     },
-    ref
+    ref,
   ) => {
     const id = useId();
     const helpTextId = `${id}-help-text`;
@@ -68,7 +68,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
           "sds-input",
           errorText && "sds-input--error",
           "sds-input-datepicker",
-          className
+          className,
         )}
         {...rest}
       >
@@ -138,7 +138,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
         )}
       </ReactAriaDatePicker>
     );
-  }
+  },
 );
 
 InputDatepicker.displayName = "InputDatepicker";

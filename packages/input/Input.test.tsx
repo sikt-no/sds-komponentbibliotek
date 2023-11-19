@@ -49,7 +49,7 @@ describe("Input", () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
       render(
-        <TextInput label="Foo" onChange={(e, val) => changeHandler(val)} />
+        <TextInput label="Foo" onChange={(e, val) => changeHandler(val)} />,
       );
 
       await user.type(screen.getByText("Foo"), "text");
@@ -60,17 +60,21 @@ describe("Input", () => {
 
     it("should have class name", async () => {
       const { container } = render(
-        <TextInput label="Foo" className="test-class-name" data-testid="test" />
+        <TextInput
+          label="Foo"
+          className="test-class-name"
+          data-testid="test"
+        />,
       );
 
       expect(
-        container.getElementsByClassName("sds-input test-class-name")[0]
+        container.getElementsByClassName("sds-input test-class-name")[0],
       ).toBeInTheDocument();
     });
 
     it("should show error text", async () => {
       const { container } = render(
-        <TextInput label="Foo" data-testid="test" errorText="Bar" />
+        <TextInput label="Foo" data-testid="test" errorText="Bar" />,
       );
 
       expect(screen.getByTestId("test")).toHaveAttribute("aria-invalid");
@@ -78,7 +82,7 @@ describe("Input", () => {
       expect(screen.getByTestId("test")).toHaveAttribute("aria-describedby");
 
       expect(
-        container.getElementsByClassName("sds-input--error")[0]
+        container.getElementsByClassName("sds-input--error")[0],
       ).toBeInTheDocument();
 
       expect(screen.getByRole("textbox")).toBeInvalid();
@@ -112,7 +116,7 @@ describe("Input", () => {
           label="Foo"
           data-testid="test"
           actionProps={{ label: "action" }}
-        />
+        />,
       );
 
       expect(screen.getByLabelText("action")).toBeInTheDocument();
@@ -130,7 +134,7 @@ describe("TextArea", () => {
           label="Foo"
           rows={2}
           onChange={(e, val) => changeHandler(val)}
-        />
+        />,
       );
 
       await user.type(screen.getByText("Foo"), "text");
@@ -141,7 +145,7 @@ describe("TextArea", () => {
 
     it("should show error text", async () => {
       const { container } = render(
-        <TextArea label="Foo" data-testid="test" errorText="Bar" />
+        <TextArea label="Foo" data-testid="test" errorText="Bar" />,
       );
 
       expect(screen.getByTestId("test")).toHaveAttribute("aria-invalid");
@@ -149,7 +153,7 @@ describe("TextArea", () => {
       expect(screen.getByTestId("test")).toHaveAttribute("aria-describedby");
 
       expect(
-        container.getElementsByClassName("sds-input--error")[0]
+        container.getElementsByClassName("sds-input--error")[0],
       ).toBeInTheDocument();
 
       expect(screen.getByRole("textbox")).toBeInvalid();

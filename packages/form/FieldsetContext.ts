@@ -6,7 +6,7 @@ export interface FieldsetState {
 }
 
 export const FieldsetContext = createContext<FieldsetState | undefined>(
-  undefined
+  undefined,
 );
 
 export function useFieldset(): FieldsetState | undefined {

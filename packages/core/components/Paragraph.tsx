@@ -25,7 +25,7 @@ export const Paragraph = ({
         "sds-typography-body",
         `sds-typography-body--${variant}`,
         modifier && `sds-typography-body--${modifier}`,
-        className
+        className,
       )}
       {...rest}
     >

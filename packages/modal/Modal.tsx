@@ -72,7 +72,7 @@ export const Modal = ({
   const checkScroll = () => {
     if (contentRef.current) {
       setIsScrolling(
-        contentRef.current.clientHeight < contentRef.current.scrollHeight
+        contentRef.current.clientHeight < contentRef.current.scrollHeight,
       );
     }
   };

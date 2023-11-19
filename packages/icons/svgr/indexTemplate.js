@@ -9,8 +9,8 @@ function defaultIndexTemplate(filePaths) {
   exportEntries.push(
     `export type { IconProps } from './${path.basename(
       filePaths[0].path,
-      path.extname(filePaths[0].path)
-    )}'`
+      path.extname(filePaths[0].path),
+    )}'`,
   );
   return exportEntries.join("\n");
 }

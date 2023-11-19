@@ -11,7 +11,7 @@ describe("ButtonGroup", () => {
           <button>1</button>
           <button>2</button>
           <button>3</button>
-        </ButtonGroup>
+        </ButtonGroup>,
       );
       const results = await axe(container);
       expect(results).toHaveNoViolations();
@@ -25,7 +25,7 @@ describe("ButtonGroup", () => {
           <button>1</button>
           <button>2</button>
           <button>3</button>
-        </ButtonGroup>
+        </ButtonGroup>,
       );
       expect(screen.getByTestId("test")).toHaveClass("test-class-name");
     });
@@ -38,10 +38,10 @@ describe("ButtonGroup", () => {
           <button>1</button>
           <button>2</button>
           <button>3</button>
-        </ButtonGroup>
+        </ButtonGroup>,
       );
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-button-group--horizontal"
+        "sds-button-group--horizontal",
       );
     });
 
@@ -51,10 +51,10 @@ describe("ButtonGroup", () => {
           <button>1</button>
           <button>2</button>
           <button>3</button>
-        </ButtonGroup>
+        </ButtonGroup>,
       );
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-button-group--vertical"
+        "sds-button-group--vertical",
       );
     });
 
@@ -64,7 +64,7 @@ describe("ButtonGroup", () => {
           <button>1</button>
           <button>2</button>
           <button>3</button>
-        </ButtonGroup>
+        </ButtonGroup>,
       );
       expect(screen.getByTestId("test")).toHaveClass("sds-button-group--auto");
     });
@@ -77,7 +77,7 @@ describe("ButtonGroup", () => {
           <button>1</button>
           <button>2</button>
           <button>3</button>
-        </ButtonGroup>
+        </ButtonGroup>,
       );
       expect(screen.getByTestId("test")).toHaveClass("sds-button-group--left");
     });
@@ -88,7 +88,7 @@ describe("ButtonGroup", () => {
           <button>1</button>
           <button>2</button>
           <button>3</button>
-        </ButtonGroup>
+        </ButtonGroup>,
       );
       expect(screen.getByTestId("test")).toHaveClass("sds-button-group--right");
     });
@@ -99,7 +99,7 @@ describe("ButtonGroup", () => {
           <button>1</button>
           <button>2</button>
           <button>3</button>
-        </ButtonGroup>
+        </ButtonGroup>,
       );
       expect(screen.getByTestId("test")).toHaveClass("sds-button-group--split");
     });

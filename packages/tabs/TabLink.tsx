@@ -28,7 +28,7 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
       isSelected,
       ...rest
     }: TabLinkProps,
-    ref
+    ref,
   ) => {
     return (
       <a
@@ -36,7 +36,7 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
           "sds-tabs__tab",
           "sds-tab-link",
           isSelected && "sds-tab-link--selected",
-          className
+          className,
         )}
         href={href}
         ref={ref}
@@ -54,7 +54,7 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
         )}
       </a>
     );
-  }
+  },
 );
 
 TabLink.displayName = "TabLink";

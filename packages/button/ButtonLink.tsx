@@ -36,7 +36,7 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
       iconVariant = "right",
       ...rest
     }: ButtonLinkProps,
-    ref
+    ref,
   ) => {
     const ariaLabel = typeof children === "string" ? children : undefined;
     return (
@@ -47,7 +47,7 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
           "sds-button",
           `sds-button--${variant}`,
           size !== "default" && `sds-button--${size}`,
-          className
+          className,
         )}
         href={href}
         aria-label={iconVariant === "only" ? ariaLabel : undefined}
@@ -64,7 +64,7 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
         )}
       </a>
     );
-  }
+  },
 );
 
 ButtonLink.displayName = "ButtonLink";

@@ -17,7 +17,7 @@ describe("LogoIcons", () => {
 
         expect(screen.getByTestId("test")).toHaveAttribute(
           "aria-hidden",
-          "true"
+          "true",
         );
         expect(await axe(container)).toHaveNoViolations();
       });
@@ -36,11 +36,11 @@ describe("LogoIcons", () => {
       it(`${logoIcon.name} has custom className`, async () => {
         const { component: Logo } = logoIcon;
         render(
-          <Logo color="black" className="test-class" data-testid="test" />
+          <Logo color="black" className="test-class" data-testid="test" />,
         );
 
         expect(screen.getByTestId("test")).toHaveClass(
-          "sds-icon--color-black test-class"
+          "sds-icon--color-black test-class",
         );
       });
     });

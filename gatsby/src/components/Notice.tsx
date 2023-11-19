@@ -10,7 +10,7 @@ export const Notice = ({ heading, children }) => {
       <div
         className={clsx(
           style.notice__heading,
-          "sds-typography-heading--paragraph"
+          "sds-typography-heading--paragraph",
         )}
       >
         {heading}

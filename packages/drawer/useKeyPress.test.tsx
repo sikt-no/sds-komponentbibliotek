@@ -24,7 +24,7 @@ describe("useKeyPress", () => {
   it("should call handleMock on Escape key", async () => {
     const mockHandler = jest.fn();
     const { unmount } = render(
-      <MockDrawerComponent isExpanded={true} onKeyPress={mockHandler} />
+      <MockDrawerComponent isExpanded={true} onKeyPress={mockHandler} />,
     );
     await user.keyboard("{Escape}");
 
@@ -36,7 +36,7 @@ describe("useKeyPress", () => {
   it("should not call handleMock on key ArrowUp", async () => {
     const mockHandler = jest.fn();
     const { unmount } = render(
-      <MockDrawerComponent isExpanded={true} onKeyPress={mockHandler} />
+      <MockDrawerComponent isExpanded={true} onKeyPress={mockHandler} />,
     );
 
     await user.keyboard("{ArrowDown}");

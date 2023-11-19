@@ -42,7 +42,7 @@ export const ToggleSegmentOption = forwardRef<
       <label
         className={clsx(
           "sds-toggle-segment__label",
-          checked && "sds-toggle-segment__label--checked"
+          checked && "sds-toggle-segment__label--checked",
         )}
         htmlFor={htmlForId}
       >

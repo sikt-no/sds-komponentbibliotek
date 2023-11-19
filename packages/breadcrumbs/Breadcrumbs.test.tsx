@@ -15,7 +15,7 @@ describe("Breadcrumbs", () => {
           <BreadcrumbItem>
             <a href="/">Level 2</a>
           </BreadcrumbItem>
-        </Breadcrumbs>
+        </Breadcrumbs>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -32,13 +32,13 @@ describe("Breadcrumbs", () => {
           <BreadcrumbItem>
             <a href="/">Level 2</a>
           </BreadcrumbItem>
-        </Breadcrumbs>
+        </Breadcrumbs>,
       );
       expect(screen.getByTestId("test-group")).toHaveClass("sds-breadcrumbs");
       expect(screen.getByTestId("test-group")).toBeInTheDocument();
 
       expect(screen.getByTestId("test-item")).toHaveClass(
-        "sds-breadcrumbs-item"
+        "sds-breadcrumbs-item",
       );
       expect(screen.getByTestId("test-item")).toBeInTheDocument();
     });
@@ -60,13 +60,13 @@ describe("Breadcrumbs", () => {
         <BreadcrumbItem>
           <a href="/">Level 2</a>
         </BreadcrumbItem>
-      </Breadcrumbs>
+      </Breadcrumbs>,
     );
     expect(screen.getByTestId("test-group")).toHaveClass(
-      "sds-breadcrumbs test-class-name"
+      "sds-breadcrumbs test-class-name",
     );
     expect(screen.getByTestId("test-item")).toHaveClass(
-      "sds-breadcrumbs-item test-class-name-on-item"
+      "sds-breadcrumbs-item test-class-name-on-item",
     );
   });
 });

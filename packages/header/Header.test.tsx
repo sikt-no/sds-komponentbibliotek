@@ -24,11 +24,11 @@ describe("Header", () => {
       render(
         <Header className="test-class-name" data-testid="test">
           Foo
-        </Header>
+        </Header>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-header test-class-name"
+        "sds-header test-class-name",
       );
     });
 
@@ -36,7 +36,7 @@ describe("Header", () => {
       render(<Header logoHref="#">Foo</Header>);
 
       expect(screen.getByRole("link", { name: "Sikt" })).toHaveClass(
-        "sds-header__logo-link"
+        "sds-header__logo-link",
       );
       expect(screen.getByRole("link", { name: "Sikt" })).toBeInTheDocument();
     });

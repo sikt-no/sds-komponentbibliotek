@@ -9,7 +9,7 @@ describe("InputActionButton", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <InputActionButton label="Foo" icon={<MagnifyingGlassIcon />} />
+        <InputActionButton label="Foo" icon={<MagnifyingGlassIcon />} />,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -23,11 +23,11 @@ describe("InputActionButton", () => {
           label="Foo"
           icon={<MagnifyingGlassIcon />}
           data-testid="test"
-        />
+        />,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-button--transparent sds-input-action"
+        "sds-button--transparent sds-input-action",
       );
       expect(screen.getByTestId("test")).toHaveAccessibleName("Foo");
     });
@@ -41,7 +41,7 @@ describe("InputActionButton", () => {
           icon={<MagnifyingGlassIcon />}
           data-testid="test"
           onClick={clickHandler}
-        />
+        />,
       );
 
       await user.click(screen.getByTestId("test"));
@@ -56,11 +56,11 @@ describe("InputActionButton", () => {
           icon={<MagnifyingGlassIcon />}
           data-testid="test"
           className="test-class-name"
-        />
+        />,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-input-action test-class-name"
+        "sds-input-action test-class-name",
       );
     });
 
@@ -71,11 +71,11 @@ describe("InputActionButton", () => {
           icon={<MagnifyingGlassIcon />}
           data-testid="test"
           error
-        />
+        />,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-button--critical sds-input-action"
+        "sds-button--critical sds-input-action",
       );
     });
   });

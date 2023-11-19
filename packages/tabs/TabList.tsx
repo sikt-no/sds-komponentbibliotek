@@ -38,7 +38,7 @@ export const TabList = ({
                 child as ReactElement<TabProps & { index: number }>,
                 {
                   index,
-                }
+                },
               )}
             </>
           );

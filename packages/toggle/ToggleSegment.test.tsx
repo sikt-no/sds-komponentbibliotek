@@ -57,7 +57,7 @@ describe("Toggle Segment", () => {
               label={`Label ${value}`}
             />
           ))}
-        </ToggleSegment>
+        </ToggleSegment>,
       );
 
       const label = screen.getByLabelText("Label 1");
@@ -84,8 +84,8 @@ describe("Toggle Segment", () => {
 
       expect(
         container.getElementsByClassName(
-          "sds-toggle-segment sds-toggle-segment--fixed"
-        )[0]
+          "sds-toggle-segment sds-toggle-segment--fixed",
+        )[0],
       ).toBeInTheDocument();
     });
   });
@@ -102,12 +102,12 @@ describe("Toggle Segment", () => {
             onChange={() => {}}
             label={label}
           />
-        </ToggleSegment>
+        </ToggleSegment>,
       );
 
       const htmlFor = screen.getByText(label).getAttribute("for");
       expect(
-        container.querySelector(`#${CSS.escape(htmlFor!)}`)
+        container.querySelector(`#${CSS.escape(htmlFor!)}`),
       ).toBeInTheDocument();
     });
 
@@ -124,13 +124,13 @@ describe("Toggle Segment", () => {
             label={label}
             id={inputId}
           />
-        </ToggleSegment>
+        </ToggleSegment>,
       );
 
       const htmlFor = screen.getByText(label).getAttribute("for");
       expect(htmlFor).toBe(inputId);
       expect(
-        container.querySelector(`#${CSS.escape(htmlFor!)}`)
+        container.querySelector(`#${CSS.escape(htmlFor!)}`),
       ).toBeInTheDocument();
     });
   });

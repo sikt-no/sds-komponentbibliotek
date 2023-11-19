@@ -28,7 +28,7 @@ export const ToggleButton = forwardRef<HTMLInputElement, ToggleButtonProps>(
         <label
           className={clsx(
             "sds-toggle-button__label",
-            checked && "sds-toggle-button__label--checked"
+            checked && "sds-toggle-button__label--checked",
           )}
           htmlFor={toggleButtonId}
         >
@@ -37,13 +37,13 @@ export const ToggleButton = forwardRef<HTMLInputElement, ToggleButtonProps>(
             <PlusCircleIcon
               className={clsx(
                 "sds-toggle-button__icon",
-                checked && "sds-toggle-button__icon--checked"
+                checked && "sds-toggle-button__icon--checked",
               )}
             />
           )}
         </label>
       </div>
     );
-  }
+  },
 );
 ToggleButton.displayName = "ToggleButton";

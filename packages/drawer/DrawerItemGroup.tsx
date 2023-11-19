@@ -22,7 +22,7 @@ export const DrawerItemGroup = ({
       className={clsx(
         "sds-drawer-item-group",
         expanded && "sds-drawer-item-group--expanded",
-        className
+        className,
       )}
       {...rest}
     >

@@ -31,7 +31,7 @@ export const DrawerHeader = ({
       className={clsx(
         "sds-drawer-header",
         expanded && "sds-drawer-header--expanded",
-        className
+        className,
       )}
       {...rest}
     >

@@ -15,7 +15,7 @@ const renderComponent = ({ className, imgAlt }: Partial<CardProps>) =>
       callToAction={<>CTA</>}
     >
       Children
-    </Card>
+    </Card>,
   );
 
 describe("Card", () => {
@@ -41,7 +41,7 @@ describe("Card", () => {
       renderComponent({ className: "test-class-name" });
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-card test-class-name"
+        "sds-card test-class-name",
       );
     });
 
