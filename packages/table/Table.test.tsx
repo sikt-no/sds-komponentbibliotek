@@ -49,10 +49,12 @@ describe("Table", () => {
 
   describe("api", () => {
     it("should render", async () => {
-      render(<Table caption="Caption" />);
+      render(
+        <Table caption="Caption" wrapperProps={{ "data-testid": "wrapper" }} />,
+      );
 
       const table = screen.getByRole("table");
-      expect(table.parentElement).toHaveClass("sds-table");
+      expect(screen.getByTestId("wrapper")).toHaveClass("sds-table");
       expect(table).toHaveClass("sds-table__table");
     });
 
@@ -62,10 +64,11 @@ describe("Table", () => {
           caption="Caption"
           data-testid="test"
           className="test-class-name"
+          wrapperProps={{ "data-testid": "wrapper" }}
         />,
       );
 
-      expect(screen.getByTestId("test").parentElement).toHaveClass(
+      expect(screen.getByTestId("wrapper")).toHaveClass(
         "sds-table test-class-name",
       );
     });

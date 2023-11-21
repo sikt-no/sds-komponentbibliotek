@@ -60,11 +60,7 @@ describe("Input", () => {
 
     it("should have class name", async () => {
       const { container } = render(
-        <TextInput
-          label="Foo"
-          className="test-class-name"
-          data-testid="test"
-        />,
+        <TextInput label="Foo" className="test-class-name" />,
       );
 
       expect(

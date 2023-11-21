@@ -94,7 +94,7 @@ describe("Toggle Segment", () => {
     it("should have automatically set input id", () => {
       const label = "Label";
 
-      const { container } = render(
+      render(
         <ToggleSegment legend="Legend" data-testid="test">
           <ToggleSegmentOption
             value={0}
@@ -106,16 +106,14 @@ describe("Toggle Segment", () => {
       );
 
       const htmlFor = screen.getByText(label).getAttribute("for");
-      expect(
-        container.querySelector(`#${CSS.escape(htmlFor!)}`),
-      ).toBeInTheDocument();
+      expect(screen.getAllByRole("radio")[0]).toHaveAttribute("id", htmlFor);
     });
 
     it("should use specified input id", () => {
       const label = "Label";
       const inputId = "input-id";
 
-      const { container } = render(
+      render(
         <ToggleSegment legend="Legend" data-testid="test">
           <ToggleSegmentOption
             value={0}
@@ -129,9 +127,7 @@ describe("Toggle Segment", () => {
 
       const htmlFor = screen.getByText(label).getAttribute("for");
       expect(htmlFor).toBe(inputId);
-      expect(
-        container.querySelector(`#${CSS.escape(htmlFor!)}`),
-      ).toBeInTheDocument();
+      expect(screen.getAllByRole("radio")[0]).toHaveAttribute("id", htmlFor);
     });
   });
 });

@@ -84,9 +84,9 @@ describe("Drawer,", () => {
         <Drawer onOverlayClick={mockFunction} expanded data-testid="test" />,
       );
 
-      const overlayDiv = container.querySelector(".sds-drawer__overlay");
+      const overlay = container.querySelector(".sds-drawer__overlay");
 
-      overlayDiv && (await user.click(overlayDiv));
+      overlay && (await user.click(overlay));
 
       expect(mockFunction).toHaveBeenCalled();
     });

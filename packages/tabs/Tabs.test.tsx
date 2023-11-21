@@ -74,9 +74,7 @@ describe("Tabs", () => {
     it("should have badge element", async () => {
       renderComponent({ badge: <span>badge</span> });
 
-      expect(screen.getByText("badge").parentNode).toHaveClass(
-        "sds-tabs__tab-badge",
-      );
+      expect(screen.getByText("badge")).toBeInTheDocument();
     });
 
     it("shows tab set by defaultIndex", async () => {

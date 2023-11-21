@@ -52,9 +52,7 @@ describe("Toggle Switch", () => {
       render(<ToggleSwitch label="Foo" />);
 
       const container = screen.getByTestId("sds-toggle-switch");
-      const label = container.getElementsByClassName(
-        "sds-toggle-switch__label-text",
-      )[0];
+      const label = screen.getByText("Foo");
       const control = container.getElementsByClassName(
         "sds-toggle-switch__inner",
       )[0];
@@ -67,9 +65,7 @@ describe("Toggle Switch", () => {
       render(<ToggleSwitch labelFirst label="Foo" />);
 
       const container = screen.getByTestId("sds-toggle-switch");
-      const label = container.getElementsByClassName(
-        "sds-toggle-switch__label-text",
-      )[0];
+      const label = screen.getByText("Foo");
       const control = container.getElementsByClassName(
         "sds-toggle-switch__inner",
       )[0];

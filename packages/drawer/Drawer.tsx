@@ -37,7 +37,7 @@ export const Drawer = ({
         className="sds-drawer__overlay"
         role="none"
         onClick={handleOverlayClick}
-      ></div>
+      />
     </div>
   );
 };

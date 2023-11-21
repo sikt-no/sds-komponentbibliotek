@@ -52,9 +52,7 @@ describe("DatePicker", () => {
     it("should have a calendar", async () => {
       const user = userEvent.setup();
 
-      const { container } = render(
-        <InputDatepicker label="Foo" data-testid="test" />,
-      );
+      render(<InputDatepicker label="Foo" data-testid="test" />);
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
 
@@ -65,15 +63,12 @@ describe("DatePicker", () => {
 
       expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
 
-      const calendarDateCells = container.getElementsByClassName(
-        "sds-input-datepicker__calendar-cell",
-      );
-      const calendarDateCell = Array.from(calendarDateCells).filter(
-        (element) => element.getAttribute("aria-disabled") !== "true",
-      )[0];
+      const calendarCell = screen.getAllByText("1", {
+        selector: ".sds-input-datepicker__calendar-cell",
+      })[0];
 
       await act(async () => {
-        await user.click(calendarDateCell);
+        await user.click(calendarCell);
       });
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();

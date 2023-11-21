@@ -7,7 +7,7 @@ export interface TableProps extends TableHTMLAttributes<HTMLTableElement> {
   className?: string;
   showCaption?: boolean;
   caption: ReactNode;
-  wrapperProps?: HTMLAttributes<HTMLDivElement>;
+  wrapperProps?: HTMLAttributes<HTMLDivElement> & { "data-testid"?: string };
 }
 
 export const Table = ({

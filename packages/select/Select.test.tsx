@@ -29,7 +29,7 @@ describe("Select", () => {
     });
 
     it("should have set value", async () => {
-      const { container } = render(
+      render(
         <Select
           label="Foo"
           options={[
@@ -41,10 +41,10 @@ describe("Select", () => {
         />,
       );
 
-      const select = container.getElementsByClassName("sds-select")[0];
-
       expect(screen.getByTestId("test")).toBeInTheDocument();
-      expect(select.querySelector("select")?.value).toBe("bar");
+      expect((screen.getByTestId("test") as HTMLSelectElement).value).toBe(
+        "bar",
+      );
     });
 
     it("calls change handler", async () => {
