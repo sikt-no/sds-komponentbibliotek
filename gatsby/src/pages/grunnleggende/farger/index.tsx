@@ -524,7 +524,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                     return Object.entries(token[1]).map(
                       (subtoken, subindex) => {
                         return (
-                          <TableRow key={token[1].name}>
+                          <TableRow key={subtoken[1].name}>
                             <TableCell data-th="Token">
                               <Badge visibility="strong" icon={<Nut />}>
                                 {`--sds-${Object.values(subtoken[1].path).join(
@@ -548,13 +548,12 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                               <div className={moduleStyle.farger__flex}>
                                 <Swatch
                                   color={
-                                    dark.color.support?.[token[0]]?.[
-                                      subtoken[0]
-                                    ].value ?? subtoken[1].value
+                                    dark.color.brand?.[token[0]]?.[subtoken[0]]
+                                      .value ?? subtoken[1].value
                                   }
                                 />
                                 <Badge>
-                                  {dark.color.support?.[token[0]]?.[subtoken[0]]
+                                  {dark.color.brand?.[token[0]]?.[subtoken[0]]
                                     .value ?? subtoken[1].value}
                                 </Badge>
                               </div>
@@ -619,7 +618,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                           return Object.entries(subtoken[1]).map(
                             (subsubtoken, subsubindex) => {
                               return (
-                                <TableRow key={token[1].name}>
+                                <TableRow key={subsubtoken[1].name}>
                                   <TableCell data-th="Token">
                                     <Badge visibility="strong" icon={<Nut />}>
                                       {`--sds-${Object.values(
@@ -717,7 +716,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                     return Object.entries(token[1]).map(
                       (subtoken, subindex) => {
                         return (
-                          <TableRow key={token[1].name}>
+                          <TableRow key={subtoken[1].name}>
                             <TableCell data-th="Token">
                               <Badge visibility="strong" icon={<Nut />}>
                                 {`--sds-${Object.values(subtoken[1].path).join(
@@ -801,7 +800,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                     return Object.entries(token[1]).map(
                       (subtoken, subindex) => {
                         return (
-                          <TableRow key={token[1].name}>
+                          <TableRow key={subtoken[1].name}>
                             <TableCell data-th="Token">
                               <Badge visibility="strong" icon={<Nut />}>
                                 {`--sds-${Object.values(subtoken[1].path).join(

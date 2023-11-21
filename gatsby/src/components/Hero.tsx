@@ -30,7 +30,7 @@ export const Hero = ({
           {breadcrumbs && (
             <Breadcrumbs aria-label="Navigasjonssti">
               {breadcrumbs.map((breadcrumb) => (
-                <BreadcrumbItem>
+                <BreadcrumbItem key={breadcrumb.to}>
                   <GatsbyLink
                     className="sds-typography-link"
                     to={breadcrumb.to}
