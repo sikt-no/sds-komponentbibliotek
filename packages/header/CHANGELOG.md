@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@2.0.1...@sikt/sds-header@2.1.0) (2023-11-24)
+
+### Features
+
+- **header:** add collapsable menu component for mobile view ([7e5e84d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7e5e84d63e482a08b114d8837d61d0b56b05f204))
+
 ### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@2.0.0...@sikt/sds-header@2.0.1) (2023-11-10)
 
 ### Bug Fixes

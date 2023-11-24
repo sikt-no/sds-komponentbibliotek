@@ -60,7 +60,7 @@ export const HeaderCollapsibleMenu = ({
               className: clsx(
                 "sds-header__header-item",
                 index + 1 === Children.count(children) &&
-                  "sds-header__header-item--last-item"
+                  "sds-header__header-item--last-item",
               ),
             })}
           </>
@@ -81,7 +81,7 @@ export const HeaderCollapsibleMenu = ({
       <div
         className={clsx(
           "sds-header-hamburger__dropdown",
-          menuOpen && "sds-header-hamburger__dropdown--open"
+          menuOpen && "sds-header-hamburger__dropdown--open",
         )}
         aria-hidden={!menuOpen}
         id={menuId}

@@ -17,7 +17,7 @@ describe("Header", () => {
             </HeaderNav>
             <div>Foo</div>
           </HeaderCollapsibleMenu>
-        </Header>
+        </Header>,
       );
 
       expect(await axe(container)).toHaveNoViolations();
@@ -31,7 +31,7 @@ describe("Header", () => {
           <div>
             <div>Foo</div>
           </div>
-        </Header>
+        </Header>,
       );
 
       expect(screen.getByTestId("test")).toBeInTheDocument();
@@ -41,11 +41,11 @@ describe("Header", () => {
       render(
         <Header className="test-class-name" data-testid="test">
           <div>Foo</div>
-        </Header>
+        </Header>,
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-header test-class-name"
+        "sds-header test-class-name",
       );
     });
 
@@ -53,11 +53,11 @@ describe("Header", () => {
       render(
         <Header logoHref="#">
           <div>Foo</div>
-        </Header>
+        </Header>,
       );
 
       expect(screen.getByRole("link", { name: "Sikt" })).toHaveClass(
-        "sds-header__logo-link"
+        "sds-header__logo-link",
       );
       expect(screen.getByRole("link", { name: "Sikt" })).toBeInTheDocument();
     });
@@ -66,7 +66,7 @@ describe("Header", () => {
       render(
         <Header logoText="Bar">
           <div>Foo</div>
-        </Header>
+        </Header>,
       );
 
       expect(screen.getByText("Bar")).toHaveClass("sds-header__logo-text");
@@ -79,7 +79,7 @@ describe("Header", () => {
           <HeaderCollapsibleMenu>
             <div>Foo</div>
           </HeaderCollapsibleMenu>
-        </Header>
+        </Header>,
       );
 
       expect(screen.getByRole("button", {})).toBeInTheDocument();
@@ -95,13 +95,13 @@ describe("Header", () => {
               </a>
             </HeaderNav>
           </HeaderCollapsibleMenu>
-        </Header>
+        </Header>,
       );
 
       /* Looks for the nav-link that belongs to the hamburger menu
       (which is nav element number 4, therefore index 3) */
       const navMobileLink = screen.getAllByTestId(
-        "test-link"
+        "test-link",
       )[3] as HTMLElement;
       expect(navMobileLink.hidden).toBe(false);
     });
@@ -121,7 +121,7 @@ describe("Header", () => {
               </a>
             </HeaderNav>
           </HeaderCollapsibleMenu>
-        </Header>
+        </Header>,
       );
 
       const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
@@ -150,7 +150,7 @@ describe("Header", () => {
               </a>
             </HeaderNav>
           </HeaderCollapsibleMenu>
-        </Header>
+        </Header>,
       );
 
       const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
