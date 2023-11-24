@@ -145,7 +145,7 @@ Rebase before merge so that your commits end up on top of the history.
 
 #### Publish
 
-Create a release branch `<gitlab-user>/release-<package-name>-<version>`.  
+~~Create a release branch `<gitlab-user>/release-<package-name>-<version>`.~~  
 Bump package versions & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version):
 
 ```sh

@@ -16,7 +16,9 @@ echo "{
   \"types\": \"dist/index.d.ts\",
   \"style\": \"dist/index.css\",
   \"files\": [
-    \"dist\"
+    \"CHANGELOG.md\",
+    \"dist\",
+    \"README.md\"
   ],
   \"scripts\": {
     \"build\": \"tsup\"
