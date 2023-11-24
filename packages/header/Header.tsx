@@ -1,4 +1,8 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import React, {
+  AnchorHTMLAttributes,
+  HTMLAttributes,
+  ReactElement,
+} from "react";
 import clsx from "clsx";
 import { Link, ScreenReaderOnly } from "@sikt/sds-core";
 import { Logo } from "@sikt/sds-logo";
@@ -6,7 +10,9 @@ import "./header.pcss";
 
 export interface HeaderProps extends HTMLAttributes<HTMLElement> {
   className?: string;
-  children?: ReactNode;
+  children?:
+    | ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>
+    | ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>[];
   skipLinkId?: string;
   skipLinkText?: string;
   logoHref?: string;
@@ -27,7 +33,7 @@ export const Header = ({
       {logoText}
     </span>
   ) : (
-    <Logo className="sds-header__logo" />
+    <Logo variant={"primary"} className="sds-header__logo" />
   );
 
   return (
@@ -36,14 +42,17 @@ export const Header = ({
         <Link href={`#${skipLinkId}`}>{skipLinkText}</Link>
       </ScreenReaderOnly>
       <header className={clsx("sds-header", className)} {...rest}>
-        {logoHref ? (
-          <Link href={logoHref} className="sds-header__logo-link">
-            {logoElement}
-          </Link>
-        ) : (
-          logoElement
-        )}
-        {children}
+        <div className="sds-header__content">
+          {logoHref ? (
+            <Link href={logoHref} className="sds-header__logo-link">
+              {logoElement}
+            </Link>
+          ) : (
+            logoElement
+          )}
+
+          {children}
+        </div>
       </header>
     </>
   );

@@ -1,0 +1,33 @@
+@import url("@sikt/sds-tokens/dist/css/custom-media.css");
+
+.sds-header__header-nav {
+  &-list {
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    gap: var(--sds-space-gap-small);
+  }
+
+  &-item {
+    &--mobile {
+      @media (--sds-base-breakpoint-tablet) {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @media (--sds-base-breakpoint-tablet) {
+        display: inline-flex;
+      }
+    }
+  }
+}
+
+.sds-header-hamburger__menu {
+  .sds-header__header-nav-list {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -2,14 +2,121 @@
 
 .sds-header {
   align-items: center;
+  position: relative;
   background-color: var(--sds-color-layout-background-primary);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  min-height: 48px;
-  padding: 0 var(--sds-space-padding-huge);
+
+  --header-height: 48px;
+
+  @media (--sds-base-breakpoint-tablet) {
+    --header-height: 56px;
+  }
+
+  @media (--sds-base-breakpoint-desktop) {
+    --header-height: 72px;
+  }
+
+  &__content {
+    min-height: var(--header-height);
+    padding: 0 var(--sds-space-padding-medium);
+    display: grid;
+    grid-gap: 0 var(--sds-space-padding-small);
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    &--desktop-only {
+      display: none;
+
+      @media (--sds-base-breakpoint-tablet) {
+        display: flex;
+      }
+    }
+  }
+
+  &__header-item {
+    display: none;
+
+    @media (--sds-base-breakpoint-tablet) {
+      display: unset;
+    }
+
+    &--last-item {
+      width: fit-content;
+      justify-self: end;
+    }
+  }
 
   &__skip-link.sds-screen-reader-only--focusable:focus-within {
     position: absolute;
+    z-index: 1;
+    background-color: var(--sds-color-layout-background-primary);
+  }
+
+  &-hamburger {
+    &__button {
+      grid-column: -2 / -1;
+      justify-self: end;
+      width: fit-content;
+
+      /* Chaining with the button class is needed here for specificity */
+      &.sds-button {
+        @media (--sds-base-breakpoint-tablet) {
+          display: none;
+        }
+      }
+    }
+
+    &__menu {
+      display: flex;
+      gap: var(--sds-space-gap-medium);
+      flex-direction: column;
+      overflow: auto;
+      width: 100%;
+      border-top: var(--sds-space-border-weight-thin) solid
+        var(--sds-color-interaction-primary-strong-default);
+      padding: var(--sds-space-padding-medium);
+
+      /* Hides menu content by default, this should be overwritten by other 
+      styling when the menu is open */
+      * {
+        display: none;
+      }
+    }
+
+    &__dropdown {
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      background-color: var(--sds-color-layout-background-primary);
+      z-index: calc(var(--sds-base-zindex-drawer) + 1);
+      height: 100vh;
+      width: 100%;
+      max-height: 0;
+      transition: max-height 0.25s ease;
+      overflow: hidden;
+      grid-column: 1 / -1;
+
+      &--open {
+        max-height: calc(100vh - var(--header-height));
+      }
+
+      @media (--sds-base-breakpoint-tablet) {
+        display: none;
+      }
+
+      /* Unhides hamburger menu items when dropdown is open */
+      &.sds-header-hamburger__dropdown--open {
+        *:not(.sds-header__header-nav-item--desktop) {
+          display: unset;
+        }
+
+        /* These need to be given flex, so we can't just unset
+        them like the other items */
+        .sds-header__header-nav-list,
+        .sds-header-hamburger__menu {
+          display: flex;
+        }
+      }
+    }
   }
 
   .sds-header__logo {
@@ -20,13 +127,5 @@
       color: inherit;
       text-decoration: none;
     }
-  }
-
-  @media (--sds-base-breakpoint-tablet) {
-    min-height: 56px;
-  }
-
-  @media (--sds-base-breakpoint-desktop) {
-    min-height: 72px;
   }
 }
