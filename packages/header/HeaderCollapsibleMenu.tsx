@@ -12,7 +12,7 @@ import React, {
 
 export interface HeaderCollapsibleMenuProps {
   children: React.ReactNode;
-  hamburgerOpen?: boolean;
+  dropdownOpen?: boolean;
   ariaLabelOpenMenu?: string;
   ariaLabelCloseMenu?: string;
   ariaLabelClose?: string;
@@ -20,14 +20,14 @@ export interface HeaderCollapsibleMenuProps {
 
 export const HeaderCollapsibleMenu = ({
   children,
-  hamburgerOpen = false,
+  dropdownOpen = false,
   ariaLabelOpenMenu = "Åpne meny",
   ariaLabelCloseMenu = "Lukk meny",
   ariaLabelClose = "Lukk",
   ...rest
 }: HeaderCollapsibleMenuProps) => {
   const menuId = useId();
-  const [menuOpen, setMenuOpen] = useState(hamburgerOpen);
+  const [menuOpen, setMenuOpen] = useState(dropdownOpen);
 
   function toggleMenu() {
     setMenuOpen(!menuOpen);
@@ -47,8 +47,8 @@ export const HeaderCollapsibleMenu = ({
   }, [menuOpen]);
 
   useEffect(() => {
-    setMenuOpen(hamburgerOpen);
-  }, [hamburgerOpen]);
+    setMenuOpen(dropdownOpen);
+  }, [dropdownOpen]);
 
   return (
     <>

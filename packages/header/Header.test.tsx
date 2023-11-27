@@ -73,7 +73,7 @@ describe("Header", () => {
       expect(screen.getByText("Bar")).toBeInTheDocument();
     });
 
-    it("render a button when using a hamburger menu", async () => {
+    it("render a button when using a collapsible menu", async () => {
       render(
         <Header data-testid="test">
           <HeaderCollapsibleMenu>
@@ -85,34 +85,13 @@ describe("Header", () => {
       expect(screen.getByRole("button", {})).toBeInTheDocument();
     });
 
-    it("should be visible when hamburger menu is open", async () => {
-      render(
-        <Header>
-          <HeaderCollapsibleMenu hamburgerOpen={true}>
-            <HeaderNav>
-              <a href="/" data-testid="test-link">
-                Foo
-              </a>
-            </HeaderNav>
-          </HeaderCollapsibleMenu>
-        </Header>,
-      );
-
-      /* Looks for the nav-link that belongs to the hamburger menu
-      (which is nav element number 4, therefore index 3) */
-      const navMobileLink = screen.getAllByTestId(
-        "test-link",
-      )[3] as HTMLElement;
-      expect(navMobileLink.hidden).toBe(false);
-    });
-
     it("should open the menu when button is pressed", async () => {
       const user = userEvent.setup();
 
       render(
         <Header>
           <HeaderCollapsibleMenu
-            hamburgerOpen={false}
+            dropdownOpen={false}
             data-testid="test-dropdown"
           >
             <HeaderNav>
@@ -127,9 +106,9 @@ describe("Header", () => {
       const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
       expect(navElement).toHaveAttribute("aria-hidden", "true");
 
-      const hamburgerMenu = screen.getByRole("button");
+      const dropdownMenu = screen.getByRole("button");
       await act(async () => {
-        await user.click(hamburgerMenu);
+        await user.click(dropdownMenu);
       });
 
       expect(navElement).toHaveAttribute("aria-hidden", "false");
@@ -141,7 +120,7 @@ describe("Header", () => {
       render(
         <Header>
           <HeaderCollapsibleMenu
-            hamburgerOpen={true}
+            dropdownOpen={true}
             data-testid="test-dropdown"
           >
             <HeaderNav>

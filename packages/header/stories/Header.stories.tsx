@@ -59,7 +59,7 @@ export const WithContent: Story = {
   },
 };
 
-export const WithHamburgerMenu: Story = {
+export const WithCollapsibleMenu: Story = {
   args: {
     logoHref: "//sikt.no",
     children: [
