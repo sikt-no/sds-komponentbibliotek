@@ -15,23 +15,15 @@ export interface HeaderNavProps extends HTMLAttributes<HTMLElement> {
 
 export const HeaderNav = ({ children, className, ...rest }: HeaderNavProps) => {
   return (
-    <nav className={clsx("sds-header__header-nav", className)} {...rest}>
-      <ul className="sds-header__header-nav-list">
-        {/* Since we need to apply sds-tabs__tab conditionally on a media query,
-        we need to duplicate these children and always only show one. Hiding is
-        done with the desktop and css classes they have. */}
+    <nav className={clsx("sds-header__nav", className)} {...rest}>
+      <ul className="sds-header__nav-list">
         {Children.map(children, (child) => {
           return (
-            <li className="sds-header__header-nav-item--desktop">
+            <li className="sds-header__nav-item">
               {cloneElement(child as ReactElement, {
-                className: "sds-tab-link sds-tabs__tab",
+                className: "sds-header__nav-link",
               })}
             </li>
-          );
-        })}
-        {Children.map(children, (child) => {
-          return (
-            <li className="sds-header__header-nav-item--mobile">{child}</li>
           );
         })}
       </ul>

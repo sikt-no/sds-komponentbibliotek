@@ -22,14 +22,6 @@
     grid-gap: 0 var(--sds-space-padding-small);
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-
-    &--desktop-only {
-      display: none;
-
-      @media (--sds-base-breakpoint-tablet) {
-        display: flex;
-      }
-    }
   }
 
   &__header-item {
@@ -46,18 +38,17 @@
   }
 
   &__skip-link.sds-screen-reader-only--focusable:focus-within {
+    background-color: var(--sds-color-layout-background-primary);
     position: absolute;
     z-index: 1;
-    background-color: var(--sds-color-layout-background-primary);
   }
 
-  &-hamburger {
+  &-collapsible {
     &__button {
       grid-column: -2 / -1;
       justify-self: end;
       width: fit-content;
 
-      /* Chaining with the button class is needed here for specificity */
       &.sds-button {
         @media (--sds-base-breakpoint-tablet) {
           display: none;
@@ -66,7 +57,7 @@
     }
 
     &__menu {
-      display: flex;
+      display: none;
       gap: var(--sds-space-gap-medium);
       flex-direction: column;
       overflow: auto;
@@ -75,10 +66,9 @@
         var(--sds-color-interaction-primary-strong-default);
       padding: var(--sds-space-padding-medium);
 
-      /* Hides menu content by default, this should be overwritten by other 
-      styling when the menu is open */
-      * {
-        display: none;
+      .sds-header__nav-list {
+        display: flex;
+        flex-direction: column;
       }
     }
 
@@ -103,16 +93,8 @@
         display: none;
       }
 
-      /* Unhides hamburger menu items when dropdown is open */
-      &.sds-header-hamburger__dropdown--open {
-        *:not(.sds-header__header-nav-item--desktop) {
-          display: unset;
-        }
-
-        /* These need to be given flex, so we can't just unset
-        them like the other items */
-        .sds-header__header-nav-list,
-        .sds-header-hamburger__menu {
+      &.sds-header-collapsible__dropdown--open {
+        .sds-header-collapsible__menu {
           display: flex;
         }
       }

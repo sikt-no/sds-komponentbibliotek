@@ -8,8 +8,6 @@ import {
   HeaderCollapsibleMenu,
 } from "../index";
 import "../header.pcss";
-import "../../tabs/tabs.pcss";
-import "../../tabs/tab-link.pcss";
 import { Button } from "@sikt/sds-button";
 
 const meta: Meta = {
@@ -26,11 +24,11 @@ const Template: Story = {
     return (
       <Header {...args}>
         <div style={{ display: "flex", gap: "10px" }}>
-          <a href="https://sikt.no">Link 1</a>
-          <a href="https://sikt.no">Link 2</a>
+          <a href="#link1">Link 1</a>
+          <a href="#link2">Link 2</a>
         </div>
         <div style={{ display: "flex", flexDirection: "row-reverse" }}>
-          <a href="https://sikt.no">Link 3</a>
+          <a href="#link3">Link 3</a>
         </div>
       </Header>
     );
@@ -67,8 +65,8 @@ export const WithHamburgerMenu: Story = {
     children: [
       <HeaderCollapsibleMenu key={1}>
         <HeaderNav>
-          <a href="https://sikt.no">Link 1</a>
-          <a href="https://sikt.no">Link 2</a>
+          <a href="#link1">Link 1</a>
+          <a href="#link2">Link 2</a>
         </HeaderNav>
         <Button>Button</Button>
       </HeaderCollapsibleMenu>,

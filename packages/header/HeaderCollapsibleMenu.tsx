@@ -52,7 +52,7 @@ export const HeaderCollapsibleMenu = ({
 
   return (
     <>
-      {/* The desktop mode content of the header */}
+      {/* INFO: The desktop mode content of the header */}
       {Children.map(children, (child, index) => {
         return (
           <>
@@ -74,21 +74,21 @@ export const HeaderCollapsibleMenu = ({
         aria-label={menuOpen ? ariaLabelCloseMenu : ariaLabelOpenMenu}
         aria-controls={menuId}
         aria-expanded={menuOpen}
-        className="sds-header-hamburger__button"
+        className="sds-header-collapsible__button"
       >
         {menuOpen && ariaLabelClose}
       </Button>
       <div
         className={clsx(
-          "sds-header-hamburger__dropdown",
-          menuOpen && "sds-header-hamburger__dropdown--open",
+          "sds-header-collapsible__dropdown",
+          menuOpen && "sds-header-collapsible__dropdown--open",
         )}
         aria-hidden={!menuOpen}
         id={menuId}
         {...rest}
       >
-        <div className="sds-header-hamburger__menu">
-          {/* The mobile mode content of the header */}
+        <div className="sds-header-collapsible__menu">
+          {/* INFO: The mobile mode content of the header */}
           {children}
         </div>
       </div>
