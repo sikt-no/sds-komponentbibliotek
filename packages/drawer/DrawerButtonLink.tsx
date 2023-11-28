@@ -31,10 +31,12 @@ export const DrawerButtonLink = forwardRef<
         className={clsx("sds-drawer-button", className)}
         {...rest}
       >
-        {icon && <span className="sds-drawer-button__label-icon">{icon}</span>}
-        <span className="sds-drawer-button__label-primary">{children}</span>
+        {icon && <span className="sds-drawer-button__icon">{icon}</span>}
+        <span className="sds-drawer-button__label-primary sds-typography-body--regular">
+          {children}
+        </span>
         {secondaryLabel && (
-          <span className="sds-drawer-button__label-secondary">
+          <span className="sds-drawer-button__label-secondary sds-typography-body--small">
             {secondaryLabel}
           </span>
         )}

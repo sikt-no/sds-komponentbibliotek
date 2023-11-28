@@ -101,7 +101,11 @@ function RenderStoryComp({
 
               <DrawerItemGroup expanded={isExpanded} heading="Group 2 heading">
                 <DrawerItem>
-                  <DrawerButtonLink href="/" icon={<span>✉️</span>}>
+                  <DrawerButtonLink
+                    href="/"
+                    icon={<InfoIcon />}
+                    secondaryLabel="Secondary Label"
+                  >
                     Meldinger
                   </DrawerButtonLink>
                 </DrawerItem>
