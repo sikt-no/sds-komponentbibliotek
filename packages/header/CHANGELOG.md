@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@2.1.0...@sikt/sds-header@3.0.0) (2023-11-28)
+
+### ⚠ BREAKING CHANGES
+
+- **header:** rename prop hamburgerOpen to dropdownOpen
+
+### Features
+
+- **header:** change collapsible menu item styling ([891822d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/891822d293dec1996b86f1000aa18e2977a62a5a))
+- **header:** rename prop hamburgerOpen to dropdownOpen ([6aedaf3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6aedaf38d01492fa1caf7c409fbed8cb87a85325))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@2.0.1...@sikt/sds-header@2.1.0) (2023-11-24)
 
 ### Features
