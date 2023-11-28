@@ -40,7 +40,10 @@ export const LinkedInLogo: Story = {
     },
   },
   render: (args) => (
-    <LinkedInLogoIcon style={{ fontSize: "calc(32rem / 16)" }} {...args} />
+    <a href="#linkedin">
+      Linkedin
+      <LinkedInLogoIcon style={{ fontSize: "calc(32rem / 16)" }} {...args} />
+    </a>
   ),
 };
 
@@ -52,6 +55,8 @@ export const XLogo: Story = {
     },
   },
   render: (args) => (
-    <XLogoIcon style={{ fontSize: "calc(32rem / 16)" }} {...args} />
+    <a href="#x">
+      X <XLogoIcon style={{ fontSize: "calc(32rem / 16)" }} {...args} />
+    </a>
   ),
 };

@@ -7,15 +7,15 @@ export interface LogoIconsProps extends IconProps {
   color?: "black" | "white";
 }
 
-export const XLogo = ({
-  color = "white",
-  className,
-  ...rest
-}: LogoIconsProps) => (
+export const XLogo = ({ color, className, ...rest }: LogoIconsProps) => (
   <svg
     viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
-    className={clsx("sds-icon", `sds-icon--color-${color}`, className)}
+    className={clsx(
+      "sds-icon-logo",
+      color && `sds-icon-logo--fill-${color}`,
+      className,
+    )}
     aria-hidden="true"
     {...rest}
   >
@@ -23,15 +23,15 @@ export const XLogo = ({
   </svg>
 );
 
-export const LinkedInLogo = ({
-  color = "white",
-  className,
-  ...rest
-}: LogoIconsProps) => (
+export const LinkedInLogo = ({ color, className, ...rest }: LogoIconsProps) => (
   <svg
     viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
-    className={clsx("sds-icon", `sds-icon--color-${color}`, className)}
+    className={clsx(
+      "sds-icon-logo",
+      color && `sds-icon-logo--fill-${color}`,
+      className,
+    )}
     aria-hidden="true"
     {...rest}
   >

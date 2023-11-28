@@ -30,7 +30,7 @@ describe("LogoIcons", () => {
         const { component: Logo } = logoIcon;
         render(<Logo data-testid="test" />);
 
-        expect(screen.getByTestId("test")).toHaveClass("sds-icon--color-white");
+        expect(screen.getByTestId("test")).toHaveClass("sds-icon-logo");
       });
 
       it(`${logoIcon.name} has custom className`, async () => {
@@ -40,7 +40,7 @@ describe("LogoIcons", () => {
         );
 
         expect(screen.getByTestId("test")).toHaveClass(
-          "sds-icon--color-black test-class",
+          "sds-icon-logo sds-icon-logo--fill-black test-class",
         );
       });
     });
