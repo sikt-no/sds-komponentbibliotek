@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@1.2.0...@sikt/sds-icons@1.2.1) (2023-11-28)
+
+### Bug Fixes
+
+- **icons-logo:** set correct logo color based on preferred color scheme ([bbdeb57](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bbdeb57aec9ccd133c30a2d5862a64ea2c87a104))
+- **icons-logo:** make it possible to override all props ([358ad2b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/358ad2b7eb8ae6e2c58c84480968e4296aa29bcf))
+
 ## [1.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@1.1.0...@sikt/sds-icons@1.2.0) (2023-08-24)
 
 ### Features
