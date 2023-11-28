@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-drawer@0.2.0...@sikt/sds-drawer@1.0.0) (2023-11-28)
+
+### Bug Fixes
+
+- **drawer-button:** correct font size on link ([6c9d1b5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6c9d1b5e4da4fb6b13b3ec456f067870e59ed6ce))
+
 ## 0.2.0 (2023-10-28)
 
 ### ⚠ BREAKING CHANGES

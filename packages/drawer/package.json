@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-drawer",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
