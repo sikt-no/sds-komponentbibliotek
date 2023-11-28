@@ -1,30 +1,23 @@
 import React from "react";
 import { Link as GatsbyLink } from "gatsby";
-import { Header as SdsHeader } from "@sikt/sds-header";
-import { TabLink } from "@sikt/sds-tabs";
+import {
+  Header as SdsHeader,
+  HeaderCollapsibleMenu,
+  HeaderNav,
+} from "@sikt/sds-header";
+import { Link } from "@sikt/sds-core";
 import * as style from "./header.module.css";
 
 const Header = () => {
   return (
-    <SdsHeader logoText="design&shy;system" className={style.header}>
-      <nav aria-label="Navigasjon" className="sds-tabs">
-        <ul className={`sds-tabs__tab-list ${style.header__tabList}`}>
-          <li>
-            <GatsbyLink
-              className="sds-tabs__tab sds-tab-link"
-              to="/grunnleggende/"
-            >
-              Grunnleggende
-            </GatsbyLink>
-          </li>
-          <li>
-            <TabLink href="/komponenter/">Komponenter</TabLink>
-          </li>
-          <li>
-            <TabLink href="/monstre/">Mønstre</TabLink>
-          </li>
-        </ul>
-      </nav>
+    <SdsHeader logoText="designsystem.sikt.no" className={style.header}>
+      <HeaderCollapsibleMenu aria-label="Navigasjon">
+        <HeaderNav>
+          <GatsbyLink to="/grunnleggende/">Grunnleggende</GatsbyLink>
+          <Link href="/komponenter/">Komponenter</Link>
+          <Link href="/monstre/">Mønstre</Link>
+        </HeaderNav>
+      </HeaderCollapsibleMenu>
       <div />
     </SdsHeader>
   );
