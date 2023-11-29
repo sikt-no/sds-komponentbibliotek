@@ -12,8 +12,9 @@ export const XLogo = ({ color, className, ...rest }: LogoIconsProps) => (
     viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
     className={clsx(
+      "sds-icon",
       "sds-icon-logo",
-      color && `sds-icon-logo--fill-${color}`,
+      color && `sds-icon-logo--color-${color}`,
       className,
     )}
     aria-hidden="true"
@@ -28,8 +29,9 @@ export const LinkedInLogo = ({ color, className, ...rest }: LogoIconsProps) => (
     viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
     className={clsx(
+      "sds-icon",
       "sds-icon-logo",
-      color && `sds-icon-logo--fill-${color}`,
+      color && `sds-icon-logo--color-${color}`,
       className,
     )}
     aria-hidden="true"
