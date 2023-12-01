@@ -82,10 +82,13 @@ test-e2e:
     - npx playwright install --with-deps
     - npm run test:e2e
   artifacts:
+    expire_in: 1 days
     paths:
       - playwright/
-    expire_in: 1 days
-    when: on_failure
+    reports:
+      junit:
+        - results.xml
+    when: always
   needs:
     - install
   except:
