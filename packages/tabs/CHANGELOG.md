@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.0.0...@sikt/sds-tabs@3.0.1) (2023-12-05)
+
+### Bug Fixes
+
+- **tabs:** remove border bottom on hover ([e308b3f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e308b3fa895a05f581e8b1e106d1b7371ef44bc6))
+
 ## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@2.0.1...@sikt/sds-tabs@3.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
