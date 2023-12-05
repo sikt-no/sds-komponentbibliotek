@@ -4,6 +4,7 @@ import React, {
   ReactElement,
   ReactNode,
   cloneElement,
+  isValidElement,
 } from "react";
 import "./header-nav.pcss";
 import clsx from "clsx";
@@ -18,13 +19,18 @@ export const HeaderNav = ({ children, className, ...rest }: HeaderNavProps) => {
     <nav className={clsx("sds-header__nav", className)} {...rest}>
       <ul className="sds-header__nav-list">
         {Children.map(children, (child) => {
-          return (
-            <li className="sds-header__nav-item">
-              {cloneElement(child as ReactElement, {
-                className: "sds-header__nav-link",
-              })}
-            </li>
-          );
+          if (isValidElement(child)) {
+            return (
+              <li className="sds-header__nav-item">
+                {cloneElement(child as ReactElement, {
+                  className: clsx(
+                    "sds-header__nav-link",
+                    child.props.className,
+                  ),
+                })}
+              </li>
+            );
+          }
         })}
       </ul>
     </nav>

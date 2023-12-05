@@ -65,7 +65,9 @@ export const WithCollapsibleMenu: Story = {
     children: [
       <HeaderCollapsibleMenu key={1}>
         <HeaderNav>
-          <a href="#link1">Link 1</a>
+          <a href="#link1" aria-current="page">
+            Link 1
+          </a>
           <a href="#link2">Link 2</a>
         </HeaderNav>
         <Button>Button</Button>
