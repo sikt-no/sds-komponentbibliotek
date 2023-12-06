@@ -8,10 +8,10 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ location, children }: LayoutProps) => {
   return (
     <div className={style.layoutWrapper}>
-      <Header />
+      <Header currentHref={location.pathname} />
       <main id="main">{children}</main>
       <Footer className={style.layoutFooter} />
     </div>

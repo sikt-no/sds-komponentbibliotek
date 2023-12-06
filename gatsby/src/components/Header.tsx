@@ -8,12 +8,21 @@ import {
 import { Link } from "@sikt/sds-core";
 import * as style from "./header.module.css";
 
-const Header = () => {
+const Header = ({ currentHref }) => {
   return (
     <SdsHeader logoText="designsystem.sikt.no" className={style.header}>
       <HeaderCollapsibleMenu aria-label="Navigasjon">
         <HeaderNav>
-          <GatsbyLink to="/grunnleggende/">Grunnleggende</GatsbyLink>
+          <GatsbyLink
+            to="/grunnleggende/"
+            aria-current={currentHref === "/grunnleggende/" && "page"}
+            className={
+              currentHref.includes("/grunnleggende/") &&
+              "sds-header__nav-link--selected"
+            }
+          >
+            Grunnleggende
+          </GatsbyLink>
           <Link href="/komponenter/">Komponenter</Link>
           <Link href="/monstre/">Mønstre</Link>
         </HeaderNav>
