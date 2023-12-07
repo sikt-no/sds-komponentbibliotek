@@ -1,6 +1,6 @@
 import * as style from "./sub-nav.module.css";
-import { SideNav } from "./side-nav/SideNav";
-import { SideNavButtonLink } from "./side-nav/SideNavButtonLink";
+import { SideNav } from "../side-nav/SideNav";
+import { SideNavButtonLink } from "../side-nav/SideNavButtonLink";
 import {
   ArrowsInLineHorizontal,
   DotsNine,

@@ -9,7 +9,7 @@ import { Link, Paragraph, Heading3 } from "@sikt/sds-core";
 import { Section } from "@sikt/sds-section";
 import { Badge } from "@sikt/sds-badge";
 import { Nut } from "@phosphor-icons/react";
-import { SubNav } from "../../../components/SubNav";
+import { SubNav } from "../../../components/grunnleggende/SubNav";
 
 export { Head } from "../../../components/Head";
 

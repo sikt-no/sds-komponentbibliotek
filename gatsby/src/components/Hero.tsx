@@ -13,7 +13,7 @@ interface BreadcrumbProps {
 interface HeroProps {
   className?: string;
   heading: ReactNode;
-  leadParagraph?: string;
+  leadParagraph?: ReactNode;
   breadcrumbs?: BreadcrumbProps[];
 }
 

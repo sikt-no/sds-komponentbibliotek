@@ -15,7 +15,7 @@ import {
   SubNav,
   tokensHref,
   typographyHref,
-} from "../../components/SubNav";
+} from "../../components/grunnleggende/SubNav";
 
 export { Head } from "../../components/Head";
 

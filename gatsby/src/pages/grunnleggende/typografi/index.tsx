@@ -8,7 +8,7 @@ import * as moduleStyle from "./index.module.css";
 import { Paragraph, Heading3 } from "@sikt/sds-core";
 import { Section } from "@sikt/sds-section";
 import { Notice } from "../../../components/Notice";
-import { SubNav } from "../../../components/SubNav";
+import { SubNav } from "../../../components/grunnleggende/SubNav";
 import {
   Table,
   TableHead,

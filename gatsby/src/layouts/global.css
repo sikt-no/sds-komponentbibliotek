@@ -11,12 +11,8 @@
 @import url("@sikt/sds-table");
 @import url("@sikt/sds-list");
 
-.sds-button-group {
-  display: flex;
-  gap: var(--sds-space-gap-small);
+.sds-sikt-button-group {
   flex-wrap: wrap;
-  justify-content: right;
-  padding: var(--sds-space-padding-medium);
 }
 
 .sds-paragraph--max-width {

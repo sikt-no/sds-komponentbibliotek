@@ -1,0 +1,5 @@
+.sub-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-space-gap-medium);
+}

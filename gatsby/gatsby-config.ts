@@ -47,6 +47,32 @@ const config: GatsbyConfig = {
         ],
       },
     },*/
+    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "components",
+        path: `${__dirname}/../packages`,
+        ignore: [
+          "**/.*",
+          "**/*.png",
+          "**/*.svg",
+          "**/*.md",
+          "**/*.pcss",
+          "**/*.mjs",
+          "**/*.js",
+          "**/*.ts",
+          "**/*.tsx",
+          "**/*.html",
+          "**/*.json",
+          "**/*.stories.mdx",
+          "**/.turbo/**",
+          "**/build/**",
+          "**/dist/**",
+          "**/stories/**",
+        ],
+      },
+    },
     {
       resolve: "gatsby-plugin-matomo",
       options: {

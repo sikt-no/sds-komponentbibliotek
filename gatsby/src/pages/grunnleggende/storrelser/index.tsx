@@ -21,7 +21,7 @@ import * as desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.js";
 import { Nut } from "@phosphor-icons/react";
 import { Badge } from "@sikt/sds-badge";
 import { Token } from "../../../components/Token";
-import { SubNav } from "../../../components/SubNav";
+import { SubNav } from "../../../components/grunnleggende/SubNav";
 
 export { Head } from "../../../components/Head";
 

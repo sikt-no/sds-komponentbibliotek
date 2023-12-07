@@ -16,14 +16,19 @@ const Header = ({ currentHref }) => {
           <GatsbyLink
             to="/grunnleggende/"
             aria-current={currentHref === "/grunnleggende/" && "page"}
-            className={
-              currentHref.includes("/grunnleggende/") &&
-              "sds-header__nav-link--selected"
-            }
+            activeClassName="sds-header__nav-link--selected"
+            partiallyActive
           >
             Grunnleggende
           </GatsbyLink>
-          <Link href="/komponenter/">Komponenter</Link>
+          <GatsbyLink
+            to="/komponenter/"
+            aria-current={currentHref === "/komponenter/" && "page"}
+            activeClassName="sds-header__nav-link--selected"
+            partiallyActive
+          >
+            Komponenter
+          </GatsbyLink>
           <Link href="/monstre/">Mønstre</Link>
         </HeaderNav>
       </HeaderCollapsibleMenu>

@@ -7,7 +7,7 @@ import * as style from "../index.module.css";
 import * as moduleStyle from "./index.module.css";
 import { Section } from "@sikt/sds-section";
 import { Heading3, Link, Paragraph } from "@sikt/sds-core";
-import { colorsHref, SubNav } from "../../../components/SubNav";
+import { colorsHref, SubNav } from "../../../components/grunnleggende/SubNav";
 
 export { Head } from "../../../components/Head";
 

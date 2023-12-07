@@ -22,7 +22,7 @@ import { FigmaLogo, Nut } from "@phosphor-icons/react";
 import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
 import * as dark from "@sikt/sds-tokens/dist/js/color.dark.js";
 import { Swatch } from "../../../components/Swatch";
-import { SubNav } from "../../../components/SubNav";
+import { SubNav } from "../../../components/grunnleggende/SubNav";
 import { ButtonLink } from "@sikt/sds-button";
 
 export { Head } from "../../../components/Head";
@@ -493,7 +493,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                 icon={<FigmaLogo />}
                 href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7849-9188&mode=design&t=luqGyDtXZMLzJTFV-4"
               >
-                Vis i Figma
+                Se i Figma
               </ButtonLink>
             }
           >
@@ -577,7 +577,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                 icon={<FigmaLogo />}
                 href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7968-8516&mode=design&t=luqGyDtXZMLzJTFV-4"
               >
-                Vis i Figma
+                Se i Figma
               </ButtonLink>
             }
           >
@@ -686,7 +686,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                 icon={<FigmaLogo />}
                 href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7899-5888&mode=design&t=luqGyDtXZMLzJTFV-4"
               >
-                Vis i Figma
+                Se i Figma
               </ButtonLink>
             }
           >
@@ -770,7 +770,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                 icon={<FigmaLogo />}
                 href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7849-9513&mode=design&t=luqGyDtXZMLzJTFV-4"
               >
-                Vis i Figma
+                Se i Figma
               </ButtonLink>
             }
           >
@@ -855,7 +855,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                 icon={<FigmaLogo />}
                 href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7863-9761&mode=design&t=luqGyDtXZMLzJTFV-4"
               >
-                Vis i Figma
+                Se i Figma
               </ButtonLink>
             }
           >

@@ -8,7 +8,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ location, children }: LayoutProps) => {
+const Layout = ({ location, children, pageContext }: LayoutProps) => {
   return (
     <div className={style.layoutWrapper}>
       <Header currentHref={location.pathname} />

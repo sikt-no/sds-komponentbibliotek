@@ -4,7 +4,7 @@ import clsx from "clsx";
 import confetti from "canvas-confetti";
 import { FigmaLogo, GitlabLogo, SlackLogo } from "@phosphor-icons/react";
 import { Heading2, Paragraph } from "@sikt/sds-core";
-import { Button, ButtonLink } from "@sikt/sds-button";
+import { Button, ButtonLink, ButtonGroup } from "@sikt/sds-button";
 import useKonami from "react-use-konami";
 import * as style from "./index.module.css";
 import Contributors from "../components/Contributors";
@@ -154,7 +154,7 @@ const IndexPage: React.FC<PageProps> = () => {
             inn mange gode bidrag fra ulike team, og vi håper at enda flere team
             ønsker å koble seg på fremover!
           </Paragraph>
-          <div className="sds-button-group">
+          <ButtonGroup variant="right" className="sds-sikt-button-group">
             <ButtonLink
               iconVariant="left"
               icon={<FigmaLogo />}
@@ -177,12 +177,12 @@ const IndexPage: React.FC<PageProps> = () => {
             >
               Bli med i Slack-kanalen
             </ButtonLink>
-          </div>
+          </ButtonGroup>
         </div>
         <div>
           <Contributors />
           {showButton && (
-            <div className="sds-button-group">
+            <ButtonGroup variant="right">
               <Button
                 variant="strong"
                 onClick={handleLaunchClick}
@@ -191,7 +191,7 @@ const IndexPage: React.FC<PageProps> = () => {
               >
                 Lansere komponentbibliotek v2
               </Button>
-            </div>
+            </ButtonGroup>
           )}
         </div>
       </section>

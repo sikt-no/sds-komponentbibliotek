@@ -1,0 +1,48 @@
+---
+title: Button
+slug: /button
+storybook: /docs/components-button-readme--docs
+figma: https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?node-id=6417-17397
+category: interaksjon
+---
+
+import { Button, ButtonGroup } from "@sikt/sds-button";
+import { ArrowCircleRightIcon } from "@sikt/sds-icons";
+
+### Varianter
+
+<ButtonGroup variant="left">
+  <Button variant="strong">Strong</Button>
+  <Button>Subtle</Button>
+  <Button variant="transparent">Transparent</Button>
+  <Button variant="critical">Critical</Button>
+</ButtonGroup>
+
+### Ikoner
+
+<ButtonGroup variant="left">
+  <Button icon={<ArrowCircleRightIcon />}>Right</Button>
+  <Button icon={<ArrowCircleRightIcon />} iconVariant="left">
+    Left
+  </Button>
+  <Button icon={<ArrowCircleRightIcon />} iconVariant="only">
+    Only
+  </Button>
+</ButtonGroup>
+
+### Størrelser
+
+<div>
+  <Button>Default</Button>
+</div>
+<div>
+  <Button size="small">Small</Button>
+</div>
+
+### Grupp
+
+<ButtonGroup>
+  <Button>Previous</Button>
+  <Button variant="transparent">Cancel</Button>
+  <Button variant="strong">Next</Button>
+</ButtonGroup>
