@@ -10,18 +10,18 @@
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@storybook/addon-essentials": "^7.5.3",
-    "@storybook/addon-interactions": "^7.5.3",
-    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-essentials": "^7.6.4",
+    "@storybook/addon-interactions": "^7.6.4",
+    "@storybook/addon-links": "^7.6.4",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/blocks": "^7.5.3",
-    "@storybook/react": "^7.5.3",
-    "@storybook/react-webpack5": "^7.5.3",
+    "@storybook/blocks": "^7.6.4",
+    "@storybook/react": "^7.6.4",
+    "@storybook/react-webpack5": "^7.6.4",
     "@storybook/testing-library": "^0.2.2",
     "@svgr/webpack": "^8.1.0",
     "globby": "^14.0.0",
     "prop-types": "^15.8.1",
     "react-syntax-highlighter": "^15.5.0",
-    "storybook": "^7.5.3"
+    "storybook": "^7.6.4"
   }
 }
