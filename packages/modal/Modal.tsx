@@ -67,6 +67,9 @@ export const Modal = ({
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "unset";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [open]);
 
   const checkScroll = () => {
