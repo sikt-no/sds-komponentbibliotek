@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-modal@2.0.0...@sikt/sds-modal@2.0.1) (2023-12-13)
+
+### Bug Fixes
+
+- **modal:** make sure overflow state on body is restored ([9fbde3c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9fbde3c0ae3e57640e1bd2b607e0c85f065542e0))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-modal@1.0.1...@sikt/sds-modal@2.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
