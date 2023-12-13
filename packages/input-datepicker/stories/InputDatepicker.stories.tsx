@@ -38,3 +38,10 @@ export const WithError: Story = {
     errorText: "Error!",
   },
 };
+
+export const WithCustomLocale: Story = {
+  args: {
+    ...Default.args,
+    lang: "en-GB",
+  },
+};
