@@ -167,7 +167,7 @@ const IndexPage: React.FC<PageProps> = () => {
               icon={<GitlabLogo />}
               href="https://gitlab.sikt.no/designsystem/sds-komponentbibliotek"
             >
-              Se prosjektet på GitLab
+              Se prosjektet i GitLab
             </ButtonLink>
             <ButtonLink
               variant="strong"

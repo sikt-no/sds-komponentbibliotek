@@ -7,6 +7,7 @@ import { NavCard } from "../../components/NavCard";
 import { Hero } from "../../components/Hero";
 import { Paragraph } from "@sikt/sds-core";
 import {
+  a11yHref,
   colorsHref,
   iconsHref,
   layoutHref,
@@ -24,9 +25,6 @@ const BasicsPage: React.FC<PageProps> = () => {
       <Hero
         breadcrumbs={[{ title: "Komponentbiblioteket", to: "/" }]}
         heading={<>Grunn&shy;leggende</>}
-        leadParagraph="Velkommen til Sikts komponentbibliotek. Dette er en sammensetning av
-            komponenter og retningslinjer du kan bruke når du designer og
-            utvikler digitale løsninger og tjenester."
       />
 
       <section
@@ -65,7 +63,7 @@ const BasicsPage: React.FC<PageProps> = () => {
                 komponenter, samt retningslinjer for hvordan ulike komponenter
                 kan settes sammen til en mer helhetlig side (se "Guidelines" og
                 "Patterns" i Figma). Per i dag er komponentbiblioteket
-                tilgjengelig i Figma, Gitlab og npmjs. Å bygge et godt
+                tilgjengelig i Figma, GitLab og npmjs. Å bygge et godt
                 komponentbibliotek for Sikt vil være en laginnsats, der alle
                 team er velkomne til å bidra inn. Det har allerede kommet inn
                 mange gode bidrag fra ulike team, og vi håper at enda flere team
@@ -154,8 +152,11 @@ const BasicsPage: React.FC<PageProps> = () => {
                 headingText="Tilgjengelighet"
                 imgSrc="/images/grunnleggende/tilgjengelighet.png"
                 imgAlt="Ikon av rullestol"
+                href={a11yHref}
               >
-                Kommer snart
+                Universell utforming er å planlegge produkter, omgivelser,
+                programmer og tjenester slik at de kan brukes av så mange
+                mennesker som mulig på en likeverdig måte.
               </NavCard>
 
               <NavCard

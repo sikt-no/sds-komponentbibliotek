@@ -20,6 +20,8 @@ export const layoutHref = "/grunnleggende/layout/";
 export const colorsHref = "/grunnleggende/farger/";
 export const typographyHref = "/grunnleggende/typografi/";
 export const iconsHref = "/grunnleggende/ikoner/";
+export const a11yHref =
+  "https://isikt.sharepoint.com/sites/Universellutforming";
 
 export const SubNav = ({ currentHref }: { currentHref?: string }) => {
   return (
@@ -87,7 +89,7 @@ export const SubNav = ({ currentHref }: { currentHref?: string }) => {
 
       <SideNav aria-label="Sidenavigasjon, Krav og mål" heading="Krav og mål">
         <li>
-          <SideNavButtonLink icon={<Wheelchair />}>
+          <SideNavButtonLink icon={<Wheelchair />} href={a11yHref}>
             Tilgjengelighet
           </SideNavButtonLink>
         </li>
