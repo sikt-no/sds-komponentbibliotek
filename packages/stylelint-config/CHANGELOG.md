@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-stylelint-config@1.1.0...@sikt/sds-stylelint-config@2.0.0) (2023-12-18)
+
+### ⚠ BREAKING CHANGES
+
+- **stylelint-config:** update peer deps
+
+### Features
+
+- **stylelint-config:** update peer deps ([9bde81d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9bde81d6bd9908a4b444b2f15b0c89151d760dfc))
+
 ## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-stylelint-config@1.0.0...@sikt/sds-stylelint-config@1.1.0) (2023-11-10)
 
 ### Features
