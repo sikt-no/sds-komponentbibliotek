@@ -3,10 +3,17 @@ import { FigmaLogo, GitlabLogo, SlackLogo } from "@phosphor-icons/react";
 import { Footer as SdsFooter } from "@sikt/sds-footer";
 import * as style from "./footer.module.css";
 import { ButtonLink } from "@sikt/sds-button";
+import { Link } from "@sikt/sds-core";
+import clsx from "clsx";
 
 const Footer = ({ className }: { className?: string }) => {
   return (
-    <SdsFooter className={className}>
+    <SdsFooter className={clsx(style.footer, className)}>
+      <div>
+        <Link href="/tilgjengelighetserklaring/">
+          Tilgjengelighets&shy;erklæring
+        </Link>
+      </div>
       <div>
         <ul className={style.footer__list}>
           <li>
