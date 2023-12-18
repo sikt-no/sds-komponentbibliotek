@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@3.0.1...@sikt/sds-core@3.0.2) (2023-12-18)
+
+### Bug Fixes
+
+- **core:** typography link icon size adjustment ([7b16829](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7b16829dd3106d6ffffdfcd18837578820cb7553))
+- **link:** size & white space wrap ([258d119](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/258d1197755c4fed78eae1d20350b77b84c1529c))
+
 ### [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@3.0.0...@sikt/sds-core@3.0.1) (2023-11-02)
 
 ### Bug Fixes
