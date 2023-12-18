@@ -19,6 +19,7 @@ node_modules
 # testing
 coverage
 junit.xml
+results.xml
 /playwright
 **/playwright/**/*-snapshots/*
 !**/playwright/**/*-snapshots/*-linux.*
