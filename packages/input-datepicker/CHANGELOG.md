@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@0.2.0...@sikt/sds-input-datepicker@1.0.0) (2023-12-18)
+
+### Bug Fixes
+
+- **inputdatepicker:** fix locale for input datepicker ([30453bc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/30453bcb7b7e417b078d01b93c4831dacceddaf0))
+
 ## 0.2.0 (2023-11-02)
 
 ### ⚠ BREAKING CHANGES
