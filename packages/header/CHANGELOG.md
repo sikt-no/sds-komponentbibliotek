@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.0.1...@sikt/sds-header@3.0.2) (2023-12-18)
+
+### Bug Fixes
+
+- **header-nav:** keep child className prop ([552e9dc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/552e9dc7619a48aef10e53f591dbff9651db82c2)), closes [#150](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/150)
+
 ### [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.0.0...@sikt/sds-header@3.0.1) (2023-12-05)
 
 ### Bug Fixes
