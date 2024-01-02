@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@2.0.0...@sikt/sds-form@2.0.1) (2024-01-02)
+
+### Bug Fixes
+
+- **deps:** update clsx peer deps range ([8fbe755](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8fbe755d352c46cd5855bb771dc38a61223c3515))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@1.0.0...@sikt/sds-form@2.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
