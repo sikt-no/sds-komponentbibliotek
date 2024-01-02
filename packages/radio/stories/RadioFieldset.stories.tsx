@@ -13,20 +13,13 @@ type Story = StoryObj<RadioFieldsetProps>;
 
 export const Default: Story = {
   args: {
-    legend: "Legend",
     children: [
       <RadioInput key={1} label="Radio 1" value="1" />,
       <RadioInput key={2} label="Radio 2" value="2" />,
       <RadioInput key={3} label="Radio 3" value="3" />,
     ],
+    legend: "Legend",
     value: "1",
-  },
-};
-
-export const WithLegend: Story = {
-  args: {
-    ...Default.args,
-    value: "2",
   },
 };
 
