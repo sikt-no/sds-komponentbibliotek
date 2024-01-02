@@ -5,11 +5,19 @@ import React, {
   Children,
   ReactElement,
   cloneElement,
+  createContext,
   useEffect,
   useId,
   useState,
 } from "react";
 
+const MenuOpenContext = createContext<{
+  menuOpen: boolean;
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}>({
+  menuOpen: false,
+  setMenuOpen: () => {},
+});
 export interface HeaderCollapsibleMenuProps {
   children: React.ReactNode;
   dropdownOpen?: boolean;
@@ -33,17 +41,52 @@ export const HeaderCollapsibleMenu = ({
     setMenuOpen(!menuOpen);
   }
 
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "unset";
 
-    const close = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && menuOpen) {
-        toggleMenu();
+    const closeWithKeyboard = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeMenu();
       }
     };
 
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
+    const closeWithClick = (e: MouseEvent) => {
+      if (
+        e.target instanceof HTMLAnchorElement ||
+        e.target instanceof HTMLButtonElement
+      ) {
+        closeMenu();
+      }
+    };
+
+    const closeWithSubmit = () => {
+      closeMenu();
+    };
+
+    if (menuOpen) {
+      const mobileContent = document.getElementById(
+        "sds-header-collapsible__mobile-content",
+      );
+      if (mobileContent) {
+        mobileContent.addEventListener("click", closeWithClick);
+        mobileContent.addEventListener("submit", closeWithSubmit);
+      }
+      window.addEventListener("keydown", closeWithKeyboard);
+    }
+    return () => {
+      const mobileContent = document.getElementById(
+        "sds-header-collapsible__mobile-content",
+      );
+      if (mobileContent) {
+        mobileContent.removeEventListener("click", closeWithClick);
+        mobileContent.removeEventListener("submit", closeWithSubmit);
+      }
+      window.removeEventListener("keydown", closeWithKeyboard);
+    };
   }, [menuOpen]);
 
   useEffect(() => {
@@ -51,7 +94,7 @@ export const HeaderCollapsibleMenu = ({
   }, [dropdownOpen]);
 
   return (
-    <>
+    <MenuOpenContext.Provider value={{ menuOpen, setMenuOpen }}>
       {/* INFO: The desktop mode content of the header */}
       {Children.map(children, (child, index) => {
         return (
@@ -87,11 +130,14 @@ export const HeaderCollapsibleMenu = ({
         id={menuId}
         {...rest}
       >
-        <div className="sds-header-collapsible__menu">
+        <div
+          id="sds-header-collapsible__mobile-content"
+          className="sds-header-collapsible__menu"
+        >
           {/* INFO: The mobile mode content of the header */}
           {children}
         </div>
       </div>
-    </>
+    </MenuOpenContext.Provider>
   );
 };

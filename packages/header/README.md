@@ -30,6 +30,15 @@ import "@sikt/sds-logo/dist/index.css";
 </Header>;
 ```
 
+The menu automatically closes if a link, button or form inside the menu is clicked or submitted, this also accounts for keyboard navigation. Should you want to ensure the menu closes on some other condition, it's possible to use the `setMenuOpen` method, which is provided together with `menuOpen` through React context.
+
+```jsx
+import { useContext } from "react";
+import { HeaderCollapsibleMenu } from "@sikt/sds-header";
+
+const { menuOpen, setMenuOpen } = useContext(MenuOpenContext);
+```
+
 To use the header with general content, do the following. This does not include the collapsible mobile menu.
 
 ```jsx

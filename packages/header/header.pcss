@@ -48,6 +48,7 @@
       grid-column: -2 / -1;
       justify-self: end;
       width: fit-content;
+      margin: var(--sds-focus-outline-width) 0;
 
       &.sds-button {
         @media (--sds-base-breakpoint-tablet) {
@@ -74,7 +75,7 @@
 
     &__dropdown {
       position: absolute;
-      top: var(--header-height);
+      top: calc(var(--header-height) + 2 * var(--sds-focus-outline-width));
       left: 0;
       background-color: var(--sds-color-layout-background-primary);
       z-index: calc(var(--sds-base-zindex-drawer) + 1);

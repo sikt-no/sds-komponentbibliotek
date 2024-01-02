@@ -1,6 +1,6 @@
 import { act, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import React from "react";
+import React, { FormEvent } from "react";
 import { Header } from "./Header";
 import { HeaderNav } from "./HeaderNav";
 import userEvent from "@testing-library/user-event";
@@ -114,7 +114,7 @@ describe("Header", () => {
       expect(navElement).toHaveAttribute("aria-hidden", "false");
     });
 
-    it("should close the menu when button is pressed", async () => {
+    it("should close the menu when escape is pressed", async () => {
       const user = userEvent.setup();
 
       render(
@@ -137,6 +137,97 @@ describe("Header", () => {
 
       await act(async () => {
         await user.keyboard("{Escape}");
+      });
+
+      expect(navElement).toHaveAttribute("aria-hidden", "true");
+    });
+
+    it("should close the menu when link is clicked", async () => {
+      const user = userEvent.setup();
+
+      render(
+        <Header>
+          <HeaderCollapsibleMenu
+            dropdownOpen={true}
+            data-testid="test-dropdown"
+          >
+            <HeaderNav>
+              <a href="/" data-testid="test-link">
+                Foo
+              </a>
+            </HeaderNav>
+          </HeaderCollapsibleMenu>
+        </Header>,
+      );
+
+      const navLink = screen.getAllByTestId("test-link")[1] as HTMLElement;
+      const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
+
+      expect(navElement).toHaveAttribute("aria-hidden", "false");
+
+      await act(async () => {
+        await user.click(navLink);
+      });
+
+      expect(navElement).toHaveAttribute("aria-hidden", "true");
+    });
+
+    it("should close the menu when button is clicked", async () => {
+      const user = userEvent.setup();
+
+      render(
+        <Header>
+          <HeaderCollapsibleMenu
+            dropdownOpen={true}
+            data-testid="test-dropdown"
+          >
+            <HeaderNav>
+              <button data-testid="test-button">Foo</button>
+            </HeaderNav>
+          </HeaderCollapsibleMenu>
+        </Header>,
+      );
+
+      const navButton = screen.getAllByTestId("test-button")[1] as HTMLElement;
+      const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
+
+      expect(navElement).toHaveAttribute("aria-hidden", "false");
+
+      await act(async () => {
+        await user.click(navButton);
+      });
+
+      expect(navElement).toHaveAttribute("aria-hidden", "true");
+    });
+
+    it("should close the menu when form is submitted", async () => {
+      const user = userEvent.setup();
+
+      render(
+        <Header>
+          <HeaderCollapsibleMenu
+            dropdownOpen={true}
+            data-testid="test-dropdown"
+          >
+            <HeaderNav>
+              <form
+                onSubmit={(e: FormEvent<HTMLFormElement>) => e.preventDefault()}
+              >
+                <input type="text" data-testid="test-input" />
+              </form>
+            </HeaderNav>
+          </HeaderCollapsibleMenu>
+        </Header>,
+      );
+
+      const submitInput = screen.getAllByTestId("test-input")[1] as HTMLElement;
+      const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
+
+      expect(navElement).toHaveAttribute("aria-hidden", "false");
+
+      await act(async () => {
+        submitInput.focus();
+        await user.keyboard("{Enter}");
       });
 
       expect(navElement).toHaveAttribute("aria-hidden", "true");
