@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.0.2...@sikt/sds-header@3.0.3) (2024-01-03)
+
+### Bug Fixes
+
+- **header:** make sure collapsible menu closes on navigation ([501a424](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/501a42411c1fafe05e76060419d37d068e0a6f9b))
+
 ### [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.0.1...@sikt/sds-header@3.0.2) (2023-12-18)
 
 ### Bug Fixes
