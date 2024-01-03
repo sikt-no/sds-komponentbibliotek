@@ -176,7 +176,7 @@ Rebase before merge so that your commits end up on top of the history.
 
 #### Publish
 
-~~Create a release branch `<gitlab-user>/release-<package-name>-<version>`.~~  
+Do this on the main branch.  
 Bump package versions & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version):
 
 ```sh
@@ -191,13 +191,7 @@ Push tags:
 git push --follow-tags
 ```
 
-Open a merge request. When approved and merged publish package to registry:
-
-_TODO: Add publish step to CI-pipeline._
-
-```sh
-npm publish --workspace=packages/<package-name> --access public
-```
+The following pipeline will create a release & publish the tagged package to npm.
 
 ℹ️ _Tips:_
 

@@ -192,6 +192,7 @@ storybook:
     - install
   except:
     - schedules
+    - tags
 
 gatsby:
   stage: build
@@ -225,6 +226,7 @@ gatsby:
     - packages
   except:
     - schedules
+    - tags
 
 docker:
   stage: build
@@ -237,6 +239,7 @@ docker:
     - gatsby
   except:
     - schedules
+    - tags
 
 .deploy:
   script:
@@ -277,42 +280,54 @@ prod:
   except:
     - schedules
 
-tag-report:
+release-prepare:
+  stage: .pre
+  extends: .tag
+  before_script:
+    - PACKAGE_NAME=$(echo "$CI_COMMIT_TAG" | sed -e "s/^@sikt\/sds-//" -e "s/^@sikt\///" -e "s/-sds@[0-9]*.[0-9]*.[0-9]*$//" -e "s/@[0-9]*.[0-9]*.[0-9]*$//")
+  script:
+    - echo "PACKAGE_NAME=$PACKAGE_NAME" >> variables.env
+  artifacts:
+    reports:
+      dotenv: variables.env
+
+release:
+  stage: .post
+  extends: .tag
+  image: registry.gitlab.com/gitlab-org/release-cli
+  script:
+    - echo "Release $CI_COMMIT_TAG"
+  release:
+    tag_name: "$CI_COMMIT_TAG"
+    description: "./packages/${PACKAGE_NAME}/CHANGELOG.md"
+
+publish:
+  stage: .post
+  extends: .tag
+  id_tokens:
+    VAULT_ID_TOKEN:
+      aud: "https://vault.sikt.no:8200"
+  secrets:
+    NPM_TOKEN:
+      vault: "gitlab/${CI_PROJECT_PATH}/npm-token@secret"
+      file: false
+  before_script:
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+  script:
+    - npm publish --workspace=packages/${PACKAGE_NAME} --access public
+  dependencies:
+    - packages
+    - release-prepare
+  needs:
+    - packages
+    - release-prepare
+    - release
+
+release-report:
   stage: .post
   extends: .tag
   script:
     - >
       curl --request POST --header "Content-Type: application/json" --data "{\"text\":\"Tag $CI_COMMIT_TAG succeeded on $CI_COMMIT_BRANCH <$CI_PIPELINE_URL|$CI_PIPELINE_ID>\"}" "${SLACK_WEBHOOK_URL_PUBLIC}"
-
-#release:
-#  stage: release
-#  extends: .tag
-#  image: registry.gitlab.com/gitlab-org/release-cli
-#  script:
-#    - echo "Release $CI_COMMIT_TAG"
-#  release:
-#    tag_name: "$CI_COMMIT_TAG"
-#    description: "$CI_COMMIT_TAG"
-
-#publish:
-#  stage: release
-#  extends: .tag
-#  when: manual
-#  id_tokens:
-#    VAULT_ID_TOKEN:
-#      aud: vault.sikt.no
-#  secrets:
-#    NPM_TOKEN:
-#      vault: gitlab/$CI_PROJECT_PATH/npm-token@secret
-#      file: false
-#  before_script:
-#    - PACKAGE_NAME=$(echo "$CI_COMMIT_TAG" | sed -e "s/^@sikt\/sds-//" -e "s/^@sikt\///" -e "s/-sds@[0-9]*.[0-9]*.[0-9]*$//" -e "s/@[0-9]*.[0-9]*.[0-9]*$//")
-#    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}">.npmrc
-#  script:
-#    - npm publish --workspace=packages/$PACKAGE_NAME --access public
-#  dependencies:
-#    - packages
-#  needs:
-#    - install
-#    - packages
-#    - release
+  needs:
+    - publish
