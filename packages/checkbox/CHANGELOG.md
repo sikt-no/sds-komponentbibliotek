@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@2.0.1...@sikt/sds-checkbox@2.0.2) (2024-01-03)
+
+### Bug Fixes
+
+- **checkbox:** ensure check mark remains in position within scrollable containers ([fb868ac](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fb868ac93b0e662f5665fffd34ead002421eb35a))
+
 ### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@2.0.0...@sikt/sds-checkbox@2.0.1) (2023-11-10)
 
 ### Bug Fixes
