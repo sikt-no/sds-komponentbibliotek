@@ -142,6 +142,18 @@ To generate local visual regression test screenshots before you begin working ru
 npm run test:e2e
 ```
 
+If you've made changes to components and need to update new snapshots, run:
+
+```sh
+npm run test:e2e -- --update-snapshots
+```
+
+To run tests with UI, run:
+
+```sh
+npm run test:e2e -- --ui
+```
+
 To generate baseline screenshot for the CI environment after you are done working run:
 
 ```sh
