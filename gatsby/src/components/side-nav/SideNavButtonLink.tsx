@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   ReactNode,
 } from "react";
+import { Link } from "gatsby";
 import clsx from "clsx";
 import "./side-nav-button.css";
 
@@ -29,7 +30,7 @@ export const SideNavButtonLink = forwardRef<
     }: SideNavButtonLinkProps,
     ref,
   ) => {
-    const Component: ElementType = href ? "a" : "div";
+    const Component: ElementType = href ? Link : "div";
 
     return (
       <Component
