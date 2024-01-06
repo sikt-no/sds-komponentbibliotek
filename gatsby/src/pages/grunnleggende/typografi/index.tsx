@@ -65,7 +65,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   "sds-paragraph--max-width",
                 )}
               >
-                Haffer Hamburgefonstiv
+                Haffer Hamburge&shy;fonstiv
               </Paragraph>
 
               <Heading3 variant="paragraph">Supplerende</Heading3>
@@ -81,7 +81,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   "sds-paragraph--max-width",
                 )}
               >
-                Arial Hamburgefonstiv
+                Arial Hamburge&shy;fonstiv
               </Paragraph>
 
               <Paragraph className="sds-paragraph--max-width">
@@ -100,7 +100,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   "sds-paragraph--max-width",
                 )}
               >
-                Courier New Hamburgefonstiv
+                Courier New Hamburge&shy;fonstiv
               </Paragraph>
             </div>
           </Section>
@@ -173,36 +173,45 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                         <TableCell data-th="Navn">{item}</TableCell>
                         <TableCell
                           data-th="Verdi @ mobil"
-                          className={`sds-typography-heading--${item}`}
                           data-color-scheme="light"
-                          style={{
-                            fontSize,
-                            lineHeight,
-                          }}
                         >
-                          Aa
+                          <span
+                            className={`sds-typography-heading--${item}`}
+                            style={{
+                              fontSize,
+                              lineHeight,
+                            }}
+                          >
+                            Aa
+                          </span>
                         </TableCell>
                         <TableCell
                           data-th="Verdi @ nettbrett"
-                          className={`sds-typography-heading--${item}`}
                           data-color-scheme="light"
-                          style={{
-                            fontSize: tabletFontSize,
-                            lineHeight: tabletLineHeight,
-                          }}
                         >
-                          Aa
+                          <span
+                            className={`sds-typography-heading--${item}`}
+                            style={{
+                              fontSize: tabletFontSize,
+                              lineHeight: tabletLineHeight,
+                            }}
+                          >
+                            Aa
+                          </span>
                         </TableCell>
                         <TableCell
                           data-th="Verdi @ datamaskin"
-                          className={`sds-typography-heading--${item}`}
                           data-color-scheme="light"
-                          style={{
-                            fontSize: desktopFontSize,
-                            lineHeight: desktopLineHeight,
-                          }}
                         >
-                          Aa
+                          <span
+                            className={`sds-typography-heading--${item}`}
+                            style={{
+                              fontSize: desktopFontSize,
+                              lineHeight: desktopLineHeight,
+                            }}
+                          >
+                            Aa
+                          </span>
                         </TableCell>
                       </TableRow>
                     );
@@ -245,12 +254,10 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                     return (
                       <TableRow key={item}>
                         <TableCell data-th="Navn">{item}</TableCell>
-                        <TableCell
-                          data-th="Verdi"
-                          className={`sds-typography-body--${item}`}
-                          data-color-scheme="light"
-                        >
-                          Aa
+                        <TableCell data-th="Verdi" data-color-scheme="light">
+                          <span className={`sds-typography-body--${item}`}>
+                            Aa
+                          </span>
                         </TableCell>
                       </TableRow>
                     );
