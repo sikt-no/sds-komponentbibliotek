@@ -27,7 +27,8 @@ export const SubNav = ({
       <SideNav heading="Alle" aria-label={`Sidenavigasjon, alle komponenter`}>
         <li>
           <SideNavButtonLink icon={<Code />} href="/storybook/">
-            Se i Storybook
+            Se <span className="sds-screen-reader-only">alle komponenter</span>{" "}
+            i Storybook
           </SideNavButtonLink>
         </li>
       </SideNav>
