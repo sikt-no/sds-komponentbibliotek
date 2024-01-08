@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-badge@2.0.0...@sikt/sds-badge@2.0.1) (2024-01-08)
+
+### Bug Fixes
+
+- **badge:** fix text contrast on variant warning & visibility strong in dark mode ([b055834](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b055834402e6822621b33b1e5787a72530048de7))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-badge@1.0.2...@sikt/sds-badge@2.0.0) (2023-10-28)
 
 ### ⚠ BREAKING CHANGES
