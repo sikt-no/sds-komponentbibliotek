@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@3.1.0...@sikt/sds-button@3.1.1) (2024-01-08)
+
+### Bug Fixes
+
+- **button-group:** wrap buttons when too wide for group container ([f63dd87](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f63dd8739aa2391c37119192a9f89046052fe606))
+
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@3.0.1...@sikt/sds-button@3.1.0) (2023-11-10)
 
 ### Features
