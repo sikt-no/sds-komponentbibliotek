@@ -312,7 +312,7 @@ publish:
       vault: "gitlab/${CI_PROJECT_PATH}/npm-token@secret"
       file: false
   before_script:
-    - echo "@sikt:registry=https://registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
   script:
     - npm publish --workspace=packages/${PACKAGE_NAME} --access public
   dependencies:
