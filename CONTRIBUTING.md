@@ -6,6 +6,7 @@
 - [Development](#development)
   - [Architecture](#architecture)
   - [Setup](#setup)
+    - [Windows](#windows)
   - [Change request](#change-request)
   - [Creating a new component](#creating-a-new-component)
   - [Workflow](#workflow)
@@ -95,6 +96,10 @@ Build all packages with `npm run build` from root.
 npm ci
 npm run storybook
 ```
+
+#### Windows
+
+On Windows you might first need to install [windows-build-tools](https://www.gatsbyjs.com/docs/how-to/local-development/gatsby-on-windows/).
 
 ### Change request
 
