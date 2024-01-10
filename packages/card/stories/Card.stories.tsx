@@ -21,7 +21,8 @@ const Template: Story = {
 export const Default: Story = {
   ...Template,
   args: {
-    imgSrc: "https://picsum.photos/600/300",
+    imgSrc:
+      "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII=",
     imgAlt: "This is an image",
     overlineText: "overline",
     headingText: "Heading",
