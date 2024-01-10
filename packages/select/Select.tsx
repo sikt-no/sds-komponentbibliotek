@@ -1,7 +1,6 @@
 import React, {
   ChangeEventHandler,
   OptionHTMLAttributes,
-  ReactNode,
   SelectHTMLAttributes,
   forwardRef,
   useId,
@@ -17,13 +16,12 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   options: Omit<OptionHTMLAttributes<HTMLOptionElement>, "selected">[];
   errorText?: string;
   helpText?: string;
-  icon?: ReactNode;
   onChange?: ChangeEventHandler<HTMLSelectElement>;
 }
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
-    { className, label, options, errorText, helpText, icon, onChange, ...rest },
+    { className, label, options, errorText, helpText, onChange, ...rest },
     ref,
   ) => {
     const id = useId();
@@ -33,7 +31,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       <FormField
         className={clsx(
           "sds-select",
-          icon && "sds-select--icon",
           errorText && "sds-select--invalid",
           className,
         )}

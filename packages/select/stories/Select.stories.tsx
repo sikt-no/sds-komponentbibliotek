@@ -2,7 +2,6 @@ import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { useArgs } from "@storybook/client-api";
 import { SelectProps, Select } from "../index";
-import { ListIcon } from "../../icons/index";
 
 const meta: Meta = {
   title: "Components/Select",
@@ -31,13 +30,6 @@ export const Default: Story = {
         onChange={(event) => setArgs({ value: event.target.value })}
       />
     );
-  },
-};
-
-export const WithIcon: Story = {
-  args: {
-    ...Default.args,
-    icon: <ListIcon />,
   },
 };
 
