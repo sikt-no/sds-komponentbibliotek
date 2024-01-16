@@ -41,9 +41,7 @@
     "test:e2e": "playwright test"
   },
   "browserslist": [
-    ">0.2% in NO",
-    "not dead",
-    "not ie <= 11"
+    "extends @sikt/browserslist-config-sds"
   ],
   "lint-staged": {
     "**/*.{css,pcss}": "stylelint --fix",
