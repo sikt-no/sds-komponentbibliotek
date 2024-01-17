@@ -7,7 +7,7 @@ import { Hero } from "../../components/Hero";
 import { Paragraph } from "@sikt/sds-core";
 import { SubNav } from "../../components/komponenter/SubNav";
 import { ButtonLink, ButtonGroup } from "@sikt/sds-button";
-import { FigmaLogo, Code, GitlabLogo } from "@phosphor-icons/react";
+import { FigmaLogo, GitlabLogo } from "@phosphor-icons/react";
 
 export { Head } from "../../components/Head";
 
