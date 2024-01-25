@@ -6,6 +6,7 @@ import * as style from "./contributors.module.css";
 const Contributors = () => {
   const contributors = [
     [
+      { name: "Kim", role: "Design", team: "Komponentbiblioteket" },
       { name: "Hanne", role: "Design", team: "Komponentbiblioteket" },
       { name: "Eivind", role: "Inkludering", team: "Komponentbiblioteket" },
       { name: "Kine", role: "Teknologi", team: "Komponentbiblioteket" },
