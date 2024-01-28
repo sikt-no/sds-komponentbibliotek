@@ -20,7 +20,7 @@
     "prepare": "run-s build:icons build:sprite build:components"
   },
   "dependencies": {
-    "@phosphor-icons/core": "^2.0.4"
+    "@phosphor-icons/core": "^2.0.6"
   },
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
