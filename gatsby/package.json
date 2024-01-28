@@ -29,10 +29,10 @@
     "@sikt/sds-tokens": "^1.0.0",
     "canvas-confetti": "^1.9.2",
     "clsx": "^2.1.0",
-    "gatsby": "^5.13.1",
+    "gatsby": "^5.13.3",
     "gatsby-plugin-matomo": "^0.16.2",
-    "gatsby-plugin-mdx": "^5.13.0",
-    "gatsby-source-filesystem": "^5.13.0",
+    "gatsby-plugin-mdx": "^5.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use-konami": "^1.1.0"
@@ -44,9 +44,9 @@
     "@types/react-dom": "^18.2.18",
     "eslint-config-react-app": "^7.0.1",
     "gatsby-plugin-force-file-loader": "^5.0.1",
-    "gatsby-plugin-layout": "^4.13.0",
-    "gatsby-plugin-manifest": "^5.13.0",
-    "gatsby-plugin-postcss": "^6.13.0",
+    "gatsby-plugin-layout": "^4.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-postcss": "^6.13.1",
     "postcss": "^8.4.33",
     "typescript": "^5.3.3"
   }
