@@ -28,7 +28,7 @@ export const WithIcon: Story = {
   },
 };
 
-export const WidthBadge: Story = {
+export const WithBadge: Story = {
   args: {
     ...Default.args,
     badge: <Badge>Badge</Badge>,

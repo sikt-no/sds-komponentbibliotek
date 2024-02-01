@@ -41,7 +41,7 @@ export const WithIcon: Story = {
   },
 };
 
-export const WidthBadge: Story = {
+export const WithBadge: Story = {
   args: {
     children: [
       <TabList key={0} aria-label="Sample Tabs">
