@@ -16,20 +16,13 @@ type Story = StoryObj<SectionProps>;
 export const Default: Story = {
   args: {
     headingText: "Header",
-    children: "",
-  },
-};
-
-export const WithChildren: Story = {
-  args: {
-    ...Default.args,
     children: "Section content",
   },
 };
 
 export const WithCallToAction: Story = {
   args: {
-    ...Default.args,
+    headingText: "Header",
     callToAction: (
       <ButtonLink variant="subtle" href="#" icon={<ArrowCircleRightIcon />}>
         Clickable label
