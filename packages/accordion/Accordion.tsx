@@ -40,29 +40,31 @@ export const Accordion = ({
       className={clsx("sds-accordion", `sds-accordion--${size}`, className)}
       {...rest}
     >
-      <button
-        id={`${id}-title`}
-        aria-expanded={expanded}
-        aria-controls={`${id}-content`}
-        className="sds-accordion__button"
-        onClick={(e) => {
-          const newValue = !expanded;
-          setExpanded(newValue);
-          if (onClick) {
-            onClick(e, newValue);
-          }
-        }}
-      >
-        <Heading className="sds-accordion__title">{title}</Heading>
-        <span className="sds-accordion__icon">
-          <CaretCircleDownIcon
-            className={clsx(
-              "sds-accordion__icon-icon",
-              expanded && "sds-accordion__icon-icon--expanded",
-            )}
-          />
-        </span>
-      </button>
+      <Heading>
+        <button
+          id={`${id}-title`}
+          aria-expanded={expanded}
+          aria-controls={`${id}-content`}
+          className="sds-accordion__button"
+          onClick={(e) => {
+            const newValue = !expanded;
+            setExpanded(newValue);
+            if (onClick) {
+              onClick(e, newValue);
+            }
+          }}
+        >
+          <span className="sds-accordion__title">{title}</span>
+          <span className="sds-accordion__icon">
+            <CaretCircleDownIcon
+              className={clsx(
+                "sds-accordion__icon-icon",
+                expanded && "sds-accordion__icon-icon--expanded",
+              )}
+            />
+          </span>
+        </button>
+      </Heading>
 
       <div
         role="region"

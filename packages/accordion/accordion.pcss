@@ -1,18 +1,14 @@
 .sds-accordion {
-  --accordion-border-radius: var(--sds-space-border-radius-large);
-  --accordion-icon-padding: var(--sds-space-padding-small);
-
   &__title {
     color: var(--sds-color-text-primary);
     font-size: var(--sds-typography-heading-fontsize-small);
     font-weight: var(--sds-typography-weight-regular);
     line-height: var(--sds-typography-heading-lineheight-small);
+    text-align: left;
   }
 
   &__icon {
-    border-radius: var(--accordion-border-radius);
     font-size: var(--sds-base-size-m);
-    padding: var(--accordion-icon-padding);
 
     &-icon {
       transition: rotate var(--sds-effect-animation-duration-medium)
@@ -27,20 +23,16 @@
   &__button {
     align-items: center;
     border: none;
-    border-radius: var(--accordion-border-radius);
     display: flex;
     gap: var(--sds-space-gap-medium);
     justify-content: space-between;
-    padding: 0;
     width: 100%;
 
     &:hover,
     &:focus-visible {
-      .sds-accordion__icon {
-        background-color: var(
-          --sds-color-interaction-primary-transparent-highlight
-        );
-      }
+      background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
     }
 
     &:focus-visible {
@@ -48,28 +40,44 @@
     }
 
     &:active {
-      .sds-accordion__icon {
-        background-color: var(
-          --sds-color-interaction-primary-transparent-pressed
-        );
-      }
+      background-color: var(
+        --sds-color-interaction-primary-transparent-pressed
+      );
     }
   }
 
   &__content {
     color: var(--sds-color-text-primary);
-    padding-top: var(--sds-space-gap-medium);
+    padding: var(--sds-space-padding-tiny) var(--sds-accordion-indentation)
+      var(--sds-space-padding-medium);
   }
 
-  &--large &__content {
-    border-top: var(--sds-space-border-weight-regular) solid
+  &--large {
+    --accordion-border: var(--sds-space-border-weight-regular) solid
       var(--sds-color-layout-divider-subtle);
-    margin-top: var(--sds-space-gap-medium);
+    --sds-accordion-indentation: var(--sds-space-padding-medium);
+
+    border-top: var(--accordion-border);
+    border-bottom: var(--accordion-border);
+  }
+
+  /* Removes the top border if an accordion directly follows another accordion,
+    to avoid a double border */
+  &--large + &--large {
+    border-top: none;
+  }
+
+  &--large &__button {
+    padding: var(--sds-space-padding-medium) var(--sds-accordion-indentation);
   }
 
   &--small {
-    --accordion-border-radius: var(--sds-space-border-radius-minimal);
-    --accordion-icon-padding: var(--sds-space-padding-minimal);
+    --sds-accordion-indentation: var(--sds-space-padding-small);
+  }
+
+  &--small &__button {
+    border-radius: var(--sds-space-border-radius-small);
+    padding: var(--sds-space-padding-minimal) var(--sds-accordion-indentation);
   }
 
   &--small &__title {
