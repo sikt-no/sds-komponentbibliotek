@@ -9,6 +9,8 @@ category: interaksjon
 import { Button, ButtonGroup } from "@sikt/sds-button";
 import { ArrowCircleRightIcon } from "@sikt/sds-icons";
 
+Pakken inneholder komponenterne `<Button />` og `<ButtonLink />`. ButtonLink er til for bruk der knappen endrer stien i nettleseren og blir til en vanlig hyper lenke.
+
 ### Varianter
 
 <ButtonGroup variant="left">
@@ -16,18 +18,6 @@ import { ArrowCircleRightIcon } from "@sikt/sds-icons";
   <Button>Subtle</Button>
   <Button variant="transparent">Transparent</Button>
   <Button variant="critical">Critical</Button>
-</ButtonGroup>
-
-### Ikoner
-
-<ButtonGroup variant="left">
-  <Button icon={<ArrowCircleRightIcon />}>Right</Button>
-  <Button icon={<ArrowCircleRightIcon />} iconVariant="left">
-    Left
-  </Button>
-  <Button icon={<ArrowCircleRightIcon />} iconVariant="only">
-    Only
-  </Button>
 </ButtonGroup>
 
 ### Størrelser
@@ -39,9 +29,55 @@ import { ArrowCircleRightIcon } from "@sikt/sds-icons";
   <Button size="small">Small</Button>
 </div>
 
-### Grupp
+### Med ikoner
+
+#### Default
+
+<div>
+  <Button icon={<ArrowCircleRightIcon />}>Default</Button>
+</div>
+
+#### Left
+
+<div>
+  <Button icon={<ArrowCircleRightIcon />} iconVariant="left">
+    Left
+  </Button>
+</div>
+
+#### Only
+
+Husk att du må ha et tilgjengeligt navn også på denna knapp. Bruk `children` eller `aria-label` for å sett det.
+
+<div>
+  <Button icon={<ArrowCircleRightIcon />} iconVariant="only">
+    Only
+  </Button>
+</div>
+
+### Gruppert
+
+Grupper knapper sammen med komponenten `<ButtonGroup />`.
+
+#### Default
 
 <ButtonGroup>
+  <Button>Previous</Button>
+  <Button variant="transparent">Cancel</Button>
+  <Button variant="strong">Next</Button>
+</ButtonGroup>
+
+#### Left
+
+<ButtonGroup variant="left">
+  <Button>Previous</Button>
+  <Button variant="transparent">Cancel</Button>
+  <Button variant="strong">Next</Button>
+</ButtonGroup>
+
+#### Right
+
+<ButtonGroup variant="right">
   <Button>Previous</Button>
   <Button variant="transparent">Cancel</Button>
   <Button variant="strong">Next</Button>
