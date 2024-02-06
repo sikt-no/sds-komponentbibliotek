@@ -27,7 +27,12 @@ export const ToggleSegmentOption = forwardRef<
   const htmlForId = rest.id ?? generatedId;
 
   return (
-    <div className="sds-toggle-segment__option">
+    <div
+      className={clsx(
+        "sds-toggle-segment__option",
+        checked && "sds-toggle-segment__option--checked",
+      )}
+    >
       <input
         id={htmlForId}
         name={name}
@@ -39,13 +44,7 @@ export const ToggleSegmentOption = forwardRef<
         checked={checked}
         {...rest}
       />
-      <label
-        className={clsx(
-          "sds-toggle-segment__label",
-          checked && "sds-toggle-segment__label--checked",
-        )}
-        htmlFor={htmlForId}
-      >
+      <label className="sds-toggle-segment__label" htmlFor={htmlForId}>
         {label}
         {children}
       </label>
