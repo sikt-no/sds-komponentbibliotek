@@ -1,14 +1,10 @@
 module.exports = {
-  extends: [
-    "./packages/eslint-config",
-    "plugin:@typescript-eslint/recommended",
-  ],
-  parser: "@typescript-eslint/parser",
+  extends: ["./packages/eslint-config"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint"],
+  ignorePatterns: [".eslintrc.js", "*.config.ts", "docs/tutorial/**"],
   rules: {},
   overrides: [
     {
@@ -17,9 +13,8 @@ module.exports = {
         "**/__tests__/**/*.[jt]s?(x)",
         "**/?(*.)+(spec|test).[jt]s?(x)",
       ],
-      plugins: ["jest", "testing-library"],
-      extends: ["plugin:jest/recommended", "plugin:testing-library/react"],
       rules: {
+        "@typescript-eslint/require-await": "off",
         "testing-library/no-container": "off",
         "testing-library/no-node-access": "off",
       },

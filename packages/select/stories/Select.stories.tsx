@@ -1,6 +1,5 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { useArgs } from "@storybook/client-api";
+import { useArgs } from "@storybook/preview-api";
 import { SelectProps, Select } from "../index";
 
 const meta: Meta = {
@@ -27,7 +26,9 @@ export const Default: Story = {
     return (
       <Select
         {...args}
-        onChange={(event) => setArgs({ value: event.target.value })}
+        onChange={(event) => {
+          setArgs({ value: event.target.value });
+        }}
       />
     );
   },

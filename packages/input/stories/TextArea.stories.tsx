@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { TextArea, InputProps } from "../index";
 import { InfoIcon } from "@sikt/sds-icons";

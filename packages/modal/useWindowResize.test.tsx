@@ -13,7 +13,9 @@ describe("useWindowResize", () => {
   test("should call the callback function when window is resized", () => {
     const callback = jest.fn();
     const throttleTime = 200;
-    renderHook(() => useWindowResize(callback, { throttleTime }));
+    renderHook(() => {
+      useWindowResize(callback, { throttleTime });
+    });
     act(() => {
       global.dispatchEvent(new Event("resize"));
     });
@@ -24,7 +26,9 @@ describe("useWindowResize", () => {
   test("should throttle the callback function when window is resized", () => {
     const callback = jest.fn();
     const throttleTime = 200;
-    renderHook(() => useWindowResize(callback));
+    renderHook(() => {
+      useWindowResize(callback);
+    });
     act(() => {
       global.dispatchEvent(new Event("resize"));
       global.dispatchEvent(new Event("resize"));
@@ -46,9 +50,9 @@ describe("useWindowResize", () => {
     window.removeEventListener = jest.fn();
     const callback = jest.fn();
     const throttleTime = 200;
-    const { unmount } = renderHook(() =>
-      useWindowResize(callback, { throttleTime }),
-    );
+    const { unmount } = renderHook(() => {
+      useWindowResize(callback, { throttleTime });
+    });
 
     expect(window.addEventListener).toHaveBeenCalledWith(
       "resize",

@@ -1,4 +1,3 @@
-import React from "react";
 import * as style from "./swatch.module.css";
 
 export const Swatch = ({ color }: { color: string }) => {

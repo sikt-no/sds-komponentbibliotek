@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, MouseEvent, ReactNode, useRef } from "react";
 import "./drawer.pcss";
 import clsx from "clsx";
 
@@ -16,9 +16,9 @@ export const Drawer = ({
   onOverlayClick,
   ...rest
 }: DrawerProps) => {
-  const drawerRef = React.useRef<HTMLDivElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
-  function handleOverlayClick(event: React.MouseEvent<HTMLDivElement>): void {
+  function handleOverlayClick(event: MouseEvent<HTMLDivElement>): void {
     if (event.target === drawerRef.current && expanded) onOverlayClick();
   }
 

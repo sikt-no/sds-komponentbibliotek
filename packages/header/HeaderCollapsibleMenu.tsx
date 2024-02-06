@@ -1,9 +1,12 @@
 import { Button } from "@sikt/sds-button";
 import { ListIcon, XIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
-import React, {
+import {
   Children,
+  Dispatch,
   ReactElement,
+  ReactNode,
+  SetStateAction,
   cloneElement,
   createContext,
   useEffect,
@@ -13,13 +16,14 @@ import React, {
 
 const MenuOpenContext = createContext<{
   menuOpen: boolean;
-  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setMenuOpen: Dispatch<SetStateAction<boolean>>;
 }>({
   menuOpen: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setMenuOpen: () => {},
 });
 export interface HeaderCollapsibleMenuProps {
-  children: React.ReactNode;
+  children: ReactNode;
   dropdownOpen?: boolean;
   ariaLabelOpenMenu?: string;
   ariaLabelCloseMenu?: string;

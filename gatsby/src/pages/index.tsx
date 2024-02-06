@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { PageProps } from "gatsby";
 import clsx from "clsx";
 import confetti from "canvas-confetti";

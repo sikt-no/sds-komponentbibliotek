@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { FooterProps, Footer } from "../index";
 
@@ -42,9 +41,7 @@ export const WithContent: Story = {
         </ul>
       </div>,
       <div key={1}>
-        <button className="sds-button sds-button--secondary" href="#link">
-          Button
-        </button>
+        <button className="sds-button sds-button--secondary">Button</button>
       </div>,
     ],
   },

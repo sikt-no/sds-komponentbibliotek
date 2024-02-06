@@ -1,6 +1,5 @@
 import { act, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import React from "react";
 import { InputDatepicker } from "./InputDatepicker";
 import userEvent from "@testing-library/user-event";
 

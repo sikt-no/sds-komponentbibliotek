@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { HTMLAttributes } from "react";
+import { HTMLAttributes } from "react";
 import "./logo.pcss";
 import { ReactComponent as LogoSvg } from "./Logo.svg";
 
@@ -12,13 +12,24 @@ export interface LogoProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const i18n = {
-  nb: "Kunnskapssektorens<br /> tjenesteleverandør",
-  nn: "Kunnskapssektorens<br /> tenesteleverandør",
-  en: "Norwegian Agency for Shared<br /> Services in Education and Research",
-  se: "Máhttosuorggi<br /> bálvaluslágideaddji",
-  smj: "Máhtudaksuorge<br /> dievnastusbuvtadadiddje",
-  sma: "Maahtoesuerkien<br /> dïenesjedeellije",
-  fkv: "Tietosektorin<br /> palvelu",
+  nb: "Kunnskapssektorens\n tjenesteleverandør",
+  nn: "Kunnskapssektorens\n tenesteleverandør",
+  en: "Norwegian Agency for Shared\n Services in Education and Research",
+  se: "Máhttosuorggi\n bálvaluslágideaddji",
+  smj: "Máhtudaksuorge\n dievnastusbuvtadadiddje",
+  sma: "Maahtoesuerkien\n dïenesjedeellije",
+  fkv: "Tietosektorin\n palvelu",
+};
+
+const addLinebreak = (lang: keyof typeof i18n) => {
+  const splitString = i18n[lang].split("\n");
+  return (
+    <>
+      {splitString[0]}
+      <br />
+      {splitString[1]}
+    </>
+  );
 };
 
 export const Logo = ({
@@ -37,10 +48,7 @@ export const Logo = ({
       <div>
         <div className="sds-logo__title">Sikt</div>
         {isSecondary && (
-          <div
-            className="sds-logo__subtitle"
-            dangerouslySetInnerHTML={{ __html: i18n[lang] }}
-          />
+          <div className="sds-logo__subtitle">{addLinebreak(lang)}</div>
         )}
       </div>
     </div>

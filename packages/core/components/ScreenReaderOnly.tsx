@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 
 export interface ScreenReaderOnlyProps extends HTMLAttributes<HTMLSpanElement> {

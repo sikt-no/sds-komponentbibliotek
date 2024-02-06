@@ -12,7 +12,6 @@ import {
   TextAa,
   Wheelchair,
 } from "@phosphor-icons/react";
-import React from "react";
 
 export const tokensHref = "/grunnleggende/designtokens/";
 export const sizesHref = "/grunnleggende/storrelser/";

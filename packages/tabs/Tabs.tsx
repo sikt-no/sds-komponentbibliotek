@@ -1,4 +1,4 @@
-import React, {
+import {
   Children,
   ReactNode,
   cloneElement,
@@ -14,14 +14,14 @@ import clsx from "clsx";
 import "./tabs.pcss";
 import { TabPanelProps } from "./TabPanel";
 
-export type TabsContextType = {
+export interface TabsContextType {
   id: string;
   count: number;
   isSelectOnFocus: boolean;
   selectedIndex: number;
   setSelectedIndex: (index: number) => void;
   setPreviousIndex: (index: number) => void;
-};
+}
 
 export const TabsContext = createContext<TabsContextType | null>(null);
 

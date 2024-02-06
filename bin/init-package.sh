@@ -43,7 +43,7 @@ echo "export type { ${capitalName}Props } from \"./$capitalName\";
 export { $capitalName } from \"./$capitalName\";" >> index.ts
 
 touch $capitalName.tsx
-echo "import React, { HTMLAttributes } from \"react\";
+echo "import { HTMLAttributes } from \"react\";
 import clsx from \"clsx\";
 import \"./$1.pcss\";
 
@@ -60,7 +60,6 @@ export const $capitalName = ({ className, ...rest }: ${capitalName}Props) => {
 touch $capitalName.test.tsx
 echo "import { render } from \"@testing-library/react\";
 import { axe } from \"jest-axe\";
-import React from \"react\";
 import { $capitalName } from \"./$capitalName\";
 
 describe(\"$capitalName\", () => {

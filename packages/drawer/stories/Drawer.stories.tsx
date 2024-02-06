@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { CSSProperties, useState } from "react";
 import { Meta } from "@storybook/react";
 import {
   Drawer,
@@ -26,13 +26,13 @@ interface RenderStoryCompProps {
   expandedWidth?: string;
 }
 
-const headerStyle: React.CSSProperties = {
+const headerStyle: CSSProperties = {
   height: "72px",
   backgroundColor: "var(--sds-color-layout-background-primary)",
   width: "100vw",
 };
 
-const bodyStyle: React.CSSProperties = {
+const bodyStyle: CSSProperties = {
   minHeight: "100vh",
   display: "flex",
   flexDirection: "column",
@@ -42,24 +42,24 @@ const bodyStyle: React.CSSProperties = {
   width: "100%",
 };
 
-const footerStyle: React.CSSProperties = {
+const footerStyle: CSSProperties = {
   backgroundColor: "var(--sds-color-layout-background-primary)",
   height: "100px",
   zIndex: "2000",
 };
 
-const containerStyle: React.CSSProperties = {
+const containerStyle: CSSProperties = {
   flex: 1,
   display: "flex",
 };
 
-const mainStyle: React.CSSProperties = {
+const mainStyle: CSSProperties = {
   paddingTop: "55px",
   position: "absolute",
   marginLeft: "100px",
 };
 
-const primaryLogoStyle: React.CSSProperties = {
+const primaryLogoStyle: CSSProperties = {
   fontSize: "20px",
 };
 
@@ -86,7 +86,9 @@ function RenderStoryComp({
                     label="Primary Label"
                     secondaryLabel="Secondary Label"
                     icon={<InfoIcon />}
-                    onClick={() => alert("DrawerButton clicked.")}
+                    onClick={() => {
+                      alert("DrawerButton clicked.");
+                    }}
                   />
                 </DrawerItem>
                 <DrawerItem>
@@ -94,7 +96,9 @@ function RenderStoryComp({
                     label="Long Primary Label"
                     secondaryLabel="Long Secondary Label"
                     icon={<InfoIcon />}
-                    onClick={() => alert("DrawerButton clicked.")}
+                    onClick={() => {
+                      alert("DrawerButton clicked.");
+                    }}
                   />
                 </DrawerItem>
               </DrawerItemGroup>
@@ -133,15 +137,17 @@ function RenderStoryComp({
 }
 
 export const Default = () => {
-  const [isExpanded, setExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const handleToggleDrawer = () => {
-    setExpanded((prevExpanded) => !prevExpanded);
+    setIsExpanded((prevExpanded) => !prevExpanded);
   };
 
   useKeyPress({
     keyToWatch: "Escape",
     state: isExpanded,
-    onKeyPress: () => setExpanded(false),
+    onKeyPress: () => {
+      setIsExpanded(false);
+    },
   });
 
   return (

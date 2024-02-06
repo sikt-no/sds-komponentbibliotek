@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useId, useRef, useState } from "react";
+import { ReactNode, useEffect, useId, useRef, useState } from "react";
 import ReactModal from "react-modal";
 import clsx from "clsx";
 import { Button } from "@sikt/sds-button";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { NumberInput, InputProps } from "../index";
 import { CalendarBlankIcon } from "@sikt/sds-icons";

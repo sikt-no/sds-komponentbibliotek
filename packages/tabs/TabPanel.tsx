@@ -1,6 +1,6 @@
-import React, { ReactNode, useContext } from "react";
+import { ReactNode, useContext } from "react";
 import clsx from "clsx";
-import { TabsContext, TabsContextType } from "./Tabs";
+import { TabsContext } from "./Tabs";
 
 export interface TabPanelProps {
   children: ReactNode;
@@ -9,7 +9,17 @@ export interface TabPanelProps {
 
 export const TabPanel = ({ children, className, ...rest }: TabPanelProps) => {
   const { index } = rest as { index: number };
-  const { id, selectedIndex } = useContext(TabsContext) as TabsContextType;
+  const context = useContext(TabsContext);
+
+  if (!context) {
+    console.warn(
+      "TabContext missing. Component needs to be used inside <Tabs>",
+    );
+    return null;
+  }
+
+  const { id, selectedIndex } = context;
+
   const isSelected = index === selectedIndex;
   return (
     <div

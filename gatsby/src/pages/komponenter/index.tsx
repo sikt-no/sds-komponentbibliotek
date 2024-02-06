@@ -1,4 +1,3 @@
-import React from "react";
 import { graphql, PageProps } from "gatsby";
 import clsx from "clsx";
 import { Section } from "@sikt/sds-section";

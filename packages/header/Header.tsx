@@ -1,8 +1,4 @@
-import React, {
-  AnchorHTMLAttributes,
-  HTMLAttributes,
-  ReactElement,
-} from "react";
+import { AnchorHTMLAttributes, HTMLAttributes, ReactElement } from "react";
 import clsx from "clsx";
 import { Link, ScreenReaderOnly } from "@sikt/sds-core";
 import { Logo } from "@sikt/sds-logo";
@@ -33,7 +29,7 @@ export const Header = ({
       {logoText}
     </span>
   ) : (
-    <Logo variant={"primary"} className="sds-header__logo" />
+    <Logo variant="primary" className="sds-header__logo" />
   );
 
   return (

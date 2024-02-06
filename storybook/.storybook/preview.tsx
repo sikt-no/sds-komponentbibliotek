@@ -1,4 +1,3 @@
-import React from "react";
 import type { Preview } from "@storybook/react";
 import "../../packages/core/index.pcss";
 import "../../packages/logo/logo.pcss";

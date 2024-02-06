@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, forwardRef, ReactNode } from "react";
+import { AnchorHTMLAttributes, forwardRef, ReactNode } from "react";
 import clsx from "clsx";
 import "./drawer-button.pcss";
 

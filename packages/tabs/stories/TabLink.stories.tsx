@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { TabLink, TabLinkProps } from "../index";
 import { InfoIcon } from "../../icons/index";

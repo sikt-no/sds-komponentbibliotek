@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const restrictedGlobals = require("confusing-browser-globals");
+
 module.exports = {
   env: {
     browser: true,
@@ -7,11 +10,17 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
     "prettier",
   ],
-  plugins: ["react", "jsx-a11y"],
+  parserOptions: {
+    project: ["./tsconfig.json"],
+  },
   rules: {
+    "no-restricted-globals": ["error"].concat(restrictedGlobals),
     "jsx-a11y/anchor-ambiguous-text": [
       "error",
       {
@@ -32,7 +41,33 @@ module.exports = {
       },
     ],
     "jsx-a11y/control-has-associated-label": "error",
+    "react/jsx-no-useless-fragment": "warn",
+    "react/hook-use-state": "error",
+    "react/jsx-boolean-value": ["error", "never"],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        props: "never",
+        children: "never",
+        propElementValues: "always",
+      },
+    ],
+    "react/jsx-fragments": ["error", "syntax"],
+    "react/no-array-index-key": "warn",
+    "react/no-danger": "warn",
+    "react/self-closing-comp": "error",
   },
+  overrides: [
+    {
+      files: [
+        "**/jest.*.[jt]s?(x)",
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)",
+      ],
+      plugins: ["jest", "testing-library"],
+      extends: ["plugin:jest/recommended", "plugin:testing-library/react"],
+    },
+  ],
   settings: {
     react: {
       version: "detect",

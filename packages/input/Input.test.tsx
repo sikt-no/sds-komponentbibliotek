@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
@@ -49,7 +48,12 @@ describe("Input", () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
       render(
-        <TextInput label="Foo" onChange={(e, val) => changeHandler(val)} />,
+        <TextInput
+          label="Foo"
+          onChange={(e, val) => {
+            changeHandler(val);
+          }}
+        />,
       );
 
       await user.type(screen.getByText("Foo"), "text");
@@ -129,7 +133,9 @@ describe("TextArea", () => {
         <TextArea
           label="Foo"
           rows={2}
-          onChange={(e, val) => changeHandler(val)}
+          onChange={(e, val) => {
+            changeHandler(val);
+          }}
         />,
       );
 

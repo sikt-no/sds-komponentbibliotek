@@ -1,4 +1,4 @@
-import React, { ReactNode, forwardRef } from "react";
+import { ReactNode, forwardRef } from "react";
 import { Fieldset, FieldsetProps } from "@sikt/sds-form";
 import clsx from "clsx";
 import "./toggle-segment.pcss";

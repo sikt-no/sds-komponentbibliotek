@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
-type Options = {
+interface Options {
   throttleTime?: number;
-};
+}
 
 const useWindowResize = (callback: () => void, options?: Options) => {
-  const { throttleTime = 200 } = options || {};
+  const { throttleTime = 200 } = options ?? {};
 
   useEffect(() => {
     let throttleTimeout: number;

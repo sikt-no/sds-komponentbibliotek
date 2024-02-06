@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import "./badge.pcss";
 
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {

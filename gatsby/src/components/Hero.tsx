@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import clsx from "clsx";
 import { BreadcrumbItem, Breadcrumbs } from "@sikt/sds-breadcrumbs";
 import { Link as GatsbyLink } from "gatsby-link";

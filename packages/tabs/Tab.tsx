@@ -1,4 +1,4 @@
-import React, {
+import {
   cloneElement,
   isValidElement,
   HTMLAttributes,
@@ -8,7 +8,7 @@ import React, {
   useContext,
 } from "react";
 import clsx from "clsx";
-import { TabsContext, TabsContextType } from "./Tabs";
+import { TabsContext } from "./Tabs";
 
 export interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -25,6 +25,15 @@ export const Tab = ({
   ...rest
 }: TabProps) => {
   const { index } = rest as { index: number };
+  const context = useContext(TabsContext);
+
+  if (!context) {
+    console.warn(
+      "TabContext missing. Component needs to be used inside <Tabs>",
+    );
+    return null;
+  }
+
   const {
     id,
     count,
@@ -32,7 +41,8 @@ export const Tab = ({
     selectedIndex,
     setSelectedIndex,
     setPreviousIndex,
-  } = useContext(TabsContext) as TabsContextType;
+  } = context;
+
   const isSelected = index === selectedIndex;
   const handleSelect = (index: number) => {
     if (isSelectOnFocus) {

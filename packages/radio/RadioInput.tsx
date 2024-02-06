@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, forwardRef } from "react";
+import { InputHTMLAttributes, forwardRef } from "react";
 import useRadioFieldset from "./RadioFieldsetContext";
 import { RadioInputBase } from "./RadioInputBase";
 

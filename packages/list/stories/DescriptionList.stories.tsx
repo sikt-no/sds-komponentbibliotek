@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { DescriptionList, ListProps } from "../index";
 import { DescriptionTerm, DescriptionDetails } from "../index";

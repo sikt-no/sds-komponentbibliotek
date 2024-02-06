@@ -1,4 +1,4 @@
-import React, { ThHTMLAttributes } from "react";
+import { ThHTMLAttributes } from "react";
 import clsx from "clsx";
 
 export interface TableHeaderProps

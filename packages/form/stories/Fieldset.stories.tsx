@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Fieldset, FieldsetProps } from "../index";
 import { CheckboxInput } from "../../checkbox";
@@ -18,7 +17,7 @@ const Template: Story = {
     children: [
       <CheckboxInput
         key={1}
-        isChecked={true}
+        isChecked
         label="Checkbox label"
         onChange={() => null}
       />,

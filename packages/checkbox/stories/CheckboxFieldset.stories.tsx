@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { CheckboxInput } from "../index";
 import { Fieldset, FieldsetProps } from "../../form";
@@ -49,9 +48,9 @@ export const WithError: Story = {
     children: [
       <CheckboxInput
         key={1}
-        isChecked={true}
+        isChecked
         label="Checkbox label"
-        error={true}
+        error
         onChange={() => null}
       />,
     ],

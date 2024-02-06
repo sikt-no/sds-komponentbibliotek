@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import React from "react";
 import { axe } from "jest-axe";
 import { DrawerButton } from "./DrawerButton";
 
@@ -7,7 +6,7 @@ describe("DrawerButton,", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <DrawerButton label={"Label"} icon={<span>⚙️</span>} />,
+        <DrawerButton label="Label" icon={<span>⚙️</span>} />,
       );
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -19,8 +18,8 @@ describe("DrawerButton,", () => {
         <DrawerButton
           data-testid="test"
           icon={<span data-testid="iconElement">⚙️</span>}
-          label={"label"}
-          secondaryLabel={"secondaryLabel"}
+          label="label"
+          secondaryLabel="secondaryLabel"
         />,
       );
 

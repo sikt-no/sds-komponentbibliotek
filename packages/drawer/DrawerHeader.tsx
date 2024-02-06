@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode, MouseEvent } from "react";
 import clsx from "clsx";
 import { ArrowRightIcon } from "@sikt/sds-icons";
 import { Button } from "@sikt/sds-button";
@@ -10,7 +10,7 @@ export interface DrawerHeaderProps {
   title?: string;
   icon?: ReactNode;
   expanded: boolean;
-  handleToggleDrawer: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleToggleDrawer: (event: MouseEvent<HTMLButtonElement>) => void;
   className?: string;
 }
 

@@ -1,8 +1,6 @@
-import React from "react";
-
 import { Modal, ModalProps } from "../Modal";
 import { Meta, StoryObj } from "@storybook/react";
-import { useArgs } from "@storybook/client-api";
+import { useArgs } from "@storybook/preview-api";
 
 import { Button } from "@sikt/sds-button";
 import { Paragraph } from "@sikt/sds-core";
@@ -37,7 +35,9 @@ export const Default: Story = {
       <>
         <Button
           variant="strong"
-          onClick={() => setArgs({ ...args, open: true })}
+          onClick={() => {
+            setArgs({ ...args, open: true });
+          }}
         >
           Open modal
         </Button>
@@ -46,14 +46,18 @@ export const Default: Story = {
           footer={[
             <Button
               variant="transparent"
-              onClick={() => setArgs({ ...args, children: shortContent })}
+              onClick={() => {
+                setArgs({ ...args, children: shortContent });
+              }}
               key="1"
             >
               Show short content
             </Button>,
             <Button
               variant="subtle"
-              onClick={() => setArgs({ ...args, children: longContent })}
+              onClick={() => {
+                setArgs({ ...args, children: longContent });
+              }}
               key="1"
             >
               Change content length
@@ -61,7 +65,9 @@ export const Default: Story = {
             <Button
               variant="strong"
               key="2"
-              onClick={() => setArgs({ ...args, open: false })}
+              onClick={() => {
+                setArgs({ ...args, open: false });
+              }}
             >
               Close
             </Button>,

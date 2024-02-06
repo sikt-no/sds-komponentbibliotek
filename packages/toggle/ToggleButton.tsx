@@ -1,14 +1,14 @@
-import React, { ChangeEventHandler, forwardRef, ReactNode, useId } from "react";
+import { ChangeEventHandler, forwardRef, ReactNode, useId } from "react";
 import clsx from "clsx";
 import { PlusCircleIcon } from "@sikt/sds-icons";
 import "./toggle-button.pcss";
 
-export type ToggleButtonProps = {
+export interface ToggleButtonProps {
   checked?: boolean;
   label: ReactNode;
   showIcons?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
-};
+}
 
 export const ToggleButton = forwardRef<HTMLInputElement, ToggleButtonProps>(
   ({ checked, label, showIcons = true, onChange, ...rest }, ref) => {

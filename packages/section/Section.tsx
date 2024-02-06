@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode, ElementType } from "react";
+import { HTMLAttributes, ReactNode, ElementType } from "react";
 import clsx from "clsx";
 import "./section.pcss";
 
@@ -18,7 +18,7 @@ export const Section = ({
   callToAction,
   ...rest
 }: SectionProps) => {
-  const H: ElementType = `${headingLevel}`;
+  const H: ElementType = headingLevel;
 
   return (
     <section className={clsx("sds-section", className)} {...rest}>

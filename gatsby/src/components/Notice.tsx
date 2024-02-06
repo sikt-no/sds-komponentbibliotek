@@ -1,4 +1,3 @@
-import React from "react";
 import clsx from "clsx";
 import { WarningIcon } from "@sikt/sds-icons";
 import * as style from "./notice.module.css";

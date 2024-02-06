@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { ToggleSegment, ToggleSegmentProps } from "./ToggleSegment";
@@ -8,10 +7,10 @@ import userEvent from "@testing-library/user-event";
 const Template = (props: Partial<ToggleSegmentProps>) => {
   return (
     <ToggleSegment legend="Legend" data-testid="test" {...props}>
-      {[1, 2, 3].map((value, index) => (
+      {[1, 2, 3].map((value) => (
         <ToggleSegmentOption
           label={`Label ${value}`}
-          key={index}
+          key={value}
           value={value}
           checked={value === 2}
           onChange={() => {
@@ -48,12 +47,14 @@ describe("Toggle Segment", () => {
       const changeHandler = jest.fn();
       render(
         <ToggleSegment legend="Test">
-          {[1, 2, 3].map((value, index) => (
+          {[1, 2, 3].map((value) => (
             <ToggleSegmentOption
-              key={index}
+              key={value}
               value={value}
               checked={value === 2}
-              onChange={() => changeHandler(value)}
+              onChange={() => {
+                changeHandler(value);
+              }}
               label={`Label ${value}`}
             />
           ))}
@@ -99,7 +100,7 @@ describe("Toggle Segment", () => {
           <ToggleSegmentOption
             value={0}
             checked
-            onChange={() => {}}
+            onChange={jest.fn()}
             label={label}
           />
         </ToggleSegment>,
@@ -118,7 +119,7 @@ describe("Toggle Segment", () => {
           <ToggleSegmentOption
             value={0}
             checked
-            onChange={() => {}}
+            onChange={jest.fn()}
             label={label}
             id={inputId}
           />

@@ -1,4 +1,3 @@
-import React from "react";
 import { Badge } from "@sikt/sds-badge";
 
 export const Token = ({ token }) => {

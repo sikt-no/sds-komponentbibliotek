@@ -2,7 +2,6 @@ import * as style from "./sub-nav.module.css";
 import { SideNav } from "../side-nav/SideNav";
 import { SideNavButtonLink } from "../side-nav/SideNavButtonLink";
 import { Cube, Code } from "@phosphor-icons/react";
-import React from "react";
 
 export const SubNav = ({
   data,

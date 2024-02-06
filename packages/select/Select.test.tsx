@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
@@ -42,9 +41,7 @@ describe("Select", () => {
       );
 
       expect(screen.getByTestId("test")).toBeInTheDocument();
-      expect((screen.getByTestId("test") as HTMLSelectElement).value).toBe(
-        "bar",
-      );
+      expect(screen.getByTestId<HTMLSelectElement>("test").value).toBe("bar");
     });
 
     it("calls change handler", async () => {

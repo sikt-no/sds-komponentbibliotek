@@ -1,4 +1,3 @@
-import React from "react";
 import { Heading3 } from "@sikt/sds-core";
 import { UserCircleIcon } from "@sikt/sds-icons";
 import * as style from "./contributors.module.css";

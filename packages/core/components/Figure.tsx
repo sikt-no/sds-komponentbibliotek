@@ -1,4 +1,4 @@
-import React, {
+import {
   Children,
   cloneElement,
   HTMLAttributes,
@@ -14,13 +14,17 @@ export interface FigureProps extends HTMLAttributes<HTMLElement> {
   figCaption?: string;
 }
 
+interface ChildProps {
+  className?: string;
+}
+
 export const Figure = ({
   children,
   aspectRatio,
   figCaption,
   ...rest
 }: FigureProps) => {
-  const addClassToChildren = (child: ReactElement) => {
+  const addClassToChildren = (child: ReactElement<ChildProps>) => {
     const props = {
       className: clsx(
         "sds-figure__figure",
@@ -36,7 +40,7 @@ export const Figure = ({
     <figure className="sds-figure" {...rest}>
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
-          return addClassToChildren(child as ReactElement);
+          return addClassToChildren(child as ReactElement<ChildProps>);
         }
       })}
       {figCaption && (

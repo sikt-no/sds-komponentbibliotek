@@ -1,6 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
 import { axe } from "jest-axe";
-import React from "react";
 import { Table } from "./Table";
 import { TableHead } from "./TableHead";
 import { TableBody } from "./TableBody";

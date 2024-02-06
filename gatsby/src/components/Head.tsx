@@ -1,4 +1,3 @@
-import React from "react";
 import { HeadFC } from "gatsby";
 import favicon32 from "@sikt/sds-logo/Favicon-Light@32px.png";
 import favicon180 from "@sikt/sds-logo/Favicon-Light@180px.png";

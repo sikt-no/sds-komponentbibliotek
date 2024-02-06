@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import { Link } from "@sikt/sds-core";
 import { Logo, LogoProps } from "@sikt/sds-logo";

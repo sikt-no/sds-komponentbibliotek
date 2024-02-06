@@ -1,4 +1,4 @@
-import React, {
+import {
   HTMLAttributes,
   ReactNode,
   useState,
@@ -32,7 +32,7 @@ export const Accordion = ({
   ...rest
 }: AccordionProps) => {
   const [expanded, setExpanded] = useState(isExpanded);
-  const Heading: ElementType = `${headingLevel}`;
+  const Heading: ElementType = headingLevel;
   const id = useId();
 
   return (

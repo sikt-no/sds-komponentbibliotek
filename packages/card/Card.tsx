@@ -1,4 +1,4 @@
-import React, { ElementType, HTMLAttributes, ReactNode } from "react";
+import { ElementType, HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import "./card.pcss";
 
@@ -24,7 +24,7 @@ export const Card = ({
   className,
   ...rest
 }: CardProps) => {
-  const H: ElementType = `${headingLevel}`;
+  const H: ElementType = headingLevel;
 
   return (
     <section className={clsx("sds-card", className)} {...rest}>

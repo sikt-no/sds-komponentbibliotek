@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import React from "react";
 import { CheckboxInput } from "./CheckboxInput";
 import { axe } from "jest-axe";
 
@@ -8,7 +7,7 @@ describe("CheckboxInput,", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <CheckboxInput label="Foo" value="foo" onChange={() => {}} />,
+        <CheckboxInput label="Foo" value="foo" onChange={jest.fn()} />,
       );
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -23,7 +22,7 @@ describe("api", () => {
         value="foo"
         data-testid="test"
         isChecked
-        onChange={() => {}}
+        onChange={jest.fn()}
       />,
     );
     expect(screen.getByTestId("test")).toHaveClass("sds-checkbox__input");
@@ -38,8 +37,8 @@ describe("api", () => {
         value="foo"
         data-testid="test"
         isChecked={false}
-        onChange={() => {}}
-        disabled={true}
+        onChange={jest.fn()}
+        disabled
       />,
     );
     expect(screen.getByTestId("test")).toHaveClass("sds-checkbox__input");
@@ -52,10 +51,10 @@ describe("api", () => {
       <CheckboxInput
         label="Foo"
         value="foo"
-        error={true}
+        error
         data-testid="test"
         isChecked
-        onChange={() => {}}
+        onChange={jest.fn()}
       />,
     );
 
@@ -70,10 +69,10 @@ describe("api", () => {
       <CheckboxInput
         label="Foo"
         value="foo"
-        error={true}
+        error
         data-testid="test"
         isChecked={false}
-        onChange={() => {}}
+        onChange={jest.fn()}
       />,
     );
 
@@ -91,7 +90,7 @@ describe("api", () => {
         data-testid="test"
         className="test-class-name"
         isChecked
-        onChange={() => {}}
+        onChange={jest.fn()}
       />,
     );
 
@@ -109,7 +108,9 @@ describe("api", () => {
       <CheckboxInput
         label="Foo"
         value="foo"
-        onChange={(val) => changeHandler(val)}
+        onChange={(val) => {
+          changeHandler(val);
+        }}
       />,
     );
 

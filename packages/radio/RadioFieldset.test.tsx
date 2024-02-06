@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import React from "react";
 import { RadioFieldset } from "./RadioFieldset";
 import { RadioInput } from "./RadioInput";
 
@@ -9,7 +8,7 @@ describe("RadioFieldset", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <RadioFieldset legend="Foo" onChange={() => {}}>
+        <RadioFieldset legend="Foo" onChange={jest.fn()}>
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
@@ -23,7 +22,7 @@ describe("RadioFieldset", () => {
   describe("api", () => {
     it("radio fieldset should render", async () => {
       render(
-        <RadioFieldset legend="Foo" onChange={() => {}} data-testid="test">
+        <RadioFieldset legend="Foo" onChange={jest.fn()} data-testid="test">
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
@@ -36,7 +35,7 @@ describe("RadioFieldset", () => {
 
     it("selected radio button should be checked", async () => {
       render(
-        <RadioFieldset legend="Foo" onChange={() => {}} value="2">
+        <RadioFieldset legend="Foo" onChange={jest.fn()} value="2">
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
           <RadioInput label="Radio 3" value="3" />
@@ -57,7 +56,9 @@ describe("RadioFieldset", () => {
       render(
         <RadioFieldset
           legend="Foo"
-          onChange={(e) => changeHandler(e.target.value)}
+          onChange={(e) => {
+            changeHandler(e.target.value);
+          }}
         >
           <RadioInput label="Radio 1" value="1" />
           <RadioInput label="Radio 2" value="2" />
@@ -74,7 +75,7 @@ describe("RadioFieldset", () => {
       render(
         <RadioFieldset
           legend="Foo"
-          onChange={() => {}}
+          onChange={jest.fn()}
           data-testid="test"
           className="test-class-name"
         >
@@ -91,7 +92,11 @@ describe("RadioFieldset", () => {
 
     it("should render help text", async () => {
       render(
-        <RadioFieldset legend="Foo" onChange={() => {}} helpText="Help message">
+        <RadioFieldset
+          legend="Foo"
+          onChange={jest.fn()}
+          helpText="Help message"
+        >
           <RadioInput label="Radio 1" value="1" />
         </RadioFieldset>,
       );
@@ -103,7 +108,7 @@ describe("RadioFieldset", () => {
       render(
         <RadioFieldset
           legend="Foo"
-          onChange={() => {}}
+          onChange={jest.fn()}
           data-testid="test"
           errorText="Error message"
         >

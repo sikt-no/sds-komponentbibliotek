@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   Table,
@@ -150,13 +149,13 @@ export const WithVerticalHeader: Story = {
       <TableBody>
         <TableRow>
           <TableHeader scope="row">A0023-35</TableHeader>
-          <TableCell>0035</TableCell>
-          <TableCell>Ola Nordmann</TableCell>
+          <TableCell data-th="A0023-35">0035</TableCell>
+          <TableCell data-th="A0023-35">Ola Nordmann</TableCell>
         </TableRow>
         <TableRow>
           <TableHeader scope="row">A0023-39</TableHeader>
-          <TableCell>0039</TableCell>
-          <TableCell>Fornavn Mellomnavn Etternavn</TableCell>
+          <TableCell data-th="A0023-39">0039</TableCell>
+          <TableCell data-th="A0023-39">Fornavn Mellomnavn Etternavn</TableCell>
         </TableRow>
       </TableBody>
     </Table>

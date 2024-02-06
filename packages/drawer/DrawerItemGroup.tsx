@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import { ListIcon } from "@sikt/sds-icons";
 import "./drawer-item-group.pcss";

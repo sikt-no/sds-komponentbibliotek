@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   IconProps,
@@ -19,14 +18,14 @@ export default meta;
 type Story = StoryObj<IconProps | LogoIconsProps>;
 
 export const ArrowRight: Story = {
-  render: (args) => (
+  render: (args: IconProps) => (
     <ArrowRightIcon {...args} style={{ fontSize: "calc(32rem / 16)" }} />
   ),
   args: {},
 };
 
 export const Spinner: Story = {
-  render: (args) => (
+  render: (args: IconProps) => (
     <SpinnerIcon {...args} style={{ fontSize: "calc(32rem / 16)" }} />
   ),
   args: {},
@@ -39,7 +38,7 @@ export const LinkedInLogo: Story = {
       control: { type: "radio" },
     },
   },
-  render: (args) => (
+  render: (args: LogoIconsProps) => (
     <a href="#linkedin">
       Linkedin
       <LinkedInLogoIcon style={{ fontSize: "calc(32rem / 16)" }} {...args} />
@@ -54,7 +53,7 @@ export const XLogo: Story = {
       control: { type: "radio" },
     },
   },
-  render: (args) => (
+  render: (args: LogoIconsProps) => (
     <a href="#x">
       X <XLogoIcon style={{ fontSize: "calc(32rem / 16)" }} {...args} />
     </a>

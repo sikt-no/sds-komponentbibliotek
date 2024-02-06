@@ -1,6 +1,5 @@
 import { useKeyPress } from "./useKeyPress";
 import { render } from "@testing-library/react";
-import React from "react";
 import userEvent from "@testing-library/user-event";
 
 interface Props {
@@ -24,7 +23,7 @@ describe("useKeyPress", () => {
   it("should call handleMock on Escape key", async () => {
     const mockHandler = jest.fn();
     const { unmount } = render(
-      <MockDrawerComponent isExpanded={true} onKeyPress={mockHandler} />,
+      <MockDrawerComponent isExpanded onKeyPress={mockHandler} />,
     );
     await user.keyboard("{Escape}");
 
@@ -36,7 +35,7 @@ describe("useKeyPress", () => {
   it("should not call handleMock on key ArrowUp", async () => {
     const mockHandler = jest.fn();
     const { unmount } = render(
-      <MockDrawerComponent isExpanded={true} onKeyPress={mockHandler} />,
+      <MockDrawerComponent isExpanded onKeyPress={mockHandler} />,
     );
 
     await user.keyboard("{ArrowDown}");

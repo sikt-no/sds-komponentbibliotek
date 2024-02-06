@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { ToggleSwitch, ToggleSwitchProps } from "../index";
 
@@ -15,7 +15,7 @@ const Template: Story = {
   render: (args) => {
     const [isChecked, setIsChecked] = useState(args.checked);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       const checked = event.target.checked;
       setIsChecked(checked);
       args.onChange && args.onChange(event);

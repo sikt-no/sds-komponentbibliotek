@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import { HTMLAttributes } from "react";
 import { CaretRightIcon, CaretLeftIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx";
 import "./pagination.pcss";
@@ -55,7 +55,9 @@ export const Pagination = ({
             className="sds-pagination__button"
             aria-label={`${ariaLabelPrevious} ${currentIndex}`}
             disabled={currentIndex === 0}
-            onClick={() => handleClick(currentIndex - 1)}
+            onClick={() => {
+              handleClick(currentIndex - 1);
+            }}
           >
             <CaretLeftIcon />
           </button>
@@ -73,7 +75,9 @@ export const Pagination = ({
                   aria-current={value === currentIndex ? true : undefined}
                   aria-label={`${ariaLabelItem} ${value + 1}`}
                   disabled={value === currentIndex}
-                  onClick={() => handleClick(value)}
+                  onClick={() => {
+                    handleClick(value);
+                  }}
                 >
                   {value + 1}
                 </button>
@@ -92,7 +96,9 @@ export const Pagination = ({
             className="sds-pagination__button"
             aria-label={`${ariaLabelNext} ${currentIndex + 2}`}
             disabled={currentIndex === count - 1}
-            onClick={() => handleClick(currentIndex + 1)}
+            onClick={() => {
+              handleClick(currentIndex + 1);
+            }}
           >
             <CaretRightIcon />
           </button>

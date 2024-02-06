@@ -1,9 +1,4 @@
-import React, {
-  ChangeEvent,
-  InputHTMLAttributes,
-  forwardRef,
-  useId,
-} from "react";
+import { ChangeEvent, InputHTMLAttributes, forwardRef, useId } from "react";
 import clsx from "clsx";
 import "./radio.pcss";
 

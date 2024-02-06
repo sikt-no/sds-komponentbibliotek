@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { SearchInput, InputProps } from "../index";
 import { MapPinIcon } from "@sikt/sds-icons";

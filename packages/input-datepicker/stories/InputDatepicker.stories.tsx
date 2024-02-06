@@ -14,7 +14,9 @@ type Story = StoryObj<InputDatepickerProps>;
 export const Default: Story = {
   args: {
     label: "Label",
-    onChange: (e) => console.log(e),
+    onChange: (e) => {
+      console.log(e);
+    },
   },
 };
 

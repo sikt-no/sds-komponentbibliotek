@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { ButtonProps, Button } from "../index";
 import { ArrowRightIcon, ArrowLeftIcon } from "../../icons/index";

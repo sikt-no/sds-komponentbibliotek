@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
+import { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
 import clsx from "clsx";
 import type { ButtonVariant, ButtonSize, ButtonIconVariant } from "./Button";
 import "./button-link.pcss";

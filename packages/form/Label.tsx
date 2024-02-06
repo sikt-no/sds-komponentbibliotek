@@ -1,4 +1,4 @@
-import React, { LabelHTMLAttributes } from "react";
+import { LabelHTMLAttributes } from "react";
 import clsx from "clsx";
 import "./label.pcss";
 

@@ -1,4 +1,4 @@
-import React, { TableHTMLAttributes, ReactNode, HTMLAttributes } from "react";
+import { TableHTMLAttributes, ReactNode, HTMLAttributes } from "react";
 import clsx from "clsx";
 import { ScreenReaderOnly } from "@sikt/sds-core";
 import "./table.pcss";

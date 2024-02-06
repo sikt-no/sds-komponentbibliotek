@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { TelInput, InputProps } from "../index";
 import { SlidersIcon } from "@sikt/sds-icons";

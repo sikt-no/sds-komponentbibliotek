@@ -1,4 +1,4 @@
-import React, { ChangeEvent, HTMLAttributes, forwardRef, useId } from "react";
+import { ChangeEvent, HTMLAttributes, forwardRef, useId } from "react";
 import clsx from "clsx";
 import "./checkbox-input.pcss";
 import { CheckIcon } from "@sikt/sds-icons";

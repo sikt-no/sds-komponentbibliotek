@@ -1,4 +1,4 @@
-import React, {
+import {
   Children,
   HTMLAttributes,
   ReactElement,
@@ -14,6 +14,16 @@ export interface HeaderNavProps extends HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
+interface ChildProps {
+  className?: string;
+}
+
+const addClassToChildren = (child: ReactElement<ChildProps>) => {
+  return cloneElement(child, {
+    className: clsx("sds-header__nav-link", child.props.className),
+  });
+};
+
 export const HeaderNav = ({ children, className, ...rest }: HeaderNavProps) => {
   return (
     <nav className={clsx("sds-header__nav", className)} {...rest}>
@@ -22,12 +32,7 @@ export const HeaderNav = ({ children, className, ...rest }: HeaderNavProps) => {
           if (isValidElement(child)) {
             return (
               <li className="sds-header__nav-item">
-                {cloneElement(child as ReactElement, {
-                  className: clsx(
-                    "sds-header__nav-link",
-                    child.props.className,
-                  ),
-                })}
+                {addClassToChildren(child as ReactElement<ChildProps>)}
               </li>
             );
           }

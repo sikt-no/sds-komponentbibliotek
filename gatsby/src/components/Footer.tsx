@@ -1,4 +1,3 @@
-import React from "react";
 import { FigmaLogo, GitlabLogo, SlackLogo } from "@phosphor-icons/react";
 import { Footer as SdsFooter } from "@sikt/sds-footer";
 import * as style from "./footer.module.css";

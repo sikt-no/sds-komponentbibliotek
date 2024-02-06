@@ -1,16 +1,16 @@
-import React, { ReactNode, ChangeEventHandler, useId, forwardRef } from "react";
+import { ReactNode, ChangeEventHandler, useId, forwardRef } from "react";
 import clsx from "clsx";
 import { CheckIcon, XIcon } from "@sikt/sds-icons";
 import "./toggle-switch.pcss";
 
-export type ToggleSwitchProps = {
+export interface ToggleSwitchProps {
   checked?: boolean;
   label: ReactNode;
   labelFirst?: boolean;
   showIcons?: boolean;
   error?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
-};
+}
 
 export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
   (

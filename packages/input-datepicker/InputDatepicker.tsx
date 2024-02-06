@@ -1,4 +1,4 @@
-import React, { useId, forwardRef, useState } from "react";
+import { useId, forwardRef, useState } from "react";
 import clsx from "clsx";
 import {
   DatePickerProps,
@@ -90,7 +90,9 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
             <Button
               variant={errorText ? "critical" : "transparent"}
               size="small"
-              onClick={() => setCalendarOpen(!calendarOpen)}
+              onClick={() => {
+                setCalendarOpen(!calendarOpen);
+              }}
               iconVariant="only"
               icon={<CalendarBlankIcon />}
             >
@@ -108,7 +110,9 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
 
           {calendarOpen && (
             <Calendar
-              onChange={() => setCalendarOpen(false)}
+              onChange={() => {
+                setCalendarOpen(false);
+              }}
               data-testid="test-calendar"
               className="sds-input-datepicker__calendar"
             >
@@ -120,7 +124,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
                 >
                   <CaretLeftIcon />
                 </ReactAriaButton>
-                <Heading className="sds-input-datepicker__calendar-heading"></Heading>
+                <Heading className="sds-input-datepicker__calendar-heading" />
                 <ReactAriaButton
                   className="sds-input-datepicker__calendar-button"
                   slot="next"

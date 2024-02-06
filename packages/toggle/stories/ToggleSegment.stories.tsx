@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { ToggleSegment, ToggleSegmentProps } from "../index";
 import { ToggleSegmentOption } from "../index";
@@ -17,26 +17,32 @@ export const Default: Story = {
     const [checkedOption, setCheckedOption] = useState("1");
 
     return (
-      <ToggleSegment legend="Toggle segment" {...args}>
+      <ToggleSegment {...args} legend="Toggle segment">
         <ToggleSegmentOption
           key={0}
           value="1"
           label="L"
-          onChange={(e) => setCheckedOption(e.target.value)}
+          onChange={(e) => {
+            setCheckedOption(e.target.value);
+          }}
           checked={checkedOption === "1"}
         />
         <ToggleSegmentOption
           key={1}
           value="2"
           label="Label"
-          onChange={(e) => setCheckedOption(e.target.value)}
+          onChange={(e) => {
+            setCheckedOption(e.target.value);
+          }}
           checked={checkedOption === "2"}
         />
         <ToggleSegmentOption
           key={2}
           value="3"
           label="Very long long label"
-          onChange={(e) => setCheckedOption(e.target.value)}
+          onChange={(e) => {
+            setCheckedOption(e.target.value);
+          }}
           checked={checkedOption === "3"}
         />
       </ToggleSegment>

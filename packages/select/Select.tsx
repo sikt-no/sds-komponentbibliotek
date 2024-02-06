@@ -1,4 +1,4 @@
-import React, {
+import {
   ChangeEventHandler,
   OptionHTMLAttributes,
   SelectHTMLAttributes,
@@ -47,12 +47,14 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             className="sds-select__select-input"
             aria-describedby={helpTextId}
             aria-invalid={Boolean(errorText) && true}
-            onChange={(e) => onChange && onChange(e)}
+            onChange={(e) => {
+              onChange && onChange(e);
+            }}
             {...rest}
           >
             {options.map((option) => (
               <option
-                key={option.value && option.value.toString()}
+                key={option.value?.toString()}
                 value={option.value}
                 disabled={option.disabled}
               >

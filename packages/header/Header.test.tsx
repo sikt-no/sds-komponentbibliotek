@@ -1,6 +1,6 @@
 import { act, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import React, { FormEvent } from "react";
+import { FormEvent } from "react";
 import { Header } from "./Header";
 import { HeaderNav } from "./HeaderNav";
 import userEvent from "@testing-library/user-event";
@@ -103,7 +103,7 @@ describe("Header", () => {
         </Header>,
       );
 
-      const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
+      const navElement = screen.getByTestId("test-dropdown");
       expect(navElement).toHaveAttribute("aria-hidden", "true");
 
       const dropdownMenu = screen.getByRole("button");
@@ -119,10 +119,7 @@ describe("Header", () => {
 
       render(
         <Header>
-          <HeaderCollapsibleMenu
-            dropdownOpen={true}
-            data-testid="test-dropdown"
-          >
+          <HeaderCollapsibleMenu dropdownOpen data-testid="test-dropdown">
             <HeaderNav>
               <a href="/" data-testid="test-link">
                 Foo
@@ -132,7 +129,7 @@ describe("Header", () => {
         </Header>,
       );
 
-      const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
+      const navElement = screen.getByTestId("test-dropdown");
       expect(navElement).toHaveAttribute("aria-hidden", "false");
 
       await act(async () => {
@@ -147,10 +144,7 @@ describe("Header", () => {
 
       render(
         <Header>
-          <HeaderCollapsibleMenu
-            dropdownOpen={true}
-            data-testid="test-dropdown"
-          >
+          <HeaderCollapsibleMenu dropdownOpen data-testid="test-dropdown">
             <HeaderNav>
               <a href="/" data-testid="test-link">
                 Foo
@@ -160,8 +154,8 @@ describe("Header", () => {
         </Header>,
       );
 
-      const navLink = screen.getAllByTestId("test-link")[1] as HTMLElement;
-      const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
+      const navLink = screen.getAllByTestId("test-link")[1];
+      const navElement = screen.getByTestId("test-dropdown");
 
       expect(navElement).toHaveAttribute("aria-hidden", "false");
 
@@ -177,10 +171,7 @@ describe("Header", () => {
 
       render(
         <Header>
-          <HeaderCollapsibleMenu
-            dropdownOpen={true}
-            data-testid="test-dropdown"
-          >
+          <HeaderCollapsibleMenu dropdownOpen data-testid="test-dropdown">
             <HeaderNav>
               <button data-testid="test-button">Foo</button>
             </HeaderNav>
@@ -188,8 +179,8 @@ describe("Header", () => {
         </Header>,
       );
 
-      const navButton = screen.getAllByTestId("test-button")[1] as HTMLElement;
-      const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
+      const navButton = screen.getAllByTestId("test-button")[1];
+      const navElement = screen.getByTestId("test-dropdown");
 
       expect(navElement).toHaveAttribute("aria-hidden", "false");
 
@@ -205,13 +196,12 @@ describe("Header", () => {
 
       render(
         <Header>
-          <HeaderCollapsibleMenu
-            dropdownOpen={true}
-            data-testid="test-dropdown"
-          >
+          <HeaderCollapsibleMenu dropdownOpen data-testid="test-dropdown">
             <HeaderNav>
               <form
-                onSubmit={(e: FormEvent<HTMLFormElement>) => e.preventDefault()}
+                onSubmit={(e: FormEvent<HTMLFormElement>) => {
+                  e.preventDefault();
+                }}
               >
                 <input type="text" data-testid="test-input" />
               </form>
@@ -220,8 +210,8 @@ describe("Header", () => {
         </Header>,
       );
 
-      const submitInput = screen.getAllByTestId("test-input")[1] as HTMLElement;
-      const navElement = screen.getByTestId("test-dropdown") as HTMLElement;
+      const submitInput = screen.getAllByTestId("test-input")[1];
+      const navElement = screen.getByTestId("test-dropdown");
 
       expect(navElement).toHaveAttribute("aria-hidden", "false");
 

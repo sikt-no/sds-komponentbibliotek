@@ -1,13 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import React from "react";
+import { MouseEvent } from "react";
 import { DrawerHeader } from "./DrawerHeader";
 import { axe } from "jest-axe";
 import userEvent from "@testing-library/user-event";
 
 describe("DrawerHeader,", () => {
-  let mockHandler: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => void;
+  let mockHandler: (event: MouseEvent<HTMLButtonElement>) => void;
 
   beforeEach(() => {
     mockHandler = jest.fn();
@@ -31,7 +29,7 @@ describe("DrawerHeader,", () => {
       render(
         <DrawerHeader
           data-testid="test"
-          icon={<span data-testid={"iconElement"}>🛠️</span>}
+          icon={<span data-testid="iconElement">🛠️</span>}
           title="title"
           expanded
           handleToggleDrawer={mockHandler}
@@ -49,7 +47,7 @@ describe("DrawerHeader,", () => {
       render(
         <DrawerHeader
           data-testid="test"
-          icon={<span data-testid={"iconElement"}>🛠️</span>}
+          icon={<span data-testid="iconElement">🛠️</span>}
           title="title"
           expanded={false}
           handleToggleDrawer={mockHandler}

@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import React from "react";
 import { axe } from "jest-axe";
 import { DrawerButtonLink } from "./DrawerButtonLink";
 
@@ -7,7 +6,7 @@ describe("DrawerButtonLink,", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <DrawerButtonLink href={"https://www.samordnaopptak.no"}>
+        <DrawerButtonLink href="https://www.samordnaopptak.no">
           Lenketekst
         </DrawerButtonLink>,
       );
@@ -19,10 +18,10 @@ describe("DrawerButtonLink,", () => {
     it("should render", () => {
       render(
         <DrawerButtonLink
-          href={"https://www.samordnaopptak.no"}
+          href="https://www.samordnaopptak.no"
           data-testid="test"
           icon={<span data-testid="iconElement">⚙️</span>}
-          secondaryLabel={"secondaryLabel"}
+          secondaryLabel="secondaryLabel"
         >
           Lenketekst
         </DrawerButtonLink>,

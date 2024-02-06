@@ -1,4 +1,4 @@
-import React, { ChangeEvent, forwardRef, useMemo } from "react";
+import { ChangeEvent, forwardRef, useMemo } from "react";
 import { Fieldset, FieldsetProps } from "@sikt/sds-form";
 import { RadioFieldsetContext } from "./RadioFieldsetContext";
 
@@ -15,7 +15,7 @@ export const RadioFieldset = forwardRef<
 
   return (
     <RadioFieldsetContext.Provider value={context}>
-      <Fieldset ref={ref} {...rest}></Fieldset>
+      <Fieldset ref={ref} {...rest} />
     </RadioFieldsetContext.Provider>
   );
 });
