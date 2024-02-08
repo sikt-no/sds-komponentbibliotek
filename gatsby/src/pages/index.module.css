@@ -41,7 +41,6 @@
   }
 
   &__hero {
-    background-image: url("/images/index/hero.png");
     background-position: 500px;
     background-repeat: no-repeat;
 
