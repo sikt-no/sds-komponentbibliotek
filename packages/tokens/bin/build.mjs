@@ -177,6 +177,11 @@ StyleDictionary.extend({
           destination: "js/color.dark.js",
           filter: colorFilter,
         },
+        {
+          format: "typescript/module-declarations",
+          destination: "js/color.dark.d.ts",
+          filter: colorFilter,
+        },
       ],
     },
     scss: {
@@ -235,6 +240,11 @@ StyleDictionary.extend({
           destination: "js/tokens.tablet.js",
           filter,
         },
+        {
+          format: "typescript/module-declarations",
+          destination: "js/tokens.tablet.d.ts",
+          filter,
+        },
       ],
     },
     scss: {
@@ -291,6 +301,11 @@ StyleDictionary.extend({
         {
           format: "javascript/module",
           destination: "js/tokens.desktop.js",
+          filter,
+        },
+        {
+          format: "typescript/module-declarations",
+          destination: "js/tokens.desktop.d.ts",
           filter,
         },
       ],
