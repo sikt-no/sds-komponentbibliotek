@@ -7,7 +7,7 @@ import {
 import { Link } from "@sikt/sds-core";
 import * as style from "./header.module.css";
 
-const Header = ({ currentHref }) => {
+const Header = ({ currentHref }: { currentHref: string }) => {
   return (
     <SdsHeader logoText="designsystem.sikt.no" className={style.header}>
       <HeaderCollapsibleMenu aria-label="Navigasjon">

@@ -19,15 +19,7 @@ export const SideNavButtonLink = forwardRef<
   SideNavButtonLinkProps
 >(
   (
-    {
-      className,
-      icon,
-      secondaryLabel,
-      href,
-      children,
-      disabled = false,
-      ...rest
-    }: SideNavButtonLinkProps,
+    { className, icon, href, children, ...rest }: SideNavButtonLinkProps,
     ref,
   ) => {
     const Component: ElementType = href ? Link : "div";

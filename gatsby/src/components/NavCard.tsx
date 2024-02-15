@@ -4,6 +4,7 @@ import { ArrowRightIcon } from "@sikt/sds-icons";
 import * as style from "./nav-card.module.css";
 
 interface NavCardProps {
+  href?: string;
   imgSrc?: string;
   imgAlt?: string;
   headingText: string;
