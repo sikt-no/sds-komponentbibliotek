@@ -20,7 +20,7 @@ import "@sikt/sds-input-datepicker/dist/index.css";
 Import stylesheet:
 
 ```css
-@import url("@sikt/sds-input-datepiker");
+@import url("@sikt/sds-input-datepicker");
 ```
 
 Create custom markup:
