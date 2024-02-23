@@ -11,6 +11,7 @@
     &-list {
       display: flex;
       gap: var(--sds-space-gap-small);
+      flex-wrap: wrap;
     }
 
     &-container {
