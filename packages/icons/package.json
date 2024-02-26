@@ -12,12 +12,12 @@
     "README.md"
   ],
   "scripts": {
-    "prebuild": "npm run prepare",
+    "prebuild": "npm run postinstall",
     "build": "tsup",
     "build:icons": "node bin/build.mjs",
     "build:components": "svgr -- dist/assets",
     "build:sprite": "svgstore dist/assets/*.svg -o dist/sds-icons.svg",
-    "prepare": "run-s build:icons build:sprite build:components"
+    "postinstall": "run-s build:icons build:sprite build:components"
   },
   "dependencies": {
     "@phosphor-icons/core": "^2.0.8"

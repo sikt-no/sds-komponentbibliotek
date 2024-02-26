@@ -9,10 +9,10 @@
     "README.md"
   ],
   "scripts": {
-    "prebuild": "npm run prepare",
+    "prebuild": "npm run postinstall",
     "build": "",
     "build:tokens": "node bin/build.mjs",
-    "prepare": "npm run build:tokens"
+    "postinstall": "npm run build:tokens"
   },
   "devDependencies": {
     "style-dictionary": "^3.9.2"
