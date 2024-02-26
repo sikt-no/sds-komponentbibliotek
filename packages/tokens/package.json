@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-tokens",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "UNLICENSED",
   "style": "dist/css/tokens.css",
   "files": [
