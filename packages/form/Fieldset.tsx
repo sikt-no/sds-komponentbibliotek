@@ -33,7 +33,9 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
             errorText && "sds-form-fieldset--error",
             className,
           )}
-          aria-describedby={`${id}-help-text`}
+          aria-describedby={
+            errorText ?? helpText ? `${id}-help-text` : undefined
+          }
           aria-invalid={Boolean(errorText)}
           aria-errormessage={errorText ? `${id}-help-text` : undefined}
           {...rest}
