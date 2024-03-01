@@ -10,6 +10,7 @@
 @import url("@sikt/sds-badge");
 @import url("@sikt/sds-table");
 @import url("@sikt/sds-list");
+@import url("@sikt/sds-accordion");
 
 .sds-sikt-button-group {
   flex-wrap: wrap;
