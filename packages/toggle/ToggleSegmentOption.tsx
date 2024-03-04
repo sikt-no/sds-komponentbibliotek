@@ -12,7 +12,7 @@ import { useFieldset } from "@sikt/sds-form";
 export interface ToggleSegmentOptionProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   value: string | number;
-  label: string;
+  label: ReactNode;
   children?: ReactNode;
   checked?: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;

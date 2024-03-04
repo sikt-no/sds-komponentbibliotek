@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import { Label } from "./Label";
 import { HelpText } from "./HelpText";
 import "./form-field.pcss";
@@ -7,9 +7,9 @@ import "./form-field.pcss";
 export interface FormFieldProps
   extends Omit<HTMLAttributes<HTMLLabelElement>, "onChange"> {
   className?: string;
-  label: string;
-  errorText?: string;
-  helpText?: string;
+  label: ReactNode;
+  errorText?: ReactNode;
+  helpText?: ReactNode;
   /**
    * ID of the form element inside children.
    */

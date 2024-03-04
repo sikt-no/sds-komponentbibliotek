@@ -5,10 +5,10 @@ import "./fieldset.pcss";
 
 export interface FieldsetProps extends HTMLAttributes<HTMLFieldSetElement> {
   className?: string;
-  legend: string;
+  legend: ReactNode;
   name?: string;
-  errorText?: string;
-  helpText?: string;
+  errorText?: ReactNode;
+  helpText?: ReactNode;
   children: ReactNode;
 }
 

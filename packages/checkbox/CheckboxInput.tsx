@@ -1,4 +1,10 @@
-import { ChangeEvent, HTMLAttributes, forwardRef, useId } from "react";
+import {
+  ChangeEvent,
+  HTMLAttributes,
+  ReactNode,
+  forwardRef,
+  useId,
+} from "react";
 import clsx from "clsx";
 import "./checkbox-input.pcss";
 import { CheckIcon } from "@sikt/sds-icons";
@@ -9,7 +15,7 @@ export interface CheckboxInputProps extends HTMLAttributes<HTMLInputElement> {
   disabled?: boolean;
   error?: boolean;
   id?: string;
-  label?: string;
+  label?: ReactNode;
   name?: string;
   value?: string | number;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;

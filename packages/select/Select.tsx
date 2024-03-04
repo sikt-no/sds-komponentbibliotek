@@ -1,6 +1,7 @@
 import {
   ChangeEventHandler,
   OptionHTMLAttributes,
+  ReactNode,
   SelectHTMLAttributes,
   forwardRef,
   useId,
@@ -12,10 +13,10 @@ import "./select.pcss";
 
 export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   className?: string;
-  label: string;
+  label: ReactNode;
   options: Omit<OptionHTMLAttributes<HTMLOptionElement>, "selected">[];
-  errorText?: string;
-  helpText?: string;
+  errorText?: ReactNode;
+  helpText?: ReactNode;
   onChange?: ChangeEventHandler<HTMLSelectElement>;
 }
 

@@ -1,11 +1,17 @@
-import { ChangeEvent, InputHTMLAttributes, forwardRef, useId } from "react";
+import {
+  ChangeEvent,
+  InputHTMLAttributes,
+  ReactNode,
+  forwardRef,
+  useId,
+} from "react";
 import clsx from "clsx";
 import "./radio.pcss";
 
 export interface RadioInputBaseProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   className?: string;
-  label: string;
+  label: ReactNode;
   name?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   value: string;

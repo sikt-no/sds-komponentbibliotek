@@ -1,4 +1,4 @@
-import { useId, forwardRef, useState } from "react";
+import { useId, forwardRef, useState, ReactNode } from "react";
 import clsx from "clsx";
 import {
   DatePickerProps,
@@ -26,13 +26,13 @@ import "./input-datepicker.pcss";
 import { I18nProvider } from "@react-aria/i18n";
 
 export interface InputDatepickerProps extends DatePickerProps<DateValue> {
-  label: string;
-  errorText?: string;
-  helpText?: string;
+  label: ReactNode;
+  errorText?: ReactNode;
+  helpText?: ReactNode;
   className?: string;
   nextMonthLabel?: string;
   previousMonthLabel?: string;
-  openCalendarLabel?: string;
+  openCalendarLabel?: ReactNode;
   lang?: string;
   value?: DateValue;
   onChange?: (newValue: DateValue) => void;

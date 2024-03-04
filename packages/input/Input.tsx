@@ -24,7 +24,7 @@ export interface InputProps
     "onChange"
   > {
   className?: string;
-  label: string;
+  label: ReactNode;
   placeholder?: string;
   onChange?: (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -33,8 +33,8 @@ export interface InputProps
   value?: string;
   icon?: ReactNode;
   actionProps?: Omit<InputActionButtonProps, "icon">;
-  errorText?: string;
-  helpText?: string;
+  errorText?: ReactNode;
+  helpText?: ReactNode;
   rows?: number;
 }
 
@@ -91,7 +91,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
               value={value}
               aria-describedby={helpTextId}
               aria-invalid={Boolean(errorText)}
-              aria-errormessage={errorText && helpTextId}
+              aria-errormessage={errorText ? helpTextId : undefined}
               rows={rows}
               {...rest}
             />
@@ -106,7 +106,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
               value={value}
               aria-describedby={helpTextId}
               aria-invalid={Boolean(errorText)}
-              aria-errormessage={errorText && helpTextId}
+              aria-errormessage={errorText ? helpTextId : undefined}
               {...rest}
             />
           )}
