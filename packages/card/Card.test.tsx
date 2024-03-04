@@ -9,6 +9,7 @@ const renderComponent = ({ className, imgAlt }: Partial<CardProps>) =>
       imgAlt={imgAlt}
       overlineText="Overline"
       headingText="Heading"
+      leadText="Lead"
       data-testid="test"
       className={className}
       callToAction={<>CTA</>}

@@ -8,6 +8,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   overlineText?: string;
   headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   headingText: string;
+  leadText?: string;
   children?: ReactNode;
   callToAction?: ReactNode;
   className?: string;
@@ -19,6 +20,7 @@ export const Card = ({
   overlineText,
   headingLevel = "h3",
   headingText,
+  leadText,
   children,
   callToAction,
   className,
@@ -38,6 +40,9 @@ export const Card = ({
           </span>
         )}
         <H className="sds-typography-heading--small">{headingText}</H>
+        {leadText && (
+          <span className="sds-typography-body--lead">{leadText}</span>
+        )}
         {children && (
           <div className="sds-typography-body--regular">{children}</div>
         )}

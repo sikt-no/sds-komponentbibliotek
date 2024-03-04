@@ -25,6 +25,7 @@ export const Default: Story = {
     imgAlt: "This is an image",
     overlineText: "overline",
     headingText: "Heading",
+    leadText: "Lead",
     children: <>Text</>,
     callToAction: (
       <ButtonLink variant="subtle" href="#" icon={<ArrowCircleRightIcon />}>
