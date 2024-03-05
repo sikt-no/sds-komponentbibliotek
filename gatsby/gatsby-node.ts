@@ -27,8 +27,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }) => {
   const { createPage } = actions;
 
-  const result = await graphql(`
-    query {
+  const result = await graphql<Queries.AllMdxQuery>(`
+    query AllMdx {
       allMdx {
         nodes {
           id
@@ -47,17 +47,19 @@ export const createPages: GatsbyNode["createPages"] = async ({
     reporter.panicOnBuild("Error loading MDX result", result.errors);
   }
 
-  const getPath = (node) => {
+  const getPackageDir = (node) => {
     try {
-      return node.internal.contentFilePath
-        .split("/sds-komponentbibliotek/packages/")[1]
-        .split("/")[0];
+      return `${
+        node.internal.contentFilePath
+          .split("/sds-komponentbibliotek/packages/")[1]
+          .split("/")[0]
+      }`;
     } catch (e) {
       reporter.panicOnBuild("Error getting package path", e);
     }
   };
 
-  const getPackage = (packageDir) => {
+  const getPackageJson = (packageDir) => {
     try {
       const pathToPackageJson = path.resolve(
         __dirname,
@@ -69,29 +71,33 @@ export const createPages: GatsbyNode["createPages"] = async ({
       const packageJsonContent = fs.readFileSync(pathToPackageJson, "utf-8");
       const packageJson = JSON.parse(packageJsonContent);
       return {
-        name: packageJson.name,
-        version: packageJson.version,
+        name: `${packageJson.name}`,
+        version: `${packageJson.version}`,
       };
     } catch (e) {
-      reporter.panicOnBuild("Error reading package.json", e);
+      reporter.panicOnBuild("Error reading package.json", e as Error);
     }
   };
 
   const template = path.resolve(`src/templates/komponenter.tsx`);
-  const files = result.data.allMdx.nodes;
+  const files = result.data?.allMdx.nodes;
+
+  if (!files) {
+    return;
+  }
 
   files.forEach((node) => {
-    const packageDir = getPath(node);
-    const { name, version } = getPackage(packageDir);
+    const packageDir = getPackageDir(node);
+    const packageJson = getPackageJson(packageDir);
 
     createPage({
-      path: `/komponenter${node.frontmatter.slug}`,
+      path: `/komponenter${node.frontmatter?.slug}`,
       component: `${template}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         id: node.id,
         directory: packageDir,
-        package: name,
-        version,
+        package: `${packageJson?.name}`,
+        version: `${packageJson?.version}`,
       },
     });
   });

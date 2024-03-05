@@ -67,7 +67,7 @@ const KomponenterPage: React.FC<PageProps> = ({ location, data }) => {
 };
 
 export const query = graphql`
-  query BasicsPageQuery {
+  query KomponenterPage {
     allMdx {
       nodes {
         frontmatter {

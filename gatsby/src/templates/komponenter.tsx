@@ -43,7 +43,9 @@ export default function PageTemplate({
   data,
   pageContext,
   children,
-}: PageProps) {
+}: PageProps<Queries.PageTemplateQuery>) {
+  const frontmatter = data.mdx?.frontmatter;
+
   return (
     <>
       <Hero
@@ -51,7 +53,7 @@ export default function PageTemplate({
           { title: "Komponentbiblioteket", to: "/" },
           { title: "Komponenter", to: "/komponenter/" },
         ]}
-        heading={<>{data.mdx.frontmatter.title}</>}
+        heading={<>{frontmatter?.title}</>}
         leadParagraph={
           <ButtonGroup variant="left">
             <ButtonLink
@@ -64,7 +66,7 @@ export default function PageTemplate({
             <ButtonLink
               variant="transparent"
               icon={<Code />}
-              href={`/storybook/?path=${data.mdx.frontmatter.storybook}`}
+              href={`/storybook/?path=${frontmatter?.storybook}`}
             >
               Se i Storybook
             </ButtonLink>
@@ -84,7 +86,7 @@ export default function PageTemplate({
 
         <div>
           <Section
-            headingText={data.mdx.frontmatter.title}
+            headingText={frontmatter?.title || ""}
             className={style.komponenter__sdsSection}
             callToAction={
               <ButtonGroup variant="right">
@@ -98,7 +100,7 @@ export default function PageTemplate({
                 <ButtonLink
                   variant="transparent"
                   icon={<FigmaLogo />}
-                  href={data.mdx.frontmatter.figma}
+                  href={frontmatter?.figma || ""}
                 >
                   Se i Figma
                 </ButtonLink>
@@ -116,7 +118,7 @@ export default function PageTemplate({
 }
 
 export const query = graphql`
-  query PageTemplateQuery($id: String!) {
+  query PageTemplate($id: String!) {
     mdx(id: { eq: $id }) {
       frontmatter {
         title

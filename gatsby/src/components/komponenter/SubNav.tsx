@@ -7,14 +7,14 @@ export const SubNav = ({
   data,
   currentHref,
 }: {
-  data: any;
+  data: Queries.PageTemplateQuery;
   currentHref?: string;
 }) => {
   const categories = data.allMdx.nodes
     .reduce(
       (accumulator, currentValue) => [
         ...accumulator,
-        currentValue.frontmatter.category,
+        currentValue.frontmatter?.category,
       ],
       [],
     )
@@ -35,9 +35,10 @@ export const SubNav = ({
       {categories.map((category) => {
         const components = data.allMdx.nodes
           .filter((node) => {
-            return node.frontmatter.category === category;
+            return node.frontmatter?.category === category;
           })
           .sort();
+
         return (
           <SideNav
             aria-label={`Sidenavigasjon, ${category}komponenter`}
@@ -45,15 +46,17 @@ export const SubNav = ({
             key={category}
           >
             {components.map((component) => {
-              const href = `/komponenter${component.frontmatter.slug}/`;
+              const frontmatter = component.frontmatter;
+              const href = `/komponenter${frontmatter?.slug}/`;
+
               return (
-                <li key={component.frontmatter.slug}>
+                <li key={frontmatter?.slug}>
                   <SideNavButtonLink
                     icon={<Cube />}
                     href={href}
                     aria-current={currentHref === href && "page"}
                   >
-                    {component.frontmatter.title}
+                    {frontmatter?.title}
                   </SideNavButtonLink>
                 </li>
               );
