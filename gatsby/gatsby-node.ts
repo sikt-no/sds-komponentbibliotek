@@ -1,21 +1,30 @@
+import type { GatsbyNode } from "gatsby";
 import fs from "fs";
 import path from "path";
 
-exports.onCreatePage = ({ page, actions }) => {
+export const onCreatePage: GatsbyNode["onCreatePage"] = ({ page, actions }) => {
   const { createPage } = actions;
 
   if (page.path.match(/grunnleggende/)) {
-    page.context.layout = "grunnleggende";
+    if (page.context) {
+      page.context.layout = "grunnleggende";
+    }
     createPage(page);
   }
 
   if (page.path.match(/komponenter/)) {
-    page.context.layout = "komponenter";
+    if (page.context) {
+      page.context.layout = "komponenter";
+    }
     createPage(page);
   }
 };
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+export const createPages: GatsbyNode["createPages"] = async ({
+  graphql,
+  actions,
+  reporter,
+}) => {
   const { createPage } = actions;
 
   const result = await graphql(`
