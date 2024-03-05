@@ -41,7 +41,7 @@ export const WithContent: Story = {
         </ul>
       </div>,
       <div key={1}>
-        <button className="sds-button sds-button--secondary">Button</button>
+        <button className="sds-button sds-button--subtle">Button</button>
       </div>,
     ],
   },
