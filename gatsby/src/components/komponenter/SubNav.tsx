@@ -18,6 +18,7 @@ export const SubNav = ({
       ],
       [],
     )
+    .filter((value, index, arr) => arr.indexOf(value) === index)
     .sort();
 
   return (
