@@ -22,7 +22,7 @@ import * as desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.js";
 
 export { Head } from "../../../components/Head";
 
-const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
+const TypografiPage: React.FC<PageProps> = ({ location }) => {
   return (
     <>
       <Hero
@@ -150,23 +150,25 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                     "overline",
                   ].map((item) => {
                     const fontSize =
-                      tokens.typography.heading[`fontsize-${item}`].value;
+                      tokens.default.typography.heading[`fontsize-${item}`]
+                        .value;
                     const lineHeight =
-                      tokens.typography.heading[`lineheight-${item}`].value;
+                      tokens.default.typography.heading[`lineheight-${item}`]
+                        .value;
 
                     const tabletFontSize =
-                      tablet.typography.heading[`fontsize-${item}`]?.value ??
-                      fontSize;
+                      tablet.default.typography.heading[`fontsize-${item}`]
+                        ?.value ?? fontSize;
                     const tabletLineHeight =
-                      tablet.typography.heading[`lineheight-${item}`]?.value ??
-                      lineHeight;
+                      tablet.default.typography.heading[`lineheight-${item}`]
+                        ?.value ?? lineHeight;
 
                     const desktopFontSize =
-                      desktop.typography.heading[`fontsize-${item}`]?.value ??
-                      tabletFontSize;
+                      desktop.default.typography.heading[`fontsize-${item}`]
+                        ?.value ?? tabletFontSize;
                     const desktopLineHeight =
-                      desktop.typography.heading[`lineheight-${item}`]?.value ??
-                      tabletLineHeight;
+                      desktop.default.typography.heading[`lineheight-${item}`]
+                        ?.value ?? tabletLineHeight;
                     return (
                       <TableRow key={item}>
                         <TableCell data-th="Navn">{item}</TableCell>
@@ -271,4 +273,4 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
   );
 };
 
-export default DesignTokensPage;
+export default TypografiPage;

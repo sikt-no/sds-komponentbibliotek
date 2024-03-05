@@ -1,14 +1,10 @@
-import { ReactNode } from "react";
+import type { PageProps } from "gatsby";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./global.css";
 import * as style from "./layout.module.css";
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-const Layout = ({ location, children, pageContext }: LayoutProps) => {
+const Layout = ({ location, children }: PageProps) => {
   return (
     <div className={style.layoutWrapper}>
       <Header currentHref={location.pathname} />

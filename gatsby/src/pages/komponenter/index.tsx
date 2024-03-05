@@ -10,7 +10,7 @@ import { FigmaLogo, GitlabLogo } from "@phosphor-icons/react";
 
 export { Head } from "../../components/Head";
 
-const BasicsPage: React.FC<PageProps> = ({ location, data }) => {
+const KomponenterPage: React.FC<PageProps> = ({ location, data }) => {
   return (
     <>
       <Hero
@@ -80,4 +80,4 @@ export const query = graphql`
   }
 `;
 
-export default BasicsPage;
+export default KomponenterPage;

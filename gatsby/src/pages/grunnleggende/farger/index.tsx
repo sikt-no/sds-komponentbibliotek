@@ -26,7 +26,7 @@ import { ButtonLink } from "@sikt/sds-button";
 
 export { Head } from "../../../components/Head";
 
-const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
+const FargerPage: React.FC<PageProps> = ({ location }) => {
   return (
     <>
       <Hero
@@ -519,49 +519,53 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.color.brand).map((token, index) => {
-                    return Object.entries(token[1]).map(
-                      (subtoken, subindex) => {
-                        return (
-                          <TableRow key={subtoken[1].name}>
-                            <TableCell data-th="Token">
-                              <Badge visibility="strong" icon={<Nut />}>
-                                {`--sds-${Object.values(subtoken[1].path).join(
-                                  "-",
-                                )}`}
-                              </Badge>
-                            </TableCell>
-                            <TableCell
-                              data-th="Verdi @ light-mode"
-                              data-color-scheme="light"
-                            >
-                              <div className={moduleStyle.farger__flex}>
-                                <Swatch color={subtoken[1].value} />
-                                <Badge>{subtoken[1].value}</Badge>
-                              </div>
-                            </TableCell>
-                            <TableCell
-                              data-th="Verdi @ dark-mode"
-                              data-color-scheme="dark"
-                            >
-                              <div className={moduleStyle.farger__flex}>
-                                <Swatch
-                                  color={
-                                    dark.color.brand?.[token[0]]?.[subtoken[0]]
-                                      .value ?? subtoken[1].value
-                                  }
-                                />
-                                <Badge>
-                                  {dark.color.brand?.[token[0]]?.[subtoken[0]]
-                                    .value ?? subtoken[1].value}
+                  {Object.entries(tokens.default.color.brand).map(
+                    (token, index) => {
+                      return Object.entries(token[1]).map(
+                        (subtoken, subindex) => {
+                          return (
+                            <TableRow key={subtoken[1].name}>
+                              <TableCell data-th="Token">
+                                <Badge visibility="strong" icon={<Nut />}>
+                                  {`--sds-${Object.values(
+                                    subtoken[1].path,
+                                  ).join("-")}`}
                                 </Badge>
-                              </div>
-                            </TableCell>
-                          </TableRow>
-                        );
-                      },
-                    );
-                  })}
+                              </TableCell>
+                              <TableCell
+                                data-th="Verdi @ light-mode"
+                                data-color-scheme="light"
+                              >
+                                <div className={moduleStyle.farger__flex}>
+                                  <Swatch color={subtoken[1].value} />
+                                  <Badge>{subtoken[1].value}</Badge>
+                                </div>
+                              </TableCell>
+                              <TableCell
+                                data-th="Verdi @ dark-mode"
+                                data-color-scheme="dark"
+                              >
+                                <div className={moduleStyle.farger__flex}>
+                                  <Swatch
+                                    color={
+                                      dark.default.color.brand?.[token[0]]?.[
+                                        subtoken[0]
+                                      ].value ?? subtoken[1].value
+                                    }
+                                  />
+                                  <Badge>
+                                    {dark.default.color.brand?.[token[0]]?.[
+                                      subtoken[0]
+                                    ].value ?? subtoken[1].value}
+                                  </Badge>
+                                </div>
+                              </TableCell>
+                            </TableRow>
+                          );
+                        },
+                      );
+                    },
+                  )}
                 </TableBody>
               </Table>
             </div>
@@ -610,7 +614,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.color.interaction).map(
+                  {Object.entries(tokens.default.color.interaction).map(
                     (token, index) => {
                       return Object.entries(token[1]).map(
                         (subtoken, subindex) => {
@@ -644,7 +648,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                                           Object.entries(
                                             Object.entries(
                                               Object.entries(
-                                                dark.color.interaction,
+                                                dark.default.color.interaction,
                                               )[index][1],
                                             )[subindex][1],
                                           )[subsubindex][1].value ??
@@ -655,7 +659,7 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                                         {Object.entries(
                                           Object.entries(
                                             Object.entries(
-                                              dark.color.interaction,
+                                              dark.default.color.interaction,
                                             )[index][1],
                                           )[subindex][1],
                                         )[subsubindex][1].value ??
@@ -711,50 +715,53 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.color.support).map((token, index) => {
-                    return Object.entries(token[1]).map(
-                      (subtoken, subindex) => {
-                        return (
-                          <TableRow key={subtoken[1].name}>
-                            <TableCell data-th="Token">
-                              <Badge visibility="strong" icon={<Nut />}>
-                                {`--sds-${Object.values(subtoken[1].path).join(
-                                  "-",
-                                )}`}
-                              </Badge>
-                            </TableCell>
-                            <TableCell
-                              data-th="Verdi @ light-mode"
-                              data-color-scheme="light"
-                            >
-                              <div className={moduleStyle.farger__flex}>
-                                <Swatch color={subtoken[1].value} />
-                                <Badge>{subtoken[1].value}</Badge>
-                              </div>
-                            </TableCell>
-                            <TableCell
-                              data-th="Verdi @ dark-mode"
-                              data-color-scheme="dark"
-                            >
-                              <div className={moduleStyle.farger__flex}>
-                                <Swatch
-                                  color={
-                                    dark.color.support?.[token[0]]?.[
-                                      subtoken[0]
-                                    ].value ?? subtoken[1].value
-                                  }
-                                />
-                                <Badge>
-                                  {dark.color.support?.[token[0]]?.[subtoken[0]]
-                                    .value ?? subtoken[1].value}
+                  {Object.entries(tokens.default.color.support).map(
+                    (token, index) => {
+                      return Object.entries(token[1]).map(
+                        (subtoken, subindex) => {
+                          return (
+                            <TableRow key={subtoken[1].name}>
+                              <TableCell data-th="Token">
+                                <Badge visibility="strong" icon={<Nut />}>
+                                  {`--sds-${Object.values(
+                                    subtoken[1].path,
+                                  ).join("-")}`}
                                 </Badge>
-                              </div>
-                            </TableCell>
-                          </TableRow>
-                        );
-                      },
-                    );
-                  })}
+                              </TableCell>
+                              <TableCell
+                                data-th="Verdi @ light-mode"
+                                data-color-scheme="light"
+                              >
+                                <div className={moduleStyle.farger__flex}>
+                                  <Swatch color={subtoken[1].value} />
+                                  <Badge>{subtoken[1].value}</Badge>
+                                </div>
+                              </TableCell>
+                              <TableCell
+                                data-th="Verdi @ dark-mode"
+                                data-color-scheme="dark"
+                              >
+                                <div className={moduleStyle.farger__flex}>
+                                  <Swatch
+                                    color={
+                                      dark.default.color.support?.[token[0]]?.[
+                                        subtoken[0]
+                                      ].value ?? subtoken[1].value
+                                    }
+                                  />
+                                  <Badge>
+                                    {dark.default.color.support?.[token[0]]?.[
+                                      subtoken[0]
+                                    ].value ?? subtoken[1].value}
+                                  </Badge>
+                                </div>
+                              </TableCell>
+                            </TableRow>
+                          );
+                        },
+                      );
+                    },
+                  )}
                 </TableBody>
               </Table>
             </div>
@@ -795,51 +802,55 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.color.layout).map((token, index) => {
-                    return Object.entries(token[1]).map(
-                      (subtoken, subindex) => {
-                        return (
-                          <TableRow key={subtoken[1].name}>
-                            <TableCell data-th="Token">
-                              <Badge visibility="strong" icon={<Nut />}>
-                                {`--sds-${Object.values(subtoken[1].path).join(
-                                  "-",
-                                )}`}
-                              </Badge>
-                            </TableCell>
-                            <TableCell
-                              data-th="Verdi @ light-mode"
-                              data-color-scheme="light"
-                            >
-                              <div className={moduleStyle.farger__flex}>
-                                <Swatch color={subtoken[1].value} />
-                                <Badge>{subtoken[1].value}</Badge>
-                              </div>
-                            </TableCell>
-                            <TableCell
-                              data-th="Verdi @ dark-mode"
-                              data-color-scheme="dark"
-                            >
-                              <div className={moduleStyle.farger__flex}>
-                                <Swatch
-                                  color={
-                                    dark.color.layout?.[token[0]]?.[subtoken[0]]
-                                      .value
-                                  }
-                                />
-                                <Badge>
-                                  {
-                                    dark.color.layout?.[token[0]]?.[subtoken[0]]
-                                      .value
-                                  }
+                  {Object.entries(tokens.default.color.layout).map(
+                    (token, index) => {
+                      return Object.entries(token[1]).map(
+                        (subtoken, subindex) => {
+                          return (
+                            <TableRow key={subtoken[1].name}>
+                              <TableCell data-th="Token">
+                                <Badge visibility="strong" icon={<Nut />}>
+                                  {`--sds-${Object.values(
+                                    subtoken[1].path,
+                                  ).join("-")}`}
                                 </Badge>
-                              </div>
-                            </TableCell>
-                          </TableRow>
-                        );
-                      },
-                    );
-                  })}
+                              </TableCell>
+                              <TableCell
+                                data-th="Verdi @ light-mode"
+                                data-color-scheme="light"
+                              >
+                                <div className={moduleStyle.farger__flex}>
+                                  <Swatch color={subtoken[1].value} />
+                                  <Badge>{subtoken[1].value}</Badge>
+                                </div>
+                              </TableCell>
+                              <TableCell
+                                data-th="Verdi @ dark-mode"
+                                data-color-scheme="dark"
+                              >
+                                <div className={moduleStyle.farger__flex}>
+                                  <Swatch
+                                    color={
+                                      dark.default.color.layout?.[token[0]]?.[
+                                        subtoken[0]
+                                      ].value
+                                    }
+                                  />
+                                  <Badge>
+                                    {
+                                      dark.default.color.layout?.[token[0]]?.[
+                                        subtoken[0]
+                                      ].value
+                                    }
+                                  </Badge>
+                                </div>
+                              </TableCell>
+                            </TableRow>
+                          );
+                        },
+                      );
+                    },
+                  )}
                 </TableBody>
               </Table>
             </div>
@@ -886,43 +897,47 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.color.text).map((token, index) => {
-                    return (
-                      <TableRow key={token[1].name}>
-                        <TableCell data-th="Token">
-                          <Badge visibility="strong" icon={<Nut />}>
-                            {`--sds-${Object.values(token[1].path).join("-")}`}
-                          </Badge>
-                        </TableCell>
-                        <TableCell
-                          data-th="Verdi @ light-mode"
-                          data-color-scheme="light"
-                        >
-                          <div className={moduleStyle.farger__flex}>
-                            <Swatch color={token[1].value} />
-                            <Badge>{token[1].value}</Badge>
-                          </div>
-                        </TableCell>
-                        <TableCell
-                          data-th="Verdi @ dark-mode"
-                          data-color-scheme="dark"
-                        >
-                          <div className={moduleStyle.farger__flex}>
-                            <Swatch
-                              color={
-                                Object.entries(dark.color.text)[index][1]
-                                  .value ?? subtoken[1].value
-                              }
-                            />
-                            <Badge>
-                              {Object.entries(dark.color.text)[index][1]
-                                .value ?? subtoken[1].value}
+                  {Object.entries(tokens.default.color.text).map(
+                    (token, index) => {
+                      return (
+                        <TableRow key={token[1].name}>
+                          <TableCell data-th="Token">
+                            <Badge visibility="strong" icon={<Nut />}>
+                              {`--sds-${Object.values(token[1].path).join("-")}`}
                             </Badge>
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
+                          </TableCell>
+                          <TableCell
+                            data-th="Verdi @ light-mode"
+                            data-color-scheme="light"
+                          >
+                            <div className={moduleStyle.farger__flex}>
+                              <Swatch color={token[1].value} />
+                              <Badge>{token[1].value}</Badge>
+                            </div>
+                          </TableCell>
+                          <TableCell
+                            data-th="Verdi @ dark-mode"
+                            data-color-scheme="dark"
+                          >
+                            <div className={moduleStyle.farger__flex}>
+                              <Swatch
+                                color={
+                                  Object.entries(dark.default.color.text)[
+                                    index
+                                  ][1].value ?? subtoken[1].value
+                                }
+                              />
+                              <Badge>
+                                {Object.entries(dark.default.color.text)[
+                                  index
+                                ][1].value ?? subtoken[1].value}
+                              </Badge>
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    },
+                  )}
                 </TableBody>
               </Table>
             </div>
@@ -933,4 +948,4 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
   );
 };
 
-export default DesignTokensPage;
+export default FargerPage;

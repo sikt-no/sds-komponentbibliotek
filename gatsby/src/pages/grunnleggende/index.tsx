@@ -18,7 +18,7 @@ import {
 
 export { Head } from "../../components/Head";
 
-const BasicsPage: React.FC<PageProps> = () => {
+const GrunnleggendePage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero
@@ -181,4 +181,4 @@ const BasicsPage: React.FC<PageProps> = () => {
   );
 };
 
-export default BasicsPage;
+export default GrunnleggendePage;

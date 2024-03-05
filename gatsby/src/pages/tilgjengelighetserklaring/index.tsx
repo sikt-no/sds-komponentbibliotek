@@ -13,7 +13,7 @@ import {
 
 export { Head } from "../../components/Head";
 
-const BasicsPage: React.FC<PageProps> = () => {
+const TilgjengelighetserklaringPage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero
@@ -94,4 +94,4 @@ const BasicsPage: React.FC<PageProps> = () => {
   );
 };
 
-export default BasicsPage;
+export default TilgjengelighetserklaringPage;

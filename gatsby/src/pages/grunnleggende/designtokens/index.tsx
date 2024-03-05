@@ -12,7 +12,7 @@ import { SubNav } from "../../../components/grunnleggende/SubNav";
 
 export { Head } from "../../../components/Head";
 
-const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
+const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
   return (
     <>
       <Hero
@@ -218,4 +218,4 @@ const DesignTokensPage: React.FC<PageProps> = ({ location }) => {
   );
 };
 
-export default DesignTokensPage;
+export default DesigntokensPage;

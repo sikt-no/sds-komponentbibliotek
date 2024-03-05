@@ -75,7 +75,7 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.base.size).map((token) => {
+                  {Object.entries(tokens.default.base.size).map((token) => {
                     return (
                       <TableRow key={token[1].name}>
                         <TableCell data-th="Navn">{token[0]}</TableCell>
@@ -121,7 +121,7 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.space.padding).map((token) => {
+                  {Object.entries(tokens.default.space.padding).map((token) => {
                     return (
                       <TableRow key={token[1].name}>
                         <TableCell data-th="Navn">{token[0]}</TableCell>
@@ -130,13 +130,17 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                         </TableCell>
                         <TableCell data-th="Verdi @ tablet">
                           <Token
-                            token={tablet.space.padding?.[token[0]] ?? token[1]}
+                            token={
+                              tablet.default.space.padding?.[token[0]] ??
+                              token[1]
+                            }
                           />
                         </TableCell>
                         <TableCell data-th="Verdi @ desktop">
                           <Token
                             token={
-                              desktop.space.padding?.[token[0]] ?? token[1]
+                              desktop.default.space.padding?.[token[0]] ??
+                              token[1]
                             }
                           />
                         </TableCell>
@@ -178,7 +182,7 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.space.gap).map((token) => {
+                  {Object.entries(tokens.default.space.gap).map((token) => {
                     return (
                       <TableRow key={token[1].name}>
                         <TableCell data-th="Navn">{token[0]}</TableCell>
@@ -187,12 +191,16 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                         </TableCell>
                         <TableCell data-th="Verdi @ tablet">
                           <Token
-                            token={tablet.space.gap?.[token[0]] ?? token[1]}
+                            token={
+                              tablet.default.space.gap?.[token[0]] ?? token[1]
+                            }
                           />
                         </TableCell>
                         <TableCell data-th="Verdi @ desktop">
                           <Token
-                            token={desktop.space.gap?.[token[0]] ?? token[1]}
+                            token={
+                              desktop.default.space.gap?.[token[0]] ?? token[1]
+                            }
                           />
                         </TableCell>
                         <TableCell data-th="Token">
@@ -247,8 +255,9 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                         <TableCell data-th="Verdi @ desktop">
                           <Token
                             token={
-                              desktop.space.border?.weight?.[token[0]] ??
-                              token[1]
+                              desktop.default.space.border?.weight?.[
+                                token[0]
+                              ] ?? token[1]
                             }
                           />
                         </TableCell>
@@ -285,37 +294,41 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.space.border.radius).map((token) => {
-                    return (
-                      <TableRow key={token[1].name}>
-                        <TableCell data-th="Navn">{token[0]}</TableCell>
-                        <TableCell data-th="Verdi @ mobile">
-                          <Token token={token[1]} />
-                        </TableCell>
-                        <TableCell data-th="Verdi @ tablet">
-                          <Token
-                            token={
-                              tablet.space.border?.radius?.[token[0]] ??
-                              token[1]
-                            }
-                          />
-                        </TableCell>
-                        <TableCell data-th="Verdi @ desktop">
-                          <Token
-                            token={
-                              desktop.space.border?.radius?.[token[0]] ??
-                              token[1]
-                            }
-                          />
-                        </TableCell>
-                        <TableCell data-th="Token">
-                          <Badge visibility="strong" icon={<Nut />}>
-                            {`--sds-${Object.values(token[1].path).join("-")}`}
-                          </Badge>
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
+                  {Object.entries(tokens.default.space.border.radius).map(
+                    (token) => {
+                      return (
+                        <TableRow key={token[1].name}>
+                          <TableCell data-th="Navn">{token[0]}</TableCell>
+                          <TableCell data-th="Verdi @ mobile">
+                            <Token token={token[1]} />
+                          </TableCell>
+                          <TableCell data-th="Verdi @ tablet">
+                            <Token
+                              token={
+                                tablet.default.space.border?.radius?.[
+                                  token[0]
+                                ] ?? token[1]
+                              }
+                            />
+                          </TableCell>
+                          <TableCell data-th="Verdi @ desktop">
+                            <Token
+                              token={
+                                desktop.default.space.border?.radius?.[
+                                  token[0]
+                                ] ?? token[1]
+                              }
+                            />
+                          </TableCell>
+                          <TableCell data-th="Token">
+                            <Badge visibility="strong" icon={<Nut />}>
+                              {`--sds-${Object.values(token[1].path).join("-")}`}
+                            </Badge>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    },
+                  )}
                 </TableBody>
               </Table>
             </div>
