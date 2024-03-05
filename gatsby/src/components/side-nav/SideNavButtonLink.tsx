@@ -26,6 +26,7 @@ export const SideNavButtonLink = forwardRef<
 
     return (
       <Component
+        // @ts-ignore
         ref={ref}
         href={href}
         className={clsx(

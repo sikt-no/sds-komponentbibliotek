@@ -21,6 +21,7 @@ export const NavCard = forwardRef<HTMLAnchorElement, NavCardProps>(
 
     return (
       <Component
+        // @ts-ignore
         ref={ref}
         href={href}
         className={clsx(style.navCard, className)}

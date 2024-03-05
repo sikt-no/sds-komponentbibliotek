@@ -46,7 +46,7 @@ const IndexPage: React.FC<PageProps> = () => {
       confetti({
         ...defaults,
         particleCount: 5,
-        flat: true,
+        // flat: true,
       });
 
       confetti({

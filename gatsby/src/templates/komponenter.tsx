@@ -1,3 +1,4 @@
+import type { PageProps } from "gatsby";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { Hero } from "../components/Hero";
@@ -42,7 +43,7 @@ export default function PageTemplate({
   data,
   pageContext,
   children,
-}) {
+}: PageProps) {
   return (
     <>
       <Hero
