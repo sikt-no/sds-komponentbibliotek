@@ -1,0 +1,126 @@
+---
+title: Card
+slug: /card
+storybook: /docs/components-card-readme--docs
+figma: https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=8411-6029&mode=design&t=R4A36hfXdVesLoQ3-0
+category: mønster
+---
+
+import { Card } from "@sikt/sds-card";
+import { Button, ButtonGroup } from "@sikt/sds-button";
+import { MapPinIcon, ClockIcon, ArrowRightIcon } from "@sikt/sds-icons";
+import { Coins, GitlabLogo, FigmaLogo, Package } from "@phosphor-icons/react";
+
+Pakken inneholder komponenterne `<Card />`. Card er en beholder for tekst, bilder og handlinger i sammenheng med et enkelt emne.
+
+### Tekst
+
+Et enkelt eksempel på å ordne teksttyper i et kort.
+
+<Card
+  overlineText="Overline"
+  headingText="Heading"
+  leadText="Lead"
+  style={{ maxWidth: "400px" }}
+>
+  Body
+</Card>
+
+### Dialog
+
+Hvordan innhold kan ordnes når brukeren presenteres for et valg
+
+<Card
+  headingText="Heading"
+  style={{ maxWidth: "400px" }}
+  callToAction={
+    <ButtonGroup variant="right">
+      <Button variant="subtle">Cancel</Button>
+      <Button variant="strong" icon={<ArrowRightIcon />}>
+        Action
+      </Button>
+    </ButtonGroup>
+  }
+>
+  Tekst som presenterer et valg for brukeren
+</Card>
+
+### Action
+
+Be brukeren om å gjøre en handling
+
+<Card
+  overlineText="Overline"
+  headingText="Heading"
+  style={{ maxWidth: "400px" }}
+  callToAction={
+    <Button variant="strong" icon={<ArrowRightIcon />}>
+      Action
+    </Button>
+  }
+>
+  Body
+</Card>
+
+### Bilde
+
+Hvordan legge inn et bilde i et kort
+
+<Card
+  headingText="Heading"
+  imgSrc="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII="
+  imgAlt="This is an image"
+  overlineText="overline"
+  style={{ maxWidth: "400px" }}
+  callToAction={
+    <Button
+      style={{ alignSelf: "right" }}
+      variant="strong"
+      icon={<ArrowRightIcon />}
+    >
+      Action
+    </Button>
+  }
+>
+  Tekst
+</Card>
+
+### Event
+
+Bruke mer kompliserte elementer som en liste over verdier med ikoner
+
+<Card
+  overlineText="Overline"
+  headingText="Heading"
+  style={{ maxWidth: "400px" }}
+  callToAction={<Button variant="strong" icon={<ArrowRightIcon />}>Action</Button>}>
+  Body
+  <br />
+  <div>
+
+    <div style={{ display: "inline-grid", gridTemplate: "auto", width: "300px" }}>
+
+      <div style={{ gridColumnStart: 1, gridColumnEnd: 2, display: "flex"}}>
+        <div><MapPinIcon /></div>
+        <div className="sds-typography-body--strong" style={{marginLeft: "8px"}}>Lokasjon</div>
+        <div className="sds-typography-body--regular" style={{ gridColumn: 3, marginLeft: "auto", textDecoration: "underline" }}><a>Vis kart</a></div>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "row", alignItems: "center" , marginTop: "12px"}}>
+        <ClockIcon />
+        <div className="sds-typography-body--strong" style={{ marginLeft: "8px" }}>Dato:</div>
+        <div className="sds-typography-body--regular" style={{ marginLeft: "8px" }}>01.10.2025</div>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "row", alignItems: "center", marginTop: "12px" }}>
+        <Coins />
+        <div className="sds-typography-body--strong" style={{ marginLeft: "8px" }}>Pris:</div>
+        <div className="sds-typography-body--regular" style={{ marginLeft: "8px" }}>3,50 USD</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</Card>
+
