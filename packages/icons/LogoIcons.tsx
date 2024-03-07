@@ -6,23 +6,6 @@ export interface LogoIconsProps extends IconProps {
   color?: "black" | "white";
 }
 
-export const XLogo = ({ color, className, ...rest }: LogoIconsProps) => (
-  <svg
-    viewBox="0 0 32 32"
-    xmlns="http://www.w3.org/2000/svg"
-    className={clsx(
-      "sds-icon",
-      "sds-icon-logo",
-      color && `sds-icon-logo--color-${color}`,
-      className,
-    )}
-    aria-hidden="true"
-    {...rest}
-  >
-    <path d="M19.0687 13.8561L29.12 2H26.7382L18.0106 12.2945L11.0399 2H3L13.5411 17.5671L3 30H5.38198L14.5985 19.1287L21.9601 30H30L19.0681 13.8561H19.0687ZM15.8062 17.7042L14.7382 16.1541L6.24025 3.81955H9.89884L16.7568 13.7739L17.8248 15.324L26.7393 28.2632H23.0807L15.8062 17.7048V17.7042Z" />
-  </svg>
-);
-
 export const LinkedInLogo = ({ color, className, ...rest }: LogoIconsProps) => (
   <svg
     viewBox="0 0 32 32"

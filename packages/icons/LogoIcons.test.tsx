@@ -1,11 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import { XLogo, LinkedInLogo } from "./LogoIcons";
+import { LinkedInLogo } from "./LogoIcons";
 
-const logoIcons = [
-  { name: "x-logo", component: XLogo },
-  { name: "linked-in-logo", component: LinkedInLogo },
-];
+const logoIcons = [{ name: "linked-in-logo", component: LinkedInLogo }];
 
 describe("LogoIcons", () => {
   describe("a11y", () => {

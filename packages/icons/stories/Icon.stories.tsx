@@ -5,7 +5,6 @@ import {
   SpinnerIcon,
   LogoIconsProps,
   LinkedInLogo as LinkedInLogoIcon,
-  XLogo as XLogoIcon,
 } from "../index";
 
 const meta: Meta = {
@@ -42,20 +41,6 @@ export const LinkedInLogo: Story = {
     <a href="#linkedin">
       Linkedin
       <LinkedInLogoIcon style={{ fontSize: "calc(32rem / 16)" }} {...args} />
-    </a>
-  ),
-};
-
-export const XLogo: Story = {
-  argTypes: {
-    color: {
-      options: ["white", "black"],
-      control: { type: "radio" },
-    },
-  },
-  render: (args: LogoIconsProps) => (
-    <a href="#x">
-      X <XLogoIcon style={{ fontSize: "calc(32rem / 16)" }} {...args} />
     </a>
   ),
 };
