@@ -1,0 +1,30 @@
+---
+title: Breadcrumbs
+slug: /breadcrumbs
+storybook: /docs/components-breadcrumbs--docs
+figma: https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=8193-12015&mode=design&t=qWR32iqzGggPcawo-0
+category: navigasjon
+---
+
+import { BreadcrumbItem, Breadcrumbs } from "@sikt/sds-breadcrumbs";
+
+Pakken inneholder `<Breadcrumbs />`-komponenten som brukes for å vise en liste med lenker som representerer en navigasjonssti.
+Breadcrumbs fungerer som et navigasjonshjelpemiddel som hjelper brukere å forstå deres nåværende plassering innenfor et hierarki av komponenter eller sider. Breadcrumbs er en visuell representasjon av brukerens reise, som viser veien de har tatt for å komme til sin nåværende posisjon.
+
+<Breadcrumbs aria-label="Navigation path">
+  <BreadcrumbItem>
+    <a className="sds-typography-link" href="/">
+      Level 1
+    </a>
+  </BreadcrumbItem>
+  <BreadcrumbItem>
+    <a className="sds-typography-link" href="/">
+      Level 2
+    </a>
+  </BreadcrumbItem>
+  <BreadcrumbItem>
+    <a className="sds-typography-link" href="/">
+      Level 3
+    </a>
+  </BreadcrumbItem>
+</Breadcrumbs>
