@@ -13,7 +13,6 @@ export interface ToggleSegmentOptionProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   value: string | number;
   label: ReactNode;
-  children?: ReactNode;
   checked?: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -21,7 +20,7 @@ export interface ToggleSegmentOptionProps
 export const ToggleSegmentOption = forwardRef<
   HTMLInputElement,
   ToggleSegmentOptionProps
->(({ value, label, checked, onChange, children, ...rest }, ref) => {
+>(({ value, label, checked, onChange, ...rest }, ref) => {
   const { name } = useFieldset() ?? {};
   const generatedId = useId();
   const htmlForId = rest.id ?? generatedId;
@@ -46,7 +45,6 @@ export const ToggleSegmentOption = forwardRef<
       />
       <label className="sds-toggle-segment__label" htmlFor={htmlForId}>
         {label}
-        {children}
       </label>
     </div>
   );
