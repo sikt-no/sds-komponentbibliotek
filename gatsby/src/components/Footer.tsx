@@ -9,12 +9,21 @@ const Footer = ({ className }: { className?: string }) => {
   return (
     <SdsFooter className={clsx(style.footer, className)}>
       <div>
-        <Link href="/tilgjengelighetserklaring/">
-          Tilgjengelighets&shy;erklæring
-        </Link>
+        <ul className={clsx(style.footer__list, style.footer__listVertical)}>
+          <li>
+            <Link href="/personvern/">
+              Personvern og informasjons&shy;kapsler
+            </Link>
+          </li>
+          <li>
+            <Link href="/tilgjengelighetserklaring/">
+              Tilgjengelighets&shy;erklæring
+            </Link>
+          </li>
+        </ul>
       </div>
       <div>
-        <ul className={style.footer__list}>
+        <ul className={clsx(style.footer__list, style.footer__listHorizontal)}>
           <li>
             <ButtonLink
               variant="transparent"

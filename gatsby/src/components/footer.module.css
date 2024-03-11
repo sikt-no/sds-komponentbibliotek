@@ -1,12 +1,19 @@
 .footer {
   :global(.sds-footer__content) {
-    align-items: center;
+    align-items: start;
   }
 
   &__list {
-    align-items: center;
     display: flex;
     gap: var(--sds-space-gap-minimal);
     list-style: none;
+
+    &-horizontal {
+      align-items: center;
+    }
+
+    &-vertical {
+      flex-direction: column;
+    }
   }
 }
