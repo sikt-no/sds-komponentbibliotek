@@ -1,0 +1,50 @@
+---
+title: Badge
+slug: /badge
+storybook: /docs/components-button-readme--docs
+figma: https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=6417-17390&mode=design&t=RVFGx3RCoUye2X5M-0
+category: informasjon
+---
+
+import { Badge } from "@sikt/sds-badge";
+import { ArrowCircleRightIcon } from "@sikt/sds-icons";
+
+Pakken inneholder komponenten `<Badge />`. Badge er en liten etikett som vanligvis vises inne i eller i nærheten av en annen større grensesnittkomponent, som representerer en status, egenskap eller andre metadata.
+
+### Varianter
+
+<div style={{ display: "flex", gap: "10px" }}>
+  <Badge variant="primary">Primary</Badge>
+  <Badge variant="critical">Critical</Badge>
+  <Badge variant="success">Success</Badge>
+  <Badge variant="warning">Warning</Badge>
+  <Badge variant="info">Info</Badge>
+</div>
+
+### Synlighet
+
+#### Strong
+
+<div style={{ display: "flex", gap: "10px" }}>
+  <Badge variant="primary" visibility="strong">
+    Primary
+  </Badge>
+  <Badge variant="critical" visibility="strong">
+    Critical
+  </Badge>
+  <Badge variant="success" visibility="strong">
+    Success
+  </Badge>
+  <Badge variant="warning" visibility="strong">
+    Warning
+  </Badge>
+  <Badge variant="info" visibility="strong">
+    Info
+  </Badge>
+</div>
+
+### Med ikon
+
+<div>
+  <Badge icon={<ArrowCircleRightIcon />}>Badge</Badge>
+</div>
