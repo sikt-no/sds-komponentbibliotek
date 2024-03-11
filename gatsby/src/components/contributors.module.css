@@ -30,6 +30,13 @@
     justify-content: center;
   }
 
+  &__crown {
+    display: flex;
+    justify-content: center;
+    margin-top: -25px;
+    transform: scale(2);
+  }
+
   @keyframes pulse {
     0% {
       box-shadow: 0 0 0 0 rgb(var(--sikt-animation-color) / 100%);

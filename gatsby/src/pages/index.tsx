@@ -15,17 +15,17 @@ import { ArrowCircleRightIcon } from "@sikt/sds-icons/build";
 export { Head } from "../components/Head";
 
 const IndexPage: React.FC<PageProps> = () => {
-  const [showButton, setShowButton] = useState(false);
+  const [showEasterEggs, setShowEasterEggs] = useState(true);
   const [disableButton, setDisableButton] = useState(false);
 
   useKonami(() => {
-    setShowButton(true);
+    setShowEasterEggs(true);
   });
 
   const handleLaunchClick = () => {
     setDisableButton(true);
     const scalar = 2;
-    const unicorn = confetti.shapeFromText({ text: "🦄", scalar });
+    const crown = confetti.shapeFromText({ text: "👑", scalar });
 
     const defaults = {
       spread: 360,
@@ -33,35 +33,14 @@ const IndexPage: React.FC<PageProps> = () => {
       gravity: 0,
       decay: 0.96,
       startVelocity: 20,
-      shapes: [unicorn],
+      shapes: [crown],
       scalar,
     };
 
-    const shoot = () => {
-      confetti({
-        ...defaults,
-        particleCount: 30,
-      });
+    confetti({
+      ...defaults,
+    });
 
-      confetti({
-        ...defaults,
-        particleCount: 5,
-        // flat: true,
-      });
-
-      confetti({
-        ...defaults,
-        particleCount: 15,
-        scalar: scalar / 2,
-        shapes: ["circle"],
-      });
-    };
-
-    setTimeout(shoot, 0);
-    setTimeout(shoot, 200);
-    setTimeout(shoot, 400);
-    setTimeout(shoot, 600);
-    setTimeout(shoot, 800);
     setTimeout(() => {
       setDisableButton(false);
     }, 1000);
@@ -180,16 +159,16 @@ const IndexPage: React.FC<PageProps> = () => {
           </ButtonGroup>
         </div>
         <div>
-          <Contributors />
-          {showButton && (
+          <Contributors showEasterEggs={showEasterEggs} />
+          {showEasterEggs && (
             <ButtonGroup variant="right">
               <Button
                 variant="strong"
                 onClick={handleLaunchClick}
                 disabled={disableButton}
-                icon="🦄"
+                icon="👑"
               >
-                Lansere komponentbibliotek v2
+                Feire komponentbiblioteket 1 år
               </Button>
             </ButtonGroup>
           )}

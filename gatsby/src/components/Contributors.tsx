@@ -2,7 +2,11 @@ import { Heading3 } from "@sikt/sds-core";
 import { UserCircleIcon } from "@sikt/sds-icons";
 import * as style from "./contributors.module.css";
 
-const Contributors = () => {
+const Contributors = ({
+  showEasterEggs = false,
+}: {
+  showEasterEggs?: boolean;
+}) => {
   const contributors = [
     [
       { name: "Kim", role: "Design", team: "Komponentbiblioteket" },
@@ -12,6 +16,15 @@ const Contributors = () => {
       { name: "Sondre E.", role: "Design", team: "Komponentbiblioteket" },
       { name: "Kristoffer", role: "Teknologi", team: "Komponentbiblioteket" },
       { name: "Petter", role: "Design", team: "Komponentbiblioteket" },
+      ...(showEasterEggs
+        ? [
+            {
+              name: "Andreas",
+              role: "Sjef",
+              team: "Komponentbiblioteket",
+            },
+          ]
+        : []),
     ],
     [
       { name: "Sondre S.", role: "Teknologi", team: "Opptak Søker" },
@@ -52,6 +65,9 @@ const Contributors = () => {
                     key={contributor.name}
                     className={style.contributors__contributor}
                   >
+                    {showEasterEggs && contributor.name === "Andreas" && (
+                      <div className={style.contributors__crown}>👑</div>
+                    )}
                     {contributor.name === "Deg" && (
                       <UserCircleIcon
                         className={`${style.contributors__contributorImage} ${style.contributors__contributorImageAnimation}`}
