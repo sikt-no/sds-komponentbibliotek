@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-accordion@2.0.1...@sikt/sds-accordion@2.1.0) (2024-03-12)
+
+### Bug Fixes
+
+- **accordion:** set text-align start directly on accordion container ([abd2541](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/abd254190d318ef0c807ca4c1987b87befd16f8f))
+
 ### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-accordion@2.0.0...@sikt/sds-accordion@2.0.1) (2024-02-05)
 
 ### Bug Fixes
