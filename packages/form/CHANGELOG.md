@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@2.0.1...@sikt/sds-form@2.1.0) (2024-03-12)
+
+### Features
+
+- **form:** allow props on input components to be ReactNode where possible ([68d2500](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/68d2500c5a6d97c72e119829169dffa278b0b2a3))
+
+### Bug Fixes
+
+- **form:** only add aria-describedby on Fieldset if helpText is set ([fa1a5b3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fa1a5b3e6a3eb7626f519ede2a71d64c296dca61))
+
 ### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@2.0.0...@sikt/sds-form@2.0.1) (2024-01-02)
 
 ### Bug Fixes
