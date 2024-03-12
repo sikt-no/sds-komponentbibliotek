@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-card@3.0.0...@sikt/sds-card@3.1.0) (2024-03-12)
+
+### Features
+
+- **card:** add lead text prop ([9919324](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/991932479bc80d0f1414583ddfa1667846866e2b))
+
+### Bug Fixes
+
+- **card:** justify content right instead of flex reverse ([bb4840b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bb4840bd1ff487739e2ecef9198fbb7f0625e8b8))
+
 ## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-card@2.0.0...@sikt/sds-card@3.0.0) (2023-11-10)
 
 ### ⚠ BREAKING CHANGES
