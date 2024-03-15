@@ -15,7 +15,7 @@ import { ArrowCircleRightIcon } from "@sikt/sds-icons/build";
 export { Head } from "../components/Head";
 
 const IndexPage: React.FC<PageProps> = () => {
-  const [showEasterEggs, setShowEasterEggs] = useState(true);
+  const [showEasterEggs, setShowEasterEggs] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
 
   useKonami(() => {
