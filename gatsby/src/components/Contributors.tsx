@@ -68,6 +68,24 @@ const Contributors = ({
                     {showEasterEggs && contributor.name === "Andreas" && (
                       <div className={style.contributors__crown}>👑</div>
                     )}
+                    {showEasterEggs && contributor.name === "Kristoffer" && (
+                      <div className={style.contributors__glasses}>🕶️</div>
+                    )}
+                    {showEasterEggs && contributor.name === "Hilde" && (
+                      <div className={style.contributors__confetti}>🎉️</div>
+                    )}
+                    {showEasterEggs && contributor.name === "Jakob" && (
+                      <div className={style.contributors__hand}>✌️️</div>
+                    )}
+                    {showEasterEggs && contributor.name === "Rolf Anders" && (
+                      <div className={style.contributors__handLeft}>🤟</div>
+                    )}
+                    {showEasterEggs && contributor.name === "Sondre L." && (
+                      <div className={style.contributors__balloon}>🎈️</div>
+                    )}
+                    {showEasterEggs && contributor.name === "Petter" && (
+                      <div className={style.contributors__crown}>🎩️</div>
+                    )}
                     {contributor.name === "Deg" && (
                       <UserCircleIcon
                         className={`${style.contributors__contributorImage} ${style.contributors__contributorImageAnimation}`}

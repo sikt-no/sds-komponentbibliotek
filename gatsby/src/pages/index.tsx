@@ -25,7 +25,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const handleLaunchClick = () => {
     setDisableButton(true);
     const scalar = 2;
-    const crown = confetti.shapeFromText({ text: "👑", scalar });
+    const crown = confetti.shapeFromText({ text: "🎈", scalar });
 
     const defaults = {
       spread: 360,
@@ -166,7 +166,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 variant="strong"
                 onClick={handleLaunchClick}
                 disabled={disableButton}
-                icon="👑"
+                icon="🎈"
               >
                 Feire komponentbiblioteket 1 år
               </Button>

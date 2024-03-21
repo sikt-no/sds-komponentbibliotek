@@ -33,7 +33,42 @@
   &__crown {
     display: flex;
     justify-content: center;
-    margin-top: -25px;
+    margin: -15px 0 -10px;
+    transform: scale(2);
+  }
+
+  &__glasses {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 -35px;
+    transform: scale(2);
+  }
+
+  &__confetti {
+    display: flex;
+    justify-content: right;
+    margin: 30px 10px -55px -10px;
+    transform: scale(2);
+  }
+
+  &__balloon {
+    display: flex;
+    justify-content: left;
+    margin: -10px 0 -15px 20px;
+    transform: scale(2);
+  }
+
+  &__hand {
+    display: flex;
+    justify-content: left;
+    margin: 30px -20px -55px 20px;
+    transform: scale(2);
+  }
+
+  &__handLeft {
+    display: flex;
+    justify-content: left;
+    margin: 30px -40px -55px 40px;
     transform: scale(2);
   }
 
