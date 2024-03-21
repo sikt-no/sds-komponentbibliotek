@@ -20,16 +20,32 @@ const config: StorybookConfig = {
       name: "@storybook/addon-docs",
       options: { transcludeMarkdown: true },
     },
-    {
-      name: "@storybook/addon-postcss",
-      options: {
-        postcssLoaderOptions: {
-          implementation: require("postcss"),
-        },
-      },
-    },
     // TODO: add agian when issue is fixed https://github.com/whitespace-se/storybook-addon-html/issues/104
     // "@whitespace/storybook-addon-html",
+    "@storybook/addon-styling-webpack",
+    {
+      name: "@storybook/addon-styling-webpack",
+
+      options: {
+        rules: [
+          {
+            test: /\.css$/,
+            sideEffects: true,
+            use: [
+              require.resolve("style-loader"),
+              {
+                loader: require.resolve("css-loader"),
+                options: {},
+              },
+              {
+                loader: "postcss-loader",
+                options: { implementation: require.resolve("postcss") },
+              },
+            ],
+          },
+        ],
+      },
+    },
   ],
   core: {
     disableTelemetry: true,
