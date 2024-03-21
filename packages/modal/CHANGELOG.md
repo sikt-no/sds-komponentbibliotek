@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-modal@2.0.2...@sikt/sds-modal@2.0.3) (2024-03-21)
+
+### Bug Fixes
+
+- **modal:** fix className prop ([e743f59](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e743f59ae71ebe4469ccb3c9230da4d2d95089bf))
+
 ### [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-modal@2.0.1...@sikt/sds-modal@2.0.2) (2024-01-02)
 
 ### Bug Fixes
