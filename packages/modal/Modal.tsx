@@ -105,10 +105,13 @@ export const Modal = ({
       shouldCloseOnOverlayClick={dismissable}
       shouldCloseOnEsc={dismissable}
       isOpen={open}
-      className={clsx("sds-modal", {
-        "sds-modal--scrollable": isScrolling,
+      className={clsx(
+        "sds-modal",
+        {
+          "sds-modal--scrollable": isScrolling,
+        },
         className,
-      })}
+      )}
       overlayClassName={clsx("sds-modal-overlay")}
     >
       <header
@@ -155,5 +158,7 @@ Modal.setAppElement = (element: string | HTMLElement | null) => {
     ReactModal.setAppElement(element);
   }
 };
+
+Modal.displayName = "Modal";
 
 export default Modal;
