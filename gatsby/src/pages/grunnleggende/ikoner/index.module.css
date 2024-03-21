@@ -2,4 +2,21 @@
   &__hero {
     background-image: url("/images/grunnleggende/ikoner/hero.png");
   }
+
+  &__ikoner {
+    display: grid;
+    gap: var(--sds-space-gap-medium);
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__ikon {
+    font-size: var(--sds-base-size-relative-m1);
+
+    &-wrapper {
+      align-items: center;
+      display: flex;
+      flex-flow: column;
+      gap: var(--sds-space-gap-tiny);
+    }
+  }
 }

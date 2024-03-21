@@ -7,6 +7,9 @@ import * as moduleStyle from "./index.module.css";
 import { Section } from "@sikt/sds-section";
 import { Heading3, Link, Paragraph } from "@sikt/sds-core";
 import { colorsHref, SubNav } from "../../../components/grunnleggende/SubNav";
+import { config } from "@sikt/sds-icons/icons.config";
+import * as icons from "@sikt/sds-icons/build/index";
+import { LinkedInLogo } from "@sikt/sds-icons";
 
 export { Head } from "../../../components/Head";
 
@@ -165,6 +168,50 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
                   vurdering. Ikonene er satt opp slik at linjetykkelsen vil bli
                   større i takt med at ikonet skaleres opp.
                 </Paragraph>
+              </div>
+
+              <div className={style.grunnleggende__sdsSectionContent}>
+                <Heading3 variant="small">Ikonbiblioteket</Heading3>
+
+                <div
+                  className={clsx(
+                    "sds-paragraph--max-width",
+                    moduleStyle.ikoner__ikoner,
+                  )}
+                >
+                  {config.map((icon) => {
+                    const iconName = `${icon
+                      .split("-")
+                      .map(
+                        (part) =>
+                          `${part.charAt(0).toUpperCase()}${part.slice(1)}`,
+                      )
+                      .join(" ")}`;
+                    const iconComponentName = `${icon
+                      .split("-")
+                      .map(
+                        (part) =>
+                          `${part.charAt(0).toUpperCase()}${part.slice(1)}`,
+                      )
+                      .join("")}Icon`;
+                    const I = icons[iconComponentName];
+
+                    return (
+                      <div className={moduleStyle.ikoner__ikonWrapper}>
+                        <I className={moduleStyle.ikoner__ikon} />
+                        <Paragraph as="span" variant="small">
+                          {iconName}
+                        </Paragraph>
+                      </div>
+                    );
+                  })}
+                  <div className={moduleStyle.ikoner__ikonWrapper}>
+                    <LinkedInLogo className={moduleStyle.ikoner__ikon} />
+                    <Paragraph as="span" variant="small">
+                      LinkedIn Logo
+                    </Paragraph>
+                  </div>
+                </div>
               </div>
             </div>
           </Section>
