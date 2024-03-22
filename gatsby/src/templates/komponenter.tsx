@@ -43,7 +43,9 @@ export default function PageTemplate({
   data,
   pageContext,
   children,
-}: PageProps<Queries.PageTemplateQuery>) {
+}: PageProps<Queries.PageTemplateQuery> & {
+  pageContext: Record<string, unknown>;
+}) {
   const frontmatter = data.mdx?.frontmatter;
 
   return (
@@ -61,7 +63,7 @@ export default function PageTemplate({
               icon={<Package />}
               href={`https://www.npmjs.com/package/${pageContext.package}`}
             >
-              {pageContext.package}@{pageContext.version}
+              {`${pageContext.package}@${pageContext.version}`}
             </ButtonLink>
             <ButtonLink
               variant="transparent"
@@ -108,6 +110,7 @@ export default function PageTemplate({
             }
           >
             <div className={style.komponenter__sdsSectionContent}>
+              {/* @ts-ignore */}
               <MDXProvider components={components}>{children}</MDXProvider>
             </div>
           </Section>

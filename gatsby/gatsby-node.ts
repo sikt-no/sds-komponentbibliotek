@@ -47,19 +47,20 @@ export const createPages: GatsbyNode["createPages"] = async ({
     reporter.panicOnBuild("Error loading MDX result", result.errors);
   }
 
-  const getPackageDir = (node) => {
+  const getPackageDir = (contentFilePath: string) => {
     try {
       return `${
-        node.internal.contentFilePath
+        contentFilePath
           .split("/sds-komponentbibliotek/packages/")[1]
           .split("/")[0]
       }`;
     } catch (e) {
+      // @ts-ignore
       reporter.panicOnBuild("Error getting package path", e);
     }
   };
 
-  const getPackageJson = (packageDir) => {
+  const getPackageJson = (packageDir: string) => {
     try {
       const pathToPackageJson = path.resolve(
         __dirname,
@@ -87,8 +88,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
   }
 
   files.forEach((node) => {
-    const packageDir = getPackageDir(node);
-    const packageJson = getPackageJson(packageDir);
+    const packageDir = getPackageDir(node.internal.contentFilePath!);
+    const packageJson = getPackageJson(packageDir!);
 
     createPage({
       path: `/komponenter${node.frontmatter?.slug}`,
