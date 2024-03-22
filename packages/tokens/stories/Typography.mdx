@@ -19,18 +19,19 @@ import * as desktop from "../dist/js/tokens.desktop.js";
       <th>Token</th>
     </tr>
   </thead>
+
   <tbody>
     {Object.entries(tokens.typography.heading).map((token) => {
-      return (
-        <tr key={token[1].name}>
-          <td>{token[0]}</td>
-          <td>{token[1].value}</td>
-          <td>{tablet.typography.heading?.[token[0]]?.value ?? ""}</td>
-          <td>{desktop.typography.heading?.[token[0]]?.value ?? ""}</td>
-          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
-        </tr>
-      );
-    })}
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{tablet.typography.heading?.[token[0]]?.value ?? ""}</td>
+              <td>{desktop.typography.heading?.[token[0]]?.value ?? ""}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
   </tbody>
 </table>
 
@@ -44,16 +45,17 @@ import * as desktop from "../dist/js/tokens.desktop.js";
       <th>Token</th>
     </tr>
   </thead>
+
   <tbody>
     {Object.entries(tokens.typography.body).map((token) => {
-      return (
-        <tr key={token[1].name}>
-          <td>{token[0]}</td>
-          <td>{token[1].value}</td>
-          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
-        </tr>
-      );
-    })}
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
   </tbody>
 </table>
 
@@ -67,15 +69,16 @@ import * as desktop from "../dist/js/tokens.desktop.js";
       <th>Token</th>
     </tr>
   </thead>
+
   <tbody>
     {Object.entries(tokens.typography.weight).map((token) => {
-      return (
-        <tr key={token[1].name}>
-          <td>{token[0]}</td>
-          <td>{token[1].value}</td>
-          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
-        </tr>
-      );
-    })}
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
   </tbody>
 </table>

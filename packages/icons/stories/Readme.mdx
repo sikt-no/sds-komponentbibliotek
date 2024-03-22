@@ -12,22 +12,21 @@ import { LinkedInLogo } from "../index";
 
 <IconGallery>
   {config.map((icon) => {
-    const iconName = `${icon
-      .split("-")
-      .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
-      .join("")}Icon`; 
-    const I = icons[iconName];
+      const iconName = `${icon
+        .split("-")
+        .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+        .join("")}Icon`; 
+      const I = icons[iconName];
 
-    return (
-      <IconItem key={icon} name={icon}>
-        <I />
-      </IconItem>
-    );
+      return (
+        <IconItem key={icon} name={icon}>
+          <I />
+        </IconItem>
+      );
 
 })}
 
-<IconItem name="linked-in-logo">
-  <LinkedInLogo color="black" />
-</IconItem>
-
+  <IconItem name="linked-in-logo">
+    <LinkedInLogo color="black" />
+  </IconItem>
 </IconGallery>

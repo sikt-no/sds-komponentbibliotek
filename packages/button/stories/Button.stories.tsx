@@ -15,6 +15,7 @@ export const Default: Story = {
   args: {
     children: "Button",
     variant: "subtle",
+    size: "default",
     disabled: false,
     onClick: () => {
       alert("click handler");

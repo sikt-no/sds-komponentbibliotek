@@ -1,28 +1,38 @@
+import { dirname, join } from "path";
 import type { StorybookConfig } from "@storybook/react-webpack5";
 // TODO: remove globby when fixed https://github.com/storybookjs/storybook/pull/22110
 import { globbySync } from "globby";
 
 const config: StorybookConfig = {
-  framework: "@storybook/react-webpack5",
+  framework: getAbsolutePath("@storybook/react-webpack5"),
+  swc: () => ({
+    jsc: {
+      transform: {
+        react: {
+          runtime: "automatic",
+        },
+      },
+    },
+  }),
   stories: globbySync(
     [
-      "../**/*.stories.mdx",
-      "../../packages/**/*.stories.mdx",
-      "../../packages/**/*.stories.@(js|jsx|ts|tsx)",
+      "../**/stories/*.mdx",
+      "../../packages/**/stories/**/*.mdx",
+      "../../packages/**/stories/*.stories.@(js|jsx|ts|tsx)",
     ],
     { cwd: "./.storybook" },
   ),
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@storybook/addon-interactions"),
     {
       name: "@storybook/addon-docs",
       options: { transcludeMarkdown: true },
     },
-    // TODO: add agian when issue is fixed https://github.com/whitespace-se/storybook-addon-html/issues/104
+    // TODO: add again when issue is fixed https://github.com/whitespace-se/storybook-addon-html/issues/104
     // "@whitespace/storybook-addon-html",
-    "@storybook/addon-styling-webpack",
+    getAbsolutePath("@storybook/addon-styling-webpack"),
     {
       name: "@storybook/addon-styling-webpack",
 
@@ -46,6 +56,8 @@ const config: StorybookConfig = {
         ],
       },
     },
+    getAbsolutePath("@storybook/addon-mdx-gfm"),
+    getAbsolutePath("@storybook/addon-webpack5-compiler-swc"),
   ],
   core: {
     disableTelemetry: true,
@@ -83,3 +95,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, "package.json")));
+}

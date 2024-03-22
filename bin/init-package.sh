@@ -82,13 +82,13 @@ echo ".sds-$1 {
 }" >> $1.pcss
 
 mkdir stories
-touch stories/$capitalName.stories.mdx
+touch stories/Readme.mdx
 echo "import { Markdown, Meta } from \"@storybook/blocks\";
 import Readme from \"../README.md?raw\";
 
-<Meta title=\"Components/$capitalName/$capitalName\" />
+<Meta title=\"Components/$capitalName/Readme\" />
 
-<Markdown>{Readme}</Markdown>" >> stories/$capitalName.stories.mdx
+<Markdown>{Readme}</Markdown>" >> stories/Readme.mdx
 
 mkdir playwright
 touch playwright/$capitalName.spec.ts

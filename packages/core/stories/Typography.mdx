@@ -1,0 +1,72 @@
+import { Meta, Typeset } from "@storybook/blocks";
+
+<Meta title="Core/Typography" />
+
+# Typography
+
+## Heading
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Example</th>
+    <th>Variable</th>
+  </thead>
+
+  <tbody>
+    {[
+          "huge",
+          "xlarge",
+          "large",
+          "medium",
+          "small",
+          "paragraph",
+          "overline",
+        ].map((item) => {
+          return (
+            <tr key={item}>
+              <th scope="row">heading / {item}</th>
+              <td className={`sds-typography-heading--${item}`}>Aa</td>
+              <td>--sds-typography-heading--{item}</td>
+            </tr>
+          );
+        })}
+  </tbody>
+</table>
+
+## Body
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Example</th>
+    <th>Variable</th>
+  </thead>
+
+  <tbody>
+    {["lead", "large", "regular", "small"].map((item) => {
+          return (
+            <tr key={item}>
+              <th scope="row">body / {item}</th>
+              <td className={`sds-typography-body--${item}`}>Aa</td>
+              <td>--sds-typography-body--{item}</td>
+            </tr>
+          );
+        })}
+
+    {["emphasis", "strong", "quote", "code"].map((item) => {
+          return (
+            <tr key={item}>
+              <th scope="row">body / {item}</th>
+              <td
+                className={`sds-typography-body--regular sds-typography-body--${item}`}
+              >
+                Aa
+              </td>
+              <td>--sds-typography-body--{item}</td>
+            </tr>
+          );
+        })}
+
+  </tbody>
+</table>

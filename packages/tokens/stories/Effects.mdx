@@ -15,16 +15,17 @@ import * as tokens from "../dist/js/tokens.js";
       <th>Token</th>
     </tr>
   </thead>
+
   <tbody>
     {Object.entries(tokens.effect.shadow).map((token) => {
-      return (
-        <tr key={token[1].name}>
-          <td>{token[0]}</td>
-          <td>{token[1].value}</td>
-          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
-        </tr>
-      );
-    })}
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
   </tbody>
 </table>
 
@@ -38,15 +39,16 @@ import * as tokens from "../dist/js/tokens.js";
       <th>Token</th>
     </tr>
   </thead>
+
   <tbody>
     {Object.entries(tokens.effect.animation).map((token) => {
-      return (
-        <tr key={token[1].name}>
-          <td>{token[0]}</td>
-          <td>{token[1].value}</td>
-          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
-        </tr>
-      );
-    })}
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
   </tbody>
 </table>

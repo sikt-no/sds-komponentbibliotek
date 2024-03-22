@@ -1,0 +1,164 @@
+import { Meta } from "@storybook/blocks";
+import * as tokens from "../dist/js/tokens.js";
+import * as tablet from "../dist/js/tokens.tablet.js";
+import * as desktop from "../dist/js/tokens.desktop.js";
+
+<Meta title="Tokens/Size" />
+
+# Size
+
+## Base
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {Object.entries(tokens.base.size).map((token) => {
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
+  </tbody>
+</table>
+
+## Space
+
+### Padding
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>@Mobile</th>
+      <th>@Tablet</th>
+      <th>@Desktop</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {Object.entries(tokens.space.padding).map((token) => {
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{tablet.space.padding?.[token[0]]?.value ?? ""}</td>
+              <td>{desktop.space.padding?.[token[0]]?.value ?? ""}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
+  </tbody>
+</table>
+
+### Gap
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {Object.entries(tokens.space.gap).map((token) => {
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
+  </tbody>
+</table>
+
+### Border
+
+#### Weight
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {Object.entries(tokens.space.border.weight).map((token) => {
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
+  </tbody>
+</table>
+
+#### Radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {Object.entries(tokens.space.border.radius).map((token) => {
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
+  </tbody>
+</table>
+
+### Grid
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>@Mobile</th>
+      <th>@Tablet</th>
+      <th>@Desktop</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {Object.entries(tokens.space.grid).map((token) => {
+          return (
+            <tr key={token[1].name}>
+              <td>{token[0]}</td>
+              <td>{token[1].value}</td>
+              <td>{tablet.space.grid?.[token[0]]?.value ?? ""}</td>
+              <td>{desktop.space.grid?.[token[0]]?.value ?? ""}</td>
+              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+            </tr>
+          );
+        })}
+  </tbody>
+</table>

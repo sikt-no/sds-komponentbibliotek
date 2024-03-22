@@ -65,7 +65,6 @@ const config: GatsbyConfig = {
           "**/*.tsx",
           "**/*.html",
           "**/*.json",
-          "**/*.stories.mdx",
           "**/.turbo/**",
           "**/build/**",
           "**/dist/**",

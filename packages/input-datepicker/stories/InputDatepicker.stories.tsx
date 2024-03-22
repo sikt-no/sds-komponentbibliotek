@@ -3,7 +3,7 @@ import { parseDate } from "@internationalized/date";
 import { InputDatepicker, InputDatepickerProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/InputDatePicker",
+  title: "Components/InputDatepicker",
   component: InputDatepicker,
 };
 
