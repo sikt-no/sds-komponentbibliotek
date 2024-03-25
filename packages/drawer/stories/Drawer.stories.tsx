@@ -63,10 +63,10 @@ const primaryLogoStyle: CSSProperties = {
   fontSize: "20px",
 };
 
-function RenderStoryComp({
+const StoryComp = ({
   isExpanded,
   handleToggleDrawer,
-}: RenderStoryCompProps) {
+}: RenderStoryCompProps) => {
   return (
     <div style={bodyStyle} className="bodyElement">
       <header style={headerStyle} />
@@ -80,35 +80,45 @@ function RenderStoryComp({
               handleToggleDrawer={handleToggleDrawer}
             />
             <DrawerContent>
-              <DrawerItemGroup expanded={isExpanded} heading="Group heading">
+              <DrawerItemGroup
+                expanded={isExpanded}
+                heading="Group heading"
+                aria-label="Group heading, Navigation"
+              >
                 <DrawerItem>
                   <DrawerButton
-                    label="Primary Label"
-                    secondaryLabel="Secondary Label"
                     icon={<InfoIcon />}
                     onClick={() => {
                       alert("DrawerButton clicked.");
                     }}
-                  />
+                  >
+                    Primary Label
+                  </DrawerButton>
                 </DrawerItem>
                 <DrawerItem>
                   <DrawerButton
-                    label="Long Primary Label"
                     secondaryLabel="Long Secondary Label"
                     icon={<InfoIcon />}
                     onClick={() => {
                       alert("DrawerButton clicked.");
                     }}
-                  />
+                  >
+                    Long Primary Label
+                  </DrawerButton>
                 </DrawerItem>
               </DrawerItemGroup>
 
-              <DrawerItemGroup expanded={isExpanded} heading="Group 2 heading">
+              <DrawerItemGroup
+                expanded={isExpanded}
+                heading="Group 2 heading"
+                aria-label="Group 2 heading, Navigation"
+              >
                 <DrawerItem>
                   <DrawerButtonLink
                     href="/"
                     icon={<InfoIcon />}
                     secondaryLabel="Secondary Label"
+                    aria-label="Custom aria label"
                   >
                     Meldinger
                   </DrawerButtonLink>
@@ -134,7 +144,7 @@ function RenderStoryComp({
       <footer style={footerStyle} />
     </div>
   );
-}
+};
 
 export const Default = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -151,7 +161,7 @@ export const Default = () => {
   });
 
   return (
-    <RenderStoryComp
+    <StoryComp
       isExpanded={isExpanded}
       handleToggleDrawer={handleToggleDrawer}
     />

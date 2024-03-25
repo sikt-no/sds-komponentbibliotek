@@ -4,7 +4,7 @@ import "./drawer-button.pcss";
 
 export interface DrawerButtonLinkProps
   extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  icon?: ReactNode;
+  icon: ReactNode;
   secondaryLabel?: string;
   children: ReactNode;
 }
@@ -24,11 +24,17 @@ export const DrawerButtonLink = forwardRef<
     }: DrawerButtonLinkProps,
     ref,
   ) => {
+    let ariaLabel = undefined;
+    if (typeof children === "string") {
+      ariaLabel = secondaryLabel ? `${children} ${secondaryLabel}` : children;
+    }
+
     return (
       <a
         ref={ref}
-        href={href}
+        aria-label={ariaLabel}
         className={clsx("sds-drawer-button", className)}
+        href={href}
         {...rest}
       >
         {icon && <span className="sds-drawer-button__icon">{icon}</span>}

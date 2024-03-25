@@ -6,7 +6,7 @@ describe("DrawerButton,", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <DrawerButton label="Label" icon={<span>⚙️</span>} />,
+        <DrawerButton icon="icon">Label</DrawerButton>,
       );
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -17,15 +17,16 @@ describe("DrawerButton,", () => {
       render(
         <DrawerButton
           data-testid="test"
-          icon={<span data-testid="iconElement">⚙️</span>}
-          label="label"
+          icon="icon"
           secondaryLabel="secondaryLabel"
-        />,
+        >
+          Label
+        </DrawerButton>,
       );
 
       expect(screen.getByTestId("test")).toBeInTheDocument();
-      expect(screen.getByTestId("iconElement")).toBeInTheDocument();
-      expect(screen.getByText("label")).toBeInTheDocument();
+      expect(screen.getByText("icon")).toHaveClass("sds-drawer-button__icon");
+      expect(screen.getByText("Label")).toBeInTheDocument();
       expect(screen.getByText("secondaryLabel")).toBeInTheDocument();
     });
   });
