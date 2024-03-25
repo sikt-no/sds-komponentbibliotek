@@ -22,7 +22,7 @@
     "@storybook/test": "^8.0.4",
     "@svgr/webpack": "^8.1.0",
     "css-loader": "^6.10.0",
-    "globby": "^14.0.0",
+    "globby": "^14.0.1",
     "postcss-loader": "^8.1.1",
     "prop-types": "^15.8.1",
     "storybook": "^8.0.4",
