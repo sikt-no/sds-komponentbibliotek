@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^3.0.1",
-    "@mdx-js/react": "^3.0.0",
+    "@mdx-js/react": "^3.0.1",
     "@phosphor-icons/react": "^2.0.15",
     "@sikt/sds-accordion": "^2.0.2",
     "@sikt/sds-badge": "^2.0.0",
@@ -41,7 +41,7 @@
   "devDependencies": {
     "@types/canvas-confetti": "^1.6.4",
     "@types/node": "^20.11.30",
-    "@types/react": "^18.2.69",
+    "@types/react": "^18.2.70",
     "@types/react-dom": "^18.2.22",
     "eslint-config-react-app": "^7.0.1",
     "gatsby-plugin-force-file-loader": "^5.0.1",
