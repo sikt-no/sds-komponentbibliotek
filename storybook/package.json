@@ -1,15 +1,12 @@
 {
   "name": "@sikt/sds-storybook",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build:prod": "storybook build --disable-telemetry"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.24.3",
-    "@babel/preset-react": "^7.24.1",
-    "@babel/preset-typescript": "^7.24.1",
     "@storybook/addon-essentials": "^8.0.4",
     "@storybook/addon-interactions": "^8.0.4",
     "@storybook/addon-links": "^8.0.4",
