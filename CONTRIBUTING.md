@@ -176,7 +176,7 @@ Rebase before merge so that your commits end up on top of the history.
 #### Publish
 
 Do this on the main branch.  
-Bump package versions & generate change log based on commit history with [Standard Version](https://github.com/conventional-changelog/standard-version):
+Bump package versions & generate change log based on commit history with [Commit and Tag Version](https://github.com/absolute-version/commit-and-tag-version):
 
 ```sh
 npm run release --package=<package-name>
