@@ -26,6 +26,13 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-force-file-loader",
     "gatsby-plugin-layout",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        sitemap: "sitemap-index.xml",
+      },
+    },
     /*{
       resolve: "gatsby-plugin-manifest",
       options: {

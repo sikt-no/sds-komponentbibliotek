@@ -33,6 +33,8 @@
     "gatsby": "^5.13.3",
     "gatsby-plugin-matomo": "^0.16.2",
     "gatsby-plugin-mdx": "^5.13.1",
+    "gatsby-plugin-robots-txt": "^1.8.0",
+    "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
