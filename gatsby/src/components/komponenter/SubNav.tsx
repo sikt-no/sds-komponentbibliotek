@@ -11,14 +11,12 @@ export const SubNav = ({
   currentHref?: string;
 }) => {
   const categories = data.allMdx.nodes
-    .reduce(
-      (accumulator, currentValue) => [
-        ...accumulator,
-        currentValue.frontmatter?.category,
-      ],
+    .filter((value) => value.frontmatter !== null)
+    .reduce<string[]>(
+      (result, value) => [...result, value.frontmatter?.category ?? ""],
       [],
     )
-    .filter((value, index, arr) => arr.indexOf(value) === index)
+    .filter((value, index, array) => array.indexOf(value) === index)
     .sort();
 
   return (

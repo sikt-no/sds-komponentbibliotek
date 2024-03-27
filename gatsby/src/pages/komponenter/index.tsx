@@ -11,7 +11,10 @@ import { useState } from "react";
 
 export { Head } from "../../components/Head";
 
-const KomponenterPage: React.FC<PageProps> = ({ location, data }) => {
+const KomponenterPage: React.FC<PageProps<Queries.PageTemplateQuery>> = ({
+  location,
+  data,
+}) => {
   const [showEasterEggs] = useState(true);
 
   return (

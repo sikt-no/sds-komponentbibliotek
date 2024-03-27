@@ -1,6 +1,7 @@
 import { Badge } from "@sikt/sds-badge";
+import type { DesignToken } from "style-dictionary";
 
-export const Token = ({ token }) => {
+export const Token = ({ token }: { token: DesignToken }) => {
   return (
     <>
       {token.original.value.indexOf("}") > -1 ? (

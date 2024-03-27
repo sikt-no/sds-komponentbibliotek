@@ -4,12 +4,12 @@ import { Hero } from "../components/Hero";
 import { ButtonLink } from "@sikt/sds-button";
 import { ArrowCircleLeftIcon } from "@sikt/sds-icons";
 
-const NotFoundPage: React.FC<PageProps> = () => {
+const ErrorPage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero
         breadcrumbs={[{ title: "Komponentbiblioteket", to: "/" }]}
-        heading={<>Siden finnes ikke</>}
+        heading={<>En feil har skjedd</>}
         leadParagraph={
           <ButtonLink
             variant="strong"
@@ -25,6 +25,6 @@ const NotFoundPage: React.FC<PageProps> = () => {
   );
 };
 
-export default NotFoundPage;
+export default ErrorPage;
 
-export const Head: HeadFC = () => <title>Siden finnes ikke</title>;
+export const Head: HeadFC = () => <title>Feil</title>;
