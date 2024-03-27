@@ -76,11 +76,15 @@ test-e2e:
   stage: test
   #  image: mcr.microsoft.com/playwright:v1.40.0-jammy
   extends: .npm_cache
+  parallel:
+    matrix:
+      - SHARD_INDEX: [1, 2, 3, 4, 5]
+        SHARD_TOTAL: 5
   script:
     - npm pkg delete scripts.prepare
     - npm ci
     - npx playwright install --with-deps
-    - npm run test:e2e
+    - npm run test:e2e -- --shard=$SHARD_INDEX/$SHARD_TOTAL
   artifacts:
     expire_in: 1 days
     paths:
