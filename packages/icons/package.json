@@ -20,7 +20,7 @@
     "postinstall": "run-s build:icons build:sprite build:components"
   },
   "dependencies": {
-    "@phosphor-icons/core": "^2.0.8"
+    "@phosphor-icons/core": "^2.1.1"
   },
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
