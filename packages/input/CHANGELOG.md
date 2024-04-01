@@ -1,6 +1,14 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+### [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@3.0.1...@sikt/sds-input@3.0.2) (2024-04-01)
+
+### Bug Fixes
+
+- allow props on input components to be ReactNode where possible ([68d2500](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/68d2500c5a6d97c72e119829169dffa278b0b2a3))
+- **deps:** update dependency @phosphor-icons/core to ^2.1.1 ([025e50b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/025e50bac95008ae70302789fec62529e6884b52))
+- **deps:** update sds-form ([795b9d7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/795b9d7b46639c019c336f8c9e4a3a58e748fdc5))
 
 ### [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@3.0.0...@sikt/sds-input@3.0.1) (2023-11-10)
 
