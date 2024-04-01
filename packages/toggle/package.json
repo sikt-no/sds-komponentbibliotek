@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@sikt/sds-core": "^3.0.0",
-    "@sikt/sds-form": "^2.0.0",
+    "@sikt/sds-form": "^2.1.0",
     "@sikt/sds-tokens": "^1.0.0"
   },
   "peerDependencies": {
