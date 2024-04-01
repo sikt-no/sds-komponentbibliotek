@@ -1,6 +1,20 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@1.2.1...@sikt/sds-icons@2.0.0) (2024-04-01)
+
+### ⚠ BREAKING CHANGES
+
+- **icons:** remove x logo icon
+
+### Features
+
+- **icons:** remove x logo icon ([aa81c70](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/aa81c701e59f847b8841eb4fe9e61a74e2449012))
+
+### Bug Fixes
+
+- **deps:** update dependency @phosphor-icons/core to ^2.1.1 ([025e50b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/025e50bac95008ae70302789fec62529e6884b52))
 
 ### [1.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@1.2.0...@sikt/sds-icons@1.2.1) (2023-11-28)
 
