@@ -1,6 +1,16 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-drawer@1.0.1...@sikt/sds-drawer@2.0.0) (2024-04-01)
+
+### ⚠ BREAKING CHANGES
+
+- **drawer-button:** fix accessibility problems
+
+### Features
+
+- **drawer-button:** fix accessibility problems ([329c4ed](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/329c4ed37507bd6bfa3e81110c52d99800d8a48e))
 
 ### [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-drawer@1.0.0...@sikt/sds-drawer@1.0.1) (2024-01-02)
 
