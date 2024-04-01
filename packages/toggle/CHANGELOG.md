@@ -1,6 +1,18 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@2.1.0...@sikt/sds-toggle@3.0.0) (2024-04-01)
+
+### ⚠ BREAKING CHANGES
+
+- **toggle-segment:** remove unneeded children prop
+
+### Bug Fixes
+
+- allow props on input components to be ReactNode where possible ([68d2500](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/68d2500c5a6d97c72e119829169dffa278b0b2a3))
+- **deps:** update sds-form ([795b9d7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/795b9d7b46639c019c336f8c9e4a3a58e748fdc5))
+- **toggle-segment:** remove unneeded children prop ([4ef6ab4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4ef6ab4be72c4c1249a7918e8ec1ceadc1fba806))
 
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@2.0.0...@sikt/sds-toggle@2.1.0) (2023-11-02)
 
