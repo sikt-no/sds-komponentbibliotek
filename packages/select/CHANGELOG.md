@@ -1,6 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@2.0.0...@sikt/sds-select@2.0.1) (2024-04-01)
+
+### Bug Fixes
+
+- allow props on input components to be ReactNode where possible ([68d2500](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/68d2500c5a6d97c72e119829169dffa278b0b2a3))
+- **deps:** update sds-form ([795b9d7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/795b9d7b46639c019c336f8c9e4a3a58e748fdc5))
 
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@1.0.2...@sikt/sds-select@2.0.0) (2023-10-28)
 
