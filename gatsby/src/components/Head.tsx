@@ -2,7 +2,7 @@ import { HeadFC } from "gatsby";
 import favicon32 from "@sikt/sds-logo/Favicon-Light@32px.png";
 import favicon180 from "@sikt/sds-logo/Favicon-Light@180px.png";
 import faviconSvg from "@sikt/sds-logo/Favicon-Light.svg";
-import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
+import * as tokens from "@sikt/sds-tokens";
 import * as colorDark from "@sikt/sds-tokens/dist/js/color.dark.js";
 
 export const Head: HeadFC = () => {

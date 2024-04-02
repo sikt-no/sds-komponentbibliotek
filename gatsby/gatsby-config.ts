@@ -1,5 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
-//import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
+//import * as tokens from "@sikt/sds-tokens";
 //import favicon192 from "@sikt/sds-logo/Favicon-Light@192px.png";
 //import favicon512 from "@sikt/sds-logo/Favicon-Light@512px.png";
 

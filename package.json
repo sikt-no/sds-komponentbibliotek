@@ -23,7 +23,7 @@
     "clean": "run-p clean:*",
     "clean:build": "rimraf packages/**/{build,dist}",
     "clean:gatsby": "npm run clean --workspace=gatsby",
-    "clean:storybook": "rimraf storybook/storybook-static",
+    "clean:storybook": "rimraf storybook/storybook-static && rimraf storybook/node_modules/.cache",
     "format": "prettier --write . --ignore-unknown",
     "gatsby": "npm run develop --workspace=gatsby",
     "gatsby:build": "npm run build:prod --workspace=gatsby",

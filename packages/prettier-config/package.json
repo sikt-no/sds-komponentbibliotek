@@ -2,6 +2,7 @@
   "name": "@sikt/prettier-config-sds",
   "version": "0.1.1",
   "license": "UNLICENSED",
+  "type": "commonjs",
   "main": "index.js",
   "files": [
     "CHANGELOG.md",

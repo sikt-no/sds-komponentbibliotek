@@ -33,7 +33,7 @@ module.exports = {
   testEnvironment: "jsdom",
   testRegex: "(/__tests__/.*|(\\.|/)(test))\\.(ts|js)x?$",
   transform: {
-    "^.+\\.(ts|js)x?$": "ts-jest",
+    "^.+\\.m?(ts|js)x?$": "ts-jest",
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/jest/__mocks__/fileTransformer.js",
   },

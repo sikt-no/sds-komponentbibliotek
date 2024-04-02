@@ -2,6 +2,8 @@
   "name": "@sikt/sds-tokens",
   "version": "1.0.1",
   "license": "UNLICENSED",
+  "type": "commonjs",
+  "main": "dist/js/tokens.js",
   "style": "dist/css/tokens.css",
   "files": [
     "CHANGELOG.md",

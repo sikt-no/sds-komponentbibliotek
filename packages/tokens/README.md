@@ -19,7 +19,7 @@ npm i -s @sikt/sds-tokens
 ### React
 
 ```js
-import * as tokens from "@sikt/sds-tokens/dist/js/tokens";
+import * as tokens from "@sikt/sds-tokens";
 
 <Button style={{ color: tokens.default.color.brand.primary.strong.value }}>
   Hello, World!

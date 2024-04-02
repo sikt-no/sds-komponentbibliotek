@@ -2,6 +2,7 @@
   "name": "@sikt/browserslist-config-sds",
   "version": "1.0.0",
   "license": "UNLICENSED",
+  "type": "commonjs",
   "main": "index.js",
   "files": [
     "CHANGELOG.md",

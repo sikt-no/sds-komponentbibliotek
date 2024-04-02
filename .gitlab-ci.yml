@@ -69,6 +69,7 @@ test-unit:
         path: coverage/cobertura-coverage.xml
   needs:
     - install
+    - packages
   except:
     - schedules
 
@@ -95,6 +96,7 @@ test-e2e:
     when: always
   needs:
     - install
+    - packages
   except:
     - schedules
 
@@ -194,6 +196,7 @@ storybook:
       - storybook/storybook-static
   needs:
     - install
+    - packages
   except:
     - schedules
     - tags

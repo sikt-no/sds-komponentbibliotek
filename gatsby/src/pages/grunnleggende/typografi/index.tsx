@@ -16,7 +16,7 @@ import {
   TableBody,
   TableCell,
 } from "@sikt/sds-table";
-import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
+import * as tokens from "@sikt/sds-tokens";
 import * as tablet from "@sikt/sds-tokens/dist/js/tokens.tablet.js";
 import * as desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.js";
 

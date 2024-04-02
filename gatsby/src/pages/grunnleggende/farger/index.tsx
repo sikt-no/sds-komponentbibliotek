@@ -17,7 +17,7 @@ import {
 } from "@sikt/sds-table";
 import { Badge } from "@sikt/sds-badge";
 import { FigmaLogo, Nut } from "@phosphor-icons/react";
-import * as tokens from "@sikt/sds-tokens/dist/js/tokens.js";
+import * as tokens from "@sikt/sds-tokens";
 import * as dark from "@sikt/sds-tokens/dist/js/color.dark.js";
 import { Swatch } from "../../../components/Swatch";
 import { SubNav } from "../../../components/grunnleggende/SubNav";
