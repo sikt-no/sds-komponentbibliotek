@@ -56,7 +56,6 @@ const config: StorybookConfig = {
         ],
       },
     },
-    getAbsolutePath("@storybook/addon-mdx-gfm"),
     getAbsolutePath("@storybook/addon-webpack5-compiler-swc"),
   ],
   core: {
