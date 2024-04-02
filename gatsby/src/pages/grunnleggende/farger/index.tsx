@@ -4,10 +4,9 @@ import clsx from "clsx";
 import * as indexStyle from "../../index.module.css";
 import * as style from "../index.module.css";
 import * as moduleStyle from "./index.module.css";
-import { Link, Paragraph } from "@sikt/sds-core";
+import { Link, Paragraph, Heading3 } from "@sikt/sds-core";
 import { Section } from "@sikt/sds-section";
 import { Notice } from "../../../components/Notice";
-import { Heading3 } from "@sikt/sds-core/components/Heading";
 import {
   Table,
   TableBody,
