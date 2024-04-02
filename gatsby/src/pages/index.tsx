@@ -10,7 +10,7 @@ import * as style from "./index.module.css";
 import Contributors from "../components/Contributors";
 import { Card } from "@sikt/sds-card";
 import { Hero } from "../components/Hero";
-import { ArrowCircleRightIcon } from "@sikt/sds-icons/build";
+import { ArrowCircleRightIcon } from "@sikt/sds-icons";
 
 export { Head } from "../components/Head";
 
