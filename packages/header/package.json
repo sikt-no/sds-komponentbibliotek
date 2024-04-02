@@ -15,7 +15,9 @@
     "build": "tsup"
   },
   "dependencies": {
+    "@sikt/sds-button": "^3.1.1",
     "@sikt/sds-core": "^3.0.0",
+    "@sikt/sds-icons": "^2.0.0",
     "@sikt/sds-logo": "^2.0.0",
     "@sikt/sds-tokens": "^1.0.0"
   },
