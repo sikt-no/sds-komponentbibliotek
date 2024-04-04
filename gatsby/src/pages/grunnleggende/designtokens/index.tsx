@@ -9,13 +9,10 @@ import { Section } from "@sikt/sds-section";
 import { Badge } from "@sikt/sds-badge";
 import { Nut } from "@phosphor-icons/react";
 import { SubNav } from "../../../components/grunnleggende/SubNav";
-import { useState } from "react";
 
 export { Head } from "../../../components/Head";
 
 const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
-  const [showEasterEggs] = useState(true);
-
   return (
     <>
       <Hero
@@ -175,20 +172,6 @@ const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
                   </div>
                   <div className="sds-typography-body--small">Variant</div>
                 </div>
-
-                {showEasterEggs && (
-                  <div className={moduleStyle.tokens__tagContainer}>
-                    <div
-                      className={clsx(
-                        moduleStyle.tokens__tag,
-                        "sds-typography-body--code",
-                      )}
-                    >
-                      🐣
-                    </div>
-                    <div className="sds-typography-body--small">Easter Egg</div>
-                  </div>
-                )}
               </div>
 
               <Paragraph className="sds-paragraph--max-width">

@@ -7,7 +7,6 @@ import { Paragraph } from "@sikt/sds-core";
 import { SubNav } from "../../components/komponenter/SubNav";
 import { ButtonLink, ButtonGroup } from "@sikt/sds-button";
 import { FigmaLogo, GitlabLogo } from "@phosphor-icons/react";
-import { useState } from "react";
 
 export { Head } from "../../components/Head";
 
@@ -15,13 +14,11 @@ const KomponenterPage: React.FC<PageProps<Queries.PageTemplateQuery>> = ({
   location,
   data,
 }) => {
-  const [showEasterEggs] = useState(true);
-
   return (
     <>
       <Hero
         breadcrumbs={[{ title: "Komponentbiblioteket", to: "/" }]}
-        heading={<>Komponenter {showEasterEggs && <>🐰</>}</>}
+        heading={<>Komponenter</>}
       />
 
       <section
