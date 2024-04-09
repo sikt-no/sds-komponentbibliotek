@@ -1,6 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+### [3.0.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.0.3...@sikt/sds-header@3.0.4) (2024-04-09)
+
+### Bug Fixes
+
+- **header:** add missing deps sds-icons & button ([1e7d6d4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1e7d6d4a78ed5356173d28089f706ee85c847d05))
+- **header:** remove obsolete clickable area of logo link ([558221c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/558221cbcfaf06edbeb3a92478a5540d4fcafd10))
 
 ### [3.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.0.2...@sikt/sds-header@3.0.3) (2024-01-03)
 
