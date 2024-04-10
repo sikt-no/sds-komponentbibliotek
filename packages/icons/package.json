@@ -12,12 +12,11 @@
     "README.md"
   ],
   "scripts": {
-    "prebuild": "npm run postinstall",
+    "prebuild": "run-s build:*",
     "build": "tsup",
     "build:icons": "node bin/build.mjs",
     "build:components": "svgr -- dist/assets",
-    "build:sprite": "svgstore dist/assets/*.svg -o dist/sds-icons.svg",
-    "postinstall": "run-s build:icons build:sprite build:components"
+    "build:sprite": "svgstore dist/assets/*.svg -o dist/sds-icons.svg"
   },
   "dependencies": {
     "@phosphor-icons/core": "^2.1.1"
@@ -25,6 +24,7 @@
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
     "cpy": "^11.0.1",
+    "run-p": "^0.0.0",
     "svgstore-cli": "^2.0.1"
   },
   "peerDependencies": {

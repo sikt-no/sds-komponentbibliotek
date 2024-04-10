@@ -28,6 +28,7 @@
     "gatsby": "npm run develop --workspace=gatsby",
     "gatsby:build": "npm run build:prod --workspace=gatsby",
     "init": "bin/init-package.sh $npm_config_package",
+    "postinstall": "npm run prebuild",
     "lint": "run-p lint:*",
     "lint:css": "stylelint \"**/*.{css,pcss}\" --ignore-path .gitignore",
     "lint:ts": "eslint \"**/*.{ts,tsx}\" --ignore-path .gitignore",
