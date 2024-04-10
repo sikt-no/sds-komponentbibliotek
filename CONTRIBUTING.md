@@ -156,7 +156,7 @@ npm run test:e2e
 To generate baseline screenshot for the CI environment after you are done working run:
 
 ```sh
-docker run --rm --network host -v $(pwd):/work/ -w /work/ -it node:20 /bin/bash
+docker run --rm --network host -v ${PWD}:/work/ -w /work/ -it node:20 /bin/bash
 npm install
 npx playwright install --with-deps
 CI=true npx playwright test --update-snapshots
