@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@2.0.0...@sikt/sds-icons@2.0.1) (2024-04-10)
+
+### Bug Fixes
+
+- **icons:** make install work again for consumers ([18ef8fb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/18ef8fbbd1ad876ed843987065315562f83030fd))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@1.2.1...@sikt/sds-icons@2.0.0) (2024-04-01)
 
 ### ⚠ BREAKING CHANGES
