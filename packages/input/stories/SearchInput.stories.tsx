@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { SearchInput, InputProps } from "../index";
 import { MapPinIcon } from "@sikt/sds-icons";
@@ -11,14 +12,53 @@ export default meta;
 
 type Story = StoryObj<InputProps>;
 
+const SearchInputWrapper = (props: InputProps) => {
+  const [value, setValue] = useState("");
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const newValue = event.target.value;
+    setValue(newValue);
+  };
+
+  const onClick = () => {
+    setValue("");
+  };
+
+  return (
+    <SearchInput
+      {...props}
+      value={value}
+      onChange={handleChange}
+      clearActionProps={{
+        onClick: onClick,
+        "aria-label": "Fjern søketekst",
+      }}
+    />
+  );
+};
+
 export const Default: Story = {
+  render: SearchInputWrapper,
   args: {
     label: "Label",
     placeholder: "Placeholder",
   },
 };
 
+export const WithClearButton: Story = {
+  render: () => (
+    <SearchInput label="label" value="Search Term" onChange={() => null} />
+  ),
+  args: {
+    ...Default.args,
+    icon: <MapPinIcon />,
+  },
+};
+
 export const WithCustomIcon: Story = {
+  render: SearchInputWrapper,
   args: {
     ...Default.args,
     icon: <MapPinIcon />,
@@ -26,13 +66,16 @@ export const WithCustomIcon: Story = {
 };
 
 export const WithHelpText: Story = {
+  render: SearchInputWrapper,
   args: { ...Default.args, helpText: "Text" },
 };
 
 export const WithError: Story = {
+  render: SearchInputWrapper,
   args: { ...Default.args, errorText: "Error!" },
 };
 
 export const WithCustomActionLabel: Story = {
-  args: { ...Default.args, actionProps: { label: "Finn resultater" } },
+  render: SearchInputWrapper,
+  args: { ...Default.args, actionProps: { "aria-label": "Finn resultater" } },
 };

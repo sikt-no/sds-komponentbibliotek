@@ -65,6 +65,16 @@ test.describe("Search Input Field", () => {
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
+    test("search input field with clear button should have screenshot", async ({
+      page,
+    }) => {
+      await page.goto(
+        "/iframe.html?ViewMode=story&id=components-input-search--with-clear-button",
+      );
+
+      await expect(page.locator(componentSelector)).toHaveScreenshot();
+    });
+
     test("search input field with help text should have screenshot", async ({
       page,
     }) => {

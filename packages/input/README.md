@@ -20,6 +20,26 @@ import "@sikt/sds-input/dist/index.css";
 />;
 ```
 
+### Input Component
+
+The Input component is a flexible input field component designed to handle different types of inputs.
+
+#### Available types
+
+- TextArea: Allows multi-line text input.
+- TextInput: Standard single-line text input.
+- NumberInput: Accepts numerical input.
+- EmailInput: Specifically designed for email input.
+- PasswordInput: Secured input for password entry.
+- TelInput: For entering telephone numbers.
+- SearchInput: Optimized for search functionality with a custom clear icon button.
+
+#### SearchInput
+
+The SearchInput features a custom clear icon button. Note that clearing the input field when pressing the Escape key is a built-in default feature.
+
+It is important to note that in Firefox, clicking the clear button causes the SearchInput field to lose focus. However, this has been adressed by reassigning focus to the SearchInput using the useRef hook.
+
 ### Stylesheets & custom markup
 
 Import stylesheet:

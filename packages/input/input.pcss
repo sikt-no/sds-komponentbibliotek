@@ -68,6 +68,7 @@
     /* Hide native clear search button in Chrome and Safari */
     &::-webkit-search-cancel-button {
       appearance: none;
+      display: none;
     }
   }
 
@@ -75,8 +76,7 @@
     align-items: flex-start;
   }
 
-  &__icon,
-  &__action {
+  &__icon {
     --input-icon-size: calc(
       var(--sds-base-size-m) + calc(var(--sds-space-padding-minimal) * 2)
     );
@@ -87,6 +87,10 @@
     justify-content: center;
     width: var(--input-icon-size);
     height: var(--input-icon-size);
+  }
+
+  &__clear {
+    margin-right: var(--sds-base-size-xs);
   }
 
   &--error &__wrapper {

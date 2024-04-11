@@ -13,9 +13,10 @@ import {
   MagnifyingGlassIcon,
   PasswordIcon,
   PhoneIcon,
+  XIcon,
 } from "@sikt/sds-icons";
 import { FormField } from "@sikt/sds-form";
-import { InputActionButton, InputActionButtonProps } from "./InputActionButton";
+import { Button, ButtonProps } from "@sikt/sds-button";
 import "./input.pcss";
 
 export interface InputProps
@@ -32,7 +33,8 @@ export interface InputProps
   ) => void;
   value?: string;
   icon?: ReactNode;
-  actionProps?: Omit<InputActionButtonProps, "icon">;
+  clearActionProps?: Pick<ButtonProps, "onClick" | "aria-label">;
+  actionProps?: Pick<ButtonProps, "onClick" | "aria-label">;
   errorText?: ReactNode;
   helpText?: ReactNode;
   rows?: number;
@@ -47,6 +49,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
       onChange,
       value,
       icon,
+      clearActionProps,
       actionProps,
       type,
       errorText,
@@ -64,6 +67,17 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
       [onChange],
     );
     const helpTextId = `${id}-help-text`;
+
+    const handleClearClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+      if (clearActionProps?.onClick) {
+        clearActionProps.onClick(event);
+      }
+
+      if (ref && "current" in ref && ref.current) {
+        ref.current.value = "";
+        ref.current.focus();
+      }
+    };
 
     return (
       <FormField
@@ -110,13 +124,27 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
               {...rest}
             />
           )}
+
+          {type === "search" && value && (
+            <Button
+              size="small"
+              variant="transparent"
+              iconVariant="only"
+              className="sds-input__clear"
+              onClick={handleClearClick}
+              icon={<XIcon />}
+              aria-label={clearActionProps?.["aria-label"] ?? "Tøm søketekst"}
+            />
+          )}
+
           {type === "search" && (
-            <InputActionButton
-              type="submit"
+            <Button
+              variant={errorText ? "critical" : "transparent"}
+              iconVariant="only"
               className="sds-input__action"
-              label="Søk"
+              size="small"
+              aria-label={actionProps?.["aria-label"] ?? "Søk"}
               icon={<MagnifyingGlassIcon />}
-              error={Boolean(errorText)}
               {...actionProps}
             />
           )}

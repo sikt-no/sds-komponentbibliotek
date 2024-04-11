@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
@@ -115,11 +116,44 @@ describe("Input", () => {
         <SearchInput
           label="Foo"
           data-testid="test"
-          actionProps={{ label: "action" }}
+          actionProps={{ "aria-label": "action" }}
         />,
       );
 
       expect(screen.getByLabelText("action")).toBeInTheDocument();
+    });
+
+    it("should clear SearchInput value on clear button click", async () => {
+      const user = userEvent.setup();
+      const Parent = () => {
+        const [value, setValue] = useState("test value");
+
+        const clearActionProps = {
+          onClick: () => {
+            setValue("");
+          },
+          "aria-label": "Tøm søketekst",
+        };
+
+        return (
+          <SearchInput
+            label="Søk utdanningstilbud"
+            clearActionProps={clearActionProps}
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+          />
+        );
+      };
+
+      render(<Parent />);
+
+      expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveValue(
+        "test value",
+      );
+      await user.click(screen.getByLabelText("Tøm søketekst"));
+      expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveValue("");
     });
   });
 });
