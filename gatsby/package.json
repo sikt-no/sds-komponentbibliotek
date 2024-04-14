@@ -30,7 +30,7 @@
     "@sikt/sds-tokens": "^1.0.1",
     "canvas-confetti": "^1.9.2",
     "clsx": "^2.1.0",
-    "gatsby": "^5.13.3",
+    "gatsby": "^5.13.4",
     "gatsby-plugin-matomo": "^0.16.2",
     "gatsby-plugin-mdx": "^5.13.1",
     "gatsby-plugin-robots-txt": "^1.8.0",
