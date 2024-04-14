@@ -17,7 +17,7 @@
     "@storybook/react-webpack5": "^8.0.8",
     "@storybook/test": "^8.0.8",
     "@svgr/webpack": "^8.1.0",
-    "css-loader": "^7.0.0",
+    "css-loader": "^7.1.1",
     "globby": "^14.0.1",
     "postcss-loader": "^8.1.1",
     "prop-types": "^15.8.1",
