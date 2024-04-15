@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@3.0.2...@sikt/sds-input@3.1.0) (2024-04-15)
+
+### Features
+
+- **input:** add clear button to search input component ([7730f0f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7730f0f48a0ea264374d80b56ddb0c36e24fcf11))
+
+### Bug Fixes
+
+- **deps:** update sds-icons ([8a3e1ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8a3e1ae229148b84f603089337b8a8f54d23fe39))
+
 ### [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@3.0.1...@sikt/sds-input@3.0.2) (2024-04-01)
 
 ### Bug Fixes
