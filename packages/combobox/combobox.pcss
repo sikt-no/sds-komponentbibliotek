@@ -1,0 +1,164 @@
+.sds-combobox {
+  --combobox-border-color: var(--sds-color-interaction-neutral-strong-default);
+  --combobox-border-width: var(--sds-space-border-weight-regular);
+  --combobox-button-color: var(--sds-color-text-primary);
+  --combobox-button-background-color: transparent;
+  --combobox-padding: calc(
+    var(--sds-space-padding-tiny) + var(--sds-space-padding-minimal) -
+      var(--combobox-border-width)
+  );
+
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__combobox {
+    align-items: center;
+    display: flex;
+    position: relative;
+
+    &-input {
+      appearance: none;
+      background-image: none;
+      background-color: var(--sds-color-layout-background-default);
+      border: var(--combobox-border-width) solid var(--combobox-border-color);
+      border-radius: var(--sds-space-border-radius-medium);
+      color: var(--sds-color-text-primary);
+      flex: 1;
+      font-size: var(--sds-typography-body-fontsize-regular);
+      font-weight: var(--sds-typography-weight-regular);
+      line-height: var(--sds-typography-body-lineheight-regular);
+      padding: var(--combobox-padding);
+
+      &:hover,
+      &:focus-visible {
+        --combobox-border-color: var(
+          --sds-color-interaction-neutral-strong-highlight
+        );
+      }
+
+      &:active {
+        --combobox-border-color: var(
+          --sds-color-interaction-neutral-strong-pressed
+        );
+      }
+
+      &:focus-visible {
+        outline: var(--sds-focus-outline);
+      }
+    }
+
+    &-button {
+      --combobox-button-size: calc(
+        var(--sds-base-size-m) + calc(var(--sds-space-padding-minimal) * 2)
+      );
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background-color: var(--combobox-button-background-color);
+      border-radius: var(--sds-space-border-radius-minimal);
+      color: var(--combobox-button-color);
+      font-size: var(--sds-base-size-m);
+      padding: var(--sds-space-padding-minimal);
+      position: absolute;
+      right: var(--combobox-padding);
+      width: var(--combobox-button-size);
+      height: var(--combobox-button-size);
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(
+          --sds-color-interaction-primary-transparent-highlight
+        );
+      }
+    }
+  }
+
+  &__listbox {
+    display: block;
+    width: unset;
+    max-height: 15rem;
+    min-height: unset;
+    overflow: auto;
+  }
+
+  &__popover {
+    padding: var(--sds-space-padding-small);
+    width: var(--trigger-width);
+    margin-top: var(--sds-space-gap-small);
+    margin-bottom: var(--sds-space-gap-small);
+    background-color: var(--sds-color-layout-background-default);
+    box-shadow: var(--sds-effect-shadow-elevated-default);
+    border-radius: var(--sds-space-border-radius-medium);
+  }
+
+  &__header {
+    padding: var(--sds-space-padding-small);
+    margin: var(--sds-space-gap-tiny);
+    font-size: var(--sds-typography-body-fontsize-medium);
+    font-weight: var(--sds-typography-weight-bold);
+    border-bottom: var(--sds-space-border-weight-thin) solid
+      var(--sds-color-brand-neutral-subtle);
+  }
+
+  &__item {
+    padding: var(--sds-space-padding-small);
+    margin: var(--sds-space-gap-tiny);
+    border-radius: var(--sds-space-border-radius-medium);
+
+    &[data-focus-visible],
+    &:focus-visible {
+      outline: var(--sds-focus-outline);
+    }
+
+    &[data-hovered],
+    &[data-focus-visible],
+    &:hover,
+    &:focus-visible {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+    }
+
+    &[data-pressed],
+    &:active {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-pressed
+      );
+    }
+
+    &[data-selected] {
+      background-color: var(--sds-color-interaction-primary-strong-pressed);
+      color: var(--sds-color-text-on-strong);
+    }
+  }
+
+  &--invalid &__combobox {
+    --combobox-border-color: var(--sds-color-interaction-danger-strong-default);
+    --combobox-button-color: var(--sds-color-text-on-strong);
+    --combobox-button-background-color: var(
+      --sds-color-interaction-danger-strong-default
+    );
+
+    &:hover,
+    &:focus-within {
+      --combobox-border-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
+      --combobox-button-background-color: var(
+        --sds-color-interaction-danger-strong-highlight
+      );
+    }
+
+    &:active {
+      --combobox-border-color: var(
+        --sds-color-interaction-danger-strong-pressed
+      );
+      --combobox-button-background-color: var(
+        --sds-color-interaction-danger-strong-pressed
+      );
+    }
+  }
+}
