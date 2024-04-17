@@ -49,7 +49,7 @@ export const Default: Story = {
 
 export const WithClearButton: Story = {
   render: () => (
-    <SearchInput label="label" value="Search Term" onChange={() => null} />
+    <SearchInput label="Label" value="Value" onChange={() => null} />
   ),
   args: {
     ...Default.args,
