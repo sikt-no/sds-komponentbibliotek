@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createRef, forwardRef, useState } from "react";
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
@@ -124,8 +124,8 @@ describe("Input", () => {
     });
 
     it("should clear SearchInput value on clear button click", async () => {
-      const user = userEvent.setup();
-      const Parent = () => {
+      // eslint-disable-next-line react/display-name,no-empty-pattern
+      const Parent = forwardRef<HTMLInputElement>(({}, ref) => {
         const [value, setValue] = useState("test value");
 
         const clearActionProps = {
@@ -137,6 +137,7 @@ describe("Input", () => {
 
         return (
           <SearchInput
+            ref={ref}
             label="Søk utdanningstilbud"
             clearActionProps={clearActionProps}
             value={value}
@@ -145,9 +146,11 @@ describe("Input", () => {
             }}
           />
         );
-      };
+      });
 
-      render(<Parent />);
+      const user = userEvent.setup();
+      const ref = createRef<HTMLInputElement>();
+      render(<Parent ref={ref} />);
 
       expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveValue(
         "test value",
@@ -158,6 +161,7 @@ describe("Input", () => {
       });
 
       expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveValue("");
+      expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveFocus();
     });
   });
 });
