@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import {
@@ -152,7 +152,11 @@ describe("Input", () => {
       expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveValue(
         "test value",
       );
-      await user.click(screen.getByLabelText("Tøm søketekst"));
+
+      await act(async () => {
+        await user.click(screen.getByLabelText("Tøm søketekst"));
+      });
+
       expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveValue("");
     });
   });
