@@ -72,5 +72,41 @@ describe("DatePicker", () => {
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
     });
+    it("should close calendar on escape key", async () => {
+      const user = userEvent.setup();
+      render(<InputDatepicker label="Foo" data-testid="test" />);
+      expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
+
+      const calendarButton = screen.getByRole("button");
+      await act(async () => {
+        await user.click(calendarButton);
+      });
+
+      expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
+
+      await act(async () => {
+        await user.keyboard("[Escape]");
+      });
+
+      expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
+    });
+    it("should close calendar on outside click", async () => {
+      const user = userEvent.setup();
+      render(<InputDatepicker label="Foo" data-testid="test" />);
+      expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
+
+      const calendarButton = screen.getByRole("button");
+      await act(async () => {
+        await user.click(calendarButton);
+      });
+
+      expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
+
+      await act(async () => {
+        await user.click(document.body);
+      });
+
+      expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
+    });
   });
 });

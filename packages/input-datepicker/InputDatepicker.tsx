@@ -1,4 +1,4 @@
-import { useId, forwardRef, useState, ReactNode } from "react";
+import { useId, forwardRef, useState, ReactNode, useRef } from "react";
 import clsx from "clsx";
 import {
   DatePickerProps,
@@ -24,6 +24,7 @@ import { Label, HelpText } from "@sikt/sds-form";
 import { Button } from "@sikt/sds-button";
 import "./input-datepicker.pcss";
 import { I18nProvider } from "@react-aria/i18n";
+import { useEventListener, useOnClickOutside } from "usehooks-ts";
 
 export interface InputDatepickerProps extends DatePickerProps<DateValue> {
   label: ReactNode;
@@ -54,9 +55,24 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
     },
     ref,
   ) => {
+    const calendarRef = useRef(null);
     const id = useId();
     const helpTextId = `${id}-help-text`;
     const [calendarOpen, setCalendarOpen] = useState(false);
+
+    const onEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setCalendarOpen(false);
+      }
+    };
+
+    useEventListener("keydown", onEscapeKey);
+
+    const handleClickOutside = () => {
+      setCalendarOpen(false);
+    };
+
+    useOnClickOutside(calendarRef, handleClickOutside);
 
     return (
       <I18nProvider locale={lang}>
@@ -110,6 +126,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
 
           {calendarOpen && (
             <Calendar
+              ref={calendarRef}
               onChange={() => {
                 setCalendarOpen(false);
               }}
