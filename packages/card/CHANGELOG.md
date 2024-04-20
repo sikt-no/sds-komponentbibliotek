@@ -1,6 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [3.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-card@3.1.0...@sikt/sds-card@3.1.1) (2024-04-20)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-tokens to ^1.0.1 ([3618147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3618147fbc51048b8f63484b63cd2fa6e76cbbf4))
+- **deps:** update to latest sds-core ([c5f750e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c5f750ef48c07842b6f04f42c235aac37a350dca))
 
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-card@3.0.0...@sikt/sds-card@3.1.0) (2024-03-12)
 
