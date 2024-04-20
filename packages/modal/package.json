@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@sikt/sds-button": "^3.0.0",
-    "@sikt/sds-core": "^3.0.0",
+    "@sikt/sds-core": "^3.0.2",
     "@sikt/sds-icons": "^2.0.1",
     "@sikt/sds-tokens": "^1.0.1",
     "react-modal": "^3.16.1"
