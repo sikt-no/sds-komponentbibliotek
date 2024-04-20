@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@1.0.2...@sikt/sds-input-datepicker@1.1.0) (2024-04-20)
+
+### Features
+
+- **input-datepicker:** close datepicker on click outside or escape ([ea69a6b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ea69a6b8c80075ed111370a2a1ecb9902332ce91))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core to ^3.0.2 ([a55b4c2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a55b4c2f0bad4dfe80b26c0f7102622b4257d8b2))
+- **deps:** update @sikt/sds-tokens to ^1.0.1 ([3618147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3618147fbc51048b8f63484b63cd2fa6e76cbbf4))
+- **deps:** update sds-icons ([8a3e1ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8a3e1ae229148b84f603089337b8a8f54d23fe39))
+
 ### [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@1.0.1...@sikt/sds-input-datepicker@1.0.2) (2024-04-01)
 
 ### Bug Fixes
