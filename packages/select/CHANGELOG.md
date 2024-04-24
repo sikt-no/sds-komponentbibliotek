@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@2.0.1...@sikt/sds-select@2.0.2) (2024-04-24)
+
+### Bug Fixes
+
+- **select:** add all props to option ([38e56b2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/38e56b2bd44e989927598504a21186cefbc17ca9))
+- **select:** add correct right padding and ellipsis to wide text ([4e7e7b3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4e7e7b3d9f6f3d380071144c1b85aba8b230c848))
+- **deps:** update @sikt/sds-core to ^3.0.2 ([a55b4c2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a55b4c2f0bad4dfe80b26c0f7102622b4257d8b2))
+- **deps:** update @sikt/sds-tokens to ^1.0.1 ([3618147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3618147fbc51048b8f63484b63cd2fa6e76cbbf4))
+- **deps:** update sds-icons ([8a3e1ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8a3e1ae229148b84f603089337b8a8f54d23fe39))
+
 ### [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@2.0.0...@sikt/sds-select@2.0.1) (2024-04-01)
 
 ### Bug Fixes
