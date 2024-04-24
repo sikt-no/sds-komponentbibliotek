@@ -27,6 +27,7 @@ const Contributors = ({
         : []),
     ],
     [
+      { name: "Kjartan", role: "Teknologi", team: "Opptak Søker" },
       { name: "Sondre S.", role: "Teknologi", team: "Opptak Søker" },
       { name: "Erik", role: "Teknologi", team: "Opptak Søker" },
       { name: "Vegard", role: "Teknologi", team: "Opptak Søker" },
