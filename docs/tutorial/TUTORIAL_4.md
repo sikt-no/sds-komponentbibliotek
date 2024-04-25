@@ -12,7 +12,7 @@
 #### Story
 
 - Create `stories/` directory
-- Create `Readme.mdx`
+- Create `stories/Readme.mdx`
 - Import README.md in story
 
 💡️ _Hint:_ See `./docs/tutorial/__example__/` for Example component  

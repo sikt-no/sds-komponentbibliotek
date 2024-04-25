@@ -64,10 +64,10 @@ See [Accessibility](./docs/A11Y.md)
 Example:
 
 ```css
---sds-variable: value;
+--sds-<variable-name>: value;
 
 .sds-<package-name > {
-  --package-name-variable: value;
+  --<package-name>-<variable-name>: value;
 
   /* styling */
   &__<element > {
@@ -167,9 +167,9 @@ CI=true npx playwright test --update-snapshots
 #### Merge request
 
 Create a merge request & wait for a required code review before merging to `main`.  
-Review comments are closed by the reviewer & not the branch owner.  
+Review comments should be closed by the reviewer & not the branch owner.  
 Rebase before merge so that your commits end up on top of the history.  
-**Note** Storybook is published to URL `<review-environment>/komponenter/`
+**Note** Storybook is published to URL `<review-environment>/storybook/`
 
 ℹ️ _Tip:_ Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
 
