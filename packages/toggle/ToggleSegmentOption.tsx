@@ -20,7 +20,7 @@ export interface ToggleSegmentOptionProps
 export const ToggleSegmentOption = forwardRef<
   HTMLInputElement,
   ToggleSegmentOptionProps
->(({ value, label, checked, onChange, ...rest }, ref) => {
+>(({ value, label, checked, onChange, className, ...rest }, ref) => {
   const { name } = useFieldset() ?? {};
   const generatedId = useId();
   const htmlForId = rest.id ?? generatedId;
@@ -30,6 +30,7 @@ export const ToggleSegmentOption = forwardRef<
       className={clsx(
         "sds-toggle-segment__option",
         checked && "sds-toggle-segment__option--checked",
+        className,
       )}
     >
       <input

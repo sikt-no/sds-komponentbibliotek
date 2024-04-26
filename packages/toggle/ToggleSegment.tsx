@@ -11,12 +11,13 @@ export interface ToggleSegmentProps extends Omit<FieldsetProps, "onChange"> {
 export const ToggleSegment = forwardRef<
   HTMLFieldSetElement,
   ToggleSegmentProps
->(({ children, variant = "default", ...rest }, ref) => {
+>(({ children, variant = "default", className, ...rest }, ref) => {
   return (
     <div
       className={clsx(
         "sds-toggle-segment",
         variant !== "default" && `sds-toggle-segment--${variant}`,
+        className,
       )}
     >
       <Fieldset className="sds-toggle-segment__fieldset" {...rest} ref={ref}>

@@ -8,13 +8,14 @@ export interface ToggleButtonProps {
   label: ReactNode;
   showIcons?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  className?: string;
 }
 
 export const ToggleButton = forwardRef<HTMLInputElement, ToggleButtonProps>(
-  ({ checked, label, showIcons = true, onChange, ...rest }, ref) => {
+  ({ checked, label, showIcons = true, onChange, className, ...rest }, ref) => {
     const toggleButtonId = useId();
     return (
-      <div className="sds-toggle-button" {...rest}>
+      <div className={clsx("sds-toggle-button", className)} {...rest}>
         <input
           ref={ref}
           type="checkbox"

@@ -10,6 +10,7 @@ export interface ToggleSwitchProps {
   showIcons?: boolean;
   error?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  className?: string;
 }
 
 export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
@@ -21,6 +22,7 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
       showIcons = true,
       error = false,
       onChange,
+      className,
       ...rest
     },
     ref,
@@ -36,6 +38,7 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
           "sds-toggle-switch",
           checked && "sds-toggle-switch--checked",
           error && "sds-toggle-switch--error",
+          className,
         )}
         data-testid="sds-toggle-switch"
       >
