@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@3.0.0...@sikt/sds-toggle@3.0.1) (2024-04-26)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core to ^3.0.2 ([a55b4c2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a55b4c2f0bad4dfe80b26c0f7102622b4257d8b2))
+- **deps:** update @sikt/sds-tokens to ^1.0.1 ([3618147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3618147fbc51048b8f63484b63cd2fa6e76cbbf4))
+- **deps:** update sds-icons ([8a3e1ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8a3e1ae229148b84f603089337b8a8f54d23fe39))
+- **toggle:** add classname to correct element ([909f938](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/909f938e643952b1354eb52c51f7e918c3c5873f))
+- **toggle:** add missing deps sds-icon ([41da229](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/41da22918039cf2a3c698e4824ef11babfc3e57c))
+
 ## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@2.1.0...@sikt/sds-toggle@3.0.0) (2024-04-01)
 
 ### ⚠ BREAKING CHANGES

@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-toggle",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "UNLICENSED",
   "type": "commonjs",
   "main": "dist/index.js",
