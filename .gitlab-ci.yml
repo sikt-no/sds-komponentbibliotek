@@ -317,6 +317,7 @@ publish:
   secrets:
     NPM_TOKEN:
       vault: "gitlab/${CI_PROJECT_PATH}/npm-token@secret"
+      token: $VAULT_ID_TOKEN
       file: false
   before_script:
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
