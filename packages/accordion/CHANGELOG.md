@@ -1,6 +1,16 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-accordion@2.0.2...@sikt/sds-accordion@2.0.3) (2024-05-03)
+
+### Bug Fixes
+
+- **accordion:** set text-align start on button ([9b4bcfd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9b4bcfd83199f544ef9ec6ac8573c95dd31542ff))
+- **deps:** update @sikt/sds-core to ^3.0.2 ([a55b4c2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a55b4c2f0bad4dfe80b26c0f7102622b4257d8b2))
+- **deps:** update @sikt/sds-tokens to ^1.0.1 ([3618147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3618147fbc51048b8f63484b63cd2fa6e76cbbf4))
+- **deps:** update sds-icons ([8a3e1ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8a3e1ae229148b84f603089337b8a8f54d23fe39))
+- **deps:** update sds-icons ([3755b67](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3755b6799170675aaf09fbe26c15110d36daaf53))
 
 ### [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-accordion@2.0.1...@sikt/sds-accordion@2.1.0) (2024-03-12)
 
