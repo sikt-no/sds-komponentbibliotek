@@ -33,8 +33,8 @@ export interface InputProps
   ) => void;
   value?: string;
   icon?: ReactNode;
-  clearActionProps?: Pick<ButtonProps, "onClick" | "aria-label">;
-  actionProps?: Pick<ButtonProps, "onClick" | "aria-label">;
+  clearActionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
+  actionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
   errorText?: ReactNode;
   helpText?: ReactNode;
   rows?: number;
@@ -134,6 +134,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
               onClick={handleClearClick}
               icon={<XIcon />}
               aria-label={clearActionProps?.["aria-label"] ?? "Tøm søketekst"}
+              type={clearActionProps?.type ?? "button"}
             />
           )}
 
@@ -145,6 +146,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
               size="small"
               aria-label={actionProps?.["aria-label"] ?? "Søk"}
               icon={<MagnifyingGlassIcon />}
+              type={actionProps?.type ?? "button"}
               {...actionProps}
             />
           )}
