@@ -6,7 +6,7 @@ import { defineConfig } from "tsup";
 export default defineConfig({
   name: "tsup",
   entry: ["./index.ts"],
-  target: [...(browserslistToEsbuild() as Target)],
+  target: [...browserslistToEsbuild()],
   dts: true,
   format: ["esm", "cjs"],
   loader: {
