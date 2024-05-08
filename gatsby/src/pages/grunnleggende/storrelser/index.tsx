@@ -236,38 +236,40 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Object.entries(tokens.space.border.weight).map((token) => {
-                    return (
-                      <TableRow key={token[1].name}>
-                        <TableCell data-th="Navn">{token[0]}</TableCell>
-                        <TableCell data-th="Verdi @ mobile">
-                          <Token token={token[1]} />
-                        </TableCell>
-                        <TableCell data-th="Verdi @ tablet">
-                          <Token
-                            token={
-                              tablet.space.border?.weight?.[token[0]] ??
-                              token[1]
-                            }
-                          />
-                        </TableCell>
-                        <TableCell data-th="Verdi @ desktop">
-                          <Token
-                            token={
-                              desktop.default.space.border?.weight?.[
-                                token[0]
-                              ] ?? token[1]
-                            }
-                          />
-                        </TableCell>
-                        <TableCell data-th="Token">
-                          <Badge visibility="strong" icon={<Nut />}>
-                            {`--sds-${Object.values(token[1].path).join("-")}`}
-                          </Badge>
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
+                  {Object.entries(tokens.default.space.border.weight).map(
+                    (token) => {
+                      return (
+                        <TableRow key={token[1].name}>
+                          <TableCell data-th="Navn">{token[0]}</TableCell>
+                          <TableCell data-th="Verdi @ mobile">
+                            <Token token={token[1]} />
+                          </TableCell>
+                          <TableCell data-th="Verdi @ tablet">
+                            <Token
+                              token={
+                                tablet.space.border?.weight?.[token[0]] ??
+                                token[1]
+                              }
+                            />
+                          </TableCell>
+                          <TableCell data-th="Verdi @ desktop">
+                            <Token
+                              token={
+                                desktop.default.space.border?.weight?.[
+                                  token[0]
+                                ] ?? token[1]
+                              }
+                            />
+                          </TableCell>
+                          <TableCell data-th="Token">
+                            <Badge visibility="strong" icon={<Nut />}>
+                              {`--sds-${Object.values(token[1].path).join("-")}`}
+                            </Badge>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    },
+                  )}
                 </TableBody>
               </Table>
             </div>
