@@ -24,30 +24,25 @@ export const Hero = ({
   leadParagraph,
 }: HeroProps) => {
   return (
-    <>
-      <section className={clsx(style.hero__section, className)}>
-        <div className={style.hero__sectionContent}>
-          {breadcrumbs && (
-            <Breadcrumbs aria-label="Navigasjonssti">
-              {breadcrumbs.map((breadcrumb) => (
-                <BreadcrumbItem key={breadcrumb.to}>
-                  <GatsbyLink
-                    className="sds-typography-link"
-                    to={breadcrumb.to}
-                  >
-                    {breadcrumb.title}
-                  </GatsbyLink>
-                </BreadcrumbItem>
-              ))}
-            </Breadcrumbs>
-          )}
-          <Heading1 variant="huge">{heading}</Heading1>
-          {leadParagraph && (
-            <p className={style.hero__paragraph}>{leadParagraph}</p>
-          )}
-        </div>
-        <div className={style.hero__sectionImage}></div>
-      </section>
-    </>
+    <section className={clsx(style.hero__section, className)}>
+      <div className={style.hero__sectionContent}>
+        {breadcrumbs && (
+          <Breadcrumbs aria-label="Navigasjonssti">
+            {breadcrumbs.map((breadcrumb) => (
+              <BreadcrumbItem key={breadcrumb.to}>
+                <GatsbyLink className="sds-typography-link" to={breadcrumb.to}>
+                  {breadcrumb.title}
+                </GatsbyLink>
+              </BreadcrumbItem>
+            ))}
+          </Breadcrumbs>
+        )}
+        <Heading1 variant="huge">{heading}</Heading1>
+        {leadParagraph && (
+          <p className={style.hero__paragraph}>{leadParagraph}</p>
+        )}
+      </div>
+      <div className={style.hero__sectionImage} />
+    </section>
   );
 };

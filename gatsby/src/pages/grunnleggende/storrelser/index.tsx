@@ -131,15 +131,14 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
                         <TableCell data-th="Verdi @ tablet">
                           <Token
                             token={
-                              tablet.default.space.padding?.[token[0]] ??
-                              token[1]
+                              tablet.default.space.padding[token[0]] ?? token[1]
                             }
                           />
                         </TableCell>
                         <TableCell data-th="Verdi @ desktop">
                           <Token
                             token={
-                              desktop.default.space.padding?.[token[0]] ??
+                              desktop.default.space.padding[token[0]] ??
                               token[1]
                             }
                           />

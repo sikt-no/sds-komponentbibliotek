@@ -22,7 +22,7 @@ export const SubNav = ({
   return (
     <div className={style.subNav}>
       <span className="sds-typography-heading--paragraph">Komponenter</span>
-      <SideNav heading="Alle" aria-label={`Sidenavigasjon, alle komponenter`}>
+      <SideNav heading="Alle" aria-label="Sidenavigasjon, alle komponenter">
         <li>
           <SideNavButtonLink icon={<Code />} href="/storybook/">
             Se <span className="sds-screen-reader-only">alle komponenter</span>{" "}

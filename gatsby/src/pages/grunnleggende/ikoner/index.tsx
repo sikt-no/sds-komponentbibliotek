@@ -1,3 +1,4 @@
+import { ElementType } from "react";
 import { PageProps } from "gatsby";
 import { Hero } from "../../../components/Hero";
 import clsx from "clsx";
@@ -179,14 +180,14 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
                     moduleStyle.ikoner__ikoner,
                   )}
                 >
-                  {config.map((icon) => {
-                    const iconName = `${icon
+                  {(config as string[]).map((icon) => {
+                    const iconName = icon
                       .split("-")
                       .map(
                         (part) =>
                           `${part.charAt(0).toUpperCase()}${part.slice(1)}`,
                       )
-                      .join(" ")}`;
+                      .join(" ");
                     const iconComponentName = `${icon
                       .split("-")
                       .map(
@@ -194,10 +195,13 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
                           `${part.charAt(0).toUpperCase()}${part.slice(1)}`,
                       )
                       .join("")}Icon`;
-                    const I = icons[iconComponentName];
+                    const I = icons[iconComponentName] as ElementType;
 
                     return (
-                      <div className={moduleStyle.ikoner__ikonWrapper}>
+                      <div
+                        className={moduleStyle.ikoner__ikonWrapper}
+                        key={iconName}
+                      >
                         <I className={moduleStyle.ikoner__ikon} />
                         <Paragraph as="span" variant="small">
                           {iconName}

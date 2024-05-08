@@ -88,7 +88,7 @@ export default function PageTemplate({
 
         <div>
           <Section
-            headingText={frontmatter?.title || ""}
+            headingText={frontmatter?.title ?? ""}
             className={style.komponenter__sdsSection}
             callToAction={
               <ButtonGroup variant="right">
@@ -102,7 +102,7 @@ export default function PageTemplate({
                 <ButtonLink
                   variant="transparent"
                   icon={<FigmaLogo />}
-                  href={frontmatter?.figma || ""}
+                  href={frontmatter?.figma ?? ""}
                 >
                   Se i Figma
                 </ButtonLink>

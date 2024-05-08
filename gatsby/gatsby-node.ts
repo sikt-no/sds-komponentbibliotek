@@ -49,11 +49,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   const getPackageDir = (contentFilePath: string) => {
     try {
-      return `${
-        contentFilePath
-          .split("/sds-komponentbibliotek/packages/")[1]
-          .split("/")[0]
-      }`;
+      return contentFilePath
+        .split("/sds-komponentbibliotek/packages/")[1]
+        .split("/")[0];
     } catch (e) {
       // @ts-ignore
       reporter.panicOnBuild("Error getting package path", e);

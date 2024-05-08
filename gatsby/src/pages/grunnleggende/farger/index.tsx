@@ -547,13 +547,13 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
                                 <div className={moduleStyle.farger__flex}>
                                   <Swatch
                                     color={
-                                      dark.default.color.brand?.[token[0]]?.[
+                                      dark.default.color.brand[token[0]]?.[
                                         subtoken[0]
                                       ].value ?? subtoken[1].value
                                     }
                                   />
                                   <Badge>
-                                    {dark.default.color.brand?.[token[0]]?.[
+                                    {dark.default.color.brand[token[0]]?.[
                                       subtoken[0]
                                     ].value ?? subtoken[1].value}
                                   </Badge>
@@ -743,13 +743,13 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
                                 <div className={moduleStyle.farger__flex}>
                                   <Swatch
                                     color={
-                                      dark.default.color.support?.[token[0]]?.[
+                                      dark.default.color.support[token[0]]?.[
                                         subtoken[0]
                                       ].value ?? subtoken[1].value
                                     }
                                   />
                                   <Badge>
-                                    {dark.default.color.support?.[token[0]]?.[
+                                    {dark.default.color.support[token[0]]?.[
                                       subtoken[0]
                                     ].value ?? subtoken[1].value}
                                   </Badge>
@@ -830,14 +830,14 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
                                 <div className={moduleStyle.farger__flex}>
                                   <Swatch
                                     color={
-                                      dark.default.color.layout?.[token[0]]?.[
+                                      dark.default.color.layout[token[0]]?.[
                                         subtoken[0]
                                       ].value
                                     }
                                   />
                                   <Badge>
                                     {
-                                      dark.default.color.layout?.[token[0]]?.[
+                                      dark.default.color.layout[token[0]]?.[
                                         subtoken[0]
                                       ].value
                                     }
