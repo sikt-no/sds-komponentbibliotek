@@ -43,8 +43,10 @@
         );
       }
 
+      &[data-focus-visible],
       &:focus-visible {
         outline: var(--sds-focus-outline);
+        outline-offset: 0;
       }
     }
 
@@ -86,18 +88,20 @@
 
   &__popover {
     padding: var(--sds-space-padding-small);
-    width: var(--trigger-width);
     margin-top: var(--sds-space-gap-small);
     margin-bottom: var(--sds-space-gap-small);
     background-color: var(--sds-color-layout-background-default);
     box-shadow: var(--sds-effect-shadow-elevated-default);
     border-radius: var(--sds-space-border-radius-medium);
+
+    /* INFO: this custom property is set by React Aria */
+    width: var(--trigger-width);
   }
 
   &__header {
     padding: var(--sds-space-padding-small);
     margin: var(--sds-space-gap-tiny);
-    font-size: var(--sds-typography-body-fontsize-medium);
+    font-size: var(--sds-typography-body-fontsize-regular);
     font-weight: var(--sds-typography-weight-bold);
     border-bottom: var(--sds-space-border-weight-thin) solid
       var(--sds-color-brand-neutral-subtle);

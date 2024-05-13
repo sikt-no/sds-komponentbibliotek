@@ -26,8 +26,6 @@ const options = [
   { id: "i123e456-12d3-a456-426614174009", name: "Adobe Dreamweaver" },
 ];
 
-console.log(options);
-
 type Story = StoryObj<ComboboxProps<(typeof options)[number]>>;
 
 export const Default: Story = {

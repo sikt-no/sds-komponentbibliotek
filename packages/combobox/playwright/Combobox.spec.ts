@@ -25,6 +25,7 @@ test.describe("Combobox", () => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-combobox--default",
       );
+
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
   });
