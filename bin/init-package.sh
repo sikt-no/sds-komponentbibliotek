@@ -22,7 +22,7 @@ echo "{
     \"require\": {
       \"types\": \"./dist/index.d.ts\",
       \"default\": \"./dist/index.js\"
-    },
+    }
   },
   \"types\": \"dist/index.d.ts\",
   \"style\": \"dist/index.css\",
@@ -35,7 +35,7 @@ echo "{
     \"build\": \"tsup\"
   },
   \"dependencies\": {
-    \"@sikt/sds-core\": \"^2.2.0\"
+    \"@sikt/sds-core\": \"^3.0.0\"
   },
   \"peerDependencies\": {
     \"@types/react\": \"^18.0.0\",
