@@ -1,5 +1,5 @@
 default:
-  image: node:20.13.1
+  image: node:20
 
 include:
   - project: "asm/gitlab-ci-helpers"
