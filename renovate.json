@@ -21,10 +21,20 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["react"],
+      "excludeDepPatterns": ["^@phosphor-icons"],
       "groupName": "react"
     },
     {
-      "matchPackagePatterns": ["tsup", "esbuild"],
+      "matchPackagePatterns": ["^node$", "^@types/node$"],
+      "groupName": "node"
+    },
+    {
+      "matchPackagePatterns": [
+        "tsup",
+        "esbuild",
+        "terser",
+        "browserslist-to-esbuild"
+      ],
       "groupName": "esbuild"
     },
     {
@@ -58,10 +68,6 @@
     {
       "matchPackagePatterns": ["^@storybook", "storybook"],
       "groupName": "storybook"
-    },
-    {
-      "matchPackagePatterns": ["^@babel"],
-      "groupName": "babel"
     },
     {
       "matchPackagePatterns": ["^gatsby"],
