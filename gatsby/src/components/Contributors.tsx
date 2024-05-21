@@ -101,6 +101,8 @@ const Contributors = ({
                           .replaceAll(" ", "-")
                           .replaceAll(".", "")}.png`}
                         alt={contributor.name}
+                        aria-hidden="true"
+                        loading="lazy"
                       />
                     )}
                     <div>{contributor.name}</div>
