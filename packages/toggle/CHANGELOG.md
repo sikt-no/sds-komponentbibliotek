@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@3.0.1...@sikt/sds-toggle@3.0.2) (2024-05-24)
+
+### Bug Fixes
+
+- **toggle:** package json exports ([3026cff](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3026cff33947459c88861ed5f4bae30da556ba5b))
+
 ## [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@3.0.0...@sikt/sds-toggle@3.0.1) (2024-04-26)
 
 ### Bug Fixes
