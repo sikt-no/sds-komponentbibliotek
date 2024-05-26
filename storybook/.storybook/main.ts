@@ -25,17 +25,13 @@ const config: StorybookConfig = {
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-interactions"),
     {
       name: "@storybook/addon-docs",
       options: { transcludeMarkdown: true },
     },
-    // TODO: add again when issue is fixed https://github.com/whitespace-se/storybook-addon-html/issues/104
-    // "@whitespace/storybook-addon-html",
-    getAbsolutePath("@storybook/addon-styling-webpack"),
+    "@whitespace/storybook-addon-html",
     {
       name: "@storybook/addon-styling-webpack",
-
       options: {
         rules: [
           {
@@ -60,9 +56,6 @@ const config: StorybookConfig = {
   ],
   core: {
     disableTelemetry: true,
-  },
-  docs: {
-    autodocs: true,
   },
   webpackFinal: async (config, { configType }) => {
     config?.module?.rules?.push({

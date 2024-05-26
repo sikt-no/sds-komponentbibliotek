@@ -15,7 +15,9 @@ const preview: Preview = {
     scheme: {
       name: "Scheme",
       description: "Select light or dark theme",
-      defaultValue: "",
+      args: {
+        value: "",
+      },
       toolbar: {
         items: [
           { value: "", icon: "mirror", title: "Color scheme" },
@@ -39,6 +41,7 @@ const preview: Preview = {
     },
   ],
   parameters: {
+    actions: { argTypesRegex: "^on.*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -61,6 +64,7 @@ const preview: Preview = {
       },
     },
   },
+  tags: ["autodocs"],
 };
 
 export default preview;
