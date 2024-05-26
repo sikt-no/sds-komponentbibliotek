@@ -106,9 +106,7 @@ describe("Modal", () => {
       const closeButton = screen.getByRole("button", { name: closeButtonText });
       expect(closeButton).toBeInTheDocument();
 
-      await act(async () => {
-        await user.click(closeButton);
-      });
+      await user.click(closeButton);
 
       // Check if the onClose function is called
       expect(handleClose).toHaveBeenCalledTimes(1);
