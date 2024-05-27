@@ -1,10 +1,9 @@
-import { dirname, join } from "path";
 import type { StorybookConfig } from "@storybook/react-webpack5";
 // TODO: remove globby when fixed https://github.com/storybookjs/storybook/pull/22110
 import { globbySync } from "globby";
 
 const config: StorybookConfig = {
-  framework: getAbsolutePath("@storybook/react-webpack5"),
+  framework: "@storybook/react-webpack5",
   swc: () => ({
     jsc: {
       transform: {
@@ -23,8 +22,8 @@ const config: StorybookConfig = {
     { cwd: "./.storybook" },
   ),
   addons: [
-    getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
     {
       name: "@storybook/addon-docs",
       options: { transcludeMarkdown: true },
@@ -38,21 +37,21 @@ const config: StorybookConfig = {
             test: /\.css$/,
             sideEffects: true,
             use: [
-              require.resolve("style-loader"),
+              "style-loader",
               {
-                loader: require.resolve("css-loader"),
+                loader: "css-loader",
                 options: {},
               },
               {
                 loader: "postcss-loader",
-                options: { implementation: require.resolve("postcss") },
+                options: { implementation: "postcss" },
               },
             ],
           },
         ],
       },
     },
-    getAbsolutePath("@storybook/addon-webpack5-compiler-swc"),
+    "@storybook/addon-webpack5-compiler-swc",
   ],
   core: {
     disableTelemetry: true,
@@ -87,7 +86,3 @@ const config: StorybookConfig = {
 };
 
 export default config;
-
-function getAbsolutePath(value: string): any {
-  return dirname(require.resolve(join(value, "package.json")));
-}
