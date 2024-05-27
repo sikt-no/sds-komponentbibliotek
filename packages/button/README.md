@@ -9,10 +9,10 @@ npm i -s @sikt/sds-button
 ### React
 
 ```js
-import { PrimaryButton } from "@sikt/sds-button";
+import { Button } from "@sikt/sds-button";
 import "@sikt/sds-button/dist/index.css";
 
-<PrimaryButton>Hello, World!</PrimaryButton>;
+<Button>Hello, World!</Button>;
 ```
 
 ### Stylesheets & custom markup
