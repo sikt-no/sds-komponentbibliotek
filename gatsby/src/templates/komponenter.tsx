@@ -19,6 +19,7 @@ import { Section } from "@sikt/sds-section";
 import { ButtonLink, ButtonGroup } from "@sikt/sds-button";
 import { OrderedList, UnorderedList, ListItem } from "@sikt/sds-list";
 import { SubNav } from "../components/komponenter/SubNav";
+import { ReactNode } from "react";
 
 export { Head } from "../components/Head";
 
@@ -26,12 +27,24 @@ export { Head } from "../components/Head";
 // https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#mdxprovider
 const components = {
   p: Paragraph,
-  h1: Heading1,
-  h2: Heading2,
-  h3: Heading3,
-  h4: Heading4,
-  h5: Heading5,
-  h6: Heading6,
+  h1: ({ children }: { children: ReactNode }) => (
+    <Heading1 variant="large">{children}</Heading1>
+  ),
+  h2: ({ children }: { children: ReactNode }) => (
+    <Heading2 variant="medium">{children}</Heading2>
+  ),
+  h3: ({ children }: { children: ReactNode }) => (
+    <Heading3 variant="small">{children}</Heading3>
+  ),
+  h4: ({ children }: { children: ReactNode }) => (
+    <Heading4 variant="paragraph">{children}</Heading4>
+  ),
+  h5: ({ children }: { children: ReactNode }) => (
+    <Heading5 variant="overline">{children}</Heading5>
+  ),
+  h6: ({ children }: { children: ReactNode }) => (
+    <Heading6 variant="overline">{children}</Heading6>
+  ),
   ul: UnorderedList,
   ol: OrderedList,
   li: ListItem,
