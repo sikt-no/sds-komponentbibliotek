@@ -14,8 +14,10 @@
       "require": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
-      }
+      },
+      "style": "./dist/index.css"
     },
+    "./dist/*": "./dist/*",
     "./*.png": "./*.png",
     "./*.svg": "./*.svg"
   },

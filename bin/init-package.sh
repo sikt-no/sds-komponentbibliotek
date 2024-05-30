@@ -15,14 +15,18 @@ echo "{
   \"main\": \"dist/index.js\",
   \"module\": \"dist/index.mjs\",
   \"exports\": {
-    \"import\": {
-      \"types\": \"./dist/index.d.mts\",
-      \"default\": \"./dist/index.mjs\"
+    \".\": {
+      \"import\": {
+        \"types\": \"./dist/index.d.mts\",
+        \"default\": \"./dist/index.mjs\"
+      },
+      \"require\": {
+        \"types\": \"./dist/index.d.ts\",
+        \"default\": \"./dist/index.js\"
+      },
+      \"style\": \"./dist/index.css\"
     },
-    \"require\": {
-      \"types\": \"./dist/index.d.ts\",
-      \"default\": \"./dist/index.js\"
-    }
+    \"./dist/*\": \"./dist/*\"
   },
   \"types\": \"dist/index.d.ts\",
   \"style\": \"dist/index.css\",

@@ -56,7 +56,7 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true,
   },
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async (config) => {
     config?.module?.rules?.push({
       test: /\.pcss$/,
       use: ["style-loader", "css-loader", "postcss-loader"],
