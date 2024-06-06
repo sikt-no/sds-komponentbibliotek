@@ -9,7 +9,7 @@ npm i -s @sikt/sds-checkbox
 ### React
 
 ```js
-import { Checkbox } from "@sikt/sds-checkbox";
+import { CheckboxInput } from "@sikt/sds-checkbox";
 import "@sikt/sds-checkbox/dist/index.css";
 ```
 
