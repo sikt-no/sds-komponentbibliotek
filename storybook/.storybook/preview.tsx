@@ -15,9 +15,7 @@ const preview: Preview = {
     scheme: {
       name: "Scheme",
       description: "Select light or dark theme",
-      args: {
-        value: "",
-      },
+      defaultValue: "",
       toolbar: {
         items: [
           { value: "", icon: "mirror", title: "Color scheme" },
