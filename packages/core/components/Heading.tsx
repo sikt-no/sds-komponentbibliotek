@@ -12,7 +12,6 @@ export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
     | "overline";
   className?: string;
   children: ReactNode;
-  isDynamic?: boolean;
 }
 
 interface HeadingLevels {
