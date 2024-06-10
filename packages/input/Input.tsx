@@ -103,7 +103,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
               placeholder={placeholder}
               onChange={onChange && changeHandler}
               value={value}
-              aria-describedby={helpTextId}
+              aria-describedby={errorText ?? helpText ? helpTextId : undefined}
               aria-invalid={Boolean(errorText)}
               aria-errormessage={errorText ? helpTextId : undefined}
               rows={rows}
@@ -118,7 +118,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
               placeholder={placeholder}
               onChange={onChange && changeHandler}
               value={value}
-              aria-describedby={helpTextId}
+              aria-describedby={errorText ?? helpText ? helpTextId : undefined}
               aria-invalid={Boolean(errorText)}
               aria-errormessage={errorText ? helpTextId : undefined}
               {...rest}

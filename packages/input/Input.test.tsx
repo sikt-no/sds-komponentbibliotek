@@ -105,6 +105,17 @@ describe("Input", () => {
       expect(helpEl).toHaveClass("sds-form-field__help-text");
     });
 
+    it("should have aria attributes set correctly when help and error text is not set", async () => {
+      render(<TextInput label="Foo" data-testid="test" />);
+
+      const textAreaEl = screen.getByTestId("test");
+      expect(textAreaEl).toHaveAttribute("aria-invalid", "false");
+      expect(textAreaEl).not.toHaveAttribute("aria-errormessage");
+      expect(textAreaEl).not.toHaveAttribute("aria-describedby");
+
+      expect(screen.getByRole("textbox")).not.toBeInvalid();
+    });
+
     it("should have icon element", async () => {
       render(<TextInput label="Foo" icon="icon" />);
 
@@ -205,6 +216,29 @@ describe("TextArea", () => {
       const errorEl = screen.getByText("Bar");
       expect(errorEl).toBeInTheDocument();
       expect(errorEl).toHaveClass("sds-form-field__help-text");
+    });
+
+    it("should show help text", async () => {
+      render(<TextArea label="Foo" data-testid="test" helpText="Bar" />);
+
+      expect(screen.getByTestId("test")).toHaveAttribute("aria-describedby");
+
+      expect(screen.getByRole("textbox")).not.toBeInvalid();
+
+      const helpEl = screen.getByText("Bar");
+      expect(helpEl).toBeInTheDocument();
+      expect(helpEl).toHaveClass("sds-form-field__help-text");
+    });
+
+    it("should have aria attributes set correctly when help and error text is not set", async () => {
+      render(<TextArea label="Foo" data-testid="test" />);
+
+      const textAreaEl = screen.getByTestId("test");
+      expect(textAreaEl).toHaveAttribute("aria-invalid", "false");
+      expect(textAreaEl).not.toHaveAttribute("aria-errormessage");
+      expect(textAreaEl).not.toHaveAttribute("aria-describedby");
+
+      expect(screen.getByRole("textbox")).not.toBeInvalid();
     });
   });
 });

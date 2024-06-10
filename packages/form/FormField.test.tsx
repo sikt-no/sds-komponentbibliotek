@@ -73,5 +73,24 @@ describe("FormField", () => {
       expect(errorEl).toBeInTheDocument();
       expect(errorEl).toHaveClass("sds-form-field__help-text");
     });
+
+    it("should only show error text if both help and error text is set", async () => {
+      const { container } = render(
+        <FormField label="Foo" htmlFor="input" errorText="Bar" helpText="Quz">
+          <input id="input" />
+        </FormField>,
+      );
+
+      expect(
+        container.getElementsByClassName("sds-form-field--error")[0],
+      ).toBeInTheDocument();
+
+      const errorEl = screen.getByText("Bar");
+      expect(errorEl).toBeInTheDocument();
+      expect(errorEl).toHaveClass("sds-form-field__help-text");
+
+      const helpEl = screen.queryByText("Quz");
+      expect(helpEl).toBeNull();
+    });
   });
 });
