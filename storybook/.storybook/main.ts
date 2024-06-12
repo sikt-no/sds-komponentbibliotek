@@ -21,6 +21,9 @@ const config: StorybookConfig = {
     ],
     { cwd: "./.storybook" },
   ),
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
+  },
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
