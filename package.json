@@ -12,6 +12,10 @@
     "type": "git",
     "url": "https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
   },
+  "engines": {
+    "node": "20.14.0"
+  },
+  "packageManager": "npm@10.7.0",
   "workspaces": [
     "packages/*",
     "gatsby",
@@ -94,7 +98,7 @@
     "terser": "^5.31.1",
     "ts-jest": "^29.1.4",
     "tsup": "^8.1.0",
-    "turbo": "^1.13.4",
+    "turbo": "^2.0.3",
     "typescript": "^5.4.5",
     "usehooks-ts": "^3.1.0"
   }
