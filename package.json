@@ -86,7 +86,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-esm-transformer": "^1.0.0",
     "jest-junit": "^16.0.0",
-    "lint-staged": "^15.2.5",
+    "lint-staged": "^15.2.7",
     "npm-run-all2": "^6.2.0",
     "postcss": "^8.4.38",
     "postcss-custom-media": "^10.0.6",
