@@ -109,6 +109,30 @@ test-e2e:
   except:
     - schedules
 
+test-e2e-update-snapshots:
+  stage: test
+  extends: .npm_cache
+  script:
+    - npm pkg delete scripts.prepare
+    - npm ci
+    - npx playwright install --with-deps
+    - npm run test:e2e -- --update-snapshots
+  after_script:
+    - git config user.name "CI Pipeline"
+    - git config user.email "cipipeline@example.com"
+    - git add "packages/**/playwright/**/*.png"
+    - >
+      git commit -m "test: update playwright snapshots"
+    - git remote set-url --push origin "https://$CI_TOKEN@gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+    - git push origin HEAD:$CI_COMMIT_REF_NAME
+  needs:
+    - install
+    - packages
+  when: manual
+  only:
+    - branches
+    - merge_requests
+
 .vuln:
   stage: test
   extends: .imagescan

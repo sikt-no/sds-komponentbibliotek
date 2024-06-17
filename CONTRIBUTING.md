@@ -163,6 +163,8 @@ npx playwright install --with-deps
 CI=true npx playwright test --update-snapshots
 ```
 
+This can also be done in the CI pipeline with the manual job `test-e2e-update-snapshots`.
+
 **Note** This should only be done when you add new components or you have made changes to existing ones and have verified everything is correct!
 
 #### Merge request
