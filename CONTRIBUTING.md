@@ -94,6 +94,7 @@ Build all packages with `npm run build` from root.
 
 ```sh
 npm ci
+npm run build
 npm run storybook
 ```
 
