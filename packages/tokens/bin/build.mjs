@@ -7,8 +7,8 @@ import StyleDictionary from "style-dictionary";
  */
 StyleDictionary.registerFormat({
   name: "custom/format/custom-media",
-  formatter({ dictionary }) {
-    return dictionary.allProperties
+  format: ({ dictionary }) => {
+    return dictionary.allTokens
       .map((prop) => {
         const { name, value } = prop;
         return `@custom-media --${name} (width >= ${value});`;
@@ -23,19 +23,19 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerFormat({
   name: "custom/format/color",
-  formatter: function ({ dictionary }) {
+  format: ({ dictionary, options }) => {
     return `${
-      this.colorScheme === "light" ? ":root, " : ""
-    }[data-color-scheme="${this.colorScheme}"],
-[data-color-scheme="${this.colorScheme}"]:root {
-${dictionary.allProperties
+      options.colorScheme === "light" ? ":root, " : ""
+    }[data-color-scheme="${options.colorScheme}"],
+[data-color-scheme="${options.colorScheme}"]:root {
+${dictionary.allTokens
   .map((prop) => `  --${prop.name}: ${prop.value};`)
   .join("\n")}
 }
 
-@media (prefers-color-scheme: ${this.colorScheme}) {
+@media (prefers-color-scheme: ${options.colorScheme}) {
   :root {
-${dictionary.allProperties
+${dictionary.allTokens
   .map((prop) => `    --${prop.name}: ${prop.value};`)
   .join("\n")}
   }
@@ -49,12 +49,12 @@ ${dictionary.allProperties
  */
 StyleDictionary.registerFormat({
   name: "custom/format/at-media",
-  formatter: function ({ dictionary, platform, options, file }) {
+  format: ({ dictionary, options }) => {
     return `@media (min-width: ${
-      dictionary.tokens.base.breakpoint[this.atMedia].value
+      dictionary.tokens.base.breakpoint[options.atMedia].value
     }) {
   :root {
-${dictionary.allProperties
+${dictionary.allTokens
   .filter((prop) => !prop.path.includes("base"))
   .map((prop) => `  --${prop.name}: ${prop.value};`)
   .join("\n")}
@@ -75,15 +75,15 @@ const colorFilter = (token) =>
   filter(token) &&
   (token.attributes.category === "color" || isEffectShadowToken(token));
 
-StyleDictionary.extend({
+const sd = new StyleDictionary({
   source: [`${sourcePath}**/!(*.dark|*.tablet|*.desktop).{json,js}`],
   platforms: {
     css: {
       transforms: [
         "attribute/cti",
-        "name/cti/kebab",
+        "name/kebab",
         "time/seconds",
-        "content/icon",
+        "html/icon",
         "color/hex8",
       ],
       buildPath,
@@ -98,7 +98,9 @@ StyleDictionary.extend({
           format: "custom/format/color",
           destination: "css/color.light.css",
           filter: colorFilter,
-          colorScheme: "light",
+          options: {
+            colorScheme: "light",
+          },
         },
         {
           format: "custom/format/custom-media",
@@ -108,7 +110,7 @@ StyleDictionary.extend({
       ],
     },
     ts: {
-      transforms: ["attribute/cti", "name/cti/pascal", "color/hex8"],
+      transforms: ["attribute/cti", "name/pascal", "color/hex8"],
       buildPath,
       prefix,
       files: [
@@ -127,9 +129,9 @@ StyleDictionary.extend({
     scss: {
       transforms: [
         "attribute/cti",
-        "name/cti/kebab",
+        "name/kebab",
         "time/seconds",
-        "content/icon",
+        "html/icon",
         "color/hex8",
       ],
       buildPath,
@@ -143,17 +145,19 @@ StyleDictionary.extend({
       ],
     },
   },
-}).buildAllPlatforms();
+});
 
-StyleDictionary.extend({
+await sd.buildAllPlatforms();
+
+const sdDark = new StyleDictionary({
   source: [`${sourcePath}**/*.dark.{json,js}`],
   platforms: {
     css: {
       transforms: [
         "attribute/cti",
-        "name/cti/kebab",
+        "name/kebab",
         "time/seconds",
-        "content/icon",
+        "html/icon",
         "color/hex8",
       ],
       buildPath,
@@ -163,12 +167,14 @@ StyleDictionary.extend({
           format: "custom/format/color",
           destination: "css/color.dark.css",
           filter: colorFilter,
-          colorScheme: "dark",
+          options: {
+            colorScheme: "dark",
+          },
         },
       ],
     },
     ts: {
-      transforms: ["attribute/cti", "name/cti/pascal", "color/hex8"],
+      transforms: ["attribute/cti", "name/pascal", "color/hex8"],
       buildPath,
       prefix,
       files: [
@@ -187,9 +193,9 @@ StyleDictionary.extend({
     scss: {
       transforms: [
         "attribute/cti",
-        "name/cti/kebab",
+        "name/kebab",
         "time/seconds",
-        "content/icon",
+        "html/icon",
         "color/hex8",
       ],
       buildPath,
@@ -203,9 +209,11 @@ StyleDictionary.extend({
       ],
     },
   },
-}).buildAllPlatforms();
+});
 
-StyleDictionary.extend({
+await sdDark.buildAllPlatforms();
+
+const sdTablet = new StyleDictionary({
   source: [
     `${sourcePath}base/*.{json,js}`,
     `${sourcePath}**/*.tablet.{json,js}`,
@@ -214,9 +222,9 @@ StyleDictionary.extend({
     css: {
       transforms: [
         "attribute/cti",
-        "name/cti/kebab",
+        "name/kebab",
         "time/seconds",
-        "content/icon",
+        "html/icon",
         "color/hex8",
       ],
       buildPath,
@@ -226,12 +234,14 @@ StyleDictionary.extend({
           format: "custom/format/at-media",
           destination: "css/tokens.tablet.css",
           filter,
-          atMedia: "tablet",
+          options: {
+            atMedia: "tablet",
+          },
         },
       ],
     },
     ts: {
-      transforms: ["attribute/cti", "name/cti/pascal", "color/hex8"],
+      transforms: ["attribute/cti", "name/pascal", "color/hex8"],
       buildPath,
       prefix,
       files: [
@@ -250,9 +260,9 @@ StyleDictionary.extend({
     scss: {
       transforms: [
         "attribute/cti",
-        "name/cti/kebab",
+        "name/kebab",
         "time/seconds",
-        "content/icon",
+        "html/icon",
         "color/hex8",
       ],
       buildPath,
@@ -266,9 +276,11 @@ StyleDictionary.extend({
       ],
     },
   },
-}).buildAllPlatforms();
+});
 
-StyleDictionary.extend({
+await sdTablet.buildAllPlatforms();
+
+const sdDesktop = new StyleDictionary({
   source: [
     `${sourcePath}base/*.{json,js}`,
     `${sourcePath}**/*.desktop.{json,js}`,
@@ -277,9 +289,9 @@ StyleDictionary.extend({
     css: {
       transforms: [
         "attribute/cti",
-        "name/cti/kebab",
+        "name/kebab",
         "time/seconds",
-        "content/icon",
+        "html/icon",
         "color/hex8",
       ],
       buildPath,
@@ -289,12 +301,14 @@ StyleDictionary.extend({
           format: "custom/format/at-media",
           destination: "css/tokens.desktop.css",
           filter,
-          atMedia: "desktop",
+          options: {
+            atMedia: "desktop",
+          },
         },
       ],
     },
     ts: {
-      transforms: ["attribute/cti", "name/cti/pascal", "color/hex8"],
+      transforms: ["attribute/cti", "name/pascal", "color/hex8"],
       buildPath,
       prefix,
       files: [
@@ -313,9 +327,9 @@ StyleDictionary.extend({
     scss: {
       transforms: [
         "attribute/cti",
-        "name/cti/kebab",
+        "name/kebab",
         "time/seconds",
-        "content/icon",
+        "html/icon",
         "color/hex8",
       ],
       buildPath,
@@ -329,4 +343,6 @@ StyleDictionary.extend({
       ],
     },
   },
-}).buildAllPlatforms();
+});
+
+await sdDesktop.buildAllPlatforms();

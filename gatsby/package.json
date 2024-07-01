@@ -51,7 +51,7 @@
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-postcss": "^6.13.1",
     "postcss": "^8.4.39",
-    "style-dictionary": "^3.9.2",
+    "style-dictionary": "^4.0.0",
     "typescript": "^5.5.2"
   }
 }
