@@ -170,7 +170,7 @@ CI=true npx playwright test --update-snapshots
 Create a merge request & wait for a required code review before merging to `main`.  
 Review comments should be closed by the reviewer & not the branch owner.  
 Rebase before merge so that your commits end up on top of the history.  
-**Note** Storybook is published to URL `<review-environment>/storybook/`
+**Note** Storybook is published to the URL `<review-environment>/storybook/`
 
 ℹ️ _Tip:_ Rebase commit history with [git-rebase](https://git-scm.com/docs/git-rebase)
 
