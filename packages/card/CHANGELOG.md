@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-card@3.1.1...@sikt/sds-card@3.1.2) (2024-07-03)
+
+### Bug Fixes
+
+- package json exports ([b62fed7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b62fed7bfa459c618c016f39c960dffda037155f))
+
 ## [3.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-card@3.1.0...@sikt/sds-card@3.1.1) (2024-04-20)
 
 ### Bug Fixes
