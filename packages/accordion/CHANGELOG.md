@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-accordion@2.0.3...@sikt/sds-accordion@2.0.4) (2024-07-03)
+
+### Bug Fixes
+
+- package json exports ([b62fed7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b62fed7bfa459c618c016f39c960dffda037155f))
+
 ## [2.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-accordion@2.0.2...@sikt/sds-accordion@2.0.3) (2024-05-03)
 
 ### Bug Fixes
