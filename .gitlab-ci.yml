@@ -132,6 +132,9 @@ test-e2e-update-snapshots:
   only:
     - branches
     - merge_requests
+  except:
+    - main
+    - schedules
 
 .vuln:
   stage: test
