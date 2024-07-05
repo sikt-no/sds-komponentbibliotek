@@ -153,6 +153,20 @@
         background-color: var(--sds-color-interaction-danger-strong-default);
         color: var(--sds-color-text-on-strong);
       }
+
+      &[aria-disabled] {
+        background: repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent var(--sds-base-size-s),
+          var(--sds-color-interaction-neutral-subtle-default)
+            var(--sds-base-size-s),
+          var(--sds-color-interaction-neutral-subtle-default)
+            calc(var(--sds-base-size-s) * 2)
+        );
+        color: var(--sds-color-text-primary);
+        cursor: not-allowed;
+      }
     }
 
     [aria-disabled="true"] {

@@ -27,6 +27,14 @@ export const WithDate: Story = {
   },
 };
 
+export const WithMinAndMaxValue: Story = {
+  args: {
+    ...Default.args,
+    minValue: parseDate(new Date().toISOString().substring(0, 10)),
+    maxValue: parseDate(new Date().toISOString().substring(0, 10)),
+  },
+};
+
 export const WithHelpText: Story = {
   args: {
     ...Default.args,
