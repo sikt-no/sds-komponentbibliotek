@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@1.1.1...@sikt/sds-input-datepicker@1.1.2) (2024-07-05)
+
+### Bug Fixes
+
+- **input-datepicker:** style calendar disabled dates ([f139a32](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f139a32152d2425e39d52c9389037173de30de08))
+
 ## [1.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@1.1.0...@sikt/sds-input-datepicker@1.1.1) (2024-05-30)
 
 ### Bug Fixes
