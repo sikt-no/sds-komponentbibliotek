@@ -19,6 +19,13 @@
       gap: var(--sds-space-gap-medium);
     }
 
+    &-inner {
+      display: grid;
+      gap: var(--sds-space-gap-large);
+      margin: 0 auto;
+      max-width: 1440px;
+    }
+
     @media (--sds-base-breakpoint-tablet) {
       &-tablet-grid-2 {
         grid-template-columns: 1fr 1fr;

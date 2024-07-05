@@ -56,65 +56,67 @@ const IndexPage: React.FC<PageProps> = () => {
         className={style.index__hero}
       />
 
-      <section
-        className={clsx(
-          style.index__section,
-          style.index__sectionTabletGrid2,
-          style.index__sectionDesktopGrid3,
-        )}
-      >
-        <Card
-          headingLevel="h2"
-          headingText="Grunnleggende"
-          imgSrc="/images/index/grunnleggende.png"
-          imgAlt="Portfølje"
-          callToAction={
-            <ButtonLink
-              variant="strong"
-              href="/grunnleggende/"
-              icon={<ArrowCircleRightIcon />}
-            >
-              Les alle bestanddelene
-            </ButtonLink>
-          }
+      <section className={clsx(style.index__section)}>
+        <div
+          className={clsx(
+            style.index__sectionInner,
+            style.index__sectionTabletGrid2,
+            style.index__sectionDesktopGrid3,
+          )}
         >
-          Les deg opp på hva komponent-biblioteket er og hva det består av
-        </Card>
-        <Card
-          headingLevel="h2"
-          headingText="Komponenter"
-          imgSrc="/images/index/komponenter.png"
-          imgAlt="Pusslebit"
-          callToAction={
-            <ButtonLink
-              variant="strong"
-              href="/komponenter/"
-              icon={<ArrowCircleRightIcon />}
-            >
-              Se alle komponentene
-            </ButtonLink>
-          }
-        >
-          Se oversikten over de ferdige komponentene som kan tas i bruk
-        </Card>
-        <Card
-          headingLevel="h2"
-          headingText="Mønstre"
-          imgSrc="/images/index/monstre.png"
-          imgAlt="Tavle"
-          callToAction={
-            <ButtonLink
-              variant="strong"
-              href="/monstre/"
-              icon={<ArrowCircleRightIcon />}
-            >
-              Se mønster og eksempler
-            </ButtonLink>
-          }
-        >
-          Se eksempler på hvordan du kan sette opp ofte brukte interaksjoner og
-          sider
-        </Card>
+          <Card
+            headingLevel="h2"
+            headingText="Grunnleggende"
+            imgSrc="/images/index/grunnleggende.png"
+            imgAlt="Portfølje"
+            callToAction={
+              <ButtonLink
+                variant="strong"
+                href="/grunnleggende/"
+                icon={<ArrowCircleRightIcon />}
+              >
+                Les alle bestanddelene
+              </ButtonLink>
+            }
+          >
+            Les deg opp på hva komponent-biblioteket er og hva det består av
+          </Card>
+          <Card
+            headingLevel="h2"
+            headingText="Komponenter"
+            imgSrc="/images/index/komponenter.png"
+            imgAlt="Pusslebit"
+            callToAction={
+              <ButtonLink
+                variant="strong"
+                href="/komponenter/"
+                icon={<ArrowCircleRightIcon />}
+              >
+                Se alle komponentene
+              </ButtonLink>
+            }
+          >
+            Se oversikten over de ferdige komponentene som kan tas i bruk
+          </Card>
+          <Card
+            headingLevel="h2"
+            headingText="Mønstre"
+            imgSrc="/images/index/monstre.png"
+            imgAlt="Tavle"
+            callToAction={
+              <ButtonLink
+                variant="strong"
+                href="/monstre/"
+                icon={<ArrowCircleRightIcon />}
+              >
+                Se mønster og eksempler
+              </ButtonLink>
+            }
+          >
+            Se eksempler på hvordan du kan sette opp ofte brukte interaksjoner
+            og sider
+          </Card>
+        </div>
       </section>
 
       <section
