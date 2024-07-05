@@ -2,11 +2,10 @@ import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { Card, CardProps } from "./Card";
 
-const renderComponent = ({ className, imgAlt }: Partial<CardProps>) =>
+const renderComponent = ({ className, image }: Partial<CardProps>) =>
   render(
     <Card
-      imgSrc="/path/to/image"
-      imgAlt={imgAlt}
+      image={image}
       overlineText="Overline"
       headingText="Heading"
       leadText="Lead"
@@ -46,7 +45,7 @@ describe("Card", () => {
     });
 
     it("should render image when alt text", () => {
-      renderComponent({ imgAlt: "Foo" });
+      renderComponent({ image: <img src="/path/to/image" alt="Foo" /> });
 
       expect(screen.getByRole("img")).toBeInTheDocument();
     });

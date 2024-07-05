@@ -3,8 +3,7 @@ import clsx from "clsx";
 import "./card.pcss";
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  imgSrc?: string;
-  imgAlt?: string;
+  image?: ReactNode;
   overlineText?: string;
   headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   headingText: string;
@@ -15,8 +14,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card = ({
-  imgSrc,
-  imgAlt,
+  image,
   overlineText,
   headingLevel = "h3",
   headingText,
@@ -30,9 +28,7 @@ export const Card = ({
 
   return (
     <section className={clsx("sds-card", className)} {...rest}>
-      {imgSrc && imgAlt && (
-        <img alt={imgAlt} src={imgSrc} className="sds-card__image" />
-      )}
+      {image && <div className="sds-card__image">{image}</div>}
       <div className="sds-card__content">
         {overlineText && (
           <span className="sds-typography-heading--overline">

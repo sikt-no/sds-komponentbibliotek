@@ -20,9 +20,22 @@ const Template: Story = {
 export const Default: Story = {
   ...Template,
   args: {
-    imgSrc:
-      "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII=",
-    imgAlt: "This is an image",
+    image: (
+      <picture>
+        <source
+          srcSet="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII="
+          type="image/avif"
+        />
+        <source
+          srcSet="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII="
+          type="image/webp"
+        />
+        <img
+          src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII="
+          alt="Green color"
+        />
+      </picture>
+    ),
     overlineText: "overline",
     headingText: "Heading",
     leadText: "Lead",
