@@ -51,8 +51,12 @@ Hvordan legge inn et bilde i et kort
 
 <Card
   headingText="Heading"
-  imgSrc="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII="
-  imgAlt="This is an image"
+  image={
+    <img
+      src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII="
+      alt="Green color"
+    />
+  }
   overlineText="overline"
   style={{ maxWidth: "400px" }}
   callToAction={

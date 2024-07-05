@@ -67,8 +67,9 @@ const IndexPage: React.FC<PageProps> = () => {
           <Card
             headingLevel="h2"
             headingText="Grunnleggende"
-            imgSrc="/images/index/grunnleggende.png"
-            imgAlt="Portfølje"
+            image={
+              <img src="/images/index/grunnleggende.png" alt="Portfølje" />
+            }
             callToAction={
               <ButtonLink
                 variant="strong"
@@ -84,8 +85,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <Card
             headingLevel="h2"
             headingText="Komponenter"
-            imgSrc="/images/index/komponenter.png"
-            imgAlt="Pusslebit"
+            image={<img src="/images/index/komponenter.png" alt="Pusslebit" />}
             callToAction={
               <ButtonLink
                 variant="strong"
@@ -101,8 +101,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <Card
             headingLevel="h2"
             headingText="Mønstre"
-            imgSrc="/images/index/monstre.png"
-            imgAlt="Tavle"
+            image={<img src="/images/index/monstre.png" alt="Tavle" />}
             callToAction={
               <ButtonLink
                 variant="strong"
