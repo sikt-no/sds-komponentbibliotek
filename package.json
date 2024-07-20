@@ -95,9 +95,9 @@
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "stylelint": "^16.6.1",
-    "terser": "^5.31.2",
+    "terser": "^5.31.3",
     "ts-jest": "^29.2.2",
-    "tsup": "^8.1.0",
+    "tsup": "^8.2.1",
     "turbo": "^2.0.9",
     "typescript": "^5.5.3",
     "usehooks-ts": "^3.1.0"
