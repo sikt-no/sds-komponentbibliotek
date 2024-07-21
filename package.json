@@ -91,7 +91,7 @@
     "postcss": "^8.4.39",
     "postcss-custom-media": "^10.0.8",
     "postcss-import": "^16.1.0",
-    "postcss-nested": "^6.0.1",
+    "postcss-nested": "^6.2.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "stylelint": "^16.7.0",
