@@ -88,7 +88,7 @@
     "jest-junit": "^16.0.0",
     "lint-staged": "^15.2.7",
     "npm-run-all2": "^6.2.2",
-    "postcss": "^8.4.39",
+    "postcss": "^8.4.40",
     "postcss-custom-media": "^10.0.8",
     "postcss-import": "^16.1.0",
     "postcss-nested": "^6.2.0",
