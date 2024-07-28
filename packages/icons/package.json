@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
-    "cpy": "^11.0.1",
+    "cpy": "^11.1.0",
     "run-p": "^0.0.0",
     "svgstore-cli": "^2.0.1"
   },
