@@ -58,7 +58,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
           value={value}
           checked={isChecked ?? false}
           disabled={disabled}
-          aria-invalid={error ?? context.error ? true : false}
+          aria-invalid={(error ?? context.error) ? true : false}
           {...rest}
         />
         <div className="sds-checkbox__icon-wrapper">

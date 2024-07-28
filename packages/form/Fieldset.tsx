@@ -34,7 +34,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
             className,
           )}
           aria-describedby={
-            errorText ?? helpText ? `${id}-help-text` : undefined
+            (errorText ?? helpText) ? `${id}-help-text` : undefined
           }
           aria-invalid={Boolean(errorText)}
           aria-errormessage={errorText ? `${id}-help-text` : undefined}
