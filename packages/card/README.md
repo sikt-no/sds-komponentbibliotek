@@ -14,14 +14,17 @@ import "@sikt/sds-card/dist/index.css";
 import "@sikt/sds-button/dist/index.css";
 
 <Card
-  headingLevel="h2"
-  imgSrc="https://url.to/image.type"
-  imgAlt="A descriptive text of what is shown in the image"
-  linkText="Call to action text"
-  linkHref="https://url.to/destination"
-  headingText="Heading"
+  image={
+    <img
+      src="https://url.to/image.type"
+      alt="A descriptive text of what is shown in the image"
+    />
+  }
   overlineText="Overline"
-  text="Text content"
+  headingText="Heading"
+  headingLevel="h2"
+  children="Content"
+  callToAction={<a href="https://url.to/destination">Call to action</a>}
 />;
 ```
 
