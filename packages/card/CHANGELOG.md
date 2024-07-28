@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-card@3.1.2...@sikt/sds-card@4.0.0) (2024-07-28)
+
+### ⚠ BREAKING CHANGES
+
+- **card:** change imgSrc & imgAlt props to prop image of type ReactNode
+
+### Features
+
+- **card:** change imgSrc & imgAlt props to prop image of type ReactNode ([fbfcec3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fbfcec377f12d6b19cbf7790ff0c509640eea5c2))
+
 ## [3.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-card@3.1.1...@sikt/sds-card@3.1.2) (2024-07-03)
 
 ### Bug Fixes
