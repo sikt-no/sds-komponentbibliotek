@@ -19,7 +19,7 @@ const _base = {
   },
 };
 
-const _color = {};
+export const _color = {};
 Object.keys(_base).forEach((colorValue) => {
   const variants = {};
   const colorBaseValue = _base[colorValue].value;
@@ -33,7 +33,3 @@ Object.keys(_base).forEach((colorValue) => {
     ...variants,
   };
 });
-
-module.exports = {
-  _color,
-};

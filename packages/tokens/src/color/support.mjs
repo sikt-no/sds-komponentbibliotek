@@ -1,7 +1,6 @@
-const _base = require("./_color");
-const _color = _base._color;
+import { _color } from "./_color.mjs";
 
-module.exports = {
+export default {
   color: {
     support: {
       info: {

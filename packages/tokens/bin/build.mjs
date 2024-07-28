@@ -76,7 +76,7 @@ const colorFilter = (token) =>
   (token.attributes.category === "color" || isEffectShadowToken(token));
 
 const sd = new StyleDictionary({
-  source: [`${sourcePath}**/!(*.dark|*.tablet|*.desktop).{json,js}`],
+  source: [`${sourcePath}**/!(*.dark|*.tablet|*.desktop).{json,js,mjs}`],
   platforms: {
     css: {
       transforms: [
@@ -150,7 +150,7 @@ const sd = new StyleDictionary({
 await sd.buildAllPlatforms();
 
 const sdDark = new StyleDictionary({
-  source: [`${sourcePath}**/*.dark.{json,js}`],
+  source: [`${sourcePath}**/*.dark.{json,js,mjs}`],
   platforms: {
     css: {
       transforms: [
@@ -215,8 +215,8 @@ await sdDark.buildAllPlatforms();
 
 const sdTablet = new StyleDictionary({
   source: [
-    `${sourcePath}base/*.{json,js}`,
-    `${sourcePath}**/*.tablet.{json,js}`,
+    `${sourcePath}base/*.{json,js,mjs}`,
+    `${sourcePath}**/*.tablet.{json,js,mjs}`,
   ],
   platforms: {
     css: {
@@ -282,8 +282,8 @@ await sdTablet.buildAllPlatforms();
 
 const sdDesktop = new StyleDictionary({
   source: [
-    `${sourcePath}base/*.{json,js}`,
-    `${sourcePath}**/*.desktop.{json,js}`,
+    `${sourcePath}base/*.{json,js,mjs}`,
+    `${sourcePath}**/*.desktop.{json,js,mjs}`,
   ],
   platforms: {
     css: {
