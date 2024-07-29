@@ -6,7 +6,6 @@ import {
   HeaderNavProps,
   HeaderCollapsibleMenu,
 } from "../index";
-import "../header.pcss";
 import { Button } from "@sikt/sds-button";
 
 const meta: Meta = {

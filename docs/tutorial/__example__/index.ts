@@ -1,2 +1,2 @@
-export type { ExampleProps } from "./Example";
-export { Example } from "./Example";
+export type { ExampleProps } from "./src/Example";
+export { Example } from "./src/Example";

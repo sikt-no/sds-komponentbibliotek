@@ -1,4 +1,4 @@
-export type { InputProps } from "./Input";
+export type { InputProps } from "./src/Input";
 export {
   TextArea,
   TextInput,
@@ -7,4 +7,4 @@ export {
   PasswordInput,
   TelInput,
   SearchInput,
-} from "./Input";
+} from "./src/Input";

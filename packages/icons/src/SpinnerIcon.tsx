@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { SpinnerGapIcon, IconProps } from "./build/index";
+import { SpinnerGapIcon, IconProps } from "../build/index";
 
 export const SpinnerIcon = ({ className, ...rest }: IconProps) => (
   <SpinnerGapIcon

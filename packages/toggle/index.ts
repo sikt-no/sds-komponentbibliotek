@@ -1,8 +1,8 @@
-export type { ToggleSwitchProps } from "./ToggleSwitch";
-export { ToggleSwitch } from "./ToggleSwitch";
-export type { ToggleButtonProps } from "./ToggleButton";
-export { ToggleButton } from "./ToggleButton";
-export { ToggleSegment } from "./ToggleSegment";
-export { ToggleSegmentOption } from "./ToggleSegmentOption";
-export type { ToggleSegmentProps } from "./ToggleSegment";
-export type { ToggleSegmentOptionProps } from "./ToggleSegmentOption";
+export type { ToggleSwitchProps } from "./src/ToggleSwitch";
+export { ToggleSwitch } from "./src/ToggleSwitch";
+export type { ToggleButtonProps } from "./src/ToggleButton";
+export { ToggleButton } from "./src/ToggleButton";
+export { ToggleSegment } from "./src/ToggleSegment";
+export { ToggleSegmentOption } from "./src/ToggleSegmentOption";
+export type { ToggleSegmentProps } from "./src/ToggleSegment";
+export type { ToggleSegmentOptionProps } from "./src/ToggleSegmentOption";

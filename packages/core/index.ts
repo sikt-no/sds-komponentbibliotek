@@ -1,12 +1,12 @@
-import "./index.pcss";
+import "./src/index.pcss";
 
-export type { AbbreviationProps } from "./components/Abbreviation";
-export { Abbreviation } from "./components/Abbreviation";
+export type { AbbreviationProps } from "./src/Abbreviation/Abbreviation";
+export { Abbreviation } from "./src/Abbreviation/Abbreviation";
 
-export type { FigureProps } from "./components/Figure";
-export { Figure } from "./components/Figure";
+export type { FigureProps } from "./src/Figure/Figure";
+export { Figure } from "./src/Figure/Figure";
 
-export type { HeadingProps } from "./components/Heading";
+export type { HeadingProps } from "./src/Heading/Heading";
 export {
   Heading,
   Heading1,
@@ -15,13 +15,13 @@ export {
   Heading4,
   Heading5,
   Heading6,
-} from "./components/Heading";
+} from "./src/Heading/Heading";
 
-export type { ParagraphProps } from "./components/Paragraph";
-export { Paragraph } from "./components/Paragraph";
+export type { ParagraphProps } from "./src/Paragraph/Paragraph";
+export { Paragraph } from "./src/Paragraph/Paragraph";
 
-export type { LinkProps } from "./components/Link";
-export { Link } from "./components/Link";
+export type { LinkProps } from "./src/Link/Link";
+export { Link } from "./src/Link/Link";
 
-export type { ScreenReaderOnlyProps } from "./components/ScreenReaderOnly";
-export { ScreenReaderOnly } from "./components/ScreenReaderOnly";
+export type { ScreenReaderOnlyProps } from "./src/ScreenReaderOnly/ScreenReaderOnly";
+export { ScreenReaderOnly } from "./src/ScreenReaderOnly/ScreenReaderOnly";

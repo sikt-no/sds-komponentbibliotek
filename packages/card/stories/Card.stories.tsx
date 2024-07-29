@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Card } from "../index";
 import { CardProps } from "../index";
-import { ButtonLink } from "../../button/ButtonLink";
+import { ButtonLink } from "../../button/index";
 import { ArrowCircleRightIcon } from "../../icons/index";
 
 const meta: Meta = {

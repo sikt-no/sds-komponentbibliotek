@@ -1,5 +1,5 @@
-export { SpinnerIcon } from "./SpinnerIcon";
-export type { LogoIconsProps } from "./LogoIcons";
-export { LinkedInLogo } from "./LogoIcons";
+export { SpinnerIcon } from "./src/SpinnerIcon";
+export type { LogoIconsProps } from "./src/LogoIcons";
+export { LinkedInLogo } from "./src/LogoIcons";
 export * from "./build/index";
-import "./icon.pcss";
+import "./src/icon.pcss";

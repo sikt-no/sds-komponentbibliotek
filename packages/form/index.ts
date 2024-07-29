@@ -1,14 +1,14 @@
-export type { FieldsetProps } from "./Fieldset";
-export { Fieldset } from "./Fieldset";
+export type { FieldsetProps } from "./src/Fieldset";
+export { Fieldset } from "./src/Fieldset";
 
-export type { FieldsetState } from "./FieldsetContext";
-export { useFieldset } from "./FieldsetContext";
+export type { FieldsetState } from "./src/FieldsetContext";
+export { useFieldset } from "./src/FieldsetContext";
 
-export type { LabelProps } from "./Label";
-export { Label } from "./Label";
+export type { LabelProps } from "./src/Label";
+export { Label } from "./src/Label";
 
-export type { HelpTextProps } from "./HelpText";
-export { HelpText } from "./HelpText";
+export type { HelpTextProps } from "./src/HelpText";
+export { HelpText } from "./src/HelpText";
 
-export type { FormFieldProps } from "./FormField";
-export { FormField } from "./FormField";
+export type { FormFieldProps } from "./src/FormField";
+export { FormField } from "./src/FormField";

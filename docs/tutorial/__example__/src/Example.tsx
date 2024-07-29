@@ -9,5 +9,5 @@ export interface ExampleProps extends HTMLAttributes<HTMLDivElement> {
 
 export const Example = ({ className, ...rest }: ExampleProps) => {
   /* logic goes here */
-  return <div className={clsx("sds-example", className)} {...rest}></div>;
+  return <div className={clsx("sds-example", className)} {...rest} />;
 };

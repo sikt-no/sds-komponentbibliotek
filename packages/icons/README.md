@@ -45,4 +45,4 @@ Or use sprite:
 
 ## Contribute
 
-Add new icons by adding name to `icons.config.js`.
+Add new icons by adding name to `src/icons.config.js`.

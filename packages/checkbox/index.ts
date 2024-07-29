@@ -1,2 +1,2 @@
-export type { CheckboxInputProps } from "./CheckboxInput";
-export { CheckboxInput } from "./CheckboxInput";
+export type { CheckboxInputProps } from "./src/CheckboxInput";
+export { CheckboxInput } from "./src/CheckboxInput";

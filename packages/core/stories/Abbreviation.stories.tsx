@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { AbbreviationProps, Abbreviation } from "../index";
 
 const meta: Meta = {
-  title: "Core/Components/Abbreviation",
+  title: "Core/Abbreviation",
   component: Abbreviation,
 };
 

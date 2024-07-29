@@ -6,7 +6,7 @@
 
 #### Create unit test file
 
-- Create `ConfettiButton.test.tsx`
+- Create `src/ConfettiButton.test.tsx`
 
 #### Add tests for component API
 
@@ -15,7 +15,7 @@
 #### Run tests
 
 ```sh
-npm t -- ConfettiButton.test.tsx --collectCoverageFrom=./packages/confetti-button/ConfettiButton.tsx
+npm t -- ConfettiButton.test.tsx --collectCoverageFrom=./packages/confetti-button/src/ConfettiButton.tsx
 ```
 
 💡️ _Hint:_ See `./docs/tutorial/__example__/` for Example component

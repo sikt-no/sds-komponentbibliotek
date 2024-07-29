@@ -1,11 +1,11 @@
-export type { TabsProps } from "./Tabs";
-export { Tabs } from "./Tabs";
-export type { TabListProps } from "./TabList";
-export { TabList } from "./TabList";
-export type { TabProps } from "./Tab";
-export { Tab } from "./Tab";
-export type { TabPanelProps } from "./TabPanel";
-export { TabPanel } from "./TabPanel";
+export type { TabsProps } from "./src/Tabs";
+export { Tabs } from "./src/Tabs";
+export type { TabListProps } from "./src/TabList";
+export { TabList } from "./src/TabList";
+export type { TabProps } from "./src/Tab";
+export { Tab } from "./src/Tab";
+export type { TabPanelProps } from "./src/TabPanel";
+export { TabPanel } from "./src/TabPanel";
 
-export type { TabLinkProps } from "./TabLink";
-export { TabLink } from "./TabLink";
+export type { TabLinkProps } from "./src/TabLink";
+export { TabLink } from "./src/TabLink";

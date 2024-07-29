@@ -5,6 +5,6 @@ module.exports = {
     "aria-hidden": "true",
   },
   outDir: "build",
-  template: require("./svgr/componentTemplate.js"),
-  indexTemplate: require("./svgr/indexTemplate.js"),
+  template: require("./componentTemplate.js"),
+  indexTemplate: require("./indexTemplate.js"),
 };

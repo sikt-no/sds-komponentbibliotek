@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { LinkProps, Link } from "../index";
 
 const meta: Meta = {
-  title: "Core/Components/Link",
+  title: "Core/Link",
   component: Link,
 };
 

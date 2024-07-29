@@ -1,2 +1,2 @@
-export type { SectionProps } from "./Section";
-export { Section } from "./Section";
+export type { SectionProps } from "./src/Section";
+export { Section } from "./src/Section";

@@ -1,4 +1,4 @@
-import { Modal, ModalProps } from "../Modal";
+import { Modal, ModalProps } from "../index";
 import { Meta, StoryObj } from "@storybook/react";
 import { useArgs } from "@storybook/preview-api";
 

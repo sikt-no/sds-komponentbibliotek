@@ -1,5 +1,5 @@
 import cpy from "cpy";
-import { config } from "../icons.config.mjs";
+import { config } from "../src/icons.config.mjs";
 
 let icons = [];
 icons.push(

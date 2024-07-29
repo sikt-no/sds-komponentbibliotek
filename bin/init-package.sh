@@ -54,10 +54,16 @@ touch README.md
 echo "# \`@sikt/sds-$1\`" >> README.md
 
 touch index.ts
-echo "export type { ${capitalName}Props } from \"./$capitalName\";
-export { $capitalName } from \"./$capitalName\";" >> index.ts
+echo "export type { ${capitalName}Props } from \"./src/$capitalName\";
+export { $capitalName } from \"./src/$capitalName\";" >> index.ts
 
-touch $capitalName.tsx
+mkdir src
+touch src/$1.pcss
+echo ".sds-$1 {
+  /* styles goes here */
+}" >> src/$1.pcss
+
+touch src/$capitalName.tsx
 echo "import { HTMLAttributes } from \"react\";
 import clsx from \"clsx\";
 import \"./$1.pcss\";
@@ -69,10 +75,10 @@ export interface ${capitalName}Props extends HTMLAttributes<HTMLDivElement> {
 
 export const $capitalName = ({ className, ...rest }: ${capitalName}Props) => {
   /* logic goes here */
-  return <div className={clsx(\"sds-$1\", className)} {...rest}></div>;
-};" >> $capitalName.tsx
+  return <div className={clsx(\"sds-$1\", className)} {...rest} />;
+};" >> src/$capitalName.tsx
 
-touch $capitalName.test.tsx
+touch src/$capitalName.test.tsx
 echo "import { render } from \"@testing-library/react\";
 import { axe } from \"jest-axe\";
 import { $capitalName } from \"./$capitalName\";
@@ -89,12 +95,7 @@ describe(\"$capitalName\", () => {
   describe(\"api\", () => {
     /* tests goes here */
   });
-});" >> $capitalName.test.tsx
-
-touch $1.pcss
-echo ".sds-$1 {
-  /* styles goes here */
-}" >> $1.pcss
+});" >> src/$capitalName.test.tsx
 
 mkdir stories
 touch stories/Readme.mdx

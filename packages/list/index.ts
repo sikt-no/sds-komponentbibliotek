@@ -1,8 +1,8 @@
-export type { ListProps } from "./List";
-export { UnorderedList, OrderedList, DescriptionList } from "./List";
-export type { ListItemProps } from "./ListItem";
-export { ListItem } from "./ListItem";
-export type { DescriptionTermProps } from "./DescriptionTerm";
-export { DescriptionTerm } from "./DescriptionTerm";
-export type { DescriptionDetailsProps } from "./DescriptionDetails";
-export { DescriptionDetails } from "./DescriptionDetails";
+export type { ListProps } from "./src/List";
+export { UnorderedList, OrderedList, DescriptionList } from "./src/List";
+export type { ListItemProps } from "./src/ListItem";
+export { ListItem } from "./src/ListItem";
+export type { DescriptionTermProps } from "./src/DescriptionTerm";
+export { DescriptionTerm } from "./src/DescriptionTerm";
+export type { DescriptionDetailsProps } from "./src/DescriptionDetails";
+export { DescriptionDetails } from "./src/DescriptionDetails";

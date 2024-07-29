@@ -14,7 +14,9 @@ Then move them to `peerDependencies`
 
 #### Create component files
 
-- Create `ConfettiButton.tsx` & `index.ts`
+- Create `index.ts`
+- Create `src/` directory
+- Create `src/ConfettiButton.tsx`
 
 #### Create component
 
@@ -22,6 +24,7 @@ Then move them to `peerDependencies`
 
 #### Create component story
 
+- Create `stories/` directory
 - Create `stories/ConfettiButton.stories.tsx`
 
 #### Add component documentation
