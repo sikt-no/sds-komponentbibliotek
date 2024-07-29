@@ -1,4 +1,66 @@
 import StyleDictionary from "style-dictionary";
+import Color from "tinycolor2";
+
+const prefix = "sds";
+const sourcePath = "src/";
+const buildPath = "dist/";
+
+const filter = (token) => !token.attributes?.category?.startsWith("_");
+const colorFilter = (token) =>
+  (token.attributes?.category === "color" || token.type === "color") &&
+  filter(token);
+
+/**
+ * Custom Transform: Color Dark
+ * This change color tokens value to dark attribute.
+ */
+StyleDictionary.registerTransform({
+  name: "transform/color/dark",
+  type: "value",
+  transitive: true,
+  filter: colorFilter,
+  transform: (token) => {
+    return Color(token.dark).toHex8String();
+  },
+});
+
+/**
+ * Custom Transform: Color Light-Dark
+ * This change color tokens value to `light-dark(value, value)`.
+ */
+StyleDictionary.registerTransform({
+  name: "transform/color/light-dark",
+  type: "value",
+  transitive: true,
+  filter: colorFilter,
+  transform: (token) => {
+    const dark = Color(token.dark).toHex8String();
+    return `light-dark(${token.value}, ${dark})`;
+  },
+});
+
+/**
+ * Custom Format: Color Light-Dark
+ * This adds `color-scheme: light dark` to color tokens.
+ */
+StyleDictionary.registerFormat({
+  name: "format/color/light-dark",
+  format: ({ dictionary, options }) => {
+    return `:root {
+  color-scheme: light dark;
+
+${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.value};`).join("\n")}
+}
+
+[data-color-scheme="light"] {
+  color-scheme: only light;
+}
+
+[data-color-scheme="dark"] {
+  color-scheme: only dark;
+}`;
+  },
+});
 
 /**
  * Custom Format: Custom Media
@@ -6,7 +68,7 @@ import StyleDictionary from "style-dictionary";
  * variable definition format.
  */
 StyleDictionary.registerFormat({
-  name: "custom/format/custom-media",
+  name: "format/custom-media",
   format: ({ dictionary }) => {
     return dictionary.allTokens
       .map((prop) => {
@@ -18,37 +80,11 @@ StyleDictionary.registerFormat({
 });
 
 /**
- * Custom Format: Color
- * This adds `prefers-color-scheme` & `[data-color-scheme]` to color tokens.
- */
-StyleDictionary.registerFormat({
-  name: "custom/format/color",
-  format: ({ dictionary, options }) => {
-    return `${
-      options.colorScheme === "light" ? ":root, " : ""
-    }[data-color-scheme="${options.colorScheme}"],
-[data-color-scheme="${options.colorScheme}"]:root {
-${dictionary.allTokens
-  .map((prop) => `  --${prop.name}: ${prop.value};`)
-  .join("\n")}
-}
-
-@media (prefers-color-scheme: ${options.colorScheme}) {
-  :root {
-${dictionary.allTokens
-  .map((prop) => `    --${prop.name}: ${prop.value};`)
-  .join("\n")}
-  }
-}`;
-  },
-});
-
-/**
  * Custom Format: At Media
  * This adds `@media` to tokens.
  */
 StyleDictionary.registerFormat({
-  name: "custom/format/at-media",
+  name: "format/at-media",
   format: ({ dictionary, options }) => {
     return `@media (min-width: ${
       dictionary.tokens.base.breakpoint[options.atMedia].value
@@ -63,20 +99,8 @@ ${dictionary.allTokens
   },
 });
 
-const prefix = "sds";
-const sourcePath = "src/";
-const buildPath = "dist/";
-
-const filter = (token) => !token.attributes.category.startsWith("_");
-
-const isEffectShadowToken = (token) =>
-  token.attributes.category === "effect" && token.attributes.type === "shadow";
-const colorFilter = (token) =>
-  filter(token) &&
-  (token.attributes.category === "color" || isEffectShadowToken(token));
-
-const sd = new StyleDictionary({
-  source: [`${sourcePath}**/!(*.dark|*.tablet|*.desktop).{json,js,mjs}`],
+const dictionaryTokens = new StyleDictionary({
+  source: [`${sourcePath}**/!(*.tablet|*.desktop).{json,js,mjs}`],
   platforms: {
     css: {
       transforms: [
@@ -95,15 +119,7 @@ const sd = new StyleDictionary({
           filter: (token) => filter(token) && !colorFilter(token),
         },
         {
-          format: "custom/format/color",
-          destination: "css/color.light.css",
-          filter: colorFilter,
-          options: {
-            colorScheme: "light",
-          },
-        },
-        {
-          format: "custom/format/custom-media",
+          format: "format/custom-media",
           destination: "css/custom-media.css",
           filter: { attributes: { type: "breakpoint" } },
         },
@@ -147,10 +163,10 @@ const sd = new StyleDictionary({
   },
 });
 
-await sd.buildAllPlatforms();
+await dictionaryTokens.buildAllPlatforms();
 
-const sdDark = new StyleDictionary({
-  source: [`${sourcePath}**/*.dark.{json,js,mjs}`],
+const dictionaryColorCss = new StyleDictionary({
+  source: [`${sourcePath}color/*.{json,js,mjs}`],
   platforms: {
     css: {
       transforms: [
@@ -159,22 +175,33 @@ const sdDark = new StyleDictionary({
         "time/seconds",
         "html/icon",
         "color/hex8",
+        "transform/color/light-dark",
       ],
       buildPath,
       prefix,
       files: [
         {
-          format: "custom/format/color",
-          destination: "css/color.dark.css",
+          format: "format/color/light-dark",
+          destination: "css/color.css",
           filter: colorFilter,
-          options: {
-            colorScheme: "dark",
-          },
         },
       ],
     },
+  },
+});
+
+await dictionaryColorCss.buildAllPlatforms();
+
+const dictionaryColorDark = new StyleDictionary({
+  source: [`${sourcePath}color/*.{json,js,mjs}`],
+  platforms: {
     ts: {
-      transforms: ["attribute/cti", "name/pascal", "color/hex8"],
+      transforms: [
+        "attribute/cti",
+        "name/pascal",
+        "color/hex8",
+        "transform/color/dark",
+      ],
       buildPath,
       prefix,
       files: [
@@ -197,6 +224,7 @@ const sdDark = new StyleDictionary({
         "time/seconds",
         "html/icon",
         "color/hex8",
+        "transform/color/dark",
       ],
       buildPath,
       prefix,
@@ -211,9 +239,9 @@ const sdDark = new StyleDictionary({
   },
 });
 
-await sdDark.buildAllPlatforms();
+await dictionaryColorDark.buildAllPlatforms();
 
-const sdTablet = new StyleDictionary({
+const dictionaryMediaTablet = new StyleDictionary({
   source: [
     `${sourcePath}base/*.{json,js,mjs}`,
     `${sourcePath}**/*.tablet.{json,js,mjs}`,
@@ -231,7 +259,7 @@ const sdTablet = new StyleDictionary({
       prefix,
       files: [
         {
-          format: "custom/format/at-media",
+          format: "format/at-media",
           destination: "css/tokens.tablet.css",
           filter,
           options: {
@@ -278,9 +306,9 @@ const sdTablet = new StyleDictionary({
   },
 });
 
-await sdTablet.buildAllPlatforms();
+await dictionaryMediaTablet.buildAllPlatforms();
 
-const sdDesktop = new StyleDictionary({
+const dictionaryMediaDesktop = new StyleDictionary({
   source: [
     `${sourcePath}base/*.{json,js,mjs}`,
     `${sourcePath}**/*.desktop.{json,js,mjs}`,
@@ -298,7 +326,7 @@ const sdDesktop = new StyleDictionary({
       prefix,
       files: [
         {
-          format: "custom/format/at-media",
+          format: "format/at-media",
           destination: "css/tokens.desktop.css",
           filter,
           options: {
@@ -345,4 +373,4 @@ const sdDesktop = new StyleDictionary({
   },
 });
 
-await sdDesktop.buildAllPlatforms();
+await dictionaryMediaDesktop.buildAllPlatforms();

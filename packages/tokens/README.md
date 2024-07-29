@@ -16,6 +16,8 @@ npm i -s @sikt/sds-tokens
 }
 ```
 
+**Note** CSS tokens are best used by importing `@sikt/sds-core` which will include them as CSS variables. But you can still make use of them directly from `@sikt/sds-tokens` if need be.
+
 ### React
 
 ```js
@@ -35,6 +37,8 @@ import * as tokens from "@sikt/sds-tokens";
   color: tokens.$sds-color-brand-primary-strong;
 }
 ```
+
+**Note** SCSS tokens are currently only for showcase and will need a little love by the first one making use of them.
 
 ## Design Tokens
 
