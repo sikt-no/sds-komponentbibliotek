@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { TextArea, InputProps } from "../index";
 import { InfoIcon } from "@sikt/sds-icons";
+import { Meta, StoryObj } from "@storybook/react";
+import { InputProps, TextArea } from "../index";
 
 const meta: Meta = {
   title: "Components/Input/TextArea",

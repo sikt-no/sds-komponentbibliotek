@@ -1,5 +1,5 @@
-import { HTMLAttributes, ReactNode, forwardRef, useId, useMemo } from "react";
 import clsx from "clsx";
+import { HTMLAttributes, ReactNode, forwardRef, useId, useMemo } from "react";
 import { FieldsetContext } from "./FieldsetContext";
 import "./fieldset.pcss";
 

@@ -1,3 +1,6 @@
+import { FormField } from "@sikt/sds-form";
+import { CaretCircleDownIcon } from "@sikt/sds-icons";
+import clsx from "clsx";
 import {
   ChangeEventHandler,
   OptionHTMLAttributes,
@@ -6,9 +9,6 @@ import {
   forwardRef,
   useId,
 } from "react";
-import clsx from "clsx";
-import { CaretCircleDownIcon } from "@sikt/sds-icons";
-import { FormField } from "@sikt/sds-form";
 import "./select.pcss";
 
 export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {

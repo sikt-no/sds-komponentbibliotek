@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import { SearchInput, InputProps } from "../index";
 import { MapPinIcon } from "@sikt/sds-icons";
+import { Meta, StoryObj } from "@storybook/react";
+import React, { useState } from "react";
+import { InputProps, SearchInput } from "../index";
 
 const meta: Meta = {
   title: "Components/Input/Search",

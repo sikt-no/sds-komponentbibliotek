@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { OrderedList, ListProps } from "../index";
-import { ListItem } from "../index";
+import { ListProps, OrderedList, ListItem } from "../index";
 
 const meta: Meta = {
   title: "Components/List/Ordered",

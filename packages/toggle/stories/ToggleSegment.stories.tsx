@@ -1,7 +1,10 @@
-import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { ToggleSegment, ToggleSegmentProps } from "../index";
-import { ToggleSegmentOption } from "../index";
+import { useState } from "react";
+import {
+  ToggleSegment,
+  ToggleSegmentProps,
+  ToggleSegmentOption,
+} from "../index";
 
 const meta: Meta = {
   title: "Components/Toggle/ToggleSegment",

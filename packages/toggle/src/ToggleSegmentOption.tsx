@@ -1,3 +1,6 @@
+import "./toggle-segment.pcss";
+import { useFieldset } from "@sikt/sds-form";
+import clsx from "clsx";
 import {
   ChangeEvent,
   InputHTMLAttributes,
@@ -5,9 +8,6 @@ import {
   forwardRef,
   useId,
 } from "react";
-import "./toggle-segment.pcss";
-import clsx from "clsx";
-import { useFieldset } from "@sikt/sds-form";
 
 export interface ToggleSegmentOptionProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {

@@ -1,5 +1,5 @@
-import { ChangeEvent, useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { ToggleSwitch, ToggleSwitchProps } from "../index";
 
 const meta: Meta = {

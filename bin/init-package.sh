@@ -64,8 +64,8 @@ echo ".sds-$1 {
 }" >> src/$1.pcss
 
 touch src/$capitalName.tsx
-echo "import { HTMLAttributes } from \"react\";
-import clsx from \"clsx\";
+echo "import clsx from \"clsx\";
+import { HTMLAttributes } from \"react\";
 import \"./$1.pcss\";
 
 export interface ${capitalName}Props extends HTMLAttributes<HTMLDivElement> {
@@ -108,8 +108,8 @@ import Readme from \"../README.md?raw\";
 
 mkdir playwright
 touch playwright/$capitalName.spec.ts
-echo "import { test, expect } from \"@playwright/test\";
-import AxeBuilder from \"@axe-core/playwright\";
+echo "import AxeBuilder from \"@axe-core/playwright\";
+import { test, expect } from \"@playwright/test\";
 
 test.describe(\"$capitalName\", () => {
   const componentSelector = \".sds-$1\";

@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react";
 import { parseDate } from "@internationalized/date";
+import { Meta, StoryObj } from "@storybook/react";
 import { InputDatepicker, InputDatepickerProps } from "../index";
 
 const meta: Meta = {

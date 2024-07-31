@@ -1,6 +1,6 @@
-import { useKeyPress } from "./useKeyPress";
 import { render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
+import { useKeyPress } from "./useKeyPress";
 
 interface Props {
   isExpanded: boolean;

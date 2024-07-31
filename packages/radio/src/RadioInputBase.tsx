@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import {
   ChangeEvent,
   InputHTMLAttributes,
@@ -5,7 +6,6 @@ import {
   forwardRef,
   useId,
 } from "react";
-import clsx from "clsx";
 import "./radio.pcss";
 
 export interface RadioInputBaseProps

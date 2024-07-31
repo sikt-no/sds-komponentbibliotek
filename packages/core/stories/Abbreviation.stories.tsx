@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { AbbreviationProps, Abbreviation } from "../index";
+import { Abbreviation, AbbreviationProps } from "../index";
 
 const meta: Meta = {
   title: "Core/Abbreviation",

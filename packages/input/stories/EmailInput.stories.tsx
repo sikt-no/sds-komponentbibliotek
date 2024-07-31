@@ -1,6 +1,6 @@
+import { GearIcon } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { EmailInput, InputProps } from "../index";
-import { GearIcon } from "@sikt/sds-icons";
 
 const meta: Meta = {
   title: "Components/Input/Email",

@@ -1,12 +1,12 @@
+import clsx from "clsx";
 import {
   Children,
-  ReactNode,
+  HTMLAttributes,
   ReactElement,
+  ReactNode,
   cloneElement,
   isValidElement,
-  HTMLAttributes,
 } from "react";
-import clsx from "clsx";
 import { TabProps } from "./Tab";
 
 export interface TabListProps extends HTMLAttributes<HTMLDivElement> {

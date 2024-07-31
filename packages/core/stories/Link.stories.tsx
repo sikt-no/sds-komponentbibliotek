@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { LinkProps, Link } from "../index";
+import { Link, LinkProps } from "../index";
 
 const meta: Meta = {
   title: "Core/Link",

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { Drawer } from "./Drawer";
+import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import userEvent from "@testing-library/user-event";
+import { Drawer } from "./Drawer";
 
 describe("Drawer,", () => {
   describe("a11y", () => {

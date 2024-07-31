@@ -1,10 +1,10 @@
 import { act, render, screen } from "@testing-library/react";
+import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { FormEvent } from "react";
 import { Header } from "./Header";
-import { HeaderNav } from "./HeaderNav";
-import userEvent from "@testing-library/user-event";
 import { HeaderCollapsibleMenu } from "./HeaderCollapsibleMenu";
+import { HeaderNav } from "./HeaderNav";
 
 describe("Header", () => {
   describe("a11y", () => {

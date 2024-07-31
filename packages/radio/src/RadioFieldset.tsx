@@ -1,5 +1,5 @@
-import { ChangeEvent, forwardRef, useMemo } from "react";
 import { Fieldset, FieldsetProps } from "@sikt/sds-form";
+import { ChangeEvent, forwardRef, useMemo } from "react";
 import { RadioFieldsetContext } from "./RadioFieldsetContext";
 
 export interface RadioFieldsetProps extends Omit<FieldsetProps, "onChange"> {

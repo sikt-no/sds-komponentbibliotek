@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
   Table,
-  TableCell,
-  TableRow,
-  TableProps,
   TableBody,
+  TableCell,
+  TableFoot,
   TableHead,
   TableHeader,
-  TableFoot,
+  TableProps,
+  TableRow,
 } from "../index";
 
 const meta: Meta = {

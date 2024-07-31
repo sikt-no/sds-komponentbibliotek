@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import {
   Children,
   HTMLAttributes,
@@ -7,7 +8,6 @@ import {
   isValidElement,
 } from "react";
 import "./header-nav.pcss";
-import clsx from "clsx";
 
 export interface HeaderNavProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;

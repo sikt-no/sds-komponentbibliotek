@@ -1,5 +1,5 @@
-import { TdHTMLAttributes } from "react";
 import clsx from "clsx";
+import { TdHTMLAttributes } from "react";
 
 export interface TableCellProps extends TdHTMLAttributes<HTMLTableCellElement> {
   className?: string;

@@ -1,12 +1,12 @@
+import clsx from "clsx";
 import {
   AnchorHTMLAttributes,
+  ReactElement,
+  ReactNode,
   cloneElement,
   forwardRef,
   isValidElement,
-  ReactElement,
-  ReactNode,
 } from "react";
-import clsx from "clsx";
 import "./tab-link.pcss";
 
 export interface TabLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {

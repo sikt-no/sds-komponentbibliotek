@@ -1,5 +1,5 @@
-import { ThHTMLAttributes } from "react";
 import clsx from "clsx";
+import { ThHTMLAttributes } from "react";
 
 export interface TableHeaderProps
   extends ThHTMLAttributes<HTMLTableCellElement> {

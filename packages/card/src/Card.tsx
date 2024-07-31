@@ -1,5 +1,5 @@
-import { ElementType, HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
+import { ElementType, HTMLAttributes, ReactNode } from "react";
 import "./card.pcss";
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {

@@ -1,7 +1,7 @@
-import { HTMLAttributes } from "react";
-import clsx from "clsx";
-import "./progress-step.pcss";
 import { CaretRightIcon } from "@sikt/sds-icons";
+import clsx from "clsx";
+import { HTMLAttributes } from "react";
+import "./progress-step.pcss";
 
 export interface ProgressStepProps extends HTMLAttributes<HTMLLIElement> {
   value: number;

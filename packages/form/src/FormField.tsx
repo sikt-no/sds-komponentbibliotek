@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { HTMLAttributes, ReactNode } from "react";
-import { Label } from "./Label";
 import { HelpText } from "./HelpText";
+import { Label } from "./Label";
 import "./form-field.pcss";
 
 export interface FormFieldProps

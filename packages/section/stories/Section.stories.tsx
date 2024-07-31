@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Section, SectionProps } from "../index";
 import { ButtonLink } from "../../button/index";
 import { ArrowCircleRightIcon } from "../../icons/index";
+import { Section, SectionProps } from "../index";
 
 const meta: Meta = {
   title: "Components/Section",

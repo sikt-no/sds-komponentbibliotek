@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { TabLink, TabLinkProps } from "../index";
-import { InfoIcon } from "../../icons/index";
 import { Badge } from "../../badge/index";
+import { InfoIcon } from "../../icons/index";
+import { TabLink, TabLinkProps } from "../index";
 
 const meta: Meta = {
   title: "Components/Tabs/TabLink",

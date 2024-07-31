@@ -1,13 +1,5 @@
-import {
-  ChangeEvent,
-  ForwardedRef,
-  ReactNode,
-  forwardRef,
-  useCallback,
-  useId,
-  InputHTMLAttributes,
-} from "react";
-import clsx from "clsx";
+import { Button, ButtonProps } from "@sikt/sds-button";
+import { FormField } from "@sikt/sds-form";
 import {
   EnvelopeIcon,
   MagnifyingGlassIcon,
@@ -15,8 +7,16 @@ import {
   PhoneIcon,
   XIcon,
 } from "@sikt/sds-icons";
-import { FormField } from "@sikt/sds-form";
-import { Button, ButtonProps } from "@sikt/sds-button";
+import clsx from "clsx";
+import {
+  ChangeEvent,
+  ForwardedRef,
+  InputHTMLAttributes,
+  ReactNode,
+  forwardRef,
+  useCallback,
+  useId,
+} from "react";
 import "./input.pcss";
 
 export interface InputProps

@@ -1,5 +1,5 @@
-import { HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
+import { HTMLAttributes, ReactNode } from "react";
 
 export interface ScreenReaderOnlyProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;

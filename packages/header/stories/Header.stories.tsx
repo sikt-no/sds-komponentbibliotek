@@ -1,12 +1,12 @@
+import { Button } from "@sikt/sds-button";
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HeaderProps,
   Header,
+  HeaderCollapsibleMenu,
   HeaderNav,
   HeaderNavProps,
-  HeaderCollapsibleMenu,
+  HeaderProps,
 } from "../index";
-import { Button } from "@sikt/sds-button";
 
 const meta: Meta = {
   title: "Components/Header",

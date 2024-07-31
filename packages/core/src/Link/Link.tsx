@@ -1,5 +1,5 @@
-import { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
 import clsx from "clsx";
+import { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
 
 export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;

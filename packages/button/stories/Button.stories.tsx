@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ButtonProps, Button } from "../index";
-import { ArrowRightIcon, ArrowLeftIcon } from "../../icons/index";
+import { ArrowLeftIcon, ArrowRightIcon } from "../../icons/index";
+import { Button, ButtonProps } from "../index";
 
 const meta: Meta = {
   title: "Components/Button/Button",

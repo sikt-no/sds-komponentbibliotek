@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import "./button.pcss";
 
 export type ButtonProps = ButtonChildrenProps | ButtonAriaLabelProps;

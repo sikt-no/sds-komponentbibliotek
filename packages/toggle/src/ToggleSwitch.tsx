@@ -1,6 +1,6 @@
-import { ReactNode, ChangeEventHandler, useId, forwardRef } from "react";
-import clsx from "clsx";
 import { CheckIcon, XIcon } from "@sikt/sds-icons";
+import clsx from "clsx";
+import { ChangeEventHandler, ReactNode, forwardRef, useId } from "react";
 import "./toggle-switch.pcss";
 
 export interface ToggleSwitchProps {

@@ -1,6 +1,6 @@
-import { HTMLAttributes, ReactNode } from "react";
-import clsx from "clsx";
 import { ListIcon } from "@sikt/sds-icons";
+import clsx from "clsx";
+import { HTMLAttributes, ReactNode } from "react";
 import "./drawer-item-group.pcss";
 
 export interface DrawerItemGroupProps extends HTMLAttributes<HTMLElement> {

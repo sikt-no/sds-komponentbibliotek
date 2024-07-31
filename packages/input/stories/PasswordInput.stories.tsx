@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { PasswordInput, InputProps } from "../index";
 import { UserCircleIcon } from "@sikt/sds-icons";
+import { Meta, StoryObj } from "@storybook/react";
+import { InputProps, PasswordInput } from "../index";
 
 const meta: Meta = {
   title: "Components/Input/Password",

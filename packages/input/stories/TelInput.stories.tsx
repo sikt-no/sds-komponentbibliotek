@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { TelInput, InputProps } from "../index";
 import { SlidersIcon } from "@sikt/sds-icons";
+import { Meta, StoryObj } from "@storybook/react";
+import { InputProps, TelInput } from "../index";
 
 const meta: Meta = {
   title: "Components/Input/Tel",

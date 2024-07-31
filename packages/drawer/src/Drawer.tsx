@@ -1,6 +1,6 @@
+import clsx from "clsx";
 import { HTMLAttributes, MouseEvent, ReactNode, useRef } from "react";
 import "./drawer.pcss";
-import clsx from "clsx";
 
 export interface DrawerProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;

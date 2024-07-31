@@ -1,16 +1,16 @@
+import clsx from "clsx";
 import {
   Children,
+  HTMLAttributes,
+  ReactElement,
   ReactNode,
   cloneElement,
+  createContext,
+  isValidElement,
+  useEffect,
   useId,
   useState,
-  isValidElement,
-  createContext,
-  ReactElement,
-  useEffect,
-  HTMLAttributes,
 } from "react";
-import clsx from "clsx";
 import "./tabs.pcss";
 import { TabPanelProps } from "./TabPanel";
 

@@ -1,12 +1,12 @@
+import { clsx } from "clsx";
 import {
   Children,
-  cloneElement,
   HTMLAttributes,
-  isValidElement,
   ReactElement,
   ReactNode,
+  cloneElement,
+  isValidElement,
 } from "react";
-import { clsx } from "clsx";
 
 export interface FigureProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;

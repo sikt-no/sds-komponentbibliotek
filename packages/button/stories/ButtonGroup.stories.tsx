@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ButtonGroupProps, Button, ButtonGroup } from "../index";
-import { ArrowRightIcon, ArrowLeftIcon } from "../../icons/index";
+import { ArrowLeftIcon, ArrowRightIcon } from "../../icons/index";
+import { Button, ButtonGroup, ButtonGroupProps } from "../index";
 
 const meta: Meta = {
   title: "Components/Button/ButtonGroup",

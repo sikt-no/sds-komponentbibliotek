@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import { Breadcrumbs } from "./Breadcrumbs";
 import { BreadcrumbItem } from "./BreadcrumbItem";
+import { Breadcrumbs } from "./Breadcrumbs";
 
 describe("Breadcrumbs", () => {
   describe("a11y", () => {

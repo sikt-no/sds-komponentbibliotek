@@ -1,5 +1,5 @@
-import { HTMLAttributes, ReactNode, ElementType } from "react";
 import clsx from "clsx";
+import { ElementType, HTMLAttributes, ReactNode } from "react";
 
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   variant:

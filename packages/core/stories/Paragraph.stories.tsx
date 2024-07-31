@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ParagraphProps, Paragraph } from "../index";
+import { Paragraph, ParagraphProps } from "../index";
 
 const meta: Meta = {
   title: "Core/Paragraph",

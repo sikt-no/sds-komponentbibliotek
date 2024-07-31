@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { DrawerContent } from "./DrawerContent";
 import { axe } from "jest-axe";
+import { DrawerContent } from "./DrawerContent";
 
 describe("DrawerContent,", () => {
   describe("a11y", () => {

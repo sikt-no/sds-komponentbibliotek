@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { RadioFieldset } from "./RadioFieldset";
 import { RadioInput } from "./RadioInput";

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { FigureProps, Figure } from "../index";
+import { Figure, FigureProps } from "../index";
 
 const meta: Meta = {
   title: "Core/Figure",

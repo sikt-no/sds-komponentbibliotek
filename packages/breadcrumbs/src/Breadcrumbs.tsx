@@ -1,6 +1,7 @@
-import { ReactNode } from "react";
 import clsx from "clsx";
+import { ReactNode } from "react";
 import "./breadcrumbs.pcss";
+
 export interface BreadcrumbsProps {
   "aria-label": string;
   children?: ReactNode;

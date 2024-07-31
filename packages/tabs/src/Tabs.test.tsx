@@ -1,10 +1,10 @@
 import { act, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import { Tabs, TabsProps } from "./Tabs";
-import { TabList } from "./TabList";
 import { Tab, TabProps } from "./Tab";
+import { TabList } from "./TabList";
 import { TabPanel } from "./TabPanel";
+import { Tabs, TabsProps } from "./Tabs";
 
 const renderComponent = ({
   className,

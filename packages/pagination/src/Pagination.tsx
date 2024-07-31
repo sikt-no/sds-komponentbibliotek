@@ -1,6 +1,6 @@
-import { HTMLAttributes } from "react";
-import { CaretRightIcon, CaretLeftIcon } from "@sikt/sds-icons";
+import { CaretLeftIcon, CaretRightIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx";
+import { HTMLAttributes } from "react";
 import "./pagination.pcss";
 
 export interface PaginationProps extends HTMLAttributes<HTMLElement> {

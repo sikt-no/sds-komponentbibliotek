@@ -1,7 +1,7 @@
-import { ReactNode, MouseEvent } from "react";
-import clsx from "clsx";
-import { ArrowRightIcon } from "@sikt/sds-icons";
 import { Button } from "@sikt/sds-button";
+import { ArrowRightIcon } from "@sikt/sds-icons";
+import clsx from "clsx";
+import { MouseEvent, ReactNode } from "react";
 import "./drawer-header.pcss";
 
 export interface DrawerHeaderProps {

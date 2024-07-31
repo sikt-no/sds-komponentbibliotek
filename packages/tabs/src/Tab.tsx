@@ -1,13 +1,13 @@
+import clsx from "clsx";
 import {
-  cloneElement,
-  isValidElement,
   HTMLAttributes,
   KeyboardEvent,
   ReactElement,
   ReactNode,
+  cloneElement,
+  isValidElement,
   useContext,
 } from "react";
-import clsx from "clsx";
 import { TabsContext } from "./Tabs";
 
 export interface TabProps extends HTMLAttributes<HTMLButtonElement> {

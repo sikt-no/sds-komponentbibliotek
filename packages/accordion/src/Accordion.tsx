@@ -1,13 +1,13 @@
-import {
-  HTMLAttributes,
-  ReactNode,
-  useState,
-  useId,
-  ElementType,
-  MouseEvent,
-} from "react";
 import { CaretCircleDownIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
+import {
+  ElementType,
+  HTMLAttributes,
+  MouseEvent,
+  ReactNode,
+  useId,
+  useState,
+} from "react";
 import "./accordion.pcss";
 
 export interface AccordionProps

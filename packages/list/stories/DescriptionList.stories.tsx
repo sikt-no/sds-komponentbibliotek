@@ -1,6 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { DescriptionList, ListProps } from "../index";
-import { DescriptionTerm, DescriptionDetails } from "../index";
+import {
+  DescriptionList,
+  ListProps,
+  DescriptionDetails,
+  DescriptionTerm,
+} from "../index";
 
 const meta: Meta = {
   title: "Components/List/Description",

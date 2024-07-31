@@ -1,9 +1,8 @@
-import { Modal, ModalProps } from "../index";
-import { Meta, StoryObj } from "@storybook/react";
-import { useArgs } from "@storybook/preview-api";
-
 import { Button } from "@sikt/sds-button";
 import { Paragraph } from "@sikt/sds-core";
+import { useArgs } from "@storybook/preview-api";
+import { Meta, StoryObj } from "@storybook/react";
+import { Modal, ModalProps } from "../index";
 
 const meta: Meta = {
   title: "Components/Modal",

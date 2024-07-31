@@ -1,5 +1,5 @@
-import { HTMLAttributes, ReactNode, ElementType } from "react";
 import clsx from "clsx";
+import { ElementType, HTMLAttributes, ReactNode } from "react";
 
 export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   variant?: "small" | "regular" | "large" | "lead";

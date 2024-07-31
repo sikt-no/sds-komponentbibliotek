@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
 import { useArgs } from "@storybook/preview-api";
-import { SelectProps, Select } from "../index";
+import { Meta, StoryObj } from "@storybook/react";
+import { Select, SelectProps } from "../index";
 
 const meta: Meta = {
   title: "Components/Select",

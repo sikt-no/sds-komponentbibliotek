@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { RadioInput, RadioFieldset, RadioFieldsetProps } from "../index";
+import { RadioFieldset, RadioFieldsetProps, RadioInput } from "../index";
 
 const meta: Meta = {
   title: "Components/Radio/RadioFieldset",

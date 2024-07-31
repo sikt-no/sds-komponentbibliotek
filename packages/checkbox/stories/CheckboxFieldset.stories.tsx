@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { CheckboxInput } from "../index";
 import { Fieldset, FieldsetProps } from "../../form";
+import { CheckboxInput } from "../index";
 
 const meta: Meta = {
   title: "Components/Checkbox/CheckboxFieldset",

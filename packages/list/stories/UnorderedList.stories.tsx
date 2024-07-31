@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { UnorderedList, ListProps } from "../index";
-import { ListItem } from "../index";
+import { ListProps, UnorderedList, ListItem } from "../index";
 
 const meta: Meta = {
   title: "Components/List/Unordered",

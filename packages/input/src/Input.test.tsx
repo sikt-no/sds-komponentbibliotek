@@ -1,7 +1,7 @@
-import { createRef, forwardRef, useState } from "react";
 import { act, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
+import { createRef, forwardRef, useState } from "react";
 import {
   EmailInput,
   NumberInput,

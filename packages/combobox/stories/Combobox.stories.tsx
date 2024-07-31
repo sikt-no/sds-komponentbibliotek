@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import {
   Combobox,
-  ComboboxProps,
-  ComboboxItem,
   ComboboxHeader,
+  ComboboxItem,
+  ComboboxProps,
   ComboboxSection,
 } from "../index";
-import React from "react";
 
 const meta: Meta = {
   title: "Components/Combobox",

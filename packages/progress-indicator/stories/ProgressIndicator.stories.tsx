@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
   ProgressIndicator,
-  ProgressStep,
   ProgressIndicatorProps,
+  ProgressStep,
   ProgressStepProps,
 } from "../index";
 

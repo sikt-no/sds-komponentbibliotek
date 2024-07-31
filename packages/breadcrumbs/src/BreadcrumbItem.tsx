@@ -1,12 +1,12 @@
+import clsx from "clsx";
 import {
+  AnchorHTMLAttributes,
   Children,
+  ReactElement,
   ReactNode,
   cloneElement,
-  AnchorHTMLAttributes,
   isValidElement,
-  ReactElement,
 } from "react";
-import clsx from "clsx";
 
 export interface BreadcrumbItemProps {
   className?: string;

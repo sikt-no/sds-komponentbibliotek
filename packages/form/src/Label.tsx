@@ -1,5 +1,5 @@
-import { LabelHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
+import { LabelHTMLAttributes, ReactNode } from "react";
 import "./label.pcss";
 
 export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {

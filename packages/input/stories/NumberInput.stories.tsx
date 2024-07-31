@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { NumberInput, InputProps } from "../index";
 import { CalendarBlankIcon } from "@sikt/sds-icons";
+import { Meta, StoryObj } from "@storybook/react";
+import { InputProps, NumberInput } from "../index";
 
 const meta: Meta = {
   title: "Components/Input/Number",

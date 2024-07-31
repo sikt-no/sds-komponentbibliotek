@@ -1,12 +1,12 @@
 import { render, screen, within } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { Table } from "./Table";
-import { TableHead } from "./TableHead";
 import { TableBody } from "./TableBody";
-import { TableRow } from "./TableRow";
-import { TableHeader } from "./TableHeader";
 import { TableCell } from "./TableCell";
 import { TableFoot } from "./TableFoot";
+import { TableHead } from "./TableHead";
+import { TableHeader } from "./TableHeader";
+import { TableRow } from "./TableRow";
 
 describe("Table", () => {
   describe("a11y", () => {

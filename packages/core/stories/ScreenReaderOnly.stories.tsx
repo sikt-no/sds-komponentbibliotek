@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ScreenReaderOnlyProps, ScreenReaderOnly } from "../index";
+import { ScreenReaderOnly, ScreenReaderOnlyProps } from "../index";
 
 const meta: Meta = {
   title: "Core/ScreenReaderOnly",

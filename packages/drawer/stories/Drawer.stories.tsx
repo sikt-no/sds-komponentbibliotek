@@ -1,17 +1,17 @@
-import { CSSProperties, useState } from "react";
+import { InfoIcon } from "@sikt/sds-icons";
+import { Logo } from "@sikt/sds-logo";
 import { Meta } from "@storybook/react";
+import { CSSProperties, useState } from "react";
 import {
   Drawer,
+  DrawerButton,
+  DrawerButtonLink,
   DrawerContent,
   DrawerHeader,
   DrawerItem,
   DrawerItemGroup,
-  DrawerButton,
-  DrawerButtonLink,
   useKeyPress,
 } from "../index";
-import { InfoIcon } from "@sikt/sds-icons";
-import { Logo } from "@sikt/sds-logo";
 
 const meta: Meta = {
   title: "Components/Drawer",

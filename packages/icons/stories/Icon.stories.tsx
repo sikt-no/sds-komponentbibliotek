@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  IconProps,
   ArrowRightIcon,
-  SpinnerIcon,
-  LogoIconsProps,
+  IconProps,
   LinkedInLogo as LinkedInLogoIcon,
+  LogoIconsProps,
+  SpinnerIcon,
 } from "../index";
 
 const meta: Meta = {

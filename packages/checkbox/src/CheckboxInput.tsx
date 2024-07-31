@@ -1,3 +1,6 @@
+import { useFieldset } from "@sikt/sds-form";
+import { CheckIcon } from "@sikt/sds-icons";
+import clsx from "clsx";
 import {
   ChangeEvent,
   HTMLAttributes,
@@ -5,10 +8,7 @@ import {
   forwardRef,
   useId,
 } from "react";
-import clsx from "clsx";
 import "./checkbox-input.pcss";
-import { CheckIcon } from "@sikt/sds-icons";
-import { useFieldset } from "@sikt/sds-form";
 
 export interface CheckboxInputProps extends HTMLAttributes<HTMLInputElement> {
   isChecked?: boolean;

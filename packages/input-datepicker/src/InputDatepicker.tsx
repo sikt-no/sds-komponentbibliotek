@@ -1,30 +1,30 @@
-import { useId, forwardRef, useState, ReactNode, useRef } from "react";
-import clsx from "clsx";
-import {
-  DatePickerProps,
-  DatePicker as ReactAriaDatePicker,
-  Button as ReactAriaButton,
-  Calendar,
-  CalendarCell,
-  CalendarGrid,
-  DateInput,
-  DateSegment,
-  DateValue,
-  Group,
-  Heading,
-  Label as ReactAriaLabel,
-  Text,
-} from "react-aria-components";
+import { I18nProvider } from "@react-aria/i18n";
+import { Button } from "@sikt/sds-button";
+import { HelpText, Label } from "@sikt/sds-form";
 import {
   CalendarBlankIcon,
   CaretLeftIcon,
   CaretRightIcon,
 } from "@sikt/sds-icons";
-import { Label, HelpText } from "@sikt/sds-form";
-import { Button } from "@sikt/sds-button";
-import "./input-datepicker.pcss";
-import { I18nProvider } from "@react-aria/i18n";
+import clsx from "clsx";
+import { ReactNode, forwardRef, useId, useRef, useState } from "react";
+import {
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  DateInput,
+  DatePickerProps,
+  DateSegment,
+  DateValue,
+  Group,
+  Heading,
+  Button as ReactAriaButton,
+  DatePicker as ReactAriaDatePicker,
+  Label as ReactAriaLabel,
+  Text,
+} from "react-aria-components";
 import { useEventListener, useOnClickOutside } from "usehooks-ts";
+import "./input-datepicker.pcss";
 
 export interface InputDatepickerProps extends DatePickerProps<DateValue> {
   label: ReactNode;

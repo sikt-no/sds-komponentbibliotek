@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { DrawerItemGroup } from "./DrawerItemGroup";
 import { axe } from "jest-axe";
 import { DrawerItem } from "./DrawerItem";
+import { DrawerItemGroup } from "./DrawerItemGroup";
 
 describe("DrawerItemGroup", () => {
   describe("a11y", () => {
