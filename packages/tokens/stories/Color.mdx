@@ -113,3 +113,22 @@ import * as dark from "../dist/js/color.dark.js";
     );
   })}
 </ColorPalette>
+
+## Shadow
+
+<ColorPalette>
+  {Object.entries(tokens.color.shadow.elevated).map((token, index) => {
+    return (
+      <ColorItem
+        title={token[0]}
+        subtitle={`--sds-${Object.values(token[1].path).join("-")}`}
+        colors={{
+          "light-mode": token[1].value,
+          "dark-mode": Object.entries(dark.color.shadow.elevated)[index][1]
+            .value,
+        }}
+        key={index}
+      />
+    );
+  })}
+</ColorPalette>

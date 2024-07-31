@@ -870,8 +870,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
           >
             <div className={style.grunnleggende__sdsSectionContent}>
               <Paragraph className="sds-paragraph--max-width">
-                Farger som brukes til tekst. Må følge WCAG-kravene tiil
-                kontrast.
+                Farger som brukes til tekst. Må følge WCAG-kravene til kontrast.
               </Paragraph>
 
               <Paragraph className="sds-paragraph--max-width">
@@ -930,6 +929,77 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
                                 {Object.entries(dark.default.color.text)[
                                   index
                                 ][1].value ?? subtoken[1].value}
+                              </Badge>
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    },
+                  )}
+                </TableBody>
+              </Table>
+            </div>
+          </Section>
+
+          <Section
+            headingText="Skyggefarger (Color / Shadow)"
+            className={style.grunnleggende__sdsSection}
+          >
+            <div className={style.grunnleggende__sdsSectionContent}>
+              <Paragraph className="sds-paragraph--max-width">
+                Farger som brukes til skygger.
+              </Paragraph>
+
+              <Table
+                caption="Designtokens for skyggefarger"
+                className={moduleStyle.farger__swatchTable}
+              >
+                <TableHead>
+                  <TableRow>
+                    <TableHeader>Token</TableHeader>
+                    <TableHeader data-color-scheme="light">
+                      Verdi @ light-mode
+                    </TableHeader>
+                    <TableHeader data-color-scheme="dark">
+                      Verdi @ dark-mode
+                    </TableHeader>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {Object.entries(tokens.default.color.shadow.elevated).map(
+                    (token, index) => {
+                      return (
+                        <TableRow key={token[1].name}>
+                          <TableCell data-th="Token">
+                            <Badge visibility="strong" icon={<Nut />}>
+                              {`--sds-${Object.values(token[1].path).join("-")}`}
+                            </Badge>
+                          </TableCell>
+                          <TableCell
+                            data-th="Verdi @ light-mode"
+                            data-color-scheme="light"
+                          >
+                            <div className={moduleStyle.farger__flex}>
+                              <Swatch color={token[1].value} />
+                              <Badge>{token[1].value}</Badge>
+                            </div>
+                          </TableCell>
+                          <TableCell
+                            data-th="Verdi @ dark-mode"
+                            data-color-scheme="dark"
+                          >
+                            <div className={moduleStyle.farger__flex}>
+                              <Swatch
+                                color={
+                                  Object.entries(
+                                    dark.default.color.shadow.elevated,
+                                  )[index][1].value ?? subtoken[1].value
+                                }
+                              />
+                              <Badge>
+                                {Object.entries(
+                                  dark.default.color.shadow.elevated,
+                                )[index][1].value ?? subtoken[1].value}
                               </Badge>
                             </div>
                           </TableCell>
