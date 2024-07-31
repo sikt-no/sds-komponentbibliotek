@@ -134,9 +134,7 @@ describe("Modal", () => {
       const closeButton = screen.queryByText(/Close/i);
       expect(closeButton).not.toBeInTheDocument();
 
-      await act(async () => {
-        await user.keyboard("[Escape]");
-      });
+      await user.keyboard("[Escape]");
 
       expect(handleClose).toHaveBeenCalledTimes(0);
     });
@@ -156,9 +154,7 @@ describe("Modal", () => {
         </Modal>,
       );
 
-      await act(async () => {
-        await user.keyboard("[Escape]");
-      });
+      await user.keyboard("[Escape]");
 
       expect(handleClose).toHaveBeenCalledTimes(1);
     });
