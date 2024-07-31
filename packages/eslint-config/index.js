@@ -16,11 +16,22 @@ module.exports = {
     "plugin:@typescript-eslint/stylistic-type-checked",
     "prettier",
   ],
+  plugins: ["import"],
   parserOptions: {
     project: ["./tsconfig.json"],
   },
   rules: {
     "no-restricted-globals": ["error"].concat(restrictedGlobals),
+    "import/order": [
+      "error",
+      {
+        alphabetize: {
+          order: "asc",
+          orderImportKind: "asc",
+          caseInsensitive: true,
+        },
+      },
+    ],
     "jsx-a11y/anchor-ambiguous-text": [
       "error",
       {
