@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { ReactNode } from "react";
 import "./button-group.pcss";
 
@@ -19,12 +19,12 @@ export const ButtonGroup = ({
   return (
     <div
       role="group"
-      className={clsx([
-        `sds-button-group`,
+      className={clsx(
+        "sds-button-group",
         `sds-button-group--${orientation}`,
         orientation !== "vertical" && `sds-button-group--${variant}`,
         className,
-      ])}
+      )}
       {...rest}
     >
       {children}

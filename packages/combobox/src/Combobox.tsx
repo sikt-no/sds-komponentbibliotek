@@ -1,8 +1,6 @@
-import "./combobox.pcss";
-
 import { FormField } from "@sikt/sds-form";
 import { CaretCircleDownIcon } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { ReactNode, useId, useState } from "react";
 import {
   ComboBox as AriaCombobox,
@@ -16,6 +14,7 @@ import {
   Popover,
   Section,
 } from "react-aria-components";
+import "./combobox.pcss";
 
 export interface ComboboxProps<T extends object>
   extends Omit<AriaComboboxProps<T>, "children" | "menuTrigger"> {

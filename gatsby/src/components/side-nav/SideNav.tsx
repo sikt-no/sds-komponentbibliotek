@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactNode } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import "./side-nav.css";
 
 export interface SideNavProps extends HTMLAttributes<HTMLElement> {

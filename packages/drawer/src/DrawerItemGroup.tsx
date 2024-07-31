@@ -1,5 +1,5 @@
 import { ListIcon } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
 import "./drawer-item-group.pcss";
 

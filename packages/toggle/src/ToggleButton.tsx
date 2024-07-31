@@ -1,5 +1,5 @@
 import { PlusCircleIcon } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { ChangeEventHandler, ReactNode, forwardRef, useId } from "react";
 import "./toggle-button.pcss";
 

@@ -1,6 +1,6 @@
 import { useFieldset } from "@sikt/sds-form";
 import { CheckIcon } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import {
   ChangeEvent,
   HTMLAttributes,

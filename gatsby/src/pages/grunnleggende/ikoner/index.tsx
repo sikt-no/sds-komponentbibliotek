@@ -1,7 +1,7 @@
 import { ElementType } from "react";
 import { PageProps } from "gatsby";
 import { Hero } from "../../../components/Hero";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import * as indexStyle from "../../index.module.css";
 import * as style from "../index.module.css";
 import * as moduleStyle from "./index.module.css";

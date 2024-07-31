@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode, forwardRef, useId, useMemo } from "react";
 import { FieldsetContext } from "./FieldsetContext";
 import "./fieldset.pcss";

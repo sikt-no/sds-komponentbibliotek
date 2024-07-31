@@ -1,6 +1,6 @@
 import { Button } from "@sikt/sds-button";
 import { ArrowRightIcon } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { MouseEvent, ReactNode } from "react";
 import "./drawer-header.pcss";
 

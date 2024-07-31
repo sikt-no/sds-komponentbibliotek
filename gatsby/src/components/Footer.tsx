@@ -3,7 +3,7 @@ import { Footer as SdsFooter } from "@sikt/sds-footer";
 import * as style from "./footer.module.css";
 import { ButtonLink } from "@sikt/sds-button";
 import { Link } from "@sikt/sds-core";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 
 const Footer = ({ className }: { className?: string }) => {
   return (

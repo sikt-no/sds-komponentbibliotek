@@ -1,5 +1,5 @@
 import { PageProps } from "gatsby";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { Section } from "@sikt/sds-section";
 import * as style from "./index.module.css";
 import { NavCard } from "../../components/NavCard";

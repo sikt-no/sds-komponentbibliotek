@@ -6,7 +6,7 @@ import {
   CaretLeftIcon,
   CaretRightIcon,
 } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { ReactNode, forwardRef, useId, useRef, useState } from "react";
 import {
   Calendar,

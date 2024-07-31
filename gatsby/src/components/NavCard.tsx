@@ -1,5 +1,5 @@
 import { ElementType, forwardRef, ReactNode } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { ArrowRightIcon } from "@sikt/sds-icons";
 import * as style from "./nav-card.module.css";
 

@@ -7,7 +7,7 @@ import {
   PhoneIcon,
   XIcon,
 } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import {
   ChangeEvent,
   ForwardedRef,

@@ -1,7 +1,7 @@
 const template = (variables, { tpl }) => {
   return tpl`
 import { SVGAttributes } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 
 export type IconProps = SVGAttributes<SVGElement>;
 

@@ -1,6 +1,6 @@
 import { FormField } from "@sikt/sds-form";
 import { CaretCircleDownIcon } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import {
   ChangeEventHandler,
   OptionHTMLAttributes,

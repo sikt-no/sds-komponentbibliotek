@@ -64,7 +64,7 @@ echo ".sds-$1 {
 }" >> src/$1.pcss
 
 touch src/$capitalName.tsx
-echo "import clsx from \"clsx\";
+import { clsx } from \"clsx/lite\";
 import { HTMLAttributes } from \"react\";
 import \"./$1.pcss\";
 

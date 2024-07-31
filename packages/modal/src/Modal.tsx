@@ -1,7 +1,7 @@
 import { Button } from "@sikt/sds-button";
 import { Heading1, Paragraph } from "@sikt/sds-core";
 import { XIcon } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { ReactNode, useEffect, useId, useRef, useState } from "react";
 import ReactModal from "react-modal";
 import useWindowResize from "./useWindowResize";
@@ -107,18 +107,12 @@ export const Modal = ({
       isOpen={open}
       className={clsx(
         "sds-modal",
-        {
-          "sds-modal--scrollable": isScrolling,
-        },
+        isScrolling && "sds-modal--scrollable",
         className,
       )}
       overlayClassName={clsx("sds-modal-overlay")}
     >
-      <header
-        className={clsx("sds-modal__header", {
-          "sds-modal__header--scrollable": false,
-        })}
-      >
+      <header className={clsx("sds-modal__header")}>
         <div
           id={headingId}
           data-testid="headings"

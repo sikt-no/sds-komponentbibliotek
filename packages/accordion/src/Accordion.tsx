@@ -1,5 +1,5 @@
 import { CaretCircleDownIcon } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import {
   ElementType,
   HTMLAttributes,

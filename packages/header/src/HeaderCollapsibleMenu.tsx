@@ -1,6 +1,6 @@
 import { Button } from "@sikt/sds-button";
 import { ListIcon, XIcon } from "@sikt/sds-icons";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import {
   Children,
   Dispatch,

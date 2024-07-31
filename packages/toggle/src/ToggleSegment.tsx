@@ -1,5 +1,5 @@
 import { Fieldset, FieldsetProps } from "@sikt/sds-form";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { ReactNode, forwardRef } from "react";
 import "./toggle-segment.pcss";
 

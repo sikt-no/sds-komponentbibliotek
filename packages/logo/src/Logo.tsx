@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
 import "./logo.pcss";
 import { ReactComponent as LogoSvg } from "../Logo.svg";

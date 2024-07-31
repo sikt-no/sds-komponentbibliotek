@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { IconProps } from "../build/index";
 
 export interface LogoIconsProps extends IconProps {

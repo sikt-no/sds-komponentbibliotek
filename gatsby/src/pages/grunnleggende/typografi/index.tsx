@@ -1,5 +1,5 @@
 import { PageProps } from "gatsby";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { Hero } from "../../../components/Hero";
 import * as indexStyle from "../../index.module.css";
 import * as style from "../index.module.css";

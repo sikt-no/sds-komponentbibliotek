@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { BreadcrumbItem, Breadcrumbs } from "@sikt/sds-breadcrumbs";
 import { Link as GatsbyLink } from "gatsby-link";
 import { Heading1 } from "@sikt/sds-core";

@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
 import { HelpText } from "./HelpText";
 import { Label } from "./Label";

@@ -1,6 +1,6 @@
 import "./toggle-segment.pcss";
 import { useFieldset } from "@sikt/sds-form";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import {
   ChangeEvent,
   InputHTMLAttributes,

@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import "./button.pcss";
 

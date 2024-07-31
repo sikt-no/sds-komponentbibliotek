@@ -1,6 +1,6 @@
 import { Link, ScreenReaderOnly } from "@sikt/sds-core";
 import { Logo } from "@sikt/sds-logo";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { AnchorHTMLAttributes, HTMLAttributes, ReactElement } from "react";
 import "./header.pcss";
 

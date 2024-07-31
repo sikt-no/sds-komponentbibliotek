@@ -5,7 +5,7 @@ import {
   ReactNode,
 } from "react";
 import { Link } from "gatsby";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import "./side-nav-button.css";
 
 export interface SideNavButtonLinkProps

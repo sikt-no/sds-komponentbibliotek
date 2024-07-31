@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { PageProps } from "gatsby";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import confetti from "canvas-confetti";
 import { FigmaLogo, GitlabLogo, SlackLogo } from "@phosphor-icons/react";
 import { Heading2, Paragraph } from "@sikt/sds-core";

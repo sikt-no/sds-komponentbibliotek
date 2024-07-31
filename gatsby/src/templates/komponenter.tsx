@@ -12,7 +12,7 @@ import {
   Paragraph,
   Link,
 } from "@sikt/sds-core";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import * as style from "../pages/komponenter/index.module.css";
 import { Code, GitlabLogo, FigmaLogo, Package } from "@phosphor-icons/react";
 import { Section } from "@sikt/sds-section";

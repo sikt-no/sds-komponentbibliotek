@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PageProps } from "gatsby";
 import { Hero } from "../../components/Hero";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import * as style from "../grunnleggende/index.module.css";
 import { Paragraph, Link } from "@sikt/sds-core";
 import { Section } from "@sikt/sds-section";

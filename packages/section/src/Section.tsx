@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { ElementType, HTMLAttributes, ReactNode } from "react";
 import "./section.pcss";
 

@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import "./example.pcss";
 
 export interface ExampleProps extends HTMLAttributes<HTMLDivElement> {

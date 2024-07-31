@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx/lite";
 import { WarningIcon } from "@sikt/sds-icons";
 import * as style from "./notice.module.css";
 
