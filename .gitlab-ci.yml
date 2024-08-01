@@ -112,6 +112,14 @@ test-e2e:
 test-e2e-update-snapshots:
   stage: test
   extends: .npm_cache
+  id_tokens:
+    VAULT_ID_TOKEN:
+      aud: "https://vault.sikt.no:8200"
+  secrets:
+    CI_TOKEN:
+      vault: "gitlab/${CI_PROJECT_PATH}/ci-token@secret"
+      token: $VAULT_ID_TOKEN
+      file: false
   script:
     - npm pkg delete scripts.prepare
     - npm ci
