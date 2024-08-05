@@ -1,0 +1,35 @@
+.sds-popover {
+  appearance: unset;
+  background-color: transparent;
+  border: 0 none;
+  cursor: pointer;
+  display: inline-flex;
+  padding: unset;
+  text-decoration: underline dotted;
+  text-underline-position: under;
+
+  &:focus,
+  &:hover {
+    background-color: var(
+      --sds-color-interaction-primary-transparent-highlight
+    );
+  }
+
+  &:focus-visible {
+    outline: var(--sds-focus-outline);
+  }
+
+  &__target {
+    background-color: var(--sds-color-layout-background-default);
+    border: solid var(--sds-space-border-weight-thin)
+      var(--sds-color-layout-divider-strong);
+    border-radius: var(--sds-space-border-radius-small);
+    color: var(--sds-color-text-primary);
+    padding: var(--sds-space-padding-minimal) var(--sds-space-padding-tiny);
+
+    &--anchor {
+      inset: unset;
+      position: absolute;
+    }
+  }
+}
