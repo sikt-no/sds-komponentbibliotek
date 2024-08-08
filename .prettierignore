@@ -5,3 +5,4 @@ storybook-static
 gatsby/public
 .cache
 gatsby-types.d.ts
+turbo/generators/template

@@ -1,0 +1,1 @@
+# `@sikt/sds-{{kebabCase newPackageName}}`

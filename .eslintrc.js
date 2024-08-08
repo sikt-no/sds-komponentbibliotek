@@ -4,7 +4,12 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  ignorePatterns: [".eslintrc.js", "*.config.ts", "docs/tutorial/**"],
+  ignorePatterns: [
+    ".eslintrc.js",
+    "*.config.ts",
+    "docs/tutorial/**",
+    "turbo/generators/**",
+  ],
   rules: {},
   overrides: [
     {

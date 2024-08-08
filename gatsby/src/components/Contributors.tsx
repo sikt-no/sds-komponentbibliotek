@@ -40,6 +40,7 @@ const Contributors = ({
       { name: "Glaysa", role: "Teknologi", team: "Kudaf" },
     ],
     [
+      { name: "Mats", role: "Teknologi", team: "Opptak Søknadsbehandling" },
       { name: "Marius", role: "Teknologi", team: "Opptak Søknadsbehandling" },
       { name: "Patrick", role: "Teknologi", team: "Opptak Søknadsbehandling" },
       { name: "An", role: "Teknologi", team: "Opptak Søknadsbehandling" },

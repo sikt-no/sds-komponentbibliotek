@@ -17,4 +17,5 @@ export default {
       },
     },
   ],
+  ignoreFiles: ["turbo/generators/template/**/*"],
 };

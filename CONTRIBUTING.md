@@ -113,8 +113,10 @@ See [Example](./docs/tutorial/__example__) component for base setup.
 
 Initialize a package:
 
+When asked, enter a package name without `sds-` prefix.
+
 ```sh
-npm run init --package=<package-name>
+npm run init
 ```
 
 If you have custom build needs, the build script and entry points may vary.  
