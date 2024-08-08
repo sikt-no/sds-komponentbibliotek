@@ -9,30 +9,32 @@ describe("Badge", () => {
       expect(await axe(container)).toHaveNoViolations();
     });
   });
-});
 
-describe("api", () => {
-  it("Badge should render", async () => {
-    render(<Badge data-testid="test">Foo</Badge>);
+  describe("api", () => {
+    it("should render", async () => {
+      render(<Badge data-testid="test">Foo</Badge>);
 
-    expect(screen.getByTestId("test")).toHaveClass("sds-badge");
-    expect(screen.getByText("Foo")).toBeInTheDocument();
-  });
+      expect(screen.getByTestId("test")).toHaveClass("sds-badge");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
 
-  it("should have class name", async () => {
-    render(
-      <Badge data-testid="test" className="test-class-name">
-        Foo
-      </Badge>,
-    );
+    it("should have class name", async () => {
+      render(
+        <Badge data-testid="test" className="test-class-name">
+          Foo
+        </Badge>,
+      );
 
-    expect(screen.getByTestId("test")).toHaveClass("sds-badge test-class-name");
-  });
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-badge test-class-name",
+      );
+    });
 
-  it("should have icon element", async () => {
-    render(<Badge icon="icon">Foo</Badge>);
+    it("should have icon element", async () => {
+      render(<Badge icon="icon">Foo</Badge>);
 
-    expect(screen.getByText("icon")).toHaveClass("sds-badge__icon");
-    expect(screen.getByText("Foo")).toBeInTheDocument();
+      expect(screen.getByText("icon")).toHaveClass("sds-badge__icon");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
   });
 });

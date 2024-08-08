@@ -1,2 +1,2 @@
-export type { {{pascalCase newPackageName}}Props } from "./src/{{pascalCase newPackageName}}";
-export { {{pascalCase newPackageName}} } from "./src/{{pascalCase newPackageName}}";
+export type { {{pascalCase name}}Props } from "./src/{{pascalCase name}}";
+export { {{pascalCase name}} } from "./src/{{pascalCase name}}";

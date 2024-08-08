@@ -1,1 +1,1 @@
-# `@sikt/sds-{{kebabCase newPackageName}}`
+# `@sikt/sds-{{kebabCase name}}`

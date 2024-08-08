@@ -6,14 +6,14 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     prompts: [
       {
         type: "input",
-        name: "newPackageName",
+        name: "name",
         message: "What is the name of the new package?",
       },
     ],
     actions: [
       {
         type: "addMany",
-        destination: "packages/{{kebabCase newPackageName}}/",
+        destination: "packages/{{kebabCase name}}/",
         templateFiles: "template/**/*",
         force: true,
       },

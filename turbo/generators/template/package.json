@@ -1,5 +1,5 @@
 {
-  "name": "@sikt/sds-{{kebabCase newPackageName}}",
+  "name": "@sikt/sds-{{kebabCase name}}",
   "version": "0.1.0",
   "license": "UNLICENSED",
   "type": "commonjs",
