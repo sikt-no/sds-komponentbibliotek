@@ -10,6 +10,7 @@ import { defineConfig, devices } from "@playwright/test";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  testIgnore: "turbo/**/*",
   // Glob patterns or regular expressions that match test files.
   testMatch: "**/playwright/*.spec.ts",
   // Folder for test artifacts such as screenshots, videos, traces, etc.
