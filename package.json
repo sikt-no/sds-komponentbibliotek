@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.9.1",
-    "@commitlint/cli": "^19.3.0",
+    "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@playwright/test": "^1.46.0",
     "@testing-library/dom": "^10.4.0",
