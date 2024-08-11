@@ -17,7 +17,7 @@
   },
   "updateLockFiles": true,
   "rangeStrategy": "bump",
-  "ignorePaths": ["**/node_modules/**", "**/__example__/**"],
+  "ignorePaths": ["**/node_modules/**", "**/__example__/**", "turbo/**"],
   "packageRules": [
     {
       "matchPackagePatterns": ["react"],
