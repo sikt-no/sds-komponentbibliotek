@@ -17,20 +17,19 @@
   },
   "packageManager": "npm@10.8.2",
   "workspaces": [
-    "packages/*",
-    "gatsby",
-    "storybook"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "prebuild": "npm run clean && npm run prebuild --workspaces --if-present",
     "clean": "run-p clean:*",
     "clean:build": "rimraf --glob packages/**/{build,dist}",
-    "clean:gatsby": "npm run clean --workspace=gatsby",
-    "clean:storybook": "rimraf storybook/storybook-static && rimraf storybook/node_modules/.cache",
+    "clean:gatsby": "npm run clean --workspace=apps/gatsby",
+    "clean:storybook": "rimraf apps/storybook/storybook-static && rimraf apps/storybook/node_modules/.cache",
     "format": "prettier --write . --ignore-unknown",
-    "gatsby": "npm run develop --workspace=gatsby",
-    "gatsby:build": "npm run build:prod --workspace=gatsby",
+    "gatsby": "npm run develop --workspace=apps/gatsby",
+    "gatsby:build": "npm run build:prod --workspace=apps/gatsby",
     "init": "turbo gen init-package",
     "postinstall": "npm run prebuild --workspaces --if-present",
     "lint": "run-p lint:*",
@@ -39,8 +38,8 @@
     "prepare": "husky",
     "release": "commit-and-tag-version",
     "prerelease": "cross-replace npm run build --workspace=packages/$npm_config_package --if-present",
-    "storybook": "npm run dev --workspace=storybook",
-    "storybook:build": "npm run build:prod --workspace=storybook",
+    "storybook": "npm run dev --workspace=apps/storybook",
+    "storybook:build": "npm run build:prod --workspace=apps/storybook",
     "test": "npm run test:unit",
     "test:unit": "jest",
     "test:e2e": "playwright test"

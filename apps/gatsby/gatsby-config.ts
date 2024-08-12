@@ -59,7 +59,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "components",
-        path: `${__dirname}/../packages`,
+        path: `${__dirname}/../../packages`,
         ignore: [
           "**/.*",
           "**/*.png",

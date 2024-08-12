@@ -1,13 +1,13 @@
 import type { Preview } from "@storybook/react";
-import "../../packages/core/src/index.pcss";
-import "../../packages/logo/src/logo.pcss";
-import "../../packages/icons/src/icon.pcss";
-import "../../packages/input/src/input.pcss";
-import "../../packages/button/src/button.pcss";
-import "../../packages/button/src/button-link.pcss";
-import "../../packages/form/src/fieldset.pcss";
-import "../../packages/form/src/form-field.pcss";
-import "../../packages/checkbox/src/checkbox-input.pcss";
+import "../../../packages/core/src/index.pcss";
+import "../../../packages/logo/src/logo.pcss";
+import "../../../packages/icons/src/icon.pcss";
+import "../../../packages/input/src/input.pcss";
+import "../../../packages/button/src/button.pcss";
+import "../../../packages/button/src/button-link.pcss";
+import "../../../packages/form/src/fieldset.pcss";
+import "../../../packages/form/src/form-field.pcss";
+import "../../../packages/checkbox/src/checkbox-input.pcss";
 import "./style.css";
 
 const preview: Preview = {

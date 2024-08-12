@@ -237,7 +237,7 @@ storybook:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
     expire_in: 1 days
     paths:
-      - storybook/storybook-static
+      - apps/storybook/storybook-static
   needs:
     - install
     - packages
@@ -263,13 +263,13 @@ gatsby:
       policy: pull
     - key: "$CI_JOB_NAME-$CI_COMMIT_BRANCH"
       paths:
-        - gatsby/.cache/
-        - gatsby/public/
+        - apps/gatsby/.cache/
+        - apps/gatsby/public/
   artifacts:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
     expire_in: 1 days
     paths:
-      - gatsby/public
+      - apps/gatsby/public
   dependencies:
     - packages
   needs:

@@ -8,8 +8,8 @@ import * as moduleStyle from "./index.module.css";
 import { Section } from "@sikt/sds-section";
 import { Heading3, Link, Paragraph } from "@sikt/sds-core";
 import { colorsHref, SubNav } from "../../../components/grunnleggende/SubNav";
-import { config } from "../../../../../packages/icons/src/icons.config";
-import * as icons from "../../../../../packages/icons/build/index";
+import { config } from "../../../../../../packages/icons/src/icons.config";
+import * as icons from "../../../../../../packages/icons/build/index";
 import { LinkedInLogo } from "@sikt/sds-icons";
 
 export { Head } from "../../../components/Head";

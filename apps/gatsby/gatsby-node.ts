@@ -63,6 +63,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       const pathToPackageJson = path.resolve(
         __dirname,
         "..",
+        "..",
         "packages",
         packageDir,
         "package.json",

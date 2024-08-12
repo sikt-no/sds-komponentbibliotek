@@ -17,6 +17,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["packages", "types", "jest"],
+  "include": ["apps", "packages", "types", "jest"],
   "exclude": ["node_modules"]
 }
