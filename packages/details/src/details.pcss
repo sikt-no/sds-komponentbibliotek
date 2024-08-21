@@ -1,0 +1,85 @@
+.sds-details {
+  border-top: var(--details-border);
+  border-bottom: var(--details-border);
+
+  ::-webkit-details-marker {
+    display: none;
+  }
+
+  & + & {
+    border-top: none;
+  }
+
+  &--large {
+    --details-border: var(--sds-space-border-weight-regular) solid
+      var(--sds-color-layout-divider-subtle);
+    --details-indentation: var(--sds-space-padding-medium);
+    --summary-border-radius: 0;
+    --summary-font-size: var(--sds-typography-heading-fontsize-small);
+    --summary-font-weight: var(--sds-typography-weight-regular);
+    --summary-line-height: var(--sds-typography-heading-lineheight-small);
+    --summary-padding: var(--sds-space-padding-medium)
+      var(--details-indentation);
+  }
+
+  &--small {
+    --details-border: none;
+    --details-indentation: var(--sds-space-padding-small);
+    --summary-border-radius: var(--sds-space-border-radius-small);
+    --summary-font-size: var(--sds-typography-heading-fontsize-paragraph);
+    --summary-font-weight: var(--sds-typography-weight-bold);
+    --summary-line-height: var(--sds-typography-heading-lineheight-paragraph);
+    --summary-padding: var(--sds-space-padding-minimal)
+      var(--details-indentation);
+  }
+
+  &__summary {
+    align-items: center;
+    border-radius: var(--summary-border-radius);
+    color: var(--sds-color-text-primary);
+    cursor: pointer;
+    display: flex;
+    font-size: var(--summary-font-size);
+    font-weight: var(--summary-font-weight);
+    gap: var(--sds-space-gap-medium);
+    justify-content: space-between;
+    line-height: var(--summary-line-height);
+    padding: var(--summary-padding);
+    text-align: start;
+    width: 100%;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+    }
+
+    &:focus-visible {
+      outline: var(--sds-focus-outline);
+    }
+
+    &:active {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-pressed
+      );
+    }
+  }
+
+  &__icon {
+    display: block;
+    font-size: var(--sds-base-size-m);
+    transition: rotate var(--sds-effect-animation-duration-medium)
+      var(--sds-effect-animation-easing-default);
+  }
+
+  &[open] &__icon {
+    rotate: 180deg;
+  }
+
+  &__content {
+    color: var(--sds-color-text-primary);
+    padding: var(--sds-space-padding-tiny) var(--details-indentation)
+      var(--sds-space-padding-medium);
+  }
+}
