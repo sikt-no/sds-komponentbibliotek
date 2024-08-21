@@ -16,3 +16,10 @@ export const Default: Story = {
     target: "Target",
   },
 };
+
+export const Abbreviation: Story = {
+  args: {
+    children: <abbr>SDS</abbr>,
+    target: "Sikt Design System",
+  },
+};
