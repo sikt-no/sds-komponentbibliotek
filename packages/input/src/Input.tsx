@@ -159,40 +159,49 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
     );
   },
 );
-
 Input.displayName = "Input";
 
-export const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(
-  (props, ref) => <Input type="textarea" ref={ref} {...props} />,
-);
+const TextArea = forwardRef<HTMLTextAreaElement, InputProps>((props, ref) => (
+  <Input type="textarea" ref={ref} {...props} />
+));
 TextArea.displayName = "TextArea";
-export const TextInput = forwardRef<HTMLInputElement, InputProps>(
-  (props, ref) => <Input type="text" ref={ref} {...props} />,
-);
+
+const TextInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
+  <Input type="text" ref={ref} {...props} />
+));
 TextInput.displayName = "TextInput";
-export const NumberInput = forwardRef<HTMLInputElement, InputProps>(
-  (props, ref) => <Input type="number" ref={ref} {...props} />,
-);
+
+const NumberInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
+  <Input type="number" ref={ref} {...props} />
+));
 NumberInput.displayName = "NumberInput";
-export const EmailInput = forwardRef<HTMLInputElement, InputProps>(
-  (props, ref) => (
-    <Input type="email" icon={<EnvelopeIcon />} ref={ref} {...props} />
-  ),
-);
+
+const EmailInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
+  <Input type="email" icon={<EnvelopeIcon />} ref={ref} {...props} />
+));
 EmailInput.displayName = "EmailInput";
-export const PasswordInput = forwardRef<HTMLInputElement, InputProps>(
-  (props, ref) => (
-    <Input type="password" icon={<PasswordIcon />} ref={ref} {...props} />
-  ),
-);
+
+const PasswordInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
+  <Input type="password" icon={<PasswordIcon />} ref={ref} {...props} />
+));
 PasswordInput.displayName = "PasswordInput";
-export const TelInput = forwardRef<HTMLInputElement, InputProps>(
-  (props, ref) => (
-    <Input type="tel" icon={<PhoneIcon />} ref={ref} {...props} />
-  ),
-);
+
+const TelInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
+  <Input type="tel" icon={<PhoneIcon />} ref={ref} {...props} />
+));
 TelInput.displayName = "TelInput";
-export const SearchInput = forwardRef<HTMLInputElement, InputProps>(
-  (props, ref) => <Input type="search" ref={ref} {...props} />,
-);
+
+const SearchInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
+  <Input type="search" ref={ref} {...props} />
+));
 SearchInput.displayName = "SearchInput";
+
+export {
+  TextArea,
+  TextInput,
+  NumberInput,
+  EmailInput,
+  PasswordInput,
+  TelInput,
+  SearchInput,
+};
