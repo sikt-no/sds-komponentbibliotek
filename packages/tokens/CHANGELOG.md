@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file. See [commit
 
 ### ⚠ BREAKING CHANGES
 
-- **tokens:** refactor css color variables
+- **tokens:** refactor css color variables, dist/css/color.light.css & dist/css/color.dark.css are replaced by one color.css
 
 ### Features
 
