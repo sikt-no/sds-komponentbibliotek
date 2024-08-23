@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-tokens",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "license": "UNLICENSED",
   "type": "commonjs",
   "main": "dist/js/tokens.js",
