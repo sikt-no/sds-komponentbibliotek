@@ -1,6 +1,17 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@3.0.2...@sikt/sds-core@3.1.0) (2024-08-25)
+
+### Features
+
+- **tokens:** update to new color tokens ([4dff38e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4dff38ea4a19c1b39c734c59e575b26d03d2d3e5))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-tokens@2.0.0 ([65f082e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/65f082eb7a9285360dceec655687260731e2c14b))
+- package json exports ([b62fed7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b62fed7bfa459c618c016f39c960dffda037155f))
 
 ### [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@3.0.1...@sikt/sds-core@3.0.2) (2023-12-18)
 
