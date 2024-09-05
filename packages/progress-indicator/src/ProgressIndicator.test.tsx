@@ -17,7 +17,7 @@ describe("Progress indicator", () => {
     });
   });
 
-  describe("Component functionality", () => {
+  describe("api", () => {
     it("should mark the correct steps as selected when controlled by parent element", async () => {
       render(
         <ProgressIndicator>
@@ -44,10 +44,14 @@ describe("Progress indicator", () => {
       const step1 = screen.getByTestId("progress-step-1");
       const step2 = screen.getByTestId("progress-step-2");
       const step3 = screen.getByTestId("progress-step-3");
+
       expect(step1).toHaveClass("sds-progress-step--selected");
       expect(step1.getAttribute("aria-current")).toBe("false");
+      expect(step1).toHaveTextContent("Fullført");
+
       expect(step2).toHaveClass("sds-progress-step--selected");
       expect(step2.getAttribute("aria-current")).toBe("step");
+
       expect(step3).not.toHaveClass("sds-progress-step--selected");
       expect(step3.getAttribute("aria-current")).toBe("false");
     });
@@ -78,12 +82,29 @@ describe("Progress indicator", () => {
       const step1 = screen.getByTestId("progress-step-1");
       const step2 = screen.getByTestId("progress-step-2");
       const step3 = screen.getByTestId("progress-step-3");
+
       expect(step1).not.toHaveClass("sds-progress-step--selected");
       expect(step1.getAttribute("aria-current")).toBe("false");
+
       expect(step2).not.toHaveClass("sds-progress-step--selected");
       expect(step1.getAttribute("aria-current")).toBe("false");
+
       expect(step3).toHaveClass("sds-progress-step--selected");
       expect(step3.getAttribute("aria-current")).toBe("step");
+    });
+
+    it("should not show label", async () => {
+      render(
+        <ProgressIndicator>
+          <ProgressStep value={1} label="First" showLabel={false} />
+          <ProgressStep value={2} label="Second" />
+        </ProgressIndicator>,
+      );
+
+      expect(screen.getByText("First")).toHaveClass("sds-screen-reader-only");
+      expect(screen.getByText("Second")).not.toHaveClass(
+        "sds-screen-reader-only",
+      );
     });
   });
 });

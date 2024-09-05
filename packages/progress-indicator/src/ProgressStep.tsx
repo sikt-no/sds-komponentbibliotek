@@ -35,7 +35,11 @@ export const ProgressStep = ({
       {...rest}
     >
       <CaretRightIcon className="sds-progress-step__separator-icon" />
-      <span className="sds-screen-reader-only">{accessibleCompleteString}</span>
+      {status === "complete" && (
+        <span className="sds-screen-reader-only">
+          {accessibleCompleteString}
+        </span>
+      )}
       {showNumber && <div className="sds-progress-step__number">{value}</div>}
       <span
         className={clsx(
