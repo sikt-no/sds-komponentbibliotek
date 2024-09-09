@@ -25,7 +25,7 @@ Icons can be added to the badge by passing an [sds-icon](/packages/icons/README.
 
 ```js
 import { Badge } from "@sikt/sds-badge";
-import { InfoIcon } from "@sikt/sds-icon";
+import { InfoIcon } from "@sikt/sds-icons";
 import "@sikt/sds-badge/dist/index.css";
 import "@sikt/sds-icon/dist/index.css";
 
