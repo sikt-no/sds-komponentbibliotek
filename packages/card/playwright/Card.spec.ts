@@ -5,7 +5,7 @@ test.describe("Card", () => {
   const componentSelector = ".sds-card";
 
   test.describe("a11y", () => {
-    test("default card should be accessible", async ({ page }) => {
+    test("default should be accessible", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-card--default",
       );
@@ -21,7 +21,7 @@ test.describe("Card", () => {
   });
 
   test.describe("visual", () => {
-    test("default card should have screenshot", async ({ page }) => {
+    test("default should have screenshot", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-card--default",
       );

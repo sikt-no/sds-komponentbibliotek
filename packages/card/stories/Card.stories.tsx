@@ -41,7 +41,7 @@ export const Default: Story = {
     children: <>Text</>,
     callToAction: (
       <ButtonLink variant="subtle" href="#" icon={<ArrowCircleRightIcon />}>
-        Clickable label
+        Action
       </ButtonLink>
     ),
   },

@@ -5,7 +5,7 @@ test.describe("Section", () => {
   const componentSelector = ".sds-section";
 
   test.describe("a11y", () => {
-    test("section default should be accessible", async ({ page }) => {
+    test("default should be accessible", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-section--default",
       );
@@ -19,9 +19,7 @@ test.describe("Section", () => {
       expect(accessibilityScanResults.violations).toEqual([]);
     });
 
-    test("section with call to action should be accessible", async ({
-      page,
-    }) => {
+    test("with call to action should be accessible", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-section--with-call-to-action",
       );
@@ -37,7 +35,7 @@ test.describe("Section", () => {
   });
 
   test.describe("visual", () => {
-    test("section default should have screenshot", async ({ page }) => {
+    test("default should have screenshot", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-section--default",
       );
@@ -45,9 +43,7 @@ test.describe("Section", () => {
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
-    test("section with call to action should have screenshot", async ({
-      page,
-    }) => {
+    test("with call to action should have screenshot", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-section--with-call-to-action",
       );

@@ -24,7 +24,7 @@ export const WithCallToAction: Story = {
     headingText: "Header",
     callToAction: (
       <ButtonLink variant="subtle" href="#" icon={<ArrowCircleRightIcon />}>
-        Clickable label
+        Action
       </ButtonLink>
     ),
   },
