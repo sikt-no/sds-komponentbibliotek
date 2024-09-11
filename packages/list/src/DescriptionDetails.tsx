@@ -1,4 +1,4 @@
-import { clsx } from "clsx";
+import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
 
 export interface DescriptionDetailsProps extends HTMLAttributes<HTMLElement> {

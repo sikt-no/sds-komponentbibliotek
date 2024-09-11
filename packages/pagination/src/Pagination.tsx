@@ -1,5 +1,5 @@
 import { CaretLeftIcon, CaretRightIcon } from "@sikt/sds-icons";
-import { clsx } from "clsx";
+import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
 import "./pagination.pcss";
 
