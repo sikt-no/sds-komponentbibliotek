@@ -9,8 +9,9 @@ import {
 } from "react";
 
 export interface FigureProps extends HTMLAttributes<HTMLElement> {
-  children: ReactNode;
   aspectRatio?: "16x9";
+  children: ReactNode;
+  className?: string;
   figCaption?: string;
 }
 
@@ -19,8 +20,9 @@ interface ChildProps {
 }
 
 export const Figure = ({
-  children,
   aspectRatio,
+  children,
+  className,
   figCaption,
   ...rest
 }: FigureProps) => {
@@ -37,7 +39,7 @@ export const Figure = ({
   };
 
   return (
-    <figure className="sds-figure" {...rest}>
+    <figure className={clsx("sds-figure", className)} {...rest}>
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
           return addClassToChildren(child as ReactElement<ChildProps>);

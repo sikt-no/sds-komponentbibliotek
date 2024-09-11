@@ -27,5 +27,17 @@ describe("Figure", () => {
         "sds-figure__figure--ratio-16x9",
       );
     });
+
+    it("should have class name", async () => {
+      render(
+        <Figure data-testid="test" className="test-class-name">
+          <img src="https://picsum.photos/400/300" alt="bar" />
+        </Figure>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-figure test-class-name",
+      );
+    });
   });
 });
