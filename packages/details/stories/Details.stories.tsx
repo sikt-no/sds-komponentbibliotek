@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { Heading } from "../../core/index";
 import { Details, DetailsProps } from "../index";
 
 const meta: Meta = {
@@ -21,13 +22,25 @@ export const Default: Story = {
 export const Accordion: Story = {
   render: () => (
     <div data-testid="test">
-      <Details summary="First Summary" name="id" key={0}>
+      <Details
+        summary={<Heading level="3">First Summary</Heading>}
+        name="id"
+        key={0}
+      >
         First Details
       </Details>
-      <Details summary="Second Summary" name="id" key={1}>
+      <Details
+        summary={<Heading level="3">Second Summary</Heading>}
+        name="id"
+        key={1}
+      >
         Second Details
       </Details>
-      <Details summary="Third Summary" name="id" key={2}>
+      <Details
+        summary={<Heading level="3">Third Summary</Heading>}
+        name="id"
+        key={2}
+      >
         Third Details
       </Details>
     </div>
