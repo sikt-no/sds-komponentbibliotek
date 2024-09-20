@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+    "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
   },
   "engines": {
     "node": "20.17.0"

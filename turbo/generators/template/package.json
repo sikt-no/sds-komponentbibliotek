@@ -2,6 +2,12 @@
   "name": "@sikt/sds-{{kebabCase name}}",
   "version": "0.1.0",
   "license": "UNLICENSED",
+  "description": "{{pascalCase name}} component, Sikt component library",
+  "homepage": "https://designsystem.sikt.no/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+  },
   "type": "commonjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
