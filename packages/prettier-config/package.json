@@ -2,6 +2,11 @@
   "name": "@sikt/prettier-config-sds",
   "version": "0.1.1",
   "license": "UNLICENSED",
+  "homepage": "https://designsystem.sikt.no/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+  },
   "type": "commonjs",
   "main": "index.js",
   "files": [

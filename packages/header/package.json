@@ -2,6 +2,11 @@
   "name": "@sikt/sds-header",
   "version": "3.0.5",
   "license": "UNLICENSED",
+  "homepage": "https://designsystem.sikt.no/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+  },
   "type": "commonjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

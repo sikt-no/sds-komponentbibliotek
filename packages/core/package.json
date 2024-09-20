@@ -2,6 +2,11 @@
   "name": "@sikt/sds-core",
   "version": "3.1.0",
   "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://designsystem.sikt.no/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+  },
   "type": "commonjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

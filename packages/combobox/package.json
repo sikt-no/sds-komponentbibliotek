@@ -2,6 +2,11 @@
   "name": "@sikt/sds-combobox",
   "version": "1.0.1",
   "license": "UNLICENSED",
+  "homepage": "https://designsystem.sikt.no/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "exports": {
