@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-radio@2.0.2...@sikt/sds-radio@3.0.0) (2024-09-23)
+
+### ⚠ BREAKING CHANGES
+
+- allow one of label or aria-labelledby for input components
+
+### Features
+
+- allow one of label or aria-labelledby for input components ([edcfefb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/edcfefbda41a4781ea5fbda0f24e7743c1d165e2))
+
+### Bug Fixes
+
+- **deps:** change peer deps clsx to ^2.1.0 ([9eb76f1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9eb76f1207a2ec8d19fda646c9bc26d5922b1839))
+- **deps:** update @sikt/sds-core to ^3.0.2 ([a55b4c2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a55b4c2f0bad4dfe80b26c0f7102622b4257d8b2))
+- **deps:** update @sikt/sds-form@3.0.0 ([6859894](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/68598941f873ffede6a5d18936279da5b98e5af2))
+- **deps:** update @sikt/sds-tokens to ^1.0.1 ([3618147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3618147fbc51048b8f63484b63cd2fa6e76cbbf4))
+- **deps:** update sds-icons ([8a3e1ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8a3e1ae229148b84f603089337b8a8f54d23fe39))
+- **deps:** update sds-icons ([3755b67](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3755b6799170675aaf09fbe26c15110d36daaf53))
+- package json exports ([b62fed7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b62fed7bfa459c618c016f39c960dffda037155f))
+
 ### [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-radio@2.0.1...@sikt/sds-radio@2.0.2) (2024-04-01)
 
 ### Bug Fixes
