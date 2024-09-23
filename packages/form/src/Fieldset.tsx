@@ -3,18 +3,42 @@ import { HTMLAttributes, ReactNode, forwardRef, useId, useMemo } from "react";
 import { FieldsetContext } from "./FieldsetContext";
 import "./fieldset.pcss";
 
-export interface FieldsetProps extends HTMLAttributes<HTMLFieldSetElement> {
+interface FieldsetBaseProps
+  extends Omit<
+    HTMLAttributes<HTMLFieldSetElement>,
+    "aria-label" | "aria-labelledby"
+  > {
   className?: string;
-  legend: ReactNode;
   name?: string;
   errorText?: ReactNode;
   helpText?: ReactNode;
   children: ReactNode;
 }
 
+export type FieldsetProps = FieldsetBaseProps &
+  (
+    | {
+        legend: NonNullable<ReactNode>;
+        "aria-labelledby"?: never;
+      }
+    | {
+        legend?: never;
+        "aria-labelledby": string;
+      }
+  );
+
 export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
   (
-    { className, legend, name, errorText, helpText, children, ...rest },
+    {
+      className,
+      legend,
+      "aria-labelledby": ariaLabelledby,
+      name,
+      errorText,
+      helpText,
+      children,
+      ...rest
+    },
     ref,
   ) => {
     const id = useId();
@@ -33,6 +57,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
             errorText && "sds-form-fieldset--error",
             className,
           )}
+          aria-labelledby={ariaLabelledby}
           aria-describedby={
             (errorText ?? helpText) ? `${id}-help-text` : undefined
           }
@@ -40,7 +65,9 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
           aria-errormessage={errorText ? `${id}-help-text` : undefined}
           {...rest}
         >
-          <legend className="sds-form-fieldset__legend">{legend}</legend>
+          {legend !== undefined && (
+            <legend className="sds-form-fieldset__legend">{legend}</legend>
+          )}
           {children}
           {(errorText ?? helpText) && (
             <div

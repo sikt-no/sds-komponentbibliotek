@@ -20,6 +20,7 @@ export const ToggleSegment = forwardRef<
         className,
       )}
     >
+      {/* @ts-expect-error TypeScript is struggling, but this is correct */}
       <Fieldset className="sds-toggle-segment__fieldset" {...rest} ref={ref}>
         <div className="sds-toggle-segment__group">{children}</div>
       </Fieldset>

@@ -26,8 +26,8 @@ import {
 import { useEventListener, useOnClickOutside } from "usehooks-ts";
 import "./input-datepicker.pcss";
 
-export interface InputDatepickerProps extends DatePickerProps<DateValue> {
-  label: ReactNode;
+interface InputDatepickerBaseProps
+  extends Omit<DatePickerProps<DateValue>, "aria-label" | "aria-labelledby"> {
   errorText?: ReactNode;
   helpText?: ReactNode;
   className?: string;
@@ -39,10 +39,23 @@ export interface InputDatepickerProps extends DatePickerProps<DateValue> {
   onChange?: (newValue: DateValue) => void;
 }
 
+export type InputDatepickerProps = InputDatepickerBaseProps &
+  (
+    | {
+        label: NonNullable<ReactNode>;
+        "aria-labelledby"?: never;
+      }
+    | {
+        label?: never;
+        "aria-labelledby": string;
+      }
+  );
+
 export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
   (
     {
       label,
+      "aria-labelledby": ariaLabelledBy,
       errorText,
       helpText,
       className,
@@ -81,6 +94,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
           ref={ref}
           value={value}
           isInvalid={Boolean(errorText)}
+          aria-labelledby={ariaLabelledBy}
           aria-describedby={helpTextId}
           aria-errormessage={errorText && helpTextId}
           className={clsx(
@@ -91,9 +105,11 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
           )}
           {...rest}
         >
-          <ReactAriaLabel>
-            <Label text={label} error={Boolean(errorText)} htmlFor={id} />
-          </ReactAriaLabel>
+          {label !== undefined && (
+            <ReactAriaLabel>
+              <Label text={label} error={Boolean(errorText)} htmlFor={id} />
+            </ReactAriaLabel>
+          )}
           <Group className="sds-input__wrapper">
             <DateInput className="sds-input-datepicker__input">
               {(segment) => (

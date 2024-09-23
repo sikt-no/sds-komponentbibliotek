@@ -7,7 +7,10 @@ import "./form-field.pcss";
 export interface FormFieldProps
   extends Omit<HTMLAttributes<HTMLLabelElement>, "onChange"> {
   className?: string;
-  label: ReactNode;
+  /**
+   * A label is required, but undefined is allowed for use when a label is provided via `aria-labelledby`.
+   */
+  label: NonNullable<ReactNode> | undefined;
   errorText?: ReactNode;
   helpText?: ReactNode;
   /**
@@ -38,14 +41,18 @@ export const FormField = ({
         className,
       )}
     >
-      <Label
-        text={label}
-        error={Boolean(errorText)}
-        htmlFor={htmlFor}
-        {...rest}
-      >
-        {children}
-      </Label>
+      {label !== undefined ? (
+        <Label
+          text={label}
+          error={Boolean(errorText)}
+          htmlFor={htmlFor}
+          {...rest}
+        >
+          {children}
+        </Label>
+      ) : (
+        children
+      )}
       {(errorText ?? helpText) && (
         <HelpText id={helpTextId} error={Boolean(errorText)}>
           {errorText ?? helpText}

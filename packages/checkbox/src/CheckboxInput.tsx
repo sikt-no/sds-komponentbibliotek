@@ -3,24 +3,37 @@ import { CheckIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
   ChangeEvent,
-  HTMLAttributes,
+  InputHTMLAttributes,
   ReactNode,
   forwardRef,
   useId,
 } from "react";
 import "./checkbox-input.pcss";
 
-export interface CheckboxInputProps extends HTMLAttributes<HTMLInputElement> {
+interface CheckboxInputBaseProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "onChange" | "aria-label" | "aria-labelledby"
+  > {
   isChecked?: boolean;
-  disabled?: boolean;
   error?: boolean;
-  id?: string;
-  label?: ReactNode;
   name?: string;
   value?: string | number;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   className?: string;
 }
+
+export type CheckboxInputProps = CheckboxInputBaseProps &
+  (
+    | {
+        label: NonNullable<ReactNode>;
+        "aria-labelledby"?: never;
+      }
+    | {
+        label?: never;
+        "aria-labelledby": string;
+      }
+  );
 
 export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
   (
@@ -31,6 +44,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
       isChecked,
       onChange,
       label,
+      "aria-labelledby": ariaLabelledby,
       value,
       error,
       ...rest
@@ -39,15 +53,15 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
   ) => {
     const id = useId();
     const context = useFieldset() ?? {};
-    return (
-      <label
-        className={clsx(
-          "sds-checkbox",
-          (error ?? context.error) && "sds-checkbox--error",
-          className,
-        )}
-        htmlFor={id}
-      >
+
+    const labelClassName = clsx(
+      "sds-checkbox",
+      (error ?? context.error) && "sds-checkbox--error",
+      className,
+    );
+
+    const input = (
+      <>
         <input
           ref={ref}
           className="sds-checkbox__input"
@@ -56,6 +70,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
           type="checkbox"
           onChange={onChange}
           value={value}
+          aria-labelledby={ariaLabelledby}
           checked={isChecked ?? false}
           disabled={disabled}
           aria-invalid={(error ?? context.error) ? true : false}
@@ -64,8 +79,16 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
         <div className="sds-checkbox__icon-wrapper">
           <CheckIcon className="sds-checkbox__icon" />
         </div>
+      </>
+    );
+
+    return label !== undefined ? (
+      <label className={labelClassName} htmlFor={id}>
+        {input}
         <div className="sds-checkbox__input-label">{label}</div>
       </label>
+    ) : (
+      <div className={labelClassName}>{input}</div>
     );
   },
 );

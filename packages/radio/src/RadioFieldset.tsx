@@ -15,6 +15,7 @@ export const RadioFieldset = forwardRef<
 
   return (
     <RadioFieldsetContext.Provider value={context}>
+      {/* @ts-expect-error TypeScript is struggling, but this is correct */}
       <Fieldset ref={ref} {...rest} />
     </RadioFieldsetContext.Provider>
   );

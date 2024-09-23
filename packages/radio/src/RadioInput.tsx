@@ -2,12 +2,26 @@ import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 import useRadioFieldset from "./RadioFieldsetContext";
 import { RadioInputBase } from "./RadioInputBase";
 
-export interface RadioInputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
+interface RadioInputBaseProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "onChange" | "aria-label" | "aria-labelledby"
+  > {
   className?: string;
-  label: ReactNode;
   value: string;
 }
+
+export type RadioInputProps = RadioInputBaseProps &
+  (
+    | {
+        label: NonNullable<ReactNode>;
+        "aria-labelledby"?: never;
+      }
+    | {
+        label?: never;
+        "aria-labelledby": string;
+      }
+  );
 
 export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
   (props, ref) => {

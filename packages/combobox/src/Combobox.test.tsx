@@ -138,5 +138,18 @@ describe("Combobox", () => {
       expect(screen.queryByText("Baz")).not.toBeInTheDocument();
       expect(screen.getByText("Qux")).toBeInTheDocument();
     });
+
+    it("should support aria-labelledby", () => {
+      render(
+        <>
+          <div id="label">Foo</div>
+          <Combobox aria-labelledby="label" defaultItems={options}>
+            {(item) => <ComboboxItem key={item.id}>{item.name}</ComboboxItem>}
+          </Combobox>
+        </>,
+      );
+
+      expect(screen.getByRole("combobox", { name: "Foo" })).toBeInTheDocument();
+    });
   });
 });

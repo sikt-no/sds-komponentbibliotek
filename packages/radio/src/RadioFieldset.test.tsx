@@ -123,5 +123,24 @@ describe("RadioFieldset", () => {
       expect(element).toBeInTheDocument();
       expect(element).toBeInvalid();
     });
+
+    it("should support aria-labelledby", () => {
+      render(
+        <>
+          <div id="label">Foo</div>
+          <div id="label1">Foo 1</div>
+          <div id="label2">Foo 2</div>
+          <RadioFieldset aria-labelledby="label">
+            <RadioInput aria-labelledby="label1" value="1" />
+            <RadioInput aria-labelledby="label2" value="2" />
+          </RadioFieldset>
+          ,
+        </>,
+      );
+
+      expect(screen.getByRole("group", { name: "Foo" })).toBeInTheDocument();
+      expect(screen.getByRole("radio", { name: "Foo 1" })).toBeInTheDocument();
+      expect(screen.getByRole("radio", { name: "Foo 2" })).toBeInTheDocument();
+    });
   });
 });

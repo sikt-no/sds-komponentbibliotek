@@ -16,15 +16,29 @@ import {
 } from "react-aria-components";
 import "./combobox.pcss";
 
-export interface ComboboxProps<T extends object>
-  extends Omit<AriaComboboxProps<T>, "children" | "menuTrigger"> {
+interface ComboboxBaseProps<T extends object>
+  extends Omit<
+    AriaComboboxProps<T>,
+    "children" | "menuTrigger" | "aria-label" | "aria-labelledby"
+  > {
   children: React.ReactNode | ((item: T) => React.ReactNode);
-  label: string;
   className?: string;
   errorText?: string;
   helpText?: string;
   menuTrigger?: "focus" | "manual" | "input";
 }
+
+export type ComboboxProps<T extends object> = ComboboxBaseProps<T> &
+  (
+    | {
+        label: string;
+        "aria-labelledby"?: never;
+      }
+    | {
+        label?: never;
+        "aria-labelledby": string;
+      }
+  );
 
 export function Combobox<T extends object>({
   children,
@@ -32,6 +46,7 @@ export function Combobox<T extends object>({
   errorText,
   helpText,
   label,
+  "aria-labelledby": ariaLabelledBy,
   menuTrigger = "focus",
   ...props
 }: ComboboxProps<T>) {
@@ -61,6 +76,7 @@ export function Combobox<T extends object>({
         onOpenChange={onOpenChangeHandler}
         id={id}
         aria-label={label}
+        aria-labelledby={ariaLabelledBy}
         {...props}
       >
         <div className="sds-combobox__combobox">

@@ -19,13 +19,12 @@ import {
 } from "react";
 import "./input.pcss";
 
-export interface InputProps
+interface InputBaseProps
   extends Omit<
     InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
-    "onChange"
+    "onChange" | "aria-label" | "aria-labelledby"
   > {
   className?: string;
-  label: ReactNode;
   placeholder?: string;
   onChange?: (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -40,11 +39,24 @@ export interface InputProps
   rows?: number;
 }
 
+export type InputProps = InputBaseProps &
+  (
+    | {
+        label: NonNullable<ReactNode>;
+        "aria-labelledby"?: never;
+      }
+    | {
+        label?: never;
+        "aria-labelledby": string;
+      }
+  );
+
 const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
   (
     {
       className,
       label,
+      "aria-labelledby": ariaLabelledBy,
       placeholder,
       onChange,
       value,
@@ -103,6 +115,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
               placeholder={placeholder}
               onChange={onChange && changeHandler}
               value={value}
+              aria-labelledby={ariaLabelledBy}
               aria-describedby={
                 (errorText ?? helpText) ? helpTextId : undefined
               }
@@ -120,6 +133,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
               placeholder={placeholder}
               onChange={onChange && changeHandler}
               value={value}
+              aria-labelledby={ariaLabelledBy}
               aria-describedby={
                 (errorText ?? helpText) ? helpTextId : undefined
               }

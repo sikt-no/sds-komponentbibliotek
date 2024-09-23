@@ -21,20 +21,20 @@ describe("Fieldset", () => {
   describe("api", () => {
     it("fieldset should render", async () => {
       render(
-        <Fieldset legend="Foo" data-testid="test">
+        <Fieldset legend="Foo">
           <label>
             Label
             <input />
           </label>
         </Fieldset>,
       );
-      expect(screen.getByTestId("test")).toHaveClass("sds-form-fieldset");
-      expect(screen.getByTestId("test")).toBeInTheDocument();
+      expect(screen.getByRole("group")).toHaveClass("sds-form-fieldset");
+      expect(screen.getByRole("group")).toBeInTheDocument();
     });
 
     it("should have class name", async () => {
       render(
-        <Fieldset legend="Foo" data-testid="test" className="test-class-name">
+        <Fieldset legend="Foo" className="test-class-name">
           <label>
             Label
             <input />
@@ -42,14 +42,14 @@ describe("Fieldset", () => {
         </Fieldset>,
       );
 
-      expect(screen.getByTestId("test")).toHaveClass(
+      expect(screen.getByRole("group")).toHaveClass(
         "sds-form-fieldset test-class-name",
       );
     });
 
     it("should show error message and mark with aria-invalid", async () => {
       render(
-        <Fieldset legend="Foo" data-testid="test" errorText="Error message">
+        <Fieldset legend="Foo" errorText="Error message">
           <label>
             Label
             <input />
@@ -62,5 +62,22 @@ describe("Fieldset", () => {
       expect(element).toBeInTheDocument();
       expect(element).toBeInvalid();
     });
+  });
+
+  it("should support aria-labelledby", () => {
+    render(
+      <>
+        <div id="label">Foo</div>
+        <Fieldset aria-labelledby="label">
+          <label>
+            Label
+            <input />
+          </label>
+        </Fieldset>
+        ,
+      </>,
+    );
+
+    expect(screen.getByRole("group", { name: "Foo" })).toBeInTheDocument();
   });
 });

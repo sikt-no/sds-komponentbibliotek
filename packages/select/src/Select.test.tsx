@@ -100,5 +100,19 @@ describe("Select", () => {
       expect(screen.queryByText("Baz")).not.toBeInTheDocument();
       expect(screen.getByText("Qux")).toBeInTheDocument();
     });
+
+    it("should support aria-labelledby", () => {
+      render(
+        <>
+          <div id="label">Foo</div>
+          <Select
+            aria-labelledby="label"
+            options={[{ label: "Bar", value: "bar" }]}
+          />
+        </>,
+      );
+
+      expect(screen.getByRole("combobox", { name: "Foo" })).toBeInTheDocument();
+    });
   });
 });

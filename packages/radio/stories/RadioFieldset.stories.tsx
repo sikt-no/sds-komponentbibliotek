@@ -1,16 +1,24 @@
+import {
+  Table,
+  TableHead,
+  TableRow,
+  TableHeader,
+  TableBody,
+  TableCell,
+} from "@sikt/sds-table";
 import { Meta, StoryObj } from "@storybook/react";
-import { RadioFieldset, RadioFieldsetProps, RadioInput } from "../index";
+import { RadioFieldset, RadioInput } from "../index";
 
-const meta: Meta = {
+const meta = {
   title: "Components/Radio/RadioFieldset",
   component: RadioFieldset,
-};
+} satisfies Meta<typeof RadioFieldset>;
 
 export default meta;
 
-type Story = StoryObj<RadioFieldsetProps>;
+type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     children: [
       <RadioInput key={1} label="Radio 1" value="1" />,
@@ -20,20 +28,53 @@ export const Default: Story = {
     legend: "Legend",
     value: "1",
   },
-};
+} satisfies Story;
 
-export const WithHelpText: Story = {
+export const WithHelpText = {
   args: {
     ...Default.args,
     helpText: "Text",
     value: "2",
   },
-};
+} satisfies Story;
 
-export const WithError: Story = {
+export const WithError = {
   args: {
     ...Default.args,
     errorText: "Error!",
     value: "3",
   },
-};
+} satisfies Story;
+
+export const WithAriaLabelledby = {
+  args: {
+    children: Default.args.children,
+    "aria-labelledby": "rowTitle columnTitle",
+  },
+  render: (args) => {
+    return (
+      <Table caption="Radio inside Table" showCaption>
+        <TableHead>
+          <TableRow>
+            <TableHeader>Name</TableHeader>
+            <TableHeader id="columnTitle">Fieldset</TableHeader>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell data-th="Name" id="rowTitle">
+              Sikt
+            </TableCell>
+            <TableCell data-th="Fieldset">
+              <RadioFieldset {...args}>
+                <RadioInput label="Radio 1" value="1" />
+                <RadioInput label="Radio 2" value="2" />
+                <RadioInput label="Radio 3" value="3" />
+              </RadioFieldset>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    );
+  },
+} satisfies Story;

@@ -122,6 +122,17 @@ describe("Input", () => {
       expect(screen.getByText("icon")).toBeInTheDocument();
     });
 
+    it("should support aria-labelledby", () => {
+      render(
+        <>
+          <div id="label">Foo</div>
+          <TextInput aria-labelledby="label" />
+        </>,
+      );
+
+      expect(screen.getByRole("textbox", { name: "Foo" })).toBeInTheDocument();
+    });
+
     it("should have action element", async () => {
       render(
         <SearchInput
@@ -173,6 +184,12 @@ describe("Input", () => {
 
       expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveValue("");
       expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveFocus();
+    });
+
+    it("should have fallback label for clear button", async () => {
+      render(<SearchInput label="Søk utdanningstilbud" value="123" />);
+
+      expect(screen.getByLabelText("Tøm søketekst")).toBeInTheDocument();
     });
   });
 });
@@ -239,6 +256,17 @@ describe("TextArea", () => {
       expect(textAreaEl).not.toHaveAttribute("aria-describedby");
 
       expect(screen.getByRole("textbox")).not.toBeInvalid();
+    });
+
+    it("should support aria-labelledby", () => {
+      render(
+        <>
+          <div id="label">Foo</div>
+          <TextArea aria-labelledby="label" />
+        </>,
+      );
+
+      expect(screen.getByRole("textbox", { name: "Foo" })).toBeInTheDocument();
     });
   });
 });

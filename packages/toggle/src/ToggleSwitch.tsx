@@ -1,23 +1,46 @@
 import { CheckIcon, XIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import { ChangeEventHandler, ReactNode, forwardRef, useId } from "react";
+import {
+  ChangeEventHandler,
+  InputHTMLAttributes,
+  ReactNode,
+  forwardRef,
+  useId,
+} from "react";
 import "./toggle-switch.pcss";
 
-export interface ToggleSwitchProps {
+interface ToggleSwitchBaseProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "onChange" | "aria-label" | "aria-labelledby"
+  > {
   checked?: boolean;
-  label: ReactNode;
-  labelFirst?: boolean;
   showIcons?: boolean;
   error?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   className?: string;
 }
 
+export type ToggleSwitchProps = ToggleSwitchBaseProps &
+  (
+    | {
+        label: NonNullable<ReactNode>;
+        labelFirst?: boolean;
+        "aria-labelledby"?: never;
+      }
+    | {
+        label?: never;
+        labelFirst?: never;
+        "aria-labelledby": string;
+      }
+  );
+
 export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
   (
     {
       checked = false,
       label,
+      "aria-labelledby": ariaLabelledby,
       labelFirst = false,
       showIcons = true,
       error = false,
@@ -31,6 +54,27 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
     const labelElement = (
       <div className="sds-toggle-switch__label-text">{label}</div>
     );
+    const input = (
+      <div className="sds-toggle-switch__inner">
+        <input
+          ref={ref}
+          id={id}
+          type="checkbox"
+          role="switch"
+          className="sds-toggle-switch__track"
+          aria-labelledby={ariaLabelledby}
+          checked={checked}
+          aria-invalid={error}
+          onChange={onChange}
+          readOnly={!onChange}
+          {...rest}
+        />
+        <div className="sds-toggle-switch__thumb">
+          {showIcons && checked && <CheckIcon />}
+          {showIcons && !checked && <XIcon />}
+        </div>
+      </div>
+    );
 
     return (
       <div
@@ -42,28 +86,15 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
         )}
         data-testid="sds-toggle-switch"
       >
-        <label className="sds-toggle-switch__label" htmlFor={id}>
-          {labelFirst && labelElement}
-          <div className="sds-toggle-switch__inner">
-            <input
-              ref={ref}
-              id={id}
-              type="checkbox"
-              role="switch"
-              className="sds-toggle-switch__track"
-              checked={checked}
-              aria-invalid={error}
-              onChange={onChange}
-              readOnly={!onChange}
-              {...rest}
-            />
-            <div className="sds-toggle-switch__thumb">
-              {showIcons && checked && <CheckIcon />}
-              {showIcons && !checked && <XIcon />}
-            </div>
-          </div>
-          {!labelFirst && labelElement}
-        </label>
+        {label !== undefined ? (
+          <label className="sds-toggle-switch__label" htmlFor={id}>
+            {labelFirst && labelElement}
+            {input}
+            {!labelFirst && labelElement}
+          </label>
+        ) : (
+          input
+        )}
       </div>
     );
   },

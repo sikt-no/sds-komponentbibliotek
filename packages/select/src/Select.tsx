@@ -11,18 +11,42 @@ import {
 } from "react";
 import "./select.pcss";
 
-export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
+interface SelectBaseProps
+  extends Omit<
+    SelectHTMLAttributes<HTMLSelectElement>,
+    "onChange" | "aria-label" | "aria-labelledby"
+  > {
   className?: string;
-  label: ReactNode;
   options: Omit<OptionHTMLAttributes<HTMLOptionElement>, "selected">[];
   errorText?: ReactNode;
   helpText?: ReactNode;
   onChange?: ChangeEventHandler<HTMLSelectElement>;
 }
 
+export type SelectProps = SelectBaseProps &
+  (
+    | {
+        label: NonNullable<ReactNode>;
+        "aria-labelledby"?: never;
+      }
+    | {
+        label?: never;
+        "aria-labelledby": string;
+      }
+  );
+
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
-    { className, label, options, errorText, helpText, onChange, ...rest },
+    {
+      className,
+      label,
+      "aria-labelledby": ariaLabelledBy,
+      options,
+      errorText,
+      helpText,
+      onChange,
+      ...rest
+    },
     ref,
   ) => {
     const id = useId();
@@ -46,6 +70,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             ref={ref}
             id={id}
             className="sds-select__select-input"
+            aria-labelledby={ariaLabelledBy}
             aria-describedby={helpTextId}
             aria-invalid={Boolean(errorText) && true}
             onChange={(e) => {

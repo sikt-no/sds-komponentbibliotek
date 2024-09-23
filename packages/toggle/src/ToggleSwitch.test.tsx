@@ -85,5 +85,16 @@ describe("Toggle Switch", () => {
         "sds-toggle-switch--error",
       );
     });
+
+    it("should support aria-labelledby", () => {
+      render(
+        <>
+          <div id="label">Foo</div>
+          <ToggleSwitch aria-labelledby="label" />
+        </>,
+      );
+
+      expect(screen.getByRole("switch", { name: "Foo" })).toBeInTheDocument();
+    });
   });
 });

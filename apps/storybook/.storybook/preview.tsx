@@ -8,6 +8,7 @@ import "../../../packages/button/src/button-link.pcss";
 import "../../../packages/form/src/fieldset.pcss";
 import "../../../packages/form/src/form-field.pcss";
 import "../../../packages/checkbox/src/checkbox-input.pcss";
+import "../../../packages/table/src/table.pcss";
 import "./style.css";
 
 const preview: Preview = {

@@ -8,10 +8,12 @@ import {
 } from "react";
 import "./radio.pcss";
 
-export interface RadioInputBaseProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
+interface RadioInputBaseBaseProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "onChange" | "aria-label" | "aria-labelledby"
+  > {
   className?: string;
-  label: ReactNode;
   name?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   value: string;
@@ -19,31 +21,63 @@ export interface RadioInputBaseProps
   error?: boolean;
 }
 
+export type RadioInputBaseProps = RadioInputBaseBaseProps &
+  (
+    | {
+        label: NonNullable<ReactNode>;
+        "aria-labelledby"?: never;
+      }
+    | {
+        label?: never;
+        "aria-labelledby": string;
+      }
+  );
+
 export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
   (
-    { className, label, name, onChange, checked, value, error, ...rest },
+    {
+      className,
+      label,
+      "aria-labelledby": ariaLabelledby,
+      name,
+      onChange,
+      checked,
+      value,
+      error,
+      ...rest
+    },
     ref,
   ) => {
     const id = useId();
 
-    return (
-      <label
-        className={clsx("sds-radio", error && "sds-radio--error", className)}
-        htmlFor={id}
-      >
-        <input
-          ref={ref}
-          className="sds-radio__input"
-          id={id}
-          name={name}
-          type="radio"
-          onChange={onChange}
-          value={value}
-          checked={checked}
-          {...rest}
-        />
+    const labelClassName = clsx(
+      "sds-radio",
+      error && "sds-radio--error",
+      className,
+    );
+
+    const input = (
+      <input
+        ref={ref}
+        className="sds-radio__input"
+        id={id}
+        name={name}
+        type="radio"
+        onChange={onChange}
+        value={value}
+        aria-labelledby={ariaLabelledby}
+        checked={checked}
+        {...rest}
+      />
+    );
+
+    return label !== undefined ? (
+      <label className={labelClassName} htmlFor={id}>
+        {input}
         <div className="sds-radio__input-label">{label}</div>
       </label>
+    ) : (
+      <div className={labelClassName}>{input}</div>
     );
   },
 );

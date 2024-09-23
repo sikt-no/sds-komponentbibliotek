@@ -1,56 +1,89 @@
+import {
+  Table,
+  TableHead,
+  TableRow,
+  TableHeader,
+  TableBody,
+  TableCell,
+} from "@sikt/sds-table";
 import { Meta, StoryObj } from "@storybook/react";
 import { CheckboxInput } from "../../checkbox";
-import { Fieldset, FieldsetProps } from "../index";
+import { Fieldset } from "../index";
 
-const meta: Meta = {
+const meta = {
   title: "Components/Form/Fieldset",
   component: Fieldset,
-};
+} satisfies Meta<typeof Fieldset>;
 
 export default meta;
 
-type Story = StoryObj<FieldsetProps>;
+type Story = StoryObj<typeof meta>;
 
-const Template: Story = {
-  args: {
-    legend: "Legend",
-    children: [
-      <CheckboxInput
-        key={1}
-        isChecked
-        label="Checkbox label"
-        onChange={() => null}
-      />,
-    ],
-  },
-};
+const templateArgs = {
+  children: [
+    <CheckboxInput
+      key={1}
+      isChecked
+      label="Checkbox label"
+      onChange={() => null}
+    />,
+  ],
+} satisfies Partial<Story["args"]>;
 
-export const WithLegend: Story = {
-  ...Template,
+export const WithLegend = {
   args: {
-    ...Template.args,
+    ...templateArgs,
     legend: "Legend",
     errorText: undefined,
     helpText: undefined,
   },
-};
+} satisfies Story;
 
-export const WithHelpText: Story = {
-  ...Template,
+export const WithHelpText = {
   args: {
-    ...Template.args,
+    ...templateArgs,
     legend: "Legend",
     errorText: undefined,
     helpText: "Help text",
   },
-};
+} satisfies Story;
 
-export const WithError: Story = {
-  ...Template,
+export const WithError = {
   args: {
-    ...Template.args,
+    ...templateArgs,
     legend: "Legend",
     errorText: "Error text",
     helpText: undefined,
   },
-};
+} satisfies Story;
+
+export const WithAriaLabelledby = {
+  args: {
+    ...templateArgs,
+    "aria-labelledby": "rowTitle columnTitle",
+  },
+  render: (args) => {
+    return (
+      <Table caption="Fieldset inside Table" showCaption>
+        <TableHead>
+          <TableRow>
+            <TableHeader>Name</TableHeader>
+            <TableHeader id="columnTitle">Fieldset</TableHeader>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell data-th="Name" id="rowTitle">
+              Sikt
+            </TableCell>
+            <TableCell data-th="Fieldset">
+              <Fieldset {...args}>
+                <CheckboxInput label="Checkbox label" />
+              </Fieldset>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    );
+  },
+} satisfies Story;

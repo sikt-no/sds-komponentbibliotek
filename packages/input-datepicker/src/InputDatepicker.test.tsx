@@ -72,6 +72,7 @@ describe("DatePicker", () => {
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
     });
+
     it("should close calendar on escape key", async () => {
       const user = userEvent.setup();
       render(<InputDatepicker label="Foo" data-testid="test" />);
@@ -90,6 +91,7 @@ describe("DatePicker", () => {
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
     });
+
     it("should close calendar on outside click", async () => {
       const user = userEvent.setup();
       render(<InputDatepicker label="Foo" data-testid="test" />);
@@ -107,6 +109,17 @@ describe("DatePicker", () => {
       });
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
+    });
+
+    it("should support aria-labelledby", () => {
+      render(
+        <>
+          <div id="label">Foo</div>
+          <InputDatepicker aria-labelledby="label" />
+        </>,
+      );
+
+      expect(screen.getByRole("group", { name: "Foo" })).toBeInTheDocument();
     });
   });
 });

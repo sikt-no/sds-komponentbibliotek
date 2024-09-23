@@ -1,17 +1,24 @@
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell,
+} from "@sikt/sds-table";
 import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import {
   Combobox,
   ComboboxHeader,
   ComboboxItem,
-  ComboboxProps,
   ComboboxSection,
 } from "../index";
 
-const meta: Meta = {
+const meta = {
   title: "Components/Combobox",
   component: Combobox,
-};
+} satisfies Meta<typeof Combobox>;
 
 export default meta;
 const options = [
@@ -25,13 +32,15 @@ const options = [
   { id: "h123e456-12d3-a456-426614174008", name: "Adobe Fresco" },
   { id: "i123e456-12d3-a456-426614174009", name: "Adobe Dreamweaver" },
 ];
+type Option = (typeof options)[number];
 
-type Story = StoryObj<ComboboxProps<(typeof options)[number]>>;
+type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     label: "Adobe product",
     onSelectionChange: console.log,
+    children: undefined,
   },
   render: (args) => {
     return (
@@ -40,13 +49,13 @@ export const Default: Story = {
         defaultInputValue="Adobe Photoshop"
         {...args}
       >
-        {(item) => <ComboboxItem>{item.name}</ComboboxItem>}
+        {(item) => <ComboboxItem>{(item as Option).name}</ComboboxItem>}
       </Combobox>
     );
   },
-};
+} satisfies Story;
 
-export const StaticItems: Story = {
+export const StaticItems = {
   args: {
     ...Default.args,
   },
@@ -61,9 +70,9 @@ export const StaticItems: Story = {
       </Combobox>
     );
   },
-};
+} satisfies Story;
 
-export const Controlled: Story = {
+export const Controlledtory = {
   args: {
     ...Default.args,
   },
@@ -76,13 +85,13 @@ export const Controlled: Story = {
         onInputChange={setValue}
         {...args}
       >
-        {(item) => <ComboboxItem>{item.name}</ComboboxItem>}
+        {(item) => <ComboboxItem>{(item as Option).name}</ComboboxItem>}
       </Combobox>
     );
   },
-};
+} satisfies Story;
 
-export const StaticItemsWithSections: Story = {
+export const StaticItemsWithSections = {
   args: {
     ...Default.args,
     label: "Preferred fruit or vegetable",
@@ -115,4 +124,39 @@ export const StaticItemsWithSections: Story = {
       </Combobox>
     );
   },
-};
+} satisfies Story;
+
+export const WithAriaLabelledby = {
+  args: {
+    children: (
+      <>
+        <ComboboxItem id="Apple">Apple</ComboboxItem>
+        <ComboboxItem id="Banana">Banana</ComboboxItem>
+        <ComboboxItem id="Orange">Orange</ComboboxItem>
+      </>
+    ),
+    "aria-labelledby": "rowTitle columnTitle",
+  },
+  render: (args) => {
+    return (
+      <Table caption="Combobox inside Table" showCaption>
+        <TableHead>
+          <TableRow>
+            <TableHeader>Name</TableHeader>
+            <TableHeader id="columnTitle">Combobox</TableHeader>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell data-th="Name" id="rowTitle">
+              Sikt
+            </TableCell>
+            <TableCell data-th="Select">
+              <Combobox {...args} />
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    );
+  },
+} satisfies Story;
