@@ -122,7 +122,7 @@ describe("api", () => {
     render(
       <>
         <div id="label">Foo</div>
-        <CheckboxInput aria-labelledby="label" />
+        <CheckboxInput aria-labelledby="label" onChange={jest.fn()} />
       </>,
     );
 

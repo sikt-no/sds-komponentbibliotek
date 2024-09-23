@@ -187,7 +187,13 @@ describe("Input", () => {
     });
 
     it("should have fallback label for clear button", async () => {
-      render(<SearchInput label="Søk utdanningstilbud" value="123" />);
+      render(
+        <SearchInput
+          label="Søk utdanningstilbud"
+          value="123"
+          onChange={() => jest.fn()}
+        />,
+      );
 
       expect(screen.getByLabelText("Tøm søketekst")).toBeInTheDocument();
     });

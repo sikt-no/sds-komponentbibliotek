@@ -130,7 +130,7 @@ describe("RadioFieldset", () => {
           <div id="label">Foo</div>
           <div id="label1">Foo 1</div>
           <div id="label2">Foo 2</div>
-          <RadioFieldset aria-labelledby="label">
+          <RadioFieldset aria-labelledby="label" onChange={jest.fn()}>
             <RadioInput aria-labelledby="label1" value="1" />
             <RadioInput aria-labelledby="label2" value="2" />
           </RadioFieldset>
