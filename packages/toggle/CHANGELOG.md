@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@3.0.2...@sikt/sds-toggle@4.0.0) (2024-09-23)
+
+### ⚠ BREAKING CHANGES
+
+- allow one of label or aria-labelledby for input components
+
+### Features
+
+- allow one of label or aria-labelledby for input components ([edcfefb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/edcfefbda41a4781ea5fbda0f24e7743c1d165e2))
+
+### Bug Fixes
+
+- **deps:** change peer deps clsx to ^2.1.0 ([9eb76f1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9eb76f1207a2ec8d19fda646c9bc26d5922b1839))
+- **deps:** update @sikt/sds-form@3.0.0 ([6859894](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/68598941f873ffede6a5d18936279da5b98e5af2))
+
 ## [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@3.0.1...@sikt/sds-toggle@3.0.2) (2024-05-24)
 
 ### Bug Fixes
