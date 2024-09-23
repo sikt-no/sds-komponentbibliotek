@@ -1,5 +1,5 @@
 import { useFieldset } from "@sikt/sds-form";
-import { CheckIcon } from "@sikt/sds-icons";
+import { CheckIcon, MinusIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
   ChangeEvent,
@@ -7,6 +7,9 @@ import {
   ReactNode,
   forwardRef,
   useId,
+  useEffect,
+  useRef,
+  useImperativeHandle,
 } from "react";
 import "./checkbox-input.pcss";
 
@@ -16,6 +19,7 @@ interface CheckboxInputBaseProps
     "onChange" | "aria-label" | "aria-labelledby"
   > {
   isChecked?: boolean;
+  indeterminate?: boolean;
   error?: boolean;
   name?: string;
   value?: string | number;
@@ -42,6 +46,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
       name,
       disabled,
       isChecked,
+      indeterminate,
       onChange,
       label,
       "aria-labelledby": ariaLabelledby,
@@ -53,6 +58,19 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
   ) => {
     const id = useId();
     const context = useFieldset() ?? {};
+    const inputRef = useRef<HTMLInputElement | null>(null);
+
+    useImperativeHandle(
+      ref,
+      () => inputRef.current ?? ({} as HTMLInputElement),
+      [],
+    );
+
+    useEffect(() => {
+      if (inputRef.current && "indeterminate" in inputRef.current) {
+        inputRef.current.indeterminate = !!indeterminate;
+      }
+    }, [indeterminate]);
 
     const labelClassName = clsx(
       "sds-checkbox",
@@ -63,7 +81,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
     const input = (
       <>
         <input
-          ref={ref}
+          ref={inputRef}
           className="sds-checkbox__input"
           id={id}
           name={name ?? context.name}
@@ -74,10 +92,15 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
           checked={isChecked ?? false}
           disabled={disabled}
           aria-invalid={(error ?? context.error) ? true : false}
+          {...(indeterminate && { "aria-checked": "mixed" })}
           {...rest}
         />
         <div className="sds-checkbox__icon-wrapper">
-          <CheckIcon className="sds-checkbox__icon" />
+          {indeterminate ? (
+            <MinusIcon className="sds-checkbox__icon" />
+          ) : (
+            <CheckIcon className="sds-checkbox__icon" />
+          )}
         </div>
       </>
     );

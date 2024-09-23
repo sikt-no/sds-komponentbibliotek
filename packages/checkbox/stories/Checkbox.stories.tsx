@@ -32,6 +32,13 @@ export const Unchecked: Story = {
   },
 };
 
+export const Indeterminate: Story = {
+  args: {
+    indeterminate: true,
+    label: "Indeterminate checkbox",
+  },
+};
+
 export const WithAriaLabelledby: Story = {
   args: {
     isChecked: true,

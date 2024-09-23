@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
+import { createRef } from "react";
 import { CheckboxInput } from "./CheckboxInput";
 
 describe("CheckboxInput,", () => {
@@ -43,6 +44,27 @@ describe("api", () => {
     expect(checkbox).toHaveClass("sds-checkbox__input");
     expect(checkbox).toBeInTheDocument();
     expect(checkbox).toBeDisabled();
+  });
+
+  it("indeterminate checkbox should render", async () => {
+    const ref = createRef<HTMLInputElement>();
+
+    render(
+      <CheckboxInput
+        ref={ref}
+        label="Foo"
+        value="foo"
+        indeterminate
+        onChange={jest.fn()}
+      />,
+    );
+
+    const checkbox = screen.getByRole("checkbox", { name: "Foo" });
+
+    expect(checkbox).toHaveClass("sds-checkbox__input");
+    expect(checkbox).toBeInTheDocument();
+    expect(checkbox).toHaveAttribute("aria-checked", "mixed");
+    expect(ref.current?.indeterminate).toBeTruthy();
   });
 
   it("checked checkbox with error should render", async () => {
@@ -116,6 +138,12 @@ describe("api", () => {
     await user.click(checkbox);
 
     expect(changeHandler).toHaveBeenCalled();
+  });
+
+  it("should support aria-label", () => {
+    render(<CheckboxInput aria-label="Foo" onChange={jest.fn()} />);
+
+    expect(screen.getByRole("checkbox", { name: "Foo" })).toBeInTheDocument();
   });
 
   it("should support aria-labelledby", () => {

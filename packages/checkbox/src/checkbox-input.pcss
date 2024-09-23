@@ -55,7 +55,8 @@
       cursor: not-allowed;
     }
 
-    &:checked {
+    &:checked,
+    &:indeterminate {
       --checkbox-background-color: var(
         --sds-color-interaction-primary-strong-default
       );
@@ -93,7 +94,8 @@
       );
     }
 
-    &:checked {
+    &:checked,
+    &:indeterminate {
       --checkbox-background-color: var(
         --sds-color-interaction-danger-strong-default
       );
@@ -131,7 +133,8 @@
     position: absolute;
   }
 
-  &__input:checked ~ &__icon-wrapper &__icon {
+  &__input:checked ~ &__icon-wrapper &__icon,
+  &__input:indeterminate ~ &__icon-wrapper &__icon {
     display: block;
   }
 
