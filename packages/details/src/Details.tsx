@@ -1,12 +1,12 @@
 import { CaretCircleDownIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import { HTMLAttributes, ReactNode } from "react";
+import { DetailsHTMLAttributes, ReactNode } from "react";
 import "./details.pcss";
 
-export interface DetailsProps extends HTMLAttributes<HTMLDetailsElement> {
+export interface DetailsProps
+  extends DetailsHTMLAttributes<HTMLDetailsElement> {
   className?: string;
   children: ReactNode;
-  name?: string;
   size?: "small" | "large";
   summary: ReactNode;
 }
