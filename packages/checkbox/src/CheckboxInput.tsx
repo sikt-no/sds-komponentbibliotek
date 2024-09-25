@@ -31,11 +31,18 @@ export type CheckboxInputProps = CheckboxInputBaseProps &
   (
     | {
         label: NonNullable<ReactNode>;
+        "aria-label"?: never;
         "aria-labelledby"?: never;
       }
     | {
         label?: never;
+        "aria-label"?: never;
         "aria-labelledby": string;
+      }
+    | {
+        label?: never;
+        "aria-label": string;
+        "aria-labelledby"?: never;
       }
   );
 
@@ -49,6 +56,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
       indeterminate,
       onChange,
       label,
+      "aria-label": ariaLabel,
       "aria-labelledby": ariaLabelledby,
       value,
       error,
@@ -88,6 +96,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
           type="checkbox"
           onChange={onChange}
           value={value}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledby}
           checked={isChecked ?? false}
           disabled={disabled}

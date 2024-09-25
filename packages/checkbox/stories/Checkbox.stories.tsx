@@ -39,6 +39,13 @@ export const Indeterminate: Story = {
   },
 };
 
+export const WithAriaLabel: Story = {
+  args: {
+    isChecked: true,
+    "aria-label": "Label",
+  },
+};
+
 export const WithAriaLabelledby: Story = {
   args: {
     isChecked: true,
