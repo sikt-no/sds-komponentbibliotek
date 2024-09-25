@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. See [commit
 
 - **deps:** change peer deps clsx to ^2.1.0 ([9eb76f1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9eb76f1207a2ec8d19fda646c9bc26d5922b1839))
 - **details:** add name prop and attribute ([4893f8e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4893f8ea68767e0bbce98d9ec406d0a8c81bc244))
+- **details:** typescript types from element ([804255a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/804255aa0389345f4b0f3fee5b324bf24fb3d838))
 
 ## 1.0.0 (2024-09-16)
 
