@@ -11,10 +11,18 @@ npm i -s @sikt/sds-icons
 ### React
 
 ```js
-import { <icon-name>Icon } from "@sikt/sds-icons";
+import { <IconName>Icon } from "@sikt/sds-icons";
 import "@sikt/sds-icons/dist/index.css";
 
 <<IconName>Icon />;
+```
+
+#### Custom icon
+
+```js
+import { <IconName> } from "@phosphor-icons/react";
+
+<<IconName> className="sds-icon" aria-hidden="true" />;
 ```
 
 ### Stylesheets & custom markup
@@ -41,6 +49,16 @@ Or use sprite:
 <svg class="sds-icon" aria-hidden="true">
   <use href="@sikt/sds-icons/dist/sds-icons.svg#<icon-name>"></use>
 </svg>
+```
+
+#### Custom icon
+
+```html
+<img
+  class="sds-icon"
+  aria-hidden="true"
+  src="@phosphor-icons/core/assets/regular/<icon-name>.svg"
+/>
 ```
 
 ## Contribute
