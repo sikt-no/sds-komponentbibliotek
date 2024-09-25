@@ -23,21 +23,33 @@ export const Accordion: Story = {
   render: () => (
     <div data-testid="test">
       <Details
-        summary={<Heading level="3">First Summary</Heading>}
+        summary={
+          <Heading variant="medium" level="3">
+            First Summary
+          </Heading>
+        }
         name="id"
         key={0}
       >
         First Details
       </Details>
       <Details
-        summary={<Heading level="3">Second Summary</Heading>}
+        summary={
+          <Heading variant="medium" level="3">
+            Second Summary
+          </Heading>
+        }
         name="id"
         key={1}
       >
         Second Details
       </Details>
       <Details
-        summary={<Heading level="3">Third Summary</Heading>}
+        summary={
+          <Heading variant="medium" level="3">
+            Third Summary
+          </Heading>
+        }
         name="id"
         key={2}
       >

@@ -6,6 +6,7 @@ import "./details.pcss";
 export interface DetailsProps extends HTMLAttributes<HTMLDetailsElement> {
   className?: string;
   children: ReactNode;
+  name?: string;
   size?: "small" | "large";
   summary: ReactNode;
 }
