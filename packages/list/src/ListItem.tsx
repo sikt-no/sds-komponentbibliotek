@@ -1,7 +1,7 @@
 import { clsx } from "clsx/lite";
-import { HTMLAttributes, ReactNode } from "react";
+import { LiHTMLAttributes, ReactNode } from "react";
 
-export interface ListItemProps extends HTMLAttributes<HTMLLIElement> {
+export interface ListItemProps extends LiHTMLAttributes<HTMLLIElement> {
   children: ReactNode;
   className?: string;
 }
