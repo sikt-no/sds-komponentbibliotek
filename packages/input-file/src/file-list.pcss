@@ -1,0 +1,50 @@
+.sds-input-file-list {
+  margin: 0;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-padding-tiny);
+    list-style: none;
+    margin: 0;
+    padding: var(--sds-space-padding-tiny) 0;
+  }
+
+  &__item {
+    background-color: var(--sds-color-layout-background-primary);
+    border-radius: var(--sds-space-border-radius-small);
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--sds-space-padding-tiny);
+    justify-content: space-between;
+    padding: calc(
+        var(--sds-space-padding-minimal) + var(--sds-space-padding-minimal)
+      )
+      calc(var(--sds-space-padding-minimal) + var(--sds-space-padding-small));
+    padding-right: var(--sds-space-padding-small);
+
+    &--error {
+      background-color: var(--sds-color-layout-page-default);
+    }
+
+    &-start {
+      max-width: 50%;
+    }
+
+    &-end {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: var(--sds-space-padding-tiny);
+    }
+
+    &-icon {
+      font-size: var(--sds-base-size-m);
+      padding: var(--sds-space-padding-minimal);
+    }
+
+    &-error {
+      padding: var(--sds-space-padding-minimal) 0;
+    }
+  }
+}
