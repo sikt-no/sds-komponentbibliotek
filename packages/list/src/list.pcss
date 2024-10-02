@@ -1,5 +1,7 @@
 .sds-description-list {
-  margin-top: calc(var(--sds-space-gap-small) * -1);
+  --list-gap: var(--sds-space-gap-tiny);
+
+  margin-top: calc(var(--list-gap) * -1);
 
   &__term {
     color: var(--sds-color-text-secondary);
@@ -15,17 +17,23 @@
   &__term,
   &__details {
     &:not(:first-child) {
-      margin-top: var(--sds-space-gap-tiny);
+      margin-top: var(--list-gap);
     }
   }
 }
 
 .sds-list {
+  --list-gap: var(--sds-space-gap-tiny);
+
+  &--unordered {
+    padding-inline-start: var(--sds-base-size-m);
+  }
+
   .sds-list {
-    margin-top: var(--sds-space-gap-small);
+    margin-top: var(--list-gap);
   }
 
   &__item:not(:first-of-type) {
-    margin-top: var(--sds-space-gap-small);
+    margin-top: var(--list-gap);
   }
 }
