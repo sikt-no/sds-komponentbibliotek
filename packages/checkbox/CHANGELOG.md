@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.0.0...@sikt/sds-checkbox@3.1.0) (2024-10-02)
+
+### Features
+
+- **checkbox:** add aria-label prop ([adb4c7c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/adb4c7c68514f10fd793c10bac7f968d8b1a3164))
+- **checkbox:** add indeterminate prop & styling ([0c12468](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0c12468b44c429575647b7048010cb74c067dd8c))
+
+### Bug Fixes
+
+- **checkbox:** prevent shrinking on limited space ([d75809a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d75809ad8016707674553fecad8dee26a44cb7b2))
+
 ## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@2.0.3...@sikt/sds-checkbox@3.0.0) (2024-09-23)
 
 ### ⚠ BREAKING CHANGES
