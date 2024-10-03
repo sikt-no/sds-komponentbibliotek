@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { ButtonVariant } from "../Button";
+import { ButtonVariant } from "../src/Button";
 
 test.describe("Button", () => {
   const componentSelector = ".sds-button";
