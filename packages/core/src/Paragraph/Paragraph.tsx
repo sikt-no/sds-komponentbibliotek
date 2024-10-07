@@ -1,3 +1,4 @@
+import tokens from "@sikt/sds-tokens";
 import { clsx } from "clsx/lite";
 import { ElementType, HTMLAttributes, ReactNode } from "react";
 
@@ -7,6 +8,7 @@ export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   className?: string;
   children: ReactNode;
   as?: ElementType;
+  color?: Exclude<keyof typeof tokens.color.text, "on_strong">;
 }
 
 export const Paragraph = ({
@@ -15,6 +17,7 @@ export const Paragraph = ({
   modifier,
   className,
   as = "p",
+  color = "primary",
   ...rest
 }: ParagraphProps) => {
   const Component: ElementType = as;
@@ -25,6 +28,7 @@ export const Paragraph = ({
         "sds-typography-body",
         `sds-typography-body--${variant}`,
         modifier && `sds-typography-body--${modifier}`,
+        `sds-typography-paragraph--color-${color}`,
         className,
       )}
       {...rest}

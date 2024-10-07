@@ -23,3 +23,17 @@ export const AsSpan: Story = {
     as: "span",
   },
 };
+
+export const SecondaryColor: Story = {
+  args: {
+    ...Regular.args,
+    color: "secondary",
+  },
+};
+
+export const CriticalColor: Story = {
+  args: {
+    ...Regular.args,
+    color: "critical",
+  },
+};
