@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@3.1.0...@sikt/sds-core@4.0.0) (2024-10-08)
+
+### ⚠ BREAKING CHANGES
+
+- **abbreviation:** remove component & styling due to wcag 1.4.13 dismissible
+
+### Features
+
+- **figure:** add className prop ([e433693](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e4336938cd8dcc8830050ef8e0859ce360ec0367))
+- **paragraph:** color prop from tokens ([fdf651b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fdf651b3bf1a2405769ce83b1086dc6bf5e78d42))
+
+### Bug Fixes
+
+- **abbreviation:** remove component & styling due to wcag 1.4.13 dismissible ([2a9ff85](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2a9ff852669d40a42616289b594bf595040f3f0d))
+- **deps:** change peer deps clsx to ^2.1.0 ([9eb76f1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9eb76f1207a2ec8d19fda646c9bc26d5922b1839))
+- **deps:** update @sikt/sds-tokens@2.0.1 ([662b57d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/662b57dfe114b6947780eb8bf5fc2e6e77de1c68))
+
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@3.0.2...@sikt/sds-core@3.1.0) (2024-08-25)
 
 ### Features
