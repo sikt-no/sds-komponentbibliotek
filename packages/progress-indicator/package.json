@@ -36,7 +36,9 @@
   },
   "dependencies": {
     "@sikt/sds-core": "^3.0.2",
-    "@sikt/sds-icons": "^2.0.1",
+    "@sikt/sds-icons": "^2.0.1"
+  },
+  "devDependencies": {
     "@sikt/sds-tokens": "^1.0.1"
   },
   "peerDependencies": {

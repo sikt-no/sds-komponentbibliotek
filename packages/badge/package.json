@@ -35,8 +35,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@sikt/sds-core": "^3.0.2",
-    "@sikt/sds-tokens": "^1.0.1"
+    "@sikt/sds-core": "^3.0.2"
   },
   "peerDependencies": {
     "clsx": "^2.1.0",
