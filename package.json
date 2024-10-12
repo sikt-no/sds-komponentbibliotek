@@ -94,7 +94,7 @@
     "postcss-nested": "^6.2.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
-    "stylelint": "^16.9.0",
+    "stylelint": "^16.10.0",
     "terser": "^5.34.1",
     "ts-jest": "^29.2.5",
     "tsup": "^8.3.0",
