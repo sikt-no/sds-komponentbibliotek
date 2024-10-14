@@ -39,7 +39,7 @@
     "@sikt/sds-core": "^3.0.2",
     "@sikt/sds-form": "^2.1.0",
     "@sikt/sds-icons": "^2.0.1",
-    "@sikt/sds-input": "^3.0.0",
+    "@sikt/sds-input": "^4.0.1",
     "react-aria-components": "^1.4.0"
   },
   "peerDependencies": {
