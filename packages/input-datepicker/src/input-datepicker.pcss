@@ -1,6 +1,12 @@
 .sds-input-datepicker {
   position: relative;
 
+  &__wrapper {
+    &:has(.sds-input-datepicker__input-segment:focus-visible) {
+      outline: var(--sds-focus-outline);
+    }
+  }
+
   &__input {
     display: flex;
     width: 100%;

@@ -110,7 +110,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
               <Label text={label} error={Boolean(errorText)} htmlFor={id} />
             </ReactAriaLabel>
           )}
-          <Group className="sds-input__wrapper">
+          <Group className="sds-input__wrapper sds-input-datepicker__wrapper">
             <DateInput className="sds-input-datepicker__input">
               {(segment) => (
                 <DateSegment

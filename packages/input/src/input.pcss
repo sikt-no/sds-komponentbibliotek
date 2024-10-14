@@ -29,10 +29,6 @@
       --input-border-color: var(--sds-color-interaction-neutral-strong-pressed);
     }
 
-    &:has(:focus-visible) {
-      outline: var(--sds-focus-outline);
-    }
-
     &:has(:disabled) {
       background: repeating-linear-gradient(
         -45deg,
@@ -106,5 +102,9 @@
     &:active {
       --input-border-color: var(--sds-color-interaction-danger-strong-pressed);
     }
+  }
+
+  &__wrapper:has(.sds-input__input:focus-visible) {
+    outline: var(--sds-focus-outline);
   }
 }
