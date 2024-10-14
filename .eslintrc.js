@@ -24,5 +24,12 @@ module.exports = {
         "testing-library/no-node-access": "off",
       },
     },
+    {
+      files: ["**/*.figma.[jt]s?(x)"],
+      rules: {
+        "@typescript-eslint/no-confusing-void-expression": "off",
+        "@typescript-eslint/no-empty-function": "off",
+      },
+    },
   ],
 };
