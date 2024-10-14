@@ -39,7 +39,7 @@ export const Hero = ({
         )}
         <Heading1 variant="huge">{heading}</Heading1>
         {leadParagraph && (
-          <p className={style.hero__paragraph}>{leadParagraph}</p>
+          <div className={style.hero__paragraph}>{leadParagraph}</div>
         )}
       </div>
       <div className={style.hero__sectionImage} />

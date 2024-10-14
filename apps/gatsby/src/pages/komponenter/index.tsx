@@ -43,7 +43,7 @@ const KomponenterPage: React.FC<PageProps<Queries.PageTemplateQuery>> = ({
                 som designtokens og atomer.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <div className="sds-paragraph--max-width">
                 <ButtonGroup variant="right">
                   <ButtonLink
                     href="https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/"
@@ -60,7 +60,7 @@ const KomponenterPage: React.FC<PageProps<Queries.PageTemplateQuery>> = ({
                     Se komponenterne i Figma
                   </ButtonLink>
                 </ButtonGroup>
-              </Paragraph>
+              </div>
             </div>
           </Section>
         </div>
