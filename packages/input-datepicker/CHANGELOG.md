@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@1.1.2...@sikt/sds-input-datepicker@2.0.0) (2024-10-14)
+
+### ⚠ BREAKING CHANGES
+
+- allow one of label or aria-labelledby for input components
+
+### Features
+
+- allow one of label or aria-labelledby for input components ([edcfefb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/edcfefbda41a4781ea5fbda0f24e7743c1d165e2))
+- **input-datepicker:** add clear button to component ([6519a2e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6519a2ed46e0645b137c2631d587fceda26d26c2))
+
+### Bug Fixes
+
+- **deps:** change peer deps clsx to ^2.1.0 ([9eb76f1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9eb76f1207a2ec8d19fda646c9bc26d5922b1839))
+- **deps:** correct deps on @sikt/sds-tokens ([b47f8a4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b47f8a4d27e99dcc731036ccf2b7b58a27d88da6))
+- **deps:** update @sikt/sds-input@4.0.1 ([4b03856](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4b03856d58ba7b6dda6d83b9107c2b87069d0802))
+- **deps:** update dependency react-aria-components to ^1.3.1 ([d691705](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d6917053e05cc53aaddd2b1ff665b3b73a7761b2))
+- **input:** focus style only when input element has focus ([89e371c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/89e371c256fa0d52b6ebf64e64c10fca3b35b1f1))
+
 ## [1.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@1.1.1...@sikt/sds-input-datepicker@1.1.2) (2024-07-05)
 
 ### Bug Fixes
