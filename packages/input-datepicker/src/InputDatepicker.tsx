@@ -73,7 +73,9 @@ const DatepickerClearButton = (
         variant="transparent"
         iconVariant="only"
         className="sds-input__clear"
-        onClick={() => { state.setValue(null); }}
+        onClick={() => {
+          state.setValue(null);
+        }}
         icon={<XIcon />}
         aria-label={clearActionProps["aria-label"] ?? "Tøm datofelt"}
         type={clearActionProps.type ?? "button"}

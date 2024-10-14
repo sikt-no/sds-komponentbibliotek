@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.0.0...@sikt/sds-input@4.0.1) (2024-10-14)
+
+### Bug Fixes
+
+- **deps:** correct deps on @sikt/sds-tokens ([b47f8a4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b47f8a4d27e99dcc731036ccf2b7b58a27d88da6))
+- **input:** focus style only when input element has focus ([89e371c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/89e371c256fa0d52b6ebf64e64c10fca3b35b1f1))
+
 ## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@3.1.2...@sikt/sds-input@4.0.0) (2024-09-23)
 
 ### ⚠ BREAKING CHANGES
