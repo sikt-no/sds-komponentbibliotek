@@ -3,13 +3,14 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-radio
+npm i -s @sikt/sds-{form,radio}
 ```
 
 ### React
 
 ```js
 import { RadioInput, RadioFieldset } from "@sikt/sds-radio";
+import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-radio/dist/index.css";
 
 <RadioFieldset
@@ -29,6 +30,7 @@ import "@sikt/sds-radio/dist/index.css";
 Import stylesheet:
 
 ```css
+@import url("@sikt/sds-form");
 @import url("@sikt/sds-radio");
 ```
 

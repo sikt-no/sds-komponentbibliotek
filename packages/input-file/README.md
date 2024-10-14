@@ -3,13 +3,14 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-input-file
+npm i -s @sikt/sds-{form,input-file}
 ```
 
 ### React
 
 ```js
 import { InputFile, FileList, FileListItem } from "@sikt/sds-input-file";
+import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-input-file/dist/index.css";
 
 <>
@@ -42,6 +43,7 @@ import "@sikt/sds-input-file/dist/index.css";
 Import stylesheet:
 
 ```css
+@import url("@sikt/sds-form");
 @import url("@sikt/sds-input-file");
 ```
 

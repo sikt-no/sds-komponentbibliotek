@@ -3,7 +3,7 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-combobox
+npm i -s @sikt/sds-{combobox,form}
 ```
 
 ### React
@@ -12,6 +12,7 @@ npm i -s @sikt/sds-combobox
 
 ```js
 import { Combobox, ComboBoxItem } from "@sikt/sds-combobox";
+import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-combobox/dist/index.css";
 
 <Combobox
@@ -28,13 +29,10 @@ import "@sikt/sds-combobox/dist/index.css";
 #### With static content
 
 ```js
-import { Combobox, ComboBoxItem } from "@sikt/sds-combobox";
-import "@sikt/sds-combobox/dist/index.css";
-
 <Combobox label="...">
   <ComboBoxItem id="Foo">Foo</ComboBoxItem>
   <ComboBoxItem id="Baz">Baz</ComboBoxItem>
-</Combobox>;
+</Combobox>
 ```
 
 ### Additional information

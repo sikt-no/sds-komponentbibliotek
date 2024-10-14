@@ -3,13 +3,14 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-input
+npm i -s @sikt/sds-{form,input}
 ```
 
 ### React
 
 ```js
 import { TextInput } from "@sikt/sds-input";
+import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-input/dist/index.css";
 
 <TextInput
@@ -45,6 +46,7 @@ It is important to note that in Firefox, clicking the clear button causes the Se
 Import stylesheet:
 
 ```css
+@import url("@sikt/sds-form");
 @import url("@sikt/sds-input");
 ```
 

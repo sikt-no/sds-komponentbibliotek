@@ -3,13 +3,14 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-select
+npm i -s @sikt/sds-{form,select}
 ```
 
 ### React
 
 ```js
 import { Select } from "@sikt/sds-select";
+import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-select/dist/index.css";
 
 <Select />;
@@ -20,6 +21,7 @@ import "@sikt/sds-select/dist/index.css";
 Import stylesheet:
 
 ```css
+@import url("@sikt/sds-form");
 @import url("@sikt/sds-select");
 ```
 

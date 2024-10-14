@@ -3,7 +3,7 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-toggle
+npm i -s @sikt/sds-{form,icons,toggle}
 ```
 
 ### React
@@ -12,8 +12,9 @@ npm i -s @sikt/sds-toggle
 
 ```js
 import { ToggleSwitch } from "@sikt/sds-toggle";
-import "@sikt/sds-toggle/dist/index.css";
+import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-icons/dist/index.css";
+import "@sikt/sds-toggle/dist/index.css";
 
 <ToggleSwitch label="Label" />;
 ```
@@ -22,8 +23,9 @@ import "@sikt/sds-icons/dist/index.css";
 
 ```js
 import { ToggleButton } from "@sikt/sds-toggle";
-import "@sikt/sds-toggle/dist/index.css";
+import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-icons/dist/index.css";
+import "@sikt/sds-toggle/dist/index.css";
 
 <ToggleButton label="Label" checked={false} onClick={() => {}} />;
 ```
@@ -32,8 +34,9 @@ import "@sikt/sds-icons/dist/index.css";
 
 ```js
 import { ToggleSegment } from "@sikt/sds-toggle";
-import "@sikt/sds-toggle/dist/index.css";
+import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-icons/dist/index.css";
+import "@sikt/sds-toggle/dist/index.css";
 
 <ToggleSegment legend="Legend">
   <ToggleSegmentOption label="Label 1" value="1" checked onChange={() => {}} />
@@ -46,6 +49,7 @@ import "@sikt/sds-icons/dist/index.css";
 Import stylesheet:
 
 ```css
+@import url("@sikt/sds-form");
 @import url("@sikt/sds-toggle");
 ```
 
