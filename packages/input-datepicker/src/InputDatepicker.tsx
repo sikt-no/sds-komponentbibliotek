@@ -1,13 +1,21 @@
 import { I18nProvider } from "@react-aria/i18n";
-import { Button } from "@sikt/sds-button";
+import { Button, ButtonProps } from "@sikt/sds-button";
 import { HelpText, Label } from "@sikt/sds-form";
 import {
   CalendarBlankIcon,
   CaretLeftIcon,
   CaretRightIcon,
+  XIcon,
 } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import { ReactNode, forwardRef, useId, useRef, useState } from "react";
+import {
+  ReactNode,
+  forwardRef,
+  useId,
+  useRef,
+  useState,
+  useContext,
+} from "react";
 import {
   Calendar,
   CalendarCell,
@@ -22,6 +30,7 @@ import {
   DatePicker as ReactAriaDatePicker,
   Label as ReactAriaLabel,
   Text,
+  DatePickerStateContext,
 } from "react-aria-components";
 import { useEventListener, useOnClickOutside } from "usehooks-ts";
 import "./input-datepicker.pcss";
@@ -37,6 +46,7 @@ interface InputDatepickerBaseProps
   lang?: string;
   value?: DateValue;
   onChange?: (newValue: DateValue) => void;
+  clearActionProps?: Pick<ButtonProps, "aria-label" | "type">;
 }
 
 export type InputDatepickerProps = InputDatepickerBaseProps &
@@ -51,6 +61,27 @@ export type InputDatepickerProps = InputDatepickerBaseProps &
       }
   );
 
+const DatepickerClearButton = (
+  clearActionProps: Pick<ButtonProps, "aria-label" | "type">,
+) => {
+  const state = useContext(DatePickerStateContext);
+
+  if (state.value) {
+    return (
+      <Button
+        size="small"
+        variant="transparent"
+        iconVariant="only"
+        className="sds-input__clear"
+        onClick={() => { state.setValue(null); }}
+        icon={<XIcon />}
+        aria-label={clearActionProps["aria-label"] ?? "Tøm datofelt"}
+        type={clearActionProps.type ?? "button"}
+      />
+    );
+  }
+};
+
 export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
   (
     {
@@ -64,6 +95,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
       openCalendarLabel = "Åpne kalender",
       lang = "nb-NO",
       value,
+      clearActionProps,
       ...rest
     },
     ref,
@@ -119,6 +151,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
                 />
               )}
             </DateInput>
+            {clearActionProps && <DatepickerClearButton />}
             <Button
               variant={errorText ? "critical" : "transparent"}
               size="small"

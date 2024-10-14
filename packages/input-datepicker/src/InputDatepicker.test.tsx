@@ -1,3 +1,4 @@
+import { parseDate } from "@internationalized/date";
 import { act, render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
@@ -120,6 +121,21 @@ describe("DatePicker", () => {
       );
 
       expect(screen.getByRole("group", { name: "Foo" })).toBeInTheDocument();
+    });
+
+    it("should render a clear button", async () => {
+      render(
+        <>
+          <div id="label">Foo</div>
+          <InputDatepicker
+            clearActionProps={{ "aria-label": "Tøm datofelt" }}
+            aria-labelledby="label"
+            value={parseDate(new Date().toISOString().substring(0, 10))}
+          />
+        </>,
+      );
+
+      expect(screen.getByLabelText("Tøm datofelt")).toBeInTheDocument();
     });
   });
 });

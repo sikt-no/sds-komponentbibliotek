@@ -64,9 +64,17 @@ export const WithCustomLocale: Story = {
   },
 } satisfies Story;
 
+export const WithClearOption: Story = {
+  args: {
+    ...Default.args,
+    clearActionProps: { "aria-label": "Clear date" },
+  },
+} satisfies Story;
+
 export const WithAriaLabelledby = {
   args: {
     "aria-labelledby": "rowTitle columnTitle",
+    clearActionProps: { "aria-label": "Clear date" },
   },
   render: (args) => {
     return (
