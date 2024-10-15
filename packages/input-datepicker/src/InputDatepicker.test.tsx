@@ -21,6 +21,7 @@ describe("DatePicker", () => {
         "sds-input sds-input-datepicker",
       );
       expect(screen.getByText("Foo")).toBeInTheDocument();
+      expect(screen.queryByLabelText("Tøm datofelt")).not.toBeInTheDocument();
     });
 
     it("should show error text", async () => {
@@ -72,6 +73,13 @@ describe("DatePicker", () => {
       });
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
+
+      await act(async () => {
+        calendarButton.focus();
+        await user.keyboard("[Enter]");
+      });
+
+      expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
     });
 
     it("should close calendar on escape key", async () => {
@@ -125,17 +133,77 @@ describe("DatePicker", () => {
 
     it("should render a clear button", async () => {
       render(
-        <>
-          <div id="label">Foo</div>
-          <InputDatepicker
-            clearActionProps={{ "aria-label": "Tøm datofelt" }}
-            aria-labelledby="label"
-            value={parseDate(new Date().toISOString().substring(0, 10))}
-          />
-        </>,
+        <InputDatepicker
+          label="Foo"
+          value={parseDate(new Date().toISOString().substring(0, 10))}
+          clearActionProps={{ onClick: jest.fn() }}
+        />,
       );
 
       expect(screen.getByLabelText("Tøm datofelt")).toBeInTheDocument();
+    });
+
+    it("should call click handler", async () => {
+      const user = userEvent.setup();
+      const clickHandler = jest.fn();
+      const dateString = new Date().toISOString().substring(0, 10);
+      const dayString = dateString.substring(8, 10);
+      render(
+        <InputDatepicker
+          label="Foo"
+          value={parseDate(dateString)}
+          clearActionProps={{ "aria-label": "Bar", onClick: clickHandler }}
+        />,
+      );
+
+      await user.click(screen.getByLabelText("Bar"));
+
+      expect(clickHandler).toHaveBeenCalled();
+      expect(screen.getByText(dayString)).toHaveFocus();
+    });
+
+    it("should call click handler on keydown Space", async () => {
+      const user = userEvent.setup();
+      const clickHandler = jest.fn();
+      const dateString = new Date().toISOString().substring(0, 10);
+      const dayString = dateString.substring(8, 10);
+      render(
+        <InputDatepicker
+          label="Foo"
+          value={parseDate(dateString)}
+          clearActionProps={{ "aria-label": "Bar", onClick: clickHandler }}
+        />,
+      );
+
+      await act(async () => {
+        screen.getByLabelText("Bar").focus();
+        await user.keyboard("[Space]");
+      });
+
+      expect(clickHandler).toHaveBeenCalled();
+      expect(screen.getByText(dayString)).toHaveFocus();
+    });
+
+    it("should call click handler on keydown Enter", async () => {
+      const user = userEvent.setup();
+      const clickHandler = jest.fn();
+      const dateString = new Date().toISOString().substring(0, 10);
+      const dayString = dateString.substring(8, 10);
+      render(
+        <InputDatepicker
+          label="Foo"
+          value={parseDate(dateString)}
+          clearActionProps={{ "aria-label": "Bar", onClick: clickHandler }}
+        />,
+      );
+
+      await act(async () => {
+        screen.getByLabelText("Bar").focus();
+        await user.keyboard("[Enter]");
+      });
+
+      expect(clickHandler).toHaveBeenCalled();
+      expect(screen.getByText(dayString)).toHaveFocus();
     });
   });
 });

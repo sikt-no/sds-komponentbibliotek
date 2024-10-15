@@ -9,7 +9,7 @@ npm i -s @sikt/sds-{form,input,input-datepicker}
 ### React
 
 ```js
-import { DatePicker } from "@sikt/sds-input-datepicker";
+import { InputDatepicker } from "@sikt/sds-input-datepicker";
 import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-input/dist/index.css";
 import "@sikt/sds-input-datepicker/dist/index.css";

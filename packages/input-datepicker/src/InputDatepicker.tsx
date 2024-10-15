@@ -15,6 +15,7 @@ import {
   useRef,
   useState,
   useContext,
+  MouseEvent,
 } from "react";
 import {
   Calendar,
@@ -46,8 +47,10 @@ interface InputDatepickerBaseProps
   lang?: string;
   value?: DateValue;
   onChange?: (newValue: DateValue) => void;
-  clearActionProps?: Pick<ButtonProps, "aria-label" | "type">;
+  clearActionProps?: ClearActionProps;
 }
+
+type ClearActionProps = Pick<ButtonProps, "onClick" | "aria-label" | "type">;
 
 export type InputDatepickerProps = InputDatepickerBaseProps &
   (
@@ -61,10 +64,24 @@ export type InputDatepickerProps = InputDatepickerBaseProps &
       }
   );
 
-const DatepickerClearButton = (
-  clearActionProps: Pick<ButtonProps, "aria-label" | "type">,
-) => {
+const DatepickerClearButton = (clearActionProps?: ClearActionProps) => {
   const state = useContext(DatePickerStateContext);
+
+  const handleClearClick = (event: MouseEvent<HTMLButtonElement>) => {
+    if (clearActionProps?.onClick) {
+      clearActionProps.onClick(event);
+    }
+
+    state.setValue(null);
+  };
+
+  const handleClearKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+  ) => {
+    if (event.key === " " || event.key === "Enter") {
+      handleClearClick(event as unknown as MouseEvent<HTMLButtonElement>);
+    }
+  };
 
   if (state.value) {
     return (
@@ -73,12 +90,11 @@ const DatepickerClearButton = (
         variant="transparent"
         iconVariant="only"
         className="sds-input__clear"
-        onClick={() => {
-          state.setValue(null);
-        }}
+        onClick={handleClearClick}
+        onKeyUp={handleClearKeyDown}
         icon={<XIcon />}
-        aria-label={clearActionProps["aria-label"] ?? "Tøm datofelt"}
-        type={clearActionProps.type ?? "button"}
+        aria-label={clearActionProps?.["aria-label"] ?? "Tøm datofelt"}
+        type={clearActionProps?.type ?? "button"}
       />
     );
   }
@@ -102,18 +118,22 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
     },
     ref,
   ) => {
-    const calendarRef = useRef(null);
+    const calendarRef = useRef<HTMLDivElement>(null);
+    const inputRef = useRef<HTMLDivElement>(null);
     const id = useId();
     const helpTextId = `${id}-help-text`;
     const [calendarOpen, setCalendarOpen] = useState(false);
 
     const onEscapeKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setCalendarOpen(false);
+        if ("current" in calendarRef && calendarRef.current) {
+          setCalendarOpen(false);
+          (inputRef.current?.firstChild as HTMLElement).focus();
+        }
       }
     };
 
-    useEventListener("keydown", onEscapeKey);
+    useEventListener("keyup", onEscapeKey, calendarRef);
 
     const handleClickOutside = () => {
       setCalendarOpen(false);
@@ -145,7 +165,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
             </ReactAriaLabel>
           )}
           <Group className="sds-input__wrapper sds-input-datepicker__wrapper">
-            <DateInput className="sds-input-datepicker__input">
+            <DateInput ref={inputRef} className="sds-input-datepicker__input">
               {(segment) => (
                 <DateSegment
                   className="sds-input-datepicker__input-segment"
@@ -153,12 +173,28 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
                 />
               )}
             </DateInput>
-            {clearActionProps && <DatepickerClearButton />}
+            {clearActionProps && (
+              <DatepickerClearButton
+                {...clearActionProps}
+                onClick={(event) => {
+                  if (clearActionProps.onClick) {
+                    clearActionProps.onClick(event);
+                  }
+
+                  (inputRef.current?.firstChild as HTMLElement).focus();
+                }}
+              />
+            )}
             <Button
               variant={errorText ? "critical" : "transparent"}
               size="small"
               onClick={() => {
                 setCalendarOpen(!calendarOpen);
+              }}
+              onKeyUp={(event) => {
+                if (event.key === " " || event.key === "Enter") {
+                  setCalendarOpen(!calendarOpen);
+                }
               }}
               iconVariant="only"
               icon={<CalendarBlankIcon />}
@@ -180,6 +216,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
               ref={calendarRef}
               onChange={() => {
                 setCalendarOpen(false);
+                (inputRef.current?.firstChild as HTMLElement).focus();
               }}
               data-testid="test-calendar"
               className="sds-input-datepicker__calendar"
