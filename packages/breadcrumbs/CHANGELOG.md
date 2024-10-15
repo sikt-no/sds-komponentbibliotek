@@ -1,6 +1,16 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-breadcrumbs@2.0.0...@sikt/sds-breadcrumbs@2.0.1) (2024-10-15)
+
+### Bug Fixes
+
+- **breadcrumbs:** wrap content when limited space ([56cf419](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/56cf419fabbb4fd74b3013f6f77c8041eaa611dc))
+- **deps:** change peer deps clsx to ^2.1.0 ([9eb76f1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9eb76f1207a2ec8d19fda646c9bc26d5922b1839))
+- **deps:** correct deps on @sikt/sds-tokens ([b47f8a4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b47f8a4d27e99dcc731036ccf2b7b58a27d88da6))
+- **deps:** update @sikt/sds-core to ^3.0.2 ([a55b4c2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a55b4c2f0bad4dfe80b26c0f7102622b4257d8b2))
+- package json exports ([b62fed7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b62fed7bfa459c618c016f39c960dffda037155f))
 
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-breadcrumbs@1.0.1...@sikt/sds-breadcrumbs@2.0.0) (2023-10-28)
 
