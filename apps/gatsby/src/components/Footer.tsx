@@ -6,6 +6,8 @@ import { Link } from "@sikt/sds-core";
 import { clsx } from "clsx/lite";
 
 const Footer = ({ className }: { className?: string }) => {
+  const isJune = new Date().getMonth() === 5;
+
   return (
     <SdsFooter className={clsx(style.footer, className)}>
       <div>
@@ -20,6 +22,7 @@ const Footer = ({ className }: { className?: string }) => {
               Tilgjengelighets&shy;erklæring
             </Link>
           </li>
+          <li>Laget med kjærlighet ❤️{isJune && <>🧡💛💚💙💜</>}</li>
         </ul>
       </div>
       <div>

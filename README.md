@@ -41,7 +41,7 @@ See custom markup below or go to the [Vue component example](./docs/VUE.md).
 
 ### Stylesheets & custom markup
 
-If you are not able to use the React components, for example if you are using Vue, Angular, Svelte or even PHP 😱. You can still benefit by using the stylesheets and building your own markup and components.
+If you are not able to use the React components, for example if you are using Vue, Angular, Svelte, htmx or even PHP 😱. You can still benefit by using the stylesheets and building your own markup and functionality based on the components CSS class names.
 
 Import stylesheet:
 
@@ -71,4 +71,4 @@ Create custom markup:
 
 ---
 
-Made with 💜 at [Sikt](https://www.sikt.no/)
+Made with ❤️🧡💛💚💙💜 at [Sikt](https://www.sikt.no/)
