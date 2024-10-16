@@ -14,8 +14,8 @@ export default {
         type: "color",
       },
       secondary: {
-        value: { ..._color.purple["10"].value, a: "0.75" },
-        dark: { ..._color.neutral["100"].value, a: "0.75" },
+        value: "#484165",
+        dark: "#c2bfcc",
         type: "color",
       },
       critical: {

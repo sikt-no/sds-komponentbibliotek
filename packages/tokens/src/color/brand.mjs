@@ -10,8 +10,8 @@ export default {
           type: "color",
         },
         subtle: {
-          value: { ..._color.purple["65"].value, a: "0.25" },
-          dark: { ..._color.purple["70"].value, a: "0.25" },
+          value: "#dbd2fe",
+          dark: "#2a1b64",
           type: "color",
         },
       },
@@ -22,8 +22,8 @@ export default {
           type: "color",
         },
         subtle: {
-          value: { ..._color.purple["10"].value, a: "0.25" },
-          dark: { ..._color.purple["95"].value, a: "0.25" },
+          value: "#c2bfcb",
+          dark: "#433a65",
           type: "color",
         },
       },
@@ -34,8 +34,8 @@ export default {
           type: "color",
         },
         subtle: {
-          value: { ..._color.neutral["45"].value, a: "0.25" },
-          dark: { ..._color.neutral["50"].value, a: "0.25" },
+          value: "#dcdcdc",
+          dark: "#282145",
           type: "color",
         },
       },
