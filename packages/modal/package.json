@@ -41,7 +41,7 @@
     "react-modal": "^3.16.1"
   },
   "devDependencies": {
-    "@sikt/sds-tokens": "^1.0.1",
+    "@sikt/sds-tokens": "^2.1.0",
     "@types/react-modal": "^3.16.3"
   },
   "peerDependencies": {

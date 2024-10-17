@@ -37,14 +37,14 @@
   "dependencies": {
     "@sikt/sds-core": "^3.0.2"
   },
-  "devDependencies": {
-    "@sikt/sds-tokens": "^1.0.1"
-  },
   "peerDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "clsx": "^2.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@sikt/sds-tokens": "^2.1.0"
   }
 }
