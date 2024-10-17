@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.0.0...@sikt/sds-core@4.1.0) (2024-10-17)
+
+### Features
+
+- **tokens:** change transparent values to solid ([a8a2248](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a8a224821227f37bfd9b94cfbb15ab1f27ab3470))
+
 ## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@3.1.0...@sikt/sds-core@4.0.0) (2024-10-08)
 
 ### ⚠ BREAKING CHANGES
