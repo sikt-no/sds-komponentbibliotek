@@ -70,7 +70,9 @@ export const WithClearOption: Story = {
     value: parseDate(new Date().toISOString().substring(0, 10)),
     clearActionProps: {
       "aria-label": "Clear date",
-      onClick: () => { console.log("clear"); },
+      onClick: () => {
+        console.log("clear");
+      },
     },
   },
 } satisfies Story;

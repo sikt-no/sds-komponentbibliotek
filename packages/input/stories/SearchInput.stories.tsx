@@ -53,7 +53,11 @@ export const WithClearButton: Story = {
       label="Label"
       value="Value"
       onChange={() => null}
-      clearActionProps={{ onClick: () => { console.log("clear"); } }}
+      clearActionProps={{
+        onClick: () => {
+          console.log("clear");
+        },
+      }}
     />
   ),
   args: {
