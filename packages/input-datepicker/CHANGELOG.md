@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@2.0.0...@sikt/sds-input-datepicker@2.0.1) (2024-10-18)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-button@4.0.0 ([d71dd86](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d71dd868279e3b304c14f3e2ee9cb509896eb329))
+- **input-datepicker:** pass clear action props to clear button ([45f548d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/45f548dcf027f916a7f77b6be874d8f6d3e364c9))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@1.1.2...@sikt/sds-input-datepicker@2.0.0) (2024-10-14)
 
 ### ⚠ BREAKING CHANGES
