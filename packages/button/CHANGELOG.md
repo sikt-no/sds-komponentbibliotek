@@ -1,6 +1,25 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@3.1.1...@sikt/sds-button@4.0.0) (2024-10-18)
+
+### ⚠ BREAKING CHANGES
+
+- **button:** add forward ref
+
+### Features
+
+- **button:** add forward ref ([d49709e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d49709ee3d175f977cd6da84df83394a3c9acec8))
+- **eslint-config:** extend config with typescript and react rules ([bb50d01](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bb50d01e6bb09c2abb870dcfa40fca9ad4114937))
+
+### Bug Fixes
+
+- **deps:** change peer deps clsx to ^2.1.0 ([9eb76f1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9eb76f1207a2ec8d19fda646c9bc26d5922b1839))
+- **deps:** correct deps on @sikt/sds-tokens ([b47f8a4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b47f8a4d27e99dcc731036ccf2b7b58a27d88da6))
+- **deps:** update @sikt/sds-core to ^3.0.2 ([a55b4c2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a55b4c2f0bad4dfe80b26c0f7102622b4257d8b2))
+- **deps:** update @sikt/sds-tokens to ^1.0.1 ([3618147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3618147fbc51048b8f63484b63cd2fa6e76cbbf4))
+- package json exports ([b62fed7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b62fed7bfa459c618c016f39c960dffda037155f))
 
 ### [3.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@3.1.0...@sikt/sds-button@3.1.1) (2024-01-08)
 
