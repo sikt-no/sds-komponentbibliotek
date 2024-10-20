@@ -21,7 +21,12 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["react"],
-      "excludeDepPatterns": ["^@phosphor-icons"],
+      "excludeDepPatterns": [
+        "^@phosphor-icons",
+        "react-aria-components",
+        "react-syntax-highlighter",
+        "@mdx-js/react"
+      ],
       "groupName": "react"
     },
     {
@@ -70,11 +75,15 @@
       "groupName": "playwright"
     },
     {
-      "matchPackagePatterns": ["^@storybook", "storybook"],
+      "matchPackagePatterns": [
+        "^@storybook",
+        "storybook",
+        "react-syntax-highlighter"
+      ],
       "groupName": "storybook"
     },
     {
-      "matchPackagePatterns": ["^gatsby"],
+      "matchPackagePatterns": ["^gatsby", "@mdx-js/mdx", "@mdx-js/react"],
       "groupName": "gatsby"
     },
     {
