@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --open",
     "start": "gatsby develop",
     "build:prod": "gatsby build",
     "serve": "gatsby serve",

@@ -96,8 +96,10 @@ Build all packages with `npm run build` from root.
 ```sh
 npm ci
 npm run build
-npm run storybook
+npm run dev
 ```
+
+Storybook will run on http://loclahost:6006 and Gatsby (designsystem.sikt.no) on http://localhost:8000
 
 #### Windows
 
