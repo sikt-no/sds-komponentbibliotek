@@ -32,8 +32,8 @@ export const Default: Story = {
       <InputFile {...args} />
       <FileList figCaption="Attachments (2)">
         <FileListItem
-          fileSize="1466607"
-          actionProps={{
+          fileSize={1466607}
+          removeActionProps={{
             label: "Remove FileName.jpg",
             onClick: () => {
               console.log("action");
@@ -63,11 +63,11 @@ export const WithError: Story = {
   },
   render: (args) => (
     <div data-testid="sds-input-file">
-      <InputFile buttonChildren="Open file explorer" {...args} />
+      <InputFile triggerText="Open file explorer" {...args} />
       <FileList figCaption="Attachments (1)">
         <FileListItem
-          fileSize="1466607"
-          actionProps={{
+          fileSize={1466607}
+          removeActionProps={{
             label: "Remove FileName.jpg",
             onClick: () => {
               console.log("action");
@@ -77,8 +77,8 @@ export const WithError: Story = {
           <Popover target="Image preview">FileName.jpg</Popover>
         </FileListItem>
         <FileListItem
-          fileSize="1000"
-          actionProps={{
+          fileSize={1000}
+          removeActionProps={{
             label: "Remove FileName.jpg",
             onClick: () => {
               console.log("action");

@@ -3,7 +3,7 @@ import { Paragraph } from "@sikt/sds-core";
 import { FormField } from "@sikt/sds-form";
 import { UploadSimpleIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import { forwardRef, ReactNode, useId, useState } from "react";
+import { forwardRef, ReactNode, useEffect, useId, useState } from "react";
 import {
   Button,
   DropZone,
@@ -64,6 +64,12 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
     const [files, setFiles] = useState<(File | FileWithError)[]>(value ?? []);
     const inputId = { id };
     const acceptedFileTypes = accept.split(",");
+
+    useEffect(() => {
+      if (value) {
+        setFiles(value);
+      }
+    }, [value]);
 
     const validateFiles = (input: File[]) => {
       return input.map((file, index) => {

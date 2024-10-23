@@ -11,13 +11,13 @@ const renderComponent = () =>
       data-testid="test"
     >
       <FileListItem
-        actionProps={{ label: "Remove Foo", onClick: jest.fn() }}
+        removeActionProps={{ label: "Remove Foo", onClick: jest.fn() }}
         fileSize={1466607}
       >
         Foo
       </FileListItem>
       <FileListItem
-        actionProps={{ label: "Remove Bar", onClick: jest.fn() }}
+        removeActionProps={{ label: "Remove Bar", onClick: jest.fn() }}
         fileSize={1000}
         loading
         progressProps={{ label: "Loading Bar", value: 54 }}
@@ -25,7 +25,7 @@ const renderComponent = () =>
         Bar
       </FileListItem>
       <FileListItem
-        actionProps={{ label: "Remove Baz", onClick: jest.fn() }}
+        removeActionProps={{ label: "Remove Baz", onClick: jest.fn() }}
         fileSize={100}
         errorText="Error"
       >

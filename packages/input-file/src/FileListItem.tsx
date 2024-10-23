@@ -10,7 +10,7 @@ export interface FileListItemProps extends LiHTMLAttributes<HTMLLIElement> {
   fileSize?: number;
   loading?: boolean;
   progressProps?: { label: string; value: number };
-  actionProps: Pick<ButtonProps, "onClick" | "type"> & { label: string };
+  removeActionProps?: Pick<ButtonProps, "onClick" | "type"> & { label: string };
 }
 
 const getFileSize = (n: number) => {
@@ -32,10 +32,10 @@ export const FileListItem = ({
   fileSize,
   loading = false,
   progressProps,
-  actionProps,
+  removeActionProps,
   ...rest
 }: FileListItemProps) => {
-  let icon = <TrashIcon />;
+  let icon = removeActionProps && <TrashIcon />;
   if (loading) {
     icon = <SpinnerIcon />;
   } else if (errorText) {
@@ -75,16 +75,16 @@ export const FileListItem = ({
             {progressProps.value}%
           </div>
         )}
-        {!loading && (
+        {!loading && removeActionProps && (
           <Button
             variant="transparent"
             size="small"
             iconVariant="only"
             icon={icon}
-            type={actionProps.type ?? "button"}
-            {...actionProps}
+            type={removeActionProps.type ?? "button"}
+            {...removeActionProps}
           >
-            {actionProps.label}
+            {removeActionProps.label}
           </Button>
         )}
         {loading && (
