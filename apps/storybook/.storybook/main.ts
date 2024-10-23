@@ -1,6 +1,4 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
-// TODO: remove globby when fixed https://github.com/storybookjs/storybook/pull/22110
-import { globbySync } from "globby";
 
 const config: StorybookConfig = {
   framework: "@storybook/react-webpack5",
@@ -13,14 +11,11 @@ const config: StorybookConfig = {
       },
     },
   }),
-  stories: globbySync(
-    [
-      "../stories/*.mdx",
-      "../../../packages/*/stories/**/*.mdx",
-      "../../../packages/*/stories/*.stories.@(js|jsx|ts|tsx)",
-    ],
-    { cwd: "./.storybook" },
-  ),
+  stories: [
+    "../stories/*.mdx",
+    "../../../packages/*/stories/**/*.mdx",
+    "../../../packages/*/stories/*.stories.@(js|jsx|ts|tsx)",
+  ],
   typescript: {
     reactDocgen: "react-docgen-typescript",
   },
