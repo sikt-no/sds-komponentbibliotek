@@ -91,7 +91,6 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
           errors.push("size");
         }
 
-        // TODO: should first/last be without error
         // TODO: should this be accepted when file1 fails validation?
         if (!multiple && index > 0) {
           errors.push("multiple");
