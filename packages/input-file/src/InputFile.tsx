@@ -76,9 +76,14 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
         const output: File | FileWithError = file;
         const errors: FileError[] = [];
 
-        // TODO: accept wildcard ["*", "image/*"]
         // DropZone getDropOperation={(types) => types.has('image/png') ? 'copy' : 'cancel'} doesn't handle this
-        if (!acceptedFileTypes.includes(file.type)) {
+        if (
+          !acceptedFileTypes.some((accept) =>
+            file.type.match(
+              accept.replaceAll("*", ".*").replaceAll("/", "/\\/"),
+            ),
+          )
+        ) {
           errors.push("type");
         }
 

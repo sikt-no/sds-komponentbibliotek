@@ -188,5 +188,30 @@ describe("InputFile", () => {
       expect(file).toHaveProperty("error", ["type"]);
       expect(file2).toHaveProperty("error", ["multiple"]);
     });
+
+    it("accept wildcard type", async () => {
+      const user = userEvent.setup();
+      const changeHandler = jest.fn();
+      const { container } = render(
+        <InputFile
+          label="Foo"
+          aria-label="Foo"
+          accept=".bar,image/*"
+          onChange={changeHandler}
+        />,
+      );
+
+      const file = new File(["hello"], "hello.png", { type: "image/png" });
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const input = container.querySelector("input")!;
+
+      await user.upload(input, file);
+
+      expect(input.files?.[0]).toBe(file);
+      expect(input.files?.item(0)).toBe(file);
+      expect(input.files).toHaveLength(1);
+      expect(changeHandler).toHaveBeenCalledTimes(1);
+      expect(changeHandler).toHaveBeenLastCalledWith([file]);
+    });
   });
 });
