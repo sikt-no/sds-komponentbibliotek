@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.2.0...@sikt/sds-input-file@0.2.1) (2024-10-25)
+
+### Bug Fixes
+
+- **input-file:** catch accept wildcard ([bcbc572](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bcbc5727850ef94e0adc6a3f490cdd44ba0fd1d1))
+
 ## [0.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.1.0...@sikt/sds-input-file@0.2.0) (2024-10-23)
 
 ### ⚠ BREAKING CHANGES
