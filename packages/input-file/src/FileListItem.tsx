@@ -4,24 +4,30 @@ import { SpinnerIcon, TrashIcon, XIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx";
 import { LiHTMLAttributes, ReactNode } from "react";
 
+export type ByteConversion = "binary" | "decimal";
+
 export interface FileListItemProps extends LiHTMLAttributes<HTMLLIElement> {
   children: ReactNode;
   errorText?: ReactNode;
   fileSize?: number;
+  bytesConversion?: ByteConversion;
   loading?: boolean;
   progressProps?: { label: string; value: number };
   removeActionProps?: Pick<ButtonProps, "onClick" | "type"> & { label: string };
 }
 
-const getFileSize = (n: number) => {
-  const round = (n: number) => Math.round(n * 100) / 100;
+const round = (n: number) => Math.round(n * 100) / 100;
 
-  if (n < 1e3) {
+const getFileSize = (n: number, conversion: ByteConversion) => {
+  const kb = conversion === "binary" ? 1024 : 1000;
+  const mb = kb ** 2;
+
+  if (n < kb) {
     return `${n}B`;
-  } else if (n >= 1e3 && n < 1e6) {
-    return `${round(n / 1e3)}KB`;
+  } else if (n >= kb && n < mb) {
+    return `${round(n / kb)}KB`;
   } else {
-    return `${round(n / 1e6)}MB`;
+    return `${round(n / mb)}MB`;
   }
 };
 
@@ -30,6 +36,7 @@ export const FileListItem = ({
   className,
   errorText,
   fileSize,
+  bytesConversion = "decimal",
   loading = false,
   progressProps,
   removeActionProps,
@@ -42,7 +49,7 @@ export const FileListItem = ({
     icon = <XIcon />;
   }
 
-  const size = fileSize && getFileSize(fileSize);
+  const size = fileSize && getFileSize(fileSize, bytesConversion);
 
   return (
     <li
