@@ -79,9 +79,7 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
         // DropZone getDropOperation={(types) => types.has('image/png') ? 'copy' : 'cancel'} doesn't handle this
         if (
           !acceptedFileTypes.some((accept) =>
-            file.type.match(
-              accept.replaceAll("*", ".*").replaceAll("/", "/\\/"),
-            ),
+            file.type.match(accept.replaceAll("*", ".*")),
           )
         ) {
           errors.push("type");

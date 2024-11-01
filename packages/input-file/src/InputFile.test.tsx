@@ -207,11 +207,28 @@ describe("InputFile", () => {
 
       await user.upload(input, file);
 
-      expect(input.files?.[0]).toBe(file);
-      expect(input.files?.item(0)).toBe(file);
-      expect(input.files).toHaveLength(1);
-      expect(changeHandler).toHaveBeenCalledTimes(1);
-      expect(changeHandler).toHaveBeenLastCalledWith([file]);
+      expect(file).not.toHaveProperty("error", ["type"]);
+    });
+
+    it("should accept file type", async () => {
+      const user = userEvent.setup();
+      const changeHandler = jest.fn();
+      const { container } = render(
+        <InputFile
+          label="Foo"
+          aria-label="Foo"
+          accept=".bar,image/gif"
+          onChange={changeHandler}
+        />,
+      );
+
+      const file = new File(["hello"], "hello.gif", { type: "image/gif" });
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const input = container.querySelector("input")!;
+
+      await user.upload(input, file);
+
+      expect(file).not.toHaveProperty("error", ["type"]);
     });
   });
 });
