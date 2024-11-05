@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.2.1...@sikt/sds-input-file@0.2.2) (2024-11-05)
+
+### Features
+
+- **input-file:** add prop for binary or decimal byte conversion ([db40fdd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/db40fdd33c713e008ed5d49a717a132cf75cc8ca))
+
+### Bug Fixes
+
+- **input-file:** bug with acceptedFileTypes check ([3afbc10](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3afbc10001aec4fdd8301af999a89c59ca845a0e))
+
 ## [0.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.2.0...@sikt/sds-input-file@0.2.1) (2024-10-25)
 
 ### Bug Fixes
