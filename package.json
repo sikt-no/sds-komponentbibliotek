@@ -90,7 +90,7 @@
     "jest-junit": "^16.0.0",
     "lint-staged": "^15.2.10",
     "npm-run-all2": "^7.0.1",
-    "postcss": "^8.4.47",
+    "postcss": "^8.4.48",
     "postcss-custom-media": "^11.0.5",
     "postcss-import": "^16.1.0",
     "postcss-nested": "^7.0.2",
