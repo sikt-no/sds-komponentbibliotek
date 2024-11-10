@@ -16,8 +16,8 @@
     "README.md"
   ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
     "confusing-browser-globals": "^1.0.11",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",

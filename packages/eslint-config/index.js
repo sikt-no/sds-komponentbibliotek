@@ -67,6 +67,10 @@ module.exports = {
     "react/no-array-index-key": "warn",
     "react/no-danger": "warn",
     "react/self-closing-comp": "error",
+    "@typescript-eslint/no-unused-expressions": [
+      "error",
+      { allowShortCircuit: true, enforceForJSX: true },
+    ],
     "@typescript-eslint/restrict-template-expressions": [
       "error",
       { allowNumber: true },
