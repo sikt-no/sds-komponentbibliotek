@@ -9,13 +9,15 @@ const Contributors = ({
 }) => {
   const contributors = [
     [
-      { name: "Kim", role: "Design", team: "Komponentbiblioteket" },
-      { name: "Hanne", role: "Design", team: "Komponentbiblioteket" },
-      { name: "Eivind", role: "Inkludering", team: "Komponentbiblioteket" },
-      { name: "Kine", role: "Teknologi", team: "Komponentbiblioteket" },
-      { name: "Sondre E.", role: "Design", team: "Komponentbiblioteket" },
-      { name: "Kristoffer", role: "Teknologi", team: "Komponentbiblioteket" },
-      { name: "Petter", role: "Design", team: "Komponentbiblioteket" },
+      { name: "Sigve", role: "Design", team: "Designsystemet" },
+      { name: "Vegar", role: "Teknologi", team: "Designsystemet" },
+      { name: "Kim", role: "Design", team: "Designsystemet" },
+      { name: "Hanne", role: "Design", team: "Designsystemet" },
+      { name: "Eivind", role: "Inkludering", team: "Designsystemet" },
+      { name: "Kine", role: "Teknologi", team: "Designsystemet" },
+      { name: "Sondre E.", role: "Design", team: "Designsystemet" },
+      { name: "Kristoffer", role: "Teknologi", team: "Designsystemet" },
+      { name: "Petter", role: "Design", team: "Designsystemet" },
       ...(showEasterEggs
         ? [
             {
