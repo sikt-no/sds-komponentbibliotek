@@ -7,7 +7,7 @@ import { ArrowCircleLeftIcon } from "@sikt/sds-icons";
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <Hero
-      breadcrumbs={[{ title: "Komponentbiblioteket", to: "/" }]}
+      breadcrumbs={[{ title: "Designsystemet", to: "/" }]}
       heading={<>Siden finnes ikke</>}
       leadParagraph={
         <ButtonLink

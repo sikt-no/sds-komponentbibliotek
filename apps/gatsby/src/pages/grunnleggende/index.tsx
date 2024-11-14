@@ -22,7 +22,7 @@ const GrunnleggendePage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero
-        breadcrumbs={[{ title: "Komponentbiblioteket", to: "/" }]}
+        breadcrumbs={[{ title: "Designsystemet", to: "/" }]}
         heading={<>Grunn&shy;leggende</>}
       />
 
@@ -38,35 +38,34 @@ const GrunnleggendePage: React.FC<PageProps> = () => {
 
         <div>
           <Section
-            headingText="Hva er et komponentbibliotek?"
+            headingText="Hva er et designsystem?"
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
               <Paragraph className="sds-paragraph--max-width">
-                Sikt komponentbibliotek inneholder en rekke nyttige komponenter
-                som kan brukes i design og utvikling av nettsider og
-                applikasjoner. Det er flere fordeler ved å ta i bruk
-                komponentbiblioteket. For det første vil utviklingsprosessen
-                kunne gå raskere, ettersom man ikke trenger å bygge alt fra
-                bunnen av hver gang. For det andre vil bruk av komponentene
-                sannsynligvis redusere risiko for bugs og manglende universell
-                utforming, siden komponentene er grundig testet i forkant. For
-                det andre vil komponentene gjøre det mulig å skape en mer
-                helhetlig opplevelse på tvers av Sikt sine
+                Sikt designsystem inneholder en rekke nyttige komponenter som
+                kan brukes i design og utvikling av nettsider og applikasjoner.
+                Det er flere fordeler ved å ta i bruk designsystemet. For det
+                første vil utviklingsprosessen kunne gå raskere, ettersom man
+                ikke trenger å bygge alt fra bunnen av hver gang. For det andre
+                vil bruk av komponentene sannsynligvis redusere risiko for bugs
+                og manglende universell utforming, siden komponentene er grundig
+                testet i forkant. For det andre vil komponentene gjøre det mulig
+                å skape en mer helhetlig opplevelse på tvers av Sikt sine
                 nettsider/applikasjoner, da det visuelle uttrykket og
                 interaksjonsmønstrene vil være gjenkjennbart for brukeren.
               </Paragraph>
 
               <Paragraph className="sds-paragraph--max-width">
-                Komponentbiblioteket vil være en kombinasjon av enkeltstående
+                Designsystemet vil være en kombinasjon av enkeltstående
                 komponenter, samt retningslinjer for hvordan ulike komponenter
                 kan settes sammen til en mer helhetlig side (se "Guidelines" og
-                "Patterns" i Figma). Per i dag er komponentbiblioteket
-                tilgjengelig i Figma, GitLab og npmjs. Å bygge et godt
-                komponentbibliotek for Sikt vil være en laginnsats, der alle
-                team er velkomne til å bidra inn. Det har allerede kommet inn
-                mange gode bidrag fra ulike team, og vi håper at enda flere team
-                ønsker å koble seg på fremover!
+                "Patterns" i Figma). Per i dag er designsystemet tilgjengelig i
+                Figma, GitLab og npmjs. Å bygge et godt designsystem for Sikt
+                vil være en laginnsats, der alle team er velkomne til å bidra
+                inn. Det har allerede kommet inn mange gode bidrag fra ulike
+                team, og vi håper at enda flere team ønsker å koble seg på
+                fremover!
               </Paragraph>
             </div>
           </Section>
@@ -135,7 +134,7 @@ const GrunnleggendePage: React.FC<PageProps> = () => {
                 imgAlt="Bilde på ikoner i Figma"
                 href={iconsHref}
               >
-                Vi har tatt i bruk Phosphor Icons som ikonsettet i Sikt, men har
+                Vi har tatt i bruk Phosphor Icons som ikonsettet i Sikt, og har
                 gjort et eget utvalg slik at vi er enige om hvilke ikoner som
                 brukes til hva.
               </NavCard>

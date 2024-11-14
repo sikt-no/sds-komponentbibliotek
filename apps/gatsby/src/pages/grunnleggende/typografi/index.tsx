@@ -27,8 +27,8 @@ const TypografiPage: React.FC<PageProps> = ({ location }) => {
     <>
       <Hero
         breadcrumbs={[
-          { title: "Komponentbiblioteket", to: "/" },
-          { title: "Gunnleggende", to: "/grunnleggende/" },
+          { title: "Designsystemet", to: "/" },
+          { title: "Grunnleggende", to: "/grunnleggende/" },
         ]}
         heading={<>Typografi</>}
         leadParagraph="Typografisystemet skal ivareta lesbarhet og utseende på tvers av

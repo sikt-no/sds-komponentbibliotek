@@ -30,8 +30,8 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
     <>
       <Hero
         breadcrumbs={[
-          { title: "Komponentbiblioteket", to: "/" },
-          { title: "Gunnleggende", to: "/grunnleggende/" },
+          { title: "Designsystemet", to: "/" },
+          { title: "Grunnleggende", to: "/grunnleggende/" },
         ]}
         heading={<>Fargesystem</>}
         leadParagraph="For å sikre likt utseende på tvers av løsninger og grensesnitt har vi
@@ -79,7 +79,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
               </Paragraph>
 
               <Paragraph className="sds-paragraph--max-width">
-                Fargene i komponentbiblioteket er satt opp i HSL-modellen (Hue,
+                Fargene i designsystemet er satt opp i HSL-modellen (Hue,
                 Saturation, Lightness) for å enkelt lage fargeskalaer basert på
                 en enkelt farge. For eksempel kan man generere
                 interaksjonsfarger basert på en profilfarge ved å legge til
@@ -499,7 +499,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
               <Paragraph className="sds-paragraph--max-width">
                 Merkevarefargene er basert på Sikt sin visuelle profil og
                 merkevare, og fungerer som basis for andre farger i
-                komponentbiblioteket.
+                designsystemet.
               </Paragraph>
 
               <Table

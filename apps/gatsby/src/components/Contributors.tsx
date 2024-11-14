@@ -23,7 +23,7 @@ const Contributors = ({
             {
               name: "Andreas",
               role: "Sjef",
-              team: "Komponentbiblioteket",
+              team: "Designsystemet",
             },
           ]
         : []),

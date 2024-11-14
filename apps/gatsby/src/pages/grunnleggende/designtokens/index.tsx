@@ -17,8 +17,8 @@ const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
     <>
       <Hero
         breadcrumbs={[
-          { title: "Komponentbiblioteket", to: "/" },
-          { title: "Gunnleggende", to: "/grunnleggende/" },
+          { title: "Designsystemet", to: "/" },
+          { title: "Grunnleggende", to: "/grunnleggende/" },
         ]}
         heading={<>Designtokens</>}
         leadParagraph="Designtokens er verdier koblet til et navn, og sørger for at ting blir

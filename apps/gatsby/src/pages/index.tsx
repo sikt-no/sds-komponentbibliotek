@@ -49,8 +49,8 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero
-        heading={<>Komponent&shy;biblioteket</>}
-        leadParagraph="Velkommen til Sikts komponentbibliotek. Dette er en sammensetning av
+        heading={<>Designsystemet</>}
+        leadParagraph="Velkommen til Sikts designsystem. Dette er en sammensetning av
             komponenter og retningslinjer du kan bruke når du designer og
             utvikler digitale løsninger og tjenester."
         className={style.index__hero}
@@ -80,7 +80,7 @@ const IndexPage: React.FC<PageProps> = () => {
               </ButtonLink>
             }
           >
-            Les deg opp på hva komponent-biblioteket er og hva det består av
+            Les deg opp på hva designsystemet er og hva det består av
           </Card>
           <Card
             headingLevel="h2"
@@ -129,9 +129,9 @@ const IndexPage: React.FC<PageProps> = () => {
         <div className={style.index__sectionContent}>
           <Heading2 variant="medium">Samarbeid</Heading2>
           <Paragraph variant="lead">
-            Å bygge et godt komponentbibliotek for Sikt vil være en laginnsats,
-            der alle team er velkomne til å bidra inn. Det har allerede kommet
-            inn mange gode bidrag fra ulike team, og vi håper at enda flere team
+            Å bygge et godt designsystem for Sikt vil være en laginnsats, der
+            alle team er velkomne til å bidra inn. Det har allerede kommet inn
+            mange gode bidrag fra ulike team, og vi håper at enda flere team
             ønsker å koble seg på fremover!
           </Paragraph>
           <ButtonGroup variant="right" className="sds-sikt-button-group">
@@ -169,7 +169,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 disabled={disableButton}
                 icon="🎈"
               >
-                Feire komponentbiblioteket 1 år
+                Feire designsystemet 1 år
               </Button>
             </ButtonGroup>
           )}

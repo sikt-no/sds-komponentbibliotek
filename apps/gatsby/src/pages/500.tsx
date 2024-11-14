@@ -7,7 +7,7 @@ import { ArrowCircleLeftIcon } from "@sikt/sds-icons";
 const ErrorPage: React.FC<PageProps> = () => {
   return (
     <Hero
-      breadcrumbs={[{ title: "Komponentbiblioteket", to: "/" }]}
+      breadcrumbs={[{ title: "Designsystemet", to: "/" }]}
       heading={<>En feil har skjedd</>}
       leadParagraph={
         <ButtonLink

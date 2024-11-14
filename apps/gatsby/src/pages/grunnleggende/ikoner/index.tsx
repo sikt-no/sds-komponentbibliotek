@@ -19,8 +19,8 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
     <>
       <Hero
         breadcrumbs={[
-          { title: "Komponentbiblioteket", to: "/" },
-          { title: "Gunnleggende", to: "/grunnleggende/" },
+          { title: "Designsystemet", to: "/" },
+          { title: "Grunnleggende", to: "/grunnleggende/" },
         ]}
         heading={<>Ikonbibliotek</>}
         leadParagraph="Vi har tatt i bruk Phosphor Icons som ikonsettet i Sikt, men har gjort

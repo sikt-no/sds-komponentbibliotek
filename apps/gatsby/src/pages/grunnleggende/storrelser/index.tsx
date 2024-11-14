@@ -29,8 +29,8 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
     <>
       <Hero
         breadcrumbs={[
-          { title: "Komponentbiblioteket", to: "/" },
-          { title: "Gunnleggende", to: "/grunnleggende/" },
+          { title: "Designsystemet", to: "/" },
+          { title: "Grunnleggende", to: "/grunnleggende/" },
         ]}
         heading={<>Størrelser</>}
         leadParagraph="For å sikre likt utseende på tvers av løsninger og grensesnitt har vi
@@ -62,8 +62,8 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
 
               <Paragraph className="sds-paragraph--max-width">
                 Disse tokensene er kun tilgjengelige i Figma-filen til
-                komponentbiblioteket da de ikke skal brukes direkte, men er
-                grunnlaget for de semantiske tokensene.
+                designsystemet da de ikke skal brukes direkte, men er grunnlaget
+                for de semantiske tokensene.
               </Paragraph>
 
               <Table caption="Designtokens for grunnstørrelser">

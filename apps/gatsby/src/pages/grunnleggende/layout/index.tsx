@@ -17,8 +17,8 @@ const LayoutPage: React.FC<PageProps> = ({ location }) => {
     <>
       <Hero
         breadcrumbs={[
-          { title: "Komponentbiblioteket", to: "/" },
-          { title: "Gunnleggende", to: "/grunnleggende/" },
+          { title: "Designsystemet", to: "/" },
+          { title: "Grunnleggende", to: "/grunnleggende/" },
         ]}
         heading={<>Layout</>}
         leadParagraph="For å sikre likt utseende på tvers av løsninger og grensesnitt har vi
@@ -90,11 +90,11 @@ const LayoutPage: React.FC<PageProps> = ({ location }) => {
           >
             <div className={style.grunnleggende__sdsSectionContent}>
               <Paragraph className="sds-paragraph--max-width">
-                Vi har definert forskjellige enhetsstørrelser i
-                komponentbiblioteket, mobil, nettbrett, stasjonær datamaskin, og
-                svært brede skjermer (mobile, tablet, desktop, utrawide).
-                Bruddpunktene er verdiene som definerer når grensesnittet bytter
-                mellom de forskjellige størrelsene og enhetene.
+                Vi har definert forskjellige enhetsstørrelser i designsystemet,
+                mobil, nettbrett, stasjonær datamaskin, og svært brede skjermer
+                (mobile, tablet, desktop, utrawide). Bruddpunktene er verdiene
+                som definerer når grensesnittet bytter mellom de forskjellige
+                størrelsene og enhetene.
               </Paragraph>
 
               <div>
