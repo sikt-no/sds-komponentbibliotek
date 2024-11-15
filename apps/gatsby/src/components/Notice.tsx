@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { clsx } from "clsx/lite";
-import { WarningIcon } from "@sikt/sds-icons";
+import { AlertIcon } from "@sikt/sds-icons";
 import * as style from "./notice.module.css";
 
 export const Notice = ({
@@ -12,7 +12,7 @@ export const Notice = ({
 }) => {
   return (
     <div className={style.notice}>
-      <WarningIcon className={style.notice__icon} />
+      <AlertIcon className={style.notice__icon} />
       <div
         className={clsx(
           style.notice__heading,

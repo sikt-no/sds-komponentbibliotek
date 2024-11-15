@@ -11,19 +11,18 @@ import { LinkedInLogo } from "../index";
 ## Icons
 
 <IconGallery>
-  {config.map((icon) => {
-      const iconName = `${icon
-        .split("-")
-        .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
-        .join("")}Icon`; 
-      const I = icons[iconName];
-
-      return (
-        <IconItem key={icon} name={icon}>
-          <I />
-        </IconItem>
-      );
-
+  {config.map(({name}) => {
+    const iconName = `${name
+      .split("-")
+      .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+      .join("")}Icon`; 
+    const I = icons[iconName];
+    
+    return (
+      <IconItem key={name} name={name}>
+        <I />
+      </IconItem>
+    );
 })}
 
   <IconItem name="linked-in-logo">

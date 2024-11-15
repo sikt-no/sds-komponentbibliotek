@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ButtonLink } from "../../button/index";
-import { ArrowCircleRightIcon } from "../../icons/index";
+import { NavigateToNextAltIcon } from "../../icons/index";
 import { Section, SectionProps } from "../index";
 
 const meta: Meta = {
@@ -23,7 +23,7 @@ export const WithCallToAction: Story = {
   args: {
     headingText: "Header",
     callToAction: (
-      <ButtonLink variant="subtle" href="#" icon={<ArrowCircleRightIcon />}>
+      <ButtonLink variant="subtle" href="#" icon={<NavigateToNextAltIcon />}>
         Action
       </ButtonLink>
     ),

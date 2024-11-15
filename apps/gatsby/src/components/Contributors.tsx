@@ -1,5 +1,5 @@
 import { Heading3 } from "@sikt/sds-core";
-import { UserCircleIcon } from "@sikt/sds-icons";
+import { UserProfileIcon } from "@sikt/sds-icons";
 import * as style from "./contributors.module.css";
 
 const Contributors = ({
@@ -100,7 +100,7 @@ const Contributors = ({
                       <div className={style.contributors__crown}>🎩️</div>
                     )}
                     {contributor.name === "Deg" && (
-                      <UserCircleIcon
+                      <UserProfileIcon
                         className={`${style.contributors__contributorImage} ${style.contributors__contributorImageAnimation}`}
                       />
                     )}

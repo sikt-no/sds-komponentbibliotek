@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { CheckIcon } from "../../icons/index";
+import { ConfirmIcon } from "../../icons/index";
 import { Badge, BadgeProps } from "../index";
 
 const meta: Meta = {
@@ -22,6 +22,6 @@ export const Default: Story = {
 export const IconLeft: Story = {
   args: {
     ...Default.args,
-    icon: <CheckIcon />,
+    icon: <ConfirmIcon />,
   },
 };

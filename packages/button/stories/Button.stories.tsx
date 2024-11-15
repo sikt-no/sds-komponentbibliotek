@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ArrowLeftIcon, ArrowRightIcon } from "../../icons/index";
+import { NavigateToNextIcon, NavigateToPreviousIcon } from "../../icons/index";
 import { Button, ButtonProps } from "../index";
 
 const meta: Meta = {
@@ -26,14 +26,14 @@ export const Default: Story = {
 export const IconRight: Story = {
   args: {
     ...Default.args,
-    icon: <ArrowRightIcon />,
+    icon: <NavigateToNextIcon />,
   },
 };
 
 export const IconLeft: Story = {
   args: {
     ...Default.args,
-    icon: <ArrowLeftIcon />,
+    icon: <NavigateToPreviousIcon />,
     iconVariant: "left",
   },
 };
@@ -41,7 +41,7 @@ export const IconLeft: Story = {
 export const IconOnly: Story = {
   args: {
     ...Default.args,
-    icon: <ArrowRightIcon />,
+    icon: <NavigateToNextIcon />,
     iconVariant: "only",
   },
 };

@@ -180,15 +180,21 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
                     moduleStyle.ikoner__ikoner,
                   )}
                 >
-                  {(config as string[]).map((icon) => {
-                    const iconName = icon
+                  {(
+                    config as {
+                      id: string;
+                      name: string;
+                      category: string;
+                    }[]
+                  ).map(({ name }) => {
+                    const iconName = name
                       .split("-")
                       .map(
                         (part) =>
                           `${part.charAt(0).toUpperCase()}${part.slice(1)}`,
                       )
                       .join(" ");
-                    const iconComponentName = `${icon
+                    const iconComponentName = `${name
                       .split("-")
                       .map(
                         (part) =>

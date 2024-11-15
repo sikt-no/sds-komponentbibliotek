@@ -10,7 +10,7 @@ import * as style from "./index.module.css";
 import Contributors from "../components/Contributors";
 import { Card } from "@sikt/sds-card";
 import { Hero } from "../components/Hero";
-import { ArrowCircleRightIcon } from "@sikt/sds-icons";
+import { NavigateToNextAltIcon } from "@sikt/sds-icons";
 
 export { Head } from "../components/Head";
 
@@ -74,7 +74,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <ButtonLink
                 variant="strong"
                 href="/grunnleggende/"
-                icon={<ArrowCircleRightIcon />}
+                icon={<NavigateToNextAltIcon />}
               >
                 Les alle bestanddelene
               </ButtonLink>
@@ -90,7 +90,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <ButtonLink
                 variant="strong"
                 href="/komponenter/"
-                icon={<ArrowCircleRightIcon />}
+                icon={<NavigateToNextAltIcon />}
               >
                 Se alle komponentene
               </ButtonLink>
@@ -106,7 +106,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <ButtonLink
                 variant="strong"
                 href="/monstre/"
-                icon={<ArrowCircleRightIcon />}
+                icon={<NavigateToNextAltIcon />}
               >
                 Se mønster og eksempler
               </ButtonLink>

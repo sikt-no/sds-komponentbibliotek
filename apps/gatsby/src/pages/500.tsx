@@ -2,7 +2,7 @@ import * as React from "react";
 import { HeadFC, PageProps } from "gatsby";
 import { Hero } from "../components/Hero";
 import { ButtonLink } from "@sikt/sds-button";
-import { ArrowCircleLeftIcon } from "@sikt/sds-icons";
+import { NavigateToPreviousAltIcon } from "@sikt/sds-icons";
 
 const ErrorPage: React.FC<PageProps> = () => {
   return (
@@ -12,7 +12,7 @@ const ErrorPage: React.FC<PageProps> = () => {
       leadParagraph={
         <ButtonLink
           variant="strong"
-          icon={<ArrowCircleLeftIcon />}
+          icon={<NavigateToPreviousAltIcon />}
           iconVariant="left"
           href="/"
         >

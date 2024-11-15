@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ArrowLeftIcon, ArrowRightIcon } from "../../icons/index";
+import { NavigateToNextIcon, NavigateToPreviousIcon } from "../../icons/index";
 import { Button, ButtonGroup, ButtonGroupProps } from "../index";
 
 const meta: Meta = {
@@ -15,11 +15,15 @@ export const Default: Story = {
   args: {
     children: (
       <>
-        <Button icon={<ArrowLeftIcon />} iconVariant="left" variant="critical">
+        <Button
+          icon={<NavigateToPreviousIcon />}
+          iconVariant="left"
+          variant="critical"
+        >
           Critical
         </Button>
         <Button>Subtle</Button>
-        <Button icon={<ArrowRightIcon />} variant="strong">
+        <Button icon={<NavigateToNextIcon />} variant="strong">
           Strong
         </Button>
       </>
