@@ -6,13 +6,16 @@ import * as indexStyle from "../../index.module.css";
 import * as style from "../index.module.css";
 import * as moduleStyle from "./index.module.css";
 import { Section } from "@sikt/sds-section";
-import { Heading3, Link, Paragraph } from "@sikt/sds-core";
+import { Heading3, Heading4, Link, Paragraph } from "@sikt/sds-core";
 import { colorsHref, SubNav } from "../../../components/grunnleggende/SubNav";
 import { config } from "../../../../../../packages/icons/src/icons.config";
 import * as icons from "../../../../../../packages/icons/build/index";
-import { LinkedInLogo } from "@sikt/sds-icons";
+import { LinkedInLogo, SpinnerIcon } from "@sikt/sds-icons";
+import { kebabToPascal, kebabToString } from "../../../utils/string";
 
 export { Head } from "../../../components/Head";
+
+const categories = [...new Set(config.map((item) => item.category))];
 
 const IkonerPage: React.FC<PageProps> = ({ location }) => {
   return (
@@ -174,52 +177,66 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               <div className={style.grunnleggende__sdsSectionContent}>
                 <Heading3 variant="small">Ikonbiblioteket</Heading3>
 
-                <div
-                  className={clsx(
-                    "sds-paragraph--max-width",
-                    moduleStyle.ikoner__ikoner,
-                  )}
-                >
-                  {(
-                    config as {
-                      id: string;
-                      name: string;
-                      category: string;
-                    }[]
-                  ).map(({ name }) => {
-                    const iconName = name
-                      .split("-")
-                      .map(
-                        (part) =>
-                          `${part.charAt(0).toUpperCase()}${part.slice(1)}`,
-                      )
-                      .join(" ");
-                    const iconComponentName = `${name
-                      .split("-")
-                      .map(
-                        (part) =>
-                          `${part.charAt(0).toUpperCase()}${part.slice(1)}`,
-                      )
-                      .join("")}Icon`;
-                    const I = icons[iconComponentName] as ElementType;
-
+                <div className="sds-paragraph--max-width">
+                  {categories.map((category) => {
                     return (
-                      <div
-                        className={moduleStyle.ikoner__ikonWrapper}
-                        key={iconName}
-                      >
-                        <I className={moduleStyle.ikoner__ikon} />
-                        <Paragraph as="span" variant="small">
-                          {iconName}
-                        </Paragraph>
-                      </div>
+                      <>
+                        <Heading4 variant="overline">
+                          {kebabToString(category)}
+                        </Heading4>
+
+                        <div className={moduleStyle.ikoner__ikoner}>
+                          {config
+                            .filter((item) => item.category === category)
+                            .filter((item) => item.id !== "spinner-gap")
+                            .map(({ name, category }, idx, config) => {
+                              const iconName = kebabToString(name);
+                              const iconComponentName = `${kebabToPascal(name)}Icon`;
+                              const I = icons[iconComponentName] as ElementType;
+
+                              return (
+                                <>
+                                  <div
+                                    className={moduleStyle.ikoner__ikonWrapper}
+                                    key={iconName}
+                                  >
+                                    <I className={moduleStyle.ikoner__ikon} />
+                                    <Paragraph as="span" variant="small">
+                                      {iconName}
+                                    </Paragraph>
+                                  </div>
+                                  {category === "ui" &&
+                                    idx + 1 === config.length && (
+                                      <div
+                                        className={
+                                          moduleStyle.ikoner__ikonWrapper
+                                        }
+                                      >
+                                        <SpinnerIcon
+                                          className={moduleStyle.ikoner__ikon}
+                                        />
+                                        <Paragraph as="span" variant="small">
+                                          Spinner
+                                        </Paragraph>
+                                      </div>
+                                    )}
+                                </>
+                              );
+                            })}
+                        </div>
+                      </>
                     );
                   })}
-                  <div className={moduleStyle.ikoner__ikonWrapper}>
-                    <LinkedInLogo className={moduleStyle.ikoner__ikon} />
-                    <Paragraph as="span" variant="small">
-                      LinkedIn Logo
-                    </Paragraph>
+
+                  <Heading4 variant="overline">Social media</Heading4>
+
+                  <div className={moduleStyle.ikoner__ikoner}>
+                    <div className={moduleStyle.ikoner__ikonWrapper}>
+                      <LinkedInLogo className={moduleStyle.ikoner__ikon} />
+                      <Paragraph as="span" variant="small">
+                        LinkedIn Logo
+                      </Paragraph>
+                    </div>
                   </div>
                 </div>
               </div>
