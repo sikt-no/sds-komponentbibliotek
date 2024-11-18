@@ -198,6 +198,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
               }}
               iconVariant="only"
               icon={<CalendarBlankIcon />}
+              type="button"
             >
               {openCalendarLabel}
             </Button>
