@@ -2,6 +2,96 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@2.0.1...@sikt/sds-icons@3.0.0) (2024-11-18)
+
+### ⚠ BREAKING CHANGES
+
+- **icons:** rename icons from visual representation to use representation
+
+#### Migration
+
+Search replace v2 name with updated v3 name.
+
+| Svg v2               | Svg v3                       | Component v2           | Component v3                  |
+| -------------------- | ---------------------------- | ---------------------- | ----------------------------- |
+| archive              | archive                      | ArchiveIcon            | ArchiveIcon                   |
+| arrow-circle-left    | navigate-to-previous-alt     | ArrowCircleLeftIcon    | NavigateToPreviousAltIcon     |
+| arrow-circle-right   | navigate-to-next-alt         | ArrowCircleRightIcon   | NavigateToNextAltIcon         |
+| arrow-clockwise      | refresh                      | ArrowClockwiseIcon     | RefreshIcon                   |
+| arrow-left           | navigate-to-previous         | ArrowLeftIcon          | NavigateToPreviousIcon        |
+| arrow-right          | navigate-to-next             | ArrowRightIcon         | NavigateToNextIcon            |
+| arrow-square-out     | navigate-to-external         | ArrowSquareOutIcon     | NavigateToExternalIcon        |
+| arrow-u-up-left      | undo                         | ArrowUUpLeftIcon       | UndoIcon                      |
+| arrow-u-up-right     | redo                         | ArrowUUpRightIcon      | RedoIcon                      |
+| bell                 | notification                 | BellIcon               | NotificationIcon              |
+| bell-ringing         | notification                 | BellRingIcon           | NotificationIcon              |
+| bookmark-simple      | bookmark-unchecked           | BookmarkSimpleIcon     | BookmarkUncheckedIcon         |
+| bookmark-simple-fill | bookmark-checked             | BookmarkSimpleFillIcon | BookmarkCheckedIcon           |
+| calendar-blank       | date-calendar                | CalendarBlankIcon      | DateCalendarIcon              |
+| calendar-plus        | add-to-calendar              | CalendarPlusIcon       | AddToCalendarIcon             |
+| caret-circle-up      | expand-show-alt              | CaretCircleUpIcon      | CollapseHideAltIcon           |
+| caret-circle-down    | collapse-hide-alt            | CaretCircleDownIcon    | ExpandShowAltIcon             |
+| caret-circle-left    | move-to-previous-alt         | CaretCircleLeftIcon    | MoveToPreviousAltIcon         |
+| caret-circle-right   | move-to-next-alt             | CaretCircleRightIcon   | MoveToNextAltIcon             |
+| caret-up             | collapse-hide                | CaretUpIcon            | CollapseHideIcon              |
+| caret-down           | expand-show                  | CaretDownIcon          | ExpandShowIcon                |
+| caret-left           | move-to-previous             | CaretLeftIcon          | MoveToPreviousIcon            |
+| caret-right          | move-to-next                 | CaretRightIcon         | MoveToNextIcon                |
+| check                | confirm                      | CheckIcon              | ConfirmIcon                   |
+| check-circle         | success                      | CheckCircleIcon        | SuccessIcon                   |
+| circle               | -                            | CircleIcon             | -                             |
+| clock                | time                         | ClockIcon              | TimeIcon                      |
+| copy                 | copy                         | CopyIcon               | CopyIcon                      |
+| dots-three           | contextual-menu              | DotsThreeIcon          | ContextualMenuIcon            |
+| dots-three-circle    | contextual-menu-alt          | DotsThreeCircleIcon    | ContextualMenuAltIcon         |
+| dots-six-vertical    | reorder-handle               | DotsSixVerticalIcon    | ReorderHandleIcon             |
+| download-simple      | download                     | DownloadSimpleIcon     | DownloadIcon                  |
+| envelope             | email                        | EnvelopeIcon           | EmailIcon                     |
+| export               | export                       | ExportIcon             | ExportIcon                    |
+| floppy-disk          | save                         | FloppyDiskIcon         | SaveIcon                      |
+| -                    | folder                       | -                      | FolderIcon                    |
+| -                    | create-folder                | -                      | CreateFolderIcon              |
+| funnel               | filter                       | FunnelIcon             | FilterIcon                    |
+| gear                 | settings                     | GearIcon               | SettingsIcon                  |
+| house                | home-landing                 | HouseIcon              | HomeLandingIcon               |
+| info                 | info                         | InfoIcon               | InfoIcon                      |
+| image                | image-placeholder            | ImageIcon              | ImagePlaceholderIcon          |
+| link-simple          | link                         | LinkSimpleIcon         | LinkIcon                      |
+| list                 | menu                         | ListIcon               | MenuIcon                      |
+| lock-simple          | locked-closed                | LockSimpleIcon         | LockedClosedIcon              |
+| lock-simple-open     | unlocked-open                | LockSimpleOpenIcon     | UnlockedOpenIcon              |
+| magnifying-glass     | search                       | MagnifyingGlassIcon    | SearchIcon                    |
+| map-pin              | location                     | MapPinIcon             | LocationIcon                  |
+| megaphone            | feedback                     | MegaphoneIcon          | FeedbackIcon                  |
+| minus                | subtract                     | MinusIcon              | SubtractIcon                  |
+| minus-circle         | subtract-alt                 | MinusCircleIcon        | SubtractAltIcon               |
+| paperclip            | attachment                   | PaperclipIcon          | AttachmentIcon                |
+| password             | password                     | PasswordIcon           | PasswordIcon                  |
+| pencil               | edit                         | PencilIcon             | EditIcon                      |
+| plus                 | add                          | PlusIcon               | AddIcon                       |
+| plus-circle          | add-alt                      | PlusCircleIcon         | AddAltIcon                    |
+| phone                | phone                        | PhoneIcon              | PhoneIcon                     |
+| question             | help                         | QuestionIcon           | HelpIcon                      |
+| sign-in              | sign-in                      | SignInIcon             | SignInIcon                    |
+| sign-out             | sign-out                     | SignOutIcon            | SignOutIcon                   |
+| sliders              | adjust-settings              | SlidersIcon            | AdjustSettingsIcon            |
+| shopping-cart        | shopping-cart-selected-items | ShoppingCartIcon       | ShoppingCartSelectedItemsIcon |
+| sort-ascending       | sort-descending              | SortAscendingIcon      | SortDescendingIcon            |
+| sort-descending      | sort-ascending               | SortDescendingIcon     | SortAscendingIcon             |
+| spinner-gap          | spinner-gap                  | SpinnerIcon            | SpinnerIcon                   |
+| trash                | delete                       | TrashIcon              | DeleteIcon                    |
+| upload-simple        | upload                       | UploadSimpleIcon       | UploadIcon                    |
+| user-circle          | user-profile                 | UserCircleIcon         | UserProfileIcon               |
+| user-circle-minus    | user-remove                  | UserCircleMinusIcon    | UserRemoveIcon                |
+| user-circle-plus     | user-add                     | UserCirclePlusIcon     | UserAddIcon                   |
+| warning              | alert                        | WarningIcon            | AlertIcon                     |
+| x                    | cancel                       | XIcon                  | CancelIcon                    |
+| x-circle             | failed                       | XCircleIcon            | FailedIcon                    |
+
+### Features
+
+- **icons:** rename icons from visual representation to use representation ([e1d2e3f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e1d2e3f4efffc0388feef00b72bddd428f64a742))
+
 ## [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@2.0.1...@sikt/sds-icons@2.0.2) (2024-11-19)
 
 ### Bug Fixes
