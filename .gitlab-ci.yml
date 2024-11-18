@@ -42,7 +42,7 @@ install:
   extends: .npm_cache
   script:
     - npm pkg delete scripts.prepare
-    - npm ci
+    - npm ci --cache .npm
   cache:
     policy: pull-push
   except:
@@ -53,7 +53,7 @@ lint:
   extends: .npm_cache
   script:
     - npm pkg delete scripts.prepare
-    - npm ci
+    - npm ci --cache .npm
     - npm run lint
   needs:
     - install
@@ -65,7 +65,7 @@ test-unit:
   extends: .npm_cache
   script:
     - npm pkg delete scripts.prepare
-    - npm ci
+    - npm ci --cache .npm
     - npm run test
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
   artifacts:
@@ -92,7 +92,7 @@ test-e2e:
         SHARD_TOTAL: 5
   script:
     - npm pkg delete scripts.prepare
-    - npm ci
+    - npm ci --cache .npm
     - npx playwright install --with-deps
     - npm run test:e2e -- --shard=$SHARD_INDEX/$SHARD_TOTAL
   artifacts:
@@ -122,7 +122,7 @@ test-e2e-update-snapshots:
       file: false
   script:
     - npm pkg delete scripts.prepare
-    - npm ci
+    - npm ci --cache .npm
     - npx playwright install --with-deps
     - npm run test:e2e -- --update-snapshots
   after_script:
@@ -191,7 +191,7 @@ packages:
   #  - .tag
   script:
     - npm pkg delete scripts.prepare
-    - npm ci
+    - npm ci --cache .npm
     - npm run build
   cache:
     - key:
@@ -224,7 +224,7 @@ storybook:
   extends: .npm_cache
   script:
     - npm pkg delete scripts.prepare
-    - npm ci
+    - npm ci --cache .npm
     - npm run storybook:build
   cache:
     - key:
@@ -252,7 +252,7 @@ gatsby:
     GATSBY_TELEMETRY_DISABLED: 1
   script:
     - npm pkg delete scripts.prepare
-    - npm ci
+    - npm ci --cache .npm
     - npm run gatsby:build
   cache:
     - key:
