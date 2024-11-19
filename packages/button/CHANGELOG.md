@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.0.0...@sikt/sds-button@4.0.1) (2024-11-19)
+
+### Bug Fixes
+
+- **button:** set default type attribute to button ([f517227](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f5172276abd2ae054d624c155a20b8fe15e08304))
+- **deps:** peer deps react@19.0.0 ([17352e2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/17352e291153f79c66a9de317ca42820159aee8a))
+- **deps:** update @sikt/sds-core@4.1.1 & @sikt/sds-icons@2.0.2 ([09e97cf](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/09e97cfe35780cc239ae2b7f55f4e793ec72e479))
+
 ## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@3.1.1...@sikt/sds-button@4.0.0) (2024-10-18)
 
 ### ⚠ BREAKING CHANGES
