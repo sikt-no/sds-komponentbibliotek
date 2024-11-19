@@ -33,6 +33,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       onClick,
       icon,
       iconVariant = "right",
+      type = "button",
       ...rest
     }: ButtonProps,
     ref,
@@ -49,6 +50,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         onClick={onClick}
         aria-label={iconVariant === "only" ? ariaLabel : undefined}
+        type={type}
         {...rest}
       >
         {icon && (iconVariant === "left" || iconVariant === "only") && (

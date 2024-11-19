@@ -33,6 +33,7 @@ describe("Button", () => {
         expect(screen.getByTestId(variant)).toHaveClass(
           `sds-button sds-button--${variant}`,
         );
+        expect(screen.getByTestId(variant)).toHaveAttribute("type", "button");
         expect(screen.getByText(variant)).toBeInTheDocument();
       });
     });
@@ -103,6 +104,16 @@ describe("Button", () => {
       expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
       expect(screen.getByTestId("test")).toHaveAccessibleName("Foo");
       expect(screen.queryByText("Foo")).not.toBeInTheDocument();
+    });
+
+    it("should have type", async () => {
+      render(
+        <Button data-testid="test" type="submit">
+          Foo
+        </Button>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveAttribute("type", "submit");
     });
   });
 });
