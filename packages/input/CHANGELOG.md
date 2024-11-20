@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.0.1...@sikt/sds-input@4.0.2) (2024-11-20)
+
+### Bug Fixes
+
+- **deps:** peer deps react@19.0.0 ([17352e2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/17352e291153f79c66a9de317ca42820159aee8a))
+- **deps:** update @sikt/sds-button@4.0.1 ([06089af](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/06089afbc2cbef6e46d98c8767f1ea71b1d14b54))
+- **deps:** update @sikt/sds-core@4.1.1 & @sikt/sds-icons@2.0.2 ([09e97cf](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/09e97cfe35780cc239ae2b7f55f4e793ec72e479))
+- **deps:** update @sikt/sds-form@3.0.1 ([8edf559](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8edf55939469d254e70c081c9e5153fc0b45b5f4))
+
 ## [4.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.0.0...@sikt/sds-input@4.0.1) (2024-10-14)
 
 ### Bug Fixes
