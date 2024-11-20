@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-list@2.1.0...@sikt/sds-list@2.1.1) (2024-11-20)
+
+### Bug Fixes
+
+- **deps:** correct deps on @sikt/sds-tokens ([b47f8a4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b47f8a4d27e99dcc731036ccf2b7b58a27d88da6))
+- **deps:** peer deps react@19.0.0 ([17352e2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/17352e291153f79c66a9de317ca42820159aee8a))
+- **deps:** update @sikt/sds-core@4.1.1 & @sikt/sds-icons@2.0.2 ([09e97cf](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/09e97cfe35780cc239ae2b7f55f4e793ec72e479))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-list@2.0.0...@sikt/sds-list@2.1.0) (2024-10-02)
 
 ### Features
