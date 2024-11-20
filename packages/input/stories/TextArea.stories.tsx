@@ -1,6 +1,6 @@
 import { InfoIcon } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { InputProps, TextArea } from "../index";
+import { TextAreaProps, TextArea } from "../index";
 
 const meta: Meta = {
   title: "Components/Input/TextArea",
@@ -9,7 +9,7 @@ const meta: Meta = {
 
 export default meta;
 
-type Story = StoryObj<InputProps>;
+type Story = StoryObj<TextAreaProps>;
 
 export const Default: Story = {
   args: {

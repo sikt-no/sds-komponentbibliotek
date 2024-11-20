@@ -10,7 +10,6 @@ import {
 import { clsx } from "clsx/lite";
 import {
   ChangeEvent,
-  ForwardedRef,
   InputHTMLAttributes,
   ReactNode,
   forwardRef,
@@ -21,22 +20,18 @@ import "./input.pcss";
 
 interface InputBaseProps
   extends Omit<
-    InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
+    InputHTMLAttributes<HTMLInputElement>,
     "onChange" | "aria-label" | "aria-labelledby"
   > {
   className?: string;
   placeholder?: string;
-  onChange?: (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    newValue: string,
-  ) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void;
   value?: string;
   icon?: ReactNode;
   clearActionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
   actionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
   errorText?: ReactNode;
   helpText?: ReactNode;
-  rows?: number;
 }
 
 export type InputProps = InputBaseProps &
@@ -51,7 +46,7 @@ export type InputProps = InputBaseProps &
       }
   );
 
-const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       className,
@@ -66,14 +61,13 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
       type,
       errorText,
       helpText,
-      rows,
       ...rest
     },
     ref,
   ) => {
     const id = useId();
     const changeHandler = useCallback(
-      (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      (event: ChangeEvent<HTMLInputElement>) => {
         onChange?.(event, event.target.value);
       },
       [onChange],
@@ -107,41 +101,20 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
       >
         <div className="sds-input__wrapper">
           {icon && <div className="sds-input__icon">{icon}</div>}
-          {type === "textarea" ? (
-            <textarea
-              ref={ref as ForwardedRef<HTMLTextAreaElement>}
-              className="sds-input__input"
-              id={id}
-              placeholder={placeholder}
-              onChange={onChange && changeHandler}
-              value={value}
-              aria-labelledby={ariaLabelledBy}
-              aria-describedby={
-                (errorText ?? helpText) ? helpTextId : undefined
-              }
-              aria-invalid={Boolean(errorText)}
-              aria-errormessage={errorText ? helpTextId : undefined}
-              rows={rows}
-              {...rest}
-            />
-          ) : (
-            <input
-              ref={ref as ForwardedRef<HTMLInputElement>}
-              className="sds-input__input"
-              id={id}
-              type={type}
-              placeholder={placeholder}
-              onChange={onChange && changeHandler}
-              value={value}
-              aria-labelledby={ariaLabelledBy}
-              aria-describedby={
-                (errorText ?? helpText) ? helpTextId : undefined
-              }
-              aria-invalid={Boolean(errorText)}
-              aria-errormessage={errorText ? helpTextId : undefined}
-              {...rest}
-            />
-          )}
+          <input
+            ref={ref}
+            className="sds-input__input"
+            id={id}
+            type={type}
+            placeholder={placeholder}
+            onChange={onChange && changeHandler}
+            value={value}
+            aria-labelledby={ariaLabelledBy}
+            aria-describedby={(errorText ?? helpText) ? helpTextId : undefined}
+            aria-invalid={Boolean(errorText)}
+            aria-errormessage={errorText ? helpTextId : undefined}
+            {...rest}
+          />
 
           {type === "search" && value && (
             <Button
@@ -175,11 +148,6 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
 );
 Input.displayName = "Input";
 
-const TextArea = forwardRef<HTMLTextAreaElement, InputProps>((props, ref) => (
-  <Input type="textarea" ref={ref} {...props} />
-));
-TextArea.displayName = "TextArea";
-
 const TextInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
   <Input type="text" ref={ref} {...props} />
 ));
@@ -211,7 +179,6 @@ const SearchInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
 SearchInput.displayName = "SearchInput";
 
 export {
-  TextArea,
   TextInput,
   NumberInput,
   EmailInput,

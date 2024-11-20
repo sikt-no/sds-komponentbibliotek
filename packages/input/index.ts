@@ -1,6 +1,6 @@
 export type { InputProps } from "./src/Input";
+export type { TextAreaProps } from "./src/TextArea";
 export {
-  TextArea,
   TextInput,
   NumberInput,
   EmailInput,
@@ -8,3 +8,4 @@ export {
   TelInput,
   SearchInput,
 } from "./src/Input";
+export { TextArea } from "./src/TextArea";
