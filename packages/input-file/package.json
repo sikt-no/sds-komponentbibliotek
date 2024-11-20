@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-input-file",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/index.js",
