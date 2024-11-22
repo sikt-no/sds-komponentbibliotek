@@ -64,11 +64,13 @@ describe("InputFile", () => {
     it("calls change handler for input", async () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
+      const value: File = new File(["hello"], "hello.bar", { type: ".bar" });
       const { container } = render(
         <InputFile
           label="Foo"
           aria-label="Foo"
           accept=".bar"
+          value={[value]}
           onChange={changeHandler}
         />,
       );
@@ -83,7 +85,7 @@ describe("InputFile", () => {
       expect(input.files?.item(0)).toBe(file);
       expect(input.files).toHaveLength(1);
       expect(changeHandler).toHaveBeenCalledTimes(1);
-      expect(changeHandler).toHaveBeenLastCalledWith([file]);
+      expect(changeHandler).toHaveBeenLastCalledWith([value, file]);
     });
 
     it("calls change handler for drop zone", async () => {

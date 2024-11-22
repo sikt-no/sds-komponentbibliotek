@@ -92,5 +92,17 @@ describe("FormField", () => {
       const helpEl = screen.queryByText("Quz");
       expect(helpEl).toBeNull();
     });
+
+    it("should support aria-labelledby", () => {
+      const { container } = render(
+        <FormField label={undefined} htmlFor="input">
+          <input id="input" />
+        </FormField>,
+      );
+
+      expect(
+        container.getElementsByClassName("sds-form-field")[0],
+      ).toBeInTheDocument();
+    });
   });
 });

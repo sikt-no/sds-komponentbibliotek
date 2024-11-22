@@ -64,6 +64,19 @@ describe("Fieldset", () => {
     });
   });
 
+  it("should show help text", async () => {
+    render(
+      <Fieldset legend="Foo" helpText="Help message">
+        <label>
+          Label
+          <input />
+        </label>
+      </Fieldset>,
+    );
+
+    expect(screen.getByText("Help message")).toBeInTheDocument();
+  });
+
   it("should support aria-labelledby", () => {
     render(
       <>
