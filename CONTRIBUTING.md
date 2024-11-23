@@ -49,7 +49,8 @@ The reasoning behind multiple packages is rooted in micro architecture. This way
 #### Documentation
 
 Document components & features near the code with markdown files.  
-Create interactive examples with [Storybook](https://storybook.js.org/docs/react/get-started/introduction) stories.
+Create interactive examples with [Storybook](https://storybook.js.org/docs/react/get-started/introduction) stories.  
+Connect components to Figma with [Figma Code Connect](https://github.com/figma/code-connect).
 
 #### Accessibility
 
