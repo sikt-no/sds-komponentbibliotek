@@ -402,6 +402,8 @@ publish-figma:
       token: $VAULT_ID_TOKEN
       file: false
   script:
+    - npm pkg delete scripts.prepare
+    - npm ci --cache .npm
     - npx figma connect publish --token ${FIGMA_TOKEN}
   only:
     refs:
