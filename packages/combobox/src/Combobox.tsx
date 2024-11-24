@@ -11,8 +11,8 @@ import {
   ListBox,
   ListBoxItem,
   ListBoxItemProps,
+  ListBoxSection,
   Popover,
-  Section,
 } from "react-aria-components";
 import "./combobox.pcss";
 
@@ -107,5 +107,5 @@ export function ComboboxHeader({ children }: { children: ReactNode }) {
 }
 
 export function ComboboxSection({ children }: { children: ReactNode }) {
-  return <Section>{children}</Section>;
+  return <ListBoxSection>{children}</ListBoxSection>;
 }

@@ -46,7 +46,7 @@ interface InputDatepickerBaseProps
   openCalendarLabel?: ReactNode;
   lang?: string;
   value?: DateValue;
-  onChange?: (newValue: DateValue) => void;
+  onChange?: (value: DateValue | null) => void;
   clearActionProps?: ClearActionProps;
 }
 
@@ -72,7 +72,7 @@ const DatepickerClearButton = (clearActionProps?: ClearActionProps) => {
       clearActionProps.onClick(event);
     }
 
-    state.setValue(null);
+    state && state.setValue(null);
   };
 
   const handleClearKeyDown = (
@@ -83,7 +83,7 @@ const DatepickerClearButton = (clearActionProps?: ClearActionProps) => {
     }
   };
 
-  if (state.value) {
+  if (!state || state.value) {
     return (
       <Button
         size="small"
