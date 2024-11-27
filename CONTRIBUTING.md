@@ -100,7 +100,7 @@ npm run build
 npm run dev
 ```
 
-Storybook will run on http://loclahost:6006 and Gatsby (designsystem.sikt.no) on http://localhost:8000
+Storybook will run on http://localhost:6006 and Gatsby (designsystem.sikt.no) on http://localhost:8000
 
 #### Windows
 
@@ -147,6 +147,12 @@ Keep the history clean with one single commit per feature.
 ℹ️ _Tip:_ Usage of [commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 
 #### Test
+
+Note that you will need to install browsers for use with Playwright and generating screenshots locally. You can install them by running the following command after having installed all dependencies:
+
+```sh
+npx playwright install
+```
 
 To generate local visual regression test screenshots before you begin working:
 
