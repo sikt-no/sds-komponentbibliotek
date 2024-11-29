@@ -13,13 +13,14 @@
     border: var(--sds-space-border-weight-regular) solid
       var(--radio-border-color);
     border-radius: var(--sds-space-border-radius-medium);
-    display: grid;
-    place-content: center;
     cursor: pointer;
+    display: grid;
+    flex-shrink: 0;
+    margin: var(--sds-space-padding-small);
+    padding: 0;
+    place-content: center;
     width: var(--radio-size);
     height: var(--radio-size);
-    padding: 0;
-    margin: var(--sds-space-padding-small);
 
     &-label {
       font-size: var(--sds-typography-body-fontsize-regular);
