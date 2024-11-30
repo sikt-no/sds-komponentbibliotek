@@ -7,21 +7,21 @@
     "build:prod": "storybook build --disable-telemetry"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.4.5",
-    "@storybook/addon-links": "^8.4.5",
+    "@storybook/addon-essentials": "^8.4.6",
+    "@storybook/addon-links": "^8.4.6",
     "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
-    "@storybook/blocks": "^8.4.5",
-    "@storybook/preview-api": "^8.4.5",
-    "@storybook/react": "^8.4.5",
-    "@storybook/react-webpack5": "^8.4.5",
+    "@storybook/blocks": "^8.4.6",
+    "@storybook/preview-api": "^8.4.6",
+    "@storybook/react": "^8.4.6",
+    "@storybook/react-webpack5": "^8.4.6",
     "@svgr/webpack": "^8.1.0",
     "@whitespace/storybook-addon-html": "^6.1.1",
     "css-loader": "^7.1.2",
     "postcss-loader": "^8.1.1",
     "prop-types": "^15.8.1",
     "react-syntax-highlighter": "^15.6.1",
-    "storybook": "^8.4.5",
+    "storybook": "^8.4.6",
     "style-loader": "^4.0.0"
   }
 }
