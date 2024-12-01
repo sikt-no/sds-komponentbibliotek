@@ -4,7 +4,7 @@ import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { InputDatepicker } from "./InputDatepicker";
 
-describe("DatePicker", () => {
+describe("InputDatepicker", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(<InputDatepicker label="Foo" />);
@@ -147,7 +147,6 @@ describe("DatePicker", () => {
       const user = userEvent.setup();
       const clickHandler = jest.fn();
       const dateString = new Date().toISOString().substring(0, 10);
-      const dayString = dateString.substring(8, 10);
       render(
         <InputDatepicker
           label="Foo"
@@ -159,14 +158,15 @@ describe("DatePicker", () => {
       await user.click(screen.getByLabelText("Bar"));
 
       expect(clickHandler).toHaveBeenCalled();
-      expect(screen.getByText(dayString)).toHaveFocus();
+      expect(
+        screen.getByRole("spinbutton", { name: "dag, Foo" }),
+      ).toHaveFocus();
     });
 
     it("should call click handler on keydown Space", async () => {
       const user = userEvent.setup();
       const clickHandler = jest.fn();
       const dateString = new Date().toISOString().substring(0, 10);
-      const dayString = dateString.substring(8, 10);
       render(
         <InputDatepicker
           label="Foo"
@@ -181,14 +181,15 @@ describe("DatePicker", () => {
       });
 
       expect(clickHandler).toHaveBeenCalled();
-      expect(screen.getByText(dayString)).toHaveFocus();
+      expect(
+        screen.getByRole("spinbutton", { name: "dag, Foo" }),
+      ).toHaveFocus();
     });
 
     it("should call click handler on keydown Enter", async () => {
       const user = userEvent.setup();
       const clickHandler = jest.fn();
       const dateString = new Date().toISOString().substring(0, 10);
-      const dayString = dateString.substring(8, 10);
       render(
         <InputDatepicker
           label="Foo"
@@ -203,7 +204,9 @@ describe("DatePicker", () => {
       });
 
       expect(clickHandler).toHaveBeenCalled();
-      expect(screen.getByText(dayString)).toHaveFocus();
+      expect(
+        screen.getByRole("spinbutton", { name: "dag, Foo" }),
+      ).toHaveFocus();
     });
   });
 });
