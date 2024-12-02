@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 
-interface Options {
+export interface useWindowResizeOptions {
   throttleTime?: number;
 }
 
-const useWindowResize = (callback: () => void, options?: Options) => {
+export const useWindowResize = (
+  callback: () => void,
+  options?: useWindowResizeOptions,
+) => {
   const { throttleTime = 200 } = options ?? {};
 
   useEffect(() => {
@@ -29,5 +32,3 @@ const useWindowResize = (callback: () => void, options?: Options) => {
     };
   }, [callback, throttleTime]);
 };
-
-export default useWindowResize;

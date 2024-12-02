@@ -4,8 +4,8 @@ import { XIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { ReactNode, useEffect, useId, useRef, useState } from "react";
 import ReactModal from "react-modal";
-import useWindowResize from "./useWindowResize";
 import "./modal.pcss";
+import useWindowResize from "./useWindowResize";
 
 export interface ModalProps {
   /**

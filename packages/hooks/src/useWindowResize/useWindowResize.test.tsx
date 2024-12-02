@@ -1,5 +1,5 @@
 import { act, renderHook } from "@testing-library/react";
-import useWindowResize from "./useWindowResize";
+import { useWindowResize } from "./useWindowResize";
 
 describe("useWindowResize", () => {
   beforeEach(() => {
