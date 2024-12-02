@@ -3,8 +3,9 @@ default:
   interruptible: true
 
 include:
-  - project: "asm/gitlab-ci-helpers"
-    file: "/gitlab-ci-helpers.yml"
+  - component: gitlab.sikt.no/platon/ci-components/docker/docker@1.0.2
+  - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@1.0.0
+  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@1.0.1
 
 variables:
   KUBE_PROD_DOMAIN: designsystem.sikt.no
