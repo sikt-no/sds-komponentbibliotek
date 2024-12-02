@@ -1,0 +1,50 @@
+{
+  "name": "@sikt/sds-message",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "description": "Message component, Sikt component library",
+  "homepage": "https://designsystem.sikt.no/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+  },
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "style": "./dist/index.css",
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./dist/*": "./dist/*"
+  },
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
+  "files": [
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@sikt/sds-button": "^4.0.1",
+    "@sikt/sds-core": "^4.1.1",
+    "@sikt/sds-icons": "^2.0.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0.0 || ^19.0.0",
+    "@types/react-dom": "^18.0.0 || ^19.0.0",
+    "clsx": "^2.1.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  }
+}

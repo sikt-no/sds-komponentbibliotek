@@ -1,0 +1,87 @@
+.sds-message {
+  --message-icon-color: var(--sds-color-text-on-strong);
+
+  background-color: var(--message-background-color);
+  color: var(--sds-color-text-primary);
+  display: flex;
+  font-size: var(--sds-typography-body-fontsize-regular);
+  font-weight: var(--sds-typography-weight-regular);
+  line-height: var(--sds-typography-body-lineheight-regular);
+  gap: var(--sds-space-gap-tiny);
+
+  &__icon {
+    align-items: center;
+    background-color: var(--message-icon-background-color);
+    border-radius: var(--sds-space-border-radius-full);
+    display: flex;
+    justify-content: center;
+    font-size: var(--sds-base-size-m);
+    min-height: var(--sds-base-size-m1);
+    min-width: var(--sds-base-size-m1);
+    height: var(--sds-base-size-m1);
+    width: var(--sds-base-size-m1);
+
+    & > .sds-icon {
+      color: var(--message-icon-color);
+    }
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-gap-tiny);
+    padding: var(--sds-space-padding-minimal) 0;
+  }
+
+  &__cta {
+    --button-small-padding: var(--sds-space-padding-minimal);
+
+    margin: calc(-1 * var(--button-small-padding));
+    margin-left: auto;
+    padding: var(--sds-space-padding-minimal) 0;
+  }
+
+  &--info {
+    --message-icon-background-color: var(--sds-color-support-info-strong);
+    --message-background-color: var(--sds-color-support-info-subtle);
+  }
+
+  &--warning {
+    --message-icon-color: #0b0132ff;
+    --message-icon-background-color: var(--sds-color-support-warning-default);
+    --message-background-color: var(--sds-color-support-warning-subtle);
+  }
+
+  &--success {
+    --message-icon-background-color: var(--sds-color-support-success-strong);
+    --message-background-color: var(--sds-color-support-success-subtle);
+  }
+
+  &--critical {
+    --message-icon-background-color: var(--sds-color-support-critical-strong);
+    --message-background-color: var(--sds-color-support-critical-subtle);
+  }
+
+  &--bar {
+    padding: var(--sds-space-padding-small) var(--sds-space-padding-large);
+  }
+
+  &--box {
+    border-radius: var(--sds-space-border-radius-medium);
+    padding: var(--sds-space-padding-small);
+  }
+
+  &-button.sds-button {
+    background-color: transparent;
+    color: var(--sds-color-text-primary);
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--sds-color-shadow-elevated-default);
+    }
+
+    &:active {
+      background-color: var(--sds-color-shadow-elevated-hover);
+    }
+  }
+}

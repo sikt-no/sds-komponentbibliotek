@@ -1,0 +1,17 @@
+import { Meta, StoryObj } from "@storybook/react";
+import { GuidePanel as Component, GuidePanelProps } from "../index";
+
+const meta: Meta = {
+  title: "Components/Message",
+  component: Component,
+};
+
+export default meta;
+
+type Story = StoryObj<GuidePanelProps>;
+
+export const GuidePanel: Story = {
+  args: {
+    children: "Message",
+  },
+};
