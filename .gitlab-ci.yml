@@ -148,6 +148,8 @@ test-e2e-update-snapshots:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
       when: never
+    - if: $CI_COMMIT_TAG
+      when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: never
     - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
@@ -332,6 +334,8 @@ review:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
       when: never
+    - if: $CI_COMMIT_TAG
+      when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: never
     - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
@@ -344,6 +348,8 @@ stop_review:
     - .stop_review
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+    - if: $CI_COMMIT_TAG
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: never
