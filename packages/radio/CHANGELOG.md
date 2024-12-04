@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-radio@3.0.1...@sikt/sds-radio@3.0.2) (2024-12-04)
+
+### Bug Fixes
+
+- **radio:** input should not shrink ([978e412](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/978e412215a56bdda01dae72c036e6f38b0a7bf8))
+
 ## [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-radio@3.0.0...@sikt/sds-radio@3.0.1) (2024-11-20)
 
 ### Bug Fixes
