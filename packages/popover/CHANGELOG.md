@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.0.1...@sikt/sds-popover@1.0.2) (2024-12-04)
+
+### Bug Fixes
+
+- **popover:** anchored target follows trigger on layout shift or window resize ([ea2fb44](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ea2fb44d2b8e9422e1cea0f209a7070856ee415a))
+
 ## [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.0.0...@sikt/sds-popover@1.0.1) (2024-11-20)
 
 ### Bug Fixes
