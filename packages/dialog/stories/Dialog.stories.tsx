@@ -2,24 +2,26 @@ import { Button } from "@sikt/sds-button";
 import { Paragraph } from "@sikt/sds-core";
 import { useArgs } from "@storybook/preview-api";
 import { Meta, StoryObj } from "@storybook/react";
-import { Modal, ModalProps } from "../index";
+
+import type { DialogProps } from "../index";
+import { Dialog } from "../index";
 
 const meta: Meta = {
-  title: "Components/Modal",
-  component: Modal,
+  title: "Components/Dialog",
+  component: Dialog,
 };
 
 export default meta;
 
-type Story = StoryObj<ModalProps>;
+type Story = StoryObj<DialogProps>;
 
 export const Default: Story = {
   args: {
     heading: "Welcome to Our Newsletter",
     subheading: "Stay Informed and Inspired",
-    closeButtonLabel: "Close",
-    appElement: "#storybook-root",
+    closeButtonLabel: "Close dialog",
     "aria-label": "Newsletter Subscription Modal",
+    dismissable: true,
     children: (
       <Paragraph>
         Sign up for our newsletter to receive the latest updates, articles, and
@@ -28,19 +30,20 @@ export const Default: Story = {
       </Paragraph>
     ),
   },
-  render: (args) => {
+  render: (args: DialogProps) => {
     const [, setArgs] = useArgs();
     return (
       <>
         <Button
           variant="strong"
+          className="sds-dialog__trigger"
           onClick={() => {
             setArgs({ ...args, open: true });
           }}
         >
-          Open modal
+          Open dialog
         </Button>
-        <Modal
+        <Dialog
           {...args}
           footer={[
             <Button

@@ -1,19 +1,17 @@
 @import url("@sikt/sds-tokens/dist/css/custom-media.css");
 
-.sds-modal {
+.sds-dialog:modal {
   --modal-border-radius: 16px;
 
   background-color: var(--sds-color-layout-background-default);
+  border: none;
   box-shadow: var(--sds-effect-shadow-elevated-default);
+  padding: 0;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   max-height: 100%;
-  height: 100%;
+  color: var(--sds-color-text-primary);
   z-index: var(--sds-base-zindex-modal);
 
   &:focus-visible {
@@ -23,20 +21,20 @@
   @media (--sds-base-breakpoint-tablet) {
     border-radius: var(--modal-border-radius);
     max-height: calc(100vh - var(--sds-space-padding-large) * 2);
-    height: inherit;
     max-width: var(--sds-base-breakpoint-tablet);
+  }
 
+  &::backdrop {
+    background-color: rgb(0 0 0 / 60%);
+  }
+}
+
+.sds-dialog {
+  @media (--sds-base-breakpoint-tablet) {
     &--scrollable {
       border-radius: var(--modal-border-radius) var(--modal-border-radius) 0
         var(--modal-border-radius);
     }
-  }
-
-  &-overlay {
-    inset: 0;
-    position: fixed;
-    z-index: calc(var(--sds-base-zindex-modal) - 1);
-    background-color: rgb(0 0 0 / 60%);
   }
 
   &__header {
