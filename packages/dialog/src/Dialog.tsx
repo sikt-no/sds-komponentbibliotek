@@ -1,5 +1,6 @@
 import { Button } from "@sikt/sds-button";
 import { Heading1, Paragraph } from "@sikt/sds-core";
+import { useWindowResize } from "@sikt/sds-hooks";
 import { XIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
@@ -11,7 +12,6 @@ import {
   useEffect,
 } from "react";
 import "./dialog.pcss";
-import useWindowResize from "./useWindowResize";
 
 export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
   children: ReactNode;
