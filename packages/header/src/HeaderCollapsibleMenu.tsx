@@ -12,6 +12,9 @@ import {
   useEffect,
   useId,
   useState,
+  isValidElement,
+  PropsWithChildren,
+  AnchorHTMLAttributes,
 } from "react";
 
 const MenuOpenContext = createContext<{
@@ -103,13 +106,19 @@ export const HeaderCollapsibleMenu = ({
       {Children.map(children, (child, index) => {
         return (
           <>
-            {cloneElement(child as ReactElement, {
-              className: clsx(
-                "sds-header__header-item",
-                index + 1 === Children.count(children) &&
-                  "sds-header__header-item--last-item",
-              ),
-            })}
+            {isValidElement(child) &&
+              cloneElement(
+                child as ReactElement<
+                  PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>
+                >,
+                {
+                  className: clsx(
+                    "sds-header__header-item",
+                    index + 1 === Children.count(children) &&
+                      "sds-header__header-item--last-item",
+                  ),
+                },
+              )}
           </>
         );
       })}

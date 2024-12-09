@@ -1,3 +1,4 @@
+import { type BadgeProps } from "@sikt/sds-badge";
 import { clsx } from "clsx/lite";
 import {
   HTMLAttributes,
@@ -7,6 +8,7 @@ import {
   cloneElement,
   isValidElement,
   useContext,
+  PropsWithChildren,
 } from "react";
 import { TabsContext } from "./Tabs";
 
@@ -107,7 +109,12 @@ export const Tab = ({
         <span className="sds-tabs__tab-badge">
           {isSelected
             ? isValidElement(badge) &&
-              cloneElement(badge as ReactElement, { visibility: "strong" })
+              cloneElement(
+                badge as ReactElement<PropsWithChildren<BadgeProps>>,
+                {
+                  visibility: "strong",
+                },
+              )
             : badge}
         </span>
       )}
