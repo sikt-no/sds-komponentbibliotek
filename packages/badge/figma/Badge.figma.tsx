@@ -7,7 +7,10 @@ figma.connect(
   {
     props: {
       children: figma.string("Label"),
-      icon: figma.instance("Icon"),
+      icon: figma.boolean("Show icon", {
+        true: figma.instance("Icon"),
+        false: undefined,
+      }),
       variant: figma.enum("Color", {
         Action: "primary",
         Success: "success",
