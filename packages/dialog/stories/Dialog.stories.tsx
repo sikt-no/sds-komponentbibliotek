@@ -51,7 +51,7 @@ export const Default: Story = {
               onClick={() => {
                 setArgs({ ...args, children: shortContent });
               }}
-              key="1"
+              key="0"
             >
               Show short content
             </Button>,
