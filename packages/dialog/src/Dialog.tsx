@@ -68,21 +68,13 @@ export const Dialog = ({
   ...rest
 }: DialogProps) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
 
   const handleBackdropClick = (event: MouseEvent) => {
     if (dismissable) {
-      const bounds = (
-        event.target as HTMLDialogElement
-      ).getBoundingClientRect();
-      if (
-        bounds.left > event.clientX ||
-        bounds.right < event.clientX ||
-        bounds.top > event.clientY ||
-        bounds.bottom < event.clientY
-      )
-        onClose();
+      !wrapperRef.current?.contains(event.target as Element) && onClose();
     }
   };
 
@@ -150,39 +142,41 @@ export const Dialog = ({
       ref={dialogRef}
       {...rest}
     >
-      <header className="sds-dialog__header">
-        <div
-          id={headingId}
-          data-testid="headings"
-          className="sds-dialog__heading"
-        >
-          <Heading1 variant="medium">{heading}</Heading1>
-          {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
-        </div>
-
-        {dismissable && (
-          <Button
-            variant="transparent"
-            icon={<XIcon />}
-            className="sds-dialog__close-button"
-            onClick={onClose}
-            aria-label={closeButtonLabel ? undefined : closeButtonAriaLabel}
+      <div ref={wrapperRef}>
+        <header className="sds-dialog__header">
+          <div
+            id={headingId}
+            data-testid="headings"
+            className="sds-dialog__heading"
           >
-            {closeButtonLabel}
-          </Button>
-        )}
-      </header>
-      <div className="sds-dialog__content-wrapper" ref={contentRef}>
-        <div
-          id={contentId}
-          data-testid="content"
-          className="sds-dialog__content"
-        >
-          {children}
+            <Heading1 variant="medium">{heading}</Heading1>
+            {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
+          </div>
+
+          {dismissable && (
+            <Button
+              variant="transparent"
+              icon={<XIcon />}
+              className="sds-dialog__close-button"
+              onClick={onClose}
+              aria-label={closeButtonLabel ? undefined : closeButtonAriaLabel}
+            >
+              {closeButtonLabel}
+            </Button>
+          )}
+        </header>
+        <div className="sds-dialog__content-wrapper" ref={contentRef}>
+          <div
+            id={contentId}
+            data-testid="content"
+            className="sds-dialog__content"
+          >
+            {children}
+          </div>
+          {footer !== undefined && (
+            <div className="sds-dialog__footer">{footer}</div>
+          )}
         </div>
-        {footer !== undefined && (
-          <div className="sds-dialog__footer">{footer}</div>
-        )}
       </div>
     </dialog>
   );
