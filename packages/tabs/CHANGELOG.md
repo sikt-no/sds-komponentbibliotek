@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.0.2...@sikt/sds-tabs@3.0.3) (2024-12-09)
+
+### Bug Fixes
+
+- **tab-link:** badge visibility on selected ([bdb72ef](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bdb72efa061d256b28e438dc609dd7e0521ca48b))
+
 ## [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.0.1...@sikt/sds-tabs@3.0.2) (2024-11-20)
 
 ### Bug Fixes
