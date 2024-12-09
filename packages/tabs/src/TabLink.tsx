@@ -1,3 +1,4 @@
+import { type BadgeProps } from "@sikt/sds-badge";
 import { clsx } from "clsx/lite";
 import {
   AnchorHTMLAttributes,
@@ -6,6 +7,7 @@ import {
   cloneElement,
   forwardRef,
   isValidElement,
+  PropsWithChildren,
 } from "react";
 import "./tab-link.pcss";
 
@@ -48,7 +50,10 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
           <div className="sds-tabs__tab-badge">
             {isSelected
               ? isValidElement(badge) &&
-                cloneElement(badge as ReactElement, { visibility: "high" })
+                cloneElement(
+                  badge as ReactElement<PropsWithChildren<BadgeProps>>,
+                  { visibility: "strong" },
+                )
               : badge}
           </div>
         )}
