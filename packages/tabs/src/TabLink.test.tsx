@@ -50,7 +50,7 @@ describe("TabLink", () => {
       expect(screen.getByTestId("test")).toHaveClass(
         "sds-tab-link sds-tab-link--selected",
       );
-      expect(screen.getByText("badge")).toHaveAttribute("visibility", "high");
+      expect(screen.getByText("badge")).toHaveAttribute("visibility", "strong");
     });
 
     it("should have icon element", async () => {
