@@ -1,6 +1,7 @@
 import { I18nProvider } from "@react-aria/i18n";
 import { Button, ButtonProps } from "@sikt/sds-button";
 import { HelpText, Label } from "@sikt/sds-form";
+import { useClickOutside, useKeydown } from "@sikt/sds-hooks";
 import {
   CalendarBlankIcon,
   CaretLeftIcon,
@@ -17,7 +18,6 @@ import {
   useContext,
   MouseEvent as ReactMouseEvent,
   KeyboardEvent as ReactKeyboardEvent,
-  useEffect,
 } from "react";
 import {
   Calendar,
@@ -123,35 +123,17 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
     const helpTextId = `${id}-help-text`;
     const [calendarOpen, setCalendarOpen] = useState(false);
 
-    const handleKeydown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setCalendarOpen(false);
-        (inputRef.current?.firstChild as HTMLElement).focus();
-      }
+    const handleEscapeKeydown = () => {
+      setCalendarOpen(false);
+      (inputRef.current?.firstChild as HTMLElement).focus();
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
-      !calendarRef.current?.contains(event.target as Element) &&
-        setCalendarOpen(false);
+    const handleClickOutside = () => {
+      setCalendarOpen(false);
     };
 
-    useEffect(() => {
-      if (calendarOpen) {
-        document.addEventListener("click", handleClickOutside);
-        calendarRef.current &&
-          calendarRef.current.addEventListener("keydown", handleKeydown);
-      } else {
-        document.removeEventListener("click", handleClickOutside);
-        calendarRef.current &&
-          calendarRef.current.removeEventListener("keydown", handleKeydown);
-      }
-
-      return () => {
-        document.removeEventListener("click", handleClickOutside);
-        calendarRef.current &&
-          calendarRef.current.removeEventListener("keydown", handleKeydown);
-      };
-    }, [calendarOpen]);
+    useClickOutside(calendarRef, handleClickOutside);
+    useKeydown(calendarRef, "Escape", handleEscapeKeydown);
 
     return (
       <I18nProvider locale={lang}>
