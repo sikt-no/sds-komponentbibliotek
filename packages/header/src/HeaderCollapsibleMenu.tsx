@@ -105,21 +105,19 @@ export const HeaderCollapsibleMenu = ({
       {/* INFO: The desktop mode content of the header */}
       {Children.map(children, (child, index) => {
         return (
-          <>
-            {isValidElement(child) &&
-              cloneElement(
-                child as ReactElement<
-                  PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>
-                >,
-                {
-                  className: clsx(
-                    "sds-header__header-item",
-                    index + 1 === Children.count(children) &&
-                      "sds-header__header-item--last-item",
-                  ),
-                },
-              )}
-          </>
+          isValidElement(child) &&
+          cloneElement(
+            child as ReactElement<
+              PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>
+            >,
+            {
+              className: clsx(
+                "sds-header__header-item",
+                index + 1 === Children.count(children) &&
+                  "sds-header__header-item--last-item",
+              ),
+            },
+          )
         );
       })}
       <Button
