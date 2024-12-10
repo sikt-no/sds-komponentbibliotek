@@ -1,7 +1,5 @@
-export {
-  useClickOutside,
-  type useClickOutsideProps,
-} from "./src/useClickOutside/useClickOutside";
+export { useClickOutside } from "./src/useClickOutside/useClickOutside";
+export { useKeydown } from "./src/useKeydown/useKeydown";
 export {
   useWindowResize,
   type useWindowResizeOptions,
