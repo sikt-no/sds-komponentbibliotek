@@ -1,6 +1,6 @@
 import { Button } from "@sikt/sds-button";
 import { Heading1, Paragraph } from "@sikt/sds-core";
-import { useWindowResize } from "@sikt/sds-hooks";
+import { useClickOutside, useKeydown, useWindowResize } from "@sikt/sds-hooks";
 import { XIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
@@ -71,21 +71,17 @@ export const Dialog = ({
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(open);
 
-  const handleBackdropClick = (event: MouseEvent) => {
-    if (dismissable) {
-      !wrapperRef.current?.contains(event.target as Element) && onClose();
+  const handleBackdropClick = () => {
+    if (dismissable && isOpen) {
+      onClose();
     }
   };
 
-  const handleEscapeKey = (event: KeyboardEvent) => {
-    if (event.key === "Escape") {
-      if (dismissable) {
-        onClose();
-      } else {
-        event.preventDefault();
-        event.stopPropagation();
-      }
+  const handleEscapeKey = () => {
+    if (dismissable && isOpen) {
+      onClose();
     }
   };
 
@@ -93,23 +89,15 @@ export const Dialog = ({
     if (dialogRef.current) {
       if (open) {
         dialogRef.current.showModal();
-        dialogRef.current.addEventListener("click", handleBackdropClick);
-        document.addEventListener("keydown", handleEscapeKey);
-        document.body.style.overflow = "hidden";
       } else {
         dialogRef.current.close();
-        dialogRef.current.removeEventListener("click", handleBackdropClick);
-        document.removeEventListener("keydown", handleEscapeKey);
-        document.body.style.overflow = "unset";
       }
     }
 
-    return () => {
-      if (dialogRef.current) {
-        dialogRef.current.removeEventListener("click", handleBackdropClick);
-      }
+    setIsOpen(open);
+    document.body.style.overflow = open ? "hidden" : "unset";
 
-      document.removeEventListener("keydown", handleEscapeKey);
+    return () => {
       document.body.style.overflow = "unset";
     };
   }, [open]);
@@ -126,6 +114,8 @@ export const Dialog = ({
   const headingId = `${id}-heading`;
   const contentId = `${id}-content`;
 
+  useClickOutside(wrapperRef, handleBackdropClick);
+  useKeydown(null, "Escape", handleEscapeKey);
   useWindowResize(checkScroll, { throttleTime: 200 });
   useEffect(checkScroll, [children]);
 

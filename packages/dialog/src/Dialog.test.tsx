@@ -98,13 +98,13 @@ describe("Dialog", () => {
       const user = userEvent.setup();
       const handleClose = jest.fn();
       const headingText = "Test Heading";
-      const closeButtonText = "Close";
+      const closeButtonText = "Close ARIA";
       render(
         <Dialog
           open
           onClose={handleClose}
           heading={headingText}
-          closeButtonLabel={closeButtonText}
+          closeButtonAriaLabel={closeButtonText}
           footer={[<button key="primary">Click me!</button>]}
           dismissable
         >
@@ -125,7 +125,9 @@ describe("Dialog", () => {
       expect(footerButton).toBeInTheDocument();
 
       // Check if the close button is rendered correctly
-      const closeButton = screen.getByRole("button", { name: closeButtonText });
+      const closeButton = screen.getByRole("button", {
+        name: closeButtonText,
+      });
       expect(closeButton).toBeInTheDocument();
 
       await user.click(closeButton);
@@ -156,7 +158,6 @@ describe("Dialog", () => {
       rerender(
         <Dialog
           closeButtonLabel={closeButtonText}
-          dismissable
           open
           onClose={handleClose}
           heading="Test heading"
@@ -243,5 +244,27 @@ describe("Dialog", () => {
 
     await user.keyboard("[Escape]");
     expect(handleClose).toHaveBeenCalledTimes(0);
+  });
+
+  it("closes dialog when click outside wrapper", async () => {
+    const user = userEvent.setup();
+    const handleClose = jest.fn();
+    render(
+      <Dialog
+        footer={[<button key="primary">Click me!</button>]}
+        open
+        onClose={handleClose}
+        heading="Test heading"
+        dismissable
+        closeButtonLabel="Close dialog"
+        data-testid="test"
+      >
+        <p>Dialog Content</p>
+      </Dialog>,
+    );
+
+    await user.click(screen.getByTestId("test"));
+
+    expect(handleClose).toHaveBeenCalledTimes(1);
   });
 });
