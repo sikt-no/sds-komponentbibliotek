@@ -42,12 +42,12 @@ export type DialogProps = DialogBaseProps &
         closeButtonAriaLabel?: never;
       }
     | {
-        dismissable: true;
+        dismissable?: true;
         closeButtonLabel: string;
         closeButtonAriaLabel?: never;
       }
     | {
-        dismissable: true;
+        dismissable?: true;
         closeButtonLabel?: never;
         closeButtonAriaLabel: string;
       }
@@ -65,6 +65,7 @@ export const Dialog = ({
   onClose,
   open,
   subheading,
+  ...rest
 }: DialogProps) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -147,6 +148,7 @@ export const Dialog = ({
       aria-describedby={contentLabel ? undefined : contentId}
       aria-label={contentLabel}
       ref={dialogRef}
+      {...rest}
     >
       <header className="sds-dialog__header">
         <div
