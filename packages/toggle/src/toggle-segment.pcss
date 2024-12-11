@@ -1,4 +1,7 @@
 .sds-toggle-segment {
+  --toggle-segment-border: var(--sds-space-border-weight-regular) solid
+    var(--sds-color-interaction-primary-strong-default);
+
   &__fieldset {
     display: flex;
     align-items: center;
@@ -12,8 +15,7 @@
     border-radius: var(--sds-space-border-radius-small);
     display: inline-grid;
     grid-auto-flow: column;
-    outline: var(--sds-space-border-weight-regular) solid
-      var(--sds-color-interaction-primary-strong-default);
+    outline: var(--toggle-segment-border);
     outline-offset: calc(var(--sds-space-border-weight-regular) * -1);
   }
 
@@ -23,9 +25,22 @@
 
   &__option {
     align-items: center;
-    border-radius: var(--sds-space-border-radius-small);
     display: flex;
     justify-content: center;
+
+    &:first-child {
+      border-radius: var(--sds-space-border-radius-small) 0 0
+        var(--sds-space-border-radius-small);
+    }
+
+    &:last-child {
+      border-radius: 0 var(--sds-space-border-radius-small)
+        var(--sds-space-border-radius-small) 0;
+    }
+
+    + .sds-toggle-segment__option {
+      border-left: var(--toggle-segment-border);
+    }
 
     &:hover {
       background: var(--sds-color-interaction-primary-transparent-highlight);
