@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@sikt/sds-core": "^4.2.0",
-    "@sikt/sds-hooks": "^0.1.0"
+    "@sikt/sds-hooks": "^1.0.0"
   },
   "peerDependencies": {
     "@types/react": "^18.0.0 || ^19.0.0",
