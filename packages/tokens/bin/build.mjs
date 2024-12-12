@@ -47,7 +47,7 @@ StyleDictionary.registerFormat({
   name: "format/color/light-dark",
   format: ({ dictionary, options }) => {
     return `:root {
-  color-scheme: light dark;
+  color-scheme: light;
 
 ${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.value};`).join("\n")}
 }
