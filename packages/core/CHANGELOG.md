@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.1.1...@sikt/sds-core@4.2.0) (2024-12-12)
+
+### Features
+
+- change dark color scheme to opt in ([29890c0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/29890c01847d19283ec218b463ddf152ee0f144e))
+
 ## [4.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.1.0...@sikt/sds-core@4.1.1) (2024-11-19)
 
 ### Bug Fixes
