@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@2.1.0...@sikt/sds-tokens@2.2.0) (2024-12-12)
+
+### Features
+
+- **tokens:** make css color tokens dark scheme opt in ([db3edd7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/db3edd779132f85e10b3f21ad7e6ce6e808bee05))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@2.0.1...@sikt/sds-tokens@2.1.0) (2024-10-17)
 
 ### Features
