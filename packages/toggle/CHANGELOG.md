@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@4.0.1...@sikt/sds-toggle@4.0.2) (2024-12-12)
+
+### Bug Fixes
+
+- **toggle-segment:** add clear visual borders between options ([ffa8887](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ffa8887a51a62f1dafa685ff5204777815ec2f9a))
+
 ## [4.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@4.0.0...@sikt/sds-toggle@4.0.1) (2024-11-20)
 
 ### Bug Fixes
