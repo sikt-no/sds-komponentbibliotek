@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@sikt/sds-button": "^4.0.1",
-    "@sikt/sds-core": "^4.1.1",
+    "@sikt/sds-core": "^4.2.0",
     "@sikt/sds-form": "^3.0.1",
     "@sikt/sds-icons": "^2.0.2",
     "@sikt/sds-input": "^4.0.2",
