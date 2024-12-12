@@ -46,14 +46,14 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
 
-    {
-      name: "chromium color-scheme=dark",
-      use: {
-        ...devices["Desktop Chrome"],
-        // https://playwright.dev/docs/emulation#color-scheme-and-media
-        colorScheme: "dark",
-      },
-    },
+    // {
+    //   name: "chromium color-scheme=dark",
+    //   use: {
+    //     ...devices["Desktop Chrome"],
+    //     // https://playwright.dev/docs/emulation#color-scheme-and-media
+    //     colorScheme: "dark",
+    //   },
+    // },
 
     // {
     //   name: "firefox",
