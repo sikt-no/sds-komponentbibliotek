@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@0.1.1...@sikt/sds-hooks@1.0.0) (2024-12-12)
+
 ## [0.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@0.1.0...@sikt/sds-hooks@0.1.1) (2024-12-12)
 
 ### Features
