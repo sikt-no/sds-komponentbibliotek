@@ -14,6 +14,12 @@ import { use<Hook> } from "@sikt/sds-hooks";
 use<Hook>();
 ```
 
+#### Hooks
+
+- useClickOutside
+- useKeydown
+- useWindowResize
+
 ### Custom hooks
 
 We use [usehooks-ts](https://usehooks-ts.com/) for external hooks.
