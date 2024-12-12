@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@0.1.0...@sikt/sds-hooks@0.1.1) (2024-12-12)
+
+### Features
+
+- **hooks:** add useClickOutisde ([fad11ca](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fad11cadb960c27f46630a09741da2b1e2eda145))
+- **hooks:** add useKeydown ([0094096](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/009409634f87762459dfd54ea2b98beff91de0a0))
+
 ## 0.1.0 (2024-12-04)
 
 ### Features
