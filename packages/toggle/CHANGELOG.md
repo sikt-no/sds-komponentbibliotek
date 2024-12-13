@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@4.0.2...@sikt/sds-toggle@4.0.3) (2024-12-13)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core@4.2.0 ([fb7f329](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fb7f329c873679481c75f80cfbe27f364d00fa50))
+- **toggle-button:** prevent flex shrink on toggle button icon ([a6f6f82](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a6f6f82cdf2dce70e1f9b86a0bb305b1640833bf))
+
 ## [4.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@4.0.1...@sikt/sds-toggle@4.0.2) (2024-12-12)
 
 ### Bug Fixes
