@@ -1,7 +1,7 @@
 import { RefObject, useEffect } from "react";
 
 export const useKeydown = (
-  ref: RefObject<HTMLElement> | null,
+  ref: RefObject<HTMLElement | null> | null,
   key: string,
   callback: (event: KeyboardEvent) => void,
 ) => {
