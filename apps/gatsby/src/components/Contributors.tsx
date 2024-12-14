@@ -9,21 +9,21 @@ const Contributors = ({
 }) => {
   const contributors = [
     [
-      { name: "Sigve", role: "Design", team: "Designsystemet" },
-      { name: "Vegar", role: "Teknologi", team: "Designsystemet" },
-      { name: "Kim", role: "Design", team: "Designsystemet" },
-      { name: "Hanne", role: "Design", team: "Designsystemet" },
-      { name: "Eivind", role: "Inkludering", team: "Designsystemet" },
-      { name: "Kine", role: "Teknologi", team: "Designsystemet" },
-      { name: "Sondre E.", role: "Design", team: "Designsystemet" },
-      { name: "Kristoffer", role: "Teknologi", team: "Designsystemet" },
-      { name: "Petter", role: "Design", team: "Designsystemet" },
+      { name: "Sigve", role: "Design", team: "Designsystem" },
+      { name: "Vegar", role: "Teknologi", team: "Designsystem" },
+      { name: "Kim", role: "Design", team: "Designsystem" },
+      { name: "Hanne", role: "Design", team: "Designsystem" },
+      { name: "Eivind", role: "Inkludering", team: "Designsystem" },
+      { name: "Kine", role: "Teknologi", team: "Designsystem" },
+      { name: "Sondre E.", role: "Design", team: "Designsystem" },
+      { name: "Kristoffer", role: "Teknologi", team: "Designsystem" },
+      { name: "Petter", role: "Design", team: "Designsystem" },
       ...(showEasterEggs
         ? [
             {
               name: "Andreas",
               role: "Sjef",
-              team: "Designsystemet",
+              team: "Designsystem",
             },
           ]
         : []),
@@ -32,17 +32,17 @@ const Contributors = ({
       {
         name: "Kjartan",
         role: "Teknologi",
-        team: "Studieadm. Min utdanning",
+        team: "Min utdanning",
       },
       {
         name: "Sondre S.",
         role: "Teknologi",
-        team: "Studieadm. Min utdanning",
+        team: "Min utdanning",
       },
-      { name: "Erik", role: "Teknologi", team: "Studieadm. Min utdanning" },
-      { name: "Vegard", role: "Teknologi", team: "Studieadm. Min utdanning" },
-      { name: "Hilde", role: "Design", team: "Studieadm. Min utdanning" },
-      { name: "Jakob", role: "Teknologi", team: "Studieadm. Min utdanning" },
+      { name: "Erik", role: "Teknologi", team: "Min utdanning" },
+      { name: "Vegard", role: "Teknologi", team: "Min utdanning" },
+      { name: "Hilde", role: "Design", team: "Min utdanning" },
+      { name: "Jakob", role: "Teknologi", team: "Min utdanning" },
     ],
     [
       { name: "Sigurd", role: "Teknologi", team: "Kudaf" },
@@ -50,17 +50,16 @@ const Contributors = ({
       { name: "Glaysa", role: "Teknologi", team: "Kudaf" },
     ],
     [
-      { name: "Mats", role: "Teknologi", team: "Studieadm. Admin" },
-      { name: "Marius", role: "Teknologi", team: "Studieadm. Admin" },
-      { name: "Patrick", role: "Teknologi", team: "Studieadm. Admin" },
-      { name: "An", role: "Teknologi", team: "Studieadm. Admin" },
+      { name: "Mats", role: "Teknologi", team: "FS Admin" },
+      { name: "Marius", role: "Teknologi", team: "FS Admin" },
+      { name: "Patrick", role: "Teknologi", team: "FS Admin" },
+      { name: "An", role: "Teknologi", team: "FS Admin" },
     ],
     [
-      { name: "Jonas", role: "Teknologi", team: "FS Studentportal" },
       { name: "Christian", role: "Design", team: "FS Studentportal" },
       { name: "Lasse", role: "Teknologi", team: "FS Studentportal" },
     ],
-    [{ name: "Sondre L.", role: "Teknologi", team: "Studieadm. Kjerne" }],
+    [{ name: "Sondre L.", role: "Teknologi", team: "FS Kjerne" }],
     [{ name: "John-Magne", role: "Teknologi", team: "Feide Kundeportal" }],
     [{ name: "Deg", role: "Din rolle", team: "Ditt team" }],
   ];
