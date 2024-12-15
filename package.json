@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
-    "@commitlint/cli": "^19.6.0",
+    "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@figma/code-connect": "^1.2.4",
     "@playwright/test": "^1.49.1",
