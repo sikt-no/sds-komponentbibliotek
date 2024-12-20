@@ -1,5 +1,5 @@
 import { Button } from "@sikt/sds-button";
-import { ArrowRightIcon } from "@sikt/sds-icons";
+import { NavigateToNextIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { MouseEvent, ReactNode } from "react";
 import "./drawer-header.pcss";
@@ -46,7 +46,7 @@ export const DrawerHeader = ({
       <Button
         variant="transparent"
         iconVariant="only"
-        icon={<ArrowRightIcon />}
+        icon={<NavigateToNextIcon />}
         className="sds-drawer-header__button"
         aria-label={ariaLabel}
         aria-expanded={expanded}

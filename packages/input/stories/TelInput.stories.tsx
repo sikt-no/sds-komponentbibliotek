@@ -1,4 +1,4 @@
-import { SlidersIcon } from "@sikt/sds-icons";
+import { AdjustSettingsIcon } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { InputProps, TelInput } from "../index";
 
@@ -21,7 +21,7 @@ export const Default: Story = {
 export const WithCustomIcon: Story = {
   args: {
     ...Default.args,
-    icon: <SlidersIcon />,
+    icon: <AdjustSettingsIcon />,
   },
 };
 

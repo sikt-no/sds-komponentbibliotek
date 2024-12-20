@@ -1,4 +1,4 @@
-import { CaretCircleDownIcon } from "@sikt/sds-icons";
+import { ExpandShowAltIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { DetailsHTMLAttributes, ReactNode } from "react";
 import "./details.pcss";
@@ -26,7 +26,7 @@ export const Details = ({
       <summary className="sds-details__summary">
         {summary}
         <div>
-          <CaretCircleDownIcon className="sds-details__icon" />
+          <ExpandShowAltIcon className="sds-details__icon" />
         </div>
       </summary>
       <div className="sds-details__content">{children}</div>

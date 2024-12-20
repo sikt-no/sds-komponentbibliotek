@@ -1,7 +1,7 @@
 import { DropEvent } from "@react-types/shared";
 import { Paragraph } from "@sikt/sds-core";
 import { FormField } from "@sikt/sds-form";
-import { UploadSimpleIcon } from "@sikt/sds-icons";
+import { UploadIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { forwardRef, ReactNode, useEffect, useId, useState } from "react";
 import {
@@ -157,7 +157,7 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
           {...rest}
         >
           <div className="sds-input-file__drop-zone-icon">
-            <UploadSimpleIcon />
+            <UploadIcon />
           </div>
           <Paragraph className="sds-input-file__placeholder">
             {placeholder}

@@ -1,6 +1,6 @@
 import { Button, ButtonProps } from "@sikt/sds-button";
 import { HelpText } from "@sikt/sds-form";
-import { SpinnerIcon, TrashIcon, XIcon } from "@sikt/sds-icons";
+import { SpinnerIcon, DeleteIcon, CancelIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx";
 import { LiHTMLAttributes, ReactNode } from "react";
 
@@ -42,11 +42,11 @@ export const FileListItem = ({
   removeActionProps,
   ...rest
 }: FileListItemProps) => {
-  let icon = removeActionProps && <TrashIcon />;
+  let icon = removeActionProps && <DeleteIcon />;
   if (loading) {
     icon = <SpinnerIcon />;
   } else if (errorText) {
-    icon = <XIcon />;
+    icon = <CancelIcon />;
   }
 
   const size = fileSize && getFileSize(fileSize, bytesConversion);

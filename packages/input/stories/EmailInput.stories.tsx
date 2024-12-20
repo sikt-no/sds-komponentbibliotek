@@ -1,4 +1,4 @@
-import { GearIcon } from "@sikt/sds-icons";
+import { SettingsIcon } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { EmailInput, InputProps } from "../index";
 
@@ -21,7 +21,7 @@ export const Input: Story = {
 export const WithCustomIcon: Story = {
   args: {
     ...Input.args,
-    icon: <GearIcon />,
+    icon: <SettingsIcon />,
   },
 };
 

@@ -3,10 +3,10 @@ import { Button, ButtonProps } from "@sikt/sds-button";
 import { HelpText, Label } from "@sikt/sds-form";
 import { useClickOutside, useKeydown } from "@sikt/sds-hooks";
 import {
-  CalendarBlankIcon,
-  CaretLeftIcon,
-  CaretRightIcon,
-  XIcon,
+  DateCalendarIcon,
+  MoveToPreviousIcon,
+  MoveToNextIcon,
+  CancelIcon,
 } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
@@ -91,7 +91,7 @@ const DatepickerClearButton = (clearActionProps?: ClearActionProps) => {
         className="sds-input__clear"
         onClick={handleClearClick}
         onKeyDown={handleClearKeydown}
-        icon={<XIcon />}
+        icon={<CancelIcon />}
         aria-label={clearActionProps?.["aria-label"] ?? "Tøm datofelt"}
         type={clearActionProps?.type ?? "button"}
       />
@@ -191,7 +191,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
                 }
               }}
               iconVariant="only"
-              icon={<CalendarBlankIcon />}
+              icon={<DateCalendarIcon />}
               type="button"
             >
               {openCalendarLabel}
@@ -222,7 +222,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
                   slot="previous"
                   aria-label={previousMonthLabel}
                 >
-                  <CaretLeftIcon />
+                  <MoveToPreviousIcon />
                 </ReactAriaButton>
                 <Heading className="sds-input-datepicker__calendar-heading" />
                 <ReactAriaButton
@@ -230,7 +230,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
                   slot="next"
                   aria-label={nextMonthLabel}
                 >
-                  <CaretRightIcon />
+                  <MoveToNextIcon />
                 </ReactAriaButton>
               </header>
               <CalendarGrid weekdayStyle="short">

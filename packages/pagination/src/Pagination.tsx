@@ -1,4 +1,4 @@
-import { CaretLeftIcon, CaretRightIcon } from "@sikt/sds-icons";
+import { MoveToPreviousIcon, MoveToNextIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
 import "./pagination.pcss";
@@ -59,7 +59,7 @@ export const Pagination = ({
               handleClick(currentIndex - 1);
             }}
           >
-            <CaretLeftIcon />
+            <MoveToPreviousIcon />
           </button>
         </li>
         {[...Array(count).keys()].map((value) => {
@@ -100,7 +100,7 @@ export const Pagination = ({
               handleClick(currentIndex + 1);
             }}
           >
-            <CaretRightIcon />
+            <MoveToNextIcon />
           </button>
         </li>
       </ol>

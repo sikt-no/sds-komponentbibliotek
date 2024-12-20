@@ -1,5 +1,5 @@
 import { Button } from "@sikt/sds-button";
-import { ListIcon, XIcon } from "@sikt/sds-icons";
+import { MenuIcon, CancelIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
   Children,
@@ -122,7 +122,7 @@ export const HeaderCollapsibleMenu = ({
       })}
       <Button
         variant="transparent"
-        icon={menuOpen ? <XIcon /> : <ListIcon />}
+        icon={menuOpen ? <CancelIcon /> : <MenuIcon />}
         iconVariant={menuOpen ? "right" : "only"}
         onClick={toggleMenu}
         aria-label={menuOpen ? ariaLabelCloseMenu : ariaLabelOpenMenu}

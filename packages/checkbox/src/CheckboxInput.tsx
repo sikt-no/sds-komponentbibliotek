@@ -1,5 +1,5 @@
 import { useFieldset } from "@sikt/sds-form";
-import { CheckIcon, MinusIcon } from "@sikt/sds-icons";
+import { ConfirmIcon, SubtractIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
   ChangeEvent,
@@ -106,9 +106,9 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
         />
         <div className="sds-checkbox__icon-wrapper">
           {indeterminate ? (
-            <MinusIcon className="sds-checkbox__icon" />
+            <SubtractIcon className="sds-checkbox__icon" />
           ) : (
-            <CheckIcon className="sds-checkbox__icon" />
+            <ConfirmIcon className="sds-checkbox__icon" />
           )}
         </div>
       </>

@@ -1,4 +1,4 @@
-import { ListIcon } from "@sikt/sds-icons";
+import { MenuIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
 import "./drawer-item-group.pcss";
@@ -31,7 +31,7 @@ export const DrawerItemGroup = ({
           <figcaption
             className={clsx("sds-drawer-item-group__heading", className)}
           >
-            <ListIcon className="sds-drawer-item-group__heading-icon" />
+            <MenuIcon className="sds-drawer-item-group__heading-icon" />
             {expanded && (
               <span className="sds-drawer-item-group__heading-title sds-typography-body--small">
                 {heading}

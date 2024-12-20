@@ -1,4 +1,4 @@
-import { CaretRightIcon } from "@sikt/sds-icons";
+import { MoveToNextIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
 import "./progress-step.pcss";
@@ -34,7 +34,7 @@ export const ProgressStep = ({
       aria-current={status === "current" ? "step" : "false"}
       {...rest}
     >
-      <CaretRightIcon className="sds-progress-step__separator-icon" />
+      <MoveToNextIcon className="sds-progress-step__separator-icon" />
       {status === "complete" && (
         <span className="sds-screen-reader-only">
           {accessibleCompleteString}

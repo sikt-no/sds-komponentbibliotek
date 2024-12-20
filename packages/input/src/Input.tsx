@@ -1,11 +1,11 @@
 import { Button, ButtonProps } from "@sikt/sds-button";
 import { FormField } from "@sikt/sds-form";
 import {
-  EnvelopeIcon,
-  MagnifyingGlassIcon,
+  EmailIcon,
+  SearchIcon,
   PasswordIcon,
   PhoneIcon,
-  XIcon,
+  CancelIcon,
 } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
@@ -123,7 +123,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               iconVariant="only"
               className="sds-input__clear"
               onClick={handleClearClick}
-              icon={<XIcon />}
+              icon={<CancelIcon />}
               aria-label={clearActionProps?.["aria-label"] ?? "Tøm søketekst"}
               type={clearActionProps?.type ?? "button"}
             />
@@ -136,7 +136,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               className="sds-input__action"
               size="small"
               aria-label={actionProps?.["aria-label"] ?? "Søk"}
-              icon={<MagnifyingGlassIcon />}
+              icon={<SearchIcon />}
               type={actionProps?.type ?? "button"}
               {...actionProps}
             />
@@ -159,7 +159,7 @@ const NumberInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
 NumberInput.displayName = "NumberInput";
 
 const EmailInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
-  <Input type="email" icon={<EnvelopeIcon />} ref={ref} {...props} />
+  <Input type="email" icon={<EmailIcon />} ref={ref} {...props} />
 ));
 EmailInput.displayName = "EmailInput";
 

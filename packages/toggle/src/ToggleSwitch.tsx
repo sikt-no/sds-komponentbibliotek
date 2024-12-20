@@ -1,4 +1,4 @@
-import { CheckIcon, XIcon } from "@sikt/sds-icons";
+import { ConfirmIcon, CancelIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
   ChangeEventHandler,
@@ -70,8 +70,8 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
           {...rest}
         />
         <div className="sds-toggle-switch__thumb">
-          {showIcons && checked && <CheckIcon />}
-          {showIcons && !checked && <XIcon />}
+          {showIcons && checked && <ConfirmIcon />}
+          {showIcons && !checked && <CancelIcon />}
         </div>
       </div>
     );

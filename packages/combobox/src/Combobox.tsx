@@ -1,5 +1,5 @@
 import { FormField } from "@sikt/sds-form";
-import { CaretCircleDownIcon } from "@sikt/sds-icons";
+import { ExpandShowAltIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { ReactNode, useId, useState } from "react";
 import {
@@ -82,7 +82,7 @@ export function Combobox<T extends object>({
         <div className="sds-combobox__combobox">
           <Input className="sds-combobox__combobox-input" />
           <Button className="sds-combobox__combobox-button">
-            <CaretCircleDownIcon />
+            <ExpandShowAltIcon />
           </Button>
         </div>
         <Popover className="sds-combobox__popover">

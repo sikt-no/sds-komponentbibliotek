@@ -1,9 +1,4 @@
-import {
-  CheckCircleIcon,
-  InfoIcon,
-  WarningIcon,
-  XCircleIcon,
-} from "@sikt/sds-icons";
+import { SuccessIcon, InfoIcon, AlertIcon, FailedIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
 import "./message.pcss";
@@ -66,9 +61,9 @@ const Message = ({
         >
           <span className="sds-message__icon">
             {variant === "info" && <InfoIcon />}
-            {variant === "warning" && <WarningIcon />}
-            {variant === "success" && <CheckCircleIcon />}
-            {variant === "critical" && <XCircleIcon />}
+            {variant === "warning" && <AlertIcon />}
+            {variant === "success" && <SuccessIcon />}
+            {variant === "critical" && <FailedIcon />}
           </span>
           <span className="sds-message__message">{children}</span>
           {callToAction && (

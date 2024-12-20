@@ -1,7 +1,7 @@
 import { Button } from "@sikt/sds-button";
 import { Heading1, Paragraph } from "@sikt/sds-core";
 import { useClickOutside, useKeydown, useWindowResize } from "@sikt/sds-hooks";
-import { XIcon } from "@sikt/sds-icons";
+import { CancelIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
   HTMLAttributes,
@@ -146,7 +146,7 @@ export const Dialog = ({
           {dismissable && (
             <Button
               variant="transparent"
-              icon={<XIcon />}
+              icon={<CancelIcon />}
               className="sds-dialog__close-button"
               onClick={onClose}
               aria-label={closeButtonLabel ? undefined : closeButtonAriaLabel}

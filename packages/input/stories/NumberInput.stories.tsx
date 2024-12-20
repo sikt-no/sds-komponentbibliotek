@@ -1,4 +1,4 @@
-import { CalendarBlankIcon } from "@sikt/sds-icons";
+import { DateCalendarIcon } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { InputProps, NumberInput } from "../index";
 
@@ -21,7 +21,7 @@ export const Default: Story = {
 export const WithCustomIcon: Story = {
   args: {
     ...Default.args,
-    icon: <CalendarBlankIcon />,
+    icon: <DateCalendarIcon />,
   },
 };
 

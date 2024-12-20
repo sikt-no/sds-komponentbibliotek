@@ -1,4 +1,4 @@
-import { PlusCircleIcon } from "@sikt/sds-icons";
+import { AddAltIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { ChangeEventHandler, ReactNode, forwardRef, useId } from "react";
 import "./toggle-button.pcss";
@@ -35,7 +35,7 @@ export const ToggleButton = forwardRef<HTMLInputElement, ToggleButtonProps>(
         >
           <div className="sds-toggle-button__label-text">{label}</div>
           {showIcons && (
-            <PlusCircleIcon
+            <AddAltIcon
               className={clsx(
                 "sds-toggle-button__icon",
                 checked && "sds-toggle-button__icon--checked",

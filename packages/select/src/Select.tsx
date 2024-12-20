@@ -1,5 +1,5 @@
 import { FormField } from "@sikt/sds-form";
-import { CaretCircleDownIcon } from "@sikt/sds-icons";
+import { ExpandShowAltIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
   ChangeEventHandler,
@@ -84,7 +84,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
               </option>
             ))}
           </select>
-          <CaretCircleDownIcon className="sds-select__select-button" />
+          <ExpandShowAltIcon className="sds-select__select-button" />
         </div>
       </FormField>
     );

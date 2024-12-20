@@ -1,4 +1,4 @@
-import { UserCircleIcon } from "@sikt/sds-icons";
+import { UserProfileIcon } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { InputProps, PasswordInput } from "../index";
 
@@ -21,7 +21,7 @@ export const Default: Story = {
 export const WithCustomIcon: Story = {
   args: {
     ...Default.args,
-    icon: <UserCircleIcon />,
+    icon: <UserProfileIcon />,
   },
 };
 
