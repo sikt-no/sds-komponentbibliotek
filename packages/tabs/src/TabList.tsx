@@ -11,7 +11,7 @@ import { TabProps } from "./Tab";
 
 export interface TabListProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
-  "aria-label": string;
+  "aria-label": NonNullable<string>;
   className?: string;
 }
 

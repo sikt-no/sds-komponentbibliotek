@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import "./breadcrumbs.pcss";
 
 export interface BreadcrumbsProps {
-  "aria-label": string;
+  "aria-label": NonNullable<string>;
   children?: ReactNode;
   className?: string;
 }

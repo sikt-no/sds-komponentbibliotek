@@ -21,7 +21,7 @@ export interface FileWithError extends File {
 
 export interface InputFileProps extends DropZoneProps {
   label: NonNullable<ReactNode>;
-  "aria-label": string;
+  "aria-label": NonNullable<string>;
   errorText?: ReactNode;
   helpText?: ReactNode;
   className?: string;

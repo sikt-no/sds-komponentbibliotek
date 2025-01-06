@@ -17,7 +17,7 @@ interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 interface ButtonLinkAriaLabelProps extends ButtonLinkBaseProps {
-  "aria-label": string;
+  "aria-label": NonNullable<string>;
 }
 
 interface ButtonLinkChildrenProps extends ButtonLinkBaseProps {

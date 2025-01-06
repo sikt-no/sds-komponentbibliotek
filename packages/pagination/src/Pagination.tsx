@@ -4,7 +4,7 @@ import { HTMLAttributes } from "react";
 import "./pagination.pcss";
 
 export interface PaginationProps extends HTMLAttributes<HTMLElement> {
-  "aria-label": string;
+  "aria-label": NonNullable<string>;
   ariaLabelPrevious?: string;
   ariaLabelNext?: string;
   ariaLabelItem?: string;

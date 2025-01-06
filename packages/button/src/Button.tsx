@@ -16,7 +16,7 @@ interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 interface ButtonAriaLabelProps extends ButtonBaseProps {
-  "aria-label": string;
+  "aria-label": NonNullable<string>;
 }
 
 interface ButtonChildrenProps extends ButtonBaseProps {
