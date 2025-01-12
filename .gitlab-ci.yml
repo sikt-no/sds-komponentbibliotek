@@ -5,7 +5,7 @@ default:
 include:
   - component: gitlab.sikt.no/platon/ci-components/docker/docker@1.0.2
   - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@1.0.0
-  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@1.1.0
+  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@1.1.1
 
 variables:
   KUBE_PROD_DOMAIN: designsystem.sikt.no
