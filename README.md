@@ -2,6 +2,20 @@
 
 A component library for [Sikt designsystem](https://isikt.sharepoint.com/sites/Innsikt-OmOss/SitePages/Profil.aspx).
 
+<details>
+  <summary>Table of Contents</summary>
+
+- [Consume](#consume)
+  - [Core & Design Tokens](#core-&-design-tokens)
+  - [React](#react)
+  - [Vue](#vue)
+  - [Stylesheets & custom markup](#stylesheets-&-custom-markup)
+- [Accessibility](#accessibility)
+- [Contribute](#contribute)
+- [License](#license)
+
+</details>
+
 ## Consume
 
 Install package to be consumed:

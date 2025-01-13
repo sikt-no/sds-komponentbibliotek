@@ -1,5 +1,15 @@
 # Release
 
+<details>
+  <summary>Table of Contents</summary>
+
+- [Create release](#create-release)
+- [Publish](#publish)
+
+</details>
+
+## Create release
+
 Do this on the main branch.  
 Bump package versions & generate change log based on commit history with [Commit and Tag Version](https://github.com/absolute-version/commit-and-tag-version):
 

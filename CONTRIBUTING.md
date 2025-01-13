@@ -1,5 +1,8 @@
 # Contributing
 
+<details>
+  <summary>Table of Contents</summary>
+
 - [Code of conduct](#code-of-conduct)
 - [Feedback](#feedback)
 - [Design](#design)
@@ -10,7 +13,9 @@
   - [Change request](#change-request)
   - [Creating a new component](#creating-a-new-component)
   - [Workflow](#workflow)
-    - [Release](RELEASE.md)
+    - [Release](#release)
+
+</details>
 
 ## Code of conduct
 
