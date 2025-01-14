@@ -49,7 +49,7 @@
     "extends @sikt/browserslist-config-sds"
   ],
   "lint-staged": {
-    "**/*.{css,pcss}": "stylelint --fix",
+    "**/*.{css,pcss}": "stylelint --fix strict",
     "**/*.{ts,tsx}": "eslint --fix",
     "**/*": "prettier --write --ignore-unknown"
   },
