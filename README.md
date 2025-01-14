@@ -6,10 +6,10 @@ A component library for [Sikt designsystem](https://isikt.sharepoint.com/sites/I
   <summary>Table of Contents</summary>
 
 - [Consume](#consume)
-  - [Core & Design Tokens](#core-&-design-tokens)
+  - [Core & Design Tokens](#core--design-tokens)
   - [React](#react)
   - [Vue](#vue)
-  - [Stylesheets & custom markup](#stylesheets-&-custom-markup)
+  - [Stylesheets & custom markup](#stylesheets--custom-markup)
 - [Accessibility](#accessibility)
 - [Contribute](#contribute)
 - [License](#license)
