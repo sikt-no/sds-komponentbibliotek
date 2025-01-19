@@ -1,4 +1,4 @@
-import { MapPinIcon } from "@sikt/sds-icons";
+import { LocationIcon } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import React, { useState } from "react";
 import { InputProps, SearchInput } from "../index";
@@ -62,7 +62,7 @@ export const WithClearButton: Story = {
   ),
   args: {
     ...Default.args,
-    icon: <MapPinIcon />,
+    icon: <LocationIcon />,
   },
 };
 
@@ -70,7 +70,7 @@ export const WithCustomIcon: Story = {
   render: SearchInputWrapper,
   args: {
     ...Default.args,
-    icon: <MapPinIcon />,
+    icon: <LocationIcon />,
   },
 };
 
