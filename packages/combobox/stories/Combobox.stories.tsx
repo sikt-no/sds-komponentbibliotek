@@ -72,7 +72,7 @@ export const StaticItems = {
   },
 } satisfies Story;
 
-export const Controlledtory = {
+export const Controlled = {
   args: {
     ...Default.args,
   },
