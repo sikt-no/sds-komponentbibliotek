@@ -43,19 +43,19 @@ import "@sikt/sds-message/dist/index.css";
 
 #### Caveats
 
-Do not use conditional rendering of these components since they need to be in the DOM for the `aria-live` attribute to take effect when a message text is added.
+Do not use conditional rendering of these components since they need to be in the DOM for the `aria-live` attribute to take effect when a message text is added. The component handles this internally with a conditional rendering based on if the `children` prop is set.
 
 Do:
 
 ```jsx
-<Alert callToAction={handleOnClick}>{message}</Alert>
+<Alert callToAction={handleOnClick}>{shouldRender && message}</Alert>
 ```
 
 Don't:
 
 ```jsx
 {
-  message && <Alert callToAction={handleOnClick}>{message}</Alert>;
+  shouldRender && <Alert callToAction={handleOnClick}>{message}</Alert>;
 }
 ```
 
