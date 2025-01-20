@@ -33,7 +33,7 @@ describe("Message Alert", () => {
     });
 
     it("should render container", async () => {
-      render(<Alert callToAction="Bar" data-testid="test" />);
+      render(<Alert data-testid="test" />);
 
       expect(screen.getByTestId("test")).toHaveRole("alert");
       expect(screen.queryByText("Bar")).not.toBeInTheDocument();
@@ -41,9 +41,7 @@ describe("Message Alert", () => {
 
     it("should have class name", async () => {
       const { container } = render(
-        <Alert className="test-class-name" callToAction="Bar">
-          Foo
-        </Alert>,
+        <Alert className="test-class-name">Foo</Alert>,
       );
 
       expect(

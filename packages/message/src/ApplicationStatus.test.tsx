@@ -33,7 +33,7 @@ describe("Message ApplicationStatus", () => {
     });
 
     it("should render container", async () => {
-      render(<ApplicationStatus callToAction="Bar" data-testid="test" />);
+      render(<ApplicationStatus data-testid="test" />);
 
       expect(screen.getByTestId("test")).toHaveRole("status");
       expect(screen.queryByText("Bar")).not.toBeInTheDocument();
@@ -41,9 +41,7 @@ describe("Message ApplicationStatus", () => {
 
     it("should have class name", async () => {
       const { container } = render(
-        <ApplicationStatus className="test-class-name" callToAction="Bar">
-          Foo
-        </ApplicationStatus>,
+        <ApplicationStatus className="test-class-name">Foo</ApplicationStatus>,
       );
 
       expect(

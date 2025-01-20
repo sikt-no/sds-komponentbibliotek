@@ -18,7 +18,7 @@ type MessageBaseProps = Omit<MessageProps, "callToAction" | "variant" | "type">;
 export type AlertVariant = Extract<MessageVariant, "success" | "critical">;
 
 export interface AlertProps extends MessageBaseProps {
-  callToAction: ReactNode;
+  callToAction?: ReactNode;
   variant?: AlertVariant;
 }
 
