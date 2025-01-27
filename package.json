@@ -13,7 +13,7 @@
     "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
   },
   "engines": {
-    "node": "20.18.1"
+    "node": "20.18.2"
   },
   "packageManager": "npm@11.0.0",
   "workspaces": [
@@ -70,7 +70,7 @@
     "@turbo/gen": "^2.3.4",
     "@types/jest": "^29.5.14",
     "@types/jest-axe": "^3.5.9",
-    "@types/node": "^20.17.14",
+    "@types/node": "^20.17.16",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "autoprefixer": "^10.4.20",
