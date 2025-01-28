@@ -133,7 +133,7 @@ test-e2e-update-snapshots:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
     - npx playwright install --with-deps
-    - npm run test:e2e -- --update-snapshots
+    - npm run test:e2e -- --update-snapshots=changed
   after_script:
     - git config user.name "CI Pipeline"
     - git config user.email "cipipeline@example.com"
