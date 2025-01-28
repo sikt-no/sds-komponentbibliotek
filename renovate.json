@@ -72,7 +72,16 @@
     },
     {
       "matchPackagePatterns": ["playwright"],
-      "groupName": "playwright"
+      "groupName": "playwright",
+      "matchUpdateTypes": ["major", "minor"],
+      "automerge": false,
+      "gitLabIgnoreApprovals": false,
+      "platformAutomerge": false
+    },
+    {
+      "matchPackagePatterns": ["playwright"],
+      "groupName": "playwright",
+      "matchUpdateTypes": ["patch"]
     },
     {
       "matchPackagePatterns": [
