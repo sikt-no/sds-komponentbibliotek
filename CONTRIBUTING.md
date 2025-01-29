@@ -177,7 +177,7 @@ To generate baseline screenshot for the CI environment after you are done workin
 docker run --rm --network host -v ${PWD}:/work/ -w /work/ -it node:20 /bin/bash
 npm install
 npx playwright install --with-deps
-CI=true npx playwright test --update-snapshots=change
+CI=true npx playwright test --update-snapshots=changed
 ```
 
 This can also be done in the CI pipeline with the manual job `test-e2e-update-snapshots`.
