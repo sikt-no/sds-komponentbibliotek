@@ -98,6 +98,10 @@ Write visual regression tests for components with [Playwright](https://playwrigh
 Export components as both CSS & React components, with [tsup](https://tsup.egoist.dev/), to allow use of both custom markup & React.  
 Build all packages with `npm run build` from root.
 
+#### CI/CD
+
+[CI/CD](./docs/CICD.md)
+
 ### Setup
 
 ```sh
