@@ -489,7 +489,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
               <ButtonLink
                 variant="transparent"
                 icon={<FigmaLogo />}
-                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7849-9188&mode=design&t=luqGyDtXZMLzJTFV-4"
+                href="https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=7849-9188&t=4xtxvL1BGv6sRmM5-4"
               >
                 Se i Figma
               </ButtonLink>
@@ -577,7 +577,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
               <ButtonLink
                 variant="transparent"
                 icon={<FigmaLogo />}
-                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7968-8516&mode=design&t=luqGyDtXZMLzJTFV-4"
+                href="https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=7968-8516&t=4xtxvL1BGv6sRmM5-4"
               >
                 Se i Figma
               </ButtonLink>
@@ -686,7 +686,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
               <ButtonLink
                 variant="transparent"
                 icon={<FigmaLogo />}
-                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7899-5888&mode=design&t=luqGyDtXZMLzJTFV-4"
+                href="https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=7899-5888&t=4xtxvL1BGv6sRmM5-4"
               >
                 Se i Figma
               </ButtonLink>
@@ -773,7 +773,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
               <ButtonLink
                 variant="transparent"
                 icon={<FigmaLogo />}
-                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7849-9513&mode=design&t=luqGyDtXZMLzJTFV-4"
+                href="https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=7849-9513&t=4xtxvL1BGv6sRmM5-4"
               >
                 Se i Figma
               </ButtonLink>
@@ -862,7 +862,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
               <ButtonLink
                 variant="transparent"
                 icon={<FigmaLogo />}
-                href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?type=design&node-id=7863-9761&mode=design&t=luqGyDtXZMLzJTFV-4"
+                href="https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=7863-9761&t=4xtxvL1BGv6sRmM5-4"
               >
                 Se i Figma
               </ButtonLink>

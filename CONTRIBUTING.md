@@ -31,6 +31,7 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issu
 ## Design
 
 [Figma File](https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem)
+(for which you need to [order access](https://isikt.sharepoint.com/sites/it-stotte/SitePages/Trenger-du-lisenser-eller-tilganger-.aspx))
 
 ## Development
 
