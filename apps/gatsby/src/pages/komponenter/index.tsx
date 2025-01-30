@@ -53,7 +53,7 @@ const KomponenterPage: React.FC<PageProps<Queries.PageTemplateQuery>> = ({
                     Se komponenterne i GitLab
                   </ButtonLink>
                   <ButtonLink
-                    href="https://www.figma.com/file/6AVtxjDULlUdl9F4JEHAfv/Komponentbibliotek-v1.0?node-id=21-357"
+                    href="https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=13124-196"
                     icon={<FigmaLogo />}
                     iconVariant="left"
                   >
