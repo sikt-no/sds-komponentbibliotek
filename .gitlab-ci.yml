@@ -165,6 +165,7 @@ test-e2e-update-snapshots:
   script:
     - trivy fs --cache-dir .trivycache/ --dependency-tree ./
     - trivy fs --cache-dir .trivycache/ -f json -o gl-container-scanning-report.json ./
+    - trivy fs --cache-dir .trivycache/ -f cyclonedx -o gl-sbom.cdx.json ./
     - trivy fs --cache-dir .trivycache/ --severity MEDIUM,HIGH,CRITICAL --exit-code 1 ./
   cache:
     paths:
@@ -174,6 +175,7 @@ test-e2e-update-snapshots:
     when: always
     reports:
       container_scanning: gl-container-scanning-report.json
+      cyclonedx: gl-sbom.cdx.json
   needs: []
 
 vuln:
