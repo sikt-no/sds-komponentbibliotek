@@ -12,6 +12,7 @@ A component library for [Sikt designsystem](https://isikt.sharepoint.com/sites/I
   - [Stylesheets & custom markup](#stylesheets--custom-markup)
 - [Accessibility](#accessibility)
 - [Contribute](#contribute)
+- [Security](#security)
 - [License](#license)
 
 </details>
@@ -78,6 +79,10 @@ Create custom markup:
 ## Contribute
 
 [Contributing](CONTRIBUTING.md)
+
+## Security
+
+[Security](./docs/SECURITY.md)
 
 ## License
 
