@@ -1,25 +1,20 @@
-import { _color } from "./_color.mjs";
-
 export default {
   color: {
     brand: {
       primary: {
         strong: {
-          value: { ..._color.purple["65"].value },
-          dark: { ..._color.purple["70"].value },
-          type: "color",
+          value: "{_color.base.purple.65-100.value}",
+          dark: "{_color.base.purple.65-100.value}",
         },
         subtle: {
-          value: "#dbd2fe",
-          dark: "#2a1b64",
-          type: "color",
+          value: "{_color.base.purple.95-100.value}",
+          dark: "{_color.base.purple.46-100.value}",
         },
       },
       accent: {
         strong: {
-          value: { ..._color.purple["10"].value },
-          dark: { ..._color.purple["95"].value },
-          type: "color",
+          value: "{_color.base.purple.10-100.value}",
+          dark: "{_color.base.neutral.11-100.value}",
         },
         subtle: {
           value: "#c2bfcb",
@@ -29,14 +24,12 @@ export default {
       },
       neutral: {
         strong: {
-          value: { ..._color.neutral["45"].value },
-          dark: { ..._color.neutral["50"].value },
-          type: "color",
+          value: "{_color.base.neutral.46-100.value}",
+          dark: "{_color.base.neutral.46-100.value}",
         },
         subtle: {
-          value: "#dcdcdc",
-          dark: "#282145",
-          type: "color",
+          value: "{_color.base.neutral.87-100.value}",
+          dark: "{_color.base.neutral.87-100.value}",
         },
       },
     },

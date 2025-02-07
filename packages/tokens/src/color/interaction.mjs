@@ -1,130 +1,107 @@
-import { _color } from "./_color.mjs";
-
 export default {
   color: {
     interaction: {
       primary: {
         strong: {
           default: {
-            value: { ..._color.purple["65"].value },
-            dark: { ..._color.purple["70"].value },
-            type: "color",
+            value: "{_color.base.purple.65-100.value}",
+            dark: "{_color.base.purple.65-100.value}",
           },
           highlight: {
-            value: { ..._color.purple["60"].value },
-            dark: { ..._color.purple["75"].value },
-            type: "color",
+            value: "{_color.base.purple.61-100.value}",
+            dark: "{_color.base.purple.61-100.value}",
           },
           pressed: {
-            value: { ..._color.purple["55"].value },
-            dark: { ..._color.purple["80"].value },
-            type: "color",
+            value: "{_color.base.purple.55-100.value}",
+            dark: "{_color.base.purple.55-100.value}",
           },
         },
         subtle: {
           default: {
-            value: "#dbd2fe",
-            dark: "#2a1b64",
-            type: "color",
+            value: "{_color.base.purple.90-100.value}",
+            dark: "{_color.base.purple.46-100.value}",
           },
           highlight: {
-            value: "#b9a8fc",
-            dark: "#493597",
-            type: "color",
+            value: "{_color.base.purple.87-100.value}",
+            dark: "{_color.base.purple.39-100.value}",
           },
           pressed: {
-            value: "#967dfc",
-            dark: "#6850c9",
-            type: "color",
+            value: "{_color.base.purple.84-100.value}",
+            dark: "{_color.base.purple.31-100.value}",
           },
         },
         transparent: {
           default: {
-            value: { ..._color.neutral["0"].value, a: "0" },
-            dark: { ..._color.neutral["0"].value, a: "0" },
-            type: "color",
+            value: "{_color.base.neutral.0-0.value}",
+            dark: "{_color.base.neutral.0-0.value}",
           },
           highlight: {
-            value: "#f0edfe",
-            dark: "#2a1b64",
-            type: "color",
+            value: "{_color.base.purple.87-100.value}",
+            dark: "{_color.base.purple.39-100.value}",
           },
           pressed: {
-            value: "#dbd2fe",
-            dark: "#493597",
-            type: "color",
+            value: "{_color.base.purple.84-100.value}",
+            dark: "{_color.base.purple.31-100.value}",
           },
         },
       },
       neutral: {
         strong: {
           default: {
-            value: { ..._color.neutral["45"].value },
-            dark: { ..._color.neutral["50"].value },
-            type: "color",
+            value: "{_color.base.neutral.46-100.value}",
+            dark: "{_color.base.neutral.46-100.value}",
           },
           highlight: {
-            value: { ..._color.neutral["40"].value },
-            dark: { ..._color.neutral["55"].value },
-            type: "color",
+            value: "{_color.base.neutral.40-100.value}",
+            dark: "{_color.base.neutral.40-100.value}",
           },
           pressed: {
-            value: { ..._color.neutral["35"].value },
-            dark: { ..._color.neutral["60"].value },
-            type: "color",
+            value: "{_color.base.neutral.35-100.value}",
+            dark: "{_color.base.neutral.35-100.value}",
           },
         },
         subtle: {
           default: {
-            value: "#dcdcdc",
-            dark: "#282145",
-            type: "color",
+            value: "{_color.base.neutral.58-100.value}",
+            dark: "{_color.base.neutral.58-100.value}",
           },
           highlight: {
-            value: "#b8b8b8",
-            dark: "#454059",
-            type: "color",
+            value: "{_color.base.neutral.46-100.value}",
+            dark: "{_color.base.neutral.46-100.value}",
           },
           pressed: {
-            value: "#969696",
-            dark: "#62606c",
-            type: "color",
+            value: "{_color.base.neutral.40-100.value}",
+            dark: "{_color.base.neutral.40-100.value}",
           },
         },
         transparent: {
           default: {
-            value: { ..._color.neutral["0"].value, a: "0" },
-            dark: { ..._color.neutral["0"].value, a: "0" },
-            type: "color",
+            value: "{_color.base.neutral.0-0.value}",
+            dark: "{_color.base.neutral.0-0.value}",
           },
           highlight: {
-            value: "#f0f0f0",
-            dark: "#282145",
-            type: "color",
+            value: "{_color.base.neutral.46-100.value}",
+            dark: "{_color.base.neutral.46-100.value}",
           },
           pressed: {
-            value: "#dcdcdc",
-            dark: "#454059",
-            type: "color",
+            value: "{_color.base.neutral.40-100.value}",
+            dark: "{_color.base.neutral.40-100.value}",
           },
         },
       },
       danger: {
         strong: {
           default: {
-            value: { ..._color.red["40"].value },
-            dark: { ..._color.red["50"].value },
-            type: "color",
+            value: "{_color.base.red.36-100.value}",
+            dark: "{_color.base.red.40-100.value}",
           },
           highlight: {
-            value: { ..._color.red["35"].value },
-            dark: { ..._color.red["55"].value },
-            type: "color",
+            value: "{_color.base.red.30-100.value}",
+            dark: "{_color.base.red.36-100.value}",
           },
           pressed: {
-            value: { ..._color.red["30"].value },
-            dark: { ..._color.red["60"].value },
-            type: "color",
+            value: "{_color.base.red.25-100.value}",
+            dark: "{_color.base.red.30-100.value}",
           },
         },
       },

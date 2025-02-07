@@ -1,27 +1,21 @@
-import { _color } from "./_color.mjs";
-
 export default {
   color: {
     text: {
       primary: {
-        value: { ..._color.purple["10"].value },
-        dark: { ..._color.neutral["100"].value },
-        type: "color",
+        value: "{_color.base.purple.10-100.value}",
+        dark: "{_color.base.neutral.100-100.value}",
       },
       on_strong: {
-        value: { ..._color.neutral["100"].value },
-        dark: { ..._color.purple["10"].value },
-        type: "color",
+        value: "{_color.base.neutral.100-100.value}",
+        dark: "{_color.base.neutral.100-100.value}",
       },
       secondary: {
-        value: "#484165",
-        dark: "#c2bfcc",
-        type: "color",
+        value: "{_color.base.neutral.35-100.value}",
+        dark: "{_color.base.neutral.87-100.value}",
       },
       critical: {
-        value: { ..._color.red["35"].value },
-        dark: { ..._color.red["50"].value },
-        type: "color",
+        value: "{_color.base.red.36-100.value}",
+        dark: "{_color.base.red.40-100.value}",
       },
     },
   },
