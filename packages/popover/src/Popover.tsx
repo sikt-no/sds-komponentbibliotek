@@ -32,7 +32,7 @@ export const Popover = ({
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const [top, setTop] = useState(0);
   const [left, setLeft] = useState(0);
-  const popovertargetAttr = { popovertarget: id };
+  const popovertargetAttr = { popoverTarget: id };
   const popoverAttr = { popover };
 
   // TODO: Replace with https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor when good browser support
