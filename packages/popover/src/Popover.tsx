@@ -63,7 +63,7 @@ export const Popover = ({
       >
         {children}
       </button>
-      <div
+      <span
         className={clsx(
           "sds-popover__target",
           anchor && "sds-popover__target--anchor",
@@ -74,7 +74,7 @@ export const Popover = ({
         style={{ top, left }}
       >
         {target}
-      </div>
+      </span>
     </>
   );
 };
