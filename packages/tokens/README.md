@@ -28,18 +28,6 @@ import * as tokens from "@sikt/sds-tokens";
 </Button>;
 ```
 
-### Sassy CSS
-
-```sass
-@use "@sikt/sds-tokens/scss/tokens";
-
-.prefix-custom-block__element--blue {
-  color: tokens.$sds-color-brand-primary-strong;
-}
-```
-
-**Note** SCSS tokens are currently only for showcase and will need a little love by the first one making use of them.
-
 ## Design Tokens
 
 Colors are available in light (default) and dark scheme.  

@@ -142,24 +142,6 @@ const dictionaryTokens = new StyleDictionary({
         },
       ],
     },
-    scss: {
-      transforms: [
-        "attribute/cti",
-        "name/kebab",
-        "time/seconds",
-        "html/icon",
-        "color/hex8",
-      ],
-      buildPath,
-      prefix,
-      files: [
-        {
-          format: "scss/variables",
-          destination: "scss/tokens.scss",
-          filter,
-        },
-      ],
-    },
   },
 });
 
@@ -217,25 +199,6 @@ const dictionaryColorDark = new StyleDictionary({
         },
       ],
     },
-    scss: {
-      transforms: [
-        "attribute/cti",
-        "name/kebab",
-        "time/seconds",
-        "html/icon",
-        "color/hex8",
-        "transform/color/dark",
-      ],
-      buildPath,
-      prefix,
-      files: [
-        {
-          format: "scss/variables",
-          destination: "scss/color.dark.scss",
-          filter: colorFilter,
-        },
-      ],
-    },
   },
 });
 
@@ -285,24 +248,6 @@ const dictionaryMediaTablet = new StyleDictionary({
         },
       ],
     },
-    scss: {
-      transforms: [
-        "attribute/cti",
-        "name/kebab",
-        "time/seconds",
-        "html/icon",
-        "color/hex8",
-      ],
-      buildPath,
-      prefix,
-      files: [
-        {
-          format: "scss/variables",
-          destination: "scss/tokens.tablet.scss",
-          filter,
-        },
-      ],
-    },
   },
 });
 
@@ -348,24 +293,6 @@ const dictionaryMediaDesktop = new StyleDictionary({
         {
           format: "typescript/module-declarations",
           destination: "js/tokens.desktop.d.ts",
-          filter,
-        },
-      ],
-    },
-    scss: {
-      transforms: [
-        "attribute/cti",
-        "name/kebab",
-        "time/seconds",
-        "html/icon",
-        "color/hex8",
-      ],
-      buildPath,
-      prefix,
-      files: [
-        {
-          format: "scss/variables",
-          destination: "scss/tokens.desktop.scss",
           filter,
         },
       ],
