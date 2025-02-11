@@ -21,12 +21,8 @@ export const Footer = ({
   const logoElement = <Logo variant="secondary" lang={lang} />;
 
   return (
-    <footer
-      className={clsx("sds-footer", className)}
-      data-color-scheme="dark"
-      {...rest}
-    >
-      <div className="sds-footer__content">
+    <footer className={clsx("sds-footer", className)} {...rest}>
+      <div className="sds-footer__content" data-color-scheme="dark">
         <div>
           {logoHref ? (
             <Link href={logoHref} className="sds-footer__logo-link">

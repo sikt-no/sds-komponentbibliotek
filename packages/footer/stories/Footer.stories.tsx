@@ -1,5 +1,6 @@
 import { Button } from "@sikt/sds-button";
-import { Link } from "@sikt/sds-core";
+import { Link, Heading3 } from "@sikt/sds-core";
+import { UnorderedList, ListItem } from "@sikt/sds-list";
 import { Meta, StoryObj } from "@storybook/react";
 import { Footer, FooterProps } from "../index";
 
@@ -23,18 +24,18 @@ export const WithContent: Story = {
     ...Default.args,
     children: [
       <div key={0}>
-        <h3>Header</h3>
-        <ul>
-          <li>
+        <Heading3 variant="paragraph">Header</Heading3>
+        <UnorderedList>
+          <ListItem>
             <Link href="#link">Link</Link>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <Link href="#link">Link</Link>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <Link href="#link">Link</Link>
-          </li>
-        </ul>
+          </ListItem>
+        </UnorderedList>
       </div>,
       <div key={1}>
         <Button>Button</Button>
