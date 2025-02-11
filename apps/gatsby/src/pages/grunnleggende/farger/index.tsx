@@ -34,8 +34,6 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
           { title: "Grunnleggende", to: "/grunnleggende/" },
         ]}
         heading={<>Fargesystem</>}
-        leadParagraph="For å sikre likt utseende på tvers av løsninger og grensesnitt har vi
-          definert et sett med størrelser og avstander som design tokens."
         className={clsx(indexStyle.index__hero, moduleStyle.farger__hero)}
       />
 

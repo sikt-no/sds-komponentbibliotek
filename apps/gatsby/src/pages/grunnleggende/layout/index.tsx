@@ -21,8 +21,6 @@ const LayoutPage: React.FC<PageProps> = ({ location }) => {
           { title: "Grunnleggende", to: "/grunnleggende/" },
         ]}
         heading={<>Layout</>}
-        leadParagraph="For å sikre likt utseende på tvers av løsninger og grensesnitt har vi
-          definert et sett med størrelser og avstander som design tokens."
         className={clsx(indexStyle.index__hero, moduleStyle.layout__hero)}
       />
 
