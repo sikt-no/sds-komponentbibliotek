@@ -18,7 +18,7 @@ const Template: Story = {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       const checked = event.target.checked;
       setIsChecked(checked);
-      args.onChange && args.onChange(event);
+      args.onChange?.(event);
     };
 
     useEffect(() => {

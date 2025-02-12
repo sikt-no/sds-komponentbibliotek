@@ -73,7 +73,7 @@ const DatepickerClearButton = (clearActionProps?: ClearActionProps) => {
       clearActionProps.onClick(event);
     }
 
-    state && state.setValue(null);
+    state?.setValue(null);
   };
 
   const handleClearKeydown = (event: ReactKeyboardEvent<HTMLButtonElement>) => {

@@ -34,7 +34,7 @@ const preview: Preview = {
       const rootElement = document.querySelector("html");
 
       if (rootElement !== null) {
-        rootElement.setAttribute("data-color-scheme", scheme.scheme);
+        rootElement.setAttribute("data-color-scheme", scheme.scheme as string);
       }
 
       return <Story />;

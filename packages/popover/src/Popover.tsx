@@ -44,7 +44,9 @@ export const Popover = ({
     }
   };
 
-  anchor && useWindowResize(setPopoverStylePosition, { throttleTime: 10 });
+  if (anchor) {
+    useWindowResize(setPopoverStylePosition, { throttleTime: 10 });
+  }
 
   return (
     <>
@@ -55,7 +57,9 @@ export const Popover = ({
         {...popovertargetAttr}
         {...rest}
         onClick={(event) => {
-          anchor && setPopoverStylePosition();
+          if (anchor) {
+            setPopoverStylePosition();
+          }
           if (onClick) {
             onClick(event);
           }

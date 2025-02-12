@@ -83,7 +83,9 @@ describe("Drawer,", () => {
 
       const overlay = container.querySelector(".sds-drawer__overlay");
 
-      overlay && (await user.click(overlay));
+      if (overlay) {
+        await user.click(overlay);
+      }
 
       expect(mockFunction).toHaveBeenCalled();
     });

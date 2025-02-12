@@ -74,7 +74,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             aria-describedby={helpTextId}
             aria-invalid={Boolean(errorText) && true}
             onChange={(e) => {
-              onChange && onChange(e);
+              onChange?.(e);
             }}
             {...rest}
           >

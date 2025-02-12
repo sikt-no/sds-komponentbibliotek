@@ -105,7 +105,7 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
     const handleOnChange = (input: File[]) => {
       const output = validateFiles(input);
       setFiles([...files, ...output]);
-      onChange && onChange([...files, ...output]);
+      onChange?.([...files, ...output]);
     };
 
     const handleOnDrop = (e: DropEvent) => {
