@@ -4,7 +4,10 @@ The config includes a strict but sensible set of ESLint rules, including the fol
 
 - [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
 - [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
-- [@typescript-eslint/eslint-plugin](https://typescript-eslint.io/linting/configs#recommended-configurations)
+- [typescript-eslint](https://typescript-eslint.io/linting/configs#recommended-configurations)
+- [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)
+- [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
+- [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library)
 
 The TypeScript ESLint plugin has typechecking enabled with both strict and stylistic rulesets.
 
@@ -16,22 +19,27 @@ npm i -D @sikt/eslint-config-sds
 
 ### Extend
 
-In `.eslintrc.js`:
+In `eslint.config.mjs`:
 
-```json
-"eslintConfig": {
-  "extends": ["@sikt/eslint-config-sds"]
-}
+```js
+import sdsConfig from "@sikt/eslint-config-sds";
+
+export default [
+  ...sdsConfig,
+  // ...other configs
+];
 ```
 
-If your `tsconfig.json` is not in the same folder as your ESLint configuration file, you may also need to configure that.
+If `typescript-eslint` is unable to find the right `tsconfig.json`, you [may also need to configure `tsconfigRootDir`](https://typescript-eslint.io/getting-started/typed-linting/).
 
-```json
+```js
 {
-  "parserOptions": {
-    "project": ["./path/to/tsconfig.json"]
-  }
-}
+  languageOptions: {
+    parserOptions: {
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+},
 ```
 
-If you are linting files that are not covered by your `tsconfig.json` file, you may get a warning. You can solve this by including them in the TypeScript config, excluding the files from linting or by conditionally disabling typechecking by extending from `plugin:@typescript-eslint/disable-type-checked` [by using overrides](https://typescript-eslint.io/linting/configs#disable-type-checked).
+You may get a warning if you are linting files that are not covered by your `tsconfig.json` file. You can solve this by including them in the TypeScript config, excluding the files from linting or by conditionally disabling typechecking by extending from `tseslint.configs.disableTypeChecked` [by using overrides](https://typescript-eslint.io/linting/configs#disable-type-checked).
