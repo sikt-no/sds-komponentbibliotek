@@ -1,3 +1,5 @@
+import { Button } from "@sikt/sds-button";
+import { Link } from "@sikt/sds-core";
 import { Meta, StoryObj } from "@storybook/react";
 import { Footer, FooterProps } from "../index";
 
@@ -24,24 +26,18 @@ export const WithContent: Story = {
         <h3>Header</h3>
         <ul>
           <li>
-            <a className="sds-typography-link" href="#link">
-              Link
-            </a>
+            <Link href="#link">Link</Link>
           </li>
           <li>
-            <a className="sds-typography-link" href="#link">
-              Link
-            </a>
+            <Link href="#link">Link</Link>
           </li>
           <li>
-            <a className="sds-typography-link" href="#link">
-              Link
-            </a>
+            <Link href="#link">Link</Link>
           </li>
         </ul>
       </div>,
       <div key={1}>
-        <button className="sds-button sds-button--subtle">Button</button>
+        <Button>Button</Button>
       </div>,
     ],
   },
