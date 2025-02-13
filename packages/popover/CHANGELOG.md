@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.0.2...@sikt/sds-popover@1.0.3) (2025-02-13)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core@4.2.0 ([fb7f329](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fb7f329c873679481c75f80cfbe27f364d00fa50))
+- **popover:** change from div element to span to allow for valid html when used in paragraphs ([86f61c9](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/86f61c9bbfd67582c678c0d3c5d9475fd195ebe3))
+- **popover:** change to react 19 property popoverTarget to avoid warnings ([3972da2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3972da239b90eccb471efb6de4b61b9420929a9b))
+
 ## [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.0.1...@sikt/sds-popover@1.0.2) (2024-12-04)
 
 ### Bug Fixes
