@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.2.3...@sikt/sds-input-file@0.2.4) (2025-02-13)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core@4.2.0 ([fb7f329](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fb7f329c873679481c75f80cfbe27f364d00fa50))
+- **deps:** update dependency react-aria-components to ^1.5.0 ([a8bd199](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a8bd19922e018caccb1ff994bdd6978cde4fe149))
+- **deps:** update dependency react-aria-components to ^1.6.0 ([ee668b8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ee668b8bd97d29acb403feacfc4d1b51569585e1))
+- **input-file:** change list caption to write out count without context ([dc270bc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/dc270bc385c1690bf4573de20300270f09d0fef7))
+- make required props non nullable ([9b26a28](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9b26a28bfdc7af1a8f1a0d8350a028240c350669))
+
 ## [0.2.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.2.2...@sikt/sds-input-file@0.2.3) (2024-11-20)
 
 ### Bug Fixes
