@@ -123,7 +123,7 @@ test-e2e-update-snapshots:
   extends: .npm_cache
   id_tokens:
     VAULT_ID_TOKEN:
-      aud: "https://vault.sikt.no:8200"
+      aud: $VAULT_SERVER_URL
   secrets:
     CI_TOKEN:
       vault: "gitlab/${CI_PROJECT_PATH}/ci-token@secret"
@@ -407,7 +407,7 @@ publish-npm:
   extends: .tag
   id_tokens:
     VAULT_ID_TOKEN:
-      aud: "https://vault.sikt.no:8200"
+      aud: $VAULT_SERVER_URL
   secrets:
     NPM_TOKEN:
       vault: "gitlab/${CI_PROJECT_PATH}/npm-token@secret"
@@ -438,7 +438,7 @@ publish-figma:
   stage: .post
   id_tokens:
     VAULT_ID_TOKEN:
-      aud: "https://vault.sikt.no:8200"
+      aud: $VAULT_SERVER_URL
   secrets:
     FIGMA_TOKEN:
       vault: "gitlab/${CI_PROJECT_PATH}/figma-token@secret"
