@@ -1,3 +1,4 @@
+/** @returns {Promise<import('jest').Config>} */
 module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ["./packages/**/*.tsx"],
