@@ -200,4 +200,4 @@ Rebase before merge so that your commits end up on top of the history.
 
 #### Release
 
-[Release](RELEASE.md)
+[Release](./docs/RELEASE.md)
