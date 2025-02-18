@@ -10,6 +10,15 @@ const colorFilter = (token) =>
   (token.attributes?.category === "color" || token.type === "color") &&
   filter(token);
 
+const transformHex = (c) => {
+  const color = Color(c);
+  if (color.getAlpha() === 1) {
+    return color.toHexString();
+  } else {
+    return color.toHex8String();
+  }
+};
+
 /**
  * Custom Transform: Color Dark
  * This change color tokens value to dark attribute.
@@ -20,7 +29,7 @@ StyleDictionary.registerTransform({
   transitive: true,
   filter: colorFilter,
   transform: (token) => {
-    return Color(token.dark).toHex8String();
+    return transformHex(token.dark);
   },
 });
 
@@ -34,7 +43,7 @@ StyleDictionary.registerTransform({
   transitive: true,
   filter: colorFilter,
   transform: (token) => {
-    const dark = Color(token.dark).toHex8String();
+    const dark = transformHex(token.dark);
     return `light-dark(${token.value}, ${dark})`;
   },
 });
@@ -108,7 +117,7 @@ const dictionaryTokens = new StyleDictionary({
         "name/kebab",
         "time/seconds",
         "html/icon",
-        "color/hex8",
+        "color/hex",
       ],
       buildPath,
       prefix,
@@ -126,7 +135,7 @@ const dictionaryTokens = new StyleDictionary({
       ],
     },
     ts: {
-      transforms: ["attribute/cti", "name/pascal", "color/hex8"],
+      transforms: ["attribute/cti", "name/pascal", "color/hex"],
       buildPath,
       prefix,
       files: [
@@ -156,7 +165,7 @@ const dictionaryColorCss = new StyleDictionary({
         "name/kebab",
         "time/seconds",
         "html/icon",
-        "color/hex8",
+        "color/hex",
         "transform/color/light-dark",
       ],
       buildPath,
@@ -181,7 +190,7 @@ const dictionaryColorDark = new StyleDictionary({
       transforms: [
         "attribute/cti",
         "name/pascal",
-        "color/hex8",
+        "color/hex",
         "transform/color/dark",
       ],
       buildPath,
@@ -216,7 +225,7 @@ const dictionaryMediaTablet = new StyleDictionary({
         "name/kebab",
         "time/seconds",
         "html/icon",
-        "color/hex8",
+        "color/hex",
       ],
       buildPath,
       prefix,
@@ -232,7 +241,7 @@ const dictionaryMediaTablet = new StyleDictionary({
       ],
     },
     ts: {
-      transforms: ["attribute/cti", "name/pascal", "color/hex8"],
+      transforms: ["attribute/cti", "name/pascal", "color/hex"],
       buildPath,
       prefix,
       files: [
@@ -265,7 +274,7 @@ const dictionaryMediaDesktop = new StyleDictionary({
         "name/kebab",
         "time/seconds",
         "html/icon",
-        "color/hex8",
+        "color/hex",
       ],
       buildPath,
       prefix,
@@ -281,7 +290,7 @@ const dictionaryMediaDesktop = new StyleDictionary({
       ],
     },
     ts: {
-      transforms: ["attribute/cti", "name/pascal", "color/hex8"],
+      transforms: ["attribute/cti", "name/pascal", "color/hex"],
       buildPath,
       prefix,
       files: [
