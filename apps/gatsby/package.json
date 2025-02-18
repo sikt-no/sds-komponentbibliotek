@@ -5,7 +5,7 @@
   "scripts": {
     "develop": "gatsby develop --open",
     "start": "gatsby develop",
-    "build:prod": "gatsby build",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"
