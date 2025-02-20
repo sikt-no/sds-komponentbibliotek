@@ -4,6 +4,7 @@ import {
   HTMLAttributes,
   MouseEvent,
   ReactNode,
+  useCallback,
   useId,
   useRef,
   useState,
@@ -36,17 +37,17 @@ export const Popover = ({
   const popoverAttr = { popover };
 
   // TODO: Replace with https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor when good browser support
-  const setPopoverStylePosition = () => {
+  const setPopoverStylePosition = useCallback(() => {
     if (buttonRef.current) {
       const bounding = buttonRef.current.getBoundingClientRect();
       setTop(bounding.top + bounding.height + window.scrollY);
       setLeft(bounding.left);
     }
-  };
+  }, []);
 
-  if (anchor) {
-    useWindowResize(setPopoverStylePosition, { throttleTime: 10 });
-  }
+  useWindowResize(anchor ? setPopoverStylePosition : undefined, {
+    throttleTime: 10,
+  });
 
   return (
     <>

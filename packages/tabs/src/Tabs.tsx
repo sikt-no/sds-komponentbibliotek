@@ -50,7 +50,7 @@ export const Tabs = ({
     if (onChange && previousIndex !== selectedIndex) {
       onChange(selectedIndex);
     }
-  }, [onChange, selectedIndex]);
+  }, [onChange, previousIndex, selectedIndex]);
 
   const arrayChildren = Children.toArray(children);
   const count = arrayChildren.length - 1;

@@ -45,7 +45,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
 
     const context = useMemo(
       () => ({ name: name ?? id, error: Boolean(errorText) }),
-      [name, errorText],
+      [name, id, errorText],
     );
 
     return (

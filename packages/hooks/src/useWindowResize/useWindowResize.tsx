@@ -5,30 +5,35 @@ export interface useWindowResizeOptions {
 }
 
 export const useWindowResize = (
-  callback: () => void,
+  callback: (() => void) | undefined,
   options?: useWindowResizeOptions,
 ) => {
   const { throttleTime = 200 } = options ?? {};
 
   useEffect(() => {
     let throttleTimeout: number;
+    let handleResize: (() => void) | undefined;
 
-    const handleResize = () => {
-      if (throttleTimeout) {
-        clearTimeout(throttleTimeout);
-      }
-      throttleTimeout = window.setTimeout(() => {
-        callback();
-      }, throttleTime);
-    };
+    if (callback) {
+      handleResize = () => {
+        if (throttleTimeout) {
+          clearTimeout(throttleTimeout);
+        }
+        throttleTimeout = window.setTimeout(() => {
+          callback();
+        }, throttleTime);
+      };
 
-    window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResize);
+    }
 
     return () => {
       if (throttleTimeout) {
         clearTimeout(throttleTimeout);
       }
-      window.removeEventListener("resize", handleResize);
+      if (handleResize) {
+        window.removeEventListener("resize", handleResize);
+      }
     };
   }, [callback, throttleTime]);
 };
