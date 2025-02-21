@@ -26,6 +26,7 @@ export const Badge = ({
         `sds-badge--visibility-${visibility}`,
         className,
       )}
+      data-color-scheme={variant === "warning" && "light"}
       {...rest}
     >
       {icon && <span className="sds-badge__icon">{icon}</span>}
