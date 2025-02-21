@@ -59,7 +59,10 @@ const Message = ({
             className,
           )}
         >
-          <span className="sds-message__icon">
+          <span
+            className="sds-message__icon"
+            data-color-scheme={variant === "warning" && "light"}
+          >
             {variant === "info" && <InfoIcon />}
             {variant === "warning" && <AlertIcon />}
             {variant === "success" && <SuccessIcon />}
