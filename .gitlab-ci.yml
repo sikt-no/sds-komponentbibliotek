@@ -272,8 +272,6 @@ storybook:
 gatsby:
   stage: build
   extends: .npm_cache
-  variables:
-    GATSBY_TELEMETRY_DISABLED: 1
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
