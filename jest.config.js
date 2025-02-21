@@ -6,7 +6,7 @@ module.exports = {
     "/node_modules/",
     "/build/",
     "/dist/",
-    ".figma.tsx",
+    "/figma/*",
     ".stories.tsx",
   ],
   coverageDirectory: "./coverage",

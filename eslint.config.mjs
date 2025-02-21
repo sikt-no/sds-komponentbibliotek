@@ -17,6 +17,7 @@ export default [
       "docs/tutorial/**/*",
       "turbo/generators/**/*",
       "apps/gatsby",
+      "packages/**/figma/*",
     ],
   },
   ...sdsConfig,

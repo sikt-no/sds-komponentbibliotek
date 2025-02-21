@@ -446,6 +446,7 @@ publish-figma:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
     - npx figma connect publish --token ${FIGMA_TOKEN}
+    - npx figma connect publish --token ${FIGMA_TOKEN} --config figma.html.config.json
   needs:
     - install
   rules:
