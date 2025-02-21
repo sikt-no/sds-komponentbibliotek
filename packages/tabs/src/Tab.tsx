@@ -107,15 +107,10 @@ export const Tab = ({
       {children}
       {badge && (
         <span className="sds-tabs__tab-badge">
-          {isSelected
-            ? isValidElement(badge) &&
-              cloneElement(
-                badge as ReactElement<PropsWithChildren<BadgeProps>>,
-                {
-                  visibility: "strong",
-                },
-              )
-            : badge}
+          {isValidElement(badge) &&
+            cloneElement(badge as ReactElement<PropsWithChildren<BadgeProps>>, {
+              visibility: "strong",
+            })}
         </span>
       )}
     </button>
