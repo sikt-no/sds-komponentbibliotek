@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.0.3...@sikt/sds-tabs@3.0.4) (2025-02-24)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core@4.2.1 ([936180f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/936180f14a710552f5045cd7a4eba2bc76c383a3))
+- make required props non nullable ([9b26a28](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9b26a28bfdc7af1a8f1a0d8350a028240c350669))
+- **tab:** badge visibility set to always strong ([518b91c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/518b91cef6c1aeba016b509968f42ecc776da45e))
+
 ## [3.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.0.2...@sikt/sds-tabs@3.0.3) (2024-12-09)
 
 ### Bug Fixes
