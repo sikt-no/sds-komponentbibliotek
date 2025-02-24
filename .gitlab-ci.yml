@@ -454,4 +454,6 @@ publish-figma:
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       changes:
-        - packages/**/*.figma.tsx
+        - packages/**/figma/*.figma.tsx
+        - packages/**/figma/*.react.tsx
+        - packages/**/figma/*.html.ts
