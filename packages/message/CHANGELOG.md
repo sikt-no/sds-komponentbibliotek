@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@0.1.1...@sikt/sds-message@1.0.0) (2025-02-24)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core@4.2.1 ([936180f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/936180f14a710552f5045cd7a4eba2bc76c383a3))
+- **message:** variant warning always in light mode ([374a1bb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/374a1bb46bce1fcab4d515bc9112bbdbf5ab00c0))
+
 ## [0.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@0.1.0...@sikt/sds-message@0.1.1) (2025-01-20)
 
 ### Bug Fixes
