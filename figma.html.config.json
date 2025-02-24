@@ -1,6 +1,7 @@
 {
   "codeConnect": {
     "parser": "html",
-    "label": "HTML"
+    "label": "HTML",
+    "include": ["/packages/*/figma/*.ts"]
   }
 }
