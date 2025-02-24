@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@2.2.0...@sikt/sds-tokens@3.0.0) (2025-02-24)
+
+### ⚠ BREAKING CHANGES
+
+- **tokens:** change color tokens
+- **tokens:** remove scss tokens
+
+### Features
+
+- **tokens:** change color tokens ([a6aad76](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a6aad76d9424c52924036141c5130f44826cef45))
+- **tokens:** make css color scheme dark mode opt out ([f95abca](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f95abcabb4ec203cd67a08509b09ae66960f4a2b))
+- **tokens:** remove scss tokens ([f89c692](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f89c69274d039a6197f599ef6a9979766d454031))
+
+### Bug Fixes
+
+- **tokens:** transform color tokens to hex8 only when needed ([de44ac2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/de44ac2c06511539813c39f5a0916820469e221b))
+
 ## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@2.1.0...@sikt/sds-tokens@2.2.0) (2024-12-12)
 
 ### Features
