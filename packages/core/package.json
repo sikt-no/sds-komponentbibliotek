@@ -35,7 +35,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@sikt/sds-tokens": "^2.2.0",
+    "@sikt/sds-tokens": "^3.0.0",
     "sanitize.css": "^13.0.0"
   },
   "peerDependencies": {
