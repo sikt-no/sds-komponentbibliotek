@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-badge@2.0.2...@sikt/sds-badge@2.0.3) (2025-02-24)
+
+### Bug Fixes
+
+- **badge:** variant warning always in light mode ([c9ea083](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c9ea083ca5350418e2b1ca83d297ced875f0116d))
+- **deps:** update @sikt/sds-core@4.2.1 ([936180f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/936180f14a710552f5045cd7a4eba2bc76c383a3))
+
 ## [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-badge@2.0.1...@sikt/sds-badge@2.0.2) (2024-11-19)
 
 ### Bug Fixes
