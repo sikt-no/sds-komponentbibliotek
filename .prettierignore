@@ -1,8 +1,8 @@
 coverage
 build
 dist
-storybook-static
-gatsby/public
+apps/storybook/storybook-static
+apps/gatsby/public
 .cache
 gatsby-types.d.ts
 turbo/generators/template

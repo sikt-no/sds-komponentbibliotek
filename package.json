@@ -28,7 +28,7 @@
     "clean:gatsby": "npm run clean --workspace=apps/gatsby",
     "clean:storybook": "rimraf apps/storybook/storybook-static && rimraf apps/storybook/node_modules/.cache",
     "dev": "run-p gatsby storybook",
-    "format": "prettier --write . --ignore-unknown",
+    "format": "prettier . --write --ignore-unknown",
     "gatsby": "npm run develop --workspace=apps/gatsby",
     "gatsby:build": "npm run build --workspace=apps/gatsby",
     "init": "turbo gen init-package",
