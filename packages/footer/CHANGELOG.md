@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-footer@2.0.1...@sikt/sds-footer@2.1.0) (2025-02-24)
+
+### Features
+
+- **footer:** change background color to new token system ([e0bfcd3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e0bfcd362c06d7eb5433aa021e811d01b40a6879))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core@4.2.1 ([a95d544](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a95d544bc87f6e0fa98bb2fbac1a2f57cb6b40bf))
+
 ## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-footer@2.0.0...@sikt/sds-footer@2.0.1) (2024-11-20)
 
 ### Bug Fixes
