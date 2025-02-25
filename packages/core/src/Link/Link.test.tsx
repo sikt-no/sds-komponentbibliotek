@@ -35,6 +35,18 @@ describe("Link", () => {
       );
     });
 
+    it("should have navigation modifier", async () => {
+      render(
+        <Link href="#" isNavigation data-testid="test">
+          Foo
+        </Link>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-typography-link sds-typography-link--navigation",
+      );
+    });
+
     it("should have external modifier", async () => {
       render(
         <Link href="#" isExternal data-testid="test">

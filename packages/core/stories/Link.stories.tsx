@@ -20,7 +20,7 @@ export const Default: Story = {
 export const Navigation: Story = {
   args: {
     ...Default.args,
-    className: "sds-typography-link--navigation",
+    isNavigation: true,
   },
 };
 
