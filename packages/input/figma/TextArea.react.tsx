@@ -1,25 +1,25 @@
 import figma from "@figma/code-connect";
-import { Select } from "@sikt/sds-select";
+import { TextArea } from "@sikt/sds-input";
 
 figma.connect(
-  Select,
-  "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=8173-29955",
+  TextArea,
+  "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=8173-25914&",
   {
     props: {
-      label: figma.boolean("Label", {
+      label: figma.boolean("Show label", {
         true: figma.string("Label text"),
         false: undefined,
       }),
-      value: figma.string("Value"),
-      helpText: figma.boolean("Helper", {
+      value: figma.string("Input value"),
+      helpText: figma.boolean("Show helper", {
         true: figma.string("Helper text"),
         false: undefined,
       }),
     },
     example: ({ label, value, helpText }) => (
-      <Select
+      <TextArea
         label={label}
-        options={[{ label: value, value: value }]}
+        value={value}
         helpText={helpText}
         onChange={() => {}}
       />
@@ -27,7 +27,7 @@ figma.connect(
     links: [
       {
         name: "Storybook",
-        url: "https://designsystem.sikt.no/storybook/?path=/docs/components-select-readme--docs",
+        url: "https://designsystem.sikt.no/storybook/?path=/docs/components-input-textarea--docs",
       },
     ],
   },
