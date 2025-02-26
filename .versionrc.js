@@ -13,7 +13,7 @@ module.exports = {
   releaseCommitMessageFormat: `chore(${packageName}): release {{currentTag}}`,
   scripts: {
     precommit:
-      "npm install --silent --ignore-scripts && npm run format -- --log-level silent && git add .",
+      "npm install --silent --ignore-scripts && npm run format --silent -- --log-level silent && git add .",
   },
   "tag-prefix": `@sikt/sds-${packageName}@`,
 };

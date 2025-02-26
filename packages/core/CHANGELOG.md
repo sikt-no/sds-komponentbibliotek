@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.2.1...@sikt/sds-core@4.3.0) (2025-02-26)
+
+### Features
+
+- **link:** add prop for navigation type link ([8e8241f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8e8241fc3eb8dc3791ffec691ad9cfc478ddc3c9))
+
 ## [4.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.2.0...@sikt/sds-core@4.2.1) (2025-02-24)
 
 ### Bug Fixes
