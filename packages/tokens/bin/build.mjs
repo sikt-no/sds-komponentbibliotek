@@ -1,9 +1,11 @@
 import StyleDictionary from "style-dictionary";
+import { fileHeader } from "style-dictionary/utils";
 import Color from "tinycolor2";
 
 const prefix = "sds";
 const sourcePath = "src/";
 const buildPath = "dist/";
+const defaultFileHeader = await fileHeader({});
 
 const filter = (token) => !token.attributes?.category?.startsWith("_");
 const colorFilter = (token) =>
@@ -55,7 +57,9 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerFormat({
   name: "format/color/light-dark",
   format: ({ dictionary, options }) => {
-    return `:root {
+    return (
+      defaultFileHeader +
+      `:root {
   color-scheme: light dark;
 
 ${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.value};`).join("\n")}
@@ -67,7 +71,8 @@ ${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.value};`).join("\
 
 [data-color-scheme="dark"] {
   color-scheme: only dark;
-}`;
+}`
+    );
   },
 });
 
@@ -79,12 +84,15 @@ ${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.value};`).join("\
 StyleDictionary.registerFormat({
   name: "format/custom-media",
   format: ({ dictionary }) => {
-    return dictionary.allTokens
-      .map((prop) => {
-        const { name, value } = prop;
-        return `@custom-media --${name} (width >= ${value});`;
-      })
-      .join("\n");
+    return (
+      defaultFileHeader +
+      dictionary.allTokens
+        .map((prop) => {
+          const { name, value } = prop;
+          return `@custom-media --${name} (width >= ${value});`;
+        })
+        .join("\n")
+    );
   },
 });
 
@@ -95,16 +103,19 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: "format/at-media",
   format: ({ dictionary, options }) => {
-    return `@media (min-width: ${
-      dictionary.tokens.base.breakpoint[options.atMedia].value
-    }) {
+    return (
+      defaultFileHeader +
+      `@media (min-width: ${
+        dictionary.tokens.base.breakpoint[options.atMedia].value
+      }) {
   :root {
 ${dictionary.allTokens
   .filter((prop) => !prop.path.includes("base"))
   .map((prop) => `  --${prop.name}: ${prop.value};`)
   .join("\n")}
   }
-}`;
+}`
+    );
   },
 });
 
