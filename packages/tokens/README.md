@@ -28,6 +28,25 @@ import * as tokens from "@sikt/sds-tokens";
 </Button>;
 ```
 
+### Tailwind CSS
+
+This is a v4 config with peer dependency on `tailwindcss@^4.0.0`. It disables Tailwind preflight and rely on CSS resets and variables from `@sikt/sds-core`.
+
+```css
+@import url("@sikt/sds-core");
+@import url("@sikt/sds-tokens/dist/tailwind/config.css");
+```
+
+```html
+<button class="text-brand-primary-strong">Hello, World!</button>
+```
+
+#### Caveats
+
+Theme utilities where we have our own tokens have been disabled in the Tailwind config with `--property-*: initial;`.
+
+Tailwind spacing (padding/margin) is scale constructed from a base value. This has been disabled and instead you should use our CSS custom properties `p-(--sds-space-padding-small)`.
+
 ## Design Tokens
 
 Colors are available in light (default) and dark scheme.  

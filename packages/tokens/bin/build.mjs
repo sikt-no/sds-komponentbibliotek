@@ -119,6 +119,74 @@ ${dictionary.allTokens
   },
 });
 
+/**
+ * Custom Format: Tailwind @theme
+ * This adds tokens to @theme.
+ */
+StyleDictionary.registerFormat({
+  name: "format/tailwind/config",
+  format: ({ dictionary, options }) => {
+    const colorTokens = dictionary.allTokens.filter(
+      (prop) => prop.attributes.category === "color",
+    );
+    const typographyTokens = dictionary.allTokens.filter(
+      (prop) => prop.attributes.category === "typography",
+    );
+    const fontSizeTokens = typographyTokens.filter(
+      (prop) =>
+        prop.attributes.category === "typography" &&
+        prop.attributes.item.includes("fontsize"),
+    );
+    const lineHeightTokens = typographyTokens.filter(
+      (prop) =>
+        prop.attributes.category === "typography" &&
+        prop.attributes.item.includes("lineheight"),
+    );
+    const fontWeightTokens = typographyTokens.filter(
+      (prop) => prop.attributes.type === "weight",
+    );
+    const breakpointTokens = dictionary.allTokens.filter(
+      (prop) => prop.attributes.type === "breakpoint",
+    );
+    const borderRadiusTokens = dictionary.allTokens.filter(
+      (prop) =>
+        prop.attributes.type === "border" && prop.attributes.item === "radius",
+    );
+
+    return (
+      defaultFileHeader +
+      `@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme inline {
+  --color-*: initial;
+${colorTokens.map((prop) => `  --${prop.name.replace(`${prefix}-`, "")}: var(--${prop.name});`).join("\n")}
+
+  --font-*: initial;
+  --font-sans: Haffer, Arial, sans-serif;
+  --font-mono: monospace;
+
+  --text-*: initial;
+${fontSizeTokens.map((prop) => `  --text-${prop.attributes.type}-${prop.attributes.item.replace("fontsize-", "")}: var(--${prop.name});`).join("\n")}
+${lineHeightTokens.map((prop) => `  --text-${prop.attributes.type}-${prop.attributes.item.replace("lineheight-", "")}--line-height: var(--${prop.name});`).join("\n")}
+
+  --font-weight-*: initial;
+${fontWeightTokens.map((prop) => `  --font-weight-${prop.attributes.item}: var(--${prop.name});`).join("\n")}
+
+  --breakpoint-*: initial;
+${breakpointTokens.map((prop) => `  --breakpoint-${prop.attributes.item}: ${prop.value};`).join("\n")}
+
+  --spacing-*: initial;
+
+  --radius-*: initial;
+${borderRadiusTokens.map((prop) => `  --radius-${prop.attributes.subitem}: var(--${prop.name});`).join("\n")}
+}`
+    );
+  },
+});
+
 const dictionaryTokens = new StyleDictionary({
   source: [`${sourcePath}**/!(*.tablet|*.desktop).{json,js,mjs}`],
   platforms: {
@@ -159,6 +227,23 @@ const dictionaryTokens = new StyleDictionary({
           format: "typescript/module-declarations",
           destination: "js/tokens.d.ts",
           filter,
+        },
+      ],
+    },
+    tailwind: {
+      transforms: [
+        "attribute/cti",
+        "name/kebab",
+        "time/seconds",
+        "html/icon",
+        "color/hex",
+      ],
+      buildPath,
+      prefix,
+      files: [
+        {
+          format: "format/tailwind/config",
+          destination: "tailwind/config.css",
         },
       ],
     },
