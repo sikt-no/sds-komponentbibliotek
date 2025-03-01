@@ -98,6 +98,10 @@
     {
       "matchPackagePatterns": ["^@sikt"],
       "groupName": "sikt"
+    },
+    {
+      "matchPackagePatterns": ["^platon"],
+      "groupName": "platon"
     }
   ]
 }
