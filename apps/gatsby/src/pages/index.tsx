@@ -22,6 +22,68 @@ const IndexPage: React.FC<PageProps> = () => {
     setShowEasterEggs(true);
   });
 
+  const team = [
+    [
+      { name: "Sigve", role: "Design", team: "Designsystem" },
+      { name: "Vegar", role: "Teknologi", team: "Designsystem" },
+      { name: "Kim", role: "Design", team: "Designsystem" },
+      { name: "Eivind", role: "Inkludering", team: "Designsystem" },
+      { name: "Kristoffer", role: "Teknologi", team: "Designsystem" },
+      ...(showEasterEggs
+        ? [
+            {
+              name: "Andreas",
+              role: "Sjef",
+              team: "Designsystem",
+            },
+          ]
+        : []),
+    ],
+  ];
+
+  const contributors = [
+    [
+      { name: "Hanne", role: "Design", team: "Designsystem" },
+      { name: "Kine", role: "Teknologi", team: "Designsystem" },
+      { name: "Sondre E.", role: "Design", team: "Designsystem" },
+      { name: "Petter", role: "Design", team: "Designsystem" },
+    ],
+    [
+      {
+        name: "Kjartan",
+        role: "Teknologi",
+        team: "Min utdanning",
+      },
+      {
+        name: "Sondre S.",
+        role: "Teknologi",
+        team: "Min utdanning",
+      },
+      { name: "Erik", role: "Teknologi", team: "Min utdanning" },
+      { name: "Vegard", role: "Teknologi", team: "Min utdanning" },
+      { name: "Hilde", role: "Design", team: "Min utdanning" },
+      { name: "Jakob", role: "Teknologi", team: "Min utdanning" },
+    ],
+    [
+      { name: "Sigurd", role: "Teknologi", team: "Kudaf" },
+      { name: "Rolf Anders", role: "Design", team: "Kudaf" },
+      { name: "Glaysa", role: "Teknologi", team: "Kudaf" },
+    ],
+    [
+      { name: "Mats", role: "Teknologi", team: "FS Admin" },
+      { name: "Marius", role: "Teknologi", team: "FS Admin" },
+      { name: "Patrick", role: "Teknologi", team: "FS Admin" },
+      { name: "An", role: "Teknologi", team: "FS Admin" },
+    ],
+    [
+      { name: "Christian", role: "Design", team: "FS Studentportal" },
+      { name: "Lasse", role: "Teknologi", team: "FS Studentportal" },
+    ],
+    [{ name: "Sondre L.", role: "Teknologi", team: "FS Kjerne" }],
+    [{ name: "John-Magne", role: "Teknologi", team: "Feide Kundeportal" }],
+    [{ name: "Deg", role: "Din rolle", team: "Ditt team" }],
+  ];
+
   const handleLaunchClick = () => {
     setDisableButton(true);
     const scalar = 2;
@@ -159,8 +221,17 @@ const IndexPage: React.FC<PageProps> = () => {
             </ButtonLink>
           </ButtonGroup>
         </div>
-        <div>
-          <Contributors showEasterEggs={showEasterEggs} />
+        <div className={style.index__sectionContent}>
+          <Contributors
+            heading="Team"
+            contributors={team}
+            showEasterEggs={showEasterEggs}
+          />
+          <Contributors
+            heading="Bidrag fra"
+            contributors={contributors}
+            showEasterEggs={showEasterEggs}
+          />
           {showEasterEggs && (
             <ButtonGroup variant="right">
               <Button
@@ -169,7 +240,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 disabled={disableButton}
                 icon="🎈"
               >
-                Feire designsystemet 1 år
+                Feire designsystemet 2 år
               </Button>
             </ButtonGroup>
           )}
