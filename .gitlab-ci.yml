@@ -3,9 +3,9 @@ default:
   interruptible: true
 
 include:
-  - component: gitlab.sikt.no/platon/ci-components/docker/docker@1.0.2
+  - component: gitlab.sikt.no/platon/ci-components/docker/docker@1.0.3
   - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@1.0.0
-  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@1.2.0
+  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@1.3.0
 
 variables:
   KUBE_PROD_DOMAIN: designsystem.sikt.no
