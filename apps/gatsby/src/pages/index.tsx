@@ -227,11 +227,6 @@ const IndexPage: React.FC<PageProps> = () => {
             contributors={team}
             showEasterEggs={showEasterEggs}
           />
-          <Contributors
-            heading="Bidrag fra"
-            contributors={contributors}
-            showEasterEggs={showEasterEggs}
-          />
           {showEasterEggs && (
             <ButtonGroup variant="right">
               <Button
@@ -244,6 +239,11 @@ const IndexPage: React.FC<PageProps> = () => {
               </Button>
             </ButtonGroup>
           )}
+          <Contributors
+            heading="Bidrag fra"
+            contributors={contributors}
+            showEasterEggs={showEasterEggs}
+          />
         </div>
       </section>
     </>
