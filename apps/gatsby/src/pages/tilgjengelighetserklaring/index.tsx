@@ -17,7 +17,7 @@ const TilgjengelighetserklaringPage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero
-        breadcrumbs={[{ title: "Designsystemet", to: "/" }]}
+        breadcrumbs={[{ title: "Designsystem", to: "/" }]}
         heading={<>Tilgjengelighets&shy;erklæring</>}
       />
       <section

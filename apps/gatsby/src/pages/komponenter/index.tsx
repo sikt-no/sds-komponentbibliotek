@@ -17,7 +17,7 @@ const KomponenterPage: React.FC<PageProps<Queries.PageTemplateQuery>> = ({
   return (
     <>
       <Hero
-        breadcrumbs={[{ title: "Designsystemet", to: "/" }]}
+        breadcrumbs={[{ title: "Designsystem", to: "/" }]}
         heading={<>Komponenter</>}
       />
 

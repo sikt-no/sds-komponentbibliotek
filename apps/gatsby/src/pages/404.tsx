@@ -7,7 +7,7 @@ import { NavigateToPreviousAltIcon } from "@sikt/sds-icons";
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <Hero
-      breadcrumbs={[{ title: "Designsystemet", to: "/" }]}
+      breadcrumbs={[{ title: "Designsystem", to: "/" }]}
       heading={<>Siden finnes ikke</>}
       leadParagraph={
         <ButtonLink

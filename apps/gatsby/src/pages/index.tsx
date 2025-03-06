@@ -111,7 +111,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero
-        heading={<>Design&shy;systemet</>}
+        heading={<>Design&shy;system</>}
         leadParagraph="Velkommen til Sikts designsystem. Dette er en sammensetning av
             komponenter og retningslinjer du kan bruke når du designer og
             utvikler digitale løsninger og tjenester."

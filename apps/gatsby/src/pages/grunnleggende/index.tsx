@@ -22,7 +22,7 @@ const GrunnleggendePage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero
-        breadcrumbs={[{ title: "Designsystemet", to: "/" }]}
+        breadcrumbs={[{ title: "Designsystem", to: "/" }]}
         heading={<>Grunn&shy;leggende</>}
       />
 

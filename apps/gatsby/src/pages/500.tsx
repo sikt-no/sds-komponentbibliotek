@@ -7,7 +7,7 @@ import { NavigateToPreviousAltIcon } from "@sikt/sds-icons";
 const ErrorPage: React.FC<PageProps> = () => {
   return (
     <Hero
-      breadcrumbs={[{ title: "Designsystemet", to: "/" }]}
+      breadcrumbs={[{ title: "Designsystem", to: "/" }]}
       heading={<>En feil har skjedd</>}
       leadParagraph={
         <ButtonLink

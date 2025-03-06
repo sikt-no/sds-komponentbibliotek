@@ -12,7 +12,7 @@ const PersonvernPage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero
-        breadcrumbs={[{ title: "Designsystemet", to: "/" }]}
+        breadcrumbs={[{ title: "Designsystem", to: "/" }]}
         heading={<>Personvern og informasjons&shy;kapsler</>}
       />
       <section

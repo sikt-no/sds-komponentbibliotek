@@ -65,7 +65,7 @@ export default function PageTemplate({
     <>
       <Hero
         breadcrumbs={[
-          { title: "Designsystemet", to: "/" },
+          { title: "Designsystem", to: "/" },
           { title: "Komponenter", to: "/komponenter/" },
         ]}
         heading={<>{frontmatter?.title}</>}
