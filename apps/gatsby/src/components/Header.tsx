@@ -9,7 +9,29 @@ import * as style from "./header.module.css";
 
 const Header = ({ currentHref }: { currentHref: string }) => {
   return (
-    <SdsHeader logoText="designsystem.sikt.no" className={style.header}>
+    <SdsHeader
+      className={style.header}
+      topSlot={
+        <nav
+          className={style.top}
+          aria-label="Navigasjon, tekniskt dokumentasjon"
+        >
+          <ul className={style.top__list} data-color-scheme="dark">
+            <li>
+              <GatsbyLink className="sds-typography-link" to="/">
+                Designsystem
+              </GatsbyLink>
+            </li>
+            <li>
+              <Link href="https://platon.sikt.no/">Platon</Link>
+            </li>
+            <li>
+              <Link href="https://docs.feide.no/">Feide</Link>
+            </li>
+          </ul>
+        </nav>
+      }
+    >
       <HeaderCollapsibleMenu aria-label="Navigasjon">
         <HeaderNav>
           <GatsbyLink
