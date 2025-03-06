@@ -25,7 +25,6 @@ const IndexPage: React.FC<PageProps> = () => {
   const team = [
     [
       { name: "Sigve", role: "Design", team: "Designsystem" },
-      { name: "Vegar", role: "Teknologi", team: "Designsystem" },
       { name: "Kim", role: "Design", team: "Designsystem" },
       { name: "Eivind", role: "Inkludering", team: "Designsystem" },
       { name: "Kristoffer", role: "Teknologi", team: "Designsystem" },
@@ -43,6 +42,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   const contributors = [
     [
+      { name: "Vegar", role: "Teknologi", team: "Designsystem" },
       { name: "Hanne", role: "Design", team: "Designsystem" },
       { name: "Kine", role: "Teknologi", team: "Designsystem" },
       { name: "Sondre E.", role: "Design", team: "Designsystem" },
