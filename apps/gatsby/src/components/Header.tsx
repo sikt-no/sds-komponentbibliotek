@@ -18,7 +18,11 @@ const Header = ({ currentHref }: { currentHref: string }) => {
         >
           <ul className={style.top__list} data-color-scheme="dark">
             <li>
-              <GatsbyLink className="sds-typography-link" to="/">
+              <GatsbyLink
+                className="sds-typography-link"
+                to="/"
+                aria-current={currentHref === "/" && "page"}
+              >
                 Designsystem
               </GatsbyLink>
             </li>
