@@ -1,7 +1,12 @@
 import { Link, ScreenReaderOnly } from "@sikt/sds-core";
 import { Logo } from "@sikt/sds-logo";
 import { clsx } from "clsx/lite";
-import { AnchorHTMLAttributes, HTMLAttributes, ReactElement } from "react";
+import {
+  AnchorHTMLAttributes,
+  HTMLAttributes,
+  ReactElement,
+  ReactNode,
+} from "react";
 import "./header.pcss";
 
 export interface HeaderProps extends HTMLAttributes<HTMLElement> {
@@ -9,6 +14,7 @@ export interface HeaderProps extends HTMLAttributes<HTMLElement> {
   children?:
     | ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>
     | ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>[];
+  topSlot?: ReactNode;
   skipLinkId?: string;
   skipLinkText?: string;
   logoHref?: string;
@@ -17,6 +23,7 @@ export interface HeaderProps extends HTMLAttributes<HTMLElement> {
 
 export const Header = ({
   children,
+  topSlot,
   className,
   skipLinkId = "main",
   skipLinkText = "Gå til innhold",
@@ -37,6 +44,7 @@ export const Header = ({
       <ScreenReaderOnly isFocusable className="sds-header__skip-link">
         <Link href={`#${skipLinkId}`}>{skipLinkText}</Link>
       </ScreenReaderOnly>
+      {topSlot}
       <header className={clsx("sds-header", className)} {...rest}>
         <div className="sds-header__content">
           {logoHref ? (
