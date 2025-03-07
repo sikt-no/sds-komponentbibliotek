@@ -5,11 +5,18 @@ import faviconSvg from "@sikt/sds-logo/Favicon-Light.svg";
 import * as tokens from "@sikt/sds-tokens";
 import * as colorDark from "@sikt/sds-tokens/dist/js/color.dark.js";
 
-export const Head: HeadFC = () => {
+export const Head: HeadFC = ({ location }) => {
+  const pathname = location.pathname;
+  let title = "Sikt designsystem";
+  if (pathname.startsWith("/grunnleggende/")) {
+    title = `Grunnleggende | ${title}`;
+  } else if (pathname.startsWith("/komponenter/")) {
+    title = `Komponenter | ${title}`;
+  }
   return (
     <>
       <html lang="nb" />
-      <title>Sikt designsystem</title>
+      <title>{title}</title>
       <link rel="icon" href={favicon32} sizes="any" />
       <link rel="icon" href={faviconSvg} type="image/svg+xml" />
       <link rel="apple-touch-icon" href={favicon180} />
