@@ -1,0 +1,12 @@
+import { addons } from "@storybook/manager-api";
+import { create } from "@storybook/theming";
+
+addons.setConfig({
+  theme: create({
+    fontBase: "Haffer, Arial, sans-serif",
+    base: "light",
+  }),
+  sidebar: {
+    showRoots: true,
+  },
+});
