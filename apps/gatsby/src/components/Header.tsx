@@ -13,10 +13,10 @@ const Header = ({ currentHref }: { currentHref: string }) => {
       className={style.header}
       topSlot={
         <nav
-          className={style.top}
+          className={style.topNav}
           aria-label="Navigasjon, tekniskt dokumentasjon"
         >
-          <ul className={style.top__list} data-color-scheme="dark">
+          <ul className={style.topNav__list} data-color-scheme="dark">
             <li>
               <GatsbyLink
                 className="sds-typography-link"

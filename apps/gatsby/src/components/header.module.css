@@ -1,6 +1,6 @@
 @import url("@sikt/sds-tokens/dist/css/custom-media.css");
 
-.top {
+.top-nav {
   --sikt-top-header-height: 28px;
 
   background-color: var(--sds-color-brand-accent-strong);
