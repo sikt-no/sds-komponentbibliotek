@@ -6,7 +6,4 @@ addons.setConfig({
     fontBase: "Haffer, Arial, sans-serif",
     base: "light",
   }),
-  sidebar: {
-    showRoots: true,
-  },
 });
