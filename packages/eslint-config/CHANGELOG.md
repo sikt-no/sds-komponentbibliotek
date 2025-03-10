@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-eslint-config@1.1.1...@sikt/sds-eslint-config@2.0.0) (2025-03-10)
+
+### ⚠ BREAKING CHANGES
+
+- **eslint-config:** convert eslint config to v9 and flat config
+
+### Features
+
+- **eslint-config:** convert eslint config to v9 and flat config ([c3deb76](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c3deb76dc5cb5fd6d15442cff39545a9096adfd2))
+- **eslint-config:** include eslint-plugin-react-hooks ([dcd074c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/dcd074c45c97aff924a14bca1acaeea581612601))
+
+### Bug Fixes
+
+- **deps:** [@typescript-eslint](https://gitlab.sikt.no/typescript-eslint) ([b46c242](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b46c2427e6dbfaa80f7c08a788016c3a269082a3))
+- **deps:** update dependency eslint-config-prettier to v10 ([3c48495](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3c48495a7581da5c5cf82a39ec6f05e1d05e8c1c))
+- **deps:** update dependency eslint-plugin-jest to ^28.10.0 ([10c8320](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/10c8320a18c477ca894cef3748666e72037aa994))
+- **deps:** update dependency eslint-plugin-react to ^7.37.4 ([2de427e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2de427e8c6f88093d94985f43952836274625a22))
+- **deps:** update dependency globals to v16 ([e922ff2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e922ff2180710904b5dff2daad8566141980aab4))
+- **deps:** update dependency eslint to ^8.24.0 ([6c2360e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6c2360e6068f882297162e3c889c107a2ea22946))
+- **deps:** update dependency eslint-plugin-jest to 28.11.0 ([a8b3d9c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a8b3d9c51987de1e0b7b779f267b00c8f5100617))
+- **deps:** use recommended-latest preset available in eslint-plugin-react-hooks 5.2.0 ([4641936](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/46419360e64b43a57904f0dbab7f664134ec8504))
+
 ## [1.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-eslint-config@1.1.0...@sikt/sds-eslint-config@1.1.1) (2024-12-14)
 
 ### Bug Fixes
