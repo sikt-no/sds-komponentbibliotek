@@ -15,15 +15,14 @@ export default tseslint.config([
   js.configs.recommended,
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat["jsx-runtime"],
-  // TODO: Due to a bug this config is missing, we currently include the contents of the config manually.
-  // reactHooks.configs["recommended-latest"],
+  reactHooks.configs["recommended-latest"],
   jsxA11y.flatConfigs.recommended,
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
   eslintPluginImportX.flatConfigs.typescript,
   eslintConfigPrettier,
   {
-    plugins: { "import-x": eslintPluginImportX, "react-hooks": reactHooks },
+    plugins: { "import-x": eslintPluginImportX },
 
     languageOptions: {
       globals: { ...globals.browser },
@@ -36,8 +35,6 @@ export default tseslint.config([
     settings: { react: { version: "detect" } },
 
     rules: {
-      ...reactHooks.configs.recommended.rules,
-
       "no-restricted-globals": [
         "error",
         ...restrictedGlobals.map((global) => ({
