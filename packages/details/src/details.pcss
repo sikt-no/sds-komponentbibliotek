@@ -85,7 +85,15 @@
 
   &__content {
     color: var(--sds-color-text-primary);
-    padding: var(--sds-space-padding-tiny) var(--details-indentation)
-      var(--sds-space-padding-medium);
+    height: 0;
+    overflow: hidden;
+    padding: var(--sds-space-padding-tiny) var(--details-indentation) 0;
+    transition: all var(--sds-effect-animation-duration-long)
+      var(--sds-effect-animation-easing-default);
+  }
+
+  &[open] &__content {
+    height: auto;
+    padding-bottom: var(--sds-space-padding-medium);
   }
 }
