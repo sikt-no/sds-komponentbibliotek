@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@1.0.0...@sikt/sds-message@1.1.0) (2025-03-10)
+
+### Features
+
+- **message:** alter dark color scheme to have border ([74aefc2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/74aefc28a1ac1325ffa6d9d300f54fd4b6963771))
+
 ## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@0.1.1...@sikt/sds-message@1.0.0) (2025-02-24)
 
 ### Bug Fixes
