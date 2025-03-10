@@ -82,8 +82,17 @@ export const Alert = (props: AlertProps) => (
   <Message role="alert" variant="critical" {...props} type="box" />
 );
 
-export const ApplicationStatus = (props: ApplicationStatusProps) => (
-  <Message role="status" variant="info" {...props} type="bar" />
+export const ApplicationStatus = ({
+  className,
+  ...props
+}: ApplicationStatusProps) => (
+  <Message
+    role="status"
+    variant="info"
+    {...props}
+    type="bar"
+    className={clsx("sds-message--application-status", className)}
+  />
 );
 
 export const ErrorSummary = (props: ErrorSummaryProps) => (
