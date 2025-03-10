@@ -71,7 +71,7 @@
 
       &:hover,
       &:focus-visible {
-        background-color: var(
+        --combobox-button-background-color: var(
           --sds-color-interaction-primary-transparent-highlight
         );
       }
@@ -163,6 +163,18 @@
       --combobox-button-background-color: var(
         --sds-color-interaction-danger-strong-pressed
       );
+    }
+
+    &-button {
+      &:hover,
+      &:focus {
+        --combobox-border-color: var(
+          --sds-color-interaction-danger-strong-highlight
+        );
+        --combobox-button-background-color: var(
+          --sds-color-interaction-danger-strong-highlight
+        );
+      }
     }
   }
 }
