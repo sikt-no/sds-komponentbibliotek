@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const Default = {
   args: {
     label: "Label",
-    placeholder: "Placeholder",
+    placeholder: "",
   },
 } satisfies Story;
 
@@ -50,7 +50,7 @@ export const WithError = {
 export const WithAriaLabelledby = {
   args: {
     "aria-labelledby": "rowTitle columnTitle",
-    placeholder: "Placeholder",
+    placeholder: "",
   },
   render: (args) => {
     return (

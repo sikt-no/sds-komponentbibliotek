@@ -13,12 +13,7 @@ import { TextInput } from "@sikt/sds-input";
 import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-input/dist/index.css";
 
-<TextInput
-  label="Label"
-  onChange={() => {}}
-  value={value}
-  placeholder="Placeholder"
-/>;
+<TextInput label="Label" onChange={() => {}} value={value} />;
 ```
 
 ### Input Component
@@ -54,15 +49,10 @@ Create custom markup:
 
 ```html
 <div class="sds-input">
-  <label className="sds-input__label" for="nameInput">Name</label>
-  <div className="sds-input__wrapper">
-    <input
-      className="sds-input__input"
-      id="nameInput"
-      type="text"
-      placeholder="Placeholder name"
-    />
+  <label class="sds-input__label" for="nameInput">Name</label>
+  <div class="sds-input__wrapper">
+    <input class="sds-input__input" id="nameInput" type="text" />
   </div>
-  <div className="sds-input__help-text">Enter your name</div>
+  <div class="sds-input__help-text">Enter your name</div>
 </div>
 ```

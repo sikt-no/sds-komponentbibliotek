@@ -14,7 +14,7 @@ type Story = StoryObj<InputProps>;
 export const Input: Story = {
   args: {
     label: "Label",
-    placeholder: "Placeholder",
+    placeholder: "",
   },
 };
 

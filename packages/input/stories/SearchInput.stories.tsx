@@ -43,7 +43,7 @@ export const Default: Story = {
   render: SearchInputWrapper,
   args: {
     label: "Label",
-    placeholder: "Placeholder",
+    placeholder: "",
   },
 };
 
