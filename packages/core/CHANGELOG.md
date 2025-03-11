@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.3.0...@sikt/sds-core@4.4.0) (2025-03-11)
+
+### Features
+
+- allow for css interpolate-size ([54ad01e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/54ad01ea6ee4d5ecb969a776b0af7b02c2d3db54))
+
 ## [4.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.2.1...@sikt/sds-core@4.3.0) (2025-02-26)
 
 ### Features
