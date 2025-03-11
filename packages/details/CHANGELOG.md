@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-details@1.0.2...@sikt/sds-details@1.1.0) (2025-03-11)
+
+### Features
+
+- animate open/close of details content ([904014f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/904014f5abd07a9dfa3f0277c3c15de4ba0d185e))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core to 4.4.0 ([955723a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/955723a400a0a880abc29872ee4b64295091356b))
+
 ## [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-details@1.0.1...@sikt/sds-details@1.0.2) (2024-11-20)
 
 ### Bug Fixes
