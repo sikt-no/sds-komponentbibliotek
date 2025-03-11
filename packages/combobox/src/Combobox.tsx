@@ -13,6 +13,7 @@ import {
   ListBoxItemProps,
   ListBoxSection,
   Popover,
+  PopoverProps,
 } from "react-aria-components";
 import "./combobox.pcss";
 
@@ -26,6 +27,7 @@ interface ComboboxBaseProps<T extends object>
   errorText?: string;
   helpText?: string;
   menuTrigger?: "focus" | "manual" | "input";
+  popoverProps?: PopoverProps;
 }
 
 export type ComboboxProps<T extends object> = ComboboxBaseProps<T> &
@@ -48,6 +50,7 @@ export function Combobox<T extends object>({
   label,
   "aria-labelledby": ariaLabelledBy,
   menuTrigger = "focus",
+  popoverProps,
   ...props
 }: ComboboxProps<T>) {
   const id = useId();
@@ -85,7 +88,7 @@ export function Combobox<T extends object>({
             <ExpandShowAltIcon />
           </Button>
         </div>
-        <Popover className="sds-combobox__popover">
+        <Popover className="sds-combobox__popover" {...popoverProps}>
           <ListBox className="sds-combobox__listbox">{children}</ListBox>
         </Popover>
       </AriaCombobox>
