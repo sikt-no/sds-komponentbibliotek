@@ -16,6 +16,7 @@ const config: StorybookConfig = {
     "../../../packages/*/stories/**/*.mdx",
     "../../../packages/*/stories/*.stories.@(js|jsx|ts|tsx)",
   ],
+  staticDirs: ["../static"],
   typescript: {
     reactDocgen: "react-docgen-typescript",
   },
