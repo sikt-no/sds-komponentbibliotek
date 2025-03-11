@@ -10,6 +10,8 @@ import {
   useState,
   useId,
   useEffect,
+  useImperativeHandle,
+  forwardRef,
 } from "react";
 import "./dialog.pcss";
 
@@ -53,124 +55,135 @@ export type DialogProps = DialogBaseProps &
       }
   );
 
-export const Dialog = ({
-  children,
-  className,
-  "aria-label": contentLabel,
-  closeButtonLabel,
-  closeButtonAriaLabel,
-  dismissable = true,
-  footer,
-  heading,
-  onClose,
-  open,
-  subheading,
-  ...rest
-}: DialogProps) => {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [isScrolling, setIsScrolling] = useState<boolean>(false);
-  const [isOpen, setIsOpen] = useState<boolean>(open);
+export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
+  (
+    {
+      children,
+      className,
+      "aria-label": contentLabel,
+      closeButtonLabel,
+      closeButtonAriaLabel,
+      dismissable = true,
+      footer,
+      heading,
+      onClose,
+      open,
+      subheading,
+      ...rest
+    },
+    ref,
+  ) => {
+    const dialogRef = useRef<HTMLDialogElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [isScrolling, setIsScrolling] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<boolean>(open);
 
-  const handleBackdropClick = () => {
-    if (dismissable && isOpen) {
-      onClose();
-    }
-  };
+    useImperativeHandle(
+      ref,
+      () => dialogRef.current ?? ({} as HTMLDialogElement),
+      [],
+    );
 
-  const handleEscapeKey = () => {
-    if (dismissable && isOpen) {
-      onClose();
-    }
-  };
-
-  useEffect(() => {
-    if (dialogRef.current) {
-      if (open) {
-        dialogRef.current.showModal();
-      } else {
-        dialogRef.current.close();
+    const handleBackdropClick = () => {
+      if (dismissable && isOpen) {
+        onClose();
       }
-    }
-
-    setIsOpen(open);
-    document.body.style.overflow = open ? "hidden" : "unset";
-
-    return () => {
-      document.body.style.overflow = "unset";
     };
-  }, [open]);
 
-  const checkScroll = () => {
-    if (contentRef.current) {
-      setIsScrolling(
-        contentRef.current.clientHeight < contentRef.current.scrollHeight,
-      );
-    }
-  };
+    const handleEscapeKey = () => {
+      if (dismissable && isOpen) {
+        onClose();
+      }
+    };
 
-  const id = useId();
-  const headingId = `${id}-heading`;
-  const contentId = `${id}-content`;
+    useEffect(() => {
+      if (dialogRef.current) {
+        if (open) {
+          dialogRef.current.showModal();
+        } else {
+          dialogRef.current.close();
+        }
+      }
 
-  useClickOutside(wrapperRef, handleBackdropClick);
-  useKeydown(null, "Escape", handleEscapeKey);
-  useWindowResize(checkScroll, { throttleTime: 200 });
-  useEffect(checkScroll, [children]);
+      setIsOpen(open);
+      document.body.style.overflow = open ? "hidden" : "unset";
 
-  return (
-    <dialog
-      className={clsx(
-        "sds-dialog",
-        isScrolling && "sds-dialog--scrollable",
-        className,
-      )}
-      aria-labelledby={contentLabel ? undefined : headingId}
-      aria-describedby={contentLabel ? undefined : contentId}
-      aria-label={contentLabel}
-      ref={dialogRef}
-      {...rest}
-    >
-      <div ref={wrapperRef}>
-        <header className="sds-dialog__header">
-          <div
-            id={headingId}
-            data-testid="headings"
-            className="sds-dialog__heading"
-          >
-            <Heading1 variant="medium">{heading}</Heading1>
-            {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
-          </div>
+      return () => {
+        document.body.style.overflow = "unset";
+      };
+    }, [open]);
 
-          {dismissable && (
-            <Button
-              variant="transparent"
-              icon={<CancelIcon />}
-              className="sds-dialog__close-button"
-              onClick={onClose}
-              aria-label={closeButtonLabel ? undefined : closeButtonAriaLabel}
+    const checkScroll = () => {
+      if (contentRef.current) {
+        setIsScrolling(
+          contentRef.current.clientHeight < contentRef.current.scrollHeight,
+        );
+      }
+    };
+
+    const id = useId();
+    const headingId = `${id}-heading`;
+    const contentId = `${id}-content`;
+
+    useClickOutside(wrapperRef, handleBackdropClick);
+    useKeydown(null, "Escape", handleEscapeKey);
+    useWindowResize(checkScroll, { throttleTime: 200 });
+    useEffect(checkScroll, [children]);
+
+    return (
+      <dialog
+        className={clsx(
+          "sds-dialog",
+          isScrolling && "sds-dialog--scrollable",
+          className,
+        )}
+        aria-labelledby={contentLabel ? undefined : headingId}
+        aria-describedby={contentLabel ? undefined : contentId}
+        aria-label={contentLabel}
+        ref={dialogRef}
+        {...rest}
+      >
+        <div ref={wrapperRef}>
+          <header className="sds-dialog__header">
+            <div
+              id={headingId}
+              data-testid="headings"
+              className="sds-dialog__heading"
             >
-              {closeButtonLabel}
-            </Button>
-          )}
-        </header>
-        <div className="sds-dialog__content-wrapper" ref={contentRef}>
-          <div
-            id={contentId}
-            data-testid="content"
-            className="sds-dialog__content"
-          >
-            {children}
+              <Heading1 variant="medium">{heading}</Heading1>
+              {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
+            </div>
+
+            {dismissable && (
+              <Button
+                variant="transparent"
+                icon={<CancelIcon />}
+                className="sds-dialog__close-button"
+                onClick={onClose}
+                aria-label={closeButtonLabel ? undefined : closeButtonAriaLabel}
+              >
+                {closeButtonLabel}
+              </Button>
+            )}
+          </header>
+          <div className="sds-dialog__content-wrapper" ref={contentRef}>
+            <div
+              id={contentId}
+              data-testid="content"
+              className="sds-dialog__content"
+            >
+              {children}
+            </div>
+            {footer !== undefined && (
+              <div className="sds-dialog__footer">{footer}</div>
+            )}
           </div>
-          {footer !== undefined && (
-            <div className="sds-dialog__footer">{footer}</div>
-          )}
         </div>
-      </div>
-    </dialog>
-  );
-};
+      </dialog>
+    );
+  },
+);
 
 Dialog.displayName = "Dialog";
 export default Dialog;
