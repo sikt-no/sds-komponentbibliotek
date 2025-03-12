@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@2.0.1...@sikt/sds-combobox@2.1.0) (2025-03-12)
+
+### Features
+
+- allow sending props to internal Popover ([ecdde11](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ecdde11b6162f2c142e195cb1fa87ae0b5e4a71e))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core to 4.4.0 ([9dd6147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9dd6147cd902975653f03b29db9f580ec19c261c))
+- **deps:** update @sikt/sds-form to 3.0.2 ([a6939a0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a6939a0b59aed1f9ae0200aff61e67c0abd0cfb7))
+- **deps:** update dependency react-aria-components to ^1.7.0 ([f6ba505](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f6ba5057c7ff465f2b90368333b076b8642d1ccb))
+- **form:** change text color on invalid state due to color contrast ([b84bf20](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b84bf20c87bc0ab0995fccbdb65b98d85e741058))
+
 ## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@2.0.0...@sikt/sds-combobox@2.0.1) (2024-11-20)
 
 ### Bug Fixes
