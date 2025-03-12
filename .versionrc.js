@@ -1,4 +1,7 @@
 const packageName = process.env.npm_config_package;
+const isConfig = packageName.includes("config");
+const packagePrefix = !isConfig ? "sds-" : "";
+const packageSuffix = isConfig ? "-sds" : "";
 
 module.exports = {
   "commit-all": true,
@@ -15,5 +18,5 @@ module.exports = {
     precommit:
       "npm install --silent --ignore-scripts && npm run format --silent -- --log-level silent && git add .",
   },
-  "tag-prefix": `@sikt/sds-${packageName}@`,
+  "tag-prefix": `@sikt/${packagePrefix}${packageName}${packageSuffix}@`,
 };
