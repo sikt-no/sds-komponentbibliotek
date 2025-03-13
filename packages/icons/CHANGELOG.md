@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@3.0.0...@sikt/sds-icons@3.1.0) (2025-03-13)
+
+### Features
+
+- add book icon ([b2749a1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b2749a118f99eda2a7ee38fd35af3269f2dee3f8))
+
 ## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@2.0.1...@sikt/sds-icons@3.0.0) (2024-11-18)
 
 ### ⚠ BREAKING CHANGES
