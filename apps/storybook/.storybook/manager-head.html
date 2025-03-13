@@ -5,20 +5,26 @@
 <link rel="stylesheet" href="dist/logo.css" />
 
 <style>
-  /* remove header from max height */
   #root > * {
-    height: calc(100dvh - 112px) !important;
+    --header-height: 56px;
+    --top-nav-height: calc(
+      var(--sds-space-padding-tiny) * 2 +
+        var(--sds-typography-body-lineheight-regular)
+    );
+
+    height: calc(
+      100dvh - calc(var(--top-nav-height) + var(--header-height))
+    ) !important;
   }
 
   /* top-nav */
   .top-nav {
-    --sikt-top-header-height: 28px;
+    --sikt-top-nav-padding: 2px;
 
     background-color: var(--sds-color-brand-accent-strong);
     display: grid;
     place-items: center center;
-    min-height: var(--sikt-top-header-height);
-    padding: 0 var(--sds-space-padding-small);
+    padding: var(--sikt-top-nav-padding) var(--sds-space-padding-small);
   }
   .top-nav__list {
     display: flex;
@@ -27,7 +33,7 @@
   }
   @media (width >= 720px) {
     .top-nav {
-      --sikt-top-header-height: 40px;
+      --sikt-top-nav-padding: var(--sds-space-padding-tiny);
     }
   }
 </style>
