@@ -15,8 +15,8 @@ figma.connect(
         }),
       ]),
       children: figma.textContent("Text"),
-      icon: figma.instance("LevelIcon"),
-      callToAction: figma.instance("button / message"),
+      icon: figma.children("LevelIcon"),
+      callToAction: figma.children("button / message"),
     },
     example: ({ className, children, callToAction, icon }) =>
       html`<div class="${className}">
@@ -42,7 +42,7 @@ figma.connect(
         }),
       ]),
       children: figma.textContent("Text"),
-      icon: figma.instance("LevelIcon"),
+      icon: figma.children("LevelIcon"),
     },
     example: ({ className, children, icon }) =>
       html`<div class="${className}">

@@ -14,7 +14,7 @@ figma.connect(
         Failure: "critical",
       }),
       callToAction: figma.boolean("Actionable", {
-        true: figma.instance("button / message"),
+        true: figma.children("button / message"),
         false: undefined,
       }),
     },

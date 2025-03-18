@@ -14,7 +14,7 @@ figma.connect(
         Failure: "critical",
       }),
       callToAction: figma.boolean("Dismissable", {
-        true: figma.instance("button / message / icon"),
+        true: figma.children("button / message / icon"),
         false: undefined,
       }),
     },

@@ -14,7 +14,7 @@ figma.connect(
         }),
       ]),
       children: figma.textContent("Text"),
-      icon: figma.instance("LevelIcon"),
+      icon: figma.children("LevelIcon"),
     },
     example: ({ className, children, icon }) =>
       html`<div class="${className}">
