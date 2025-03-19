@@ -15,6 +15,17 @@
   flex-wrap: wrap;
 }
 
-.sds-paragraph--max-width {
+.sds-sikt-u-max-width-180,
+.sds-sikt-u-max-width-fourth {
+  max-width: 180px;
+}
+
+.sds-sikt-u-max-width-360,
+.sds-sikt-u-max-width-half {
+  max-width: 360px;
+}
+
+.sds-sikt-u-max-width-720,
+.sds-sikt-u-max-width-full {
   max-width: 720px;
 }

@@ -54,13 +54,13 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 For å sikre at vi bruker de samme verdiene er det satt opp en
                 skala med tallverdier som definerer de grunleggende størrelsene
                 og avstandene som er i bruk.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Disse tokensene er kun tilgjengelige i Figma-filen til
                 designsystemet da de ikke skal brukes direkte, men er grunnlaget
                 for de semantiske tokensene.
@@ -100,11 +100,11 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Avstander brukes til å sette marginer og padding.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Noen av avstands-tokensene endrer seg ut i fra hvilken enhet man
                 bruker, slik at enkelte elementer tar mindre plass på små
                 skjermer.
@@ -161,11 +161,11 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Mellomrom brukes til å sette avstander mellom elementer.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Mellomrommene er faste på tvers av enheter da de er knyttet til
                 tekst o.l. for å skape en visuell rytme.
               </Paragraph>
@@ -220,7 +220,7 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Linjetykkelse brukes til å sette tykkelsen/vekten på linjer og
                 omriss.
               </Paragraph>
@@ -280,7 +280,7 @@ const StorrelserPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Hjørneavrunding setter radiusen på hjørner.
               </Paragraph>
 

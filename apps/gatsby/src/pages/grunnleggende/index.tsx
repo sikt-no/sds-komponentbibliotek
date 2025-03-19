@@ -42,7 +42,7 @@ const GrunnleggendePage: React.FC<PageProps> = () => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Sikt designsystem inneholder en rekke nyttige komponenter som
                 kan brukes i design og utvikling av nettsider og applikasjoner.
                 Det er flere fordeler ved å ta i bruk designsystemet. For det
@@ -56,7 +56,7 @@ const GrunnleggendePage: React.FC<PageProps> = () => {
                 interaksjonsmønstrene vil være gjenkjennbart for brukeren.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Designsystemet vil være en kombinasjon av enkeltstående
                 komponenter, samt retningslinjer for hvordan ulike komponenter
                 kan settes sammen til en mer helhetlig side (se "Guidelines" og

@@ -53,7 +53,7 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               )}
             >
               <div className={style.grunnleggende__sdsSectionContent}>
-                <Paragraph variant="lead" className="sds-paragraph--max-width">
+                <Paragraph variant="lead" className="sds-sikt-u-max-width-full">
                   Sikt designsystem bruker ikoner fra{" "}
                   <Link href="https://phosphoricons.com/" isExternal>
                     Phosphor icons
@@ -81,7 +81,7 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               <div className={style.grunnleggende__sdsSectionContent}>
                 <Heading3 variant="small">Utvalg</Heading3>
 
-                <Paragraph className="sds-paragraph--max-width">
+                <Paragraph className="sds-sikt-u-max-width-full">
                   Phosphor icons har et svært bredt utvalg ikoner, der mange av
                   ikonene kan brukes i samme kontekst. I Sikt designsystem har
                   vi begrenset utvalget, ettersom vi tror det er lettere å ha en
@@ -97,7 +97,7 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               <div className={style.grunnleggende__sdsSectionContent}>
                 <Heading3 variant="small">Utvidelse</Heading3>
 
-                <Paragraph className="sds-paragraph--max-width">
+                <Paragraph className="sds-sikt-u-max-width-full">
                   Dersom det oppstår behov for å inkludere flere ikoner i
                   ikonbiblioteket til Sikt vil vi gjerne ha tilbakemelding på
                   dette, slik at vi kan utvide utvalget. Dette kan enten være i
@@ -112,7 +112,7 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               <div className={style.grunnleggende__sdsSectionContent}>
                 <Heading3 variant="small">Konsistent bruk</Heading3>
 
-                <Paragraph className="sds-paragraph--max-width">
+                <Paragraph className="sds-sikt-u-max-width-full">
                   For å sørge for en helhetlig brukeropplevelse på tvers av Sikt
                   sine tjenester/flater er det ønskelig med konsistent bruk av
                   ikoner. Det vil si at samme brukskontekst bør bruke samme
@@ -126,7 +126,7 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               <div className={style.grunnleggende__sdsSectionContent}>
                 <Heading3 variant="small">Alternative ikoner</Heading3>
 
-                <Paragraph className="sds-paragraph--max-width">
+                <Paragraph className="sds-sikt-u-max-width-full">
                   I ikonbiblioteket vil du se at enkelte brukskontekster har
                   flere alternative ikoner. Her kan man selv avgjøre hva som
                   passer best i det aktuelle brukergrensesnittet.
@@ -136,7 +136,7 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               <div className={style.grunnleggende__sdsSectionContent}>
                 <Heading3 variant="small">Farge</Heading3>
 
-                <Paragraph className="sds-paragraph--max-width">
+                <Paragraph className="sds-sikt-u-max-width-full">
                   Ikonene bruker samme fargepalett som tekst, med samme
                   betydning av fargene. Dette vil sørge for at ikon-fargen
                   støtter UU-krav på lik linje som tekst-fargen. Se{" "}
@@ -152,7 +152,7 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               <div className={style.grunnleggende__sdsSectionContent}>
                 <Heading3 variant="small">Fyll</Heading3>
 
-                <Paragraph className="sds-paragraph--max-width">
+                <Paragraph className="sds-sikt-u-max-width-full">
                   Enkelte ikoner finnes også med fyll (fill), slik at man kan
                   bruke ikonet som en knapp der omriss (outline) endres til fyll
                   når den er trykket på. Eksempel på bruk kan være å lagre noe
@@ -165,7 +165,7 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               <div className={style.grunnleggende__sdsSectionContent}>
                 <Heading3 variant="small">Størrelse og skalering</Heading3>
 
-                <Paragraph className="sds-paragraph--max-width">
+                <Paragraph className="sds-sikt-u-max-width-full">
                   Størrelsen på ikonet bør ses i sammenheng med linjehøyden på
                   teksten som ligger før/etter ikonet. Dersom ikonet ikke skal
                   ses i sammenheng med tekst blir det en skjønnsmessig
@@ -177,7 +177,7 @@ const IkonerPage: React.FC<PageProps> = ({ location }) => {
               <div className={style.grunnleggende__sdsSectionContent}>
                 <Heading3 variant="small">Ikonbiblioteket</Heading3>
 
-                <div className="sds-paragraph--max-width">
+                <div className="sds-sikt-u-max-width-full">
                   {categories.map((category) => {
                     return (
                       <>

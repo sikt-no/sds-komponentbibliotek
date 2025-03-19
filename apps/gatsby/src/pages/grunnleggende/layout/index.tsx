@@ -40,7 +40,7 @@ const LayoutPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Det er satt opp et enkelt gridsystem basert på 12 kolonner.
                 Marginene på sidene er{" "}
                 <code className="sds-typography-body--code">
@@ -67,13 +67,13 @@ const LayoutPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 På store skjermer og med enklere innhold kan det være fornuftig
                 å begrense hvor mye bredde innholdet skal ta, da det kan se rart
                 ut f.eks. på en ultra-wide skjerm.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 I Figma er det definert et layout-grid som har en bredde på
                 960px. Innholdet må også tilpasses, og section-mønstrene er
                 tilrettelagt slik at man kan bruke max-width-funksjonaliteten i
@@ -87,7 +87,7 @@ const LayoutPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Vi har definert forskjellige enhetsstørrelser i designsystemet,
                 mobil, nettbrett, stasjonær datamaskin, og svært brede skjermer
                 (mobile, tablet, desktop, utrawide). Bruddpunktene er verdiene

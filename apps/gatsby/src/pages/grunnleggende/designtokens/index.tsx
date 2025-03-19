@@ -42,7 +42,7 @@ const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph variant="lead" className="sds-paragraph--max-width">
+              <Paragraph variant="lead" className="sds-sikt-u-max-width-full">
                 Designtokens er små byggeklosser bestående av designattributter
                 som farger, typografi, størrelser, avstander, former osv. De er
                 ikke begrenset til en spesifikk teknologi eller et
@@ -56,7 +56,7 @@ const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
               <Paragraph
                 variant="small"
                 modifier="emphasis"
-                className="sds-paragraph--max-width"
+                className="sds-sikt-u-max-width-full"
               >
                 Fra{" "}
                 <Link href="https://aksel.nav.no" isExternal>
@@ -71,7 +71,7 @@ const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Vi bruker den innebygde funksjonaliteten for designtokens som
                 Figma kaller “variables”. Denne funksjonaliteten er fremdeles i
                 beta-versjon og under utvikling, men det gir oss en større
@@ -85,20 +85,20 @@ const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 I Figma brukes terminologien collections og modes om å gruppere
                 variabler i sett (collections) og å kunne gi et token flere
                 verdier (mode, f.eks. dark- og light-mode).
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Vi har gruppert et sett tokens i “Base”-collection som kun er
                 tilgjengelig i selve bibliotek-filen, da disse ikke skal brukes
                 direkte men inneholder de grunnleggende verdiene de andre
                 tokensene baserer seg på.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 De andre tokensene er gruppert i farger (Color) og
                 størrelser/avstander (Space) slik at man enkelt kan bytte mellom
                 de forskjellige modusene de inneholder (dark / light, og desktop
@@ -174,7 +174,7 @@ const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
                 </div>
               </div>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Navngivingen på tokens er forsøkt satt opp slik at de er
                 selvforklarende om hvilken type de er og hva de skal brukes til.
                 Som en tommelfingerregel går det fra generellt -&gt; spesifikt i
@@ -183,13 +183,13 @@ const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
 
               <Heading3 variant="paragraph">Eksempel:</Heading3>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 <Badge visibility="strong" icon={<Nut />}>
                   --sds-color-interaction-primary-transparent-default
                 </Badge>
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Dette er et token fra Sikt Design System (sds), en farge (color)
                 som brukes til interaksjoner (interaction), og er basert på
                 hovedfargen (primary), med gjennomsiktighet (transparent) i
@@ -204,7 +204,7 @@ const DesigntokensPage: React.FC<PageProps> = ({ location }) => {
           >
             <div className={style.grunnleggende__sdsSectionContent}>
               <Heading3 variant="small">Lenker</Heading3>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 W3C Design tokens Community Group{" "}
                 <Link href="https://tr.designtokens.org/" isExternal>
                   https://tr.designtokens.org/

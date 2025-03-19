@@ -29,7 +29,7 @@ const PersonvernPage: React.FC<PageProps> = () => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Les mer om hvordan Sikt hånderer personvern i vår{" "}
                 <Link href="https://sikt.no/personvernerklaering">
                   personvernserklæring
@@ -44,10 +44,10 @@ const PersonvernPage: React.FC<PageProps> = () => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Denne siden bruker ikke noen informasjonskapsler.
               </Paragraph>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Vi samler kun teknisk informasjon for å gjøre tjenesten bedre og
                 følger innstillingene dine for å ikke bli sporet (do not track).
               </Paragraph>

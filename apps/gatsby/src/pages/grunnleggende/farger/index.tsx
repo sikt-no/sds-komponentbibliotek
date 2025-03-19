@@ -62,7 +62,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
             }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Merkevarefargene er basert på Sikt sin visuelle profil og
                 merkevare, og fungerer som basis for andre farger i
                 designsystemet.
@@ -150,13 +150,13 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
             }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Interaksjonsfargene krever at man har tilgjengelige farger for
                 forskjellige tilstander, som for eksempel når elementet blir
                 trykket på.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Strong-farger mørkere i light-mode og lysere i dark-mode, og
                 flytter seg ett hakk på lightness-skalaen per steg i
                 interaksjonen. Subtle- og transparent-farger blir mindre
@@ -259,7 +259,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
             }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Tilleggsfargene brukes til å understreke statuser, nivåer,
                 grafer, osv.
               </Paragraph>
@@ -346,7 +346,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
             }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Farger som brukes til generelle deler av sider, som for eksempel
                 bakgrunner og oppsettselementer.
               </Paragraph>
@@ -435,11 +435,11 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
             }
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Farger som brukes til tekst. Må følge WCAG-kravene til kontrast.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 "On_strong"-fargen brukes kun på elementer som er fargelagt med
                 en "strong"-farge for å sørge for god nok kontrast mellom tekst
                 og bakgrunn.
@@ -512,7 +512,7 @@ const FargerPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Farger som brukes til skygger.
               </Paragraph>
 

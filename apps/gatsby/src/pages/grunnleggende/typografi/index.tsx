@@ -54,14 +54,14 @@ const TypografiPage: React.FC<PageProps> = ({ location }) => {
             <div className={style.grunnleggende__sdsSectionContent}>
               <Heading3 variant="paragraph">Profilfont</Heading3>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Profilfonten til Sikt er Haffer, laget av Displaay Type Foundry.
               </Paragraph>
 
               <Paragraph
                 className={clsx(
                   "sds-typography-heading--huge",
-                  "sds-paragraph--max-width",
+                  "sds-sikt-u-max-width-full",
                 )}
               >
                 Haffer Hamburge&shy;fonstiv
@@ -69,7 +69,7 @@ const TypografiPage: React.FC<PageProps> = ({ location }) => {
 
               <Heading3 variant="paragraph">Supplerende</Heading3>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Hvis man ikke har Haffer tilgjengelig kan man bruke Arial
               </Paragraph>
 
@@ -77,13 +77,13 @@ const TypografiPage: React.FC<PageProps> = ({ location }) => {
                 className={clsx(
                   moduleStyle.typografi__fontArial,
                   "sds-typography-heading--huge",
-                  "sds-paragraph--max-width",
+                  "sds-sikt-u-max-width-full",
                 )}
               >
                 Arial Hamburge&shy;fonstiv
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Til visning av for eksempel kode og lignende bruker vi Courier
                 New
               </Paragraph>
@@ -96,7 +96,7 @@ const TypografiPage: React.FC<PageProps> = ({ location }) => {
                 className={clsx(
                   moduleStyle.typografi__fontCourier,
                   "sds-typography-heading--huge",
-                  "sds-paragraph--max-width",
+                  "sds-sikt-u-max-width-full",
                 )}
               >
                 Courier New Hamburge&shy;fonstiv
@@ -109,14 +109,14 @@ const TypografiPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 En overskrift skal gi en idé innholdet i en tekst som følger.
                 Den kan tillegges en funksjon som blikkfang og for eksempel være
                 informativ, tankevekkende eller provokativ, alt etter hvilken
                 sammenheng den står i.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 De tre største overskriftsstilene endrer størrelse ut ifra
                 skjermstørrelsen.
               </Paragraph>
@@ -227,7 +227,7 @@ const TypografiPage: React.FC<PageProps> = ({ location }) => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Brødtekst er den vanlige løpende teksten.
               </Paragraph>
 

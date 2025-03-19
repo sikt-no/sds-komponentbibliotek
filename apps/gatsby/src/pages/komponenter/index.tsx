@@ -37,13 +37,13 @@ const KomponenterPage: React.FC<PageProps<Queries.PageTemplateQuery>> = ({
             className={style.komponenter__sdsSection}
           >
             <div className={style.komponenter__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Komponenterne er designsystemets brød og smør som muliggjør for
                 likt bruk på tvers. Disse er sammensatte av mindre byggeklosser
                 som designtokens og atomer.
               </Paragraph>
 
-              <div className="sds-paragraph--max-width">
+              <div className="sds-sikt-u-max-width-full">
                 <ButtonGroup variant="right">
                   <ButtonLink
                     href="https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/"

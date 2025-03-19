@@ -35,11 +35,11 @@ const TilgjengelighetserklaringPage: React.FC<PageProps> = () => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Nettstedet oppfyller alle krav til universell utforming.
               </Paragraph>
 
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Figma, Storybook og GitLab er verktøy for internt bruk og har
                 derfor ikke samme krav till universell utforming.
               </Paragraph>
@@ -51,7 +51,7 @@ const TilgjengelighetserklaringPage: React.FC<PageProps> = () => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 <DescriptionList>
                   <DescriptionTerm>Ansvarlig for nettstedet</DescriptionTerm>
                   <DescriptionDetails>
@@ -74,7 +74,7 @@ const TilgjengelighetserklaringPage: React.FC<PageProps> = () => {
             className={style.grunnleggende__sdsSection}
           >
             <div className={style.grunnleggende__sdsSectionContent}>
-              <Paragraph className="sds-paragraph--max-width">
+              <Paragraph className="sds-sikt-u-max-width-full">
                 Diskrimineringsnemnda behandler klager om brudd på regelverket.
                 Du finner informasjon om{" "}
                 <Link
