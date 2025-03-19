@@ -6,7 +6,7 @@ figma.connect(
   "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=18311-2101",
   {
     props: {
-      children: figma.textContent("Text"),
+      children: figma.string("Alert Message"),
       variant: figma.enum("Priority", {
         Info: "info",
         Success: "success",
@@ -14,7 +14,7 @@ figma.connect(
         Failure: "critical",
       }),
       callToAction: figma.boolean("Dismissable", {
-        true: figma.children("button / message / icon"),
+        true: figma.children("button / message"),
         false: undefined,
       }),
     },

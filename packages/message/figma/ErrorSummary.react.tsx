@@ -6,7 +6,7 @@ figma.connect(
   "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=18313-868",
   {
     props: {
-      children: figma.textContent("Text"),
+      children: figma.string("Error Message"),
     },
     example: ({ children }) => <ErrorSummary>{children}</ErrorSummary>,
     links: [

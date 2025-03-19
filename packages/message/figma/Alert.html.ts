@@ -8,20 +8,20 @@ figma.connect(
       className: figma.className([
         "sds-message",
         figma.enum("Priority", {
-          Info: "info",
-          Success: "success",
-          Warning: "warning",
-          Failure: "critical",
+          Info: "sds-message--info",
+          Success: "sds-message--success",
+          Warning: "sds-message--warning",
+          Failure: "sds-message--critical",
         }),
       ]),
-      children: figma.textContent("Text"),
+      label: figma.string("Alert Message"),
       icon: figma.children("LevelIcon"),
-      callToAction: figma.children("button / message / icon"),
+      callToAction: figma.children("button / message"),
     },
-    example: ({ className, children, callToAction, icon }) =>
+    example: ({ className, label, callToAction, icon }) =>
       html`<div class="${className}">
         <span class="sds-message__icon">${icon}</span>
-        <span class="sds-message__message">${children}</span>
+        <span class="sds-message__message">${label}</span>
         <span class="sds-message__cta">${callToAction}</span>
       </div>`,
   },
@@ -35,19 +35,19 @@ figma.connect(
       className: figma.className([
         "sds-message",
         figma.enum("Priority", {
-          Info: "info",
-          Success: "success",
-          Warning: "warning",
-          Failure: "critical",
+          Info: "sds-message--info",
+          Success: "sds-message--success",
+          Warning: "sds-message--warning",
+          Failure: "sds-message--critical",
         }),
       ]),
-      children: figma.textContent("Text"),
+      label: figma.string("Alert Message"),
       icon: figma.children("LevelIcon"),
     },
-    example: ({ className, children, icon }) =>
+    example: ({ className, label, icon }) =>
       html`<div class="${className}">
         <span class="sds-message__icon">${icon}</span>
-        <span class="sds-message__message">${children}</span>
+        <span class="sds-message__message">${label}</span>
       </div>`,
   },
 );

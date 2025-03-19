@@ -5,13 +5,13 @@ figma.connect(
   {
     props: {
       className: figma.className(["sds-message", "sds-message--critical"]),
-      children: figma.textContent("Text"),
+      label: figma.string("Error Message"),
       icon: figma.children("LevelIcon"),
     },
-    example: ({ className, children, icon }) =>
+    example: ({ className, label, icon }) =>
       html`<div class="${className}">
         <span class="sds-message__icon">${icon}</span>
-        <span class="sds-message__message">${children}</span>
+        <span class="sds-message__message">${label}</span>
       </div>`,
   },
 );
