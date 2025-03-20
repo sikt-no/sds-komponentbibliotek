@@ -15,6 +15,7 @@ module.exports = {
   path: `./packages/${packageName}`,
   releaseCommitMessageFormat: `chore(${packageName}): release {{currentTag}}`,
   scripts: {
+    prerelease: `npm run build --workspace=packages/${packageName} --if-present`,
     precommit:
       "npm install --silent --ignore-scripts && npm run format --silent -- --log-level silent && git add .",
   },
