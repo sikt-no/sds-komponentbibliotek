@@ -25,7 +25,7 @@
     "@sikt/sds-list": "^2.1.0",
     "@sikt/sds-logo": "^2.0.1",
     "@sikt/sds-section": "^3.0.0",
-    "@sikt/sds-table": "^2.0.1",
+    "@sikt/sds-table": "^2.0.2",
     "@sikt/sds-tokens": "^3.0.0",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
