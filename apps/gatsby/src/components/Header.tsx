@@ -54,7 +54,6 @@ const Header = ({ currentHref }: { currentHref: string }) => {
           >
             Komponenter
           </GatsbyLink>
-          <Link href="/monstre/">Mønstre</Link>
         </HeaderNav>
       </HeaderCollapsibleMenu>
       <div />
