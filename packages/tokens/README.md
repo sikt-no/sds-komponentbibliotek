@@ -43,11 +43,10 @@ When there is no corresponding token in the non-default version the default shou
 
 ## Contribute
 
-Created using [Style Dictionary](https://github.com/amzn/style-dictionary) and exported as CSS, SCSS & JavaScript variables.
+Created using [Style Dictionary](https://github.com/amzn/style-dictionary) and exported as CSS & JavaScript variables.
 
 **Note** Do not edit these directly in the `/dist` output directory but rather in the `/src` source directory.
 
 **Note** Style Dictionary tokens follow a CTI (Category/Type/Item) naming pattern that may affect their outcome by what transforms are applied.
 
-_TODO: SCSS media query mixins._  
 _TODO: JavaScript relative size variables. How are these used in non-CSS environments?_
