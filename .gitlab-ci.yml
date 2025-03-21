@@ -339,9 +339,11 @@ review:
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: never
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
     - if: $CI_MERGE_REQUEST_IID
-    - when: on_success
+      when: on_success
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+      when: manual
+      allow_failure: true
 
 stop_review:
   stage: .post
@@ -354,10 +356,10 @@ stop_review:
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: never
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+    - if: $CI_MERGE_REQUEST_IID
       when: manual
       allow_failure: true
-    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
       when: manual
       allow_failure: true
 
