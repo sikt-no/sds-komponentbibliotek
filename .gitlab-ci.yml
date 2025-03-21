@@ -246,7 +246,7 @@ storybook:
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
-    - npm run storybook:build
+    - npm run build:storybook
   cache:
     - key:
         files:
@@ -275,7 +275,7 @@ gatsby:
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
-    - npm run gatsby:build
+    - npm run build:gatsby
   cache:
     - key:
         files:
