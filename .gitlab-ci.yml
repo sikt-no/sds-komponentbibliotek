@@ -43,6 +43,7 @@ install:
   extends: .npm_cache
   script:
     - npm pkg delete scripts.prepare
+    - npm pkg delete scripts.postinstall
     - npm ci --cache .npm
   cache:
     policy: pull-push
@@ -444,6 +445,7 @@ publish-figma:
       file: false
   script:
     - npm pkg delete scripts.prepare
+    - npm pkg delete scripts.postinstall
     - npm ci --cache .npm
     - npx figma connect publish --token ${FIGMA_TOKEN}
     - npx figma connect publish --token ${FIGMA_TOKEN} --config figma.html.config.json
