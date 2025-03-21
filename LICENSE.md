@@ -2,9 +2,13 @@ Copyright (c) Sikt (Norwegian Agency for Shared Services in Education and Resear
 
 All rights reserved.
 
+---
+
 Haffer Font Copyright (c) Displaay (Martin Vácha)
 
 All rights reserved.
+
+---
 
 Phosphor Icons Copyright (c) Phosphor Icons
 
