@@ -11,15 +11,15 @@
     "copy:css:logo": "cpy ../../packages/logo/dist/index.css static/dist --flat --rename=logo.css"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.6.6",
-    "@storybook/addon-links": "^8.6.6",
+    "@storybook/addon-essentials": "^8.6.7",
+    "@storybook/addon-links": "^8.6.7",
     "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
-    "@storybook/blocks": "^8.6.6",
-    "@storybook/manager-api": "^8.6.6",
-    "@storybook/preview-api": "^8.6.6",
-    "@storybook/react": "^8.6.6",
-    "@storybook/react-webpack5": "^8.6.6",
+    "@storybook/blocks": "^8.6.7",
+    "@storybook/manager-api": "^8.6.7",
+    "@storybook/preview-api": "^8.6.7",
+    "@storybook/react": "^8.6.7",
+    "@storybook/react-webpack5": "^8.6.7",
     "@svgr/webpack": "^8.1.0",
     "@whitespace/storybook-addon-html": "^6.1.1",
     "cpy-cli": "^5.0.0",
@@ -29,7 +29,7 @@
     "prop-types": "^15.8.1",
     "raw-loader": "^4.0.2",
     "react-syntax-highlighter": "^15.6.1",
-    "storybook": "^8.6.6",
+    "storybook": "^8.6.7",
     "style-loader": "^4.0.0"
   }
 }
