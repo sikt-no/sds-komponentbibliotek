@@ -2,14 +2,17 @@ import { clsx } from "clsx/lite";
 import { ElementType, HTMLAttributes, ReactNode } from "react";
 
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
-  variant:
+  variant?:
     | "small"
     | "medium"
     | "large"
     | "xlarge"
     | "huge"
     | "paragraph"
-    | "overline";
+    | "overline"
+    | "editorial"
+    | "application";
+  size?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl";
   className?: string;
   children: ReactNode;
 }
@@ -21,17 +24,27 @@ interface HeadingLevels {
 export const Heading = ({
   children,
   level,
-  variant,
+  variant = "editorial",
+  size = "m",
   className,
   ...rest
 }: HeadingProps & HeadingLevels) => {
   const H: ElementType = `h${level}`;
+  const isDeprecated = !["editorial", "application"].includes(variant);
+
+  if (isDeprecated) {
+    console.warn(
+      `Deprecated <Heading /> variant. Please use variant "editorial" (default) or "application".`,
+    );
+  }
 
   return (
     <H
       className={clsx(
-        "sds-typography-heading",
-        `sds-typography-heading--${variant}`,
+        isDeprecated && "sds-typography-heading",
+        isDeprecated && `sds-typography-heading--${variant}`,
+        !isDeprecated && `sds-typography-${variant}-headline`,
+        !isDeprecated && `sds-typography-${variant}-headline--${size}`,
         className,
       )}
       {...rest}

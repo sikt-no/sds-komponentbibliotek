@@ -23,7 +23,7 @@ describe("Heading", () => {
     levels.map((level) => {
       it(`${level.name} should be accessible`, async () => {
         const { component: Heading } = level;
-        const { container } = render(<Heading variant="medium">Foo</Heading>);
+        const { container } = render(<Heading>Foo</Heading>);
 
         expect(await axe(container)).toHaveNoViolations();
       });
@@ -34,33 +34,34 @@ describe("Heading", () => {
     levels.map((level) => {
       it(`${level.name} should render`, async () => {
         const { name, component: Heading } = level;
-        render(
-          <Heading variant="medium" data-testid={name}>
-            {name}
-          </Heading>,
-        );
+        render(<Heading>{name}</Heading>);
 
-        expect(screen.getByTestId(name)).toHaveClass(
-          "sds-typography-heading sds-typography-heading--medium",
+        expect(screen.getByText(name)).toHaveClass(
+          "sds-typography-editorial-headline sds-typography-editorial-headline--m",
         );
         expect(screen.getByText(name)).toBeInTheDocument();
       });
     });
 
     it("should have class name", async () => {
-      render(
-        <Heading1
-          variant="medium"
-          data-testid="test"
-          className="test-class-name"
-        >
-          Foo
-        </Heading1>,
-      );
+      render(<Heading1 className="test-class-name">Foo</Heading1>);
 
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-typography-heading sds-typography-heading--medium test-class-name",
+      expect(screen.getByText("Foo")).toHaveClass(
+        "sds-typography-editorial-headline sds-typography-editorial-headline--m test-class-name",
       );
+    });
+
+    it("should have deprecation warning", async () => {
+      const spy = jest
+        .spyOn(global.console, "warn")
+        .mockImplementationOnce(() => jest.fn);
+
+      render(<Heading1 variant="medium">Foo</Heading1>);
+
+      expect(screen.getByText("Foo")).toHaveClass(
+        "sds-typography-heading sds-typography-heading--medium",
+      );
+      expect(spy).toHaveBeenCalled();
     });
   });
 });
