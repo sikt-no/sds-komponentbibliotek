@@ -1,36 +1,92 @@
-import { Meta, Typeset } from "@storybook/blocks";
+import { Meta } from "@storybook/blocks";
 
 <Meta title="Core/Typography" />
 
 # Typography
 
-## Heading
+## Editorial Headline
 
 <table>
   <thead>
-    <th>Name</th>
-    <th>Example</th>
-    <th>Variable</th>
+    <tr>
+      <th>Name</th>
+      <th>Example</th>
+      <th>Class</th>
+    </tr>
   </thead>
-
   <tbody>
-    {[
-          "huge",
-          "xlarge",
-          "large",
-          "medium",
-          "small",
-          "paragraph",
-          "overline",
-        ].map((item) => {
-          return (
-            <tr key={item}>
-              <th scope="row">heading / {item}</th>
-              <td className={`sds-typography-heading--${item}`}>Aa</td>
-              <td>--sds-typography-heading--{item}</td>
-            </tr>
-          );
-        })}
+    {["editorial"].map((variant) => {
+      return ["xxl", "xl", "l", "m", "s", "xs", "xxs"].map((size) => {
+        return (
+          <tr key={`${variant}-${size}`}>
+            <th scope="row">
+              {variant} / headline / {size}
+            </th>
+            <td className={`sds-typography-${variant}-headline--${size}`}>
+              Aa
+            </td>
+            <td>
+              .sds-typography-{variant}-headline--{size}
+            </td>
+          </tr>
+        );
+      });
+    })}
+  </tbody>
+</table>
+
+## Application Headline
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Example</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    {["application"].map((variant) => {
+      return ["xxl", "xl", "l", "m", "s", "xs", "xxs"].map((size) => {
+        return (
+          <tr key={`${variant}-${size}`}>
+            <th scope="row">
+              {variant} / headline / {size}
+            </th>
+            <td className={`sds-typography-${variant}-headline--${size}`}>
+              Aa
+            </td>
+            <td>
+              .sds-typography-{variant}-headline--{size}
+            </td>
+          </tr>
+        );
+      });
+    })}
+  </tbody>
+</table>
+
+## Label
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Example</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    {["l", "default"].map((item) => {
+      const postfix = item !== "default" ? `--${item}` : "";
+      return (
+        <tr key={item}>
+          <th scope="row">label / {item}</th>
+          <td className={`sds-typography-label${postfix}`}>Aa</td>
+          <td>.sds-typography-label{postfix}</td>
+        </tr>
+      );
+    })}
   </tbody>
 </table>
 
@@ -38,35 +94,48 @@ import { Meta, Typeset } from "@storybook/blocks";
 
 <table>
   <thead>
-    <th>Name</th>
-    <th>Example</th>
-    <th>Variable</th>
+    <tr>
+      <th>Name</th>
+      <th>Example</th>
+      <th>Class</th>
+    </tr>
   </thead>
-
   <tbody>
     {["lead", "large", "regular", "small"].map((item) => {
-          return (
-            <tr key={item}>
-              <th scope="row">body / {item}</th>
-              <td className={`sds-typography-body--${item}`}>Aa</td>
-              <td>--sds-typography-body--{item}</td>
-            </tr>
-          );
-        })}
+      return (
+        <tr key={item}>
+          <th scope="row">body / {item}</th>
+          <td className={`sds-typography-body--${item}`}>Aa</td>
+          <td>--sds-typography-body--{item}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
 
+## Other
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Example</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
     {["emphasis", "strong", "quote", "code"].map((item) => {
-          return (
-            <tr key={item}>
-              <th scope="row">body / {item}</th>
-              <td
-                className={`sds-typography-body--regular sds-typography-body--${item}`}
-              >
-                Aa
-              </td>
-              <td>--sds-typography-body--{item}</td>
-            </tr>
-          );
-        })}
-
+      return (
+        <tr key={item}>
+          <th scope="row">body / {item}</th>
+          <td
+            className={`sds-typography-body--regular sds-typography-body--${item}`}
+          >
+            Aa
+          </td>
+          <td>--sds-typography-body--{item}</td>
+        </tr>
+      );
+    })}
   </tbody>
 </table>

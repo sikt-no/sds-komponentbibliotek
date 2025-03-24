@@ -1,4 +1,108 @@
 .sds-typography {
+  &-editorial {
+    &-headline {
+      &--xxs {
+        font-size: var(--sds-typography-editorial-headline-xxs-fontsize);
+        font-weight: var(--sds-typography-editorial-headline-xxs-fontweight);
+        line-height: var(--sds-typography-editorial-headline-xxs-lineheight);
+      }
+
+      &--xs {
+        font-size: var(--sds-typography-editorial-headline-xs-fontsize);
+        font-weight: var(--sds-typography-editorial-headline-xs-fontweight);
+        line-height: var(--sds-typography-editorial-headline-xs-lineheight);
+      }
+
+      &--s {
+        font-size: var(--sds-typography-editorial-headline-s-fontsize);
+        font-weight: var(--sds-typography-editorial-headline-s-fontweight);
+        line-height: var(--sds-typography-editorial-headline-s-lineheight);
+      }
+
+      &--m {
+        font-size: var(--sds-typography-editorial-headline-m-fontsize);
+        font-weight: var(--sds-typography-editorial-headline-m-fontweight);
+        line-height: var(--sds-typography-editorial-headline-m-lineheight);
+      }
+
+      &--l {
+        font-size: var(--sds-typography-editorial-headline-l-fontsize);
+        font-weight: var(--sds-typography-editorial-headline-l-fontweight);
+        line-height: var(--sds-typography-editorial-headline-l-lineheight);
+      }
+
+      &--xl {
+        font-size: var(--sds-typography-editorial-headline-xl-fontsize);
+        font-weight: var(--sds-typography-editorial-headline-xl-fontweight);
+        line-height: var(--sds-typography-editorial-headline-xl-lineheight);
+      }
+
+      &--xxl {
+        font-size: var(--sds-typography-editorial-headline-xxl-fontsize);
+        font-weight: var(--sds-typography-editorial-headline-xxl-fontweight);
+        line-height: var(--sds-typography-editorial-headline-xxl-lineheight);
+      }
+    }
+  }
+
+  &-application {
+    &-headline {
+      &--xxs {
+        font-size: var(--sds-typography-application-headline-xxs-fontsize);
+        font-weight: var(--sds-typography-application-headline-xxs-fontweight);
+        line-height: var(--sds-typography-application-headline-xxs-lineheight);
+      }
+
+      &--xs {
+        font-size: var(--sds-typography-application-headline-xs-fontsize);
+        font-weight: var(--sds-typography-application-headline-xs-fontweight);
+        line-height: var(--sds-typography-application-headline-xs-lineheight);
+      }
+
+      &--s {
+        font-size: var(--sds-typography-application-headline-s-fontsize);
+        font-weight: var(--sds-typography-application-headline-s-fontweight);
+        line-height: var(--sds-typography-application-headline-s-lineheight);
+      }
+
+      &--m {
+        font-size: var(--sds-typography-application-headline-m-fontsize);
+        font-weight: var(--sds-typography-application-headline-m-fontweight);
+        line-height: var(--sds-typography-application-headline-m-lineheight);
+      }
+
+      &--l {
+        font-size: var(--sds-typography-application-headline-l-fontsize);
+        font-weight: var(--sds-typography-application-headline-l-fontweight);
+        line-height: var(--sds-typography-application-headline-l-lineheight);
+      }
+
+      &--xl {
+        font-size: var(--sds-typography-application-headline-xl-fontsize);
+        font-weight: var(--sds-typography-application-headline-xl-fontweight);
+        line-height: var(--sds-typography-application-headline-xl-lineheight);
+      }
+
+      &--xxl {
+        font-size: var(--sds-typography-application-headline-xxl-fontsize);
+        font-weight: var(--sds-typography-application-headline-xxl-fontweight);
+        line-height: var(--sds-typography-application-headline-xxl-lineheight);
+      }
+    }
+  }
+
+  &-label {
+    font-size: var(--sds-typography-label-default-fontsize);
+    font-weight: var(--sds-typography-label-default-fontweight);
+    line-height: var(--sds-typography-label-default-lineheight);
+
+    &--l {
+      font-size: var(--sds-typography-label-l-fontsize);
+      font-weight: var(--sds-typography-label-l-fontweight);
+      line-height: var(--sds-typography-label-l-lineheight);
+    }
+  }
+
   &-body {
     &--lead {
       font-size: var(--sds-typography-body-fontsize-lead);
@@ -35,51 +139,6 @@
 
     &--code {
       font-family: monospace;
-    }
-  }
-
-  &-heading {
-    &--huge {
-      font-size: var(--sds-typography-heading-fontsize-huge);
-      font-weight: var(--sds-typography-weight-bold);
-      line-height: var(--sds-typography-heading-lineheight-huge);
-    }
-
-    &--xlarge {
-      font-size: var(--sds-typography-heading-fontsize-xlarge);
-      font-weight: var(--sds-typography-weight-bold);
-      line-height: var(--sds-typography-heading-lineheight-xlarge);
-    }
-
-    &--large {
-      font-size: var(--sds-typography-heading-fontsize-large);
-      font-weight: var(--sds-typography-weight-bold);
-      line-height: var(--sds-typography-heading-lineheight-large);
-    }
-
-    &--medium {
-      font-size: var(--sds-typography-heading-fontsize-medium);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-heading-lineheight-medium);
-    }
-
-    &--small {
-      font-size: var(--sds-typography-heading-fontsize-small);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-heading-lineheight-small);
-    }
-
-    &--paragraph {
-      font-size: var(--sds-typography-heading-fontsize-paragraph);
-      font-weight: var(--sds-typography-weight-bold);
-      line-height: var(--sds-typography-heading-lineheight-paragraph);
-    }
-
-    &--overline {
-      font-size: var(--sds-typography-heading-fontsize-overline);
-      font-weight: var(--sds-typography-weight-bold);
-      line-height: var(--sds-typography-heading-lineheight-overline);
-      text-transform: uppercase;
     }
   }
 
