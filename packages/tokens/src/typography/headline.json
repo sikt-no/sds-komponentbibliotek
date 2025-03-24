@@ -1,0 +1,166 @@
+{
+  "typography": {
+    "editorial": {
+      "headline": {
+        "xxs": {
+          "fontsize": {
+            "value": "{typography.fontsize.300.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.m.value}"
+          }
+        },
+        "xs": {
+          "fontsize": {
+            "value": "{typography.fontsize.600.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.m.value}"
+          }
+        },
+        "s": {
+          "fontsize": {
+            "value": "{typography.fontsize.700.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.s.value}"
+          }
+        },
+        "m": {
+          "fontsize": {
+            "value": "{typography.fontsize.800.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.s.value}"
+          }
+        },
+        "l": {
+          "fontsize": {
+            "value": "{typography.fontsize.900.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.xs.value}"
+          }
+        },
+        "xl": {
+          "fontsize": {
+            "value": "{typography.fontsize.1100.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.xs.value}"
+          }
+        },
+        "xxl": {
+          "fontsize": {
+            "value": "{typography.fontsize.1200.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.xs.value}"
+          }
+        }
+      }
+    },
+    "application": {
+      "headline": {
+        "xxs": {
+          "fontsize": {
+            "value": "{typography.fontsize.300.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.m.value}"
+          }
+        },
+        "xs": {
+          "fontsize": {
+            "value": "{typography.fontsize.400.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.m.value}"
+          }
+        },
+        "s": {
+          "fontsize": {
+            "value": "{typography.fontsize.500.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.m.value}"
+          }
+        },
+        "m": {
+          "fontsize": {
+            "value": "{typography.fontsize.600.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.s.value}"
+          }
+        },
+        "l": {
+          "fontsize": {
+            "value": "{typography.fontsize.700.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.s.value}"
+          }
+        },
+        "xl": {
+          "fontsize": {
+            "value": "{typography.fontsize.800.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.s.value}"
+          }
+        },
+        "xxl": {
+          "fontsize": {
+            "value": "{typography.fontsize.1000.value}"
+          },
+          "fontweight": {
+            "value": "{typography.fontweight.semibold.value}"
+          },
+          "lineheight": {
+            "value": "{_typography.lineheight.s.value}"
+          }
+        }
+      }
+    }
+  }
+}

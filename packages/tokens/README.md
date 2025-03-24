@@ -55,7 +55,7 @@ When there is no corresponding token in the non-default version the default shou
 
 ### Tips
 
-- Relative size tokens (`--sds-base-size-relative-<size>`) should be used on user font size setting scalable properties like `font-size`, `line-height`, etc. These are calculated from the root font-size so that for example `16px` is the same as `calc(16 * 1rem / 16)`.
+- Relative sizes should be used on user font size setting scalable properties like `font-size`, `line-height`, etc. These are calculated from the root font-size so that for example `20px` is the same as `calc(20 * 1rem / 16)` when root font-size is `16px`.
 - Custom media queries are transformed to valid CSS during build step and need to be imported into the PostCSS file that uses them.
 
 **Note** There is currently a bug in Figma that translates HSL to incorrect HEX color values. If you use the same name token you will get the correct HEX color value.

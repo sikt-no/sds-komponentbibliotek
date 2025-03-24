@@ -2,28 +2,32 @@
   "typography": {
     "body": {
       "fontsize-small": {
-        "value": "{base.size-relative.s.value}"
+        "value": "{typography.fontsize.100.value}"
       },
       "lineheight-small": {
-        "value": "{base.size-relative.s1.value}"
+        "value": "16px",
+        "type": "dimension"
       },
       "fontsize-regular": {
-        "value": "{base.size-relative.s1.value}"
+        "value": "{typography.fontsize.300.value}"
       },
       "lineheight-regular": {
-        "value": "{base.size-relative.m.value}"
+        "value": "24px",
+        "type": "dimension"
       },
       "fontsize-large": {
-        "value": "calc(18rem / 16)"
+        "value": "{typography.fontsize.400.value}"
       },
       "lineheight-large": {
-        "value": "{base.size-relative.m.value}"
+        "value": "24px",
+        "type": "dimension"
       },
       "fontsize-lead": {
-        "value": "calc(22rem / 16)"
+        "value": "{typography.fontsize.600.value}"
       },
       "lineheight-lead": {
-        "value": "{base.size-relative.m1.value}"
+        "value": "32px",
+        "type": "dimension"
       }
     }
   }

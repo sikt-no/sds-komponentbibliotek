@@ -1,0 +1,77 @@
+{
+  "typography": {
+    "editorial": {
+      "headline": {
+        "xxs": {
+          "fontsize": {
+            "value": "{typography.fontsize.500.value}"
+          }
+        },
+        "xs": {
+          "fontsize": {
+            "value": "{typography.fontsize.800.value}"
+          }
+        },
+        "s": {
+          "fontsize": {
+            "value": "{typography.fontsize.800.value}"
+          }
+        },
+        "m": {
+          "fontsize": {
+            "value": "{typography.fontsize.1000.value}"
+          }
+        },
+        "l": {
+          "fontsize": {
+            "value": "{typography.fontsize.1200.value}"
+          }
+        },
+        "xl": {
+          "fontsize": {
+            "value": "{typography.fontsize.1400.value}"
+          }
+        },
+        "xxl": {
+          "fontsize": {
+            "value": "{typography.fontsize.1500.value}"
+          }
+        }
+      }
+    },
+    "application": {
+      "headline": {
+        "xs": {
+          "fontsize": {
+            "value": "{typography.fontsize.500.value}"
+          }
+        },
+        "s": {
+          "fontsize": {
+            "value": "{typography.fontsize.600.value}"
+          }
+        },
+        "m": {
+          "fontsize": {
+            "value": "{typography.fontsize.700.value}"
+          }
+        },
+        "l": {
+          "fontsize": {
+            "value": "{typography.fontsize.800.value}"
+          }
+        },
+        "xl": {
+          "fontsize": {
+            "value": "{typography.fontsize.1000.value}"
+          }
+        },
+        "xxl": {
+          "fontsize": {
+            "value": "{typography.fontsize.1200.value}"
+          }
+        }
+      }
+    }
+  }
+}

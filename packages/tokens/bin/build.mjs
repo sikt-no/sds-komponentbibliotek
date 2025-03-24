@@ -110,7 +110,7 @@ StyleDictionary.registerFormat({
       }) {
   :root {
 ${dictionary.allTokens
-  .filter((prop) => !prop.path.includes("base"))
+  .filter((prop) => !prop.filePath.includes("base"))
   .map((prop) => `  --${prop.name}: ${prop.value};`)
   .join("\n")}
   }
@@ -197,6 +197,7 @@ const dictionaryTokens = new StyleDictionary({
         "time/seconds",
         "html/icon",
         "color/hex",
+        "size/pxToRem",
       ],
       buildPath,
       prefix,
@@ -311,7 +312,7 @@ await dictionaryColorDark.buildAllPlatforms();
 
 const dictionaryMediaTablet = new StyleDictionary({
   source: [
-    `${sourcePath}base/*.{json,js,mjs}`,
+    `${sourcePath}**/base/*.{json,js,mjs}`,
     `${sourcePath}**/*.tablet.{json,js,mjs}`,
   ],
   platforms: {
@@ -360,7 +361,7 @@ await dictionaryMediaTablet.buildAllPlatforms();
 
 const dictionaryMediaDesktop = new StyleDictionary({
   source: [
-    `${sourcePath}base/*.{json,js,mjs}`,
+    `${sourcePath}**/base/*.{json,js,mjs}`,
     `${sourcePath}**/*.desktop.{json,js,mjs}`,
   ],
   platforms: {

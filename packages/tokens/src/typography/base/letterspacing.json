@@ -1,0 +1,9 @@
+{
+  "typography": {
+    "letterspacing": {
+      "wide": {
+        "value": "0.02em"
+      }
+    }
+  }
+}

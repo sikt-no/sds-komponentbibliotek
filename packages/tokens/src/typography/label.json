@@ -1,0 +1,28 @@
+{
+  "typography": {
+    "label": {
+      "default": {
+        "fontsize": {
+          "value": "{typography.fontsize.300.value}"
+        },
+        "fontweight": {
+          "value": "{typography.fontweight.semibold.value}"
+        },
+        "lineheight": {
+          "value": "{_typography.lineheight.xl.value}"
+        }
+      },
+      "l": {
+        "fontsize": {
+          "value": "{typography.fontsize.500.value}"
+        },
+        "fontweight": {
+          "value": "{typography.fontweight.semibold.value}"
+        },
+        "lineheight": {
+          "value": "{_typography.lineheight.xl.value}"
+        }
+      }
+    }
+  }
+}

@@ -28,35 +28,6 @@
       "xxl": {
         "value": "192px"
       }
-    },
-    "size-relative": {
-      "xxs": {
-        "value": "calc(4rem / 16)"
-      },
-      "xs": {
-        "value": "calc(8rem / 16)"
-      },
-      "s": {
-        "value": "calc(12rem / 16)"
-      },
-      "s1": {
-        "value": "calc(16rem / 16)"
-      },
-      "m": {
-        "value": "calc(24rem / 16)"
-      },
-      "m1": {
-        "value": "calc(32rem / 16)"
-      },
-      "l": {
-        "value": "calc(48rem / 16)"
-      },
-      "xl": {
-        "value": "calc(96rem / 16)"
-      },
-      "xxl": {
-        "value": "calc(192rem / 16)"
-      }
     }
   }
 }

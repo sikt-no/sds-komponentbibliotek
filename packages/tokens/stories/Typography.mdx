@@ -7,7 +7,53 @@ import * as desktop from "../dist/js/tokens.desktop.js";
 
 # Typography
 
-## Heading
+## Font Size
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(tokens.typography.fontsize).map((token) => {
+      return (
+        <tr key={token[1].name}>
+          <td>{token[0]}</td>
+          <td>{token[1].value}</td>
+          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
+
+## Font Weight
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(tokens.typography.fontweight).map((token) => {
+      return (
+        <tr key={token[1].name}>
+          <td>{token[0]}</td>
+          <td>{token[1].value}</td>
+          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
+
+## Editorial Headline
 
 <table>
   <thead>
@@ -19,19 +65,94 @@ import * as desktop from "../dist/js/tokens.desktop.js";
       <th>Token</th>
     </tr>
   </thead>
-
   <tbody>
-    {Object.entries(tokens.typography.heading).map((token) => {
-          return (
-            <tr key={token[1].name}>
-              <td>{token[0]}</td>
-              <td>{token[1].value}</td>
-              <td>{tablet.typography.heading?.[token[0]]?.value ?? ""}</td>
-              <td>{desktop.typography.heading?.[token[0]]?.value ?? ""}</td>
-              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
-            </tr>
-          );
-        })}
+    {Object.entries(tokens.typography.editorial.headline).map((token) => {
+      return Object.entries(token[1]).map((subtoken) => {
+        return (
+          <tr key={subtoken[1].name}>
+            <td>
+              {subtoken[0]}-{token[0]}
+            </td>
+            <td>{subtoken[1].value}</td>
+            <td>
+              {tablet.typography.editorial?.headline?.[token[0]]?.[subtoken[0]]
+                ?.value ?? ""}
+            </td>
+            <td>
+              {desktop.typography.editorial?.headline?.[token[0]]?.[subtoken[0]]
+                ?.value ?? ""}
+            </td>
+            <td>{`--sds-${Object.values(subtoken[1].path).join("-")}`}</td>
+          </tr>
+        );
+      });
+    })}
+  </tbody>
+</table>
+
+## Application Headline
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>@Mobile</th>
+      <th>@Tablet</th>
+      <th>@Desktop</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(tokens.typography.application.headline).map((token) => {
+      return Object.entries(token[1]).map((subtoken) => {
+        return (
+          <tr key={subtoken[1].name}>
+            <td>
+              {subtoken[0]}-{token[0]}
+            </td>
+            <td>{subtoken[1].value}</td>
+            <td>
+              {tablet.typography.application?.headline?.[token[0]]?.[
+                subtoken[0]
+              ]?.value ?? ""}
+            </td>
+            <td>
+              {desktop.typography.application?.headline?.[token[0]]?.[
+                subtoken[0]
+              ]?.value ?? ""}
+            </td>
+            <td>{`--sds-${Object.values(subtoken[1].path).join("-")}`}</td>
+          </tr>
+        );
+      });
+    })}
+  </tbody>
+</table>
+
+## Label
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(tokens.typography.label).map((token) => {
+      return Object.entries(token[1]).map((subtoken) => {
+        return (
+          <tr key={subtoken[1].name}>
+            <td>
+              {subtoken[0]}-{token[0]}
+            </td>
+            <td>{subtoken[1].value}</td>
+            <td>{`--sds-${Object.values(subtoken[1].path).join("-")}`}</td>
+          </tr>
+        );
+      });
+    })}
   </tbody>
 </table>
 
@@ -45,40 +166,15 @@ import * as desktop from "../dist/js/tokens.desktop.js";
       <th>Token</th>
     </tr>
   </thead>
-
   <tbody>
     {Object.entries(tokens.typography.body).map((token) => {
-          return (
-            <tr key={token[1].name}>
-              <td>{token[0]}</td>
-              <td>{token[1].value}</td>
-              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
-            </tr>
-          );
-        })}
-  </tbody>
-</table>
-
-## Weight
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Value</th>
-      <th>Token</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    {Object.entries(tokens.typography.weight).map((token) => {
-          return (
-            <tr key={token[1].name}>
-              <td>{token[0]}</td>
-              <td>{token[1].value}</td>
-              <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
-            </tr>
-          );
-        })}
+      return (
+        <tr key={token[1].name}>
+          <td>{token[0]}</td>
+          <td>{token[1].value}</td>
+          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+        </tr>
+      );
+    })}
   </tbody>
 </table>
