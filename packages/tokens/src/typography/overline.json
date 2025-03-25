@@ -1,0 +1,17 @@
+{
+  "typography": {
+    "overline": {
+      "default": {
+        "fontsize": {
+          "value": "{typography.fontsize.200.value}"
+        },
+        "fontweight": {
+          "value": "{typography.fontweight.semibold.value}"
+        },
+        "lineheight": {
+          "value": "1"
+        }
+      }
+    }
+  }
+}

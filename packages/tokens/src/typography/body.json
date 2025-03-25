@@ -1,33 +1,38 @@
 {
   "typography": {
     "body": {
-      "fontsize-small": {
-        "value": "{typography.fontsize.100.value}"
+      "s": {
+        "fontsize": {
+          "value": "{typography.fontsize.200.value}"
+        },
+        "fontweight": {
+          "value": "{typography.fontweight.regular.value}"
+        },
+        "lineheight": {
+          "value": "{typography.lineheight.xl.value}"
+        }
       },
-      "lineheight-small": {
-        "value": "16px",
-        "type": "dimension"
+      "default": {
+        "fontsize": {
+          "value": "{typography.fontsize.300.value}"
+        },
+        "fontweight": {
+          "value": "{typography.fontweight.regular.value}"
+        },
+        "lineheight": {
+          "value": "{typography.lineheight.l.value}"
+        }
       },
-      "fontsize-regular": {
-        "value": "{typography.fontsize.300.value}"
-      },
-      "lineheight-regular": {
-        "value": "24px",
-        "type": "dimension"
-      },
-      "fontsize-large": {
-        "value": "{typography.fontsize.400.value}"
-      },
-      "lineheight-large": {
-        "value": "24px",
-        "type": "dimension"
-      },
-      "fontsize-lead": {
-        "value": "{typography.fontsize.600.value}"
-      },
-      "lineheight-lead": {
-        "value": "32px",
-        "type": "dimension"
+      "l": {
+        "fontsize": {
+          "value": "{typography.fontsize.500.value}"
+        },
+        "fontweight": {
+          "value": "{typography.fontweight.regular.value}"
+        },
+        "lineheight": {
+          "value": "{typography.lineheight.l.value}"
+        }
       }
     }
   }

@@ -53,6 +53,29 @@ import * as desktop from "../dist/js/tokens.desktop.js";
   </tbody>
 </table>
 
+## Line Height
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(tokens.typography.lineheight).map((token) => {
+      return (
+        <tr key={token[1].name}>
+          <td>{token[0]}</td>
+          <td>{token[1].value}</td>
+          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
+
 ## Editorial Headline
 
 <table>
@@ -71,7 +94,7 @@ import * as desktop from "../dist/js/tokens.desktop.js";
         return (
           <tr key={subtoken[1].name}>
             <td>
-              {subtoken[0]}-{token[0]}
+              {token[0]}-{subtoken[0]}
             </td>
             <td>{subtoken[1].value}</td>
             <td>
@@ -108,7 +131,7 @@ import * as desktop from "../dist/js/tokens.desktop.js";
         return (
           <tr key={subtoken[1].name}>
             <td>
-              {subtoken[0]}-{token[0]}
+              {token[0]}-{subtoken[0]}
             </td>
             <td>{subtoken[1].value}</td>
             <td>
@@ -145,7 +168,34 @@ import * as desktop from "../dist/js/tokens.desktop.js";
         return (
           <tr key={subtoken[1].name}>
             <td>
-              {subtoken[0]}-{token[0]}
+              {token[0]}-{subtoken[0]}
+            </td>
+            <td>{subtoken[1].value}</td>
+            <td>{`--sds-${Object.values(subtoken[1].path).join("-")}`}</td>
+          </tr>
+        );
+      });
+    })}
+  </tbody>
+</table>
+
+## Overline
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(tokens.typography.overline).map((token) => {
+      return Object.entries(token[1]).map((subtoken) => {
+        return (
+          <tr key={subtoken[1].name}>
+            <td>
+              {token[0]}-{subtoken[0]}
             </td>
             <td>{subtoken[1].value}</td>
             <td>{`--sds-${Object.values(subtoken[1].path).join("-")}`}</td>
@@ -168,13 +218,17 @@ import * as desktop from "../dist/js/tokens.desktop.js";
   </thead>
   <tbody>
     {Object.entries(tokens.typography.body).map((token) => {
-      return (
-        <tr key={token[1].name}>
-          <td>{token[0]}</td>
-          <td>{token[1].value}</td>
-          <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
-        </tr>
-      );
+      return Object.entries(token[1]).map((subtoken) => {
+        return (
+          <tr key={subtoken[1].name}>
+            <td>
+              {token[0]}-{subtoken[0]}
+            </td>
+            <td>{subtoken[1].value}</td>
+            <td>{`--sds-${Object.values(subtoken[1].path).join("-")}`}</td>
+          </tr>
+        );
+      });
     })}
   </tbody>
 </table>

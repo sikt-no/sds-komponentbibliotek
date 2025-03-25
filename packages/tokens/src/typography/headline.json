@@ -10,7 +10,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.m.value}"
+            "value": "{typography.lineheight.m.value}"
           }
         },
         "xs": {
@@ -21,7 +21,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.m.value}"
+            "value": "{typography.lineheight.m.value}"
           }
         },
         "s": {
@@ -32,7 +32,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.s.value}"
+            "value": "{typography.lineheight.s.value}"
           }
         },
         "m": {
@@ -43,7 +43,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.s.value}"
+            "value": "{typography.lineheight.s.value}"
           }
         },
         "l": {
@@ -54,7 +54,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.xs.value}"
+            "value": "{typography.lineheight.xs.value}"
           }
         },
         "xl": {
@@ -65,7 +65,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.xs.value}"
+            "value": "{typography.lineheight.xs.value}"
           }
         },
         "xxl": {
@@ -76,7 +76,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.xs.value}"
+            "value": "{typography.lineheight.xs.value}"
           }
         }
       }
@@ -91,7 +91,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.m.value}"
+            "value": "{typography.lineheight.m.value}"
           }
         },
         "xs": {
@@ -102,7 +102,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.m.value}"
+            "value": "{typography.lineheight.m.value}"
           }
         },
         "s": {
@@ -113,7 +113,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.m.value}"
+            "value": "{typography.lineheight.m.value}"
           }
         },
         "m": {
@@ -124,7 +124,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.s.value}"
+            "value": "{typography.lineheight.s.value}"
           }
         },
         "l": {
@@ -135,7 +135,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.s.value}"
+            "value": "{typography.lineheight.s.value}"
           }
         },
         "xl": {
@@ -146,7 +146,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.s.value}"
+            "value": "{typography.lineheight.s.value}"
           }
         },
         "xxl": {
@@ -157,7 +157,7 @@
             "value": "{typography.fontweight.semibold.value}"
           },
           "lineheight": {
-            "value": "{_typography.lineheight.s.value}"
+            "value": "{typography.lineheight.s.value}"
           }
         }
       }
