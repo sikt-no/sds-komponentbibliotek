@@ -90,6 +90,30 @@ import { Meta } from "@storybook/blocks";
   </tbody>
 </table>
 
+## Overline
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Example</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    {["default"].map((item) => {
+      const postfix = item !== "default" ? `--${item}` : "";
+      return (
+        <tr key={item}>
+          <th scope="row">overline / {item}</th>
+          <td className={`sds-typography-overline${postfix}`}>Aa</td>
+          <td>.sds-typography-overline{postfix}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
+
 ## Body
 
 <table>
@@ -101,12 +125,13 @@ import { Meta } from "@storybook/blocks";
     </tr>
   </thead>
   <tbody>
-    {["lead", "large", "regular", "small"].map((item) => {
+    {["l", "default", "s"].map((item) => {
+      const postfix = item !== "default" ? `--${item}` : "";
       return (
         <tr key={item}>
           <th scope="row">body / {item}</th>
-          <td className={`sds-typography-body--${item}`}>Aa</td>
-          <td>--sds-typography-body--{item}</td>
+          <td className={`sds-typography-body${postfix}`}>Aa</td>
+          <td>.sds-typography-body{postfix}</td>
         </tr>
       );
     })}
@@ -127,13 +152,9 @@ import { Meta } from "@storybook/blocks";
     {["emphasis", "strong", "quote", "code"].map((item) => {
       return (
         <tr key={item}>
-          <th scope="row">body / {item}</th>
-          <td
-            className={`sds-typography-body--regular sds-typography-body--${item}`}
-          >
-            Aa
-          </td>
-          <td>--sds-typography-body--{item}</td>
+          <th scope="row">{item}</th>
+          <td className={`sds-typography-body sds-typography--${item}`}>Aa</td>
+          <td>--sds-typography--{item}</td>
         </tr>
       );
     })}

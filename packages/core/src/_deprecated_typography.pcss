@@ -2,11 +2,17 @@
   INFO: Deprecated
 
   Classes:
+  - `.sds-typography-body--*` replaced by `.sds-typography-body--*`
+  - `.sds-typography-body--{emphasis,quote,strong,code}` replaced by `.sds-typography--*`
+  - `.sds-typography-body-paragraph--color-*` replaced by `.sds-typography-color--*`
+  - `.sds-typography-heading-*` replaced by `.sds-typography-*-headline-*`
   - `.sds-typography-heading-*` replaced by `.sds-typography-*-headline-*`
 
   Custom properties
   - `--sds-base-size-relative-*` replaced by `--sds-typography-fontsize-*`
   - `--sds-typography-weight-*` replaced by `--sds-typography-fontweight-*`
+  - `--sds-typography-body-fontsize-*` replaced by `--sds-typography-body-*-fontsize`
+  - `--sds-typography-body-lineheight-*` replaced by `--sds-typography-body-*-lineheight`
   - `--sds-typography-heading-*` replaced by `--sds-typography-*-headline-*`
 */
 :root {
@@ -21,6 +27,14 @@
   --sds-base-size-relative-xxl: calc(192rem / 16);
   --sds-typography-weight-regular: 400;
   --sds-typography-weight-bold: 600;
+  --sds-typography-body-fontsize-small: calc(12rem / 16);
+  --sds-typography-body-lineheight-small: calc(16rem / 16);
+  --sds-typography-body-fontsize-regular: calc(16rem / 16);
+  --sds-typography-body-lineheight-regular: calc(24rem / 16);
+  --sds-typography-body-fontsize-large: calc(18rem / 16);
+  --sds-typography-body-lineheight-large: calc(24rem / 16);
+  --sds-typography-body-fontsize-lead: calc(22rem / 16);
+  --sds-typography-body-lineheight-lead: calc(32rem / 16);
   --sds-typography-heading-fontsize-overline: calc(12.8rem / 16);
   --sds-typography-heading-lineheight-overline: calc(calc(12.8rem / 16) * 1.25);
   --sds-typography-heading-fontsize-paragraph: calc(19.2rem / 16);
@@ -100,6 +114,61 @@
       font-weight: var(--sds-typography-weight-bold);
       line-height: var(--sds-typography-heading-lineheight-overline);
       text-transform: uppercase;
+    }
+  }
+
+  &-body {
+    &--lead {
+      font-size: var(--sds-typography-body-fontsize-lead);
+      font-weight: var(--sds-typography-weight-regular);
+      line-height: var(--sds-typography-body-lineheight-lead);
+    }
+
+    &--large {
+      font-size: var(--sds-typography-body-fontsize-large);
+      font-weight: var(--sds-typography-weight-regular);
+      line-height: var(--sds-typography-body-lineheight-large);
+    }
+
+    &--regular {
+      font-size: var(--sds-typography-body-fontsize-regular);
+      font-weight: var(--sds-typography-weight-regular);
+      line-height: var(--sds-typography-body-lineheight-regular);
+    }
+
+    &--small {
+      font-size: var(--sds-typography-body-fontsize-small);
+      font-weight: var(--sds-typography-weight-regular);
+      line-height: var(--sds-typography-body-lineheight-small);
+    }
+
+    &--emphasis,
+    &--quote {
+      font-style: italic;
+    }
+
+    &--strong {
+      font-weight: 600;
+    }
+
+    &--code {
+      font-family: monospace;
+    }
+  }
+
+  &-paragraph {
+    &--color {
+      &-primary {
+        color: var(--sds-color-text-primary);
+      }
+
+      &-secondary {
+        color: var(--sds-color-text-secondary);
+      }
+
+      &-critical {
+        color: var(--sds-color-text-critical);
+      }
     }
   }
 }

@@ -103,42 +103,55 @@
     }
   }
 
+  &-overline {
+    font-size: var(--sds-typography-overline-default-fontsize);
+    font-weight: var(--sds-typography-overline-default-fontweight);
+    line-height: var(--sds-typography-overline-default-lineheight);
+    text-transform: uppercase;
+  }
+
   &-body {
-    &--lead {
-      font-size: var(--sds-typography-body-fontsize-lead);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-body-lineheight-lead);
+    font-size: var(--sds-typography-body-default-fontsize);
+    font-weight: var(--sds-typography-body-default-fontweight);
+    line-height: var(--sds-typography-body-default-lineheight);
+
+    &--s {
+      font-size: var(--sds-typography-body-s-fontsize);
+      font-weight: var(--sds-typography-body-s-fontweight);
+      line-height: var(--sds-typography-body-s-lineheight);
     }
 
-    &--large {
-      font-size: var(--sds-typography-body-fontsize-large);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-body-lineheight-large);
+    &--l {
+      font-size: var(--sds-typography-body-l-fontsize);
+      font-weight: var(--sds-typography-body-l-fontweight);
+      line-height: var(--sds-typography-body-l-lineheight);
+    }
+  }
+
+  &--emphasis,
+  &--quote {
+    font-style: italic;
+  }
+
+  &--strong {
+    font-weight: 600;
+  }
+
+  &--code {
+    font-family: monospace;
+  }
+
+  &--color {
+    &-primary {
+      color: var(--sds-color-text-primary);
     }
 
-    &--regular {
-      font-size: var(--sds-typography-body-fontsize-regular);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-body-lineheight-regular);
+    &-secondary {
+      color: var(--sds-color-text-secondary);
     }
 
-    &--small {
-      font-size: var(--sds-typography-body-fontsize-small);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-body-lineheight-small);
-    }
-
-    &--emphasis,
-    &--quote {
-      font-style: italic;
-    }
-
-    &--strong {
-      font-weight: 600;
-    }
-
-    &--code {
-      font-family: monospace;
+    &-critical {
+      color: var(--sds-color-text-critical);
     }
   }
 
@@ -282,22 +295,6 @@
           width: unset;
           height: unset;
         }
-      }
-    }
-  }
-
-  &-paragraph {
-    &--color {
-      &-primary {
-        color: var(--sds-color-text-primary);
-      }
-
-      &-secondary {
-        color: var(--sds-color-text-secondary);
-      }
-
-      &-critical {
-        color: var(--sds-color-text-critical);
       }
     }
   }
