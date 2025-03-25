@@ -14,7 +14,12 @@ export {
   Heading6,
 } from "./src/Heading/Heading";
 
-export type { ParagraphProps } from "./src/Paragraph/Paragraph";
+export type {
+  ParagraphProps,
+  LabelProps,
+  OverlineProps,
+  BodyProps,
+} from "./src/Paragraph/Paragraph";
 export { Paragraph } from "./src/Paragraph/Paragraph";
 
 export type { LinkProps } from "./src/Link/Link";

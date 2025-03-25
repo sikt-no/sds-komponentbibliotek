@@ -15,16 +15,15 @@ describe("Paragraph", () => {
     it("should render", async () => {
       render(<Paragraph>Foo</Paragraph>);
 
-      expect(screen.getByText("Foo")).toHaveClass(
-        "sds-typography-body sds-typography-body--regular",
-      );
+      expect(screen.getByText("Foo")).toHaveClass("sds-typography-body");
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
 
     it("should have class name", async () => {
       render(
         <Paragraph
-          variant="small"
+          variant="label"
+          size="l"
           modifier="strong"
           className="test-class-name"
         >
@@ -33,7 +32,7 @@ describe("Paragraph", () => {
       );
 
       expect(screen.getByText("Foo")).toHaveClass(
-        "sds-typography-body sds-typography-body--small sds-typography-body--strong test-class-name",
+        "sds-typography-label sds-typography-label--l sds-typography--strong test-class-name",
       );
     });
 
@@ -41,6 +40,17 @@ describe("Paragraph", () => {
       render(<Paragraph as="span">Foo</Paragraph>);
 
       expect(screen.getByText("Foo").nodeName).toBe("SPAN");
+    });
+
+    it("should have deprecation warning", async () => {
+      const spy = jest
+        .spyOn(global.console, "warn")
+        .mockImplementationOnce(() => jest.fn);
+
+      render(<Paragraph variant="small">Foo</Paragraph>);
+
+      expect(screen.getByText("Foo")).toHaveClass("sds-typography-body");
+      expect(spy).toHaveBeenCalled();
     });
   });
 });
