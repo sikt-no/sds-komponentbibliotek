@@ -15,12 +15,19 @@ figma.connect(
         true: figma.string("Helper text"),
         false: undefined,
       }),
+      errorText: figma.enum("State", {
+        Invalid: figma.boolean("Show helper", {
+          true: figma.string("Helper text"),
+          false: undefined,
+        }),
+      }),
     },
-    example: ({ label, value, helpText }) => (
+    example: ({ label, value, helpText, errorText }) => (
       <TextArea
         label={label}
         value={value}
         helpText={helpText}
+        errorText={errorText}
         onChange={() => {}}
       />
     ),
