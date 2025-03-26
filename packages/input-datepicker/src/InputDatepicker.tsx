@@ -143,8 +143,8 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
           value={value}
           isInvalid={Boolean(errorText)}
           aria-labelledby={ariaLabelledBy}
-          aria-describedby={helpTextId}
-          aria-errormessage={errorText && helpTextId}
+          aria-describedby={(errorText ?? helpText) ? helpTextId : undefined}
+          aria-errormessage={errorText ? helpTextId : undefined}
           className={clsx(
             "sds-input",
             errorText && "sds-input--error",
