@@ -95,7 +95,7 @@ figma.connect(
               value="${value}"
               aria-describedby="unique-id-help-text"
               aria-invalid="true"
-              aria-errormessage="${errorText}"
+              aria-errormessage="unique-id-help-text"
             />
           </div>
           <div
