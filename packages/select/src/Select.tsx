@@ -71,8 +71,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             id={id}
             className="sds-select__select-input"
             aria-labelledby={ariaLabelledBy}
-            aria-describedby={helpTextId}
+            aria-describedby={(errorText ?? helpText) ? helpTextId : undefined}
             aria-invalid={Boolean(errorText) && true}
+            aria-errormessage={errorText ? helpTextId : undefined}
             onChange={(e) => {
               onChange?.(e);
             }}
