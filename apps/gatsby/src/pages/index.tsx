@@ -70,6 +70,7 @@ const IndexPage: React.FC<PageProps> = () => {
       { name: "Glaysa", role: "Teknologi", team: "Kudaf" },
     ],
     [
+      { name: "Eirik", role: "Teknologi", team: "FS Admin" },
       { name: "Mats", role: "Teknologi", team: "FS Admin" },
       { name: "Marius", role: "Teknologi", team: "FS Admin" },
       { name: "Patrick", role: "Teknologi", team: "FS Admin" },
