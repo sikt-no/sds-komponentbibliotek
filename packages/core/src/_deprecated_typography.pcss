@@ -1,10 +1,26 @@
 /*
   INFO: Deprecated
-  The `.sds-typography-heading-*` CSS classes & `--sds-typography-heading-*` CSS
-  variables has been deprecated and will be removed. Use `.sds-typography-*-headline-*`
-  & `--sds-typography-*-headline-*` instead.
+
+  Classes:
+  - `.sds-typography-heading-*` replaced by `.sds-typography-*-headline-*`
+
+  Custom properties
+  - `--sds-base-size-relative-*` replaced by `--sds-typography-fontsize-*`
+  - `--sds-typography-weight-*` replaced by `--sds-typography-fontweight-*`
+  - `--sds-typography-heading-*` replaced by `--sds-typography-*-headline-*`
 */
 :root {
+  --sds-base-size-relative-xxs: calc(4rem / 16);
+  --sds-base-size-relative-xs: calc(8rem / 16);
+  --sds-base-size-relative-s: calc(12rem / 16);
+  --sds-base-size-relative-s1: calc(16rem / 16);
+  --sds-base-size-relative-m: calc(24rem / 16);
+  --sds-base-size-relative-m1: calc(32rem / 16);
+  --sds-base-size-relative-l: calc(48rem / 16);
+  --sds-base-size-relative-xl: calc(96rem / 16);
+  --sds-base-size-relative-xxl: calc(192rem / 16);
+  --sds-typography-weight-regular: 400;
+  --sds-typography-weight-bold: 600;
   --sds-typography-heading-fontsize-overline: calc(12.8rem / 16);
   --sds-typography-heading-lineheight-overline: calc(calc(12.8rem / 16) * 1.25);
   --sds-typography-heading-fontsize-paragraph: calc(19.2rem / 16);
