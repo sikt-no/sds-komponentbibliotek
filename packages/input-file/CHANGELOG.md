@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.2.5...@sikt/sds-input-file@0.2.6) (2025-03-27)
+
+### Features
+
+- **input-file:** added support for string array to accept prop ([fffb52b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fffb52bb24bd2dd0799508f02802e5ccd05c0a76))
+
+### Bug Fixes
+
+- **deps:** update dependency react-aria-components to ^1.7.1 ([3b4be55](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3b4be55b6ae58dadb6d1922a7a73ded8af91966f))
+
 ## [0.2.5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.2.4...@sikt/sds-input-file@0.2.5) (2025-03-12)
 
 ### Bug Fixes
