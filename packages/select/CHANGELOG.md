@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@3.0.2...@sikt/sds-select@3.0.3) (2025-03-27)
+
+### Bug Fixes
+
+- **select:** avoid invalid aria-describedby when no help text ([2c7dacc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2c7dacc92c0eb211e0b8a356d387670700d4bee8))
+
 ## [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@3.0.1...@sikt/sds-select@3.0.2) (2025-03-12)
 
 ### Bug Fixes
