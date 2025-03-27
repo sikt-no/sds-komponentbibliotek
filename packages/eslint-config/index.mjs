@@ -22,8 +22,6 @@ export default tseslint.config([
   eslintPluginImportX.flatConfigs.typescript,
   eslintConfigPrettier,
   {
-    plugins: { "import-x": eslintPluginImportX },
-
     languageOptions: {
       globals: { ...globals.browser },
 
