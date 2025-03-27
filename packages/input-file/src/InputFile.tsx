@@ -29,7 +29,7 @@ export interface InputFileProps extends DropZoneProps {
   placeholderBridge?: string;
   triggerText?: ReactNode;
   onChange?: (newValue: (File | FileWithError)[]) => void;
-  accept: string;
+  accept: string | string[];
   multiple?: boolean;
   capture?: "user" | "environment";
   value?: File[];
@@ -63,7 +63,8 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
     const helpTextId = `${id}-help-text`;
     const [files, setFiles] = useState<(File | FileWithError)[]>(value ?? []);
     const inputId = { id };
-    const acceptedFileTypes = accept.split(",");
+    const acceptedFileTypes =
+      typeof accept === "string" ? accept.split(",") : accept;
 
     useEffect(() => {
       if (value) {
