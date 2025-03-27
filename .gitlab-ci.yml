@@ -3,8 +3,8 @@ default:
   interruptible: true
 
 include:
-  - component: gitlab.sikt.no/platon/ci-components/docker/docker@1.0.3
-  - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@1.0.0
+  - component: gitlab.sikt.no/platon/ci-components/docker/docker@2.0.0
+  - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@2.0.0
   - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@1.3.0
 
 variables:
@@ -162,7 +162,7 @@ test-e2e-update-snapshots:
 
 .vuln:
   stage: test
-  extends: .imagescan
+  extends: .platon-imagescan
   script:
     - trivy fs --cache-dir .trivycache/ --dependency-tree ./
     - trivy fs --cache-dir .trivycache/ -f json -o gl-container-scanning-report.json ./
@@ -307,7 +307,7 @@ gatsby:
 
 docker:
   stage: build
-  extends: .docker-build
+  extends: .platon-docker-build
   dependencies:
     - storybook
     - gatsby
