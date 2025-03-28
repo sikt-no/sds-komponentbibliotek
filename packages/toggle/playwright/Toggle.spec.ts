@@ -92,20 +92,6 @@ test.describe("Toggle", () => {
 
       expect(accessibilityScanResults.violations).toEqual([]);
     });
-
-    test("toggle switch with error should be accessible", async ({ page }) => {
-      await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-toggleswitch--with-error",
-      );
-
-      await page.locator(".sds-toggle-switch").first().waitFor();
-
-      const accessibilityScanResults = await new AxeBuilder({ page })
-        .include(".sds-toggle-switch")
-        .analyze();
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    });
   });
 
   test.describe("visual", () => {
@@ -158,16 +144,6 @@ test.describe("Toggle", () => {
     }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-toggle-toggleswitch--with-label-first",
-      );
-
-      await expect(page.locator(".sds-toggle-switch")).toHaveScreenshot();
-    });
-
-    test("toggle switch with error should have screenshot", async ({
-      page,
-    }) => {
-      await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-toggleswitch--with-error",
       );
 
       await expect(page.locator(".sds-toggle-switch")).toHaveScreenshot();

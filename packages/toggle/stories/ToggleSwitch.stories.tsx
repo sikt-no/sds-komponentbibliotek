@@ -64,11 +64,6 @@ export const WithLabelFirst = {
   },
 } satisfies Story;
 
-export const WithError = {
-  ...Template,
-  args: { ...Default.args, error: true },
-} satisfies Story;
-
 export const WithAriaLabelledby = {
   args: {
     "aria-labelledby": "rowTitle columnTitle",

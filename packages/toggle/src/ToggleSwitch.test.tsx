@@ -78,14 +78,6 @@ describe("Toggle Switch", () => {
       );
     });
 
-    it("should have error class modifier", async () => {
-      render(<ToggleSwitch checked error label="Foo" />);
-
-      expect(screen.getByTestId("sds-toggle-switch")).toHaveClass(
-        "sds-toggle-switch--error",
-      );
-    });
-
     it("should support aria-labelledby", () => {
       render(
         <>

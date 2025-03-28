@@ -16,7 +16,6 @@ interface ToggleSwitchBaseProps
   > {
   checked?: boolean;
   showIcons?: boolean;
-  error?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   className?: string;
 }
@@ -43,7 +42,6 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
       "aria-labelledby": ariaLabelledby,
       labelFirst = false,
       showIcons = true,
-      error = false,
       onChange,
       className,
       ...rest
@@ -64,7 +62,6 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
           className="sds-toggle-switch__track"
           aria-labelledby={ariaLabelledby}
           checked={checked}
-          aria-invalid={error}
           onChange={onChange}
           readOnly={!onChange}
           {...rest}
@@ -81,7 +78,6 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
         className={clsx(
           "sds-toggle-switch",
           checked && "sds-toggle-switch--checked",
-          error && "sds-toggle-switch--error",
           className,
         )}
         data-testid="sds-toggle-switch"
