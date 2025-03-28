@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@3.0.0...@sikt/sds-tokens@3.1.0) (2025-03-28)
+
+### Features
+
+- **tailwind:** add tailwind v4 config ([d81abbb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d81abbb880458eb40336790b17c25268a7a56494))
+
 ## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@2.2.0...@sikt/sds-tokens@3.0.0) (2025-02-24)
 
 ### ⚠ BREAKING CHANGES
