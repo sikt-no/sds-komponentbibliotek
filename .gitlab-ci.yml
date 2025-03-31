@@ -270,6 +270,40 @@ storybook:
       when: never
     - when: on_success
 
+astro:
+  stage: build
+  extends: .npm_cache
+  script:
+    - npm pkg delete scripts.prepare
+    - npm ci --cache .npm
+    - npm run build:astro
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - .npm
+      policy: pull
+    - key: "$CI_JOB_NAME-$CI_COMMIT_BRANCH"
+      paths:
+        - apps/astro/dist/
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+    expire_in: 1 days
+    paths:
+      - apps/astro/dist
+  dependencies:
+    - packages
+  needs:
+    - install
+    - packages
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+    - if: $CI_COMMIT_TAG
+      when: never
+    - when: on_success
+
 gatsby:
   stage: build
   extends: .npm_cache
@@ -309,11 +343,13 @@ docker:
   stage: build
   extends: .platon-docker-build
   dependencies:
-    - storybook
+    - astro
     - gatsby
+    - storybook
   needs:
-    - storybook
+    - astro
     - gatsby
+    - storybook
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
       when: never
