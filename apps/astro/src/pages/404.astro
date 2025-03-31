@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Hero } from "../components";
+import { BackButton } from "../components";
+
+const pageTitle = "Siden finnes ikke";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[{ title: "Designsystem", href: "/" }]}
+    heading={pageTitle}
+  >
+    <BackButton />
+  </Hero>
+</Layout>

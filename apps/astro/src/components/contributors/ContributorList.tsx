@@ -1,30 +1,32 @@
 import { Heading2, Heading3 } from "@sikt/sds-core";
-import * as styles from "./contributors.module.css";
-import Contributor from "./Contributor";
+import type { Contributors as ContributorsType } from "../../assets/data/contributors.ts";
+import { Contributor } from "./Contributor";
+import styles from "./contributors.module.css";
 
-export const Contributors = ({
+export const ContributorList = ({
   heading,
   contributors,
   showEasterEggs = false,
 }: {
   heading: string;
-  contributors: [];
+  contributors: ContributorsType[];
   showEasterEggs?: boolean;
 }) => {
   return (
     <>
       <Heading2 variant="medium">{heading}</Heading2>
-      <div className={style.contributors}>
-        {contributors.reverse().map((team) => {
+      <div className={styles.contributors}>
+        {contributors.map((group) => {
           return (
-            <div key={team[0].team}>
+            <div key={group[0].team}>
               {contributors.length > 1 && (
-                <Heading3 variant="overline">{team[0].team}</Heading3>
+                <Heading3 variant="overline">{group[0].team}</Heading3>
               )}
-              <div className={style.contributors__contributorGroup}>
-                {team.map((contributor) => {
+              <div className={styles.group}>
+                {group.map((contributor) => {
                   return (
                     <Contributor
+                      key={contributor.name}
                       {...contributor}
                       showEasterEggs={showEasterEggs}
                     />
@@ -38,5 +40,3 @@ export const Contributors = ({
     </>
   );
 };
-
-export default Contributors;

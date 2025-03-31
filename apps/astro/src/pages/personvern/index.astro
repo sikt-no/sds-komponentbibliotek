@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Hero } from "../../components";
+import { Link, Paragraph } from "@sikt/sds-core";
+import { Section } from "@sikt/sds-section";
+
+const pageTitle = "Personvern og informasjonskapsler";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[{ title: "Designsystem", href: "/" }]}
+    heading=`Personvern og informasjons­kapsler`
+  />
+  <section class="part">
+    <div>
+      <Section headingText="Personvern" className="section">
+        <div>
+          <Paragraph className="content-max-width">
+            Les mer om hvordan Sikt hånderer personvern i vår{" "}
+            <Link href="https://sikt.no/personvernerklaering">
+              personvernserklæring
+            </Link>
+            .
+          </Paragraph>
+        </div>
+      </Section>
+
+      <Section headingText="Informasjonskapsler (cookies)" className="section">
+        <div>
+          <Paragraph className="content-max-width">
+            Denne siden bruker ikke noen informasjonskapsler.
+          </Paragraph>
+          <Paragraph className="content-max-width">
+            Vi samler kun teknisk informasjon for å gjøre tjenesten bedre og
+            følger innstillingene dine for å ikke bli sporet (do not track).
+          </Paragraph>
+        </div>
+      </Section>
+    </div>
+  </section>
+</Layout>

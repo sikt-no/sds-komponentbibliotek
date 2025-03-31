@@ -1,0 +1,26 @@
+@import url("@sikt/sds-tokens/dist/css/custom-media.css");
+
+.section {
+  background-color: var(--sds-color-layout-background-primary);
+  display: grid;
+  gap: var(--sds-space-gap-large);
+  margin: 0 auto;
+  max-width: var(--sds-space-grid-full);
+  padding: var(--sds-space-padding-huge);
+
+  @media (--sds-base-breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-space-gap-medium);
+}
+
+.image {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

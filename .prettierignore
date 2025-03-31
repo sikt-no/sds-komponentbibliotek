@@ -1,6 +1,7 @@
 coverage
 build
 dist
+apps/astro/.astro
 apps/storybook/storybook-static
 apps/gatsby/public
 .cache

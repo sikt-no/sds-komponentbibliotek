@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Contributors } from "../components";
+import { Hero } from "../components";
+import { Button, ButtonGroup } from "@sikt/sds-button";
+import { Image } from "astro:assets";
+import underConstruction from "../assets/images/under-construction.gif";
+---
+
+<Layout>
+  <Hero heading=`Design­system`>
+    Velkommen til Sikts designsystem. Dokumentasjonen er under konstruksjon.
+  </Hero>
+
+  <section class="part">
+    <div class="content">
+      <Image
+        src={underConstruction}
+        alt="Animert veiskilt for under konstruksjon."
+      />
+    </div>
+  </section>
+
+  <section class:list={["part", "primary"]}>
+    <div class="content">
+      <Contributors client:load />
+    </div>
+  </section>
+</Layout>

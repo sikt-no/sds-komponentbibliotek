@@ -1,0 +1,17 @@
+:global(.sds-footer__content) {
+  align-items: start;
+}
+
+.ul {
+  display: flex;
+  gap: var(--sds-space-gap-minimal);
+  list-style: none;
+}
+
+.horizontal {
+  align-items: center;
+}
+
+.vertical {
+  flex-direction: column;
+}

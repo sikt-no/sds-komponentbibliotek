@@ -1,0 +1,42 @@
+{
+  "name": "@sikt/sds-astro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.2",
+    "@astrojs/sitemap": "^3.3.0",
+    "@phosphor-icons/core": "^2.1.1",
+    "@sikt/sds-breadcrumbs": "^2.0.3",
+    "@sikt/sds-button": "^4.0.1",
+    "@sikt/sds-core": "^4.5.0",
+    "@sikt/sds-footer": "^2.1.0",
+    "@sikt/sds-header": "^3.0.6",
+    "@sikt/sds-icons": "^3.1.0",
+    "@sikt/sds-list": "^2.1.1",
+    "@sikt/sds-logo": "^2.0.1",
+    "@sikt/sds-section": "^3.0.1",
+    "@sikt/sds-tokens": "^4.0.0",
+    "astro": "^5.5.5",
+    "astro-matomo": "^1.8.0",
+    "canvas-confetti": "^1.9.3",
+    "clsx": "^2.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-use-konami": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "autoprefixer": "^10.4.21",
+    "postcss-custom-media": "^11.0.5",
+    "vite-plugin-svgr": "^4.3.0"
+  }
+}

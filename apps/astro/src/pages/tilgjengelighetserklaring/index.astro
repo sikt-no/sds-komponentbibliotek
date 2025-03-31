@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Hero } from "../../components";
+import { Link, Paragraph } from "@sikt/sds-core";
+import {
+  DescriptionList,
+  DescriptionDetails,
+  DescriptionTerm,
+} from "@sikt/sds-list";
+import { Section } from "@sikt/sds-section";
+
+const pageTitle = "Tilgjengelighetserklæring";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[{ title: "Designsystem", href: "/" }]}
+    heading=`Tilgjengelighets­erklæring`
+  />
+  <section class="part">
+    <div>
+      <Section
+        headingText="I hvilken grad er nettstedet i samsvar med kravene til universell utforming?"
+        className="section"
+      >
+        <div class="content">
+          <Paragraph className="content-max-width">
+            Nettstedet oppfyller alle krav til universell utforming.
+          </Paragraph>
+
+          <Paragraph className="content-max-width">
+            Figma, Storybook og GitLab er verktøy for internt bruk og har derfor
+            ikke samme krav till universell utforming.
+          </Paragraph>
+        </div>
+      </Section>
+
+      <Section headingText="Om nettstedet" className="section">
+        <div class="content">
+          <Paragraph className="content-max-width">
+            <DescriptionList>
+              <DescriptionTerm>Ansvarlig for nettstedet</DescriptionTerm>
+              <DescriptionDetails>
+                Sikt - Kunnskapssektorens tjenesteleverandør,
+                organisasjonsnummer 919 477 822
+              </DescriptionDetails>
+              <DescriptionTerm>
+                Meld gjerne fra om brudd på kravene
+              </DescriptionTerm>
+              <DescriptionDetails>
+                <Link href="mailto:uu@sikt.no">uu@sikt.no</Link>
+              </DescriptionDetails>
+            </DescriptionList>
+          </Paragraph>
+        </div>
+      </Section>
+
+      <Section headingText="Klage" className="section">
+        <div class="content">
+          <Paragraph className="content-max-width">
+            Diskrimineringsnemnda behandler klager om brudd på regelverket. Du
+            finner informasjon om{" "}
+            <Link href="https://diskrimineringsnemnda.no/for-klager" isExternal>
+              hvordan du klager på nettstedet til Diskrimineringsnemnda
+            </Link>
+            . Du kan også klage på manglende eller sent svar på tilbakemeldinger
+            du har sendt til oss.
+          </Paragraph>
+        </div>
+      </Section>
+    </div>
+  </section>
+</Layout>
