@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.5.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.4.0...@sikt/sds-core@4.5.0) (2025-04-01)
+
+### ⚠ Deprecations
+
+- **typography:** deprecate
+  - CSS classes:
+    - `.sds-typography-body--*` replaced by `.sds-typography-body--*`
+    - `.sds-typography-body--{emphasis,quote,strong,code}` replaced by `.sds-typography--*`
+    - `.sds-typography-body-paragraph--color-*` replaced by `.sds-typography-color--*`
+    - `.sds-typography-heading-*` replaced by `.sds-typography-*-headline-*`
+    - `.sds-typography-heading-*` replaced by `.sds-typography-*-headline-*`
+  - CSS custom properties
+    - `--sds-base-size-relative-*` replaced by `--sds-typography-fontsize-*`
+    - `--sds-typography-weight-*` replaced by `--sds-typography-fontweight-*`
+    - `--sds-typography-body-fontsize-*` replaced by `--sds-typography-body-*-fontsize`
+    - `--sds-typography-body-lineheight-*` replaced by `--sds-typography-body-*-lineheight`
+    - `--sds-typography-heading-*` replaced by `--sds-typography-*-headline-*`
+
+### Features
+
+- remove view-transitions when prefers reduced motion ([afc7624](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/afc76248cd235ebad6f93a90b1b3e17399339883))
+- **typography:** add headline classes & deprecate old heading classes & variables ([47d0e93](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/47d0e934934e13504f2e75daa67ba9deb00562ab))
+- **typography:** add headline props to heading component ([349451e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/349451e303e7f4154b9169bfe211dd774d58f4d8))
+- **typography:** add new body classes & deprecate old ([404f52c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/404f52c442f2f35283fddf0d2a769154a8dec85d))
+- **typography:** add new typography props to paragraph component ([07a5a4e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/07a5a4e87a6efd68800e1f8da8856a87a90bee3a))
+- **typography:** deprecated size relative custom properties ([297d0a5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/297d0a5dff3a26d9cfac879c5024313952cf1ea9))
+
+### Bug Fixes
+
+- **blockquote:** set quote marks to english ([d386370](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d38637032f745d58d0b13395eef5ef878accfb60))
+
 ## [4.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.3.0...@sikt/sds-core@4.4.0) (2025-03-11)
 
 ### Features
