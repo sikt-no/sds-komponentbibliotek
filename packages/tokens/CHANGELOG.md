@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@3.1.0...@sikt/sds-tokens@4.0.0) (2025-04-01)
+
+### ⚠ BREAKING CHANGES
+
+- **tokens:** add new typography body tokens
+- **tokens:** add new typography tokens
+- **tokens:** removes old typography tokens
+  - base.size-relative
+  - typography.heading
+  - typography.body.fontsize
+  - typography.body.lineheight
+
+### Features
+
+- **tokens:** add new typography body tokens ([a9ec19d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a9ec19d472c195c1b945d66cd049d0d34faabed9))
+- **tokens:** add new typography tokens ([2189d46](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2189d46c6484a17d49019aff51a57f1fb29f7791))
+
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@3.0.0...@sikt/sds-tokens@3.1.0) (2025-03-28)
 
 ### Features
