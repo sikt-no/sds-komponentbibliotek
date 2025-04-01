@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-breadcrumbs@2.0.2...@sikt/sds-breadcrumbs@2.0.3) (2025-04-01)
+
+### Bug Fixes
+
+- **breadcrumbs:** add empty alt text for slash separator ([11d2693](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/11d269327f22d1f093fe7000fa58b4e7aae36bb5))
+- **deps:** update @sikt/sds-core to 4.4.0 ([9dd6147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9dd6147cd902975653f03b29db9f580ec19c261c))
+- make required props non nullable ([9b26a28](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9b26a28bfdc7af1a8f1a0d8350a028240c350669))
+
 ## [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-breadcrumbs@2.0.1...@sikt/sds-breadcrumbs@2.0.2) (2024-11-19)
 
 ### Bug Fixes
