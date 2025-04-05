@@ -112,10 +112,6 @@ npm run dev
 
 Storybook will run on http://localhost:6006 and Astro (designsystem.sikt.no) on http://localhost:4321
 
-#### Windows
-
-On Windows you might first need to install [windows-build-tools](https://www.gatsbyjs.com/docs/how-to/local-development/gatsby-on-windows/).
-
 ### Change request
 
 Open an issue on Gitlab and/or talk to us. We are here to help!

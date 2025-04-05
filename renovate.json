@@ -92,10 +92,6 @@
       "groupName": "storybook"
     },
     {
-      "matchPackagePatterns": ["^gatsby", "@mdx-js/mdx", "@mdx-js/react"],
-      "groupName": "gatsby"
-    },
-    {
       "matchPackagePatterns": ["^@sikt"],
       "groupName": "sikt"
     },

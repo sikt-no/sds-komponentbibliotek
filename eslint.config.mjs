@@ -16,7 +16,6 @@ export default [
       "**/*.config.ts",
       "docs/tutorial/**/*",
       "turbo/generators/**/*",
-      "apps/gatsby",
       "packages/**/figma/*",
     ],
   },

@@ -17,5 +17,5 @@ export default {
       },
     },
   ],
-  ignoreFiles: ["turbo/generators/template/**/*", "apps/gatsby/public/**/*"],
+  ignoreFiles: ["turbo/generators/template/**/*"],
 };
