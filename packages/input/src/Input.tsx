@@ -99,8 +99,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         htmlFor={id}
         helpTextId={helpTextId}
       >
-        <div className="sds-input__wrapper">
-          {icon && <div className="sds-input__icon">{icon}</div>}
+        <span className="sds-input__wrapper">
+          {icon && <span className="sds-input__icon">{icon}</span>}
           <input
             ref={ref}
             className="sds-input__input"
@@ -141,7 +141,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               {...actionProps}
             />
           )}
-        </div>
+        </span>
       </FormField>
     );
   },

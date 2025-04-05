@@ -74,10 +74,10 @@ export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
     return label !== undefined ? (
       <label className={labelClassName} htmlFor={id}>
         {input}
-        <div className="sds-radio__input-label">{label}</div>
+        <span className="sds-radio__input-label">{label}</span>
       </label>
     ) : (
-      <div className={labelClassName}>{input}</div>
+      <span className={labelClassName}>{input}</span>
     );
   },
 );

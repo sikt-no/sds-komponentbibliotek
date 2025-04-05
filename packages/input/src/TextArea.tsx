@@ -80,7 +80,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         htmlFor={id}
         helpTextId={helpTextId}
       >
-        <div className="sds-input__wrapper">
+        <span className="sds-input__wrapper">
           {icon && <div className="sds-input__icon">{icon}</div>}
           <textarea
             ref={ref}
@@ -96,7 +96,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             rows={rows}
             {...rest}
           />
-        </div>
+        </span>
       </FormField>
     );
   },

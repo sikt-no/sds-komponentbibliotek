@@ -104,23 +104,23 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
           {...(indeterminate && { "aria-checked": "mixed" })}
           {...rest}
         />
-        <div className="sds-checkbox__icon-wrapper">
+        <span className="sds-checkbox__icon-wrapper">
           {indeterminate ? (
             <SubtractIcon className="sds-checkbox__icon" />
           ) : (
             <ConfirmIcon className="sds-checkbox__icon" />
           )}
-        </div>
+        </span>
       </>
     );
 
     return label !== undefined ? (
       <label className={labelClassName} htmlFor={id}>
         {input}
-        <div className="sds-checkbox__input-label">{label}</div>
+        <span className="sds-checkbox__input-label">{label}</span>
       </label>
     ) : (
-      <div className={labelClassName}>{input}</div>
+      <span className={labelClassName}>{input}</span>
     );
   },
 );

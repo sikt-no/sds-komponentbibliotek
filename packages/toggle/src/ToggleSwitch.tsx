@@ -50,10 +50,10 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
   ) => {
     const id = useId();
     const labelElement = (
-      <div className="sds-toggle-switch__label-text">{label}</div>
+      <span className="sds-toggle-switch__label-text">{label}</span>
     );
     const input = (
-      <div className="sds-toggle-switch__inner">
+      <span className="sds-toggle-switch__inner">
         <input
           ref={ref}
           id={id}
@@ -66,11 +66,11 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(
           readOnly={!onChange}
           {...rest}
         />
-        <div className="sds-toggle-switch__thumb">
+        <span className="sds-toggle-switch__thumb">
           {showIcons && checked && <ConfirmIcon />}
           {showIcons && !checked && <CancelIcon />}
-        </div>
-      </div>
+        </span>
+      </span>
     );
 
     return (

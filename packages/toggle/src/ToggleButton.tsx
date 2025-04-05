@@ -23,7 +23,6 @@ export const ToggleButton = forwardRef<HTMLInputElement, ToggleButtonProps>(
           onChange={onChange}
           readOnly={!onChange}
           checked={checked}
-          aria-checked={checked}
           id={toggleButtonId}
         />
         <label
@@ -33,7 +32,7 @@ export const ToggleButton = forwardRef<HTMLInputElement, ToggleButtonProps>(
           )}
           htmlFor={toggleButtonId}
         >
-          <div className="sds-toggle-button__label-text">{label}</div>
+          <span className="sds-toggle-button__label-text">{label}</span>
           {showIcons && (
             <AddAltIcon
               className={clsx(

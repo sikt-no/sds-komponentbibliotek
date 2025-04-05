@@ -24,7 +24,7 @@ export const Label = ({
       )}
       {...rest}
     >
-      <div className="sds-form-field__label-text">{text}</div>
+      <span className="sds-form-field__label-text">{text}</span>
       {children}
     </label>
   );
