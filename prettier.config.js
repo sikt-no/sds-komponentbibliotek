@@ -1,1 +1,9 @@
-module.exports = require("./packages/prettier-config");
+/**
+ * @see https://prettier.io/docs/configuration
+ * @type {import("prettier").Config}
+ */
+const config = {
+  ...require("./packages/prettier-config"),
+};
+
+module.exports = config;
