@@ -1,4 +1,4 @@
-import { act, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import {
@@ -57,9 +57,7 @@ describe("Combobox", () => {
         </Combobox>,
       );
 
-      await act(async () => {
-        await user.click(screen.getByRole("button"));
-      });
+      await user.click(screen.getByRole("button"));
 
       expect(screen.getByText("Section heading")).toBeInTheDocument();
     });
@@ -76,9 +74,7 @@ describe("Combobox", () => {
         </Combobox>,
       );
 
-      await act(async () => {
-        await user.click(screen.getByRole("button"));
-      });
+      await user.click(screen.getByRole("button"));
 
       expect(screen.getByRole("listbox")).toBeInTheDocument();
     });
@@ -97,12 +93,8 @@ describe("Combobox", () => {
         </Combobox>,
       );
 
-      await act(async () => {
-        await user.click(screen.getByRole("button"));
-      });
-      await act(async () => {
-        await user.click(screen.getByText("Option 1"));
-      });
+      await user.click(screen.getByRole("button"));
+      await user.click(screen.getByText("Option 1"));
 
       expect(onSelectionChangeHandler).toHaveBeenCalledWith(1);
     });

@@ -1,4 +1,4 @@
-import { act, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { Tab, TabProps } from "./Tab";
@@ -88,9 +88,7 @@ describe("Tabs", () => {
       const user = userEvent.setup();
       renderComponent({});
 
-      await act(async () => {
-        await user.click(screen.getByText("Tab 2"));
-      });
+      await user.click(screen.getByText("Tab 2"));
 
       expect(screen.getByText("Content 1")).not.toBeVisible();
       expect(screen.getByText("Content 2")).toBeVisible();
@@ -101,9 +99,7 @@ describe("Tabs", () => {
       const changeHandler = jest.fn();
       renderComponent({ onChange: changeHandler });
 
-      await act(async () => {
-        await user.click(screen.getByText("Tab 2"));
-      });
+      await user.click(screen.getByText("Tab 2"));
 
       expect(changeHandler).toHaveBeenCalled();
       expect(changeHandler).toHaveBeenCalledWith(1);
@@ -113,44 +109,34 @@ describe("Tabs", () => {
       const user = userEvent.setup();
       renderComponent({});
 
-      await act(async () => {
-        await user.tab();
-        await user.keyboard("[ArrowRight]");
-      });
+      await user.tab();
+      await user.keyboard("[ArrowRight]");
 
       expect(screen.getByText("Tab 2")).toHaveFocus();
       expect(screen.getByText("Content 1")).toBeVisible();
       expect(screen.getByText("Content 2")).not.toBeVisible();
 
-      await act(async () => {
-        await user.keyboard("[Space]");
-      });
+      await user.keyboard("[Space]");
 
       expect(screen.getByText("Tab 2")).toHaveFocus();
       expect(screen.getByText("Content 1")).not.toBeVisible();
       expect(screen.getByText("Content 2")).toBeVisible();
 
-      await act(async () => {
-        await user.keyboard("[ArrowLeft]");
-        await user.keyboard("[Enter]");
-      });
+      await user.keyboard("[ArrowLeft]");
+      await user.keyboard("[Enter]");
 
       expect(screen.getByText("Tab 1")).toHaveFocus();
       expect(screen.getByText("Content 1")).toBeVisible();
       expect(screen.getByText("Content 2")).not.toBeVisible();
 
-      await act(async () => {
-        await user.keyboard("[End]");
-      });
+      await user.keyboard("[End]");
 
       expect(screen.getByText("Tab 3")).toHaveFocus();
       expect(screen.getByText("Content 1")).toBeVisible();
       expect(screen.getByText("Content 3")).not.toBeVisible();
 
-      await act(async () => {
-        await user.keyboard("[Enter]");
-        await user.keyboard("[Home]");
-      });
+      await user.keyboard("[Enter]");
+      await user.keyboard("[Home]");
 
       expect(screen.getByText("Tab 1")).toHaveFocus();
       expect(screen.getByText("Content 1")).not.toBeVisible();
@@ -161,50 +147,38 @@ describe("Tabs", () => {
       const user = userEvent.setup();
       renderComponent({ isSelectOnFocus: true });
 
-      await act(async () => {
-        await user.tab();
-        await user.keyboard("[ArrowRight]");
-      });
+      await user.tab();
+      await user.keyboard("[ArrowRight]");
 
       expect(screen.getByText("Tab 2")).toHaveFocus();
       expect(screen.getByText("Content 1")).not.toBeVisible();
       expect(screen.getByText("Content 2")).toBeVisible();
 
-      await act(async () => {
-        await user.keyboard("[ArrowLeft]");
-      });
+      await user.keyboard("[ArrowLeft]");
 
       expect(screen.getByText("Tab 1")).toHaveFocus();
       expect(screen.getByText("Content 1")).toBeVisible();
       expect(screen.getByText("Content 2")).not.toBeVisible();
 
-      await act(async () => {
-        await user.keyboard("[End]");
-      });
+      await user.keyboard("[End]");
 
       expect(screen.getByText("Tab 3")).toHaveFocus();
       expect(screen.getByText("Content 1")).not.toBeVisible();
       expect(screen.getByText("Content 3")).toBeVisible();
 
-      await act(async () => {
-        await user.keyboard("[Home]");
-      });
+      await user.keyboard("[Home]");
 
       expect(screen.getByText("Tab 1")).toHaveFocus();
       expect(screen.getByText("Content 1")).toBeVisible();
       expect(screen.getByText("Content 3")).not.toBeVisible();
 
-      await act(async () => {
-        await user.keyboard("[ArrowLeft]");
-      });
+      await user.keyboard("[ArrowLeft]");
 
       expect(screen.getByText("Tab 3")).toHaveFocus();
       expect(screen.getByText("Content 1")).not.toBeVisible();
       expect(screen.getByText("Content 3")).toBeVisible();
 
-      await act(async () => {
-        await user.keyboard("[ArrowRight]");
-      });
+      await user.keyboard("[ArrowRight]");
 
       expect(screen.getByText("Tab 1")).toHaveFocus();
       expect(screen.getByText("Content 1")).toBeVisible();

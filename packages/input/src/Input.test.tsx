@@ -1,4 +1,4 @@
-import { act, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { createRef, forwardRef, useState } from "react";
@@ -176,9 +176,7 @@ describe("Input", () => {
         "test value",
       );
 
-      await act(async () => {
-        await user.click(screen.getByLabelText("Tøm søketekst"));
-      });
+      await user.click(screen.getByLabelText("Tøm søketekst"));
 
       expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveValue("");
       expect(screen.getByLabelText("Søk utdanningstilbud")).toHaveFocus();

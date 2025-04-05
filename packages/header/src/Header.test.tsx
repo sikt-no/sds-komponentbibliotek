@@ -107,9 +107,7 @@ describe("Header", () => {
       expect(navElement).toHaveAttribute("aria-hidden", "true");
 
       const dropdownMenu = screen.getByRole("button");
-      await act(async () => {
-        await user.click(dropdownMenu);
-      });
+      await user.click(dropdownMenu);
 
       expect(navElement).toHaveAttribute("aria-hidden", "false");
     });
@@ -132,9 +130,7 @@ describe("Header", () => {
       const navElement = screen.getByTestId("test-dropdown");
       expect(navElement).toHaveAttribute("aria-hidden", "false");
 
-      await act(async () => {
-        await user.keyboard("{Escape}");
-      });
+      await user.keyboard("{Escape}");
 
       expect(navElement).toHaveAttribute("aria-hidden", "true");
     });
@@ -159,9 +155,7 @@ describe("Header", () => {
 
       expect(navElement).toHaveAttribute("aria-hidden", "false");
 
-      await act(async () => {
-        await user.click(navLink);
-      });
+      await user.click(navLink);
 
       expect(navElement).toHaveAttribute("aria-hidden", "true");
     });
@@ -184,9 +178,7 @@ describe("Header", () => {
 
       expect(navElement).toHaveAttribute("aria-hidden", "false");
 
-      await act(async () => {
-        await user.click(navButton);
-      });
+      await user.click(navButton);
 
       expect(navElement).toHaveAttribute("aria-hidden", "true");
     });
@@ -217,8 +209,8 @@ describe("Header", () => {
 
       await act(async () => {
         submitInput.focus();
-        await user.keyboard("{Enter}");
       });
+      await user.keyboard("{Enter}");
 
       expect(navElement).toHaveAttribute("aria-hidden", "true");
     });

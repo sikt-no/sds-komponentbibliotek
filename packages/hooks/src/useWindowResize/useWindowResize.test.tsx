@@ -1,4 +1,4 @@
-import { act, renderHook } from "@testing-library/react";
+import { renderHook } from "@testing-library/react";
 import { useWindowResize } from "./useWindowResize";
 
 describe("useWindowResize", () => {
@@ -16,9 +16,7 @@ describe("useWindowResize", () => {
     renderHook(() => {
       useWindowResize(callback, { throttleTime });
     });
-    act(() => {
-      global.dispatchEvent(new Event("resize"));
-    });
+    global.dispatchEvent(new Event("resize"));
     jest.advanceTimersByTime(200);
     expect(callback).toHaveBeenCalledTimes(1);
   });
@@ -29,19 +27,13 @@ describe("useWindowResize", () => {
     renderHook(() => {
       useWindowResize(callback);
     });
-    act(() => {
-      global.dispatchEvent(new Event("resize"));
-      global.dispatchEvent(new Event("resize"));
-      global.dispatchEvent(new Event("resize"));
-    });
-    act(() => {
-      jest.advanceTimersByTime(throttleTime);
-    });
+    global.dispatchEvent(new Event("resize"));
+    global.dispatchEvent(new Event("resize"));
+    global.dispatchEvent(new Event("resize"));
+    jest.advanceTimersByTime(throttleTime);
 
     expect(callback).toHaveBeenCalledTimes(1);
-    act(() => {
-      jest.advanceTimersByTime(throttleTime);
-    });
+    jest.advanceTimersByTime(throttleTime);
     expect(callback).toHaveBeenCalledTimes(1);
   });
 

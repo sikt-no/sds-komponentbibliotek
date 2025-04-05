@@ -58,9 +58,7 @@ describe("InputDatepicker", () => {
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
 
       const calendarButton = screen.getByRole("button");
-      await act(async () => {
-        await user.click(calendarButton);
-      });
+      await user.click(calendarButton);
 
       expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
 
@@ -68,16 +66,14 @@ describe("InputDatepicker", () => {
         selector: ".sds-input-datepicker__calendar-cell",
       })[0];
 
-      await act(async () => {
-        await user.click(calendarCell);
-      });
+      await user.click(calendarCell);
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
 
       await act(async () => {
         calendarButton.focus();
-        await user.keyboard("[Enter]");
       });
+      await user.keyboard("[Enter]");
 
       expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
     });
@@ -88,15 +84,11 @@ describe("InputDatepicker", () => {
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
 
       const calendarButton = screen.getByRole("button");
-      await act(async () => {
-        await user.click(calendarButton);
-      });
+      await user.click(calendarButton);
 
       expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
 
-      await act(async () => {
-        await user.keyboard("[Escape]");
-      });
+      await user.keyboard("[Escape]");
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
     });
@@ -107,15 +99,11 @@ describe("InputDatepicker", () => {
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
 
       const calendarButton = screen.getByRole("button");
-      await act(async () => {
-        await user.click(calendarButton);
-      });
+      await user.click(calendarButton);
 
       expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
 
-      await act(async () => {
-        await user.click(document.body);
-      });
+      await user.click(document.body);
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
     });
@@ -177,8 +165,8 @@ describe("InputDatepicker", () => {
 
       await act(async () => {
         screen.getByLabelText("Bar").focus();
-        await user.keyboard("[Space]");
       });
+      await user.keyboard("[Space]");
 
       expect(clickHandler).toHaveBeenCalled();
       expect(
@@ -200,8 +188,8 @@ describe("InputDatepicker", () => {
 
       await act(async () => {
         screen.getByLabelText("Bar").focus();
-        await user.keyboard("[Enter]");
       });
+      await user.keyboard("[Enter]");
 
       expect(clickHandler).toHaveBeenCalled();
       expect(
