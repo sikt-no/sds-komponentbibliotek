@@ -27,17 +27,17 @@ export const contributors: Contributors[] = [
     {
       name: "Kjartan",
       role: "Teknologi",
-      team: "Min utdanning",
+      team: "Tind",
     },
     {
       name: "Sondre S.",
       role: "Teknologi",
-      team: "Min utdanning",
+      team: "Tind",
     },
-    { name: "Erik", role: "Teknologi", team: "Min utdanning" },
-    { name: "Vegard", role: "Teknologi", team: "Min utdanning" },
-    { name: "Hilde", role: "Design", team: "Min utdanning" },
-    { name: "Jakob", role: "Teknologi", team: "Min utdanning" },
+    { name: "Erik", role: "Teknologi", team: "Tind" },
+    { name: "Vegard", role: "Teknologi", team: "Tind" },
+    { name: "Hilde", role: "Design", team: "Tind" },
+    { name: "Jakob", role: "Teknologi", team: "Tind" },
   ],
   [
     { name: "Sigurd", role: "Teknologi", team: "Kudaf" },
