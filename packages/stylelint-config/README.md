@@ -3,7 +3,7 @@
 ## Consume
 
 ```sh
-npm i -D @sikt/stylelint-config-sds
+npm i -D @sikt/stylelint-config-sds stylelint
 ```
 
 ### Extend

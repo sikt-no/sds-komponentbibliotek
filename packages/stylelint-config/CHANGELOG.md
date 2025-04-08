@@ -1,6 +1,24 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-stylelint-config@2.0.0...@sikt/stylelint-config-sds@3.0.0) (2025-04-08)
+
+### ⚠ BREAKING CHANGES
+
+- **stylelint-config:** update peer deps
+  - Removed: stylelint less than 16.18.0 from peer dependencies.
+
+### Features
+
+- **eslint-config:** add package ([a5780ca](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a5780ca61d436c7df8d5a82358ee9990d8549386))
+- **stylelint-config:** add package ([68353c4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/68353c4b043d42e65b0e97abf555ba49b37c9466))
+- **stylelint-config:** override config for css modules ([226dfd1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/226dfd1b4ba6c82e696bd41842bb06663fe9ee74))
+- **stylelint-config:** update peer deps ([9bde81d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9bde81d6bd9908a4b444b2f15b0c89151d760dfc))
+
+### Bug Fixes
+
+- **deps:** update dependency stylelint-config-standard to v38 ([4fad1de](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4fad1de2140f3c467f16bca890d6156c10f2f58d))
 
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-stylelint-config@1.1.0...@sikt/sds-stylelint-config@2.0.0) (2023-12-18)
 
