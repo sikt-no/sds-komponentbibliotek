@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-details@1.1.0...@sikt/sds-details@1.1.1) (2025-04-08)
+
+### Bug Fixes
+
+- **details:** replace div in summary with span for valid html ([519f1b3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/519f1b3e38944e54e1ebe1f9f163b7dc4e53fd95))
+
 ## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-details@1.0.2...@sikt/sds-details@1.1.0) (2025-03-11)
 
 ### Features
