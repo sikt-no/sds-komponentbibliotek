@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@4.0.4...@sikt/sds-toggle@5.0.0) (2025-04-08)
+
+### ⚠ BREAKING CHANGES
+
+- **toggle-switch:** remove error prop
+
+### Bug Fixes
+
+- change div to span for valid html ([f23d5d4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f23d5d441bd7966baaf502322adf039ff3be8535))
+- **toggle-switch:** remove error prop ([c894cdf](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c894cdfe7d9cee4e38774077fda2625f46e81944))
+
 ## [4.0.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@4.0.3...@sikt/sds-toggle@4.0.4) (2025-03-12)
 
 ### Bug Fixes
