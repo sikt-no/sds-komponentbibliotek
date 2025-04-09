@@ -6,9 +6,9 @@
     "dev": "npm run copy:css && storybook dev -p 6006",
     "build": "npm run copy:css && storybook build --disable-telemetry",
     "copy:css": "run-p copy:css:*",
-    "copy:css:core": "cpy ../../packages/core/dist/index.css static/dist --flat --rename=core.css",
-    "copy:css:header": "cpy ../../packages/header/dist/index.css static/dist --flat --rename=header.css",
-    "copy:css:logo": "cpy ../../packages/logo/dist/index.css static/dist --flat --rename=logo.css"
+    "copy:css:core": "cpy ../../packages/core/dist/*.css static/dist --flat --rename=core.css",
+    "copy:css:header": "cpy ../../packages/header/dist/*.css static/dist --flat --rename=header.css",
+    "copy:css:logo": "cpy ../../packages/logo/dist/*.css static/dist --flat --rename=logo.css"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.12",
