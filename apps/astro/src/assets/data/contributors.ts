@@ -21,7 +21,7 @@ export const contributors: Contributors[] = [
     { name: "Hanne", role: "Design", team: "Designsystem" },
     { name: "Kine", role: "Teknologi", team: "Designsystem" },
     { name: "Sondre E.", role: "Design", team: "Designsystem" },
-    { name: "Petter", role: "Design", team: "Designsystem" },
+    { name: "Petter S.", role: "Design", team: "Designsystem" },
   ],
   [
     {
@@ -45,17 +45,18 @@ export const contributors: Contributors[] = [
     { name: "Glaysa", role: "Teknologi", team: "Kudaf" },
   ],
   [
-    { name: "Eirik", role: "Teknologi", team: "FS Admin" },
-    { name: "Mats", role: "Teknologi", team: "FS Admin" },
-    { name: "Marius", role: "Teknologi", team: "FS Admin" },
-    { name: "Patrick", role: "Teknologi", team: "FS Admin" },
-    { name: "An", role: "Teknologi", team: "FS Admin" },
+    { name: "Petter K.", role: "Teknologi", team: "Studieadmin." },
+    { name: "Eirik", role: "Teknologi", team: "Studieadmin." },
+    { name: "Mats", role: "Teknologi", team: "Studieadmin." },
+    { name: "Marius", role: "Teknologi", team: "Studieadmin." },
+    { name: "Patrick", role: "Teknologi", team: "Studieadmin." },
+    { name: "An", role: "Teknologi", team: "Studieadmin." },
   ],
   [
-    { name: "Christian", role: "Design", team: "FS Studentportal" },
-    { name: "Lasse", role: "Teknologi", team: "FS Studentportal" },
+    { name: "Christian", role: "Design", team: "Studentportal" },
+    { name: "Lasse", role: "Teknologi", team: "Studentportal" },
   ],
-  [{ name: "Sondre L.", role: "Teknologi", team: "FS Kjerne" }],
+  [{ name: "Sondre L.", role: "Teknologi", team: "Opptak Kjerne" }],
   [
     { name: "Solveig", role: "Teknologi", team: "Feide Kundeportal" },
     { name: "John-Magne", role: "Teknologi", team: "Feide Kundeportal" },
