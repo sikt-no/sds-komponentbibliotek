@@ -6,19 +6,18 @@ All notable changes to this project will be documented in this file. See [commit
 
 ### ⚠ Deprecations
 
-- **typography:** deprecate
+- **typography:** deprecated
   - CSS classes:
     - `.sds-typography-body--*` replaced by `.sds-typography-body--*`
     - `.sds-typography-body--{emphasis,quote,strong,code}` replaced by `.sds-typography--*`
     - `.sds-typography-body-paragraph--color-*` replaced by `.sds-typography-color--*`
-    - `.sds-typography-heading-*` replaced by `.sds-typography-*-headline-*`
-    - `.sds-typography-heading-*` replaced by `.sds-typography-*-headline-*`
+    - `.sds-typography-heading-*` replaced by `.sds-typography-{editorial,application}-headline-*`
   - CSS custom properties
     - `--sds-base-size-relative-*` replaced by `--sds-typography-fontsize-*`
     - `--sds-typography-weight-*` replaced by `--sds-typography-fontweight-*`
     - `--sds-typography-body-fontsize-*` replaced by `--sds-typography-body-*-fontsize`
     - `--sds-typography-body-lineheight-*` replaced by `--sds-typography-body-*-lineheight`
-    - `--sds-typography-heading-*` replaced by `--sds-typography-*-headline-*`
+    - `--sds-typography-heading-*` replaced by `--sds-typography-{editorial,application}-headline-*`
 
 ### Features
 
