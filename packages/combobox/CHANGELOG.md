@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@2.1.0...@sikt/sds-combobox@2.1.1) (2025-04-11)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-form to avoid invalid markup ([2d5f1cc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2d5f1cc0b36d7d838f995f66eaa818101fccb991))
+- **deps:** update dependency react-aria-components to ^1.7.1 ([3b4be55](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3b4be55b6ae58dadb6d1922a7a73ded8af91966f))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@2.0.1...@sikt/sds-combobox@2.1.0) (2025-03-12)
 
 ### Features
