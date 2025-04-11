@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.1.3...@sikt/sds-checkbox@3.1.4) (2025-04-11)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-form to avoid invalid markup ([2d5f1cc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2d5f1cc0b36d7d838f995f66eaa818101fccb991))
+
 ## [3.1.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.1.2...@sikt/sds-checkbox@3.1.3) (2025-04-08)
 
 ### Bug Fixes
