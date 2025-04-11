@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@2.0.5...@sikt/sds-input-datepicker@2.0.6) (2025-04-11)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-form to avoid invalid markup ([2d5f1cc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2d5f1cc0b36d7d838f995f66eaa818101fccb991))
+
 ## [2.0.5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@2.0.4...@sikt/sds-input-datepicker@2.0.5) (2025-03-27)
 
 ### Bug Fixes
