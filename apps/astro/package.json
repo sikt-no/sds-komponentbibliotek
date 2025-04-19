@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.2.3",
+    "@astrojs/react": "^4.2.4",
     "@astrojs/sitemap": "^3.3.0",
     "@phosphor-icons/core": "^2.1.1",
     "@sikt/sds-breadcrumbs": "^2.0.3",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/canvas-confetti": "^1.9.0",
-    "@types/react": "^19.1.1",
+    "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "autoprefixer": "^10.4.21",
     "postcss-custom-media": "^11.0.5",
