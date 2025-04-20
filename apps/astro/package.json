@@ -23,7 +23,7 @@
     "@sikt/sds-logo": "^2.0.1",
     "@sikt/sds-section": "^3.0.1",
     "@sikt/sds-tokens": "^4.0.0",
-    "astro": "^5.6.1",
+    "astro": "^5.7.4",
     "astro-matomo": "^1.8.1",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
