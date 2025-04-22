@@ -1,4 +1,5 @@
-import { Heading2, Heading3 } from "@sikt/sds-core";
+import { Heading3 } from "@sikt/sds-core";
+import { Section } from "@sikt/sds-section";
 import type { Contributors as ContributorsType } from "../../assets/data/contributors.ts";
 import { Contributor } from "./Contributor";
 import styles from "./contributors.module.css";
@@ -13,12 +14,11 @@ export const ContributorList = ({
   showEasterEggs?: boolean;
 }) => {
   return (
-    <>
-      <Heading2 variant="medium">{heading}</Heading2>
+    <Section headingText={heading} className="section">
       <div className={styles.contributors}>
         {contributors.map((group) => {
           return (
-            <div key={group[0].team}>
+            <div key={group[0].team} className="content-max-width">
               {contributors.length > 1 && (
                 <Heading3 variant="overline">{group[0].team}</Heading3>
               )}
@@ -37,6 +37,6 @@ export const ContributorList = ({
           );
         })}
       </div>
-    </>
+    </Section>
   );
 };

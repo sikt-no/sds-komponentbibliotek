@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {Contributors, Hero} from "../../components";
+
+const pageTitle = "Laget med kjærlighet";
+const isJune = new Date().getMonth() === 5;
+const titleSuffix = isJune ? "🧡💛💚💙💜" : "";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[{ title: "Designsystem", href: "/" }]}
+    heading=`Laget med kjærlighet ❤️${titleSuffix}`
+  />
+  <section class="part">
+    <div>
+      <Contributors client:load />
+    </div>
+  </section>
+</Layout>

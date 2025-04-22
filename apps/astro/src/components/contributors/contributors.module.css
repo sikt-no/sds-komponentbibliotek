@@ -4,6 +4,7 @@
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+  max-width: var(--sds-space-grid-max-width);
   text-align: center;
 
   @media (prefers-color-scheme: dark) {

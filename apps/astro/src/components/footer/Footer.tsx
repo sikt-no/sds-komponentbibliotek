@@ -40,7 +40,14 @@ export const Footer = ({
               Tilgjengelighets&shy;erklæring
             </Link>
           </li>
-          <li>Laget med kjærlighet ❤️{isJune && <>🧡💛💚💙💜</>}</li>
+          <li>
+            <Link
+              href="/laget-med/"
+              aria-current={currentHref === "/laget-med/" && "page"}
+            >
+              Laget med kjærlighet ❤️{isJune && <>🧡💛💚💙💜</>}
+            </Link>
+          </li>
         </ul>
       </div>
       <div>
