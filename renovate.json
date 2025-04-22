@@ -98,6 +98,10 @@
     {
       "matchPackagePatterns": ["^platon"],
       "groupName": "platon"
+    },
+    {
+      "matchPackagePatterns": ["^@astrojs", "^astro"],
+      "groupName": "astro"
     }
   ]
 }
