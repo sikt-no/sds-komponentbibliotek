@@ -4,7 +4,6 @@
  */
 const config = {
   ...require("./packages/prettier-config"),
-  plugins: ["prettier-plugin-astro"],
   overrides: [
     {
       files: "*.astro",
