@@ -1,5 +1,5 @@
 import { Link } from "@sikt/sds-core";
-import { Header as SdsHeader, HeaderNav } from "@sikt/sds-header";
+import { Header as SdsHeader } from "@sikt/sds-header";
 import styles from "./header.module.css";
 
 export const Header = ({ currentHref }: { currentHref: string }) => {
@@ -25,10 +25,6 @@ export const Header = ({ currentHref }: { currentHref: string }) => {
           </ul>
         </nav>
       }
-    >
-      <HeaderNav aria-label="Navigasjon">
-        <Link href="/storybook/">Komponenter</Link>
-      </HeaderNav>
-    </SdsHeader>
+    />
   );
 };

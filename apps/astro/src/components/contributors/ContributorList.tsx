@@ -14,11 +14,11 @@ export const ContributorList = ({
   showEasterEggs?: boolean;
 }) => {
   return (
-    <Section headingText={heading} className="section">
+    <Section headingText={heading}>
       <div className={styles.contributors}>
         {contributors.map((group) => {
           return (
-            <div key={group[0].team} className="content-max-width">
+            <div key={group[0].team} className="ds-content-max-width">
               {contributors.length > 1 && (
                 <Heading3 variant="overline">{group[0].team}</Heading3>
               )}

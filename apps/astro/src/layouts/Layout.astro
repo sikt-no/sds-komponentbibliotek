@@ -59,7 +59,7 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
     <main id="main">
       <slot />
     </main>
-    <Footer className="footer" currentHref={currentPath} />
+    <Footer currentHref={currentPath} />
   </body>
 </html>
 
@@ -74,42 +74,22 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
   @import url("@sikt/sds-logo");
   @import url("@sikt/sds-section");
 
-  .body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .footer {
-    margin-top: auto;
-  }
-
-  .content-max-width {
+  .ds-content-max-width {
     max-width: 720px;
   }
 
-  .part {
-    background-color: var(--sds-color-layout-page-default);
-    display: grid;
-    gap: var(--sds-space-gap-large);
-    margin: 0 auto;
-    max-width: var(--sds-space-grid-full);
-    padding: var(--sds-space-padding-huge);
-    place-items: center;
-  }
-
-  .section {
-    padding: var(--sds-space-padding-huge);
-  }
-
-  .content {
+  .sds-section__content {
     display: flex;
     flex-direction: column;
     gap: var(--sds-space-gap-medium);
     max-width: var(--sds-space-grid-max-width);
   }
+</style>
 
-  .primary {
-    background-color: var(--sds-color-layout-background-primary);
+<style>
+  .body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 </style>

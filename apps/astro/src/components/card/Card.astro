@@ -1,0 +1,46 @@
+---
+const { className } = Astro.props;
+---
+
+<section class:list={["card", className]}>
+  <slot name="image" />
+  <slot name="heading" />
+  <slot />
+  <slot name="call-to-action" />
+</section>
+
+<style>
+  .card {
+    background-color: var(--sds-color-layout-background-default);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-padding-medium);
+    padding: var(--sds-space-padding-medium);
+  }
+
+  .image {
+    /* TODO: class on slot */
+    border-radius: 16px;
+  }
+
+  .reverse {
+    flex-direction: column-reverse;
+
+    @container page (min-width: 760px) {
+      flex-direction: row-reverse;
+
+      > * {
+        flex: 1;
+      }
+    }
+  }
+
+  .large {
+    padding: var(--sds-space-padding-large);
+
+    @container page (min-width: 760px) {
+      gap: 96px;
+    }
+  }
+</style>

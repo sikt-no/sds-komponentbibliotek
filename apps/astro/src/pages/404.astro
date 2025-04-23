@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Hero } from "../components";
-import { BackButton } from "../components";
+import { BackToFrontpageButton } from "../components";
 
 const pageTitle = "Siden finnes ikke";
 ---
@@ -11,6 +11,6 @@ const pageTitle = "Siden finnes ikke";
     breadcrumbs={[{ title: "Designsystem", href: "/" }]}
     heading={pageTitle}
   >
-    <BackButton />
+    <BackToFrontpageButton />
   </Hero>
 </Layout>

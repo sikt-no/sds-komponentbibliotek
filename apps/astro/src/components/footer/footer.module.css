@@ -2,6 +2,10 @@
   align-items: start;
 }
 
+.footer {
+  margin-top: auto;
+}
+
 .ul {
   display: flex;
   gap: var(--sds-space-gap-minimal);

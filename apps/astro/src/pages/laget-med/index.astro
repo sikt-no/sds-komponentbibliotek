@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/PageLayout.astro";
 import { Contributors, Hero } from "../../components";
 
 const pageTitle = "Laget med kjærlighet";
@@ -11,10 +11,8 @@ const titleSuffix = isJune ? "🧡💛💚💙💜" : "";
   <Hero
     breadcrumbs={[{ title: "Designsystem", href: "/" }]}
     heading=`Laget med kjærlighet ❤️${titleSuffix}`
+    slot="hero"
   />
-  <section class="part">
-    <div>
-      <Contributors client:load />
-    </div>
-  </section>
+
+  <Contributors client:load />
 </Layout>

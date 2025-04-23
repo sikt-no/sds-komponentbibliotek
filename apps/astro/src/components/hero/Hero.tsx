@@ -23,23 +23,18 @@ export const Hero = ({
   children,
 }: HeroProps) => {
   return (
-    <section className={clsx(styles.section, className)}>
-      <div className={styles.content}>
-        {breadcrumbs && (
-          <Breadcrumbs aria-label="Navigasjonssti">
-            {breadcrumbs.map((breadcrumb) => (
-              <BreadcrumbItem key={breadcrumb.href}>
-                <Link className="sds-typography-link" href={breadcrumb.href}>
-                  {breadcrumb.title}
-                </Link>
-              </BreadcrumbItem>
-            ))}
-          </Breadcrumbs>
-        )}
-        <Heading1 variant="huge">{heading}</Heading1>
-        {children && <div className="content-max-width">{children}</div>}
-      </div>
-      <div className={styles.image} />
-    </section>
+    <div className={clsx(styles.section, className)}>
+      {breadcrumbs && (
+        <Breadcrumbs aria-label="Navigasjonssti">
+          {breadcrumbs.map((breadcrumb) => (
+            <BreadcrumbItem key={breadcrumb.href}>
+              <Link href={breadcrumb.href}>{breadcrumb.title}</Link>
+            </BreadcrumbItem>
+          ))}
+        </Breadcrumbs>
+      )}
+      <Heading1 size="xl">{heading}</Heading1>
+      {children && <div className="ds-content-max-width">{children}</div>}
+    </div>
   );
 };

@@ -1,23 +1,95 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Contributors } from "../components";
-import { Hero } from "../components";
-import { Button, ButtonGroup } from "@sikt/sds-button";
+import Layout from "../layouts/PageLayout.astro";
+import { GitlabButton, FigmaButton, SlackButton } from "../components";
+import Card from "../components/card/Card.astro";
+import { Heading2 } from "@sikt/sds-core";
+import { ButtonGroup, ButtonLink, Button } from "@sikt/sds-button";
 import { Image } from "astro:assets";
-import underConstruction from "../assets/images/under-construction.gif";
+import heroImage from "../assets/images/hero.png";
+import komponenterImage from "../assets/images/komponenter.png";
+import designprinsipperImage from "../assets/images/designprinsipper.png";
+
+const isProd = import.meta.env.PROD;
+const storybookUrl = isProd ? "/storybook" : "http://localhost:6006/";
 ---
 
 <Layout>
-  <Hero heading=`Design­system`>
-    Velkommen til Sikts designsystem. Dokumentasjonen er under konstruksjon.
-  </Hero>
-
-  <section class="part">
-    <div class="content">
-      <Image
-        src={underConstruction}
-        alt="Animert veiskilt for under konstruksjon."
-      />
+  <div class="container">
+    <div class="section">
+      <Card className={["reverse", "large"]}>
+        <div slot="image"><Image src={heroImage} alt="" aria-hidden /></div>
+        <div>
+          <Heading2 size="xl" slot="heading">Lær, bruk og bidra</Heading2>
+          Velkommen til Sikts designsystem! Dette er en sammensetning av komponenter
+          og retningslinjer du kan bruke når du designer og utvikler digitale løsninger
+          og tjenester.
+        </div>
+      </Card>
     </div>
-  </section>
+
+    <div class:list={["section", "section-double"]}>
+      <Card>
+        <div slot="image">
+          <Image src={designprinsipperImage} alt="" aria-hidden />
+        </div>
+        <Heading2 slot="heading">Designprisipper og byggesteiner</Heading2>
+
+        <ButtonGroup variant="left" slot="call-to-action">
+          <Button disabled variant="strong"> Grunnleggende </Button>
+        </ButtonGroup>
+      </Card>
+
+      <Card>
+        <div slot="image">
+          <Image src={komponenterImage} alt="" aria-hidden />
+        </div>
+        <Heading2 slot="heading">Komponenter</Heading2>
+        <p>
+          Komponenter er designsystemets brød og smør som muliggjør for likt
+          bruk på tvers. Disse er sammensatte av mindre byggeklosser som
+          designtokens og atomer.
+        </p>
+        <p>Alle komponentene i Sikt designsystem ligger i Storybook.</p>
+        <ButtonGroup variant="left" slot="call-to-action">
+          <ButtonLink variant="strong" href={storybookUrl}>
+            Komponenter
+          </ButtonLink>
+        </ButtonGroup>
+      </Card>
+    </div>
+
+    <div class="section">
+      <Card>
+        <Heading2 slot="heading">Samarbeid</Heading2>
+        Å bygge et godt designsystem for Sikt vil være en laginnsats, der alle team
+        er velkomne til å bidra inn. Det har allerede kommet inn mange gode bidrag
+        fra ulike team, og vi håper at enda flere team ønsker å koble seg på fremover!
+        <ButtonGroup variant="left" slot="call-to-action">
+          <FigmaButton />
+          <GitlabButton />
+          <SlackButton variant="strong" />
+        </ButtonGroup>
+      </Card>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  @import url("@sikt/sds-tokens/dist/css/custom-media.css");
+
+  .container {
+    display: grid;
+    gap: 48px;
+  }
+
+  .section {
+    display: grid;
+    gap: 48px;
+  }
+
+  .section-double {
+    @media (--sds-base-breakpoint-desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

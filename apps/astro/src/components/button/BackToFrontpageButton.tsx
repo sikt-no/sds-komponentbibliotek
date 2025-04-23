@@ -1,7 +1,7 @@
 import { ButtonLink } from "@sikt/sds-button";
 import { NavigateToPreviousAltIcon } from "@sikt/sds-icons";
 
-export const BackButton = () => {
+export const BackToFrontpageButton = () => {
   return (
     <ButtonLink
       variant="strong"

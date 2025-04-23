@@ -1,5 +1,8 @@
-export { BackButton } from "./button/BackButton.tsx";
-export { Contributors } from "./contributors/Contributors.tsx";
+export { BackToFrontpageButton } from "./button/BackToFrontpageButton";
+export { FigmaButton } from "./button/FigmaButton";
+export { GitlabButton } from "./button/GitlabButton";
+export { SlackButton } from "./button/SlackButton";
+export { Contributors } from "./contributors/Contributors";
 export { Footer } from "./footer/Footer";
 export { Header } from "./header/Header";
 export { Hero } from "./hero/Hero";

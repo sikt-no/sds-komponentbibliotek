@@ -1,4 +1,5 @@
 // @ts-check
+import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
@@ -10,6 +11,7 @@ const siteUrl = "https://designsystem.sikt.no";
 // https://astro.build/config
 export default defineConfig({
   integrations: [
+    mdx(),
     react(),
     matomo({
       enabled: import.meta.env.PROD,

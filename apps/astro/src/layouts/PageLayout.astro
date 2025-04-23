@@ -1,0 +1,49 @@
+---
+import Layout from "./Layout.astro";
+
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <div class="page">
+    <div class="menu">
+      {/* TODO: Menu */}
+      <slot name="menu" />
+    </div>
+    <div class="content">
+      <div class="container">
+        {/* TODO: Hero */}
+        <slot name="hero" />
+        <slot />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @import url("@sikt/sds-tokens/dist/css/custom-media.css");
+
+  .page {
+    display: grid;
+
+    @media (--sds-base-breakpoint-tablet) {
+      grid-template-columns: 242px auto;
+    }
+  }
+
+  .menu {
+    padding: var(--sds-space-padding-large);
+  }
+
+  .content {
+    background-color: var(--sds-color-layout-page-default);
+    padding: var(--sds-space-padding-huge);
+  }
+
+  .container {
+    container: page / inline-size;
+    display: grid;
+    gap: var(--sds-space-padding-huge);
+    max-width: 920px;
+  }
+</style>

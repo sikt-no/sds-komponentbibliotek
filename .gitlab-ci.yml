@@ -61,6 +61,7 @@ lint:
     - npm run lint
   needs:
     - install
+    - packages
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
       when: never
