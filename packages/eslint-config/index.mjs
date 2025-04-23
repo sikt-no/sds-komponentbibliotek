@@ -2,6 +2,7 @@ import js from "@eslint/js";
 
 import restrictedGlobals from "confusing-browser-globals";
 import eslintConfigPrettier from "eslint-config-prettier";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import eslintPluginImportX from "eslint-plugin-import-x";
 import jest from "eslint-plugin-jest";
 import jsxA11y from "eslint-plugin-jsx-a11y";
@@ -30,7 +31,10 @@ export default tseslint.config([
       parserOptions: { projectService: true },
     },
 
-    settings: { react: { version: "detect" } },
+    settings: {
+      react: { version: "detect" },
+      "import-x/resolver-next": [createTypeScriptImportResolver()],
+    },
 
     rules: {
       "no-restricted-globals": [
