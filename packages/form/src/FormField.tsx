@@ -21,6 +21,7 @@ export interface FormFieldProps
    * ID for help text and error text element, needs to be set if either of those is.
    */
   helpTextId?: string;
+  postLabelSlot?: ReactNode;
 }
 
 export const FormField = ({
@@ -31,6 +32,7 @@ export const FormField = ({
   htmlFor,
   helpTextId,
   children,
+  postLabelSlot,
   ...rest
 }: FormFieldProps) => {
   return (
@@ -41,18 +43,23 @@ export const FormField = ({
         className,
       )}
     >
-      {label !== undefined ? (
-        <Label
-          text={label}
-          error={Boolean(errorText)}
-          htmlFor={htmlFor}
-          {...rest}
-        >
-          {children}
-        </Label>
-      ) : (
-        children
-      )}
+      <div className="sds-form-field__label-wrapper">
+        {label !== undefined ? (
+          <Label
+            text={label}
+            error={Boolean(errorText)}
+            htmlFor={htmlFor}
+            {...rest}
+          >
+            {children}
+          </Label>
+        ) : (
+          children
+        )}
+        {postLabelSlot && (
+          <div className="sds-form-field__label-after">{postLabelSlot}</div>
+        )}
+      </div>
       {(errorText ?? helpText) && (
         <HelpText id={helpTextId} error={Boolean(errorText)}>
           {errorText ?? helpText}

@@ -85,6 +85,34 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       }
     };
 
+    const postLabelSlot = type === "search" && (
+      <>
+        {value && (
+          <Button
+            size="small"
+            variant="transparent"
+            iconVariant="only"
+            className="sds-input__clear"
+            onClick={handleClearClick}
+            icon={<CancelIcon />}
+            aria-label={clearActionProps?.["aria-label"] ?? "Tøm søketekst"}
+            type={clearActionProps?.type ?? "button"}
+          />
+        )}
+
+        <Button
+          variant={errorText ? "critical" : "transparent"}
+          iconVariant="only"
+          className="sds-input__action"
+          size="small"
+          aria-label={actionProps?.["aria-label"] ?? "Søk"}
+          icon={<SearchIcon />}
+          type={actionProps?.type ?? "button"}
+          {...actionProps}
+        />
+      </>
+    );
+
     return (
       <FormField
         className={clsx(
@@ -98,6 +126,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         helpText={helpText}
         htmlFor={id}
         helpTextId={helpTextId}
+        postLabelSlot={postLabelSlot}
       >
         <span className="sds-input__wrapper">
           {icon && <span className="sds-input__icon">{icon}</span>}
@@ -115,32 +144,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             aria-errormessage={errorText ? helpTextId : undefined}
             {...rest}
           />
-
-          {type === "search" && value && (
-            <Button
-              size="small"
-              variant="transparent"
-              iconVariant="only"
-              className="sds-input__clear"
-              onClick={handleClearClick}
-              icon={<CancelIcon />}
-              aria-label={clearActionProps?.["aria-label"] ?? "Tøm søketekst"}
-              type={clearActionProps?.type ?? "button"}
-            />
-          )}
-
-          {type === "search" && (
-            <Button
-              variant={errorText ? "critical" : "transparent"}
-              iconVariant="only"
-              className="sds-input__action"
-              size="small"
-              aria-label={actionProps?.["aria-label"] ?? "Søk"}
-              icon={<SearchIcon />}
-              type={actionProps?.type ?? "button"}
-              {...actionProps}
-            />
-          )}
         </span>
       </FormField>
     );

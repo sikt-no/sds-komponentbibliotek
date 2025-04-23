@@ -44,6 +44,13 @@ export const Default: Story = {
   args: {
     label: "Label",
     placeholder: "",
+    actionProps: {
+      onClick: () => {
+        console.log("search");
+      },
+      "aria-label": "Search",
+      type: "submit",
+    },
   },
 };
 
@@ -82,9 +89,4 @@ export const WithHelpText: Story = {
 export const WithError: Story = {
   render: SearchInputWrapper,
   args: { ...Default.args, errorText: "Error!" },
-};
-
-export const WithCustomActionLabel: Story = {
-  render: SearchInputWrapper,
-  args: { ...Default.args, actionProps: { "aria-label": "Finn resultater" } },
 };

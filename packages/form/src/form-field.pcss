@@ -1,2 +1,17 @@
 @import url("./label.pcss");
 @import url("./help-text.pcss");
+
+.sds-form-field__label {
+  &-wrapper {
+    position: relative;
+  }
+
+  &-after {
+    display: flex;
+    gap: var(--sds-base-size-xs);
+    padding: calc(var(--input-padding) + var(--input-border-width));
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

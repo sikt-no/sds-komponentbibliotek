@@ -80,6 +80,12 @@ describe("TextArea", () => {
       expect(helpEl).toHaveClass("sds-form-field__help-text");
     });
 
+    it("should have icon element", async () => {
+      render(<TextArea label="Foo" icon="icon" />);
+
+      expect(screen.getByText("icon")).toBeInTheDocument();
+    });
+
     it("should have aria attributes set correctly when help and error text is not set", async () => {
       render(<TextArea label="Foo" data-testid="test" />);
 
