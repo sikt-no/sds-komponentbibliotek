@@ -2,21 +2,6 @@
   "typography": {
     "editorial": {
       "headline": {
-        "xxs": {
-          "fontsize": {
-            "value": "{typography.fontsize.500.value}"
-          }
-        },
-        "xs": {
-          "fontsize": {
-            "value": "{typography.fontsize.800.value}"
-          }
-        },
-        "s": {
-          "fontsize": {
-            "value": "{typography.fontsize.800.value}"
-          }
-        },
         "m": {
           "fontsize": {
             "value": "{typography.fontsize.1000.value}"
