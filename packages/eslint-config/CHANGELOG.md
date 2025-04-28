@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/eslint-config-sds@2.0.1...@sikt/eslint-config-sds@2.1.0) (2025-04-28)
+
+### Features
+
+- **eslint-config:** setup typescript resolver for import plugin ([4775efb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4775efbab4d3f49fbe8ad8fd855b597db2cc154b))
+
+### Bug Fixes
+
+- **deps:** update dependency eslint-plugin-import-x to ^4.10.2 ([2f63c1f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2f63c1fc18c10cfa3d6350dc98facfd5edc970c1))
+- **deps:** update eslint ([39caa45](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/39caa45ccec753e5ac8844dacb8780c0661a83f0))
+- **deps:** update eslint ([de060ed](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/de060ed0017c0a334f4e3707f0ed18c4a7cd162b))
+
 ## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-eslint-config@2.0.0...@sikt/eslint-config-sds@2.0.1) (2025-04-05)
 
 ### Bug Fixes
