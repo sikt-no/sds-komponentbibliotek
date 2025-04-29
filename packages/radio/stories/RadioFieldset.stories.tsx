@@ -7,6 +7,7 @@ import {
   TableCell,
 } from "@sikt/sds-table";
 import { Meta, StoryObj } from "@storybook/react";
+import { useState } from "react";
 import { RadioFieldset, RadioInput } from "../index";
 
 const meta = {
@@ -26,7 +27,21 @@ export const Default = {
       <RadioInput key={3} label="Radio 3" value="3" />,
     ],
     legend: "Legend",
-    value: "1",
+  },
+  render: (args) => {
+    const [selected, setSelected] = useState("1");
+    return (
+      <RadioFieldset
+        {...args}
+        onChange={(event) => {
+          console.log(event.target.value);
+          setSelected(event.target.value);
+        }}
+        value={selected}
+      >
+        {args.children}
+      </RadioFieldset>
+    );
   },
 } satisfies Story;
 
@@ -34,7 +49,21 @@ export const WithHelpText = {
   args: {
     ...Default.args,
     helpText: "Text",
-    value: "2",
+  },
+  render: (args) => {
+    const [selected, setSelected] = useState("2");
+    return (
+      <RadioFieldset
+        {...args}
+        onChange={(event) => {
+          console.log(event.target.value);
+          setSelected(event.target.value);
+        }}
+        value={selected}
+      >
+        {args.children}
+      </RadioFieldset>
+    );
   },
 } satisfies Story;
 
@@ -42,7 +71,21 @@ export const WithError = {
   args: {
     ...Default.args,
     errorText: "Error!",
-    value: "3",
+  },
+  render: (args) => {
+    const [selected, setSelected] = useState("3");
+    return (
+      <RadioFieldset
+        {...args}
+        onChange={(event) => {
+          console.log(event.target.value);
+          setSelected(event.target.value);
+        }}
+        value={selected}
+      >
+        {args.children}
+      </RadioFieldset>
+    );
   },
 } satisfies Story;
 
@@ -52,6 +95,7 @@ export const WithAriaLabelledby = {
     "aria-labelledby": "rowTitle columnTitle",
   },
   render: (args) => {
+    const [selected, setSelected] = useState("");
     return (
       <Table caption="Radio inside Table" showCaption>
         <TableHead>
@@ -66,7 +110,14 @@ export const WithAriaLabelledby = {
               Sikt
             </TableCell>
             <TableCell data-th="Fieldset">
-              <RadioFieldset {...args}>
+              <RadioFieldset
+                {...args}
+                onChange={(event) => {
+                  console.log(event.target.value);
+                  setSelected(event.target.value);
+                }}
+                value={selected}
+              >
                 <RadioInput label="Radio 1" value="1" />
                 <RadioInput label="Radio 2" value="2" />
                 <RadioInput label="Radio 3" value="3" />
