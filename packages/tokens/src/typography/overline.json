@@ -9,7 +9,7 @@
           "value": "{typography.fontweight.semibold.value}"
         },
         "lineheight": {
-          "value": "1"
+          "value": "{typography.lineheight.xs.value}"
         }
       }
     }
