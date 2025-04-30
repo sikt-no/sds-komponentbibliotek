@@ -1,6 +1,9 @@
 {
   "base": {
     "size": {
+      "xxxs": {
+        "value": "2px"
+      },
       "xxs": {
         "value": "4px"
       },

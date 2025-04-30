@@ -1,6 +1,9 @@
 {
   "space": {
     "padding": {
+      "infinitesimal": {
+        "value": "{base.size.xxxs.value}"
+      },
       "minimal": {
         "value": "{base.size.xxs.value}"
       },
