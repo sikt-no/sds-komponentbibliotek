@@ -62,16 +62,16 @@ export default {
         },
         subtle: {
           default: {
-            value: "{_color.base.neutral.58-100.value}",
-            dark: "{_color.base.neutral.58-100.value}",
+            value: "{_color.base.neutral.87-100.value}",
+            dark: "{_color.base.neutral.31-100.value}",
           },
           highlight: {
-            value: "{_color.base.neutral.46-100.value}",
-            dark: "{_color.base.neutral.46-100.value}",
+            value: "{_color.base.neutral.84-100.value}",
+            dark: "{_color.base.neutral.27-100.value}",
           },
           pressed: {
-            value: "{_color.base.neutral.40-100.value}",
-            dark: "{_color.base.neutral.40-100.value}",
+            value: "{_color.base.neutral.80-100.value}",
+            dark: "{_color.base.neutral.24-100.value}",
           },
         },
         transparent: {
@@ -80,12 +80,12 @@ export default {
             dark: "{_color.base.neutral.0-0.value}",
           },
           highlight: {
-            value: "{_color.base.neutral.46-100.value}",
-            dark: "{_color.base.neutral.46-100.value}",
+            value: "{_color.base.neutral.84-100.value}",
+            dark: "{_color.base.neutral.27-100.value}",
           },
           pressed: {
-            value: "{_color.base.neutral.40-100.value}",
-            dark: "{_color.base.neutral.40-100.value}",
+            value: "{_color.base.neutral.80-100.value}",
+            dark: "{_color.base.neutral.24-100.value}",
           },
         },
       },

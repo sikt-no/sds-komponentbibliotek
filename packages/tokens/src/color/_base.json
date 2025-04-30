@@ -84,6 +84,14 @@
           "value": "#DEDEDE",
           "type": "color"
         },
+        "84-100": {
+          "value": "#D6D6D6",
+          "type": "color"
+        },
+        "80-100": {
+          "value": "#CCCCCC",
+          "type": "color"
+        },
         "58-100": {
           "value": "#959595",
           "type": "color"
@@ -98,6 +106,18 @@
         },
         "35-100": {
           "value": "#595959",
+          "type": "color"
+        },
+        "31-100": {
+          "value": "#4F4F4F",
+          "type": "color"
+        },
+        "27-100": {
+          "value": "#454545",
+          "type": "color"
+        },
+        "24-100": {
+          "value": "#3D3D3D",
           "type": "color"
         },
         "19-100": {
