@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.5",
-    "@astrojs/react": "^4.2.5",
+    "@astrojs/mdx": "^4.2.6",
+    "@astrojs/react": "^4.2.7",
     "@astrojs/sitemap": "^3.3.1",
     "@phosphor-icons/react": "^2.1.7",
     "@sikt/sds-breadcrumbs": "^2.0.3",
@@ -24,7 +24,7 @@
     "@sikt/sds-logo": "^2.0.1",
     "@sikt/sds-section": "^3.0.1",
     "@sikt/sds-tokens": "^4.0.0",
-    "astro": "^5.7.5",
+    "astro": "^5.7.10",
     "astro-matomo": "^1.8.1",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
