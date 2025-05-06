@@ -9,8 +9,7 @@ import heroImage from "../assets/images/hero.png";
 import komponenterImage from "../assets/images/komponenter.png";
 import designprinsipperImage from "../assets/images/designprinsipper.png";
 
-const isProd = import.meta.env.PROD;
-const storybookUrl = isProd ? "/storybook" : "http://localhost:6006/";
+const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
 ---
 
 <Layout>

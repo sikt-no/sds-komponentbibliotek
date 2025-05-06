@@ -6,3 +6,6 @@ export { Contributors } from "./contributors/Contributors";
 export { Footer } from "./footer/Footer";
 export { Header } from "./header/Header";
 export { Hero } from "./hero/Hero";
+export { Nav } from "./nav/Nav";
+export { NavButtonLink } from "./nav/NavButtonLink";
+export { Menu } from "./menu/Menu";

@@ -1,0 +1,10 @@
+.figure {
+  margin: 0;
+}
+
+.figcaption {
+  align-items: center;
+  display: flex;
+  gap: var(--sds-space-gap-small);
+  padding-bottom: var(--sds-space-gap-medium);
+}
