@@ -64,15 +64,21 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
 </html>
 
 <style is:global>
-  @import url("@sikt/sds-core");
-  @import url("@sikt/sds-breadcrumbs");
-  @import url("@sikt/sds-button");
-  @import url("@sikt/sds-footer");
-  @import url("@sikt/sds-header");
-  @import url("@sikt/sds-icons");
-  @import url("@sikt/sds-list");
-  @import url("@sikt/sds-logo");
-  @import url("@sikt/sds-section");
+  @layer base, components;
+
+  @import url("@sikt/sds-core") layer(base);
+  @import url("@sikt/sds-breadcrumbs") layer(base);
+  @import url("@sikt/sds-button") layer(base);
+  @import url("@sikt/sds-footer") layer(base);
+  @import url("@sikt/sds-header") layer(base);
+  @import url("@sikt/sds-icons") layer(base);
+  @import url("@sikt/sds-list") layer(base);
+  @import url("@sikt/sds-logo") layer(base);
+  @import url("@sikt/sds-section") layer(base);
+
+  .sds-typography-link[aria-current="page"] {
+    text-decoration: none;
+  }
 
   .ds-content-max-width {
     max-width: 720px;

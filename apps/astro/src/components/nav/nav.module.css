@@ -1,10 +1,6 @@
 .figure {
-  margin: 0;
-}
-
-.figcaption {
-  align-items: center;
   display: flex;
-  gap: var(--sds-space-gap-small);
-  padding-bottom: var(--sds-space-gap-medium);
+  flex-direction: column;
+  margin: 0;
+  gap: var(--sds-space-gap-medium);
 }

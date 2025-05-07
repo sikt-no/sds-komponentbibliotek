@@ -6,12 +6,12 @@
   color: var(--sds-color-text-primary);
   cursor: pointer;
   display: flex;
-  gap: var(--sds-space-gap-small) !important;
+  gap: var(--sds-space-gap-small);
   font-size: var(--sds-typography-body-fontsize-regular);
   font-weight: var(--sds-typography-weight-regular);
   line-height: var(--sds-typography-body-lineheight-regular);
   padding: var(--sds-space-padding-small);
-  text-decoration: none !important;
+  text-decoration: none;
   width: 100%;
 
   &:hover,

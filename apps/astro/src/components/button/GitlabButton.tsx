@@ -12,7 +12,7 @@ export const GitlabButton = ({
       icon={<GitlabLogo className="sds-icon" aria-hidden />}
       href="https://gitlab.sikt.no/designsystem/sds-komponentbibliotek"
     >
-      Se prosjektet i GitLab
+      Se koden i GitLab
     </ButtonLink>
   );
 };
