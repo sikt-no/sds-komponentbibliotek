@@ -11,7 +11,7 @@ import { Nav, NavButtonLink } from "../";
 
 export const Menu = ({ pathname }: { pathname: string }) => {
   const tokensHref = "/grunnleggende/designtokens/";
-  const sizesHref = "/grunnleggende/storrelser/";
+  const sizesHref = "/grunnleggende/storrelse-og-layout/";
   const colorsHref = "/grunnleggende/farger/";
   const typographyHref = "/grunnleggende/typografi/";
   const iconsHref = "/grunnleggende/ikoner/";
@@ -36,7 +36,7 @@ export const Menu = ({ pathname }: { pathname: string }) => {
             href={sizesHref}
             aria-current={pathname === sizesHref && "page"}
           >
-            Størrelser
+            Størrelse og layout
           </NavButtonLink>
         </li>
         <li>
