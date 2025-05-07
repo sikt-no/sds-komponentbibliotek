@@ -37,7 +37,12 @@ const { className } = Astro.props;
   }
 
   .large {
-    padding: var(--sds-space-padding-large);
+    --padding: var(--sds-space-padding-large);
+    padding: var(--padding);
+
+    img {
+      margin-bottom: calc(var(--padding) * -1);
+    }
 
     @container page (min-width: 760px) {
       gap: 96px;
