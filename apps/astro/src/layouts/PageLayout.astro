@@ -2,13 +2,14 @@
 import Layout from "./Layout.astro";
 import { Menu } from "../components";
 
-const { title, url } = Astro.props;
+const { pathname } = Astro.url;
+const { title } = Astro.props;
 ---
 
 <Layout title={title}>
   <div class="page">
     <div class="menu">
-      <Menu currentUrl={url} />
+      <Menu pathname={pathname} />
     </div>
     <div class="content">
       <div class="container">
