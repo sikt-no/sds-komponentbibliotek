@@ -116,4 +116,5 @@ export const config = [
   { id: "map-pin", name: "location", category: "map" },
   { id: "spinner-gap", name: "spinner-gap", category: "ui" },
   { id: "book", name: "book", category: "categorization" },
+  { id: "law", source: "sds", name: "law", category: "categorization" },
 ];
