@@ -1,0 +1,302 @@
+---
+import Layout from "../../layouts/PageLayout.astro";
+import { Hero, Token } from "../../components";
+import { Paragraph } from "@sikt/sds-core";
+import { Badge } from "@sikt/sds-badge";
+import { Section } from "@sikt/sds-section";
+import {
+  Table,
+  TableHead,
+  TableHeader,
+  TableRow,
+  TableBody,
+  TableCell,
+} from "@sikt/sds-table";
+import * as tokens from "@sikt/sds-tokens";
+import * as tablet from "@sikt/sds-tokens/dist/js/tokens.tablet.js";
+import * as desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.js";
+import { pascalToKebab } from "../../utils/string";
+import type { Token as DesignToken } from "style-dictionary";
+
+const tokenName = (token: DesignToken) => `--${pascalToKebab(token.name)}`;
+const pageTitle = "Størrelser";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[
+      { title: "Designsystem", href: "/" },
+      { title: "Grunnleggende" },
+    ]}
+    heading={pageTitle}
+    slot="hero"
+  >
+    For å sikre likt utseende på tvers av løsninger og grensesnitt har vi
+    definert et sett med størrelser og avstander som design tokens.
+  </Hero>
+
+  <Section headingText="Basetokens">
+    <Paragraph className="ds-content-max-width">
+      For å sikre at vi bruker de samme verdiene er det satt opp en skala med
+      tallverdier som definerer de grunleggende størrelsene og avstandene som er
+      i bruk.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Disse tokensene er kun tilgjengelige i Figma-filen til designsystemet da
+      de ikke skal brukes direkte, men er grunnlaget for de semantiske
+      tokensene.
+    </Paragraph>
+
+    <Table caption="Designtokens for basetokens">
+      <TableHead>
+        <TableRow>
+          <TableHeader>Navn</TableHeader>
+          <TableHeader>Verdi</TableHeader>
+          <TableHeader>Token</TableHeader>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {
+          Object.entries(tokens.default.base.size).map((token) => {
+            return (
+              <TableRow key={token[1].name}>
+                <TableCell data-th="Navn">{token[0]}</TableCell>
+                <TableCell data-th="Verdi">{token[1].value}</TableCell>
+                <TableCell data-th="Token">
+                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                </TableCell>
+              </TableRow>
+            );
+          })
+        }
+      </TableBody>
+    </Table>
+  </Section>
+
+  <Section headingText="Padding">
+    <Paragraph className="ds-content-max-width">
+      Avstander brukes til å sette marginer og padding.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Noen av avstands-tokensene endrer seg ut i fra hvilken enhet man bruker,
+      slik at enkelte elementer tar mindre plass på små skjermer.
+    </Paragraph>
+
+    <Table caption="Designtokens for padding">
+      <TableHead>
+        <TableRow>
+          <TableHeader>Navn</TableHeader>
+          <TableHeader>Verdi @ mobile</TableHeader>
+          <TableHeader>Verdi @ tablet</TableHeader>
+          <TableHeader>Verdi @ desktop</TableHeader>
+          <TableHeader>Token</TableHeader>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {
+          Object.entries(tokens.default.space.padding).map((token) => {
+            const tabletToken =
+              tablet.default.space.padding?.[token[0]] ?? token[1];
+            const desktopToken =
+              desktop.default.space.padding?.[token[0]] ?? token[1];
+
+            return (
+              <TableRow key={token[1].name}>
+                <TableCell data-th="Navn">{token[0]}</TableCell>
+                <TableCell data-th="Verdi @ mobile">
+                  <Token token={token[1]} />
+                </TableCell>
+                <TableCell data-th="Verdi @ tablet">
+                  <Token token={tabletToken} />
+                </TableCell>
+                <TableCell data-th="Verdi @ desktop">
+                  <Token token={desktopToken} />
+                </TableCell>
+                <TableCell data-th="Token">
+                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                </TableCell>
+              </TableRow>
+            );
+          })
+        }
+      </TableBody>
+    </Table>
+  </Section>
+
+  <Section headingText="Gap">
+    <Paragraph className="ds-content-max-width">
+      Mellomrom brukes til å sette avstander mellom elementer.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Mellomrommene er faste på tvers av enheter da de er knyttet til tekst o.l.
+      for å skape en visuell rytme.
+    </Paragraph>
+
+    <Table caption="Designtokens for gap">
+      <TableHead>
+        <TableRow>
+          <TableHeader>Navn</TableHeader>
+          <TableHeader>Verdi @ mobile</TableHeader>
+          <TableHeader>Verdi @ tablet</TableHeader>
+          <TableHeader>Verdi @ desktop</TableHeader>
+          <TableHeader>Token</TableHeader>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {
+          Object.entries(tokens.default.space.gap).map((token) => {
+            const tabletToken =
+              tablet.default.space.gap?.[token[0]] ?? token[1];
+            const desktopToken =
+              desktop.default.space.gap?.[token[0]] ?? token[1];
+            return (
+              <TableRow key={token[1].name}>
+                <TableCell data-th="Navn">{token[0]}</TableCell>
+                <TableCell data-th="Verdi @ mobile">
+                  <Token token={token[1]} />
+                </TableCell>
+                <TableCell data-th="Verdi @ tablet">
+                  <Token token={tabletToken} />
+                </TableCell>
+                <TableCell data-th="Verdi @ desktop">
+                  <Token token={desktopToken} />
+                </TableCell>
+                <TableCell data-th="Token">
+                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                </TableCell>
+              </TableRow>
+            );
+          })
+        }
+      </TableBody>
+    </Table>
+  </Section>
+
+  <Section headingText="Border weight">
+    <Paragraph className="ds-content-max-width">
+      Linjetykkelse brukes til å sette tykkelsen/vekten på linjer og omriss.
+    </Paragraph>
+
+    <Table caption="Designtokens for border weight">
+      <TableHead>
+        <TableRow>
+          <TableHeader>Navn</TableHeader>
+          <TableHeader>Verdi @ mobile</TableHeader>
+          <TableHeader>Verdi @ tablet</TableHeader>
+          <TableHeader>Verdi @ desktop</TableHeader>
+          <TableHeader>Token</TableHeader>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {
+          Object.entries(tokens.default.space.border.weight).map((token) => {
+            const tabletToken =
+              tablet.default.space.border?.weight?.[token[0]] ?? token[1];
+            const desktopToken =
+              desktop.default.space.border?.weight?.[token[0]] ?? token[1];
+            return (
+              <TableRow key={token[1].name}>
+                <TableCell data-th="Navn">{token[0]}</TableCell>
+                <TableCell data-th="Verdi @ mobile">
+                  <Token token={token[1]} />
+                </TableCell>
+                <TableCell data-th="Verdi @ tablet">
+                  <Token token={tabletToken} />
+                </TableCell>
+                <TableCell data-th="Verdi @ desktop">
+                  <Token token={desktopToken} />
+                </TableCell>
+                <TableCell data-th="Token">
+                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                </TableCell>
+              </TableRow>
+            );
+          })
+        }
+      </TableBody>
+    </Table>
+  </Section>
+
+  <Section headingText="Border radius">
+    <Paragraph className="ds-content-max-width">
+      Hjørneavrunding setter radiusen på hjørner.
+    </Paragraph>
+
+    <Table caption="Designtokens for hjørneavrunding">
+      <TableHead>
+        <TableRow>
+          <TableHeader>Navn</TableHeader>
+          <TableHeader>Verdi @ mobile</TableHeader>
+          <TableHeader>Verdi @ tablet</TableHeader>
+          <TableHeader>Verdi @ desktop</TableHeader>
+          <TableHeader>Token</TableHeader>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {
+          Object.entries(tokens.default.space.border.radius).map((token) => {
+            const tabletToken =
+              tablet.default.space.border?.radius?.[token[0]] ?? token[1];
+            const desktopToken =
+              desktop.default.space.border?.radius?.[token[0]] ?? token[1];
+
+            return (
+              <TableRow key={token[1].name}>
+                <TableCell data-th="Navn">{token[0]}</TableCell>
+                <TableCell data-th="Verdi @ mobile">
+                  <Token token={token[1]} />
+                </TableCell>
+                <TableCell data-th="Verdi @ tablet">
+                  <Token token={tabletToken} />
+                </TableCell>
+                <TableCell data-th="Verdi @ desktop">
+                  <Token token={desktopToken} />
+                </TableCell>
+                <TableCell data-th="Token">
+                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                </TableCell>
+              </TableRow>
+            );
+          })
+        }
+      </TableBody>
+    </Table>
+  </Section>
+
+  <Section headingText="Breakpoints">
+    <Paragraph className="ds-content-max-width">
+      Vi har definert forskjellige enhetsstørrelser i designsystemet, mobil,
+      nettbrett, stasjonær datamaskin, og svært brede skjermer (mobile, tablet,
+      desktop, utrawide). Bruddpunktene er verdiene som definerer når
+      grensesnittet bytter mellom de forskjellige størrelsene og enhetene.
+    </Paragraph>
+
+    <Table caption="Designtokens for breakpoints">
+      <TableHead>
+        <TableRow>
+          <TableHeader>Navn</TableHeader>
+          <TableHeader>Verdi</TableHeader>
+          <TableHeader>Token</TableHeader>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {
+          Object.entries(tokens.default.base.breakpoint).map((token) => {
+            return (
+              <TableRow key={token[1].name}>
+                <TableCell data-th="Navn">{token[0]}</TableCell>
+                <TableCell data-th="Verdi">{token[1].value}</TableCell>
+                <TableCell data-th="Token">
+                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                </TableCell>
+              </TableRow>
+            );
+          })
+        }
+      </TableBody>
+    </Table>
+  </Section>
+</Layout>

@@ -24,6 +24,7 @@
     "@sikt/sds-list": "^2.1.1",
     "@sikt/sds-logo": "^2.0.1",
     "@sikt/sds-section": "^3.0.1",
+    "@sikt/sds-table": "^2.0.2",
     "@sikt/sds-tokens": "^4.0.0",
     "astro": "^5.7.10",
     "astro-matomo": "^1.8.1",
@@ -40,6 +41,7 @@
     "autoprefixer": "^10.4.21",
     "postcss-custom-media": "^11.0.5",
     "prettier-plugin-astro": "^0.14.1",
+    "style-dictionary": "^4.4.0",
     "vite-plugin-svgr": "^4.3.0"
   }
 }

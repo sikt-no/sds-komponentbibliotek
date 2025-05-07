@@ -35,6 +35,7 @@ export const Menu = ({ currentUrl }: { currentUrl: string }) => {
         <li>
           <NavButtonLink
             icon={<ArrowsInLineHorizontal className="sds-icon" aria-hidden />}
+            href={sizesHref}
             aria-current={currentUrl === sizesHref && "page"}
           >
             Størrelser
