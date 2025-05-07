@@ -1,7 +1,6 @@
 import {
   ArrowsInLineHorizontal,
   DotsNine,
-  Layout,
   Nut,
   Palette,
   SquaresFour,
@@ -13,7 +12,6 @@ import { Nav, NavButtonLink } from "../";
 export const Menu = ({ currentUrl }: { currentUrl: string }) => {
   const tokensHref = "/grunnleggende/designtokens/";
   const sizesHref = "/grunnleggende/storrelser/";
-  const layoutHref = "/grunnleggende/layout/";
   const colorsHref = "/grunnleggende/farger/";
   const typographyHref = "/grunnleggende/typografi/";
   const iconsHref = "/grunnleggende/ikoner/";
@@ -39,14 +37,6 @@ export const Menu = ({ currentUrl }: { currentUrl: string }) => {
             aria-current={currentUrl === sizesHref && "page"}
           >
             Størrelser
-          </NavButtonLink>
-        </li>
-        <li>
-          <NavButtonLink
-            icon={<Layout className="sds-icon" aria-hidden />}
-            aria-current={currentUrl === layoutHref && "page"}
-          >
-            Layout
           </NavButtonLink>
         </li>
         <li>
