@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import styles from "./hero.module.css";
 
 interface BreadcrumbProps {
-  href: string;
+  href?: string;
   title: string;
 }
 
@@ -26,11 +26,17 @@ export const Hero = ({
     <div className={clsx(styles.section, className)}>
       {breadcrumbs && (
         <Breadcrumbs aria-label="Navigasjonssti">
-          {breadcrumbs.map((breadcrumb) => (
-            <BreadcrumbItem key={breadcrumb.href}>
-              <Link href={breadcrumb.href}>{breadcrumb.title}</Link>
-            </BreadcrumbItem>
-          ))}
+          {breadcrumbs.map((breadcrumb) =>
+            breadcrumb.href ? (
+              <BreadcrumbItem key={breadcrumb.href}>
+                <Link href={breadcrumb.href}>{breadcrumb.title}</Link>
+              </BreadcrumbItem>
+            ) : (
+              <BreadcrumbItem key={breadcrumb.title}>
+                <span>{breadcrumb.title}</span>
+              </BreadcrumbItem>
+            ),
+          )}
         </Breadcrumbs>
       )}
       <Heading1 size="xl">{heading}</Heading1>

@@ -26,6 +26,7 @@ export const Menu = ({ currentUrl }: { currentUrl: string }) => {
         <li>
           <NavButtonLink
             icon={<Nut className="sds-icon" aria-hidden />}
+            href={tokensHref}
             aria-current={currentUrl === tokensHref && "page"}
           >
             Designtokens
