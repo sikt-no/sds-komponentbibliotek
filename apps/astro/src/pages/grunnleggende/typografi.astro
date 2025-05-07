@@ -1,0 +1,110 @@
+---
+import Layout from "../../layouts/PageLayout.astro";
+import { Hero } from "../../components";
+import { Heading, Paragraph } from "@sikt/sds-core";
+import { Section } from "@sikt/sds-section";
+
+const pageTitle = "Typografi";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[
+      { title: "Designsystem", href: "/" },
+      { title: "Grunnleggende" },
+    ]}
+    heading={pageTitle}
+    slot="hero"
+  >
+    Sikt Designsystem har utviklet et typografisystem som skal gjøre det enklere
+    å lage produkter som er både funksjonelle og lettfattelige. Systemet skal
+    ivareta lesbarhet og utseende på tvers av skjermstørrelser og tjenester.
+  </Hero>
+
+  <Section headingText="Fontfamilier">
+    <Paragraph className="ds-content-max-width">
+      I Sikt så benytter vi oss av skriftfamilien Haffer. Vi har tre
+      forskjeliige vekter tilgjengelige, som brukes i spesifiserte kontekster.
+    </Paragraph>
+
+    <Paragraph className="bold">Haffer Bold 700</Paragraph>
+    <Paragraph size="l" className="semibold">Haffer Semibold 600</Paragraph>
+    <Paragraph size="l" className="regular">Haffer Regular 400</Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Hvis det å bruke Haffer ikke er praktisk, som for eksempel presentasjoner
+      som skal sendes ut og redigeres av eksterne bidragsytere, bruker vi
+      <Paragraph as="span" modifier="strong">Arial</Paragraph>
+      som erstatning.
+    </Paragraph>
+  </Section>
+
+  <Section headingText="Tokenbasert">
+    <Paragraph className="ds-content-max-width">
+      Sikt designsystem benytter seg av tokens for å holde kontroll på våre
+      typografiske attributter, gjøre vedlikehold enklere og gjøre design og
+      utviklingsprosessen enklere.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Sikt leverer semantiske typografitokens i flere kategorier: headlines,
+      body text, label og overline. Disse er bygget opp av basetokens (også
+      kjent som primitives) som definerer skriftstørrelser (fontsize), vekt
+      (fontweight), linjehøyder (lineheight). Basetokens finner du nederst på
+      denne siden.
+    </Paragraph>
+  </Section>
+
+  <Section headingText="Overskriftshierarki">
+    <Paragraph className="ds-content-max-width">
+      På bakgrunn av det enorme spennet av produkter og tjenester som sikt
+      leverer, tilbyr Sikt Designsystem to forskjellige overskriftspakker:
+      Editorial og Application.
+    </Paragraph>
+
+    <Heading level="3" size="xs">Editorial headlines</Heading>
+
+    <Paragraph className="ds-content-max-width">
+      Editorial-pakken er utgangspunktet for det fleste produktene i Sikt. Den
+      ligger størrelsesmessig tett opptil overskriftsstilene som har vært brukt
+      før. Den har høy størrelseskontrast mellom de største og de minste
+      overskriftene, slik at man kan lage både nøkterne og rolige layouter, samt
+      at man har anledning til å blåse opp overskrifter som trenger mer fokus.
+    </Paragraph>
+
+    <Heading level="3" size="xs">Application headlines</Heading>
+
+    <Paragraph className="ds-content-max-width">
+      Application-pakken er et tilbud som leveres på bakgrunn av noen teams
+      behov for å ha en stor informasjonstetthet med mindre tekststørrelser og
+      mindre luft i sine produkter. Application-pakkens overskrifter er dermed
+      en del mindre på de største nivåene, og har også mindre størrelses
+      forskjell mellom hvert trinn.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Uansett hvilken av pakkene man velger, kan det være et greit utgangspunkt
+      å velge overskrifter slik at man hopper over et nivå. I stedet for xxl,
+      xl, og l, kan det bli klarere for brukeren å se forskjell om man bruker
+      xl, l og s. Hva som er riktig fremgangsmåte her avhenger selvfølgelig av
+      plassbehov, og hvor mange nivåer med overskrifter man har behov for.
+    </Paragraph>
+  </Section>
+</Layout>
+
+<style>
+  .bold {
+    font-size: var(--sds-typography-fontsize-600);
+    font-weight: var(--sds-typography-fontweight-bold);
+  }
+
+  .semibold {
+    font-size: var(--sds-typography-fontsize-600);
+    font-weight: var(--sds-typography-fontweight-semibold);
+  }
+
+  .regular {
+    font-size: var(--sds-typography-fontsize-600);
+    font-weight: var(--sds-typography-fontweight-regular);
+  }
+</style>

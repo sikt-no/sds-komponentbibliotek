@@ -50,6 +50,7 @@ export const Menu = ({ pathname }: { pathname: string }) => {
         <li>
           <NavButtonLink
             icon={<TextAa className="sds-icon" aria-hidden />}
+            href={typographyHref}
             aria-current={pathname === typographyHref && "page"}
           >
             Typografi
