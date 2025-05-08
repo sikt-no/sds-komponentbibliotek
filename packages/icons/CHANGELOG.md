@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@3.1.0...@sikt/sds-icons@3.2.0) (2025-05-08)
+
+### Features
+
+- **icons:** add law icon ([9b9cad1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9b9cad1ce4e9cca5ed2ced982ae256b777bf60f3))
+
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@3.0.0...@sikt/sds-icons@3.1.0) (2025-03-13)
 
 ### Features
