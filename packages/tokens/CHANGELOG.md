@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@4.0.0...@sikt/sds-tokens@4.1.0) (2025-05-08)
+
+### Features
+
+- **color:** new values for interaction neutral ([0f5ec2e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0f5ec2e01bd1a85eab1df1a739cc7a9b68453640))
+- **space:** new padding 2px token ([07caf42](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/07caf421a5495967e258288c5b0ec2a00cce949f))
+- **typography:** new line height values for label, overline and editorial-headline-xxs ([286bce2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/286bce22814374a3778ff74b0b14ff8f1aeeee3a))
+
+### Bug Fixes
+
+- **typography:** changes to editorial headline xxs & xs ([3d0d98d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3d0d98d7c4cab821da7ee25d6a2911402488dee5))
+
 ## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@3.1.0...@sikt/sds-tokens@4.0.0) (2025-04-01)
 
 ### ⚠ BREAKING CHANGES
