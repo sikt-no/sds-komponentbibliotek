@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.1.4...@sikt/sds-checkbox@3.1.5) (2025-05-08)
+
+### Bug Fixes
+
+- **checkbox:** icon not resizing in safari ([489516c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/489516cc47def5dc8b935db171f5436544484ea5))
+
 ## [3.1.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.1.3...@sikt/sds-checkbox@3.1.4) (2025-04-11)
 
 ### Bug Fixes
