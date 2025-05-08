@@ -8,6 +8,8 @@ const variants: ButtonVariant[] = [
   "subtle",
   "transparent",
   "critical",
+  "neutral",
+  "neutral-transparent",
 ];
 
 describe("Button", () => {

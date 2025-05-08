@@ -3,7 +3,13 @@ import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
 import "./button.pcss";
 
 export type ButtonProps = ButtonChildrenProps | ButtonAriaLabelProps;
-export type ButtonVariant = "strong" | "subtle" | "transparent" | "critical";
+export type ButtonVariant =
+  | "strong"
+  | "subtle"
+  | "transparent"
+  | "critical"
+  | "neutral"
+  | "neutral-transparent";
 export type ButtonSize = "default" | "small";
 export type ButtonIconVariant = "right" | "left" | "only";
 

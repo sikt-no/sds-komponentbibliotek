@@ -9,6 +9,8 @@ test.describe("Button", () => {
     "subtle",
     "transparent",
     "critical",
+    "neutral",
+    "neutral-transparent",
   ];
 
   test.describe("a11y", () => {

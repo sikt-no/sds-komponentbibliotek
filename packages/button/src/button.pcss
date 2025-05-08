@@ -83,6 +83,30 @@
     }
   }
 
+  &--neutral {
+    background-color: var(--sds-color-interaction-neutral-subtle-default);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--sds-color-interaction-neutral-subtle-highlight);
+    }
+
+    &:active {
+      background: var(--sds-color-interaction-neutral-subtle-pressed);
+    }
+  }
+
+  &--neutral-transparent {
+    &:hover,
+    &:focus-visible {
+      background: var(--sds-color-interaction-neutral-transparent-highlight);
+    }
+
+    &:active {
+      background: var(--sds-color-interaction-neutral-transparent-pressed);
+    }
+  }
+
   &--small {
     --button-border-radius: var(--sds-space-border-radius-minimal);
     --button-padding: var(--sds-space-padding-minimal);
