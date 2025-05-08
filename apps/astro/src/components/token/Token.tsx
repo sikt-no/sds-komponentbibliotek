@@ -5,21 +5,23 @@ import { dotToKebab } from "../../utils/string.ts";
 const tokenToKebab = (str: string) =>
   dotToKebab(str.replaceAll("{", "").replaceAll("}", ""));
 
-const tokenOriginalName = (token: TransformedToken) =>
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  `--${tokenToKebab(token.original.value)}`;
+const tokenOriginalName = (token: TransformedToken) => {
+  const originalValue = `${token.original.value}`;
+  return tokenToKebab(originalValue);
+};
 
-const tokenValueOrOriginal = (token: TransformedToken) =>
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return
-  token.original.value.indexOf("}") > -1
+const tokenValueOrOriginal = (token: TransformedToken) => {
+  const originalValue = `${token.original.value}`;
+  return originalValue.includes("}")
     ? tokenOriginalName(token)
-    : token.value;
+    : `${token.value}`;
+};
 
 export const Token = ({ token }: { token: TransformedToken }) => {
+  const originalValue = `${token.original.value}`;
   return (
     <>
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access */}
-      {token.original.value.indexOf("}") > -1 ? (
+      {originalValue.includes("}") ? (
         <Paragraph as="span" size="s">
           {tokenValueOrOriginal(token)}
         </Paragraph>

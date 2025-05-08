@@ -1,0 +1,6 @@
+.card {
+  background-color: var(--sds-color-layout-background-default);
+  border-radius: var(--sds-space-border-radius-medium);
+  gap: var(--sds-space-gap-small);
+  padding: var(--sds-space-padding-medium);
+}

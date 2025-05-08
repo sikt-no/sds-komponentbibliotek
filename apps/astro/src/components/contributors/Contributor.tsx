@@ -14,6 +14,9 @@ export const Contributor = ({
     return;
   }
 
+  const imgName = name.toLowerCase().replaceAll(" ", "-").replaceAll(".", "");
+  const imgSrc = `/images/contributors/${imgName}.png`;
+
   return (
     <div className={styles.contributor}>
       {showEasterEggs && name === "Andreas" && (
@@ -46,12 +49,9 @@ export const Contributor = ({
       {name !== "Deg" && (
         <img
           className={styles.image}
-          src={`/images/contributors/${name
-            .toLowerCase()
-            .replaceAll(" ", "-")
-            .replaceAll(".", "")}.png`}
-          alt={name}
-          aria-hidden="true"
+          src={imgSrc}
+          alt=""
+          aria-hidden
           loading="lazy"
         />
       )}

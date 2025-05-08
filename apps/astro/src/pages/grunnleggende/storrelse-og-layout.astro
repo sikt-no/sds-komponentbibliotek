@@ -12,13 +12,13 @@ import {
   TableBody,
   TableCell,
 } from "@sikt/sds-table";
-import * as tokens from "@sikt/sds-tokens";
-import * as tablet from "@sikt/sds-tokens/dist/js/tokens.tablet.js";
-import * as desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.js";
+import tokens from "@sikt/sds-tokens/dist/js/tokens.mjs";
+import tablet from "@sikt/sds-tokens/dist/js/tokens.tablet.mjs";
+import desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.mjs";
 import { pascalToKebab } from "../../utils/string";
-import type { Token as DesignToken } from "style-dictionary";
+import type { TransformedToken } from "style-dictionary";
 
-const tokenName = (token: DesignToken) => `--${pascalToKebab(token.name)}`;
+const tokenName = (token: TransformedToken) => `--${pascalToKebab(token.name)}`;
 const pageTitle = "Størrelse og layout";
 ---
 
@@ -58,7 +58,7 @@ const pageTitle = "Størrelse og layout";
       </TableHead>
       <TableBody>
         {
-          Object.entries(tokens.default.base.size).map((token) => {
+          Object.entries(tokens.base.size).map((token) => {
             return (
               <TableRow key={token[1].name}>
                 <TableCell data-th="Navn">{token[0]}</TableCell>
@@ -96,11 +96,9 @@ const pageTitle = "Størrelse og layout";
       </TableHead>
       <TableBody>
         {
-          Object.entries(tokens.default.space.padding).map((token) => {
-            const tabletToken =
-              tablet.default.space.padding?.[token[0]] ?? token[1];
-            const desktopToken =
-              desktop.default.space.padding?.[token[0]] ?? token[1];
+          Object.entries(tokens.space.padding).map((token) => {
+            const tabletToken = tablet.space.padding?.[token[0]] ?? token[1];
+            const desktopToken = desktop.space.padding?.[token[0]] ?? token[1];
 
             return (
               <TableRow key={token[1].name}>
@@ -147,11 +145,9 @@ const pageTitle = "Størrelse og layout";
       </TableHead>
       <TableBody>
         {
-          Object.entries(tokens.default.space.gap).map((token) => {
-            const tabletToken =
-              tablet.default.space.gap?.[token[0]] ?? token[1];
-            const desktopToken =
-              desktop.default.space.gap?.[token[0]] ?? token[1];
+          Object.entries(tokens.space.gap).map((token) => {
+            const tabletToken = tablet.space.gap?.[token[0]] ?? token[1];
+            const desktopToken = desktop.space.gap?.[token[0]] ?? token[1];
             return (
               <TableRow key={token[1].name}>
                 <TableCell data-th="Navn">{token[0]}</TableCell>
@@ -192,11 +188,11 @@ const pageTitle = "Størrelse og layout";
       </TableHead>
       <TableBody>
         {
-          Object.entries(tokens.default.space.border.weight).map((token) => {
+          Object.entries(tokens.space.border.weight).map((token) => {
             const tabletToken =
-              tablet.default.space.border?.weight?.[token[0]] ?? token[1];
+              tablet.space.border?.weight?.[token[0]] ?? token[1];
             const desktopToken =
-              desktop.default.space.border?.weight?.[token[0]] ?? token[1];
+              desktop.space.border?.weight?.[token[0]] ?? token[1];
             return (
               <TableRow key={token[1].name}>
                 <TableCell data-th="Navn">{token[0]}</TableCell>
@@ -237,11 +233,11 @@ const pageTitle = "Størrelse og layout";
       </TableHead>
       <TableBody>
         {
-          Object.entries(tokens.default.space.border.radius).map((token) => {
+          Object.entries(tokens.space.border.radius).map((token) => {
             const tabletToken =
-              tablet.default.space.border?.radius?.[token[0]] ?? token[1];
+              tablet.space.border?.radius?.[token[0]] ?? token[1];
             const desktopToken =
-              desktop.default.space.border?.radius?.[token[0]] ?? token[1];
+              desktop.space.border?.radius?.[token[0]] ?? token[1];
 
             return (
               <TableRow key={token[1].name}>
@@ -284,7 +280,7 @@ const pageTitle = "Størrelse og layout";
       </TableHead>
       <TableBody>
         {
-          Object.entries(tokens.default.base.breakpoint).map((token) => {
+          Object.entries(tokens.base.breakpoint).map((token) => {
             return (
               <TableRow key={token[1].name}>
                 <TableCell data-th="Navn">{token[0]}</TableCell>

@@ -4,7 +4,7 @@ import { GitlabButton, FigmaButton, SlackButton } from "../components";
 import Card from "../components/card/Card.astro";
 import { Heading2 } from "@sikt/sds-core";
 import { ButtonGroup, ButtonLink, Button } from "@sikt/sds-button";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import heroImage from "../assets/images/hero.png";
 import komponenterImage from "../assets/images/komponenter.png";
 import designprinsipperImage from "../assets/images/designprinsipper.png";
@@ -16,7 +16,15 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
   <div class="container">
     <div class="section">
       <Card className={["reverse", "large"]}>
-        <div slot="image"><Image src={heroImage} alt="" aria-hidden /></div>
+        <div slot="image">
+          <Picture
+            src={heroImage}
+            formats={["avif", "webp"]}
+            widths={[240, 540]}
+            alt=""
+            aria-hidden
+          />
+        </div>
         <div>
           <Heading2 size="xl" slot="heading">Lær, bruk og bidra</Heading2>
           Velkommen til Sikts designsystem! Dette er en sammensetning av komponenter
@@ -29,7 +37,13 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
     <div class:list={["section", "section-double"]}>
       <Card>
         <div slot="image">
-          <Image src={designprinsipperImage} alt="" aria-hidden />
+          <Picture
+            src={designprinsipperImage}
+            formats={["avif", "webp"]}
+            widths={[240, 540]}
+            alt=""
+            aria-hidden
+          />
         </div>
         <Heading2 slot="heading">Designprisipper og byggesteiner</Heading2>
 
@@ -42,7 +56,13 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
 
       <Card>
         <div slot="image">
-          <Image src={komponenterImage} alt="" aria-hidden />
+          <Picture
+            src={komponenterImage}
+            formats={["avif", "webp"]}
+            widths={[240, 540]}
+            alt=""
+            aria-hidden
+          />
         </div>
         <Heading2 slot="heading">Komponenter</Heading2>
         <p>

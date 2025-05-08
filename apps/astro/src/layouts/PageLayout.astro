@@ -13,9 +13,11 @@ const { title } = Astro.props;
     </div>
     <div class="content">
       <div class="container">
-        {/* TODO: Hero */}
-        <slot name="hero" />
-        <slot />
+        <div class="wrapper">
+          {/* TODO: Hero */}
+          <slot name="hero" />
+          <slot />
+        </div>
       </div>
     </div>
   </div>
@@ -23,6 +25,8 @@ const { title } = Astro.props;
 
 <style>
   @import url("@sikt/sds-tokens/dist/css/custom-media.css");
+
+  @custom-media --breakpoint-ultrawide (width >= 1800px);
 
   .page {
     display: grid;
@@ -46,8 +50,20 @@ const { title } = Astro.props;
 
   .container {
     container: page / inline-size;
+    display: flex;
+
+    @media (--breakpoint-ultrawide) {
+      justify-content: center;
+    }
+  }
+
+  .wrapper {
     display: grid;
     gap: var(--sds-space-padding-huge);
     max-width: 920px;
+
+    @media (--breakpoint-ultrawide) {
+      margin-left: -18vw;
+    }
   }
 </style>

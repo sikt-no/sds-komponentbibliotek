@@ -13,7 +13,7 @@ import { Tabs, TabList, Tab, TabPanel } from "@sikt/sds-tabs";
 import "@sikt/sds-tabs/dist/index.css";
 
 <Tabs>
-  <TabList>
+  <TabList aria-label="Tabs Label">
     <Tab>First Tab</Tab>
     <Tab>Second Tab</Tab>
     <Tab>Third Tab</Tab>
@@ -36,7 +36,7 @@ Create custom markup:
 
 ```html
 <div class="sds-tabs">
-  <div class="sds-tabs__tab-list" role="tablist" aria-label="Sample Tabs">
+  <div class="sds-tabs__tab-list" role="tablist" aria-label="Tabs Label">
     <button
       class="sds-tabs__tab"
       role="tab"

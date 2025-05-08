@@ -5,8 +5,8 @@ import faviconSvg from "@sikt/sds-logo/Favicon-Light.svg";
 import faviconDark32 from "@sikt/sds-logo/Favicon-Dark@32px.png";
 import faviconDark180 from "@sikt/sds-logo/Favicon-Dark@180px.png";
 import faviconDarkSvg from "@sikt/sds-logo/Favicon-Dark.svg";
-import * as tokens from "@sikt/sds-tokens";
-import * as colorDark from "@sikt/sds-tokens/dist/js/color.dark.js";
+import tokens from "@sikt/sds-tokens/dist/js/tokens.mjs";
+import colorDark from "@sikt/sds-tokens/dist/js/color.dark.mjs";
 import { Footer } from "../components";
 import { Header } from "../components";
 
@@ -44,12 +44,12 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta
       name="theme-color"
-      content={tokens.default.color.brand.primary.strong.value}
+      content={tokens.color.brand.primary.strong.value}
     />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
-      content={colorDark.default.color.brand.primary.strong.value}
+      content={colorDark.color.brand.primary.strong.value}
     />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
@@ -77,6 +77,7 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
   @import url("@sikt/sds-logo") layer(base);
   @import url("@sikt/sds-section") layer(base);
   @import url("@sikt/sds-table") layer(base);
+  @import url("@sikt/sds-tabs") layer(base);
 
   .sds-typography-link[aria-current="page"] {
     text-decoration: none;

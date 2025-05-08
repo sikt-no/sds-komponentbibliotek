@@ -2,7 +2,9 @@
 import Layout from "../../layouts/PageLayout.astro";
 import { Hero } from "../../components";
 import { Heading, Paragraph } from "@sikt/sds-core";
+import { ButtonGroup, Button } from "@sikt/sds-button";
 import { Section } from "@sikt/sds-section";
+import { HeadlineTabs } from "../../components";
 
 const pageTitle = "Typografi";
 ---
@@ -30,6 +32,10 @@ const pageTitle = "Typografi";
     <Paragraph className="bold">Haffer Bold 700</Paragraph>
     <Paragraph size="l" className="semibold">Haffer Semibold 600</Paragraph>
     <Paragraph size="l" className="regular">Haffer Regular 400</Paragraph>
+
+    <ButtonGroup>
+      <Button variant="strong" disabled>Last ned Haffer</Button>
+    </ButtonGroup>
 
     <Paragraph className="ds-content-max-width">
       Hvis det å bruke Haffer ikke er praktisk, som for eksempel presentasjoner
@@ -89,6 +95,14 @@ const pageTitle = "Typografi";
       xl, l og s. Hva som er riktig fremgangsmåte her avhenger selvfølgelig av
       plassbehov, og hvor mange nivåer med overskrifter man har behov for.
     </Paragraph>
+  </Section>
+
+  <Section headingText="Editorial headlines">
+    <HeadlineTabs type="editorial" client:load />
+  </Section>
+
+  <Section headingText="Application headlines">
+    <HeadlineTabs type="application" client:load />
   </Section>
 </Layout>
 
