@@ -7,7 +7,11 @@ import { Tabs, TabList, Tab, TabPanel } from "@sikt/sds-tabs";
 import { capitalize } from "../../utils/string.ts";
 import { HeadlineTabPanel } from "./HeadlineTabPanel.tsx";
 
-export const HeadlineTabs = ({ type }: { type: string }) => {
+export const HeadlineTabs = ({
+  type,
+}: {
+  type: "editorial" | "application";
+}) => {
   return (
     <Tabs>
       <TabList aria-label={`${capitalize(type)} headlines`}>

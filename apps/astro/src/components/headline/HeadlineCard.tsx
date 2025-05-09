@@ -1,19 +1,18 @@
-import { Heading3 } from "@sikt/sds-core";
-import type { ReactNode } from "react";
+import type { ReactNode, CSSProperties } from "react";
 import styles from "./headline-card.module.css";
 
 export const HeadlineCard = ({
   heading,
   children,
+  style,
 }: {
-  heading: string;
+  heading: ReactNode;
   children: ReactNode;
+  style: CSSProperties;
 }) => {
   return (
     <section className={styles.card}>
-      <Heading3 variant="application" size="xxl">
-        {heading}
-      </Heading3>
+      <h3 style={style}>{heading}</h3>
       {children}
     </section>
   );
