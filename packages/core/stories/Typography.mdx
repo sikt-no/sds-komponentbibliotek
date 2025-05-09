@@ -149,12 +149,12 @@ import { Meta } from "@storybook/blocks";
     </tr>
   </thead>
   <tbody>
-    {["emphasis", "strong", "quote", "code"].map((item) => {
+    {["emphasis", "strong", "quote", "code", "tabular-nums"].map((item) => {
       return (
         <tr key={item}>
           <th scope="row">{item}</th>
           <td className={`sds-typography-body sds-typography--${item}`}>Aa</td>
-          <td>--sds-typography--{item}</td>
+          <td>.sds-typography--{item}</td>
         </tr>
       );
     })}
