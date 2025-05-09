@@ -229,6 +229,11 @@ const dictionaryTokens = new StyleDictionary({
           destination: "js/tokens.d.ts",
           filter,
         },
+        {
+          format: "javascript/esm",
+          destination: "js/tokens.mjs",
+          filter,
+        },
       ],
     },
     tailwind: {
@@ -303,6 +308,11 @@ const dictionaryColorDark = new StyleDictionary({
           destination: "js/color.dark.d.ts",
           filter: colorFilter,
         },
+        {
+          format: "javascript/esm",
+          destination: "js/color.dark.mjs",
+          filter,
+        },
       ],
     },
   },
@@ -352,6 +362,11 @@ const dictionaryMediaTablet = new StyleDictionary({
           destination: "js/tokens.tablet.d.ts",
           filter,
         },
+        {
+          format: "javascript/esm",
+          destination: "js/tokens.tablet.mjs",
+          filter,
+        },
       ],
     },
   },
@@ -399,6 +414,11 @@ const dictionaryMediaDesktop = new StyleDictionary({
         {
           format: "typescript/module-declarations",
           destination: "js/tokens.desktop.d.ts",
+          filter,
+        },
+        {
+          format: "javascript/esm",
+          destination: "js/tokens.desktop.mjs",
           filter,
         },
       ],

@@ -9,6 +9,22 @@
   },
   "type": "commonjs",
   "main": "dist/js/tokens.js",
+  "module": "dist/js/tokens.mjs",
+  "exports": {
+    ".": {
+      "style": "./dist/css/tokens.css",
+      "import": {
+        "types": "./dist/js/tokens.d.ts",
+        "default": "./dist/js/tokens.mjs"
+      },
+      "require": {
+        "types": "./dist/js/tokens.d.ts",
+        "default": "./dist/js/tokens.js"
+      }
+    },
+    "./dist/*": "./dist/*"
+  },
+  "types": "dist/js/tokens.d.ts",
   "style": "dist/css/tokens.css",
   "files": [
     "CHANGELOG.md",
