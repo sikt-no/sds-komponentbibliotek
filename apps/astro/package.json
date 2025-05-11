@@ -27,7 +27,7 @@
     "@sikt/sds-table": "^2.0.2",
     "@sikt/sds-tabs": "^3.0.4",
     "@sikt/sds-tokens": "^4.0.0",
-    "astro": "^5.7.10",
+    "astro": "^5.7.12",
     "astro-matomo": "^1.8.1",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
