@@ -46,7 +46,8 @@ export const HeadlineTabPanel = ({
               key={group[0]}
               heading={
                 <>
-                  {type}/&shy;headline-{group[0]}
+                  {type}/<wbr />
+                  headline-{group[0]}
                 </>
               }
               style={{
