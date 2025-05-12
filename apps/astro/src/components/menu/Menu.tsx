@@ -69,6 +69,7 @@ export const Menu = ({ pathname }: { pathname: string }) => {
             icon={<Wheelchair className="sds-icon" aria-hidden />}
             href={a11yHref}
             aria-current={pathname === a11yHref && "page"}
+            target="_blank"
           >
             Tilgjengelighet
           </NavButtonLink>

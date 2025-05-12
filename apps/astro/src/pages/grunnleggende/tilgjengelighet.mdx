@@ -1,0 +1,47 @@
+---
+layout: "../../layouts/MdxLayout.astro"
+pageTitle: "Tilgjengelighet"
+---
+
+import {
+  Link,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
+  Paragraph,
+} from "@sikt/sds-core";
+import { ListItem, OrderedList, UnorderedList } from "@sikt/sds-list";
+export const components = {
+  a: Link,
+  h1: Heading1,
+  h2: Heading2,
+  h3: Heading3,
+  h4: Heading4,
+  h5: Heading5,
+  h6: Heading6,
+  li: ListItem,
+  ol: OrderedList,
+  p: Paragraph,
+  ul: UnorderedList,
+};
+
+import { Hero } from "../../components";
+import { Section } from "@sikt/sds-section";
+
+<Hero
+  breadcrumbs={[
+    { title: "Designsystem", href: "/" },
+    { title: "Grunnleggende" },
+  ]}
+  heading={frontmatter.pageTitle}
+>
+  For å sikre likt utseende på tvers av løsninger og grensesnitt har vi definert
+  et sett med størrelser og avstander som design tokens.
+</Hero>
+
+<Section headingText="Testing out JSX">Test</Section>
+
+[test](https://google.com)

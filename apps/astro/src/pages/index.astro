@@ -25,11 +25,13 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
             aria-hidden
           />
         </div>
-        <div>
+        <div class="card-body">
           <Heading2 size="xl" slot="heading">Lær, bruk og bidra</Heading2>
-          Velkommen til Sikts designsystem! Dette er en sammensetning av komponenter
-          og retningslinjer du kan bruke når du designer og utvikler digitale løsninger
-          og tjenester.
+          <p>
+            Velkommen til Sikts designsystem! Dette er en sammensetning av
+            komponenter og retningslinjer du kan bruke når du designer og
+            utvikler digitale løsninger og tjenester.
+          </p>
         </div>
       </Card>
     </div>
@@ -112,5 +114,11 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
     @media (--sds-base-breakpoint-desktop) {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-padding-medium);
   }
 </style>
