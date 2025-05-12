@@ -2,6 +2,7 @@ import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode, forwardRef, useId, useMemo } from "react";
 import { FieldsetContext } from "./FieldsetContext";
 import "./fieldset.pcss";
+import { HelpText } from "./HelpText";
 
 interface FieldsetBaseProps
   extends Omit<
@@ -42,11 +43,18 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
     ref,
   ) => {
     const id = useId();
+    const errorTextId = `${id}-error-text`;
+    const helpTextId = `${id}-help-text`;
 
     const context = useMemo(
       () => ({ name: name ?? id, error: Boolean(errorText) }),
       [name, id, errorText],
     );
+
+    const ariaDescribedBy =
+      [errorText && errorTextId, helpText && helpTextId]
+        .filter(Boolean)
+        .join(" ") || undefined;
 
     return (
       <FieldsetContext.Provider value={context}>
@@ -58,25 +66,21 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
             className,
           )}
           aria-labelledby={ariaLabelledby}
-          aria-describedby={
-            (errorText ?? helpText) ? `${id}-help-text` : undefined
-          }
+          aria-describedby={ariaDescribedBy}
           aria-invalid={Boolean(errorText)}
-          aria-errormessage={errorText ? `${id}-help-text` : undefined}
+          aria-errormessage={errorText ? errorTextId : undefined}
           {...rest}
         >
           {legend !== undefined && (
             <legend className="sds-form-fieldset__legend">{legend}</legend>
           )}
-          {children}
-          {(errorText ?? helpText) && (
-            <div
-              className="sds-form-fieldset__help-text"
-              id={`${id}-help-text`}
-            >
-              {errorText ?? helpText}
-            </div>
+          {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}
+          {errorText && (
+            <HelpText id={errorTextId} error>
+              {errorText}
+            </HelpText>
           )}
+          {children}
         </fieldset>
       </FieldsetContext.Provider>
     );

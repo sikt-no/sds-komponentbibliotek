@@ -57,7 +57,7 @@ describe("InputFile", () => {
         />,
       );
 
-      expect(screen.queryByText("help")).not.toBeInTheDocument();
+      expect(screen.getByText("help")).toBeInTheDocument();
       expect(screen.getByText("error")).toBeInTheDocument();
     });
 

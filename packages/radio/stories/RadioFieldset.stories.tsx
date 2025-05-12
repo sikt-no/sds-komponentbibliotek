@@ -48,7 +48,7 @@ export const Default = {
 export const WithHelpText = {
   args: {
     ...Default.args,
-    helpText: "Text",
+    helpText: "Helpful text",
   },
   render: (args) => {
     const [selected, setSelected] = useState("2");
@@ -70,7 +70,8 @@ export const WithHelpText = {
 export const WithError = {
   args: {
     ...Default.args,
-    errorText: "Error!",
+    errorText: "Error: Message",
+    helpText: "Helpful text",
   },
   render: (args) => {
     const [selected, setSelected] = useState("3");

@@ -1,20 +1,17 @@
-.sds-form-fieldset {
-  --fieldset-color: var(--sds-color-text-secondary);
+.sds-form {
+  &-fieldset {
+    &__legend {
+      color: var(--sds-color-text-primary);
+      display: block;
+      font-size: var(--sds-typography-label-default-fontsize);
+      font-weight: var(--sds-typography-label-default-fontweight);
+      line-height: var(--sds-typography-label-default-lineheight);
+      padding: var(--sds-space-padding-minimal) var(--sds-space-padding-tiny)
+        var(--sds-space-padding-tiny);
 
-  &__legend,
-  &__help-text {
-    color: var(--fieldset-color);
-    font-size: var(--sds-typography-body-fontsize-small);
-    font-weight: var(--sds-typography-weight-regular);
-    line-height: var(--sds-typography-body-lineheight-small);
-    padding: var(--sds-space-padding-tiny);
-  }
-
-  &__help-text {
-    color: var(--help-text-color);
-  }
-
-  &--error {
-    --help-text-color: var(--sds-color-text-primary);
+      &:has(+ .sds-form__help-text) {
+        padding-bottom: unset;
+      }
+    }
   }
 }

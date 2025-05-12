@@ -14,9 +14,9 @@ describe("HelpText", () => {
   describe("api", () => {
     it("help text should render", async () => {
       render(<HelpText data-testid="test">Foo</HelpText>);
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__help-text",
-      );
+      expect(screen.getByTestId("test")).toHaveClass("sds-form__help-text", {
+        exact: false,
+      });
       expect(screen.getByTestId("test")).toBeInTheDocument();
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
@@ -29,7 +29,8 @@ describe("HelpText", () => {
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__help-text test-class-name",
+        "sds-form__help-text test-class-name",
+        { exact: false },
       );
     });
 
@@ -42,7 +43,8 @@ describe("HelpText", () => {
 
       expect(screen.getByText("Error")).toBeInTheDocument();
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__help-text--error",
+        "sds-form__help-text sds-form__help-text--error",
+        { exact: false },
       );
     });
   });

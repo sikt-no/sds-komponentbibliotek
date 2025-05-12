@@ -54,7 +54,9 @@ describe("FormField", () => {
 
       const errorEl = screen.getByText("Bar");
       expect(errorEl).toBeInTheDocument();
-      expect(errorEl).toHaveClass("sds-form-field__help-text");
+      expect(errorEl).toHaveClass("sds-form__help-text", {
+        exact: false,
+      });
     });
 
     it("should show help text", async () => {
@@ -71,26 +73,29 @@ describe("FormField", () => {
 
       const errorEl = screen.getByText("Bar");
       expect(errorEl).toBeInTheDocument();
-      expect(errorEl).toHaveClass("sds-form-field__help-text");
+      expect(errorEl).toHaveClass("sds-form__help-text", {
+        exact: false,
+      });
     });
 
-    it("should only show error text if both help and error text is set", async () => {
-      const { container } = render(
+    it("should show both help and error text", async () => {
+      render(
         <FormField label="Foo" htmlFor="input" errorText="Bar" helpText="Quz">
           <input id="input" />
         </FormField>,
       );
 
-      expect(
-        container.getElementsByClassName("sds-form-field--error")[0],
-      ).toBeInTheDocument();
-
       const errorEl = screen.getByText("Bar");
       expect(errorEl).toBeInTheDocument();
-      expect(errorEl).toHaveClass("sds-form-field__help-text");
+      expect(errorEl).toHaveClass("sds-form__help-text", {
+        exact: false,
+      });
 
       const helpEl = screen.queryByText("Quz");
-      expect(helpEl).toBeNull();
+      expect(helpEl).toBeInTheDocument();
+      expect(helpEl).toHaveClass("sds-form__help-text", {
+        exact: false,
+      });
     });
 
     it("should support aria-labelledby", () => {

@@ -97,7 +97,7 @@ describe("Select", () => {
         />,
       );
 
-      expect(screen.queryByText("Baz")).not.toBeInTheDocument();
+      expect(screen.getByText("Baz")).toBeInTheDocument();
       expect(screen.getByText("Qux")).toBeInTheDocument();
     });
 

@@ -41,7 +41,7 @@ export const WithHelpText = {
     ...templateArgs,
     legend: "Legend",
     errorText: undefined,
-    helpText: "Help text",
+    helpText: "Helpful text",
   },
 } satisfies Story;
 
@@ -57,8 +57,9 @@ export const WithError = {
         onChange={() => null}
       />,
     ],
-    legend: "Legend with error icon",
-    errorText: "Error text",
+    legend: "Legend",
+    errorText: "Error: Message",
+    helpText: "Helpful text",
   },
 } satisfies Story;
 

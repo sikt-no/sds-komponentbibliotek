@@ -16,7 +16,7 @@ export const Default: Story = {
   args: {
     label: "Label",
     "aria-label": "Label",
-    helpText: "Help text",
+    helpText: "Helpful text",
     placeholder: "Drop file here,",
     placeholderBridge: "or",
     triggerText: "Open file explorer",
@@ -59,7 +59,8 @@ export const Default: Story = {
 export const WithError: Story = {
   args: {
     ...Default.args,
-    errorText: "Error",
+    helpText: "Helpful text",
+    errorText: "Error: Message",
   },
   render: (args) => (
     <div data-testid="sds-input-file">

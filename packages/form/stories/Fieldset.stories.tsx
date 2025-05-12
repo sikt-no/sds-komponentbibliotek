@@ -44,7 +44,7 @@ export const WithHelpText = {
     ...templateArgs,
     legend: "Legend",
     errorText: undefined,
-    helpText: "Help text",
+    helpText: "Helpful text",
   },
 } satisfies Story;
 
@@ -52,8 +52,8 @@ export const WithError = {
   args: {
     ...templateArgs,
     legend: "Legend",
-    errorText: "Error text",
-    helpText: undefined,
+    errorText: "Error: Message",
+    helpText: "Helpful text",
   },
 } satisfies Story;
 

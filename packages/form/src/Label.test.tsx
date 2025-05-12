@@ -22,7 +22,9 @@ describe("Label", () => {
           <input id="id" />
         </Label>,
       );
-      expect(screen.getByTestId("test")).toHaveClass("sds-form-field__label");
+      expect(screen.getByTestId("test")).toHaveClass("sds-form__label", {
+        exact: false,
+      });
       expect(screen.getByTestId("test")).toBeInTheDocument();
     });
 
@@ -39,7 +41,10 @@ describe("Label", () => {
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__label test-class-name",
+        "sds-form__label test-class-name",
+        {
+          exact: false,
+        },
       );
     });
 
@@ -61,9 +66,9 @@ describe("Label", () => {
       );
 
       expect(screen.getByText("Foo")).toBeInTheDocument();
-      expect(screen.getByTestId("test")).toHaveClass(
-        "sds-form-field__label--error",
-      );
+      expect(screen.getByTestId("test")).toHaveClass("sds-form__label--error", {
+        exact: false,
+      });
     });
   });
 });

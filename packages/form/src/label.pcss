@@ -1,13 +1,16 @@
-.sds-form-field__label {
-  --label-color: var(--sds-color-text-secondary);
-
-  &-text {
-    color: var(--label-color);
+.sds-form {
+  &__label {
+    color: var(--sds-color-text-primary);
     cursor: pointer;
     display: block;
-    font-size: var(--sds-typography-body-fontsize-small);
-    font-weight: var(--sds-typography-weight-regular);
-    line-height: var(--sds-typography-body-lineheight-small);
-    padding: var(--sds-space-padding-tiny);
+    font-size: var(--sds-typography-label-default-fontsize);
+    font-weight: var(--sds-typography-label-default-fontweight);
+    line-height: var(--sds-typography-label-default-lineheight);
+    padding: var(--sds-space-padding-minimal) var(--sds-space-padding-tiny)
+      var(--sds-space-padding-tiny);
+
+    &:has(+ .sds-form__help-text) {
+      padding-bottom: unset;
+    }
   }
 }

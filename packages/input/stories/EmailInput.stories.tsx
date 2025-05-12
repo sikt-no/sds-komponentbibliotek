@@ -28,13 +28,14 @@ export const WithCustomIcon: Story = {
 export const WithHelpText: Story = {
   args: {
     ...Input.args,
-    helpText: "Text",
+    helpText: "Helpful text",
   },
 };
 
 export const WithError: Story = {
   args: {
     ...Input.args,
-    errorText: "Error!",
+    helpText: "Helpful text",
+    errorText: "Error: Message",
   },
 };

@@ -65,7 +65,7 @@ describe("TextArea", () => {
 
       const errorEl = screen.getByText("Bar");
       expect(errorEl).toBeInTheDocument();
-      expect(errorEl).toHaveClass("sds-form-field__help-text");
+      expect(errorEl).toHaveClass("sds-form__help-text", { exact: false });
     });
 
     it("should show help text", async () => {
@@ -77,7 +77,7 @@ describe("TextArea", () => {
 
       const helpEl = screen.getByText("Bar");
       expect(helpEl).toBeInTheDocument();
-      expect(helpEl).toHaveClass("sds-form-field__help-text");
+      expect(helpEl).toHaveClass("sds-form__help-text", { exact: false });
     });
 
     it("should have icon element", async () => {

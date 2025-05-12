@@ -83,10 +83,14 @@ export const WithCustomIcon: Story = {
 
 export const WithHelpText: Story = {
   render: SearchInputWrapper,
-  args: { ...Default.args, helpText: "Text" },
+  args: { ...Default.args, helpText: "Helpful text" },
 };
 
 export const WithError: Story = {
   render: SearchInputWrapper,
-  args: { ...Default.args, errorText: "Error!" },
+  args: {
+    ...Default.args,
+    helpText: "Helpful text",
+    errorText: "Error: Message",
+  },
 };

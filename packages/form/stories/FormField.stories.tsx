@@ -22,21 +22,24 @@ export const WithHelpText: Story = {
   args: {
     ...Default.args,
     helpText: "Help text",
-    helpTextId: "help-text",
-    children: <input id="input" aria-describedby="help-text" />,
+    helpTextId: "input-help-text",
+    children: <input id="input" aria-describedby="input-help-text" />,
   },
 };
 
 export const WithError: Story = {
   args: {
     ...Default.args,
-    errorText: "Error!",
+    helpText: "Helpful text",
+    helpTextId: "input-help-text",
+    errorText: "Error: Message",
+    errorTextId: "input-error-text",
     children: (
       <input
         id="input"
-        aria-describedby="help-text"
+        aria-describedby="input-help-text input-error-text"
         aria-invalid
-        aria-errormessage="help-text"
+        aria-errormessage="input-error-text"
       />
     ),
   },

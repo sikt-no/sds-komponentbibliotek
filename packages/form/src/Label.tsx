@@ -16,16 +16,18 @@ export const Label = ({
   ...rest
 }: LabelProps) => {
   return (
-    <label
-      className={clsx(
-        "sds-form-field__label",
-        error && "sds-form-field__label--error",
-        className,
-      )}
-      {...rest}
-    >
-      <span className="sds-form-field__label-text">{text}</span>
+    <>
+      <label
+        className={clsx(
+          "sds-form__label",
+          error && "sds-form__label--error",
+          className,
+        )}
+        {...rest}
+      >
+        {text}
+      </label>
       {children}
-    </label>
+    </>
   );
 };
