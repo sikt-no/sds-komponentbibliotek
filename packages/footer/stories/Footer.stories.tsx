@@ -24,7 +24,7 @@ export const WithContent: Story = {
     ...Default.args,
     children: [
       <div key={0}>
-        <Heading3 variant="paragraph">Header</Heading3>
+        <Heading3 size="xxs">Header</Heading3>
         <UnorderedList>
           <ListItem>
             <Link href="#link">Link</Link>
