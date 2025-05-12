@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.6.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.5.0...@sikt/sds-core@4.6.0) (2025-05-12)
+
+### Features
+
+- **core:** add typography tabular-nums modifier ([c526ca2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c526ca2ad2f526da70db74fc66d123792eb3fb7e))
+
+### Bug Fixes
+
+- **core:** update @sikt/sds-tokens@^4.1.0 ([0aaa315](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0aaa31590aae6e8cdcaf5d40807fb3d356c87447))
+- **deps:** update @sikt/sds-tokens ([15cc470](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/15cc470c668e7bac9eea19f410736d932bcae1c0))
+
 ## [4.5.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.4.0...@sikt/sds-core@4.5.0) (2025-04-01)
 
 ### ⚠ Deprecations
