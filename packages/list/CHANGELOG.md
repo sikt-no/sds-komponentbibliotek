@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-list@2.1.1...@sikt/sds-list@2.1.2) (2025-05-12)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core to 4.4.0 ([9dd6147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9dd6147cd902975653f03b29db9f580ec19c261c))
+- **deps:** update @sikt/sds-core@4.2.0 ([fb7f329](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fb7f329c873679481c75f80cfbe27f364d00fa50))
+- **deps:** update @sikt/sds-core@4.2.1 ([936180f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/936180f14a710552f5045cd7a4eba2bc76c383a3))
+- **description-list:** remove negative top margin ([fd1a8bd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fd1a8bdcbedc02e43a1c7a0cb7c728e58eaf95ce))
+
 ## [2.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-list@2.1.0...@sikt/sds-list@2.1.1) (2024-11-20)
 
 ### Bug Fixes
