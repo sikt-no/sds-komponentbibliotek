@@ -151,7 +151,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
               data-testid="headings"
               className="sds-dialog__heading"
             >
-              <Heading1 variant="medium">{heading}</Heading1>
+              <Heading1 size="s">{heading}</Heading1>
               {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
             </div>
 
@@ -171,7 +171,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
             <div
               id={contentId}
               data-testid="content"
-              className="sds-dialog__content"
+              className="sds-typography-body--l sds-dialog__content"
             >
               {children}
             </div>
