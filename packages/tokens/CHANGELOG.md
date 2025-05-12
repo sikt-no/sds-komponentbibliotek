@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@4.1.0...@sikt/sds-tokens@4.2.0) (2025-05-12)
+
+### Features
+
+- **tokens:** export esm ([1b7638e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1b7638e7f553d2bfb2ac1a52da3e99d995e66747))
+
 ## [4.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@4.0.0...@sikt/sds-tokens@4.1.0) (2025-05-08)
 
 ### Features
