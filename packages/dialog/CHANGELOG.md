@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@1.0.2...@sikt/sds-dialog@1.0.3) (2025-05-13)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- **dialog:** update to new typography headlines ([2566ba0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2566ba052fda87bfac6ccc7af4ef25049744b721))
+
 ## [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@1.0.1...@sikt/sds-dialog@1.0.2) (2025-03-12)
 
 ### Bug Fixes
