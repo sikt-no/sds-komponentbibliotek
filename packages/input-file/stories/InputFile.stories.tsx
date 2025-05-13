@@ -63,7 +63,7 @@ export const WithError: Story = {
     errorText: "Error: Message",
   },
   render: (args) => (
-    <div data-testid="sds-input-file">
+    <div className="sds-input-file-wrapper" data-testid="sds-input-file">
       <InputFile triggerText="Open file explorer" {...args} />
       <FileList figCaption="Attachments (1)">
         <FileListItem

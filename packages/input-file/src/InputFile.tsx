@@ -60,11 +60,17 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
     ref,
   ) => {
     const id = useId();
+    const errorTextId = `${id}-error-text`;
     const helpTextId = `${id}-help-text`;
     const [files, setFiles] = useState<(File | FileWithError)[]>(value ?? []);
     const inputId = { id };
     const acceptedFileTypes =
       typeof accept === "string" ? accept.split(",") : accept;
+
+    const ariaDescribedBy =
+      [errorText && errorTextId, helpText && helpTextId]
+        .filter(Boolean)
+        .join(" ") || undefined;
 
     useEffect(() => {
       if (value) {
@@ -140,9 +146,10 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
         )}
         label={label}
         errorText={errorText}
+        errorTextId={errorTextId}
         helpText={helpText}
-        htmlFor={id}
         helpTextId={helpTextId}
+        htmlFor={id}
       >
         <DropZone
           className={clsx(
@@ -151,9 +158,9 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
           )}
           onDrop={handleOnDrop}
           aria-label={ariaLabel}
-          aria-describedby={(errorText ?? helpText) ? helpTextId : undefined}
+          aria-describedby={ariaDescribedBy}
           aria-invalid={Boolean(errorText)}
-          aria-errormessage={errorText ? helpTextId : undefined}
+          aria-errormessage={errorText ? errorTextId : undefined}
           ref={ref}
           {...rest}
         >
