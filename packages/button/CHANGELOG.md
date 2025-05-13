@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.0.1...@sikt/sds-button@4.1.0) (2025-05-13)
+
+### Features
+
+- **button:** add variant neutral ([313572a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/313572a2033bcf308e8629e3d27d10fd4beae871))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- make required props non nullable ([9b26a28](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9b26a28bfdc7af1a8f1a0d8350a028240c350669))
+
 ## [4.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.0.0...@sikt/sds-button@4.0.1) (2024-11-19)
 
 ### Bug Fixes
