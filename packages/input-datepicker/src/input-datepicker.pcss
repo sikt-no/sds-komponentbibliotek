@@ -2,6 +2,8 @@
   position: relative;
 
   &__wrapper {
+    margin-top: var(--sds-space-padding-tiny);
+
     &:has(.sds-input-datepicker__input-segment:focus-visible) {
       outline: var(--sds-focus-outline);
     }
@@ -178,5 +180,10 @@
     [aria-disabled="true"] {
       cursor: auto;
     }
+  }
+
+  .sds-form__label,
+  .sds-form__help-text {
+    padding-bottom: unset !important;
   }
 }

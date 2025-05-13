@@ -46,14 +46,15 @@ export const WithMinAndMaxValue = {
 export const WithHelpText = {
   args: {
     ...Default.args,
-    helpText: "Text",
+    helpText: "Helpful text",
   },
 } satisfies Story;
 
 export const WithError: Story = {
   args: {
     ...Default.args,
-    errorText: "Error!",
+    helpText: "Helpful text",
+    errorText: "Error: Message",
   },
 } satisfies Story;
 

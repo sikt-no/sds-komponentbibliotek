@@ -120,8 +120,14 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
     const calendarRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLDivElement>(null);
     const id = useId();
+    const errorTextId = `${id}-error-text`;
     const helpTextId = `${id}-help-text`;
     const [calendarOpen, setCalendarOpen] = useState(false);
+
+    const ariaDescribedBy =
+      [errorText && errorTextId, helpText && helpTextId]
+        .filter(Boolean)
+        .join(" ") || undefined;
 
     const handleEscapeKeydown = () => {
       setCalendarOpen(false);
@@ -143,8 +149,8 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
           value={value}
           isInvalid={Boolean(errorText)}
           aria-labelledby={ariaLabelledBy}
-          aria-describedby={(errorText ?? helpText) ? helpTextId : undefined}
-          aria-errormessage={errorText ? helpTextId : undefined}
+          aria-describedby={ariaDescribedBy}
+          aria-errormessage={errorText ? errorTextId : undefined}
           className={clsx(
             "sds-input",
             errorText && "sds-input--error",
@@ -157,6 +163,18 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
             <ReactAriaLabel>
               <Label text={label} error={Boolean(errorText)} htmlFor={id} />
             </ReactAriaLabel>
+          )}
+          {helpText && (
+            <Text slot="description">
+              <HelpText id={helpTextId}>{helpText}</HelpText>
+            </Text>
+          )}
+          {errorText && (
+            <Text slot="errorMessage">
+              <HelpText id={helpTextId} error>
+                {errorText}
+              </HelpText>
+            </Text>
           )}
           <Group className="sds-input__wrapper sds-input-datepicker__wrapper">
             <DateInput ref={inputRef} className="sds-input-datepicker__input">
@@ -197,14 +215,6 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
               {openCalendarLabel}
             </Button>
           </Group>
-
-          {(errorText ?? helpText) && (
-            <Text slot={errorText ? "errorMessage" : "description"}>
-              <HelpText id={helpTextId} error={Boolean(errorText)}>
-                {errorText ?? helpText}
-              </HelpText>
-            </Text>
-          )}
 
           {calendarOpen && (
             <Calendar
