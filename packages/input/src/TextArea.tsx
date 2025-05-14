@@ -64,7 +64,13 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       },
       [onChange],
     );
+    const errorTextId = `${id}-error-text`;
     const helpTextId = `${id}-help-text`;
+
+    const ariaDescribedBy =
+      [errorText && errorTextId, helpText && helpTextId]
+        .filter(Boolean)
+        .join(" ") || undefined;
 
     return (
       <FormField
@@ -76,9 +82,10 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         )}
         label={label}
         errorText={errorText}
+        errorTextId={errorTextId}
         helpText={helpText}
-        htmlFor={id}
         helpTextId={helpTextId}
+        htmlFor={id}
       >
         <span className="sds-input__wrapper">
           {icon && <div className="sds-input__icon">{icon}</div>}
@@ -90,9 +97,9 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             onChange={onChange && changeHandler}
             value={value}
             aria-labelledby={ariaLabelledBy}
-            aria-describedby={(errorText ?? helpText) ? helpTextId : undefined}
+            aria-describedby={ariaDescribedBy}
             aria-invalid={Boolean(errorText)}
-            aria-errormessage={errorText ? helpTextId : undefined}
+            aria-errormessage={errorText ? errorTextId : undefined}
             rows={rows}
             {...rest}
           />

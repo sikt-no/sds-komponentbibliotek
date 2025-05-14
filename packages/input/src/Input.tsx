@@ -72,7 +72,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       },
       [onChange],
     );
+    const errorTextId = `${id}-error-text`;
     const helpTextId = `${id}-help-text`;
+
+    const ariaDescribedBy =
+      [errorText && errorTextId, helpText && helpTextId]
+        .filter(Boolean)
+        .join(" ") || undefined;
 
     const handleClearClick = (event: React.MouseEvent<HTMLButtonElement>) => {
       if (clearActionProps?.onClick) {
@@ -123,9 +129,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
         label={label}
         errorText={errorText}
+        errorTextId={errorTextId}
         helpText={helpText}
-        htmlFor={id}
         helpTextId={helpTextId}
+        htmlFor={id}
         postLabelSlot={postLabelSlot}
       >
         <span className="sds-input__wrapper">
@@ -139,9 +146,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             onChange={onChange && changeHandler}
             value={value}
             aria-labelledby={ariaLabelledBy}
-            aria-describedby={(errorText ?? helpText) ? helpTextId : undefined}
+            aria-describedby={ariaDescribedBy}
             aria-invalid={Boolean(errorText)}
-            aria-errormessage={errorText ? helpTextId : undefined}
+            aria-errormessage={errorText ? errorTextId : undefined}
             {...rest}
           />
         </span>
