@@ -15,11 +15,18 @@ figma.connect(
         true: figma.string("Helper text"),
         false: undefined,
       }),
+      errorText: figma.enum("State", {
+        Invalid: figma.boolean("Show helper", {
+          true: figma.string("Error Message"),
+          false: undefined,
+        }),
+      }),
     },
-    example: ({ label, value, helpText }) => (
+    example: ({ label, value, helpText, errorText }) => (
       <InputDatepicker
         label={label}
         helpText={helpText}
+        errorText={errorText}
         value={value}
         onChange={() => {}}
       />

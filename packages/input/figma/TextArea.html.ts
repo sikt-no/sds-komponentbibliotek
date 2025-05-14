@@ -12,19 +12,17 @@ figma.connect(
     },
     example: ({ label, value }) =>
       html`<div class="sds-form-field sds-input sds-input--textarea">
-        <label class="sds-form-field__label" for="unique-id">
-          <div class="sds-form-field__label-text">${label}</div>
-          <div class="sds-input__wrapper">
-            <textarea
-              class="sds-input__input"
-              id="unique-id"
-              aria-describedby="unique-id-help-text"
-            >
+        <label class="sds-form__label" for="unique-id">${label}</label>
+        <div class="sds-input__wrapper">
+          <textarea
+            class="sds-input__input"
+            id="unique-id"
+            aria-describedby="unique-id-help-text"
+          >
 ${value}
             </textarea
-            >
-          </div>
-        </label>
+          >
+        </div>
       </div>`,
   },
 );
@@ -45,26 +43,21 @@ figma.connect(
       }),
     },
     example: ({ label, value, helpText }) =>
-      html` <div
-        class="sds-form-field sds-input sds-input--textarea"
-        xmlns="http://www.w3.org/1999/html"
-      >
-        <label class="sds-form-field__label" for="unique-id">
-          <div class="sds-form-field__label-text">${label}</div>
-          <div class="sds-input__wrapper">
-            <textarea
-              class="sds-input__input"
-              id="unique-id"
-              aria-describedby="unique-id-help-text"
-            >
+      html` <div class="sds-form-field sds-input sds-input--textarea">
+        <label class="sds-form__label" for="unique-id">${label}</label>
+        <div class="sds-form__help-text" id=":unique-id-help-text">
+          ${helpText}
+        </div>
+        <div class="sds-input__wrapper">
+          <textarea
+            class="sds-input__input"
+            id="unique-id"
+            aria-describedby="unique-id-help-text"
+          >
 ${value}
             </textarea
-            >
-          </div>
-          <div class="sds-form-field__help-text" id=":unique-id-help-text">
-            ${helpText}
-          </div>
-        </label>
+          >
+        </div>
       </div>`,
   },
 );
@@ -79,39 +72,41 @@ figma.connect(
         false: undefined,
       }),
       value: figma.string("Input value"),
-      errorText: figma.boolean("Show helper", {
+      helpText: figma.boolean("Show helper", {
         true: figma.string("Helper text"),
         false: undefined,
       }),
+      errorText: figma.enum("State", {
+        Invalid: figma.boolean("Show helper", {
+          true: figma.string("Error Message"),
+          false: undefined,
+        }),
+      }),
     },
-    example: ({ label, value, errorText }) =>
-      html` <div
-        class="sds-form-field sds-form-field--error sds-input sds-input--textarea sds-input--error"
-      >
-        <label
-          class="sds-form-field__label sds-form-field__label--error"
-          for="unique-id"
+    example: ({ label, value, helpText, errorText }) =>
+      html`<div class="sds-form-field sds-input sds-input--textarea">
+        <label class="sds-form__label" for="unique-id">${label}</label>
+        <div class="sds-form__help-text" id=":unique-id-help-text">
+          ${helpText}
+        </div>
+        <div
+          class="sds-form__help-text sds-form__help-text--error"
+          id=":unique-id-error-text"
         >
-          <div class="sds-form-field__label-text">${label}</div>
-          <div class="sds-input__wrapper">
-            <textarea
-              class="sds-input__input"
-              id="unique-id"
-              aria-describedby="unique-id-help-text"
-              aria-invalid="true"
-              aria-errormessage="unique-id-help-text"
-            >
+          ${errorText}
+        </div>
+        <div class="sds-input__wrapper">
+          <textarea
+            class="sds-input__input"
+            id="unique-id"
+            aria-describedby="unique-id-help-text"
+            aria-invalid="true"
+            aria-errormessage="unique-id-help-text"
+          >
 ${value}
             </textarea
-            >
-          </div>
-          <div
-            class="sds-form-field__help-text sds-form-field__help-text--error"
-            id=":unique-id-help-text"
           >
-            ${errorText}
-          </div>
-        </label>
+        </div>
       </div>`,
   },
 );

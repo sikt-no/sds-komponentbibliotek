@@ -17,7 +17,7 @@ figma.connect(
       }),
       errorText: figma.enum("State", {
         Invalid: figma.boolean("Show helper", {
-          true: figma.string("Helper text"),
+          true: figma.string("Error Message"),
           false: undefined,
         }),
       }),
