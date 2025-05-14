@@ -1,7 +1,7 @@
 import { FormField } from "@sikt/sds-form";
 import { ExpandShowAltIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import { ReactNode, useId, useState } from "react";
+import { ReactNode, useId } from "react";
 import {
   ComboBox as AriaCombobox,
   ComboBoxProps as AriaComboboxProps,
@@ -54,12 +54,13 @@ export function Combobox<T extends object>({
   ...props
 }: ComboboxProps<T>) {
   const id = useId();
+  const errorTextId = `${id}-error-text`;
   const helpTextId = `${id}-help-text`;
-  const [open, setOpen] = useState(false);
 
-  function onOpenChangeHandler(isOpen: boolean) {
-    setOpen(isOpen);
-  }
+  const ariaDescribedBy =
+    [errorText && errorTextId, helpText && helpTextId]
+      .filter(Boolean)
+      .join(" ") || undefined;
 
   return (
     <FormField
@@ -70,20 +71,25 @@ export function Combobox<T extends object>({
       )}
       label={label}
       errorText={errorText}
-      helpText={open ? "" : helpText}
-      htmlFor={id}
+      errorTextId={errorTextId}
+      helpText={helpText}
       helpTextId={helpTextId}
+      htmlFor={id}
     >
       <AriaCombobox
         menuTrigger={menuTrigger}
-        onOpenChange={onOpenChangeHandler}
         id={id}
         aria-label={label}
         aria-labelledby={ariaLabelledBy}
         {...props}
       >
         <div className="sds-combobox__combobox">
-          <Input className="sds-combobox__combobox-input" />
+          <Input
+            className="sds-combobox__combobox-input"
+            aria-describedby={ariaDescribedBy}
+            aria-invalid={Boolean(errorText)}
+            aria-errormessage={errorText ? errorTextId : undefined}
+          />
           <Button className="sds-combobox__combobox-button">
             <ExpandShowAltIcon />
           </Button>

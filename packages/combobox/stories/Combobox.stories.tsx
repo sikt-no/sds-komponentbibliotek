@@ -126,6 +126,43 @@ export const StaticItemsWithSections = {
   },
 } satisfies Story;
 
+export const WithHelpText = {
+  args: {
+    ...Default.args,
+    helpText: "Helpful text",
+  },
+  render: (args) => {
+    return (
+      <Combobox
+        defaultItems={options}
+        defaultInputValue="Adobe Photoshop"
+        {...args}
+      >
+        {(item) => <ComboboxItem>{(item as Option).name}</ComboboxItem>}
+      </Combobox>
+    );
+  },
+} satisfies Story;
+
+export const WithError = {
+  args: {
+    ...Default.args,
+    helpText: "Helpful text",
+    errorText: "Error: Message",
+  },
+  render: (args) => {
+    return (
+      <Combobox
+        defaultItems={options}
+        defaultInputValue="Adobe Photoshop"
+        {...args}
+      >
+        {(item) => <ComboboxItem>{(item as Option).name}</ComboboxItem>}
+      </Combobox>
+    );
+  },
+} satisfies Story;
+
 export const WithAriaLabelledby = {
   args: {
     children: (
