@@ -11,7 +11,8 @@
     @media (width < 720px) {
       --table-padding-cell: var(--sds-base-size-s);
 
-      display: block;
+      display: flex;
+      flex-direction: column;
 
       & > thead,
       & > thead > tr,
@@ -46,6 +47,7 @@
     font-size: var(--sds-typography-body-fontsize-small);
     font-weight: var(--sds-typography-weight-regular);
     line-height: var(--sds-typography-body-lineheight-small);
+    order: 9999;
   }
 
   &__header,
