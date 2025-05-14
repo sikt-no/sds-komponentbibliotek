@@ -50,7 +50,13 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     ref,
   ) => {
     const id = useId();
+    const errorTextId = `${id}-error-text`;
     const helpTextId = `${id}-help-text`;
+
+    const ariaDescribedBy =
+      [errorText && errorTextId, helpText && helpTextId]
+        .filter(Boolean)
+        .join(" ") || undefined;
 
     return (
       <FormField
@@ -61,9 +67,10 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         )}
         label={label}
         errorText={errorText}
+        errorTextId={errorTextId}
         helpText={helpText}
-        htmlFor={id}
         helpTextId={helpTextId}
+        htmlFor={id}
       >
         <div className="sds-select__select">
           <select
@@ -71,9 +78,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             id={id}
             className="sds-select__select-input"
             aria-labelledby={ariaLabelledBy}
-            aria-describedby={(errorText ?? helpText) ? helpTextId : undefined}
-            aria-invalid={Boolean(errorText) && true}
-            aria-errormessage={errorText ? helpTextId : undefined}
+            aria-describedby={ariaDescribedBy}
+            aria-invalid={Boolean(errorText)}
+            aria-errormessage={errorText ? errorTextId : undefined}
             onChange={(e) => {
               onChange?.(e);
             }}
