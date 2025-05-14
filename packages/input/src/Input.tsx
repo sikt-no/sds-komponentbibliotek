@@ -46,7 +46,7 @@ export type InputProps = InputBaseProps &
       }
   );
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       className,
