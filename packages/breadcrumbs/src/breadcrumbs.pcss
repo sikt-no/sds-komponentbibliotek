@@ -1,7 +1,10 @@
 .sds-breadcrumbs {
-  color: var(--sds-color-text-secondary);
-  font-size: var(--sds-typography-body-fontsize-small);
-  line-height: var(--sds-typography-body-lineheight-small);
+  --breadcrumbs-color: var(--sds-color-text-secondary);
+
+  color: var(--breadcrumbs-color);
+  font-size: var(--sds-typography-body-s-fontsize);
+  font-weight: var(--sds-typography-body-s-fontweight);
+  line-height: var(--sds-typography-body-s-lineheight);
 
   &__list {
     display: flex;
@@ -16,5 +19,9 @@
         margin-left: var(--sds-space-gap-tiny);
       }
     }
+  }
+
+  .sds-typography-link {
+    color: var(--breadcrumbs-color);
   }
 }
