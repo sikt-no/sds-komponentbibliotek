@@ -14,7 +14,7 @@
       },
       "l": {
         "fontsize": {
-          "value": "{typography.fontsize.500.value}"
+          "value": "{typography.fontsize.400.value}"
         },
         "fontweight": {
           "value": "{typography.fontweight.semibold.value}"
