@@ -31,17 +31,11 @@ export const Card = ({
       {image && <div className="sds-card__image">{image}</div>}
       <div className="sds-card__content">
         {overlineText && (
-          <span className="sds-typography-heading--overline">
-            {overlineText}
-          </span>
+          <span className="sds-typography-overline">{overlineText}</span>
         )}
-        <H className="sds-typography-heading--small">{headingText}</H>
-        {leadText && (
-          <span className="sds-typography-body--lead">{leadText}</span>
-        )}
-        {children && (
-          <div className="sds-typography-body--regular">{children}</div>
-        )}
+        <H className="sds-typography-editorial-headline--xs">{headingText}</H>
+        {leadText && <span className="sds-typography-body--l">{leadText}</span>}
+        {children && <div className="sds-typography-body">{children}</div>}
         {callToAction && <div className="sds-card__cta">{callToAction}</div>}
       </div>
     </section>
