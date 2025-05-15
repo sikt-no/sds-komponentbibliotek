@@ -32,7 +32,7 @@ export const WithIcon: Story = {
     children: [
       <TabList key={0} aria-label="Sample Tabs">
         <Tab icon={<InfoIcon />}>First Tab</Tab>
-        <Tab icon={<InfoIcon />}>Second Tab</Tab>
+        <Tab>Second Tab</Tab>
       </TabList>,
       <TabPanel key={1}>First Content</TabPanel>,
       <TabPanel key={2}>Second Content</TabPanel>,
@@ -45,7 +45,7 @@ export const WithBadge: Story = {
     children: [
       <TabList key={0} aria-label="Sample Tabs">
         <Tab badge={<Badge>Badge</Badge>}>First Tab</Tab>
-        <Tab badge={<Badge>Badge</Badge>}>Second Tab</Tab>
+        <Tab>Second Tab</Tab>
       </TabList>,
       <TabPanel key={1}>First Content</TabPanel>,
       <TabPanel key={2}>Second Content</TabPanel>,

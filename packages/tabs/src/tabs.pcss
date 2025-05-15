@@ -15,13 +15,21 @@
     color: var(--sds-color-text-primary);
     display: flex;
     gap: var(--sds-space-gap-small);
-    font-size: var(--sds-typography-body-fontsize-large);
-    line-height: var(--sds-typography-body-lineheight-large);
+    font-size: var(--sds-typography-label-l-fontsize);
+    font-weight: var(--sds-typography-label-l-fontweight);
+    line-height: var(--sds-typography-label-l-lineheight);
     padding: var(--sds-space-padding-medium) var(--sds-space-padding-small);
     margin-bottom: calc(var(--tab-list-border-bottom) * -1);
 
     &-icon {
-      font-size: var(--sds-base-size-m);
+      align-items: center;
+      display: flex;
+      font-size: var(--sds-typography-fontsize-700);
+      justify-content: center;
+    }
+
+    &-badge {
+      margin: -1px 0;
     }
 
     &[aria-selected="true"] {
