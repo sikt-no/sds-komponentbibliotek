@@ -33,7 +33,7 @@ export const DrawerItemGroup = ({
           >
             <MenuIcon className="sds-drawer-item-group__heading-icon" />
             {expanded && (
-              <span className="sds-drawer-item-group__heading-title sds-typography-body--small">
+              <span className="sds-drawer-item-group__heading-title">
                 {heading}
               </span>
             )}

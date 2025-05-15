@@ -39,7 +39,9 @@ export const DrawerHeader = ({
         <div className="sds-drawer-header__heading">
           {icon}
           {title && (
-            <span className="sds-typography-heading--paragraph">{title}</span>
+            <span className="sds-typography-editorial-headline--xxs">
+              {title}
+            </span>
           )}
         </div>
       )}

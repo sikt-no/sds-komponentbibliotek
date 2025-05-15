@@ -9,15 +9,20 @@
 
   &__heading {
     align-items: center;
+    color: var(--sds-color-text-secondary);
     display: flex;
     gap: var(--sds-space-gap-small);
     padding: var(--sds-space-padding-small);
-  }
 
-  &__heading-icon {
-    font-size: var(--sds-base-size-m);
-    width: var(--sds-base-size-m);
-    height: var(--sds-base-size-m);
+    &-title {
+      font-size: var(--sds-typography-body-s-fontsize);
+      font-weight: var(--sds-typography-body-s-fontweight);
+      line-height: var(--sds-typography-body-s-lineheight);
+    }
+
+    &-icon {
+      font-size: var(--sds-typography-fontsize-700);
+    }
   }
 
   &--expanded &__heading-title {
