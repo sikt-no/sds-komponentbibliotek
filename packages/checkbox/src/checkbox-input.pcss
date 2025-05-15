@@ -1,7 +1,7 @@
 .sds-checkbox {
   --checkbox-background-color: var(--sds-color-layout-background-default);
   --checkbox-border-color: var(--sds-color-interaction-neutral-strong-default);
-  --checkbox-size: var(--sds-base-size-m);
+  --checkbox-size: var(--sds-typography-fontsize-700);
 
   display: flex;
   align-items: center;
@@ -25,9 +25,9 @@
 
     &-label {
       display: block;
-      font-size: var(--sds-typography-body-fontsize-regular);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-body-lineheight-regular);
+      font-size: var(--sds-typography-body-default-fontsize);
+      font-weight: var(--sds-typography-body-default-fontweight);
+      line-height: var(--sds-typography-body-default-lineheight);
       padding: var(--sds-space-padding-small) var(--sds-space-padding-tiny);
     }
 
@@ -119,6 +119,7 @@
 
   &__icon-wrapper {
     display: flex;
+    font-size: var(--checkbox-size);
     place-content: center;
     width: var(--checkbox-size);
     height: var(--checkbox-size);
@@ -130,8 +131,6 @@
   &__icon {
     color: var(--sds-color-text-on-strong);
     display: none;
-    width: var(--checkbox-size);
-    height: var(--checkbox-size);
     padding: 2px;
     position: absolute;
   }
