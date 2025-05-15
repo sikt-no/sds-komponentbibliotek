@@ -12,9 +12,7 @@ export const Nav = ({ children, heading, className, ...rest }: NavProps) => {
     <nav className={className} {...rest}>
       <figure className={styles.figure}>
         {heading && (
-          <figcaption className={styles.figcaption}>
-            <span className="sds-typography-label">{heading}</span>
-          </figcaption>
+          <figcaption className={styles.figcaption}>{heading}</figcaption>
         )}
         <ul>{children}</ul>
       </figure>

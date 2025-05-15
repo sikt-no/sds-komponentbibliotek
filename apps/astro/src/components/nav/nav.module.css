@@ -4,3 +4,10 @@
   margin: 0;
   gap: var(--sds-space-gap-medium);
 }
+
+.figcaption {
+  color: var(--sds-color-text-secondary);
+  font-size: var(--sds-typography-body-s-fontsize);
+  font-weight: var(--sds-typography-body-s-fontweight);
+  line-height: var(--sds-typography-body-s-lineheight);
+}

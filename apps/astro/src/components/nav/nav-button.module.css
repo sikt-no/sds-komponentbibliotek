@@ -1,15 +1,15 @@
 .button {
   align-items: center;
-  background-color: transparent;
+  background-color: var(--sds-color-interaction-neutral-transparent-default);
   border: 0 none;
   border-radius: var(--sds-space-border-radius-small);
   color: var(--sds-color-text-primary);
   cursor: pointer;
   display: flex;
   gap: var(--sds-space-gap-small);
-  font-size: var(--sds-typography-body-fontsize-regular);
-  font-weight: var(--sds-typography-weight-regular);
-  line-height: var(--sds-typography-body-lineheight-regular);
+  font-size: var(--sds-typography-body-default-fontsize);
+  font-weight: var(--sds-typography-body-default-fontweight);
+  line-height: var(--sds-typography-body-default-lineheight);
   padding: var(--sds-space-padding-small);
   text-decoration: none;
   width: 100%;
@@ -17,12 +17,12 @@
   &:hover,
   &:focus-visible {
     background-color: var(
-      --sds-color-interaction-primary-transparent-highlight
+      --sds-color-interaction-neutral-transparent-highlight
     );
   }
 
   &:active {
-    background-color: var(--sds-color-interaction-primary-transparent-pressed);
+    background-color: var(--sds-color-interaction-neutral-transparent-pressed);
   }
 
   &:focus-visible {
@@ -30,21 +30,21 @@
   }
 
   &[aria-current="page"] {
-    background-color: var(--sds-color-interaction-primary-subtle-default);
+    background-color: var(--sds-color-interaction-neutral-subtle-default);
 
     &:hover,
     &:focus-visible {
-      background-color: var(--sds-color-interaction-primary-subtle-highlight);
+      background-color: var(--sds-color-interaction-neutral-subtle-highlight);
     }
 
     &:active {
-      background-color: var(--sds-color-interaction-primary-subtle-pressed);
+      background-color: var(--sds-color-interaction-neutral-subtle-pressed);
     }
   }
 }
 
 .disabled {
-  background-color: var(--sds-color-interaction-primary-transparent-default);
+  background-color: var(--sds-color-interaction-neutral-transparent-default);
   color: var(--sds-color-text-primary);
   cursor: not-allowed;
   opacity: 0.2;
@@ -53,8 +53,6 @@
 .icon {
   align-items: center;
   display: flex;
-  font-size: var(--sds-base-size-m);
+  font-size: var(--sds-typography-fontsize-700);
   justify-content: center;
-  width: var(--sds-base-size-m);
-  height: var(--sds-base-size-m);
 }
