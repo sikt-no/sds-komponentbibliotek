@@ -15,9 +15,13 @@
       var(--sds-color-layout-divider-subtle);
     --details-indentation: var(--sds-space-padding-medium);
     --summary-border-radius: 0;
-    --summary-font-size: var(--sds-typography-heading-fontsize-small);
-    --summary-font-weight: var(--sds-typography-weight-regular);
-    --summary-line-height: var(--sds-typography-heading-lineheight-small);
+    --summary-font-size: var(--sds-typography-editorial-headline-s-fontsize);
+    --summary-font-weight: var(
+      --sds-typography-editorial-headline-s-fontweight
+    );
+    --summary-line-height: var(
+      --sds-typography-editorial-headline-s-lineheight
+    );
     --summary-padding: var(--sds-space-padding-medium)
       var(--details-indentation);
   }
@@ -26,9 +30,13 @@
     --details-border: none;
     --details-indentation: var(--sds-space-padding-small);
     --summary-border-radius: var(--sds-space-border-radius-small);
-    --summary-font-size: var(--sds-typography-heading-fontsize-paragraph);
-    --summary-font-weight: var(--sds-typography-weight-bold);
-    --summary-line-height: var(--sds-typography-heading-lineheight-paragraph);
+    --summary-font-size: var(--sds-typography-editorial-headline-xxs-fontsize);
+    --summary-font-weight: var(
+      --sds-typography-editorial-headline-xxs-fontweight
+    );
+    --summary-line-height: var(
+      --sds-typography-editorial-headline-xxs-lineheight
+    );
     --summary-padding: var(--sds-space-padding-minimal)
       var(--details-indentation);
   }
@@ -48,7 +56,8 @@
     text-align: start;
     width: 100%;
 
-    .sds-typography-heading {
+    .sds-typography-application-headline,
+    .sds-typography-editorial-headline {
       font-size: var(--summary-font-size);
       font-weight: var(--summary-font-weight);
       line-height: var(--summary-line-height);
@@ -57,7 +66,7 @@
     &:hover,
     &:focus-visible {
       background-color: var(
-        --sds-color-interaction-primary-transparent-highlight
+        --sds-color-interaction-neutral-transparent-highlight
       );
     }
 
@@ -67,14 +76,14 @@
 
     &:active {
       background-color: var(
-        --sds-color-interaction-primary-transparent-pressed
+        --sds-color-interaction-neutral-transparent-pressed
       );
     }
   }
 
   &__icon {
     display: block;
-    font-size: var(--sds-base-size-m);
+    font-size: var(--sds-typography-fontsize-700);
     transition: rotate var(--sds-effect-animation-duration-medium)
       var(--sds-effect-animation-easing-default);
   }
