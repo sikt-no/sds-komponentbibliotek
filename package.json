@@ -96,9 +96,9 @@
     "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "stylelint": "^16.19.1",
-    "terser": "^5.39.0",
+    "terser": "^5.39.2",
     "ts-jest": "^29.3.4",
-    "tsup": "^8.4.0",
+    "tsup": "^8.5.0",
     "turbo": "^2.5.3",
     "typescript": "^5.8.3"
   }
