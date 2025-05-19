@@ -18,9 +18,9 @@
     cursor: pointer;
     display: flex;
     gap: var(--sds-space-gap-small);
-    font-size: var(--sds-typography-body-fontsize-regular);
-    font-weight: var(--sds-typography-weight-regular);
-    line-height: var(--sds-typography-body-lineheight-regular);
+    font-size: var(--sds-typography-label-default-fontsize);
+    font-weight: var(--sds-typography-label-default-fontweight);
+    line-height: var(--sds-typography-label-default-lineheight);
     padding: calc(
       var(--sds-space-padding-small) - var(--sds-space-border-weight-regular)
     );
@@ -71,8 +71,8 @@
   }
 
   &__icon {
-    height: var(--sds-base-size-m);
-    width: var(--sds-base-size-m);
+    height: var(--sds-typography-fontsize-700);
+    width: var(--sds-typography-fontsize-700);
     transform: rotateY(0deg) rotate(0deg);
     transition: transform 0.3s ease;
     flex-shrink: 0;
