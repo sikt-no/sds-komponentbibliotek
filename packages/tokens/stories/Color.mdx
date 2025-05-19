@@ -16,10 +16,10 @@ import * as dark from "../dist/js/color.dark.js";
           title={`${token[0]} / ${subtoken[0]}`}
           subtitle={`--sds-${Object.values(subtoken[1].path).join("-")}`}
           colors={{
-            "light-mode": subtoken[1].value,
+            "light-mode": subtoken[1].$value,
             "dark-mode": Object.entries(
               Object.entries(dark.color.brand)[index][1],
-            )[subindex][1].value,
+            )[subindex][1].$value,
           }}
           key={`${index}-${subindex}`}
         />
@@ -39,12 +39,12 @@ import * as dark from "../dist/js/color.dark.js";
             title={`${token[0]} / ${subtoken[0]} / ${subsubtoken[0]}`}
             subtitle={`--sds-${Object.values(subsubtoken[1].path).join("-")}`}
             colors={{
-              "light-mode": subsubtoken[1].value,
+              "light-mode": subsubtoken[1].$value,
               "dark-mode": Object.entries(
                 Object.entries(
                   Object.entries(dark.color.interaction)[index][1],
                 )[subindex][1],
-              )[subsubindex][1].value,
+              )[subsubindex][1].$value,
             }}
             key={`${index}-${subindex}-${subsubindex}`}
           />
@@ -64,9 +64,9 @@ import * as dark from "../dist/js/color.dark.js";
           title={`${token[0]} / ${subtoken[0]}`}
           subtitle={`--sds-${Object.values(subtoken[1].path).join("-")}`}
           colors={{
-            "light-mode": subtoken[1].value,
+            "light-mode": subtoken[1].$value,
             "dark-mode":
-              dark.color.support?.[token[0]]?.[subtoken[0]].value ?? "",
+              dark.color.support?.[token[0]]?.[subtoken[0]].$value ?? "",
           }}
           key={`${index}-${subindex}`}
         />
@@ -85,9 +85,9 @@ import * as dark from "../dist/js/color.dark.js";
           title={`${token[0]} / ${subtoken[0]}`}
           subtitle={`--sds-${Object.values(subtoken[1].path).join("-")}`}
           colors={{
-            "light-mode": subtoken[1].value,
+            "light-mode": subtoken[1].$value,
             "dark-mode":
-              dark.color.layout?.[token[0]]?.[subtoken[0]].value ?? "",
+              dark.color.layout?.[token[0]]?.[subtoken[0]].$value ?? "",
           }}
           key={`${index}-${subindex}`}
         />
@@ -105,8 +105,8 @@ import * as dark from "../dist/js/color.dark.js";
         title={token[0]}
         subtitle={`--sds-${Object.values(token[1].path).join("-")}`}
         colors={{
-          "light-mode": token[1].value,
-          "dark-mode": Object.entries(dark.color.text)[index][1].value,
+          "light-mode": token[1].$value,
+          "dark-mode": Object.entries(dark.color.text)[index][1].$value,
         }}
         key={index}
       />
@@ -123,9 +123,9 @@ import * as dark from "../dist/js/color.dark.js";
         title={token[0]}
         subtitle={`--sds-${Object.values(token[1].path).join("-")}`}
         colors={{
-          "light-mode": token[1].value,
+          "light-mode": token[1].$value,
           "dark-mode": Object.entries(dark.color.shadow.elevated)[index][1]
-            .value,
+            .$value,
         }}
         key={index}
       />

@@ -52,11 +52,11 @@ export const HeadlineTabPanel = ({
               }
               style={{
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
-                fontSize: data.fontsize?.value,
+                fontSize: data.fontsize?.$value,
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
-                fontWeight: data.fontweight?.value,
+                fontWeight: data.fontweight?.$value,
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
-                lineHeight: data.lineheight?.value,
+                lineHeight: data.lineheight?.$value,
               }}
             >
               <Table caption="Designtokens for editorial headline">
@@ -78,7 +78,7 @@ export const HeadlineTabPanel = ({
                         </TableCell>
                         <TableCell data-th="Verdi">
                           {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
-                          {data?.[token[0]].value}
+                          {data?.[token[0]].$value}
                         </TableCell>
                       </TableRow>
                     );

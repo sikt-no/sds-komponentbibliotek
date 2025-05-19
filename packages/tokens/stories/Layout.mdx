@@ -23,7 +23,7 @@ import * as tokens from "../dist/js/tokens.js";
           return (
             <tr key={token[1].name}>
               <td>{token[0]}</td>
-              <td>{token[1].value}</td>
+              <td>{token[1].$value}</td>
               <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
             </tr>
           );
@@ -47,7 +47,7 @@ import * as tokens from "../dist/js/tokens.js";
           return (
             <tr key={token[1].name}>
               <td>{token[0]}</td>
-              <td>{token[1].value}</td>
+              <td>{token[1].$value}</td>
               <td>{`--sds-${Object.values(token[1].path).join("-")}`}</td>
             </tr>
           );

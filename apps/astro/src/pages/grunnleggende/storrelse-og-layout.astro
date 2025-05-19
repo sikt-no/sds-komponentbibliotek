@@ -62,7 +62,7 @@ const pageTitle = "Størrelse og layout";
             return (
               <TableRow key={token[1].name}>
                 <TableCell data-th="Navn">{token[0]}</TableCell>
-                <TableCell data-th="Verdi">{token[1].value}</TableCell>
+                <TableCell data-th="Verdi">{token[1].$value}</TableCell>
                 <TableCell data-th="Token">
                   <Badge visibility="strong">{tokenName(token[1])}</Badge>
                 </TableCell>
@@ -284,7 +284,7 @@ const pageTitle = "Størrelse og layout";
             return (
               <TableRow key={token[1].name}>
                 <TableCell data-th="Navn">{token[0]}</TableCell>
-                <TableCell data-th="Verdi">{token[1].value}</TableCell>
+                <TableCell data-th="Verdi">{token[1].$value}</TableCell>
                 <TableCell data-th="Token">
                   <Badge visibility="strong">{tokenName(token[1])}</Badge>
                 </TableCell>

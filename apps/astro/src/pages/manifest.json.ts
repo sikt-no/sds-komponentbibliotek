@@ -8,8 +8,8 @@ export function GET() {
     name: "Sikt designsystem",
     display: "browser",
     start_url: "/",
-    background_color: tokens.color.layout.background.default.value,
-    theme_color: tokens.color.brand.accent.strong.value,
+    background_color: tokens.color.layout.background.default.$value,
+    theme_color: tokens.color.brand.accent.strong.$value,
     icons: [
       {
         src: favicon192,
