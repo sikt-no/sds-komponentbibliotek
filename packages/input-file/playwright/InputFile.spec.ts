@@ -2,7 +2,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
 
 test.describe("InputFile", () => {
-  const componentSelector = "[data-testid='sds-input-file']";
+  const componentSelector = ".sds-input-file-wrapper";
 
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {

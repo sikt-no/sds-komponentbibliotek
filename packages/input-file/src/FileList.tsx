@@ -17,7 +17,7 @@ export const FileList = ({
   return (
     <figure className={clsx("sds-input-file-list", className)} {...rest}>
       {figCaption && (
-        <figcaption className="sds-input-file-list__caption sds-typography-heading--paragraph">
+        <figcaption className="sds-input-file-list__caption sds-typography-label">
           {figCaption}
         </figcaption>
       )}

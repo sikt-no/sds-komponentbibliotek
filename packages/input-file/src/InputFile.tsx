@@ -24,6 +24,7 @@ export interface InputFileProps extends DropZoneProps {
   "aria-label": NonNullable<string>;
   errorText?: ReactNode;
   helpText?: ReactNode;
+  children?: ReactNode;
   className?: string;
   placeholder?: string;
   placeholderBridge?: string;
@@ -45,6 +46,7 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
       "aria-label": ariaLabel,
       errorText,
       helpText,
+      children,
       className,
       placeholder = "Dra og slipp filer her,",
       placeholderBridge = "eller",
@@ -138,62 +140,65 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
     };
 
     return (
-      <FormField
-        className={clsx(
-          "sds-input-file",
-          errorText && `sds-input-file--error`,
-          className,
-        )}
-        label={label}
-        errorText={errorText}
-        errorTextId={errorTextId}
-        helpText={helpText}
-        helpTextId={helpTextId}
-        htmlFor={id}
-      >
-        <DropZone
+      <div className="sds-input-file-wrapper">
+        <FormField
           className={clsx(
-            "sds-input-file__drop-zone",
-            Boolean(errorText) && "sds-input-file__drop-zone--error",
+            "sds-input-file",
+            errorText && `sds-input-file--error`,
+            className,
           )}
-          onDrop={handleOnDrop}
-          aria-label={ariaLabel}
-          aria-describedby={ariaDescribedBy}
-          aria-invalid={Boolean(errorText)}
-          aria-errormessage={errorText ? errorTextId : undefined}
-          ref={ref}
-          {...rest}
+          label={label}
+          errorText={errorText}
+          errorTextId={errorTextId}
+          helpText={helpText}
+          helpTextId={helpTextId}
+          htmlFor={id}
         >
-          <div className="sds-input-file__drop-zone-icon">
-            <UploadIcon />
-          </div>
-          <Paragraph className="sds-input-file__placeholder">
-            {placeholder}
-            {placeholderBridge && (
-              <>
-                <br />
-                {placeholderBridge}
-              </>
+          <DropZone
+            className={clsx(
+              "sds-input-file__drop-zone",
+              Boolean(errorText) && "sds-input-file__drop-zone--error",
             )}
-          </Paragraph>
-          <FileTrigger
-            {...inputId}
-            onSelect={handleOnSelect}
-            acceptedFileTypes={acceptedFileTypes}
-            allowsMultiple={multiple}
-            defaultCamera={capture}
+            onDrop={handleOnDrop}
+            aria-label={ariaLabel}
+            aria-describedby={ariaDescribedBy}
+            aria-invalid={Boolean(errorText)}
+            aria-errormessage={errorText ? errorTextId : undefined}
+            ref={ref}
+            {...rest}
           >
-            <Button
-              className={clsx(
-                "sds-button",
-                `sds-button--${errorText ? "critical" : "subtle"}`,
+            <div className="sds-input-file__drop-zone-icon">
+              <UploadIcon />
+            </div>
+            <Paragraph className="sds-input-file__placeholder">
+              {placeholder}
+              {placeholderBridge && (
+                <>
+                  <br />
+                  {placeholderBridge}
+                </>
               )}
+            </Paragraph>
+            <FileTrigger
+              {...inputId}
+              onSelect={handleOnSelect}
+              acceptedFileTypes={acceptedFileTypes}
+              allowsMultiple={multiple}
+              defaultCamera={capture}
             >
-              <span className="sds-button__label">{triggerText}</span>
-            </Button>
-          </FileTrigger>
-        </DropZone>
-      </FormField>
+              <Button
+                className={clsx(
+                  "sds-button",
+                  `sds-button--${errorText ? "critical" : "subtle"}`,
+                )}
+              >
+                <span className="sds-button__label">{triggerText}</span>
+              </Button>
+            </FileTrigger>
+          </DropZone>
+        </FormField>
+        {children}
+      </div>
     );
   },
 );

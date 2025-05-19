@@ -28,8 +28,7 @@ export const Default: Story = {
     multiple: true,
   },
   render: (args) => (
-    <div data-testid="sds-input-file">
-      <InputFile {...args} />
+    <InputFile {...args}>
       <FileList figCaption="Attachments (2)">
         <FileListItem
           fileSize={1466607}
@@ -52,7 +51,7 @@ export const Default: Story = {
           FileNameVeeeeeeeeeeeeeeeeeeeeeeeeeeeeeryLong.pdf
         </FileListItem>
       </FileList>
-    </div>
+    </InputFile>
   ),
 };
 
@@ -63,8 +62,7 @@ export const WithError: Story = {
     errorText: "Error: Message",
   },
   render: (args) => (
-    <div className="sds-input-file-wrapper" data-testid="sds-input-file">
-      <InputFile triggerText="Open file explorer" {...args} />
+    <InputFile triggerText="Open file explorer" {...args}>
       <FileList figCaption="Attachments (1)">
         <FileListItem
           fileSize={1466607}
@@ -90,6 +88,6 @@ export const WithError: Story = {
           FileName.pdf
         </FileListItem>
       </FileList>
-    </div>
+    </InputFile>
   ),
 };

@@ -56,13 +56,13 @@ export const FileListItem = ({
       className={clsx(
         "sds-input-file-list__item",
         Boolean(errorText) && "sds-input-file-list__item--error",
-        "ssds-typography-body--regular",
+        "ssds-typography-body",
         className,
       )}
       {...rest}
     >
       <div className="sds-input-file-list__item-start">
-        <div className="sds-input-file-list__item-name sds-typography-body--strong">
+        <div className="sds-input-file-list__item-name sds-typography-label">
           {children}
         </div>
         {size && <div>{size}</div>}

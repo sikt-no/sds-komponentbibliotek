@@ -13,13 +13,12 @@ import { InputFile, FileList, FileListItem } from "@sikt/sds-input-file";
 import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-input-file/dist/index.css";
 
-<>
-  <InputFile
-    label="Upload documentation"
-    aria-label="Upload documentation"
-    accept=".doc,.docx"
-    onChange={changeHandler}
-  />
+<InputFile
+  label="Upload documentation"
+  aria-label="Upload documentation"
+  accept=".doc,.docx"
+  onChange={changeHandler}
+>
   <FileList figCaption="Attatchments">
     files.map((file) => {
       <FileListItem
@@ -30,7 +29,7 @@ import "@sikt/sds-input-file/dist/index.css";
       </FileListItem>
     })
   </FileList>
-</>
+</InputFile>
 ```
 
 #### Caveats
