@@ -1,0 +1,33 @@
+.sds-filter-list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sds-space-gap-tiny);
+  border-radius: var(--sds-space-border-radius-small);
+  padding-right: var(--sds-space-padding-small);
+  width: 100%;
+
+  &:hover,
+  &:focus-visible {
+    /* todo - uncomment when clickable */
+
+    /* background: var(--sds-color-interaction-primary-subtle-highlight); */
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--sds-space-gap-tiny);
+  }
+
+  &__count {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: var(--sds-space-padding-tiny);
+  }
+}
