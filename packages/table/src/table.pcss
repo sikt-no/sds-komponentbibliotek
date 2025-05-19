@@ -3,14 +3,12 @@
   width: 100%;
 
   &__table {
-    --table-padding-cell: var(--sds-base-size-m);
+    --table-padding-cell: var(--sds-space-padding-medium);
 
     width: 100%;
 
     /* stylelint-disable selector-max-type */
     @media (width < 720px) {
-      --table-padding-cell: var(--sds-base-size-s);
-
       display: flex;
       flex-direction: column;
 
@@ -44,9 +42,9 @@
 
   &__caption {
     caption-side: bottom;
-    font-size: var(--sds-typography-body-fontsize-small);
-    font-weight: var(--sds-typography-weight-regular);
-    line-height: var(--sds-typography-body-lineheight-small);
+    font-size: var(--sds-typography-body-s-fontsize);
+    font-weight: var(--sds-typography-body-s-fontweight);
+    line-height: var(--sds-typography-body-s-lineheight);
     order: 9999;
   }
 
@@ -69,9 +67,9 @@
   &__header,
   [data-th]::before,
   &__foot &__cell {
-    font-size: var(--sds-typography-heading-fontsize-overline);
-    font-weight: var(--sds-typography-weight-bold);
-    line-height: var(--sds-typography-heading-lineheight-overline);
+    font-size: var(--sds-typography-overline-default-fontsize);
+    font-weight: var(--sds-typography-overline-default-fontweight);
+    line-height: var(--sds-typography-overline-default-lineheight);
     text-transform: uppercase;
     text-align: start;
   }
