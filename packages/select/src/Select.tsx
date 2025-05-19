@@ -92,7 +92,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
               </option>
             ))}
           </select>
-          <ExpandShowAltIcon className="sds-select__select-button" />
+          <span className="sds-select__select-button">
+            <ExpandShowAltIcon />
+          </span>
         </div>
       </FormField>
     );

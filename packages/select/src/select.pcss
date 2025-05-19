@@ -13,10 +13,11 @@
   width: 100%;
 
   &__select {
-    --select-button-size: calc(
-      var(--sds-base-size-m) + calc(var(--sds-space-padding-minimal) * 2)
-    );
+    --select-button-font-size: var(--sds-typography-fontsize-700);
     --select-button-padding: var(--sds-space-padding-minimal);
+    --select-button-size: calc(
+      var(--select-button-font-size) + calc(var(--select-button-padding) * 2)
+    );
 
     align-items: center;
     display: flex;
@@ -31,9 +32,9 @@
       color: var(--sds-color-text-primary);
       cursor: pointer;
       flex: 1;
-      font-size: var(--sds-typography-body-fontsize-regular);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-body-lineheight-regular);
+      font-size: var(--sds-typography-body-default-fontsize);
+      font-weight: var(--sds-typography-body-default-fontweight);
+      line-height: var(--sds-typography-body-default-lineheight);
       overflow: hidden;
       padding: var(--select-padding);
       padding-right: calc(
@@ -61,16 +62,17 @@
     }
 
     &-button {
+      align-items: center;
       background-color: var(--select-button-background-color);
       border-radius: var(--sds-space-border-radius-minimal);
       color: var(--select-button-color);
-      font-size: var(--sds-base-size-m);
+      display: flex;
+      font-size: var(--select-button-font-size);
+      justify-content: center;
       padding: var(--select-button-padding);
       position: absolute;
       right: var(--select-padding);
       pointer-events: none;
-      width: var(--select-button-size);
-      height: var(--select-button-size);
     }
   }
 
