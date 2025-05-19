@@ -1,4 +1,4 @@
-import { SlackLogo } from "@phosphor-icons/react/dist/ssr";
+import { SlackLogoIcon } from "@phosphor-icons/react/dist/ssr";
 import { ButtonLink, type ButtonLinkProps } from "@sikt/sds-button";
 
 export const SlackButton = ({
@@ -9,7 +9,7 @@ export const SlackButton = ({
     <ButtonLink
       variant={variant}
       iconVariant={iconVariant}
-      icon={<SlackLogo className="sds-icon" aria-hidden />}
+      icon={<SlackLogoIcon className="sds-icon" aria-hidden />}
       href="https://sikt-no.slack.com/archives/C04K82KES0J"
     >
       Bli med i Slack-kanalen

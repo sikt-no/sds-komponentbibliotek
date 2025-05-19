@@ -1,11 +1,11 @@
 import {
-  ArrowsInLineHorizontal,
-  DotsNine,
-  Nut,
-  Palette,
-  SquaresFour,
-  TextAa,
-  Wheelchair,
+  ArrowsInLineHorizontalIcon,
+  DotsNineIcon,
+  NutIcon,
+  PaletteIcon,
+  SquaresFourIcon,
+  TextAaIcon,
+  WheelchairIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Nav, NavButtonLink } from "../";
 
@@ -23,7 +23,7 @@ export const Menu = ({ pathname }: { pathname: string }) => {
       <Nav aria-label="Sidenavigasjon, Grunnleggende" heading="Grunnleggende">
         <li>
           <NavButtonLink
-            icon={<Nut className="sds-icon" aria-hidden />}
+            icon={<NutIcon className="sds-icon" aria-hidden />}
             href={tokensHref}
             aria-current={pathname === tokensHref && "page"}
           >
@@ -32,7 +32,9 @@ export const Menu = ({ pathname }: { pathname: string }) => {
         </li>
         <li>
           <NavButtonLink
-            icon={<ArrowsInLineHorizontal className="sds-icon" aria-hidden />}
+            icon={
+              <ArrowsInLineHorizontalIcon className="sds-icon" aria-hidden />
+            }
             href={sizesHref}
             aria-current={pathname === sizesHref && "page"}
           >
@@ -41,7 +43,7 @@ export const Menu = ({ pathname }: { pathname: string }) => {
         </li>
         <li>
           <NavButtonLink
-            icon={<Palette className="sds-icon" aria-hidden />}
+            icon={<PaletteIcon className="sds-icon" aria-hidden />}
             aria-current={pathname === colorsHref && "page"}
           >
             Fargesystem
@@ -49,7 +51,7 @@ export const Menu = ({ pathname }: { pathname: string }) => {
         </li>
         <li>
           <NavButtonLink
-            icon={<TextAa className="sds-icon" aria-hidden />}
+            icon={<TextAaIcon className="sds-icon" aria-hidden />}
             href={typographyHref}
             aria-current={pathname === typographyHref && "page"}
           >
@@ -58,7 +60,7 @@ export const Menu = ({ pathname }: { pathname: string }) => {
         </li>
         <li>
           <NavButtonLink
-            icon={<DotsNine className="sds-icon" aria-hidden />}
+            icon={<DotsNineIcon className="sds-icon" aria-hidden />}
             aria-current={pathname === iconsHref && "page"}
           >
             Ikonbibliotek
@@ -66,7 +68,7 @@ export const Menu = ({ pathname }: { pathname: string }) => {
         </li>
         <li>
           <NavButtonLink
-            icon={<Wheelchair className="sds-icon" aria-hidden />}
+            icon={<WheelchairIcon className="sds-icon" aria-hidden />}
             href={a11yHref}
             aria-current={pathname === a11yHref && "page"}
             target="_blank"
@@ -79,7 +81,7 @@ export const Menu = ({ pathname }: { pathname: string }) => {
       <Nav aria-label="Sidenavigasjon, Komponenter" heading="Komponenter">
         <li>
           <NavButtonLink
-            icon={<SquaresFour className="sds-icon" aria-hidden />}
+            icon={<SquaresFourIcon className="sds-icon" aria-hidden />}
             href={storybookUrl}
             aria-current={pathname === storybookUrl && "page"}
           >

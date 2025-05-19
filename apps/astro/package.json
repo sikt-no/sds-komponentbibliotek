@@ -13,7 +13,7 @@
     "@astrojs/mdx": "^4.2.6",
     "@astrojs/react": "^4.2.7",
     "@astrojs/sitemap": "^3.4.0",
-    "@phosphor-icons/react": "^2.1.7",
+    "@phosphor-icons/react": "^2.1.8",
     "@sikt/sds-badge": "^2.0.3",
     "@sikt/sds-breadcrumbs": "^2.0.3",
     "@sikt/sds-button": "^4.0.1",

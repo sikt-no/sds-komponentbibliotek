@@ -1,4 +1,4 @@
-import { FigmaLogo } from "@phosphor-icons/react/dist/ssr";
+import { FigmaLogoIcon } from "@phosphor-icons/react/dist/ssr";
 import { ButtonLink, type ButtonLinkProps } from "@sikt/sds-button";
 
 export const FigmaButton = ({
@@ -9,7 +9,7 @@ export const FigmaButton = ({
     <ButtonLink
       variant={variant}
       iconVariant={iconVariant}
-      icon={<FigmaLogo className="sds-icon" aria-hidden />}
+      icon={<FigmaLogoIcon className="sds-icon" aria-hidden />}
       href="https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem"
     >
       Se skisser i Figma

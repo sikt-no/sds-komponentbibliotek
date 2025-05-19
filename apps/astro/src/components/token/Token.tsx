@@ -19,15 +19,12 @@ const tokenValueOrOriginal = (token: TransformedToken) => {
 
 export const Token = ({ token }: { token: TransformedToken }) => {
   const originalValue = `${token.original.value}`;
-  return (
-    <>
-      {originalValue.includes("}") ? (
-        <Paragraph as="span" size="s">
-          {tokenValueOrOriginal(token)}
-        </Paragraph>
-      ) : (
-        token.value
-      )}
-    </>
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return originalValue.includes("}") ? (
+    <Paragraph as="span" size="s">
+      {tokenValueOrOriginal(token)}
+    </Paragraph>
+  ) : (
+    token.value
   );
 };

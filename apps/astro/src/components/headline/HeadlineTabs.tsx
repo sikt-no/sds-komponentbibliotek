@@ -1,7 +1,7 @@
 import {
-  Desktop,
-  DeviceMobile,
-  DeviceTablet,
+  DesktopIcon,
+  DeviceMobileIcon,
+  DeviceTabletIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Tabs, TabList, Tab, TabPanel } from "@sikt/sds-tabs";
 import { capitalize } from "../../utils/string.ts";
@@ -15,13 +15,15 @@ export const HeadlineTabs = ({
   return (
     <Tabs>
       <TabList aria-label={`${capitalize(type)} headlines`}>
-        <Tab icon={<DeviceMobile className="sds-icon" aria-hidden />}>
+        <Tab icon={<DeviceMobileIcon className="sds-icon" aria-hidden />}>
           Mobil
         </Tab>
-        <Tab icon={<DeviceTablet className="sds-icon" aria-hidden />}>
+        <Tab icon={<DeviceTabletIcon className="sds-icon" aria-hidden />}>
           Tablet
         </Tab>
-        <Tab icon={<Desktop className="sds-icon" aria-hidden />}>Desktop</Tab>
+        <Tab icon={<DesktopIcon className="sds-icon" aria-hidden />}>
+          Desktop
+        </Tab>
       </TabList>
       <TabPanel>
         <HeadlineTabPanel type={type} />
