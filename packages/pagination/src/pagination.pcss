@@ -1,13 +1,22 @@
 .sds-pagination {
   --pagination-background-color: var(
-    --sds-color-interaction-primary-subtle-default
+    --sds-color-interaction-neutral-subtle-default
   );
   --pagination-color: var(--sds-color-text-primary);
 
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sds-space-gap-small);
+    font-size: var(--sds-typography-label-l-fontsize);
+    font-variant-numeric: tabular-nums;
+    font-weight: var(--sds-typography-label-l-fontweight);
+    line-height: var(--sds-typography-label-l-lineheight);
+  }
+
   &__list-item {
     align-items: center;
-    display: inline-flex;
-    gap: var(--sds-space-gap-small);
+    display: flex;
     justify-content: center;
   }
 
@@ -20,17 +29,15 @@
     border-radius: var(--sds-space-border-radius-full);
     color: var(--pagination-color);
     cursor: pointer;
-    font-size: var(--sds-typography-body-fontsize-large);
-    line-height: var(--sds-typography-body-lineheight-large);
     text-align: center;
-    width: var(--sds-base-size-l);
-    height: var(--sds-base-size-l);
+    width: var(--sds-typography-fontsize-1200);
+    height: var(--sds-typography-fontsize-1200);
     padding: 0;
 
     &:hover,
     &:focus-visible {
       --pagination-background-color: var(
-        --sds-color-interaction-primary-subtle-highlight
+        --sds-color-interaction-neutral-subtle-highlight
       );
     }
 
@@ -40,7 +47,7 @@
 
     &:active {
       --pagination-background-color: var(
-        --sds-color-interaction-primary-subtle-pressed
+        --sds-color-interaction-neutral-subtle-pressed
       );
     }
 
@@ -48,8 +55,8 @@
       align-items: center;
       display: flex;
       justify-content: center;
-      width: var(--sds-base-size-m);
-      height: var(--sds-base-size-m);
+      width: var(--sds-typography-fontsize-700);
+      height: var(--sds-typography-fontsize-700);
     }
 
     &[disabled],
@@ -67,9 +74,8 @@
 
     &[aria-current] {
       --pagination-background-color: var(
-        --sds-color-interaction-primary-strong-default
+        --sds-color-interaction-primary-subtle-default
       );
-      --pagination-color: var(--sds-color-text-on-strong);
 
       cursor: inherit;
 
@@ -77,7 +83,7 @@
       &:hover,
       &:focus-visible {
         --pagination-background-color: var(
-          --sds-color-interaction-primary-strong-default
+          --sds-color-interaction-primary-subtle-default
         );
       }
     }
