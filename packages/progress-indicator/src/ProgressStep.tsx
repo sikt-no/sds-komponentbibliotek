@@ -34,7 +34,9 @@ export const ProgressStep = ({
       aria-current={status === "current" ? "step" : "false"}
       {...rest}
     >
-      <MoveToNextIcon className="sds-progress-step__separator-icon" />
+      <span className="sds-progress-step__separator-icon">
+        <MoveToNextIcon />
+      </span>
       {status === "complete" && (
         <span className="sds-screen-reader-only">
           {accessibleCompleteString}

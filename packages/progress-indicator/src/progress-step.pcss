@@ -1,22 +1,24 @@
 @import url("@sikt/sds-tokens/dist/css/custom-media.css");
 
 .sds-progress-step {
-  --progress-indicator-size: var(--sds-base-size-m1);
+  --progress-indicator-size: var(--sds-typography-fontsize-900);
 
   display: flex;
   align-items: center;
   gap: var(--sds-space-gap-tiny);
 
   &__label {
-    font-size: var(--sds-typography-body-fontsize-small);
-    line-height: var(--sds-typography-body-lineheight-small);
+    font-size: var(--sds-typography-body-s-fontsize);
+    font-weight: var(--sds-typography-body-s-fontweight);
+    line-height: var(--sds-typography-body-s-lineheight);
   }
 
   &__number {
     background-color: var(--sds-color-interaction-primary-subtle-default);
     border-radius: var(--sds-space-border-radius-full);
-    font-size: var(--sds-typography-body-fontsize-regular);
-    line-height: var(--sds-typography-body-lineheight-regular);
+    font-size: var(--sds-typography-label-default-fontsize);
+    font-weight: var(--sds-typography-label-default-fontweight);
+    line-height: var(--sds-typography-label-default-lineheight);
     width: var(--progress-indicator-size);
     height: var(--progress-indicator-size);
     display: grid;
@@ -25,18 +27,17 @@
 
   &--selected &__number {
     background-color: var(--sds-color-interaction-primary-strong-default);
-    font-weight: var(--sds-typography-weight-bold);
     color: var(--sds-color-text-on-strong);
   }
 
   &__separator-icon {
     display: none;
-    font-size: var(--sds-base-size-m);
+    font-size: var(--sds-typography-fontsize-700);
   }
 
   & + .sds-progress-step &__separator-icon {
     @media (--sds-base-breakpoint-tablet) {
-      display: unset;
+      display: flex;
     }
   }
 }
