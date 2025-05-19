@@ -2,16 +2,16 @@
   "base": {
     "zindex": {
       "default": {
-        "value": "auto"
+        "$value": "auto"
       },
       "drawer": {
-        "value": 2000
+        "$value": 2000
       },
       "menu": {
-        "value": 1000
+        "$value": 1000
       },
       "modal": {
-        "value": 3000
+        "$value": 3000
       }
     }
   }

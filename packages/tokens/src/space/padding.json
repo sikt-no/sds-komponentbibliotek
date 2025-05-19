@@ -2,25 +2,25 @@
   "space": {
     "padding": {
       "infinitesimal": {
-        "value": "{base.size.xxxs.value}"
+        "$value": "{base.size.xxxs}"
       },
       "minimal": {
-        "value": "{base.size.xxs.value}"
+        "$value": "{base.size.xxs}"
       },
       "tiny": {
-        "value": "{base.size.xs.value}"
+        "$value": "{base.size.xs}"
       },
       "small": {
-        "value": "{base.size.s.value}"
+        "$value": "{base.size.s}"
       },
       "medium": {
-        "value": "{base.size.s.value}"
+        "$value": "{base.size.s}"
       },
       "large": {
-        "value": "{base.size.m.value}"
+        "$value": "{base.size.m}"
       },
       "huge": {
-        "value": "{base.size.m1.value}"
+        "$value": "{base.size.m1}"
       }
     }
   }

@@ -2,7 +2,7 @@
   "space": {
     "grid": {
       "max-width": {
-        "value": "960px"
+        "$value": "960px"
       }
     }
   }

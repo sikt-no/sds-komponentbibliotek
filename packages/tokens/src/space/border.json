@@ -3,30 +3,30 @@
     "border": {
       "weight": {
         "thin": {
-          "value": "1px"
+          "$value": "1px"
         },
         "regular": {
-          "value": "2px"
+          "$value": "2px"
         },
         "bold": {
-          "value": "4px"
+          "$value": "4px"
         }
       },
       "radius": {
         "minimal": {
-          "value": "{base.size.xxs.value}"
+          "$value": "{base.size.xxs}"
         },
         "small": {
-          "value": "{base.size.xs.value}"
+          "$value": "{base.size.xs}"
         },
         "medium": {
-          "value": "{base.size.s.value}"
+          "$value": "{base.size.s}"
         },
         "large": {
-          "value": "{base.size.m.value}"
+          "$value": "{base.size.m}"
         },
         "full": {
-          "value": "99999px"
+          "$value": "99999px"
         }
       }
     }

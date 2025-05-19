@@ -2,34 +2,34 @@
   "base": {
     "size": {
       "xxxs": {
-        "value": "2px"
+        "$value": "2px"
       },
       "xxs": {
-        "value": "4px"
+        "$value": "4px"
       },
       "xs": {
-        "value": "8px"
+        "$value": "8px"
       },
       "s": {
-        "value": "12px"
+        "$value": "12px"
       },
       "s1": {
-        "value": "16px"
+        "$value": "16px"
       },
       "m": {
-        "value": "24px"
+        "$value": "24px"
       },
       "m1": {
-        "value": "32px"
+        "$value": "32px"
       },
       "l": {
-        "value": "48px"
+        "$value": "48px"
       },
       "xl": {
-        "value": "96px"
+        "$value": "96px"
       },
       "xxl": {
-        "value": "192px"
+        "$value": "192px"
       }
     }
   }

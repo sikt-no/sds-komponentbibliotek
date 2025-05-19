@@ -46,7 +46,7 @@ StyleDictionary.registerTransform({
   filter: colorFilter,
   transform: (token) => {
     const dark = transformHex(token.dark);
-    return `light-dark(${token.value}, ${dark})`;
+    return `light-dark(${token.$value}, ${dark})`;
   },
 });
 
@@ -62,7 +62,7 @@ StyleDictionary.registerFormat({
       `:root {
   color-scheme: light dark;
 
-${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.value};`).join("\n")}
+${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.$value};`).join("\n")}
 }
 
 [data-color-scheme="light"] {
@@ -88,8 +88,8 @@ StyleDictionary.registerFormat({
       defaultFileHeader +
       dictionary.allTokens
         .map((prop) => {
-          const { name, value } = prop;
-          return `@custom-media --${name} (width >= ${value});`;
+          const { name, $value } = prop;
+          return `@custom-media --${name} (width >= ${$value});`;
         })
         .join("\n")
     );
@@ -106,12 +106,12 @@ StyleDictionary.registerFormat({
     return (
       defaultFileHeader +
       `@media (min-width: ${
-        dictionary.tokens.base.breakpoint[options.atMedia].value
+        dictionary.tokens.base.breakpoint[options.atMedia].$value
       }) {
   :root {
 ${dictionary.allTokens
   .filter((prop) => !prop.filePath.includes("base"))
-  .map((prop) => `  --${prop.name}: ${prop.value};`)
+  .map((prop) => `  --${prop.name}: ${prop.$value};`)
   .join("\n")}
   }
 }`
@@ -176,7 +176,7 @@ ${lineHeightTokens.map((prop) => `  --text-${prop.attributes.type}-${prop.attrib
 ${fontWeightTokens.map((prop) => `  --font-weight-${prop.attributes.item}: var(--${prop.name});`).join("\n")}
 
   --breakpoint-*: initial;
-${breakpointTokens.map((prop) => `  --breakpoint-${prop.attributes.item}: ${prop.value};`).join("\n")}
+${breakpointTokens.map((prop) => `  --breakpoint-${prop.attributes.item}: ${prop.$value};`).join("\n")}
 
   --spacing-*: initial;
 
@@ -188,6 +188,11 @@ ${borderRadiusTokens.map((prop) => `  --radius-${prop.attributes.subitem}: var(-
 });
 
 const dictionaryTokens = new StyleDictionary({
+  /*
+  log: {
+    verbosity: "verbose",
+  },
+  */
   source: [`${sourcePath}**/!(*.tablet|*.desktop).{json,js,mjs}`],
   platforms: {
     css: {

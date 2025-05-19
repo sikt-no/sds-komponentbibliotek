@@ -4,27 +4,27 @@
       "headline": {
         "s": {
           "fontsize": {
-            "value": "{typography.fontsize.800.value}"
+            "$value": "{typography.fontsize.800}"
           }
         },
         "m": {
           "fontsize": {
-            "value": "{typography.fontsize.900.value}"
+            "$value": "{typography.fontsize.900}"
           }
         },
         "l": {
           "fontsize": {
-            "value": "{typography.fontsize.1100.value}"
+            "$value": "{typography.fontsize.1100}"
           }
         },
         "xl": {
           "fontsize": {
-            "value": "{typography.fontsize.1200.value}"
+            "$value": "{typography.fontsize.1200}"
           }
         },
         "xxl": {
           "fontsize": {
-            "value": "{typography.fontsize.1300.value}"
+            "$value": "{typography.fontsize.1300}"
           }
         }
       }
@@ -33,12 +33,12 @@
       "headline": {
         "xl": {
           "fontsize": {
-            "value": "{typography.fontsize.900.value}"
+            "$value": "{typography.fontsize.900}"
           }
         },
         "xxl": {
           "fontsize": {
-            "value": "{typography.fontsize.1100.value}"
+            "$value": "{typography.fontsize.1100}"
           }
         }
       }

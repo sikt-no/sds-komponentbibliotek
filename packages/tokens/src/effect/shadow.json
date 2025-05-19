@@ -2,10 +2,10 @@
   "effect": {
     "shadow": {
       "elevated-default": {
-        "value": "0 4px 24px var(--sds-color-shadow-elevated-default)"
+        "$value": "0 4px 24px var(--sds-color-shadow-elevated-default)"
       },
       "elevated-hover": {
-        "value": "0 4px 12px var(--sds-color-shadow-elevated-hover)"
+        "$value": "0 4px 12px var(--sds-color-shadow-elevated-hover)"
       }
     }
   }

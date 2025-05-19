@@ -3,24 +3,24 @@
     "label": {
       "default": {
         "fontsize": {
-          "value": "{typography.fontsize.300.value}"
+          "$value": "{typography.fontsize.300}"
         },
         "fontweight": {
-          "value": "{typography.fontweight.semibold.value}"
+          "$value": "{typography.fontweight.semibold}"
         },
         "lineheight": {
-          "value": "{typography.lineheight.l.value}"
+          "$value": "{typography.lineheight.l}"
         }
       },
       "l": {
         "fontsize": {
-          "value": "{typography.fontsize.400.value}"
+          "$value": "{typography.fontsize.400}"
         },
         "fontweight": {
-          "value": "{typography.fontweight.semibold.value}"
+          "$value": "{typography.fontweight.semibold}"
         },
         "lineheight": {
-          "value": "{typography.lineheight.m.value}"
+          "$value": "{typography.lineheight.m}"
         }
       }
     }

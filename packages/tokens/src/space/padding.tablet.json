@@ -2,13 +2,13 @@
   "space": {
     "padding": {
       "medium": {
-        "value": "{base.size.s1.value}"
+        "$value": "{base.size.s1}"
       },
       "large": {
-        "value": "{base.size.m1.value}"
+        "$value": "{base.size.m1}"
       },
       "huge": {
-        "value": "{base.size.l.value}"
+        "$value": "{base.size.l}"
       }
     }
   }

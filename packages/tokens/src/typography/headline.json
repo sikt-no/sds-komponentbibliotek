@@ -4,79 +4,79 @@
       "headline": {
         "xxs": {
           "fontsize": {
-            "value": "{typography.fontsize.300.value}"
+            "$value": "{typography.fontsize.300}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.l.value}"
+            "$value": "{typography.lineheight.l}"
           }
         },
         "xs": {
           "fontsize": {
-            "value": "{typography.fontsize.600.value}"
+            "$value": "{typography.fontsize.600}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.m.value}"
+            "$value": "{typography.lineheight.m}"
           }
         },
         "s": {
           "fontsize": {
-            "value": "{typography.fontsize.700.value}"
+            "$value": "{typography.fontsize.700}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.s.value}"
+            "$value": "{typography.lineheight.s}"
           }
         },
         "m": {
           "fontsize": {
-            "value": "{typography.fontsize.800.value}"
+            "$value": "{typography.fontsize.800}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.s.value}"
+            "$value": "{typography.lineheight.s}"
           }
         },
         "l": {
           "fontsize": {
-            "value": "{typography.fontsize.900.value}"
+            "$value": "{typography.fontsize.900}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.xs.value}"
+            "$value": "{typography.lineheight.xs}"
           }
         },
         "xl": {
           "fontsize": {
-            "value": "{typography.fontsize.1100.value}"
+            "$value": "{typography.fontsize.1100}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.xs.value}"
+            "$value": "{typography.lineheight.xs}"
           }
         },
         "xxl": {
           "fontsize": {
-            "value": "{typography.fontsize.1200.value}"
+            "$value": "{typography.fontsize.1200}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.xs.value}"
+            "$value": "{typography.lineheight.xs}"
           }
         }
       }
@@ -85,79 +85,79 @@
       "headline": {
         "xxs": {
           "fontsize": {
-            "value": "{typography.fontsize.300.value}"
+            "$value": "{typography.fontsize.300}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.m.value}"
+            "$value": "{typography.lineheight.m}"
           }
         },
         "xs": {
           "fontsize": {
-            "value": "{typography.fontsize.400.value}"
+            "$value": "{typography.fontsize.400}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.m.value}"
+            "$value": "{typography.lineheight.m}"
           }
         },
         "s": {
           "fontsize": {
-            "value": "{typography.fontsize.500.value}"
+            "$value": "{typography.fontsize.500}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.m.value}"
+            "$value": "{typography.lineheight.m}"
           }
         },
         "m": {
           "fontsize": {
-            "value": "{typography.fontsize.600.value}"
+            "$value": "{typography.fontsize.600}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.s.value}"
+            "$value": "{typography.lineheight.s}"
           }
         },
         "l": {
           "fontsize": {
-            "value": "{typography.fontsize.700.value}"
+            "$value": "{typography.fontsize.700}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.s.value}"
+            "$value": "{typography.lineheight.s}"
           }
         },
         "xl": {
           "fontsize": {
-            "value": "{typography.fontsize.800.value}"
+            "$value": "{typography.fontsize.800}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.s.value}"
+            "$value": "{typography.lineheight.s}"
           }
         },
         "xxl": {
           "fontsize": {
-            "value": "{typography.fontsize.1000.value}"
+            "$value": "{typography.fontsize.1000}"
           },
           "fontweight": {
-            "value": "{typography.fontweight.semibold.value}"
+            "$value": "{typography.fontweight.semibold}"
           },
           "lineheight": {
-            "value": "{typography.lineheight.s.value}"
+            "$value": "{typography.lineheight.s}"
           }
         }
       }

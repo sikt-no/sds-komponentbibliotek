@@ -2,10 +2,10 @@
   "space": {
     "grid": {
       "full": {
-        "value": "100%"
+        "$value": "100%"
       },
       "max-width": {
-        "value": "100%"
+        "$value": "100%"
       }
     }
   }

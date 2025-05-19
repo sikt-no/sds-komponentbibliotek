@@ -3,14 +3,14 @@ export default {
     shadow: {
       elevated: {
         default: {
-          value: { h: 0, s: 0, l: 0, a: 0.1 },
+          $value: { h: 0, s: 0, l: 0, a: 0.1 },
           dark: { h: 0, s: 0, l: 0, a: 0.5 },
-          type: "color",
+          $type: "color",
         },
         hover: {
-          value: { h: 0, s: 0, l: 0, a: 0.25 },
+          $value: { h: 0, s: 0, l: 0, a: 0.25 },
           dark: { h: 0, s: 0, l: 0, a: 0.75 },
-          type: "color",
+          $type: "color",
         },
       },
     },

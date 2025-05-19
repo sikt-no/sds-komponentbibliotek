@@ -4,22 +4,22 @@
       "headline": {
         "m": {
           "fontsize": {
-            "value": "{typography.fontsize.1000.value}"
+            "$value": "{typography.fontsize.1000}"
           }
         },
         "l": {
           "fontsize": {
-            "value": "{typography.fontsize.1200.value}"
+            "$value": "{typography.fontsize.1200}"
           }
         },
         "xl": {
           "fontsize": {
-            "value": "{typography.fontsize.1400.value}"
+            "$value": "{typography.fontsize.1400}"
           }
         },
         "xxl": {
           "fontsize": {
-            "value": "{typography.fontsize.1500.value}"
+            "$value": "{typography.fontsize.1500}"
           }
         }
       }
@@ -28,32 +28,32 @@
       "headline": {
         "xs": {
           "fontsize": {
-            "value": "{typography.fontsize.500.value}"
+            "$value": "{typography.fontsize.500}"
           }
         },
         "s": {
           "fontsize": {
-            "value": "{typography.fontsize.600.value}"
+            "$value": "{typography.fontsize.600}"
           }
         },
         "m": {
           "fontsize": {
-            "value": "{typography.fontsize.700.value}"
+            "$value": "{typography.fontsize.700}"
           }
         },
         "l": {
           "fontsize": {
-            "value": "{typography.fontsize.800.value}"
+            "$value": "{typography.fontsize.800}"
           }
         },
         "xl": {
           "fontsize": {
-            "value": "{typography.fontsize.1000.value}"
+            "$value": "{typography.fontsize.1000}"
           }
         },
         "xxl": {
           "fontsize": {
-            "value": "{typography.fontsize.1200.value}"
+            "$value": "{typography.fontsize.1200}"
           }
         }
       }

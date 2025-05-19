@@ -3,35 +3,35 @@
     "body": {
       "s": {
         "fontsize": {
-          "value": "{typography.fontsize.200.value}"
+          "$value": "{typography.fontsize.200}"
         },
         "fontweight": {
-          "value": "{typography.fontweight.regular.value}"
+          "$value": "{typography.fontweight.regular}"
         },
         "lineheight": {
-          "value": "{typography.lineheight.xl.value}"
+          "$value": "{typography.lineheight.xl}"
         }
       },
       "default": {
         "fontsize": {
-          "value": "{typography.fontsize.300.value}"
+          "$value": "{typography.fontsize.300}"
         },
         "fontweight": {
-          "value": "{typography.fontweight.regular.value}"
+          "$value": "{typography.fontweight.regular}"
         },
         "lineheight": {
-          "value": "{typography.lineheight.l.value}"
+          "$value": "{typography.lineheight.l}"
         }
       },
       "l": {
         "fontsize": {
-          "value": "{typography.fontsize.500.value}"
+          "$value": "{typography.fontsize.500}"
         },
         "fontweight": {
-          "value": "{typography.fontweight.regular.value}"
+          "$value": "{typography.fontweight.regular}"
         },
         "lineheight": {
-          "value": "{typography.lineheight.l.value}"
+          "$value": "{typography.lineheight.l}"
         }
       }
     }

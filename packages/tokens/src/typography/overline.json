@@ -3,13 +3,13 @@
     "overline": {
       "default": {
         "fontsize": {
-          "value": "{typography.fontsize.200.value}"
+          "$value": "{typography.fontsize.200}"
         },
         "fontweight": {
-          "value": "{typography.fontweight.semibold.value}"
+          "$value": "{typography.fontweight.semibold}"
         },
         "lineheight": {
-          "value": "{typography.lineheight.xs.value}"
+          "$value": "{typography.lineheight.xs}"
         }
       }
     }
