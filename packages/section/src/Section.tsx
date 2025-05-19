@@ -23,7 +23,7 @@ export const Section = ({
   return (
     <section className={clsx("sds-section", className)} {...rest}>
       <header className="sds-section__header">
-        <H className="sds-section__heading sds-typography-heading--medium">
+        <H className="sds-section__heading sds-typography-editorial-headline--s">
           {headingText}
         </H>
         {callToAction && <div className="sds-section__cta">{callToAction}</div>}
