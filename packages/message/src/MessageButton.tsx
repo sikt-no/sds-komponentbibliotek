@@ -11,7 +11,7 @@ export const MessageButton = forwardRef<HTMLButtonElement, MessageButtonProps>(
       <Button
         ref={ref}
         className={clsx("sds-message-button", className)}
-        variant="transparent"
+        variant="neutral-transparent"
         size="small"
         {...rest}
       >

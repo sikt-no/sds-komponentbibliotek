@@ -10,9 +10,9 @@
     var(--message-border-color);
   color: var(--sds-color-text-primary);
   display: flex;
-  font-size: var(--sds-typography-body-fontsize-regular);
-  font-weight: var(--sds-typography-weight-regular);
-  line-height: var(--sds-typography-body-lineheight-regular);
+  font-size: var(--sds-typography-body-default-fontsize);
+  font-weight: var(--sds-typography-body-default-fontweight);
+  line-height: var(--sds-typography-body-default-lineheight);
   gap: var(--sds-space-gap-tiny);
 
   &__icon {
@@ -20,12 +20,10 @@
     background-color: var(--message-icon-background-color);
     border-radius: var(--sds-space-border-radius-full);
     display: flex;
+    font-size: var(--sds-typography-fontsize-700);
     justify-content: center;
-    font-size: var(--sds-base-size-m);
-    min-height: var(--sds-base-size-m1);
-    min-width: var(--sds-base-size-m1);
-    height: var(--sds-base-size-m1);
-    width: var(--sds-base-size-m1);
+    height: var(--sds-typography-fontsize-900);
+    width: var(--sds-typography-fontsize-900);
 
     & > .sds-icon {
       color: var(--message-icon-color);
@@ -80,19 +78,5 @@
   &--application-status {
     box-shadow: inset 0 calc(var(--sds-space-border-weight-regular) * -1)
       var(--message-border-color);
-  }
-
-  &-button.sds-button {
-    background-color: transparent;
-    color: var(--sds-color-text-primary);
-
-    &:hover,
-    &:focus-visible {
-      background-color: var(--sds-color-shadow-elevated-default);
-    }
-
-    &:active {
-      background-color: var(--sds-color-shadow-elevated-hover);
-    }
   }
 }

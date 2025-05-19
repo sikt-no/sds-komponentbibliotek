@@ -13,7 +13,7 @@ export const MessageButtonLink = forwardRef<
     <ButtonLink
       ref={ref}
       className={clsx("sds-message-button", className)}
-      variant="transparent"
+      variant="neutral-transparent"
       size="small"
       {...rest}
     >
