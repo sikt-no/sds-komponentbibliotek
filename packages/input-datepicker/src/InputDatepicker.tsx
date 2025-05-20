@@ -177,7 +177,10 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
             </Text>
           )}
           <Group className="sds-input__wrapper sds-input-datepicker__wrapper">
-            <DateInput ref={inputRef} className="sds-input-datepicker__input">
+            <DateInput
+              ref={inputRef}
+              className="sds-input-datepicker__input sds-typography--tabular-nums"
+            >
               {(segment) => (
                 <DateSegment
                   className="sds-input-datepicker__input-segment"
