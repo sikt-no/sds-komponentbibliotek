@@ -46,9 +46,9 @@
   &__input {
     border: none;
     color: var(--sds-color-text-primary);
-    font-size: var(--sds-typography-body-fontsize-regular);
-    font-weight: var(--sds-typography-weight-regular);
-    line-height: var(--sds-typography-body-lineheight-regular);
+    font-size: var(--sds-typography-body-default-fontsize);
+    font-weight: var(--sds-typography-body-default-fontweight);
+    line-height: var(--sds-typography-body-default-lineheight);
     padding: var(--sds-space-padding-minimal);
     width: 100%;
 
@@ -73,16 +73,11 @@
   }
 
   &__icon {
-    --input-icon-size: calc(
-      var(--sds-base-size-m) + calc(var(--sds-space-padding-minimal) * 2)
-    );
-
     align-items: center;
     display: inline-flex;
-    font-size: var(--sds-base-size-m);
+    font-size: var(--sds-typography-fontsize-700);
     justify-content: center;
-    width: var(--input-icon-size);
-    height: var(--input-icon-size);
+    padding-left: var(--sds-space-padding-minimal);
   }
 
   &--error &__wrapper {
