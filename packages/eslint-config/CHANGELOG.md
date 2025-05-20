@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/eslint-config-sds@2.1.0...@sikt/eslint-config-sds@2.2.0) (2025-05-20)
+
+### Features
+
+- **eslint-config:** change no-deprecated from error to warn ([9cb28eb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9cb28eb59490fa00c02b9d567b7e9e21a0229b25))
+
+### Bug Fixes
+
+- **deps:** update dependency globals to v16 ([5b901dd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5b901dd04629743a77b065ec4a747b5555ea7738))
+- **deps:** update eslint ([7f1a8e5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7f1a8e515d4720c264cf5be2c92590b2d82c8237))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/eslint-config-sds@2.0.1...@sikt/eslint-config-sds@2.1.0) (2025-04-28)
 
 ### Features
