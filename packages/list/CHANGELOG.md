@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-list@2.1.2...@sikt/sds-list@2.2.0) (2025-05-20)
+
+### Features
+
+- **list:** update with new typography ([d5b808f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d5b808faefee6bd68461919d921dbdffcce4aa25))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+
 ## [2.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-list@2.1.1...@sikt/sds-list@2.1.2) (2025-05-12)
 
 ### Bug Fixes
