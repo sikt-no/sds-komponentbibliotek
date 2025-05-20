@@ -92,6 +92,7 @@ export default tseslint.config([
       "react/no-danger": "warn",
       "react/self-closing-comp": "error",
 
+      "@typescript-eslint/no-deprecated": "warn",
       "@typescript-eslint/restrict-template-expressions": [
         "error",
         { allowNumber: true },
