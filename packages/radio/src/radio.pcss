@@ -1,7 +1,7 @@
 .sds-radio {
   --radio-background-color: var(--sds-color-layout-background-default);
   --radio-border-color: var(--sds-color-interaction-neutral-strong-default);
-  --radio-size: var(--sds-base-size-m);
+  --radio-size: var(--sds-typography-fontsize-700);
 
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
     background: var(--radio-background-color);
     border: var(--sds-space-border-weight-regular) solid
       var(--radio-border-color);
-    border-radius: var(--sds-space-border-radius-medium);
+    border-radius: var(--sds-space-border-radius-full);
     cursor: pointer;
     display: grid;
     flex-shrink: 0;
@@ -24,9 +24,9 @@
 
     &-label {
       display: block;
-      font-size: var(--sds-typography-body-fontsize-regular);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-body-lineheight-regular);
+      font-size: var(--sds-typography-body-default-fontsize);
+      font-weight: var(--sds-typography-body-default-fontweight);
+      line-height: var(--sds-typography-body-default-lineheight);
       padding: var(--sds-space-padding-small) var(--sds-space-padding-tiny);
     }
 
@@ -64,8 +64,8 @@
         content: "";
         display: block;
         border-radius: var(--sds-space-border-radius-full);
-        width: var(--sds-base-size-s);
-        height: var(--sds-base-size-s);
+        width: var(--sds-typography-fontsize-100);
+        height: var(--sds-typography-fontsize-100);
         background: var(--sds-color-text-on-strong);
       }
 
