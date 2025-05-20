@@ -25,9 +25,9 @@
       border-radius: var(--sds-space-border-radius-medium);
       color: var(--sds-color-text-primary);
       flex: 1;
-      font-size: var(--sds-typography-body-fontsize-regular);
-      font-weight: var(--sds-typography-weight-regular);
-      line-height: var(--sds-typography-body-lineheight-regular);
+      font-size: var(--sds-typography-body-default-fontsize);
+      font-weight: var(--sds-typography-body-default-fontweight);
+      line-height: var(--sds-typography-body-default-lineheight);
       padding: var(--combobox-padding);
 
       &:hover,
@@ -51,18 +51,20 @@
     }
 
     &-button {
+      --combobox-button-font-size: var(--sds-typography-fontsize-700);
       --combobox-button-size: calc(
-        var(--sds-base-size-m) + calc(var(--sds-space-padding-minimal) * 2)
+        var(--combobox-button-font-size) +
+          calc(var(--sds-space-padding-minimal) * 2)
       );
 
-      display: flex;
       align-items: center;
-      justify-content: center;
       border: 0;
       background-color: var(--combobox-button-background-color);
       border-radius: var(--sds-space-border-radius-minimal);
       color: var(--combobox-button-color);
-      font-size: var(--sds-base-size-m);
+      display: flex;
+      font-size: var(--combobox-button-font-size);
+      justify-content: center;
       padding: var(--sds-space-padding-minimal);
       position: absolute;
       right: var(--combobox-padding);
@@ -99,12 +101,13 @@
   }
 
   &__header {
-    padding: var(--sds-space-padding-small);
-    margin: var(--sds-space-gap-tiny);
-    font-size: var(--sds-typography-body-fontsize-regular);
-    font-weight: var(--sds-typography-weight-bold);
     border-bottom: var(--sds-space-border-weight-thin) solid
       var(--sds-color-brand-neutral-subtle);
+    font-size: var(--sds-typography-editorial-headline-xxs-fontsize);
+    font-weight: var(--sds-typography-editorial-headline-xxs-fontweight);
+    line-height: var(--sds-typography-editorial-headline-xxs-lineheight);
+    padding: var(--sds-space-padding-small);
+    margin: var(--sds-space-gap-tiny);
   }
 
   &__item {
