@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.1.0...@sikt/sds-button@4.2.0) (2025-05-20)
+
+### Features
+
+- **button:** update with new typography ([75a1c16](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/75a1c16796c793097ea587b408105ec682c71352))
+
 ## [4.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.0.1...@sikt/sds-button@4.1.0) (2025-05-13)
 
 ### Features
