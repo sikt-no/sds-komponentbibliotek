@@ -3,63 +3,63 @@
     "fontsize": {
       "100": {
         "$value": "12px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "200": {
         "$value": "14px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "300": {
         "$value": "16px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "400": {
         "$value": "18px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "500": {
         "$value": "20px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "600": {
         "$value": "22px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "700": {
         "$value": "24px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "800": {
         "$value": "28px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "900": {
         "$value": "32px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "1000": {
         "$value": "36px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "1100": {
         "$value": "42px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "1200": {
         "$value": "48px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "1300": {
         "$value": "56px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "1400": {
         "$value": "64px",
-        "type": "dimension"
+        "$type": "dimension"
       },
       "1500": {
         "$value": "72px",
-        "type": "dimension"
+        "$type": "dimension"
       }
     }
   }
