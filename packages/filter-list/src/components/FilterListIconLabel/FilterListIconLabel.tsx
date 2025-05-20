@@ -13,11 +13,11 @@ export const FilterListIconLabel = ({
 }: FilterListIconLabelProps) => {
   return (
     <div
-      className="sds-filter-list__icon-label"
+      className="sds-filter-list-icon-label"
       data-testid="filter-list-icon-label"
     >
-      {icon}
-      {label}
+      <span className="sds-filter-list-icon-label__icon">{icon}</span>
+      <span>{label}</span>
     </div>
   );
 };

@@ -11,40 +11,29 @@
     justify-content: space-between;
     gap: var(--sds-space-gap-small);
     border-radius: var(--sds-space-border-radius-small);
-  }
+    padding-right: var(--sds-space-padding-minimal);
 
-  &__header-clickable {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: var(--sds-space-gap-small);
-    border-radius: var(--sds-space-border-radius-small);
-
-    &:hover,
-    &:focus-visible {
-      cursor: pointer;
-      background: var(--sds-color-interaction-primary-subtle-highlight);
+    &-clickable {
+      &:hover,
+      &:focus-visible {
+        cursor: pointer;
+        background: var(--sds-color-interaction-primary-subtle-highlight);
+      }
     }
   }
 
-  &--button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: var(--sds-space-padding-tiny);
-  }
-
+  &--button-container,
   &--icon-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: var(--sds-space-padding-small);
+  }
+
+  &--icon-container {
+    font-size: var(--sds-typography-fontsize-700);
   }
 
   &__icon {
-    font-size: var(--sds-typography-heading-fontsize-small);
-
     &--closed-no-anim,
     &--closed {
       rotate: 0deg;

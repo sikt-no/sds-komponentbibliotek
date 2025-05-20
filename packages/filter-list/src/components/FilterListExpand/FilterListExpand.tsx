@@ -73,7 +73,7 @@ export function FilterListExpand({
           tabIndex={0}
           role="button"
           data-testid="toggle-expand-button"
-          className="sds-filter-list-expand__header-clickable"
+          className="sds-filter-list-expand__header sds-filter-list-expand__header-clickable"
           aria-expanded={!!expanded}
           aria-label={ariaLabelExpandToggle}
         >
