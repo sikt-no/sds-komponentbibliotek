@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.1.5...@sikt/sds-checkbox@3.2.0) (2025-05-21)
+
+### Features
+
+- **checkbox:** update with new typography ([c200bf3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c200bf3203848ff0c86316bfb3c597723f42ae41))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- update @sikt/sds-form@4.0.0 ([c9c1473](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c9c1473524d32e0a7512644e105a346faaf1b109))
+
 ## [3.1.5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.1.4...@sikt/sds-checkbox@3.1.5) (2025-05-08)
 
 ### Bug Fixes
