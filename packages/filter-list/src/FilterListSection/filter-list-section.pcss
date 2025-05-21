@@ -1,15 +1,20 @@
 .sds-filter-list-section {
-  &__header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--sds-space-gap-tiny);
-    width: 100%;
-    padding: var(--sds-space-padding-small);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: var(--sds-space-gap-tiny);
+  justify-content: space-between;
+  padding: var(--sds-space-padding-minimal) var(--sds-space-padding-minimal)
+    var(--sds-space-padding-minimal) var(--sds-space-padding-small);
+  width: 100%;
 
-    &--expandable {
-      padding-right: 0;
-    }
+  &--expandable {
+    padding-right: 0;
+  }
+
+  &__label {
+    font-size: var(--sds-typography-label-default-fontsize);
+    font-weight: var(--sds-typography-label-default-fontweight);
+    line-height: var(--sds-typography-label-default-lineheight);
   }
 }

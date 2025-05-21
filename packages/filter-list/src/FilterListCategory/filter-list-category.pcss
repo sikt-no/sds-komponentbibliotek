@@ -1,22 +1,24 @@
 .sds-filter-list-category {
-  &__header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--sds-space-gap-tiny);
-    width: 100%;
+  --filter-list-item-background-color: transparent;
 
-    &-label {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      gap: var(--sds-space-gap-tiny);
-    }
+  display: flex;
+  background: var(--filter-list-item-background-color);
+  border-radius: var(--sds-space-border-radius-small);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sds-space-gap-tiny);
+  width: 100%;
+
+  &:has(.sds-filter-list-item__input:hover) {
+    --filter-list-item-background-color: var(
+      --sds-color-interaction-neutral-transparent-highlight
+    );
   }
 
   &__content {
-    padding-left: var(--sds-space-padding-small);
+    .sds-filter-list-item {
+      padding-left: var(--sds-space-padding-small);
+    }
   }
 }

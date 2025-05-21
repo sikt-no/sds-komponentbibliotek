@@ -67,9 +67,9 @@ describe("FilterListSection", () => {
       expect(screen.getByText("2")).toBeInTheDocument();
       expect(screen.getByText("1")).toBeInTheDocument();
       expect(
-        container.getElementsByClassName("sds-filter-list-section__header")[0],
+        container.getElementsByClassName("sds-filter-list-section")[0],
       ).toHaveClass(
-        "sds-filter-list-section__header sds-filter-list-section__header--expandable",
+        "sds-filter-list-section sds-filter-list-section--expandable",
       );
 
       expect(expandedState).toBeTruthy();

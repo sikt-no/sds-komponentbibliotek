@@ -29,6 +29,7 @@ export const FilterListCategory = ({
   children,
 }: FilterListCategoryProps) => {
   const id = useId();
+  const hasCount = count !== undefined && count > 0;
 
   return (
     <FilterListExpand
@@ -36,7 +37,7 @@ export const FilterListCategory = ({
       initialExpanded={expanded}
       onExpandToggle={onExpandToggle}
       header={
-        <div className="sds-filter-list-category__header">
+        <div className="sds-filter-list-category">
           <CheckboxInput
             className="sds-filter-list-item__input"
             aria-describedby={id}
@@ -51,7 +52,7 @@ export const FilterListCategory = ({
             indeterminate={indeterminate}
             checked={checked}
           />
-          {count !== undefined && count > 0 && (
+          {hasCount && (
             <Badge
               visibility="strong"
               className="sds-filter-list__badge"

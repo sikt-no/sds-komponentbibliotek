@@ -20,15 +20,17 @@ export const FilterListSection = ({
   expandable,
   count,
 }: FilterListSectionProps) => {
+  const hasCount = count !== undefined && count > 0;
+
   const header = (
     <div
       className={clsx(
-        "sds-filter-list-section__header",
-        expandable && "sds-filter-list-section__header--expandable",
+        "sds-filter-list-section",
+        expandable && "sds-filter-list-section--expandable",
       )}
     >
-      <span className="sds-typography--strong">{label}</span>
-      {count !== undefined && count > 0 && (
+      <span className="sds-filter-list-section__label">{label}</span>
+      {hasCount && (
         <Badge visibility="strong" className="sds-filter-list__badge">
           {count}
         </Badge>
@@ -36,24 +38,20 @@ export const FilterListSection = ({
     </div>
   );
 
-  return (
-    <div>
-      {expandable ? (
-        <FilterListExpand
-          header={header}
-          clickableHeader
-          ariaLabelExpandToggle={label}
-          initialExpanded={expandable.expanded}
-          onExpandToggle={expandable.onExpandToggle}
-        >
-          {children}
-        </FilterListExpand>
-      ) : (
-        <>
-          {header}
-          {children}
-        </>
-      )}
-    </div>
+  return expandable ? (
+    <FilterListExpand
+      header={header}
+      clickableHeader
+      ariaLabelExpandToggle={label}
+      initialExpanded={expandable.expanded}
+      onExpandToggle={expandable.onExpandToggle}
+    >
+      {children}
+    </FilterListExpand>
+  ) : (
+    <>
+      {header}
+      {children}
+    </>
   );
 };

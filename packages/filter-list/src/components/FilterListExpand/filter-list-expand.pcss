@@ -1,36 +1,42 @@
 .sds-filter-list-expand {
   display: flex;
-  width: 100%;
-  justify-content: flex-start;
   flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
 
   &__header {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: var(--sds-space-gap-small);
+    align-items: center;
     border-radius: var(--sds-space-border-radius-small);
-    padding-right: var(--sds-space-padding-minimal);
+    display: flex;
+    flex-direction: row;
+    gap: var(--sds-space-gap-small);
+    justify-content: space-between;
+    width: 100%;
 
     &-clickable {
       &:hover,
       &:focus-visible {
+        background: var(--sds-color-interaction-neutral-transparent-highlight);
         cursor: pointer;
-        background: var(--sds-color-interaction-primary-subtle-highlight);
+      }
+
+      &:focus-visible {
+        outline: var(--sds-focus-outline);
       }
     }
   }
 
   &--button-container,
   &--icon-container {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 
   &--icon-container {
     font-size: var(--sds-typography-fontsize-700);
+    width: var(--sds-typography-fontsize-900);
+    height: var(--sds-typography-fontsize-900);
   }
 
   &__icon {

@@ -36,9 +36,7 @@ export const ItemWithCheckbox: { render: () => React.JSX.Element } = {
     return (
       <FilterList key={0} className="sds-filter-list-max-width">
         <Fieldset
-          legend={
-            <legend className="sds-screen-reader-only">Grade-filters</legend>
-          }
+          legend={<span className="sds-screen-reader-only">Grade-filters</span>}
         >
           <FilterListItem
             type="checkbox"
@@ -74,7 +72,7 @@ export const ItemWithRadio: { render: () => React.JSX.Element } = {
         <RadioFieldset
           value={country}
           onChange={handleChange}
-          legend={<legend className="sds-screen-reader-only">Countries</legend>}
+          legend={<span className="sds-screen-reader-only">Countries</span>}
         >
           <FilterListItem
             type="radio"
@@ -120,9 +118,9 @@ export const SectionExample: { render: () => React.JSX.Element } = {
         <FilterListSection label="Not expandable section">
           <Fieldset
             legend={
-              <legend className="sds-screen-reader-only">
+              <span className="sds-screen-reader-only">
                 Not expandable section
-              </legend>
+              </span>
             }
           >
             <FilterListItem
@@ -149,9 +147,7 @@ export const SectionExample: { render: () => React.JSX.Element } = {
         >
           <Fieldset
             legend={
-              <legend className="sds-screen-reader-only">
-                Expandable section
-              </legend>
+              <span className="sds-screen-reader-only">Expandable section</span>
             }
           >
             <FilterListItem
@@ -219,9 +215,7 @@ export const CategoryExample: {
         >
           <Fieldset
             legend={
-              <legend className="sds-screen-reader-only">
-                Category example
-              </legend>
+              <span className="sds-screen-reader-only">Category example</span>
             }
           >
             <FilterListItem

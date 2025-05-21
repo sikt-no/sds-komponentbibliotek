@@ -1,5 +1,8 @@
 .sds-filter-list-item {
+  --filter-list-item-background-color: transparent;
+
   align-items: center;
+  background: var(--filter-list-item-background-color);
   border-radius: var(--sds-space-border-radius-small);
   display: flex;
   flex-direction: row;
@@ -8,11 +11,10 @@
   padding-right: var(--sds-space-padding-small);
   width: 100%;
 
-  &:hover,
-  &:focus-visible {
-    /* todo - uncomment when clickable */
-
-    /* background: var(--sds-color-interaction-primary-subtle-highlight); */
+  &:has(&__input:hover) {
+    --filter-list-item-background-color: var(
+      --sds-color-interaction-neutral-transparent-highlight
+    );
   }
 
   &__input {
@@ -20,9 +22,9 @@
   }
 
   &__count {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: flex-end;
   }
 }
