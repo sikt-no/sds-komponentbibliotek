@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@3.0.1...@sikt/sds-section@3.1.0) (2025-05-21)
+
+### Features
+
+- **section:** update with new typography ([8f4c76d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8f4c76dabcac112a98ec995130f199a7927eb793))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- **deps:** update @sikt/sds-core to 4.4.0 ([9dd6147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9dd6147cd902975653f03b29db9f580ec19c261c))
+- **deps:** update @sikt/sds-core@4.2.0 ([fb7f329](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fb7f329c873679481c75f80cfbe27f364d00fa50))
+- **deps:** update @sikt/sds-core@4.2.1 ([936180f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/936180f14a710552f5045cd7a4eba2bc76c383a3))
+
 ## [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@3.0.0...@sikt/sds-section@3.0.1) (2024-11-20)
 
 ### Bug Fixes
