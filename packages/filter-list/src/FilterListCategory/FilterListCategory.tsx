@@ -52,7 +52,11 @@ export const FilterListCategory = ({
             checked={checked}
           />
           {count !== undefined && count > 0 && (
-            <Badge visibility="strong" id={id}>
+            <Badge
+              visibility="strong"
+              className="sds-filter-list__badge"
+              id={id}
+            >
               {count}
             </Badge>
           )}

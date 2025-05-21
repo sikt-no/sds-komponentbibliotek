@@ -29,7 +29,9 @@ export const FilterListSection = ({
     >
       <span className="sds-typography--strong">{label}</span>
       {count !== undefined && count > 0 && (
-        <Badge visibility="strong">{count}</Badge>
+        <Badge visibility="strong" className="sds-filter-list__badge">
+          {count}
+        </Badge>
       )}
     </div>
   );
