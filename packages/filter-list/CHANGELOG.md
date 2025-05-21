@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.2.0...@sikt/sds-filter-list@0.3.0) (2025-05-21)
+
+### Features
+
+- **filter-list:** hover background ([1077177](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1077177018f1a8ca4559cfeb88408b7e1fc6e6dd))
+
+### Bug Fixes
+
+- **filter-list:** export props ([47e2856](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/47e285610d815da57da14dfb64ec9f2cc45eac8a))
+
 ## [0.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.1.1...@sikt/sds-filter-list@0.2.0) (2025-05-21)
 
 ### Bug Fixes
