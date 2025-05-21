@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-footer@2.1.0...@sikt/sds-footer@2.1.1) (2025-05-21)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- **deps:** update @sikt/sds-core to 4.4.0 ([9dd6147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9dd6147cd902975653f03b29db9f580ec19c261c))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-footer@2.0.1...@sikt/sds-footer@2.1.0) (2025-02-24)
 
 ### Features
