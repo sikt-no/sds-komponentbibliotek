@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@1.1.0...@sikt/sds-message@1.2.0) (2025-05-21)
+
+### Features
+
+- **message:** update with new typography ([abe1513](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/abe1513aa54a2b06b31d93ac3ef843355eaecfd0))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-button ([45447fd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/45447fd3bb1b017daabc76121fa3e8ec9c20f29e))
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- **deps:** update @sikt/sds-core to 4.4.0 ([9dd6147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9dd6147cd902975653f03b29db9f580ec19c261c))
+
 ## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@1.0.0...@sikt/sds-message@1.1.0) (2025-03-10)
 
 ### Features
