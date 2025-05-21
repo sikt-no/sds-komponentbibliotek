@@ -36,8 +36,11 @@ export const ItemWithCheckbox: { render: () => React.JSX.Element } = {
 
     return (
       <FilterList key={0} className="sds-filter-list-max-width">
-        <Fieldset>
-          <legend className="sds-screen-reader-only">Grade-filters</legend>
+        <Fieldset
+          legend={
+            <legend className="sds-screen-reader-only">Grade-filters</legend>
+          }
+        >
           <FilterListItem
             type="checkbox"
             label="Has good grades"
@@ -69,8 +72,11 @@ export const ItemWithRadio: { render: () => React.JSX.Element } = {
 
     return (
       <FilterList key={0} className="sds-filter-list-max-width">
-        <RadioFieldset value={country} onChange={handleChange}>
-          <legend className="sds-screen-reader-only">Countries</legend>
+        <RadioFieldset
+          value={country}
+          onChange={handleChange}
+          legend={<legend className="sds-screen-reader-only">Countries</legend>}
+        >
           <FilterListItem
             type="radio"
             label="Norway"
@@ -113,10 +119,13 @@ export const SectionExample: { render: () => React.JSX.Element } = {
     return (
       <FilterList key={0} className="sds-filter-list-max-width">
         <FilterListSection label="Not expandable section">
-          <Fieldset>
-            <legend className="sds-screen-reader-only">
-              Not expandable section
-            </legend>
+          <Fieldset
+            legend={
+              <legend className="sds-screen-reader-only">
+                Not expandable section
+              </legend>
+            }
+          >
             <FilterListItem
               type="checkbox"
               label="checkbox 1"
@@ -139,10 +148,13 @@ export const SectionExample: { render: () => React.JSX.Element } = {
           }}
           count={getCount()}
         >
-          <Fieldset>
-            <legend className="sds-screen-reader-only">
-              Expandable section
-            </legend>
+          <Fieldset
+            legend={
+              <legend className="sds-screen-reader-only">
+                Expandable section
+              </legend>
+            }
+          >
             <FilterListItem
               type="checkbox"
               label="Has good grades"
@@ -206,8 +218,13 @@ export const CategoryExample: {
           onExpandToggle={setIsExpanded}
           count={getCount()}
         >
-          <Fieldset>
-            <legend className="sds-screen-reader-only">Category example</legend>
+          <Fieldset
+            legend={
+              <legend className="sds-screen-reader-only">
+                Category example
+              </legend>
+            }
+          >
             <FilterListItem
               type="checkbox"
               label="Has good grades"
