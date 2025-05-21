@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@2.1.1...@sikt/sds-combobox@2.2.0) (2025-05-21)
+
+### Features
+
+- **combobox:** new typography & label, help, error order ([f40a0b9](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f40a0b9878d78f3c89f928b5295e40171f7dcc2d))
+- **combobox:** update with new typography ([895a286](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/895a286ade0a04ad04fe48f19ee94339cfc2f484))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- **deps:** update dependency react-aria-components to ^1.8.0 ([3f0110e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3f0110ef382a2cf69051e42904375d5574c7e9a4))
+- update @sikt/sds-form@4.0.0 ([c9c1473](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c9c1473524d32e0a7512644e105a346faaf1b109))
+
 ## [2.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@2.1.0...@sikt/sds-combobox@2.1.1) (2025-04-11)
 
 ### Bug Fixes
