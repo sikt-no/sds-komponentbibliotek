@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.0.6...@sikt/sds-header@3.1.0) (2025-05-21)
+
+### Features
+
+- add a top slot for content between skip link & header ([a44ff5f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a44ff5f4a7d0b45f0df2b7b362990773e535a20d))
+- **header:** update with new typography ([562b959](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/562b95991fe1b33a2f521db3f0931ceea614b7b4))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-button & @sikt/sds-logo ([5d31cd9](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5d31cd9ade923a9d51f5a0efdcb10ca6e08ea452))
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- **deps:** update @sikt/sds-core to 4.4.0 ([9dd6147](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9dd6147cd902975653f03b29db9f580ec19c261c))
+
 ## [3.0.6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.0.5...@sikt/sds-header@3.0.6) (2024-11-20)
 
 ### Bug Fixes
