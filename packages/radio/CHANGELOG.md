@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-radio@3.0.4...@sikt/sds-radio@4.0.0) (2025-05-21)
+
+### ⚠ BREAKING CHANGES
+
+- **form:** new typography & label, help, error order
+
+### Features
+
+- **form:** new typography & label, help, error order ([7b679e2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7b679e2ddb450d844b8703952a084645f488af31))
+- **radio:** update with new typography ([5e450af](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5e450af0817d62f06b908eec841aed7a2e991f5f))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- update @sikt/sds-form@4.0.0 ([c9c1473](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c9c1473524d32e0a7512644e105a346faaf1b109))
+
 ## [3.0.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-radio@3.0.3...@sikt/sds-radio@3.0.4) (2025-04-08)
 
 ### Bug Fixes
