@@ -14,7 +14,6 @@ import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-radio/dist/index.css";
 import "@sikt/sds-badge/dist/index.css";
 import "@sikt/sds-checkbox/dist/index.css";
-import "./filter-list.stories.pcss";
 
 const meta = {
   title: "Components/FilterList",
