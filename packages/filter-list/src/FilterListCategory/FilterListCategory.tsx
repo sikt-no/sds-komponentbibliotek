@@ -37,29 +37,24 @@ export const FilterListCategory = ({
       onExpandToggle={onExpandToggle}
       header={
         <div className="sds-filter-list-category__header">
-          <div className="sds-filter-list-category__header-label">
-            <CheckboxInput
-              tabIndex={0}
-              data-testid="filter-list-category_check"
-              aria-describedby={id}
-              label={
-                icon ? <FilterListIconLabel label={label} icon={icon} /> : label
+          <CheckboxInput
+            className="sds-filter-list-item__input"
+            aria-describedby={id}
+            label={
+              icon ? <FilterListIconLabel label={label} icon={icon} /> : label
+            }
+            onChange={(event) => {
+              if (onCategoryToggle) {
+                onCategoryToggle(event.target.checked);
               }
-              onChange={(event) => {
-                if (onCategoryToggle) {
-                  onCategoryToggle(event.target.checked);
-                }
-              }}
-              indeterminate={indeterminate}
-              checked={checked}
-            />
-          </div>
-          {count !== undefined && count > 0 ? (
+            }}
+            indeterminate={indeterminate}
+            checked={checked}
+          />
+          {count !== undefined && count > 0 && (
             <Badge id={id} visibility="strong">
               {count}
             </Badge>
-          ) : (
-            ""
           )}
         </div>
       }

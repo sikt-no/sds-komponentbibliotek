@@ -1,10 +1,10 @@
 .sds-filter-list-item {
+  align-items: center;
+  border-radius: var(--sds-space-border-radius-small);
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   gap: var(--sds-space-gap-tiny);
-  border-radius: var(--sds-space-border-radius-small);
+  justify-content: space-between;
   padding-right: var(--sds-space-padding-small);
   width: 100%;
 
@@ -16,11 +16,7 @@
   }
 
   &__input {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--sds-space-gap-tiny);
+    flex-basis: 100%;
   }
 
   &__count {
@@ -28,6 +24,5 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    padding-right: var(--sds-space-padding-tiny);
   }
 }

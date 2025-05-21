@@ -32,30 +32,28 @@ export const FilterListItem = ({
 
   return (
     <div className="sds-filter-list-item">
-      <div className="sds-filter-list-item__input">
-        {type === "radio" && (
-          <RadioInput
-            tabIndex={0}
-            data-testid="filter-list-item-input"
-            label={iconLabel}
-            value={value}
-            checked={checked}
-            aria-describedby={id}
-          />
-        )}
+      {type === "radio" && (
+        <RadioInput
+          className="sds-filter-list-item__input"
+          data-testid="filter-list-item-input"
+          label={iconLabel}
+          value={value}
+          checked={checked}
+          aria-describedby={id}
+        />
+      )}
 
-        {type === "checkbox" && (
-          <CheckboxInput
-            tabIndex={0}
-            data-testid="filter-list-item-input"
-            label={iconLabel}
-            value={value}
-            onChange={onChange}
-            checked={checked}
-            aria-describedby={id}
-          />
-        )}
-      </div>
+      {type === "checkbox" && (
+        <CheckboxInput
+          className="sds-filter-list-item__input"
+          data-testid="filter-list-item-input"
+          label={iconLabel}
+          value={value}
+          onChange={onChange}
+          checked={checked}
+          aria-describedby={id}
+        />
+      )}
 
       {count !== undefined && (
         <div className="sds-filter-list-item__count" id={id}>
