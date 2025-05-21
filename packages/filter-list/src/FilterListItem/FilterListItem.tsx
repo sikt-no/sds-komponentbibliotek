@@ -1,8 +1,8 @@
-import "./filter-list-item.pcss";
 import { CheckboxInput } from "@sikt/sds-checkbox";
 import { RadioInput } from "@sikt/sds-radio";
 import { ChangeEvent, ReactElement, useId } from "react";
 import { FilterListIconLabel } from "../components/FilterListIconLabel/FilterListIconLabel";
+import "./filter-list-item.pcss";
 
 export interface FilterListItemProps {
   type: "radio" | "checkbox";
@@ -35,7 +35,6 @@ export const FilterListItem = ({
       {type === "radio" && (
         <RadioInput
           className="sds-filter-list-item__input"
-          data-testid="filter-list-item-input"
           label={iconLabel}
           value={value}
           checked={checked}
@@ -46,7 +45,6 @@ export const FilterListItem = ({
       {type === "checkbox" && (
         <CheckboxInput
           className="sds-filter-list-item__input"
-          data-testid="filter-list-item-input"
           label={iconLabel}
           value={value}
           onChange={onChange}

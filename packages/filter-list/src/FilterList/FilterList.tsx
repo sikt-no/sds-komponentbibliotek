@@ -1,6 +1,5 @@
 import { clsx } from "clsx/lite";
 import { ReactNode } from "react";
-
 import "./filter-list.pcss";
 
 export interface FilterListProps {

@@ -1,9 +1,9 @@
 import { Badge } from "@sikt/sds-badge";
-import "./filter-list-category.pcss";
 import { CheckboxInput } from "@sikt/sds-checkbox";
 import { ReactNode, useId } from "react";
 import { FilterListExpand } from "../components/FilterListExpand/FilterListExpand";
 import { FilterListIconLabel } from "../components/FilterListIconLabel/FilterListIconLabel";
+import "./filter-list-category.pcss";
 
 export interface FilterListCategoryProps {
   label: string;
@@ -52,7 +52,7 @@ export const FilterListCategory = ({
             checked={checked}
           />
           {count !== undefined && count > 0 && (
-            <Badge id={id} visibility="strong">
+            <Badge visibility="strong" id={id}>
               {count}
             </Badge>
           )}

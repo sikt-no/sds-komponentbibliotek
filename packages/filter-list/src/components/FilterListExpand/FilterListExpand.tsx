@@ -1,9 +1,8 @@
 import { Button } from "@sikt/sds-button";
 import { ExpandShowIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
-
-import "./filter-list-expand.pcss";
 import { ReactNode, useState } from "react";
+import "./filter-list-expand.pcss";
 
 interface FilterListExpandProps {
   header: ReactNode;
@@ -72,7 +71,6 @@ export function FilterListExpand({
           onKeyDown={handleToggleByKeyDown}
           tabIndex={0}
           role="button"
-          data-testid="toggle-expand-button"
           className="sds-filter-list-expand__header sds-filter-list-expand__header-clickable"
           aria-expanded={!!expanded}
           aria-label={ariaLabelExpandToggle}
@@ -85,10 +83,7 @@ export function FilterListExpand({
           {header}
           <div className="sds-filter-list-expand--button-container">
             <Button
-              tabIndex={0}
               onClick={handleToggleByClick}
-              className="sds-filter-list-expand__button"
-              data-testid="toggle-expand-button"
               title={buttonTitle}
               aria-expanded={expanded}
               aria-label={ariaLabelExpandToggle}
@@ -104,7 +99,6 @@ export function FilterListExpand({
       )}
 
       <div
-        data-testid="content"
         className={clsx(
           "sds-filter-list-expand__content",
           expanded &&

@@ -47,14 +47,17 @@ describe("FilterListCategory", () => {
           disabled
           count={1}
         >
-          <div>expanded content</div>
+          Content
         </FilterListCategory>,
       );
 
       expect(screen.getByText("Grade filters")).toBeInTheDocument();
       expect(screen.getByText("1")).toBeInTheDocument();
 
-      await user.click(screen.getByTestId("toggle-expand-button"));
+      /* TODO: should not need selector when fixed aria-label on expand/collapse FilterListExpand.tsx:90 */
+      await user.click(
+        screen.getByLabelText("Grade filters", { selector: "button" }),
+      );
 
       expect(expandedState).toBeTruthy();
     });
@@ -74,16 +77,19 @@ describe("FilterListCategory", () => {
           }}
           count={2}
         >
-          <div>expanded content</div>
+          Content
         </FilterListCategory>,
       );
 
       expect(screen.getByText("Grade filters")).toBeInTheDocument();
       expect(screen.getByText("2")).toBeInTheDocument();
-      expect(screen.getByText("expanded content")).toBeInTheDocument();
+      expect(screen.getByText("Content")).toBeInTheDocument();
       expect(expandedState).toBeTruthy();
 
-      await user.click(screen.getByTestId("toggle-expand-button"));
+      /* TODO: should not need selector when fixed aria-label on expand/collapse FilterListExpand.tsx:90 */
+      await user.click(
+        screen.getByLabelText("Grade filters", { selector: "button" }),
+      );
 
       expect(expandedState).toBeFalsy();
     });
@@ -99,12 +105,15 @@ describe("FilterListCategory", () => {
           checked={checked}
           indeterminate={false}
         >
-          <div>expanded content</div>
+          Content
         </FilterListCategory>,
       );
 
       expect(screen.getByText("Grade filters")).toBeInTheDocument();
-      await user.click(screen.getByTestId("filter-list-category_check"));
+      /* TODO: should not need selector when fixed aria-label on expand/collapse FilterListExpand.tsx:90 */
+      await user.click(
+        screen.getByLabelText("Grade filters", { selector: "input" }),
+      );
       expect(checked).toBeTruthy();
     });
   });

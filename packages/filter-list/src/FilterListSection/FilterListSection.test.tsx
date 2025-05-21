@@ -37,16 +37,13 @@ describe("FilterListSection", () => {
       expect(screen.getByText("Not expandable section")).toBeInTheDocument();
       expect(screen.getByText("Has good grades")).toBeInTheDocument();
       expect(screen.getByText("3")).toBeInTheDocument();
-      expect(screen.getByTestId("filter-list-section-header")).toHaveClass(
-        "sds-filter-list-section__header sds-filter-list-section__header--default",
-      );
     });
 
     it("should render as expandable", async () => {
       const user = userEvent.setup();
       let expandedState = true;
 
-      render(
+      const { container } = render(
         <FilterListSection
           label="Expandable section"
           expandable={{
@@ -69,13 +66,15 @@ describe("FilterListSection", () => {
       expect(screen.getByText("Expandable section")).toBeInTheDocument();
       expect(screen.getByText("2")).toBeInTheDocument();
       expect(screen.getByText("1")).toBeInTheDocument();
-      expect(screen.getByTestId("filter-list-section-header")).toHaveClass(
+      expect(
+        container.getElementsByClassName("sds-filter-list-section__header")[0],
+      ).toHaveClass(
         "sds-filter-list-section__header sds-filter-list-section__header--expandable",
       );
 
       expect(expandedState).toBeTruthy();
 
-      await user.click(screen.getByTestId("toggle-expand-button"));
+      await user.click(screen.getByText("Expandable section"));
 
       expect(expandedState).toBeFalsy();
       expect(screen.getByText("Has good grades")).toBeInTheDocument();

@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-
 import "./filter-list-icon-label.pcss";
 
 export interface FilterListIconLabelProps {
@@ -12,10 +11,7 @@ export const FilterListIconLabel = ({
   label,
 }: FilterListIconLabelProps) => {
   return (
-    <div
-      className="sds-filter-list-icon-label"
-      data-testid="filter-list-icon-label"
-    >
+    <div className="sds-filter-list-icon-label">
       <span className="sds-filter-list-icon-label__icon">{icon}</span>
       <span>{label}</span>
     </div>

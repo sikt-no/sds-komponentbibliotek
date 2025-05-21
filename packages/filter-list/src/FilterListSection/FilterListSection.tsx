@@ -1,9 +1,8 @@
 import { Badge } from "@sikt/sds-badge";
 import { clsx } from "clsx";
-import { ReactNode, useId } from "react";
-
-import "./filter-list-section.pcss";
+import { ReactNode } from "react";
 import { FilterListExpand } from "../components/FilterListExpand/FilterListExpand";
+import "./filter-list-section.pcss";
 
 export interface FilterListSectionProps {
   label: string;
@@ -21,27 +20,16 @@ export const FilterListSection = ({
   expandable,
   count,
 }: FilterListSectionProps) => {
-  const id = useId();
-
   const header = (
     <div
-      aria-describedby={id}
-      data-testid="filter-list-section-header"
       className={clsx(
         "sds-filter-list-section__header",
-        expandable
-          ? "sds-filter-list-section__header--expandable"
-          : "sds-filter-list-section__header--default",
+        expandable && "sds-filter-list-section__header--expandable",
       )}
     >
       <span className="sds-typography--strong">{label}</span>
-
-      {count !== undefined && count > 0 ? (
-        <Badge visibility="strong" data-testid="header-badge" id={id}>
-          {count}
-        </Badge>
-      ) : (
-        ""
+      {count !== undefined && count > 0 && (
+        <Badge visibility="strong">{count}</Badge>
       )}
     </div>
   );

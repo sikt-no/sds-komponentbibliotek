@@ -29,7 +29,7 @@ describe("FilterListItem", () => {
       let value = "false";
 
       render(
-        <Fieldset>
+        <Fieldset legend={<>Legend</>}>
           <FilterListItem
             type="checkbox"
             label="Has good grades"
@@ -42,10 +42,10 @@ describe("FilterListItem", () => {
         </Fieldset>,
       );
 
-      expect(screen.getByText("Has good grades")).toBeInTheDocument();
+      expect(screen.getByLabelText("Has good grades")).toBeInTheDocument();
       expect(screen.getByText("3")).toBeInTheDocument();
       expect(value).toBe("false");
-      await user.click(screen.getByTestId("filter-list-item-input"));
+      await user.click(screen.getByLabelText("Has good grades"));
       expect(value).toBe("true");
     });
 
@@ -68,10 +68,10 @@ describe("FilterListItem", () => {
         </RadioFieldset>,
       );
 
-      expect(screen.getByText("Norway")).toBeInTheDocument();
+      expect(screen.getByLabelText("Norway")).toBeInTheDocument();
       expect(screen.getByText("0")).toBeInTheDocument();
       expect(value).toBe("sweden");
-      await user.click(screen.getByTestId("filter-list-item-input"));
+      await user.click(screen.getByLabelText("Norway"));
       expect(value).toBe("norway");
     });
   });

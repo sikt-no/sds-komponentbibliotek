@@ -11,7 +11,7 @@ describe("FilterListExpand", () => {
           header="Expand header"
           ariaLabelExpandToggle="Expand header"
         >
-          <div>expanded content</div>
+          Content
         </FilterListExpand>,
       );
       expect(await axe(container)).toHaveNoViolations();
@@ -19,61 +19,61 @@ describe("FilterListExpand", () => {
   });
 
   describe("api", () => {
-    it("should not render expanded content", async () => {
+    it("should not render content", async () => {
       const user = userEvent.setup();
       let openState = false;
 
       render(
         <FilterListExpand
           header="Expand header"
-          ariaLabelExpandToggle="Expand header"
+          ariaLabelExpandToggle="Expand toggle"
           initialExpanded={openState}
           onExpandToggle={(open) => {
             openState = open;
           }}
         >
-          <div>expanded content</div>
+          Content
         </FilterListExpand>,
       );
 
       expect(screen.getByText("Expand header")).toBeInTheDocument();
-      expect(screen.getByTestId("content")).toHaveClass(
+      expect(screen.queryByText("Content")).toHaveClass(
         "sds-filter-list-expand__content sds-filter-list-expand__content--closed-no-anim",
       );
 
       expect(openState).toBeFalsy();
-      await user.click(screen.getByTestId("toggle-expand-button"));
+      await user.click(screen.getByLabelText("Expand toggle"));
       expect(openState).toBeTruthy();
-      expect(screen.getByTestId("content")).toHaveClass(
+      expect(screen.getByText("Content")).toHaveClass(
         "sds-filter-list-expand__content sds-filter-list-expand__content--open",
       );
     });
 
-    it("should render expanded content", async () => {
+    it("should render content", async () => {
       const user = userEvent.setup();
       let openState = true;
 
       render(
         <FilterListExpand
           header="Expand header"
-          ariaLabelExpandToggle="Expand header"
+          ariaLabelExpandToggle="Expand toggle"
           initialExpanded={openState}
           onExpandToggle={(open) => {
             openState = open;
           }}
         >
-          <div>expanded content</div>
+          Content
         </FilterListExpand>,
       );
       expect(screen.getByText("Expand header")).toBeInTheDocument();
-      expect(screen.getByText("expanded content")).toBeInTheDocument();
-      expect(screen.getByTestId("content")).toHaveClass(
+      expect(screen.getByText("Content")).toBeInTheDocument();
+      expect(screen.getByText("Content")).toHaveClass(
         "sds-filter-list-expand__content sds-filter-list-expand__content--open-no-anim",
       );
       expect(openState).toBeTruthy();
-      await user.click(screen.getByTestId("toggle-expand-button"));
+      await user.click(screen.getByLabelText("Expand toggle"));
       expect(openState).toBeFalsy();
-      expect(screen.getByTestId("content")).toHaveClass(
+      expect(screen.getByText("Content")).toHaveClass(
         "sds-filter-list-expand__content sds-filter-list-expand__content--closed",
       );
     });
@@ -86,12 +86,12 @@ describe("FilterListExpand", () => {
         <FilterListExpand
           header="Expand header"
           clickableHeader
-          ariaLabelExpandToggle="Expand header"
+          ariaLabelExpandToggle="Expand toggle"
           onExpandToggle={(open) => {
             openState = open;
           }}
         >
-          <div>expanded content</div>
+          Content
         </FilterListExpand>,
       );
 
@@ -105,18 +105,18 @@ describe("FilterListExpand", () => {
           "sds-filter-list-expand--icon-container",
         ).length,
       ).toBe(1);
-      expect(screen.getByTestId("content")).toHaveClass(
+      expect(screen.getByText("Content")).toHaveClass(
         "sds-filter-list-expand__content sds-filter-list-expand__content--closed-no-anim",
       );
 
       expect(openState).toBeFalsy();
-      await user.click(screen.getByTestId("toggle-expand-button"));
+      await user.click(screen.getByLabelText("Expand toggle"));
       expect(openState).toBeTruthy();
 
-      expect(screen.getByTestId("content")).toHaveClass(
+      expect(screen.getByText("Content")).toHaveClass(
         "sds-filter-list-expand__content sds-filter-list-expand__content--open",
       );
-      expect(screen.getByText("expanded content")).toBeInTheDocument();
+      expect(screen.getByText("Content")).toBeInTheDocument();
     });
 
     it("should not have clickable header, button only", async () => {
@@ -126,13 +126,13 @@ describe("FilterListExpand", () => {
       const { container } = render(
         <FilterListExpand
           header="Expand header"
-          ariaLabelExpandToggle="Expand header"
+          ariaLabelExpandToggle="Expand toggle"
           buttonTitle="buttontitle"
           onExpandToggle={(open) => {
             openState = open;
           }}
         >
-          <div>expanded content</div>
+          Content
         </FilterListExpand>,
       );
 
@@ -145,17 +145,17 @@ describe("FilterListExpand", () => {
           "sds-filter-list-expand--button-container",
         ).length,
       ).toBe(1);
-      expect(screen.getByTestId("content")).toHaveClass(
+      expect(screen.getByText("Content")).toHaveClass(
         "sds-filter-list-expand__content sds-filter-list-expand__content--closed-no-anim",
       );
       expect(openState).toBeFalsy();
-      await user.click(screen.getByTestId("toggle-expand-button"));
+      await user.click(screen.getByLabelText("Expand toggle"));
 
       expect(openState).toBeTruthy();
-      expect(screen.getByTestId("content")).toHaveClass(
+      expect(screen.getByText("Content")).toHaveClass(
         "sds-filter-list-expand__content sds-filter-list-expand__content--open",
       );
-      expect(screen.getByText("expanded content")).toBeInTheDocument();
+      expect(screen.getByText("Content")).toBeInTheDocument();
     });
 
     it("should have clickable header by tab + keyboard", async () => {
@@ -171,7 +171,7 @@ describe("FilterListExpand", () => {
             openState = open;
           }}
         >
-          <div>expanded content</div>
+          Content
         </FilterListExpand>,
       );
 
@@ -193,7 +193,7 @@ describe("FilterListExpand", () => {
             openState = open;
           }}
         >
-          <div>expanded content</div>
+          Content
         </FilterListExpand>,
       );
 
