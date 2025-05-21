@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.2.7...@sikt/sds-input-file@1.0.0) (2025-05-21)
+
+### Features
+
+- **input-file:** new typography & label, help, error order ([4a0f46b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4a0f46bf77364df5903fa477064e841f574edaf5))
+- **input-file:** update with new typography ([029952f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/029952f7b28660f2dfc170aafe6ced9e07bc416a))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-button & react-aria-components ([84f4610](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/84f4610d18697714352ce0dbbc444df38955cccb))
+- **deps:** update @sikt/sds-core ([f1f7023](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f1f7023a7e77980ef15993b0bdac76bff254b651))
+- **deps:** update dependency react-aria-components to ^1.8.0 ([3f0110e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3f0110ef382a2cf69051e42904375d5574c7e9a4))
+- update @sikt/sds-form@4.0.0 ([c9c1473](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c9c1473524d32e0a7512644e105a346faaf1b109))
+
 ## [0.2.7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@0.2.6...@sikt/sds-input-file@0.2.7) (2025-04-11)
 
 ### Bug Fixes
