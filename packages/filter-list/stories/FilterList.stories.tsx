@@ -35,9 +35,7 @@ export const ItemWithCheckbox: { render: () => React.JSX.Element } = {
 
     return (
       <FilterList key={0} className="sds-filter-list-max-width">
-        <Fieldset
-          legend={<span className="sds-screen-reader-only">Grade-filters</span>}
-        >
+        <Fieldset legend="Grade-filters">
           <FilterListItem
             type="checkbox"
             label="Has good grades"
@@ -72,7 +70,7 @@ export const ItemWithRadio: { render: () => React.JSX.Element } = {
         <RadioFieldset
           value={country}
           onChange={handleChange}
-          legend={<span className="sds-screen-reader-only">Countries</span>}
+          legend="Countries"
         >
           <FilterListItem
             type="radio"
@@ -116,13 +114,7 @@ export const SectionExample: { render: () => React.JSX.Element } = {
     return (
       <FilterList key={0} className="sds-filter-list-max-width">
         <FilterListSection label="Not expandable section">
-          <Fieldset
-            legend={
-              <span className="sds-screen-reader-only">
-                Not expandable section
-              </span>
-            }
-          >
+          <Fieldset legend="Not expandable section">
             <FilterListItem
               type="checkbox"
               label="checkbox 1"
@@ -145,11 +137,7 @@ export const SectionExample: { render: () => React.JSX.Element } = {
           }}
           count={getCount()}
         >
-          <Fieldset
-            legend={
-              <span className="sds-screen-reader-only">Expandable section</span>
-            }
-          >
+          <Fieldset legend="Expandable section">
             <FilterListItem
               type="checkbox"
               label="Has good grades"
@@ -206,6 +194,7 @@ export const CategoryExample: {
       <FilterList key={0} className="sds-filter-list-max-width">
         <FilterListCategory
           label="Category example"
+          ariaLabelExpandToggle={`${isExpanded ? "Hide" : "Show"} category example`}
           onCategoryToggle={handleCategoryChange}
           indeterminate={getIsSomeOn()}
           checked={getIsAllOn()}
@@ -213,11 +202,7 @@ export const CategoryExample: {
           onExpandToggle={setIsExpanded}
           count={getCount()}
         >
-          <Fieldset
-            legend={
-              <span className="sds-screen-reader-only">Category example</span>
-            }
-          >
+          <Fieldset legend="Category example">
             <FilterListItem
               type="checkbox"
               label="Has good grades"
@@ -254,6 +239,7 @@ export const IconExample: { render: () => React.JSX.Element } = {
 
         <FilterListCategory
           label="Category in list"
+          ariaLabelExpandToggle="Show/hide category in list"
           icon={<ArchiveIcon />}
           indeterminate={false}
           checked={false}
