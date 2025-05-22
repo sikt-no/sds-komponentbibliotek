@@ -22,11 +22,9 @@ export function FilterListExpand({
   children,
 }: FilterListExpandProps) {
   const [expanded, setExpanded] = useState(initialExpanded);
-  const [animate, setAnimate] = useState(false);
 
   const onToggle = () => {
     const newState = !expanded;
-    setAnimate(true);
     setExpanded(newState);
     if (onExpandToggle) {
       onExpandToggle(newState);
@@ -86,15 +84,14 @@ export function FilterListExpand({
       <div
         className={clsx(
           "sds-filter-list-expand__content",
-          expanded &&
-            (animate
-              ? "sds-filter-list-expand__content--open"
-              : "sds-filter-list-expand__content--open-no-anim"),
-          !expanded &&
-            (animate
-              ? "sds-filter-list-expand__content--closed"
-              : "sds-filter-list-expand__content--closed-no-anim"),
+          expanded
+            ? "sds-filter-list-expand__content--open"
+            : "sds-filter-list-expand__content--closed",
         )}
+        role="region"
+        id={`${id}-content`}
+        aria-labelledby={`${id}-title`}
+        hidden={!expanded}
       >
         {children}
       </div>

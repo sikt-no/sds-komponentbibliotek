@@ -54,8 +54,14 @@
   }
 
   &__content {
+    height: 0;
     overflow: hidden;
-    max-height: none;
+    transition: all var(--sds-effect-animation-duration-long)
+      var(--sds-effect-animation-easing-default);
+
+    &--open {
+      height: auto;
+    }
 
     .sds-form-fieldset__legend {
       position: absolute;
@@ -67,55 +73,6 @@
       clip: rect(0, 0, 0, 0);
       white-space: nowrap;
       border-width: 0;
-    }
-
-    &--closed-no-anim,
-    &--closed {
-      max-height: 0;
-      display: none;
-    }
-
-    &--open-no-anim,
-    &--open {
-      display: inline;
-    }
-
-    &--closed,
-    &--open {
-      animation: var(--sds-effect-animation-duration-medium) forwards;
-    }
-
-    &--closed {
-      animation-name: content-close-keyframes;
-    }
-
-    &--open {
-      animation-name: content-open-keyframes;
-    }
-
-    @keyframes content-close-keyframes {
-      from {
-        max-height: none;
-        display: inline;
-      }
-
-      to {
-        max-height: 0;
-        display: none;
-      }
-    }
-
-    @keyframes content-open-keyframes {
-      0% {
-        max-height: 0;
-        display: none;
-      }
-
-      1%,
-      100% {
-        max-height: none;
-        display: inline;
-      }
     }
   }
 }

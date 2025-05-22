@@ -38,7 +38,7 @@ describe("FilterListExpand", () => {
 
       expect(screen.getByText("Expand header")).toBeInTheDocument();
       expect(screen.queryByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--closed-no-anim",
+        "sds-filter-list-expand__content sds-filter-list-expand__content--closed",
       );
 
       expect(openState).toBeFalsy();
@@ -68,7 +68,7 @@ describe("FilterListExpand", () => {
       expect(screen.getByText("Expand header")).toBeInTheDocument();
       expect(screen.getByText("Content")).toBeInTheDocument();
       expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--open-no-anim",
+        "sds-filter-list-expand__content sds-filter-list-expand__content--open",
       );
       expect(openState).toBeTruthy();
       await user.click(screen.getByLabelText("Expand toggle"));
@@ -105,7 +105,7 @@ describe("FilterListExpand", () => {
         ).length,
       ).toBe(1);
       expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--closed-no-anim",
+        "sds-filter-list-expand__content sds-filter-list-expand__content--closed",
       );
 
       expect(openState).toBeFalsy();
@@ -140,7 +140,7 @@ describe("FilterListExpand", () => {
       ).toBe(1);
       expect(screen.getByLabelText("Expand toggle")).toBeInTheDocument();
       expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--closed-no-anim",
+        "sds-filter-list-expand__content sds-filter-list-expand__content--closed",
       );
       expect(openState).toBeFalsy();
       await user.click(screen.getByLabelText("Expand toggle"));
