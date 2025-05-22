@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.3.0...@sikt/sds-filter-list@0.4.0) (2025-05-22)
+
+### ⚠ BREAKING CHANGES
+
+- **filter-list:** require ariaLabelExpandToggle for FilterListCategory
+
+### Bug Fixes
+
+- **filter-list:** add missing aria attributes to accordions ([ca7b564](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ca7b564be814d31fbe2d5526d14bbdbe022bbe48))
+- **filter-list:** hover & hide legend ([b35a6ab](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b35a6ab688033f71bb5eb24b9593c98029fc6191))
+- **filter-list:** open/close animation ([697868c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/697868c0b417c57a6b9bb0eab72a40a447591621))
+- **filter-list:** require ariaLabelExpandToggle for FilterListCategory ([0abab22](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0abab22f9f0b1897b6f05b4ec15afd321be60750))
+
 ## [0.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.2.0...@sikt/sds-filter-list@0.3.0) (2025-05-21)
 
 ### Features
