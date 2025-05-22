@@ -7,17 +7,15 @@ import "./filter-list-expand.pcss";
 interface FilterListExpandProps {
   header: ReactNode;
   clickableHeader?: boolean;
-  buttonTitle?: string;
   initialExpanded?: boolean;
   onExpandToggle?: (expanded: boolean) => void;
-  ariaLabelExpandToggle: string;
+  ariaLabelExpandToggle?: NonNullable<string>;
   children: ReactNode;
 }
 
 export function FilterListExpand({
   header,
   clickableHeader = false,
-  buttonTitle,
   initialExpanded = false,
   onExpandToggle,
   ariaLabelExpandToggle,
@@ -65,7 +63,6 @@ export function FilterListExpand({
           role="button"
           className="sds-filter-list-expand__header sds-filter-list-expand__header-clickable"
           aria-expanded={!!expanded}
-          aria-label={ariaLabelExpandToggle}
         >
           {header}
           <div className="sds-filter-list-expand--icon-container">{icon}</div>
@@ -79,11 +76,9 @@ export function FilterListExpand({
             icon={icon}
             iconVariant="only"
             onClick={handleToggleByClick}
-            title={buttonTitle}
             aria-expanded={expanded}
-            aria-label={ariaLabelExpandToggle}
           >
-            {buttonTitle}
+            {ariaLabelExpandToggle}
           </Button>
         </div>
       )}

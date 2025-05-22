@@ -35,8 +35,7 @@ describe("FilterListSection", () => {
       );
 
       expect(screen.getByText("Not expandable section")).toBeInTheDocument();
-      expect(screen.getByText("Has good grades")).toBeInTheDocument();
-      expect(screen.getByText("3")).toBeInTheDocument();
+      expect(screen.getByText("Has good grades (3)")).toBeInTheDocument();
     });
 
     it("should render as expandable", async () => {
@@ -58,14 +57,13 @@ describe("FilterListSection", () => {
             type="checkbox"
             label="Has good grades"
             value="hasGoodGrades"
-            count={1}
           />
         </FilterListSection>,
       );
 
       expect(screen.getByText("Expandable section")).toBeInTheDocument();
       expect(screen.getByText("2")).toBeInTheDocument();
-      expect(screen.getByText("1")).toBeInTheDocument();
+      expect(screen.getByText("Has good grades")).toBeInTheDocument();
       expect(
         container.getElementsByClassName("sds-filter-list-section")[0],
       ).toHaveClass(

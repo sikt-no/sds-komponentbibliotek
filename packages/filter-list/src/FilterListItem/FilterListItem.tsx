@@ -24,10 +24,13 @@ export const FilterListItem = ({
   count,
 }: FilterListItemProps) => {
   const id = useId();
+  const hasCount = count !== undefined;
+
+  const inputLabel = hasCount ? `${label} (${count})` : label;
   const iconLabel = icon ? (
-    <FilterListIconLabel label={label} icon={icon} />
+    <FilterListIconLabel label={inputLabel} icon={icon} />
   ) : (
-    label
+    inputLabel
   );
 
   return (
@@ -51,12 +54,6 @@ export const FilterListItem = ({
           checked={checked}
           aria-describedby={id}
         />
-      )}
-
-      {count !== undefined && (
-        <div className="sds-filter-list-item__count" id={id}>
-          {count}
-        </div>
       )}
     </div>
   );

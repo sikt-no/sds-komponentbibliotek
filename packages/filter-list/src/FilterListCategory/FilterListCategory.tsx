@@ -10,6 +10,7 @@ export interface FilterListCategoryProps {
   icon?: ReactNode;
   expanded?: boolean;
   onExpandToggle?: (expanded: boolean) => void;
+  ariaLabelExpandToggle: NonNullable<string>;
   onCategoryToggle?: (checked: boolean) => void;
   indeterminate: boolean;
   checked: boolean;
@@ -21,6 +22,7 @@ export const FilterListCategory = ({
   label,
   icon,
   expanded,
+  ariaLabelExpandToggle,
   onExpandToggle,
   onCategoryToggle,
   indeterminate,
@@ -33,7 +35,7 @@ export const FilterListCategory = ({
 
   return (
     <FilterListExpand
-      ariaLabelExpandToggle={label}
+      ariaLabelExpandToggle={ariaLabelExpandToggle}
       initialExpanded={expanded}
       onExpandToggle={onExpandToggle}
       header={

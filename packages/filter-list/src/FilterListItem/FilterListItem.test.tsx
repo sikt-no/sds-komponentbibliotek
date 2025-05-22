@@ -37,13 +37,11 @@ describe("FilterListItem", () => {
             onChange={(event) => {
               value = event.target.value;
             }}
-            count={3}
           />
         </Fieldset>,
       );
 
       expect(screen.getByLabelText("Has good grades")).toBeInTheDocument();
-      expect(screen.getByText("3")).toBeInTheDocument();
       expect(value).toBe("false");
       await user.click(screen.getByLabelText("Has good grades"));
       expect(value).toBe("true");
@@ -68,10 +66,9 @@ describe("FilterListItem", () => {
         </RadioFieldset>,
       );
 
-      expect(screen.getByLabelText("Norway")).toBeInTheDocument();
-      expect(screen.getByText("0")).toBeInTheDocument();
+      expect(screen.getByLabelText("Norway (0)")).toBeInTheDocument();
       expect(value).toBe("sweden");
-      await user.click(screen.getByLabelText("Norway"));
+      await user.click(screen.getByLabelText("Norway (0)"));
       expect(value).toBe("norway");
     });
   });

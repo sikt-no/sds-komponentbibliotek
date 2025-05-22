@@ -42,7 +42,6 @@ export const FilterListSection = ({
     <FilterListExpand
       header={header}
       clickableHeader
-      ariaLabelExpandToggle={label}
       initialExpanded={expandable.expanded}
       onExpandToggle={expandable.onExpandToggle}
     >

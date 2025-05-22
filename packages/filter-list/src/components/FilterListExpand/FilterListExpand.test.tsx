@@ -86,7 +86,6 @@ describe("FilterListExpand", () => {
         <FilterListExpand
           header="Expand header"
           clickableHeader
-          ariaLabelExpandToggle="Expand toggle"
           onExpandToggle={(open) => {
             openState = open;
           }}
@@ -110,7 +109,7 @@ describe("FilterListExpand", () => {
       );
 
       expect(openState).toBeFalsy();
-      await user.click(screen.getByLabelText("Expand toggle"));
+      await user.click(screen.getByText("Expand header"));
       expect(openState).toBeTruthy();
 
       expect(screen.getByText("Content")).toHaveClass(
@@ -127,7 +126,6 @@ describe("FilterListExpand", () => {
         <FilterListExpand
           header="Expand header"
           ariaLabelExpandToggle="Expand toggle"
-          buttonTitle="buttontitle"
           onExpandToggle={(open) => {
             openState = open;
           }}
@@ -140,11 +138,7 @@ describe("FilterListExpand", () => {
         container.getElementsByClassName("sds-filter-list-expand__header")
           .length,
       ).toBe(1);
-      expect(
-        container.getElementsByClassName(
-          "sds-filter-list-expand--button-container",
-        ).length,
-      ).toBe(1);
+      expect(screen.getByLabelText("Expand toggle")).toBeInTheDocument();
       expect(screen.getByText("Content")).toHaveClass(
         "sds-filter-list-expand__content sds-filter-list-expand__content--closed-no-anim",
       );
@@ -165,8 +159,8 @@ describe("FilterListExpand", () => {
       render(
         <FilterListExpand
           header="Expand header"
+          ariaLabelExpandToggle="Expand toggle"
           clickableHeader
-          ariaLabelExpandToggle="Expand header"
           onExpandToggle={(open) => {
             openState = open;
           }}

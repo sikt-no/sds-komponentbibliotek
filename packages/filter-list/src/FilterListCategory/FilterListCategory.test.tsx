@@ -11,11 +11,11 @@ describe("FilterListCategory", () => {
       const { container } = render(
         <FilterListCategory
           label="Grade filters"
+          ariaLabelExpandToggle="Toggle grade filters"
           icon={<ArchiveIcon />}
           indeterminate={false}
           checked={false}
           expanded={false}
-          disabled
         >
           <FilterListItem
             type="checkbox"
@@ -37,6 +37,7 @@ describe("FilterListCategory", () => {
       render(
         <FilterListCategory
           label="Grade filters"
+          ariaLabelExpandToggle="Toggle grade filters"
           icon={<ArchiveIcon />}
           indeterminate={false}
           checked={false}
@@ -44,7 +45,6 @@ describe("FilterListCategory", () => {
           onExpandToggle={(expanded) => {
             expandedState = expanded;
           }}
-          disabled
           count={1}
         >
           Content
@@ -54,10 +54,7 @@ describe("FilterListCategory", () => {
       expect(screen.getByText("Grade filters")).toBeInTheDocument();
       expect(screen.getByText("1")).toBeInTheDocument();
 
-      /* TODO: should not need selector when fixed aria-label on expand/collapse FilterListExpand.tsx:90 */
-      await user.click(
-        screen.getByLabelText("Grade filters", { selector: "button" }),
-      );
+      await user.click(screen.getByLabelText("Toggle grade filters"));
 
       expect(expandedState).toBeTruthy();
     });
@@ -71,6 +68,7 @@ describe("FilterListCategory", () => {
           label="Grade filters"
           indeterminate={false}
           checked={false}
+          ariaLabelExpandToggle="Toggle grade filters"
           expanded={expandedState}
           onExpandToggle={(expanded) => {
             expandedState = expanded;
@@ -86,10 +84,7 @@ describe("FilterListCategory", () => {
       expect(screen.getByText("Content")).toBeInTheDocument();
       expect(expandedState).toBeTruthy();
 
-      /* TODO: should not need selector when fixed aria-label on expand/collapse FilterListExpand.tsx:90 */
-      await user.click(
-        screen.getByLabelText("Grade filters", { selector: "button" }),
-      );
+      await user.click(screen.getByLabelText("Toggle grade filters"));
 
       expect(expandedState).toBeFalsy();
     });
@@ -101,6 +96,7 @@ describe("FilterListCategory", () => {
       render(
         <FilterListCategory
           label="Grade filters"
+          ariaLabelExpandToggle="Toggle grade filters"
           onCategoryToggle={(check: boolean) => (checked = check)}
           checked={checked}
           indeterminate={false}
@@ -110,10 +106,7 @@ describe("FilterListCategory", () => {
       );
 
       expect(screen.getByText("Grade filters")).toBeInTheDocument();
-      /* TODO: should not need selector when fixed aria-label on expand/collapse FilterListExpand.tsx:90 */
-      await user.click(
-        screen.getByLabelText("Grade filters", { selector: "input" }),
-      );
+      await user.click(screen.getByLabelText("Grade filters"));
       expect(checked).toBeTruthy();
     });
   });
