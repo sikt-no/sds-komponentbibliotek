@@ -106,7 +106,9 @@ describe("FilterListCategory", () => {
       );
 
       expect(screen.getByText("Grade filters")).toBeInTheDocument();
-      await user.click(screen.getByLabelText("Grade filters"));
+      await user.click(
+        screen.getByLabelText("Grade filters", { selector: "input" }),
+      );
       expect(checked).toBeTruthy();
     });
   });

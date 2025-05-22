@@ -1,7 +1,7 @@
 import { Button } from "@sikt/sds-button";
 import { ExpandShowIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
-import { ReactNode, useState } from "react";
+import { ReactNode, useId, useState } from "react";
 import "./filter-list-expand.pcss";
 
 interface FilterListExpandProps {
@@ -21,6 +21,7 @@ export function FilterListExpand({
   ariaLabelExpandToggle,
   children,
 }: FilterListExpandProps) {
+  const id = useId();
   const [expanded, setExpanded] = useState(initialExpanded);
 
   const onToggle = () => {
@@ -55,18 +56,20 @@ export function FilterListExpand({
     <div className="sds-filter-list-expand">
       {clickableHeader ? (
         <div
+          className="sds-filter-list-expand__header sds-filter-list-expand__header-clickable"
           onClick={handleToggleByClick}
           onKeyDown={handleToggleByKeyDown}
           tabIndex={0}
           role="button"
-          className="sds-filter-list-expand__header sds-filter-list-expand__header-clickable"
-          aria-expanded={!!expanded}
+          id={`${id}-title`}
+          aria-expanded={expanded}
+          aria-controls={`${id}-content`}
         >
           {header}
           <div className="sds-filter-list-expand--icon-container">{icon}</div>
         </div>
       ) : (
-        <div className="sds-filter-list-expand__header">
+        <div className="sds-filter-list-expand__header" id={`${id}-title`}>
           {header}
           <Button
             variant="transparent"
@@ -75,6 +78,7 @@ export function FilterListExpand({
             iconVariant="only"
             onClick={handleToggleByClick}
             aria-expanded={expanded}
+            aria-controls={`${id}-content`}
           >
             {ariaLabelExpandToggle}
           </Button>
