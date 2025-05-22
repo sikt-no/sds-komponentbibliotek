@@ -55,7 +55,7 @@ test.describe("FilterList", () => {
 
     test("FilterListIcon should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--icon-aria-label-example",
+        "/iframe.html?viewMode=story&id=components-filterlist--icon-example",
       );
       await page.locator(componentSelector).waitFor();
       const accessibilityScanResults = await new AxeBuilder({ page })
@@ -97,7 +97,7 @@ test.describe("FilterList", () => {
 
     test("FilterListIcon should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--icon-aria-label-example",
+        "/iframe.html?viewMode=story&id=components-filterlist--icon-example",
       );
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });

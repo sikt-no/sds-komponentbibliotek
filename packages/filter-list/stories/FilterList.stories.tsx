@@ -241,7 +241,7 @@ export const CategoryExample: {
   },
 };
 
-export const IconAriaLabelExample: { render: () => React.JSX.Element } = {
+export const IconExample: { render: () => React.JSX.Element } = {
   render: () => {
     return (
       <FilterList key={0} className="sds-filter-list-max-width">

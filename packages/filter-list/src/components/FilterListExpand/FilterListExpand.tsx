@@ -50,15 +50,7 @@ export function FilterListExpand({
     <ExpandShowIcon
       className={clsx(
         "sds-filter-list-expand__icon",
-
-        expanded &&
-          (animate
-            ? "sds-filter-list-expand__icon--open"
-            : "sds-filter-list-expand__icon--open-no-anim"),
-        !expanded &&
-          (animate
-            ? "sds-filter-list-expand__icon--closed"
-            : "sds-filter-list-expand__icon--closed-no-anim"),
+        expanded && "sds-filter-list-expand__icon--expanded",
       )}
     />
   );
@@ -81,20 +73,18 @@ export function FilterListExpand({
       ) : (
         <div className="sds-filter-list-expand__header">
           {header}
-          <div className="sds-filter-list-expand--button-container">
-            <Button
-              onClick={handleToggleByClick}
-              title={buttonTitle}
-              aria-expanded={expanded}
-              aria-label={ariaLabelExpandToggle}
-              icon={icon as ReactNode}
-              iconVariant="only"
-              size="small"
-              variant="transparent"
-            >
-              {buttonTitle}
-            </Button>
-          </div>
+          <Button
+            variant="transparent"
+            size="small"
+            icon={icon}
+            iconVariant="only"
+            onClick={handleToggleByClick}
+            title={buttonTitle}
+            aria-expanded={expanded}
+            aria-label={ariaLabelExpandToggle}
+          >
+            {buttonTitle}
+          </Button>
         </div>
       )}
 

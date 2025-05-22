@@ -26,61 +26,21 @@
     }
   }
 
-  &--button-container,
   &--icon-container {
     align-items: center;
     display: flex;
-    justify-content: center;
-  }
-
-  &--icon-container {
     font-size: var(--sds-typography-fontsize-700);
+    justify-content: center;
     width: var(--sds-typography-fontsize-900);
     height: var(--sds-typography-fontsize-900);
   }
 
   &__icon {
-    &--closed-no-anim,
-    &--closed {
-      rotate: 0deg;
-    }
+    transition: rotate var(--sds-effect-animation-duration-medium)
+      var(--sds-effect-animation-easing-default);
 
-    &--open-no-anim,
-    &--open {
+    &--expanded {
       rotate: 180deg;
-    }
-
-    &--closed,
-    &--open {
-      animation: var(--sds-effect-animation-duration-medium) forwards;
-    }
-
-    &--closed {
-      animation-name: icon-close-keyframes;
-    }
-
-    &--open {
-      animation-name: icon-open-keyframes;
-    }
-
-    @keyframes icon-close-keyframes {
-      from {
-        rotate: 180deg;
-      }
-
-      to {
-        rotate: 0deg;
-      }
-    }
-
-    @keyframes icon-open-keyframes {
-      from {
-        rotate: 0deg;
-      }
-
-      to {
-        rotate: 180deg;
-      }
     }
   }
 
