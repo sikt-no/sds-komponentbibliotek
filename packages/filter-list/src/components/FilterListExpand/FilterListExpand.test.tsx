@@ -37,16 +37,12 @@ describe("FilterListExpand", () => {
       );
 
       expect(screen.getByText("Expand header")).toBeInTheDocument();
-      expect(screen.queryByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--closed",
-      );
+      expect(screen.queryByText("Content")).toHaveAttribute("hidden");
 
       expect(openState).toBeFalsy();
       await user.click(screen.getByLabelText("Expand toggle"));
       expect(openState).toBeTruthy();
-      expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--open",
-      );
+      expect(screen.getByText("Content")).not.toHaveAttribute("hidden");
     });
 
     it("should render content", async () => {
@@ -67,15 +63,11 @@ describe("FilterListExpand", () => {
       );
       expect(screen.getByText("Expand header")).toBeInTheDocument();
       expect(screen.getByText("Content")).toBeInTheDocument();
-      expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--open",
-      );
+      expect(screen.getByText("Content")).not.toHaveAttribute("hidden");
       expect(openState).toBeTruthy();
       await user.click(screen.getByLabelText("Expand toggle"));
       expect(openState).toBeFalsy();
-      expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--closed",
-      );
+      expect(screen.getByText("Content")).toHaveAttribute("hidden");
     });
 
     it("should have clickable header", async () => {
@@ -104,17 +96,13 @@ describe("FilterListExpand", () => {
           "sds-filter-list-expand--icon-container",
         ).length,
       ).toBe(1);
-      expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--closed",
-      );
+      expect(screen.getByText("Content")).toHaveAttribute("hidden");
 
       expect(openState).toBeFalsy();
       await user.click(screen.getByText("Expand header"));
       expect(openState).toBeTruthy();
 
-      expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--open",
-      );
+      expect(screen.getByText("Content")).not.toHaveAttribute("hidden");
       expect(screen.getByText("Content")).toBeInTheDocument();
     });
 
@@ -139,16 +127,12 @@ describe("FilterListExpand", () => {
           .length,
       ).toBe(1);
       expect(screen.getByLabelText("Expand toggle")).toBeInTheDocument();
-      expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--closed",
-      );
+      expect(screen.getByText("Content")).toHaveAttribute("hidden");
       expect(openState).toBeFalsy();
       await user.click(screen.getByLabelText("Expand toggle"));
 
       expect(openState).toBeTruthy();
-      expect(screen.getByText("Content")).toHaveClass(
-        "sds-filter-list-expand__content sds-filter-list-expand__content--open",
-      );
+      expect(screen.getByText("Content")).not.toHaveAttribute("hidden");
       expect(screen.getByText("Content")).toBeInTheDocument();
     });
 

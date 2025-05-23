@@ -88,16 +88,17 @@ export function FilterListExpand({
       <div
         className={clsx(
           "sds-filter-list-expand__content",
-          expanded
-            ? "sds-filter-list-expand__content--open"
-            : "sds-filter-list-expand__content--closed",
+          expanded && "sds-filter-list-expand__content--open",
         )}
-        role="region"
-        id={`${id}-content`}
-        aria-labelledby={`${id}-title`}
-        hidden={!expanded}
       >
-        {children}
+        <div
+          role="region"
+          id={`${id}-content`}
+          aria-labelledby={`${id}-title`}
+          hidden={!expanded}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
