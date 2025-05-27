@@ -40,6 +40,25 @@ All notable changes to this project will be documented in this file. See [commit
     - `--sds-typography-body-lineheight-*` replaced by `--sds-typography-body-*-lineheight`
     - `--sds-typography-heading-*` replaced by `--sds-typography-{editorial,application}-headline-*`
 
+#### Migration
+
+| Old                               | New                                          |
+| --------------------------------- | -------------------------------------------- |
+| `<Heading variant="huge" />`      | `<Heading variant="editorial" size="xxl" />` |
+| `<Heading variant="xlarge" />`    | `<Heading variant="editorial" size="xl" />`  |
+| `<Heading variant="large" />`     | `<Heading variant="editorial" size="l" />`   |
+|                                   | `<Heading variant="editorial" size="m" />`   |
+| `<Heading variant="medium" />`    | `<Heading variant="editorial" size="s" />`   |
+| `<Heading variant="small" />`     | `<Heading variant="editorial" size="xs" />`  |
+| `<Heading variant="paragraph" />` | `<Heading variant="editorial" size="xxs" />` |
+| `<Heading variant="overline" />`  | `<Paragraph variant="overline" />`           |
+| `<Paragraph variant="lead" />`    | `<Paragraph variant="body" size="l" />`      |
+| `<Paragraph variant="large" />`   | `<Paragraph variant="body" size="l" />`      |
+| `<Paragraph variant="regular" />` | `<Paragraph variant="body" />`               |
+| `<Paragraph variant="small" />`   | `<Paragraph variant="body" size="s" />`      |
+|                                   | `<Paragraph variant="label" size="l" />`     |
+|                                   | `<Paragraph variant="label" />`              |
+
 ### Features
 
 - remove view-transitions when prefers reduced motion ([afc7624](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/afc76248cd235ebad6f93a90b1b3e17399339883))
