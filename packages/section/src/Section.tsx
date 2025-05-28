@@ -1,5 +1,5 @@
 import { clsx } from "clsx/lite";
-import { ElementType, HTMLAttributes, ReactNode } from "react";
+import { ElementType, HTMLAttributes, ReactNode, useId } from "react";
 import "./section.pcss";
 
 export interface SectionProps extends HTMLAttributes<HTMLElement> {
@@ -18,12 +18,20 @@ export const Section = ({
   callToAction,
   ...rest
 }: SectionProps) => {
+  const id = useId();
   const H: ElementType = headingLevel;
 
   return (
-    <section className={clsx("sds-section", className)} {...rest}>
+    <section
+      className={clsx("sds-section", className)}
+      aria-labelledby={id}
+      {...rest}
+    >
       <header className="sds-section__header">
-        <H className="sds-section__heading sds-typography-editorial-headline--s">
+        <H
+          id={id}
+          className="sds-section__heading sds-typography-editorial-headline--s"
+        >
           {headingText}
         </H>
         {callToAction && <div className="sds-section__cta">{callToAction}</div>}

@@ -1,4 +1,5 @@
 import type { ReactNode, CSSProperties } from "react";
+import { useId } from "react";
 import styles from "./headline-card.module.css";
 
 export const HeadlineCard = ({
@@ -10,9 +11,13 @@ export const HeadlineCard = ({
   children: ReactNode;
   style: CSSProperties;
 }) => {
+  const id = useId();
+
   return (
-    <section className={styles.card}>
-      <h3 style={style}>{heading}</h3>
+    <section className={styles.card} aria-labelledby={id}>
+      <h3 id={id} style={style}>
+        {heading}
+      </h3>
       {children}
     </section>
   );

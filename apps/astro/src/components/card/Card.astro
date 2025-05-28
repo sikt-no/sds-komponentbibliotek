@@ -1,12 +1,17 @@
 ---
 const { className } = Astro.props;
+const id = Math.random().toString(36);
 ---
 
-<section class:list={["card", className]}>
+<section class:list={["card", className]} aria-labelledby={id}>
   <slot name="image" />
-  <slot name="heading" />
-  <slot />
-  <slot name="call-to-action" />
+  <div class="content">
+    <div id={id}>
+      <slot name="heading" />
+    </div>
+    <slot />
+    <slot name="call-to-action" />
+  </div>
 </section>
 
 <style>
@@ -22,6 +27,12 @@ const { className } = Astro.props;
       /* TODO: class on slot */
       border-radius: 16px;
     }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-padding-medium);
   }
 
   .reverse {

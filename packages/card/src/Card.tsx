@@ -1,5 +1,5 @@
 import { clsx } from "clsx/lite";
-import { ElementType, HTMLAttributes, ReactNode } from "react";
+import { ElementType, HTMLAttributes, ReactNode, useId } from "react";
 import "./card.pcss";
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
@@ -24,16 +24,23 @@ export const Card = ({
   className,
   ...rest
 }: CardProps) => {
+  const id = useId();
   const H: ElementType = headingLevel;
 
   return (
-    <section className={clsx("sds-card", className)} {...rest}>
+    <section
+      className={clsx("sds-card", className)}
+      aria-labelledby={id}
+      {...rest}
+    >
       {image && <div className="sds-card__image">{image}</div>}
       <div className="sds-card__content">
         {overlineText && (
           <span className="sds-typography-overline">{overlineText}</span>
         )}
-        <H className="sds-typography-editorial-headline--xs">{headingText}</H>
+        <H id={id} className="sds-typography-editorial-headline--xs">
+          {headingText}
+        </H>
         {leadText && <span className="sds-typography-body--l">{leadText}</span>}
         {children && <div className="sds-typography-body">{children}</div>}
         {callToAction && <div className="sds-card__cta">{callToAction}</div>}
