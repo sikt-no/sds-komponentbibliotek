@@ -40,7 +40,7 @@
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
     "autoprefixer": "^10.4.21",
-    "postcss-custom-media": "^11.0.5",
+    "postcss-custom-media": "^11.0.6",
     "prettier-plugin-astro": "^0.14.1",
     "style-dictionary": "^5.0.0",
     "vite-plugin-svgr": "^4.3.0"
