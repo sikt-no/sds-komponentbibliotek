@@ -18,14 +18,14 @@ type Story = StoryObj<IconProps | LogoIconsProps>;
 
 export const ArrowRight: Story = {
   render: (args: IconProps) => (
-    <NavigateToNextIcon {...args} style={{ fontSize: "calc(32rem / 16)" }} />
+    <NavigateToNextIcon {...args} style={{ fontSize: "2rem" }} />
   ),
   args: {},
 };
 
 export const Spinner: Story = {
   render: (args: IconProps) => (
-    <SpinnerIcon {...args} style={{ fontSize: "calc(32rem / 16)" }} />
+    <SpinnerIcon {...args} style={{ fontSize: "2rem" }} />
   ),
   args: {},
 };
@@ -40,7 +40,7 @@ export const LinkedInLogo: Story = {
   render: (args: LogoIconsProps) => (
     <a href="#linkedin">
       Linkedin
-      <LinkedInLogoIcon style={{ fontSize: "calc(32rem / 16)" }} {...args} />
+      <LinkedInLogoIcon style={{ fontSize: "2rem" }} {...args} />
     </a>
   ),
 };
