@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@3.1.0...@sikt/sds-section@3.1.1) (2025-06-01)
+
+### Bug Fixes
+
+- add aria-label to section ([56f67f3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/56f67f39603dbb8f1a13f20a7378472b0bbafa00))
+
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@3.0.1...@sikt/sds-section@3.1.0) (2025-05-21)
 
 ### Features
