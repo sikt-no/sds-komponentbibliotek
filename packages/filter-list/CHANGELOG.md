@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.4.0...@sikt/sds-filter-list@0.4.1) (2025-06-01)
+
+### Bug Fixes
+
+- change transition speed ([48a677c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/48a677cb94776395a0c7ea6ed1efd2fb81bbb326))
+- **filter-list:** expand animation ([1b3bd43](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1b3bd430f598ed851db7839e602da0de02ebd43c))
+
 ## [0.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.3.0...@sikt/sds-filter-list@0.4.0) (2025-05-22)
 
 ### ⚠ BREAKING CHANGES
