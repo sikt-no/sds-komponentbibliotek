@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.1.0...@sikt/sds-tabs@3.2.0) (2025-06-02)
+
+### Features
+
+- **tabs:** change hover color to neutral ([1c81bdb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1c81bdb438230613dcf1da0bcfd6966adde22864))
+
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.0.4...@sikt/sds-tabs@3.1.0) (2025-05-20)
 
 ### Features
