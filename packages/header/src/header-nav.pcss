@@ -54,6 +54,13 @@
     }
 
     @media (--sds-base-breakpoint-tablet) {
+      --tab-hover-background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+      --tab-active-background-color: var(
+        --sds-color-interaction-primary-transparent-pressed
+      );
+
       /* TODO: import this from Tabs component */
       align-items: center;
       border: 0 none;
@@ -82,15 +89,11 @@
 
       &:hover,
       &:focus-visible {
-        background-color: var(
-          --sds-color-interaction-primary-transparent-highlight
-        );
+        background-color: var(--tab-hover-background-color);
       }
 
       &:active {
-        background-color: var(
-          --sds-color-interaction-primary-transparent-pressed
-        );
+        background-color: var(--tab-active-background-color);
         border-color: var(--sds-color-interaction-primary-strong-pressed);
       }
 
