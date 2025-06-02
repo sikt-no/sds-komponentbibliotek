@@ -1,5 +1,11 @@
 .sds-tabs {
   --tab-list-border-bottom: var(--sds-space-border-weight-regular);
+  --tab-hover-background-color: var(
+    --sds-color-interaction-neutral-transparent-highlight
+  );
+  --tab-active-background-color: var(
+    --sds-color-interaction-neutral-transparent-pressed
+  );
 
   &__tab-list {
     border-bottom: var(--tab-list-border-bottom) solid
@@ -38,15 +44,11 @@
 
     &:hover,
     &:focus-visible {
-      background-color: var(
-        --sds-color-interaction-primary-transparent-highlight
-      );
+      background-color: var(--tab-hover-background-color);
     }
 
     &:active {
-      background-color: var(
-        --sds-color-interaction-primary-transparent-pressed
-      );
+      background-color: var(--tab-active-background-color);
       border-color: var(--sds-color-interaction-primary-strong-pressed);
     }
 
