@@ -21,8 +21,6 @@ const config: StorybookConfig = {
     reactDocgen: "react-docgen-typescript",
   },
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
     {
       name: "@storybook/addon-docs",
       options: { transcludeMarkdown: true },

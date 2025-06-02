@@ -6,8 +6,8 @@ import {
   TableBody,
   TableCell,
 } from "@sikt/sds-table";
-import { useArgs } from "@storybook/preview-api";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { useArgs } from "storybook/preview-api";
 import { Select } from "../index";
 
 const meta = {

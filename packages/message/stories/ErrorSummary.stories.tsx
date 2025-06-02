@@ -1,6 +1,6 @@
 import { Link } from "@sikt/sds-core";
 import { UnorderedList, ListItem } from "@sikt/sds-list";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { ErrorSummary as Component, ErrorSummaryProps } from "../index";
 
 const meta: Meta = {

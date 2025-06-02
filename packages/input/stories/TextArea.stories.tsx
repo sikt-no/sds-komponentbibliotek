@@ -1,5 +1,5 @@
 import { InfoIcon } from "@sikt/sds-icons";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { TextAreaProps, TextArea } from "../index";
 
 const meta: Meta = {

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { NavigateToNextIcon, NavigateToPreviousIcon } from "../../icons/index";
 import { Button, ButtonGroup, ButtonGroupProps } from "../index";
 

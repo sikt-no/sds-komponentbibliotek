@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-webpack5";
 import "../../../packages/core/src/index.pcss";
 import "../../../packages/logo/src/logo.pcss";
 import "../../../packages/icons/src/icon.pcss";

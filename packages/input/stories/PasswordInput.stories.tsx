@@ -1,5 +1,5 @@
 import { UserProfileIcon } from "@sikt/sds-icons";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { InputProps, PasswordInput } from "../index";
 
 const meta: Meta = {

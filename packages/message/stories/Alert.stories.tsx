@@ -1,5 +1,5 @@
 import { NavigateToNextIcon } from "@sikt/sds-icons";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Alert as Component, AlertProps, MessageButton } from "../index";
 
 const meta: Meta = {

@@ -1,5 +1,5 @@
 import { LocationIcon } from "@sikt/sds-icons";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import React, { useState } from "react";
 import { InputProps, SearchInput } from "../index";
 

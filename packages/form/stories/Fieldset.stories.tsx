@@ -6,7 +6,7 @@ import {
   TableBody,
   TableCell,
 } from "@sikt/sds-table";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { CheckboxInput } from "../../checkbox";
 import { Fieldset } from "../index";
 

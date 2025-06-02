@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Badge } from "../../badge/index";
 import { InfoIcon } from "../../icons/index";
 import { TabLink, TabLinkProps } from "../index";

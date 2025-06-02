@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { ChangeEvent, useEffect, useState } from "react";
 import { ToggleButton, ToggleButtonProps } from "../index";
 

@@ -1,6 +1,6 @@
 import { InfoIcon } from "@sikt/sds-icons";
 import { Logo } from "@sikt/sds-logo";
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-webpack5";
 import { CSSProperties, useState } from "react";
 import {
   Drawer,

@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableBody,
 } from "@sikt/sds-table";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { InputDatepicker } from "../index";
 
 const meta = {

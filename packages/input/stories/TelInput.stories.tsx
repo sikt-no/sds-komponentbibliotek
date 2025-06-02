@@ -1,5 +1,5 @@
 import { AdjustSettingsIcon } from "@sikt/sds-icons";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { InputProps, TelInput } from "../index";
 
 const meta: Meta = {
