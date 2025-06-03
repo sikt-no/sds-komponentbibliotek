@@ -45,6 +45,6 @@
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
-    "@sikt/sds-tokens": "^3.0.0"
+    "@sikt/sds-tokens": "^5.0.0"
   }
 }
