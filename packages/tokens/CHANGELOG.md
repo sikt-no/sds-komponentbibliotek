@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@4.2.1...@sikt/sds-tokens@5.0.0) (2025-06-03)
+
+### ⚠ BREAKING CHANGES
+
+- **js:** dtcg format, value changed to $value in object
+
+### Bug Fixes
+
+- **js:** dtcg format, value changed to $value in object ([9dd05a8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9dd05a87aa60dbed1215f0ebb0c14e435cfbd0e9))
+- **tailwind:** new typography tokens in config ([c68236b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c68236b284191c627e3636b5edf28c966c274f2b))
+
 ## [4.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@4.2.0...@sikt/sds-tokens@4.2.1) (2025-05-15)
 
 ### Bug Fixes
