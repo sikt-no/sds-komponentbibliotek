@@ -1,4 +1,4 @@
-import { Heading3 } from "@sikt/sds-core";
+import { Paragraph } from "@sikt/sds-core";
 import { Section } from "@sikt/sds-section";
 import type { Contributors as ContributorsType } from "../../assets/data/contributors.ts";
 import { Contributor } from "./Contributor";
@@ -20,7 +20,9 @@ export const ContributorList = ({
           return (
             <div key={group[0].team} className="ds-content-max-width">
               {contributors.length > 1 && (
-                <Heading3 variant="overline">{group[0].team}</Heading3>
+                <Paragraph variant="overline" as="h3">
+                  {group[0].team}
+                </Paragraph>
               )}
               <div className={styles.group}>
                 {group.map((contributor) => {
