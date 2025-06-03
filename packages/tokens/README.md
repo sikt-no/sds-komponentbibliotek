@@ -23,7 +23,7 @@ npm i -s @sikt/sds-tokens
 ```js
 import * as tokens from "@sikt/sds-tokens";
 
-<Button style={{ color: tokens.default.color.brand.primary.strong.value }}>
+<Button style={{ color: tokens.default.color.brand.primary.strong.$value }}>
   Hello, World!
 </Button>;
 ```
@@ -65,7 +65,3 @@ When there is no corresponding token in the non-default version the default shou
 Created using [Style Dictionary](https://github.com/amzn/style-dictionary) and exported as CSS & JavaScript variables.
 
 **Note** Do not edit these directly in the `/dist` output directory but rather in the `/src` source directory.
-
-**Note** Style Dictionary tokens follow a CTI (Category/Type/Item) naming pattern that may affect their outcome by what transforms are applied.
-
-_TODO: JavaScript relative size variables. How are these used in non-CSS environments?_
