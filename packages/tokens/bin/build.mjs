@@ -132,18 +132,40 @@ StyleDictionary.registerFormat({
     const typographyTokens = dictionary.allTokens.filter(
       (prop) => prop.attributes.category === "typography",
     );
-    const fontSizeTokens = typographyTokens.filter(
+    const fontSizeTokensBase = typographyTokens.filter(
       (prop) =>
         prop.attributes.category === "typography" &&
-        prop.attributes.item.includes("fontsize"),
+        prop.attributes.type?.includes("fontsize"),
     );
-    const lineHeightTokens = typographyTokens.filter(
+    const fontSizeTokensSemantic = typographyTokens.filter(
       (prop) =>
         prop.attributes.category === "typography" &&
-        prop.attributes.item.includes("lineheight"),
+        prop.name.endsWith("fontsize"),
     );
+    const fontSizeTokens = [...fontSizeTokensBase, ...fontSizeTokensSemantic];
+    const lineHeightTokensBase = typographyTokens.filter(
+      (prop) =>
+        prop.attributes.category === "typography" &&
+        prop.attributes.type?.includes("lineheight"),
+    );
+    const lineHeightTokensSemantic = typographyTokens.filter(
+      (prop) =>
+        prop.attributes.category === "typography" &&
+        prop.name.endsWith("lineheight"),
+    );
+    const lineHeightTokens = [
+      ...lineHeightTokensBase,
+      ...lineHeightTokensSemantic,
+    ];
     const fontWeightTokens = typographyTokens.filter(
-      (prop) => prop.attributes.type === "weight",
+      (prop) =>
+        prop.attributes.category === "typography" &&
+        prop.attributes.type?.includes("fontweight"),
+    );
+    const letterSpacingTokens = typographyTokens.filter(
+      (prop) =>
+        prop.attributes.category === "typography" &&
+        prop.attributes.type?.includes("letterspacing"),
     );
     const breakpointTokens = dictionary.allTokens.filter(
       (prop) => prop.attributes.type === "breakpoint",
@@ -169,11 +191,14 @@ ${colorTokens.map((prop) => `  --${prop.name.replace(`${prefix}-`, "")}: var(--$
   --font-mono: monospace;
 
   --text-*: initial;
-${fontSizeTokens.map((prop) => `  --text-${prop.attributes.type}-${prop.attributes.item.replace("fontsize-", "")}: var(--${prop.name});`).join("\n")}
-${lineHeightTokens.map((prop) => `  --text-${prop.attributes.type}-${prop.attributes.item.replace("lineheight-", "")}--line-height: var(--${prop.name});`).join("\n")}
+${fontSizeTokens.map((prop) => `  --text${prop.name.replace("sds-typography", "").replace("-fontsize", "")}: var(--${prop.name});`).join("\n")}
+${lineHeightTokens.map((prop) => `  --text${prop.name.replace("sds-typography", "").replace("-lineheight", "")}--line-height: var(--${prop.name});`).join("\n")}
 
   --font-weight-*: initial;
 ${fontWeightTokens.map((prop) => `  --font-weight-${prop.attributes.item}: var(--${prop.name});`).join("\n")}
+
+  --tracking-*: initial;
+${letterSpacingTokens.map((prop) => `  --tracking-${prop.attributes.item}: var(--${prop.name});`).join("\n")}
 
   --breakpoint-*: initial;
 ${breakpointTokens.map((prop) => `  --breakpoint-${prop.attributes.item}: ${prop.$value};`).join("\n")}
