@@ -13,7 +13,6 @@ type Story = StoryObj<ParagraphProps>;
 export const Regular: Story = {
   args: {
     children: "Paragraph",
-    variant: "regular",
   },
 };
 
@@ -24,14 +23,21 @@ export const AsSpan: Story = {
   },
 };
 
-export const SecondaryColor: Story = {
+export const AsHeading3: Story = {
+  args: {
+    ...Regular.args,
+    as: "h3",
+  },
+};
+
+export const ColorSecondary: Story = {
   args: {
     ...Regular.args,
     color: "secondary",
   },
 };
 
-export const CriticalColor: Story = {
+export const ColorCritical: Story = {
   args: {
     ...Regular.args,
     color: "critical",

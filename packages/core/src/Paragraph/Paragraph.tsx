@@ -29,11 +29,17 @@ export interface BodyProps extends Omit<BaseParagraphProps, "variant"> {
   size?: "s" | "default" | "l";
 }
 
-export interface ParagraphProps
+export interface DeprecatedParagraphProps
   extends Omit<BaseParagraphProps, "variant" | "size"> {
   variant?: "small" | "regular" | "large" | "lead";
   size?: undefined;
 }
+
+export type ParagraphProps =
+  | DeprecatedParagraphProps
+  | LabelProps
+  | OverlineProps
+  | BodyProps;
 
 export const Paragraph = ({
   children,
@@ -44,7 +50,7 @@ export const Paragraph = ({
   as = "p",
   color = "primary",
   ...rest
-}: ParagraphProps | LabelProps | OverlineProps | BodyProps) => {
+}: ParagraphProps) => {
   const Component: ElementType = as;
   const isDeprecated = !["body", "label", "overline"].includes(variant);
 
