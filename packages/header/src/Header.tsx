@@ -32,7 +32,7 @@ export const Header = ({
   ...rest
 }: HeaderProps) => {
   const logoElement = logoText ? (
-    <span className="sds-header__logo-text sds-typography-body--large">
+    <span className="sds-header__logo-text sds-typography-body--l">
       {logoText}
     </span>
   ) : (
