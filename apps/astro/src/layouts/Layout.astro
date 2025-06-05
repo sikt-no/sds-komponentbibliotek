@@ -102,3 +102,18 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
     min-height: 100vh;
   }
 </style>
+
+<script>
+  import { onCLS, onINP, onLCP } from "web-vitals";
+
+  const sendToAnalytics = ({ name, delta, value, id }) => {
+    if (!_paq) {
+      return;
+    }
+    _paq.push(["trackEvent", name, id, delta, value]);
+  };
+
+  onCLS(sendToAnalytics);
+  onINP(sendToAnalytics);
+  onLCP(sendToAnalytics);
+</script>
