@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@1.2.0...@sikt/sds-message@1.2.1) (2025-06-06)
+
+### Bug Fixes
+
+- **message:** icon element width when multiple lines ([369d007](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/369d007d80b550fa567b44b8969ecce73c51ddcd))
+
 ## [1.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@1.1.0...@sikt/sds-message@1.2.0) (2025-05-21)
 
 ### Features
