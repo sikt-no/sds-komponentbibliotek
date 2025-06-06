@@ -4,6 +4,7 @@ import {
   NutIcon,
   PaletteIcon,
   SquaresFourIcon,
+  GridFourIcon,
   TextAaIcon,
   WheelchairIcon,
 } from "@phosphor-icons/react/dist/ssr";
@@ -66,6 +67,7 @@ const utviklingMenu: MenuItemType[] = [
   },
   {
     name: "Mønstre",
+    icon: <GridFourIcon className="sds-icon" aria-hidden />,
   },
 ];
 
