@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/PageLayout.astro";
-import { GitlabButton, FigmaButton, SlackButton } from "../components";
+import { FigmaButton, GitlabButton, SlackButton } from "../components";
 import Card from "../components/card/Card.astro";
-import { Heading2 } from "@sikt/sds-core";
+import { Heading2, Link, ScreenReaderOnly } from "@sikt/sds-core";
 import { ButtonGroup, ButtonLink, Button } from "@sikt/sds-button";
 import { Picture } from "astro:assets";
 import heroImage from "../assets/images/hero.png";
@@ -28,8 +28,8 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
         <Heading2 size="xl" slot="heading">Lær, bruk og bidra</Heading2>
         <p>
           Velkommen til Sikts designsystem! Dette er en sammensetning av
-          komponenter og retningslinjer du kan bruke når du designer og utvikler
-          digitale løsninger og tjenester.
+          <Link href={storybookUrl}>komponenter</Link> og retningslinjer du kan bruke
+          når du designer og utvikler digitale løsninger og tjenester.
         </p>
       </Card>
     </div>
@@ -89,6 +89,43 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
           <FigmaButton />
           <GitlabButton />
           <SlackButton variant="strong" />
+        </ButtonGroup>
+      </Card>
+    </div>
+
+    <div class:list={["section", "section-double"]}>
+      <Card>
+        <Heading2 slot="heading">Fagnettverk for frontendutvikling</Heading2>
+        <p>
+          Ett nettverk for å bygge kompetanse og synergi på tvers av Sikt sine
+          frontendere.
+        </p>
+
+        <ButtonGroup variant="left" slot="call-to-action">
+          <ButtonLink
+            variant="strong"
+            href="https://over.sikt.no/fagnettverk/52eca689-219e-4b98-8abb-a0f6ad8b527f"
+          >
+            Fagnettverk<ScreenReaderOnly>for frontendutvikling</ScreenReaderOnly
+            >
+          </ButtonLink>
+        </ButtonGroup>
+      </Card>
+
+      <Card>
+        <Heading2 slot="heading">Fagnettverk for tilgjengelighet</Heading2>
+        <p>
+          Vi lærer om universell utforming av nettsteder: inkluderende design,
+          sematisk HTML, ARIA, testing, tilgjengelighetserklæring,
+          funksjonsnedsettelser, skjermlesere og annen hjelpemiddelteknologi.
+        </p>
+        <ButtonGroup variant="left" slot="call-to-action">
+          <ButtonLink
+            variant="strong"
+            href="https://over.sikt.no/fagnettverk/bde65d71-b64f-4724-879a-889364ada9a2"
+          >
+            Fagnettverk<ScreenReaderOnly>for tilgjengelighet</ScreenReaderOnly>
+          </ButtonLink>
         </ButtonGroup>
       </Card>
     </div>
