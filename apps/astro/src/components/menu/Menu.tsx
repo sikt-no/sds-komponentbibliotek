@@ -7,87 +7,127 @@ import {
   TextAaIcon,
   WheelchairIcon,
 } from "@phosphor-icons/react/dist/ssr";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { Nav, NavButtonLink } from "../";
 
-export const Menu = ({ pathname }: { pathname: string }) => {
-  const tokensHref = "/grunnleggende/designtokens/";
-  const sizesHref = "/grunnleggende/storrelse-og-layout/";
-  const colorsHref = "/grunnleggende/farger/";
-  const typographyHref = "/grunnleggende/typografi/";
-  const iconsHref = "/grunnleggende/ikoner/";
-  const a11yHref = "https://isikt.sharepoint.com/sites/Universellutforming";
-  const storybookUrl = `${import.meta.env.PUBLIC_STORYBOOK_URL}`;
+interface PathnameType {
+  pathname: string;
+}
 
+interface MenuItemType extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  name: string;
+  url?: string;
+  icon?: ReactNode;
+}
+
+const merkevareMenu: MenuItemType[] = [
+  { name: "Merkevarestrategi" },
+  { name: "Stil og tone" },
+];
+
+const visuellIdentitetMenu: MenuItemType[] = [
+  { name: "Fargepalett" },
+  { name: "Logoer" },
+  { name: "Typografi" },
+  { name: "Illustrasjoner" },
+  { name: "Bilder" },
+  { name: "Designelementer" },
+  { name: "Komposisjon" },
+];
+
+const utviklingMenu: MenuItemType[] = [
+  {
+    name: "Designtokens",
+    url: "/utvikling/designtokens",
+    icon: <NutIcon className="sds-icon" aria-hidden />,
+  },
+  {
+    name: "Størrelse og layout",
+    url: "/utvikling/storrelse-og-layout",
+    icon: <ArrowsInLineHorizontalIcon className="sds-icon" aria-hidden />,
+  },
+  {
+    name: "Fargesystem",
+    icon: <PaletteIcon className="sds-icon" aria-hidden />,
+  },
+  {
+    name: "Typografi",
+    url: "/utvikling/typografi",
+    icon: <TextAaIcon className="sds-icon" aria-hidden />,
+  },
+  {
+    name: "Ikonbibliotek",
+    icon: <DotsNineIcon className="sds-icon" aria-hidden />,
+  },
+  {
+    name: "Komponenter (Storybook)",
+    url: `${import.meta.env.PUBLIC_STORYBOOK_URL}`,
+    icon: <SquaresFourIcon className="sds-icon" aria-hidden />,
+  },
+  {
+    name: "Mønstre",
+  },
+];
+
+const tilgjengelighetMenu: MenuItemType[] = [
+  {
+    name: "Tilgjengelighet",
+    url: "https://isikt.sharepoint.com/sites/Universellutforming",
+    icon: <WheelchairIcon className="sds-icon" aria-hidden />,
+    target: "_blank",
+  },
+];
+
+const MenuItem = ({
+  name,
+  url,
+  icon,
+  pathname,
+  ...rest
+}: MenuItemType & PathnameType) => (
+  <li>
+    <NavButtonLink
+      icon={icon}
+      href={url}
+      aria-current={url === pathname && "page"}
+      {...rest}
+    >
+      {name}
+    </NavButtonLink>
+  </li>
+);
+
+export const Menu = ({ pathname }: PathnameType) => {
   return (
     <>
-      <Nav aria-label="Sidenavigasjon, Grunnleggende" heading="Grunnleggende">
-        <li>
-          <NavButtonLink
-            icon={<NutIcon className="sds-icon" aria-hidden />}
-            href={tokensHref}
-            aria-current={pathname === tokensHref && "page"}
-          >
-            Designtokens
-          </NavButtonLink>
-        </li>
-        <li>
-          <NavButtonLink
-            icon={
-              <ArrowsInLineHorizontalIcon className="sds-icon" aria-hidden />
-            }
-            href={sizesHref}
-            aria-current={pathname === sizesHref && "page"}
-          >
-            Størrelse og layout
-          </NavButtonLink>
-        </li>
-        <li>
-          <NavButtonLink
-            icon={<PaletteIcon className="sds-icon" aria-hidden />}
-            aria-current={pathname === colorsHref && "page"}
-          >
-            Fargesystem
-          </NavButtonLink>
-        </li>
-        <li>
-          <NavButtonLink
-            icon={<TextAaIcon className="sds-icon" aria-hidden />}
-            href={typographyHref}
-            aria-current={pathname === typographyHref && "page"}
-          >
-            Typografi
-          </NavButtonLink>
-        </li>
-        <li>
-          <NavButtonLink
-            icon={<DotsNineIcon className="sds-icon" aria-hidden />}
-            aria-current={pathname === iconsHref && "page"}
-          >
-            Ikonbibliotek
-          </NavButtonLink>
-        </li>
-        <li>
-          <NavButtonLink
-            icon={<WheelchairIcon className="sds-icon" aria-hidden />}
-            href={a11yHref}
-            aria-current={pathname === a11yHref && "page"}
-            target="_blank"
-          >
-            Tilgjengelighet
-          </NavButtonLink>
-        </li>
+      <Nav aria-label="Sidenavigasjon, Merkevare" heading="Merkevare">
+        {merkevareMenu.map((item) => (
+          <MenuItem key={item.name} {...item} pathname={pathname} />
+        ))}
       </Nav>
 
-      <Nav aria-label="Sidenavigasjon, Komponenter" heading="Komponenter">
-        <li>
-          <NavButtonLink
-            icon={<SquaresFourIcon className="sds-icon" aria-hidden />}
-            href={storybookUrl}
-            aria-current={pathname === storybookUrl && "page"}
-          >
-            Komponenter (Storybook)
-          </NavButtonLink>
-        </li>
+      <Nav
+        aria-label="Sidenavigasjon, Visuell identitet"
+        heading="Visuell identitet"
+      >
+        {visuellIdentitetMenu.map((item) => (
+          <MenuItem key={item.name} {...item} pathname={pathname} />
+        ))}
+      </Nav>
+
+      <Nav aria-label="Sidenavigasjon, Utvikling" heading="Utvikling">
+        {utviklingMenu.map((item) => (
+          <MenuItem key={item.name} {...item} pathname={pathname} />
+        ))}
+      </Nav>
+
+      <Nav
+        aria-label="Sidenavigasjon, Tilgjengelighet"
+        heading="Tilgjengelighet"
+      >
+        {tilgjengelighetMenu.map((item) => (
+          <MenuItem key={item.name} {...item} pathname={pathname} />
+        ))}
       </Nav>
     </>
   );

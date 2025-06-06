@@ -41,7 +41,7 @@ export const Contributors = () => {
   return (
     <>
       <ContributorList
-        heading="Teamet"
+        heading="Laget"
         contributors={team}
         showEasterEggs={showEasterEggs}
       />
