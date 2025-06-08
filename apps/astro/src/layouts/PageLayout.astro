@@ -9,13 +9,13 @@ const { title } = Astro.props;
 
 <Layout title={title}>
   <div class="page">
-    <div class="menu">
-      <Details className="menu-mobile" size="small" summary="Meny">
-        <Menu pathname={pathname} />
-      </Details>
-      <div class="menu-desktop">
+    <Details className="menu-mobile" size="small" summary="Meny">
+      <div class="menu">
         <Menu pathname={pathname} />
       </div>
+    </Details>
+    <div class:list={["menu", "menu-desktop"]}>
+      <Menu pathname={pathname} />
     </div>
     <div class="content">
       <div class="container">
@@ -60,7 +60,7 @@ const { title } = Astro.props;
     display: none;
 
     @media (--sds-base-breakpoint-desktop) {
-      display: block;
+      display: flex;
       padding: var(--sds-space-padding-large);
     }
   }
