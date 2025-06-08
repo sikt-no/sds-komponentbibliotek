@@ -59,7 +59,7 @@
       "groupName": "commitlint"
     },
     {
-      "matchPackagePatterns": ["eslint", "globals"],
+      "matchPackagePatterns": ["eslint", "eslint-plugin-jest", "globals"],
       "groupName": "eslint"
     },
     {
