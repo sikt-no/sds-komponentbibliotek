@@ -27,22 +27,22 @@ export const contributors: Contributors[] = [
     {
       name: "Kjartan",
       role: "Teknologi",
-      team: "Tind",
+      team: "Min kompetanse",
     },
     {
       name: "Sondre S.",
       role: "Teknologi",
-      team: "Tind",
+      team: "Min kompetanse",
     },
-    { name: "Erik", role: "Teknologi", team: "Tind" },
-    { name: "Vegard", role: "Teknologi", team: "Tind" },
-    { name: "Hilde", role: "Design", team: "Tind" },
-    { name: "Jakob", role: "Teknologi", team: "Tind" },
+    { name: "Erik", role: "Teknologi", team: "Min kompetanse" },
+    { name: "Vegard", role: "Teknologi", team: "Min kompetanse" },
+    { name: "Hilde", role: "Design", team: "Min kompetanse" },
+    { name: "Jakob", role: "Teknologi", team: "Min kompetanse" },
   ],
   [
-    { name: "Sigurd", role: "Teknologi", team: "Kudaf" },
-    { name: "Rolf Anders", role: "Design", team: "Kudaf" },
-    { name: "Glaysa", role: "Teknologi", team: "Kudaf" },
+    { name: "Sigurd", role: "Teknologi", team: "Kunnskapsdata" },
+    { name: "Rolf Anders", role: "Design", team: "Kunnskapsdata" },
+    { name: "Glaysa", role: "Teknologi", team: "Kunnskapsdata" },
   ],
   [
     { name: "Petter K.", role: "Teknologi", team: "Studieadmin." },
@@ -61,5 +61,5 @@ export const contributors: Contributors[] = [
     { name: "Solveig", role: "Teknologi", team: "Feide Kundeportal" },
     { name: "John-Magne", role: "Teknologi", team: "Feide Kundeportal" },
   ],
-  [{ name: "Deg", role: "Din rolle", team: "Ditt team" }],
+  [{ name: "Deg", role: "Din rolle", team: "Din produkt" }],
 ].reverse();
