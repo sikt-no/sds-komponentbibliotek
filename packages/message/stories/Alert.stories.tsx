@@ -15,6 +15,7 @@ type Story = StoryObj<AlertProps>;
 export const Alert: Story = {
   args: {
     children: "Message",
+    variant: "critical",
     callToAction: (
       <MessageButton icon={<NavigateToNextIcon />}>Action</MessageButton>
     ),

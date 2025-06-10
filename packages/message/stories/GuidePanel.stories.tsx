@@ -13,5 +13,6 @@ type Story = StoryObj<GuidePanelProps>;
 export const GuidePanel: Story = {
   args: {
     children: "Message",
+    variant: "info",
   },
 };

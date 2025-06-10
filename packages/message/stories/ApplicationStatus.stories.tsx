@@ -16,5 +16,6 @@ type Story = StoryObj<ApplicationStatusProps>;
 export const ApplicationStatus: Story = {
   args: {
     children: "Message",
+    variant: "info",
   },
 };

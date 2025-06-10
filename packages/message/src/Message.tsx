@@ -19,7 +19,7 @@ export type AlertVariant = Extract<MessageVariant, "success" | "critical">;
 
 export interface AlertProps extends MessageBaseProps {
   callToAction?: ReactNode;
-  variant?: AlertVariant;
+  variant: AlertVariant;
 }
 
 export type ApplicationStatusVariant = Extract<
@@ -29,15 +29,15 @@ export type ApplicationStatusVariant = Extract<
 
 export interface ApplicationStatusProps extends MessageBaseProps {
   callToAction?: ReactNode;
-  variant?: ApplicationStatusVariant;
+  variant: ApplicationStatusVariant;
 }
 
-export type ErrorSummaryProps = MessageBaseProps;
+export type ErrorSummaryProps = Omit<MessageBaseProps, "variant">;
 
 export type GuidePanelVariant = Extract<MessageVariant, "info" | "warning">;
 
 export interface GuidePanelProps extends MessageBaseProps {
-  variant?: Extract<MessageVariant, "info" | "warning">;
+  variant: Extract<MessageVariant, "info" | "warning">;
 }
 
 const Message = ({
@@ -79,7 +79,7 @@ const Message = ({
 };
 
 export const Alert = (props: AlertProps) => (
-  <Message role="alert" variant="critical" {...props} type="box" />
+  <Message role="alert" {...props} type="box" />
 );
 
 export const ApplicationStatus = ({
@@ -88,7 +88,6 @@ export const ApplicationStatus = ({
 }: ApplicationStatusProps) => (
   <Message
     role="status"
-    variant="info"
     {...props}
     type="bar"
     className={clsx("sds-message--application-status", className)}
@@ -100,5 +99,5 @@ export const ErrorSummary = (props: ErrorSummaryProps) => (
 );
 
 export const GuidePanel = (props: GuidePanelProps) => (
-  <Message variant="info" {...props} type="box" />
+  <Message {...props} type="box" />
 );
