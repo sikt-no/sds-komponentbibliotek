@@ -12,13 +12,14 @@ type Story = StoryObj<HelpTextProps>;
 
 export const Default: Story = {
   args: {
-    children: "Help text",
+    children: "Helpful text",
   },
 };
 
 export const WithError: Story = {
   args: {
     ...Default.args,
+    children: "Error: Message",
     error: true,
   },
 };

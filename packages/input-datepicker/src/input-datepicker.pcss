@@ -2,8 +2,6 @@
   position: relative;
 
   &__wrapper {
-    margin-top: var(--sds-space-padding-tiny);
-
     &:has(.sds-input-datepicker__input-segment:focus-visible) {
       outline: var(--sds-focus-outline);
     }
@@ -186,8 +184,13 @@
     }
   }
 
-  .sds-form__label,
   .sds-form__help-text {
-    padding-bottom: unset !important;
+    padding-top: unset !important;
   }
+
+  /* stylelint-disable selector-class-pattern */
+  .react-aria-Text:nth-child(1 of .react-aria-Text) {
+    padding-top: var(--sds-space-padding-tiny);
+  }
+  /* stylelint-enable selector-class-pattern */
 }

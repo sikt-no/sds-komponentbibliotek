@@ -130,3 +130,31 @@ export const WithAriaLabelledby = {
     );
   },
 } satisfies Story;
+
+export const HorizontalLayout = {
+  args: {
+    children: (
+      <div style={{ display: "flex" }}>
+        <RadioInput key={1} label="Radio 1" value="1" />
+        <RadioInput key={2} label="Radio 2" value="2" />
+        <RadioInput key={3} label="Radio 3" value="3" />
+      </div>
+    ),
+    legend: "Legend",
+  },
+  render: (args) => {
+    const [selected, setSelected] = useState("1");
+    return (
+      <RadioFieldset
+        {...args}
+        onChange={(event) => {
+          console.log(event.target.value);
+          setSelected(event.target.value);
+        }}
+        value={selected}
+      >
+        {args.children}
+      </RadioFieldset>
+    );
+  },
+} satisfies Story;

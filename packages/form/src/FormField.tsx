@@ -55,12 +55,6 @@ export const FormField = ({
           htmlFor={htmlFor}
           {...rest}
         >
-          {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}
-          {errorText && (
-            <HelpText id={errorTextId} error>
-              {errorText}
-            </HelpText>
-          )}
           {children}
         </Label>
       ) : (
@@ -68,6 +62,12 @@ export const FormField = ({
       )}
       {postLabelSlot && (
         <div className="sds-form-field__after">{postLabelSlot}</div>
+      )}
+      {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}
+      {errorText && (
+        <HelpText id={errorTextId} error>
+          {errorText}
+        </HelpText>
       )}
     </div>
   );

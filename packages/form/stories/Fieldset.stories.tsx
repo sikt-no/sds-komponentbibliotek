@@ -30,7 +30,7 @@ const templateArgs = {
   ],
 } satisfies Partial<Story["args"]>;
 
-export const WithLegend = {
+export const Default = {
   args: {
     ...templateArgs,
     legend: "Legend",

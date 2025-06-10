@@ -27,7 +27,7 @@ const templateArgs = {
   ],
 } satisfies Partial<Story["args"]>;
 
-export const WithLegend = {
+export const Default = {
   args: {
     ...templateArgs,
     legend: "Legend",
@@ -91,5 +91,21 @@ export const WithAriaLabelledby = {
         </TableBody>
       </Table>
     );
+  },
+} satisfies Story;
+
+export const HorizontalLayout = {
+  args: {
+    ...templateArgs,
+    children: (
+      <div style={{ display: "flex" }}>
+        <CheckboxInput key={1} isChecked label="Checkbox label 1" />
+        <CheckboxInput key={2} label="Checkbox label 2" />
+        <CheckboxInput key={3} isChecked label="Checkbox label 3" />
+      </div>
+    ),
+    legend: "Legend",
+    errorText: undefined,
+    helpText: undefined,
   },
 } satisfies Story;

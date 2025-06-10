@@ -21,7 +21,7 @@ export const Default: Story = {
 export const WithHelpText: Story = {
   args: {
     ...Default.args,
-    helpText: "Help text",
+    helpText: "Helpful text",
     helpTextId: "input-help-text",
     children: <input id="input" aria-describedby="input-help-text" />,
   },

@@ -74,13 +74,13 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
           {legend !== undefined && (
             <legend className="sds-form-fieldset__legend">{legend}</legend>
           )}
+          {children}
           {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}
           {errorText && (
             <HelpText id={errorTextId} error>
               {errorText}
             </HelpText>
           )}
-          {children}
         </fieldset>
       </FieldsetContext.Provider>
     );

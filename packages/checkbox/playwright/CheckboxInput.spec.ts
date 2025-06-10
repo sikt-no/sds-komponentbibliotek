@@ -9,7 +9,7 @@ test.describe("Checkbox", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--with-legend",
+        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -59,7 +59,7 @@ test.describe("Checkbox", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--with-legend",
+        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

@@ -164,18 +164,6 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
               <Label text={label} error={Boolean(errorText)} htmlFor={id} />
             </ReactAriaLabel>
           )}
-          {helpText && (
-            <Text slot="description">
-              <HelpText id={helpTextId}>{helpText}</HelpText>
-            </Text>
-          )}
-          {errorText && (
-            <Text slot="errorMessage">
-              <HelpText id={helpTextId} error>
-                {errorText}
-              </HelpText>
-            </Text>
-          )}
           <Group className="sds-input__wrapper sds-input-datepicker__wrapper">
             <DateInput
               ref={inputRef}
@@ -218,6 +206,19 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
               {openCalendarLabel}
             </Button>
           </Group>
+
+          {helpText && (
+            <Text slot="description">
+              <HelpText id={helpTextId}>{helpText}</HelpText>
+            </Text>
+          )}
+          {errorText && (
+            <Text slot="errorMessage">
+              <HelpText id={helpTextId} error>
+                {errorText}
+              </HelpText>
+            </Text>
+          )}
 
           {calendarOpen && (
             <Calendar
