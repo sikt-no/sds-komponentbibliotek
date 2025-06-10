@@ -58,6 +58,7 @@ const utviklingMenu: MenuItemType[] = [
   },
   {
     name: "Ikonbibliotek",
+    url: "/utvikling/ikonbibliotek",
     icon: <DotsNineIcon className="sds-icon" aria-hidden />,
   },
   {

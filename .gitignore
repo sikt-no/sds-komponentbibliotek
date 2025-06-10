@@ -32,5 +32,3 @@ results.xml
 # build
 build
 dist
-storybook-static
-.astro/

@@ -1,4 +1,6 @@
 export { BackToFrontpageButton } from "./button/BackToFrontpageButton";
+export { CopyCodeButton } from "./button/CopyCodeButton";
+export { DownloadButton } from "./button/DownloadButton";
 export { FigmaButton } from "./button/FigmaButton";
 export { GitlabButton } from "./button/GitlabButton";
 export { SlackButton } from "./button/SlackButton";

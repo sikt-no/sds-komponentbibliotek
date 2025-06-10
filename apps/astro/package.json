@@ -4,10 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "npm run copy:icons && astro dev",
+    "build": "npm run copy:icons && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "copy:icons": "cpy ../../packages/icons/dist/assets public/images/sds-icons --flat"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
@@ -42,6 +43,7 @@
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
     "autoprefixer": "^10.4.21",
+    "cpy-cli": "^5.0.0",
     "postcss-custom-media": "^11.0.6",
     "prettier-plugin-astro": "^0.14.1",
     "style-dictionary": "^5.0.0",
