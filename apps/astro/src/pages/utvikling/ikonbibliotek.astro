@@ -1,13 +1,11 @@
 ---
-import type { ElementType } from "react";
 import Layout from "../../layouts/PageLayout.astro";
-import { Hero, DownloadButton, CopyCodeButton } from "../../components";
+import { Hero } from "../../components";
+import IconCard from "../../components/card/IconCard.astro";
 import { Link } from "@sikt/sds-core";
-import { LinkedInLogo } from "@sikt/sds-icons";
 import { Section } from "@sikt/sds-section";
 import { config } from "../../../../../packages/icons/src/icons.config.mjs";
-import * as icons from "../../../../../packages/icons/build/index";
-import { kebabToString, kebabToPascal } from "../../utils/string";
+import { kebabToString } from "../../utils/string";
 
 const pageTitle = "Ikonbibliotek";
 const categories = [...new Set(config.map((item) => item.category))];
@@ -32,38 +30,9 @@ const categories = [...new Set(config.map((item) => item.category))];
         <div class="ocean">
           {config
             .filter((item) => item.category === category)
-            .filter((item) => item.id !== "spinner-gap")
-            .map(({ name, category }, idx, config) => {
-              const iconName = kebabToString(name);
-              const iconComponentName = `${kebabToPascal(name)}Icon`;
-              const I = icons[iconComponentName] as ElementType;
-
-              return (
-                <div class="card">
-                  <div class="heading">
-                    <div class="icon">
-                      <I />
-                    </div>
-                    <div>{iconName}</div>
-                  </div>
-                  <div class="call-to-action">
-                    <DownloadButton
-                      href={`/images/sds-icons/${name}.svg`}
-                      aria-label={`Last ned ${iconName}`}
-                    >
-                      Last ned
-                    </DownloadButton>
-                    <CopyCodeButton
-                      aria-label={`Kopier ${iconName}`}
-                      text={`<${iconComponentName} />`}
-                      client:load
-                    >
-                      Kopier
-                    </CopyCodeButton>
-                  </div>
-                </div>
-              );
-            })}
+            .map(({ name }) => (
+              <IconCard name={name} />
+            ))}
         </div>
       </Section>
     ))
@@ -75,31 +44,5 @@ const categories = [...new Set(config.map((item) => item.category))];
     display: flex;
     flex-wrap: wrap;
     gap: var(--sds-space-gap-medium);
-  }
-
-  .card {
-    align-items: center;
-    background-color: var(--sds-color-layout-background-default);
-    border-radius: var(--sds-space-border-radius-small);
-    display: flex;
-    flex-direction: column;
-    gap: var(--sds-space-gap-large);
-    padding: var(--sds-space-padding-medium);
-  }
-
-  .heading {
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .icon {
-    display: flex;
-    font-size: var(--sds-typography-fontsize-900);
-  }
-
-  .heading,
-  .call-to-action {
-    display: flex;
-    gap: var(--sds-space-padding-small);
   }
 </style>

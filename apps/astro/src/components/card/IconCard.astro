@@ -1,0 +1,81 @@
+---
+import type { ElementType } from "react";
+import { SpinnerIcon, LinkedInLogo } from "@sikt/sds-icons";
+import { CopyCodeButton } from "../button/CopyCodeButton";
+import { DownloadButton } from "../button/DownloadButton";
+import * as icons from "../../../../../packages/icons/build/index";
+import { kebabToPascal, kebabToString } from "../../utils/string";
+
+const { name } = Astro.props;
+const isSpinner = name === "spinner-gap";
+const isLinkedIn = name === "linked-in";
+let iconName, iconComponentName, I;
+
+if (isSpinner || isLinkedIn) {
+  if (isSpinner) {
+    iconName = "Spinner";
+    iconComponentName = "SpinnerIcon";
+  } else if (isLinkedIn) {
+    iconName = "LinkedIn Logo";
+    iconComponentName = "LinkedInLogo";
+  }
+} else {
+  iconName = kebabToString(name);
+  iconComponentName = `${kebabToPascal(name)}Icon`;
+  I = icons[iconComponentName] as ElementType;
+}
+---
+
+<div class="card">
+  <div class="heading">
+    <div class="icon">
+      {isSpinner && <SpinnerIcon />}
+      {isLinkedIn && <LinkedInLogo />}
+      {I ? <I /> : null}
+    </div>
+    <div>{iconName}</div>
+  </div>
+  <div class="call-to-action">
+    <DownloadButton
+      href={`/images/sds-icons/${name}.svg`}
+      aria-label={`Last ned ${iconName}`}
+    >
+      Last ned
+    </DownloadButton>
+    <CopyCodeButton
+      aria-label={`Kopier ${iconName}`}
+      text={`<${iconComponentName} />`}
+      client:load
+    >
+      Kopier
+    </CopyCodeButton>
+  </div>
+</div>
+
+<style>
+  .card {
+    align-items: center;
+    background-color: var(--sds-color-layout-background-default);
+    border-radius: var(--sds-space-border-radius-small);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-gap-large);
+    padding: var(--sds-space-padding-medium);
+  }
+
+  .heading {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .icon {
+    display: flex;
+    font-size: var(--sds-typography-fontsize-900);
+  }
+
+  .heading,
+  .call-to-action {
+    display: flex;
+    gap: var(--sds-space-padding-small);
+  }
+</style>
