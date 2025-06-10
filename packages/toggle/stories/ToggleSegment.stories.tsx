@@ -60,3 +60,11 @@ export const WithFixedWidth: Story = {
     variant: "fixed",
   },
 };
+
+export const WithVerticalOrientation: Story = {
+  ...Default,
+  args: {
+    ...Default.args,
+    orientation: "vertical",
+  },
+};
