@@ -117,4 +117,10 @@ export const config = [
   { id: "spinner-gap", name: "spinner-gap", category: "ui" },
   { id: "book", name: "book", category: "categorization" },
   { id: "law", source: "sds", name: "law", category: "categorization" },
+  {
+    id: "linked-in",
+    source: "sds",
+    name: "linked-in",
+    category: "social-media",
+  },
 ];
