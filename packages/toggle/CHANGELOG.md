@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@5.1.0...@sikt/sds-toggle@5.2.0) (2025-06-11)
+
+### Features
+
+- **toggle-segment:** add prop for vertical orientation ([bdc4840](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bdc4840c2069d960b0c6562e5af59727935b84bb))
+
 ## [5.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@5.0.1...@sikt/sds-toggle@5.1.0) (2025-05-21)
 
 ### Features
