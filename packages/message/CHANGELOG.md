@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@1.2.1...@sikt/sds-message@2.0.0) (2025-06-11)
+
+### ⚠ BREAKING CHANGES
+
+- require variant prop for Alert, ApplicationStatus & GuidePanel
+
+### Features
+
+- require variant prop for Alert, ApplicationStatus & GuidePanel ([2ec2cb4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2ec2cb4df52ba02a559f3f4d19f890c40fc28d19))
+
 ## [1.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@1.2.0...@sikt/sds-message@1.2.1) (2025-06-06)
 
 ### Bug Fixes
