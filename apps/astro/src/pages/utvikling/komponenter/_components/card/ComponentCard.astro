@@ -1,0 +1,57 @@
+---
+import { Heading2 } from "@sikt/sds-core";
+
+const { name, url } = Astro.props;
+
+const imgName = name.toLowerCase().replaceAll(" ", "-").replaceAll(".", "");
+const imgSrc = `/images/components/${imgName}.svg`;
+---
+
+<a href={url} class="card">
+  <div class="heading">
+    <Heading2 variant="application" size="s">{name}</Heading2>
+  </div>
+  <div class="image">
+    <img src={imgSrc} alt="" aria-hidden loading="lazy" />
+  </div>
+</a>
+
+<style>
+  .card {
+    color: var(--sds-color-text-primary);
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--sds-space-gap-small);
+    text-decoration: none;
+    text-underline-position: under;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+
+      .image {
+        border-color: var(--sds-color-interaction-primary-strong-highlight);
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      .image {
+        outline: var(--sds-focus-outline);
+      }
+    }
+  }
+
+  .image {
+    align-items: center;
+    background-color: var(--sds-color-layout-background-default);
+    background-image: url("/images/components/background.svg");
+    border: 1px solid var(--sds-color-interaction-primary-strong-default);
+    border-radius: var(--sds-space-border-radius-small);
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    height: 220px;
+  }
+</style>

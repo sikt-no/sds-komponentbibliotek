@@ -63,8 +63,8 @@ const utviklingMenu: MenuItemType[] = [
     icon: <DotsNineIcon className="sds-icon" aria-hidden />,
   },
   {
-    name: "Komponenter (Storybook)",
-    url: `${import.meta.env.PUBLIC_STORYBOOK_URL}`,
+    name: "Komponenter",
+    url: "/utvikling/komponenter",
     icon: <SquaresFourIcon className="sds-icon" aria-hidden />,
   },
   {

@@ -1,0 +1,48 @@
+---
+import Layout from "../../../layouts/PageLayout.astro";
+import { Hero } from "../../../components";
+import ComponentCard from "./_components/card/ComponentCard.astro";
+import { components } from "./_data/components.ts";
+import { Link, Paragraph } from "@sikt/sds-core";
+
+const pageTitle = "Komponenter";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[{ title: "Designsystem", href: "/" }, { title: "Utvikling" }]}
+    heading={pageTitle}
+    slot="hero"
+  >
+    <div class="hero-content">
+      <p>
+        Komponenter er designsystemets brød og smør som muliggjør for likt bruk
+        på tvers. Disse er sammensatte av mindre byggeklosser som designtokens
+        og atomer.
+      </p>
+      <p>
+        Alle komponentene i Sikt designsystem ligger i <Link
+          href={import.meta.env.PUBLIC_STORYBOOK_URL}>Storybook</Link
+        >.
+      </p>
+    </div>
+  </Hero>
+
+  <div class="ocean">
+    {components.map(({ name, url }) => <ComponentCard name={name} url={url} />)}
+  </div>
+</Layout>
+
+<style>
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-padding-medium);
+  }
+
+  .ocean {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sds-space-gap-medium);
+  }
+</style>
