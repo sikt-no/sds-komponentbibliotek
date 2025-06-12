@@ -1,11 +1,11 @@
 ---
-import Layout from "../../layouts/PageLayout.astro";
-import { Hero } from "../../components";
-import IconCard from "../../components/card/IconCard.astro";
+import Layout from "../../../layouts/PageLayout.astro";
+import { Hero } from "../../../components";
+import IconCard from "./_components/card/IconCard.astro";
 import { Link } from "@sikt/sds-core";
 import { Section } from "@sikt/sds-section";
-import { config } from "../../../../../packages/icons/src/icons.config.mjs";
-import { kebabToString } from "../../utils/string";
+import { config } from "../../../../../../packages/icons/src/icons.config.mjs";
+import { kebabToString } from "../../../utils/string";
 
 const pageTitle = "Ikonbibliotek";
 const categories = [...new Set(config.map((item) => item.category))];
