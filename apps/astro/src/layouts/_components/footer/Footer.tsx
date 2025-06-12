@@ -1,7 +1,7 @@
 import { Link } from "@sikt/sds-core";
 import { Footer as SdsFooter } from "@sikt/sds-footer";
 import { clsx } from "clsx/lite";
-import { GitlabButton, FigmaButton, SlackButton } from "../";
+import { GitlabButton, FigmaButton, SlackButton } from "../../../components";
 import styles from "./footer.module.css";
 
 export const Footer = ({ currentHref }: { currentHref: string }) => {

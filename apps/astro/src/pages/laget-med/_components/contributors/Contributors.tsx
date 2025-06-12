@@ -2,7 +2,7 @@ import { Button, ButtonGroup } from "@sikt/sds-button";
 import confetti from "canvas-confetti";
 import { useState } from "react";
 import useKonami from "react-use-konami";
-import { contributors, team } from "../../assets/data/contributors.ts";
+import { contributors, team } from "../../_data/contributors.ts";
 import { ContributorList } from "./ContributorList.tsx";
 
 export const Contributors = () => {

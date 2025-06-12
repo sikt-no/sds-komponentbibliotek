@@ -1,6 +1,6 @@
 import { Paragraph } from "@sikt/sds-core";
 import { Section } from "@sikt/sds-section";
-import type { Contributors as ContributorsType } from "../../assets/data/contributors.ts";
+import type { Contributors as ContributorsType } from "../../_data/contributors.ts";
 import { Contributor } from "./Contributor";
 import styles from "./contributors.module.css";
 

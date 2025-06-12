@@ -13,16 +13,16 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── /* Static files */
 ├── src/
 │   ├── assets/
-│   │   └── data/
 │   │   └── images/
 │   │   └── /* Other files */
 │   └── components/
 │   │   └── /* TSX & Astro components  */
-│   │   └── footer/ /* Footer component  */
-│   │   └── header/ /* Header component  */
-│   │   └── menu/ /* Menu component  */
 │   │   └── index.ts /* Components export */
 │   ├── layouts/
+│   │   └── _components/
+│   │   │   └── footer/ /* Footer component  */
+│   │   │   └── header/ /* Header component  */
+│   │   │   └── menu/ /* Menu component  */
 │   │   └── PageLayout.astro /* Layout for Astro & TSX */
 │   │   └── MdxLayout.astro /* Layout for MDX */
 │   └── content/
@@ -39,6 +39,69 @@ Inside of your Astro project, you'll see the following folders and files:
 ```
 
 To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+
+## Authentication & protected routes
+
+This is out of current scope and protected content should be stored in Sikt Sharepoint.
+
+## CMS
+
+_TODO_
+
+## Workflow
+
+Follow the [contributing](../../CONTRIBUTING.md) guidelines.
+
+1. Add a new page to `src/pages/` in a directory corresponding to it's route.
+1. Add a [Frontmatter](https://jekyllrb.com/docs/front-matter/) `layout` & `pageTitle`, and a `Hero` component.
+1. Add a link to the page in the [Menu](src/components/menu/Menu.tsx).
+1. Write content
+
+### Stylesheets
+
+- Astro uses [scoped styles](https://docs.astro.build/en/guides/styling/#scoped-styles).
+- React uses [CSS Modules](https://github.com/css-modules/css-modules) `*.module.css`.
+- Markdown/MDX uses components or global styles.
+
+### MDX
+
+MDX files should include a [Frontmatter](https://jekyllrb.com/docs/front-matter/) `layout` & `pageTitle`:
+
+```yaml
+---
+layout: "path/to/layouts/MdxLayout.astro"
+pageTitle: "The title of the page"
+---
+```
+
+And a component mapping:
+
+```jsx
+import {
+  Link,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
+  Paragraph,
+} from "@sikt/sds-core";
+import { ListItem, OrderedList, UnorderedList } from "@sikt/sds-list";
+export const components = {
+  a: Link,
+  h1: Heading1,
+  h2: Heading2,
+  h3: Heading3,
+  h4: Heading4,
+  h5: Heading5,
+  h6: Heading6,
+  li: ListItem,
+  ol: OrderedList,
+  p: Paragraph,
+  ul: UnorderedList,
+};
+```
 
 ## Commands
 

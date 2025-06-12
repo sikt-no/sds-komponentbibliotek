@@ -9,7 +9,8 @@ import {
   WheelchairIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
-import { Nav, NavButtonLink } from "../";
+import { Nav } from "./nav/Nav";
+import { NavButtonLink } from "./nav/NavButtonLink";
 
 interface PathnameType {
   pathname: string;

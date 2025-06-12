@@ -1,6 +1,6 @@
 import { UserProfileIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import type { Contributor as ContributorType } from "../../assets/data/contributors.ts";
+import type { Contributor as ContributorType } from "../../_data/contributors.ts";
 import styles from "./contributors.module.css";
 
 export const Contributor = ({
