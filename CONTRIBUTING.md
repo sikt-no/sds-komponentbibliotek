@@ -110,7 +110,7 @@ npm run build
 npm run dev
 ```
 
-Storybook will run on http://localhost:6006 and Astro (designsystem.sikt.no) on http://localhost:4321
+Storybook will run on http://localhost:6006 and [Astro (designsystem.sikt.no)](./apps/astro/README.md) on http://localhost:4321
 
 ### Change request
 

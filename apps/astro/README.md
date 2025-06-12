@@ -1,7 +1,23 @@
-# Astro
+# Astro (designsystem.sikt.no)
 
-Documentation application for Sikt designsystem.  
-[Astro](https://astro.build/) is a multi-page app & static site generator (all content is static at build time) framework that supports Astro, React & Markdown/MDX.
+<details>
+  <summary>Table of Contents</summary>
+
+- [Project Structure](#project-structure)
+- [Authentication & protected routes](#authentication--protected-routes)
+- [Analytics](#analytics)
+- [CMS](#cms)
+- [Workflow](#workflow)
+  - [Stylesheets](#stylesheets)
+  - [MDX](#mdx)
+  - [Test](#test)
+- [Commands](#commands)
+- [Want to learn more?](#want-to-learn-more)
+
+</details>
+
+Documentation application for [Sikt designsystem](https://designsystem.sikt.no/).  
+[Astro](https://astro.build/) is a multi-page app framework & statically generated at build time that supports HTML, Astro, React & Markdown/MDX.
 
 ## Project Structure
 
@@ -10,39 +26,44 @@ Inside of your Astro project, you'll see the following folders and files:
 ```text
 /
 ├── public/
-│   └── /* Static files */
+│   └── /* Static files, served from root / */
 ├── src/
 │   ├── assets/
 │   │   └── images/
 │   │   └── /* Other files */
 │   └── components/
-│   │   └── /* TSX & Astro components  */
+│   │   └── /* TSX & Astro components */
 │   │   └── index.ts /* Components export */
 │   ├── layouts/
 │   │   └── _components/
-│   │   │   └── footer/ /* Footer component  */
-│   │   │   └── header/ /* Header component  */
-│   │   │   └── menu/ /* Menu component  */
-│   │   └── PageLayout.astro /* Layout for Astro & TSX */
-│   │   └── MdxLayout.astro /* Layout for MDX */
+│   │   │   └── footer/ /* Footer component */
+│   │   │   └── header/ /* Header component */
+│   │   │   └── menu/ /* Menu component */
+│   │   └── BaseLayout.astro /* Layout containing head, meta, header, footer & used by other layouts */
+│   │   └── MdxLayout.astro /* Layout for MDX pages */
+│   │   └── PageLayout.astro /* Layout for Astro & TSX pages */
 │   └── content/
-│   │   └── /* CMS content  */
+│   │   └── /* CMS content */
 │   └── pages/
 │   │   └── /* Pages & directories for routes */
 │   │   └── 404.astro
 │   │   └── 500.astro
 │   │   └── index.astro /* Start page */
 │   └── utils/
-│       └── /* Utils  */
+│       └── /* Utils */
 └── .env /* Environment variables */
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+To learn more about the folder structure of an Astro project, refer to [Astro guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
 ## Authentication & protected routes
 
 This is out of current scope and protected content should be stored in Sikt Sharepoint.
+
+## Analytics
+
+Site analytics is collected to [Matomo](https://matomo.sikt.no/).
 
 ## CMS
 
@@ -103,6 +124,11 @@ export const components = {
 };
 ```
 
+### Test
+
+_Pfft_ we do manual testing only 🫠  
+Test all packages over this MVP / WIP site.
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -118,4 +144,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## Want to learn more?
 
-Feel free to check [Astro documentation](https://docs.astro.build) or jump into Astro [Discord server](https://astro.build/chat).
+Feel free to check [Astro documentation](https://docs.astro.build) or jump into [Astro Discord server](https://astro.build/chat).
