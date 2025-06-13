@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Alert as Component, AlertProps, MessageButton } from "../index";
 
 const meta: Meta = {
-  title: "Components/Message",
+  title: "Components/Message/Alert",
   component: Component,
   subcomponents: { MessageButton },
 };

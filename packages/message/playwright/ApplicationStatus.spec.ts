@@ -9,7 +9,7 @@ test.describe("Message ApplicationStatus", () => {
     variants.map((variant) => {
       test(`${variant} should be accessible`, async ({ page }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=components-message--application-status&args=variant:${variant}`,
+          `/iframe.html?viewMode=story&id=components-message-application-status--application-status&args=variant:${variant}`,
         );
 
         await page.locator(componentSelector).waitFor();
@@ -27,7 +27,7 @@ test.describe("Message ApplicationStatus", () => {
     variants.map((variant) => {
       test(`${variant} should have screenshot`, async ({ page }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=components-message--application-status&args=variant:${variant}`,
+          `/iframe.html?viewMode=story&id=components-message-application-status--application-status&args=variant:${variant}`,
         );
 
         await expect(page.locator(componentSelector)).toHaveScreenshot();

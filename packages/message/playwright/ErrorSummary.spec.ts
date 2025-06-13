@@ -7,7 +7,7 @@ test.describe("Message ErrorSummary", () => {
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-message--error-summary",
+        "/iframe.html?viewMode=story&id=components-message-error-summary--error-summary",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Message ErrorSummary", () => {
   test.describe("visual", () => {
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-message--error-summary",
+        "/iframe.html?viewMode=story&id=components-message-error-summary--error-summary",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

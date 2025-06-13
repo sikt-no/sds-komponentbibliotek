@@ -4,7 +4,7 @@ import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { ErrorSummary as Component, ErrorSummaryProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Message",
+  title: "Components/Message/Error Summary",
   component: Component,
   subcomponents: { Link, ListItem, UnorderedList },
 };

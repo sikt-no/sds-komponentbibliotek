@@ -9,7 +9,7 @@ test.describe("Message GuidePanel", () => {
     variants.map((variant) => {
       test(`${variant} should be accessible`, async ({ page }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=components-message--guide-panel&args=variant:${variant}`,
+          `/iframe.html?viewMode=story&id=components-message-guide-panel--guide-panel&args=variant:${variant}`,
         );
 
         await page.locator(componentSelector).waitFor();
@@ -27,7 +27,7 @@ test.describe("Message GuidePanel", () => {
     variants.map((variant) => {
       test(`${variant} should have screenshot`, async ({ page }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=components-message--guide-panel&args=variant:${variant}`,
+          `/iframe.html?viewMode=story&id=components-message-guide-panel--guide-panel&args=variant:${variant}`,
         );
 
         await expect(page.locator(componentSelector)).toHaveScreenshot();
