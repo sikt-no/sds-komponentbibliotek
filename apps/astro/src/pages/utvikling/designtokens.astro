@@ -4,6 +4,7 @@ import { Hero } from "../../components";
 import { Link, Paragraph } from "@sikt/sds-core";
 import { Badge } from "@sikt/sds-badge";
 import { Section } from "@sikt/sds-section";
+import TagList from "../../components/tag/TagList.astro";
 
 const pageTitle = "Designtokens";
 ---
@@ -65,28 +66,15 @@ const pageTitle = "Designtokens";
   </Section>
 
   <Section headingText="Navngiving">
-    <div class="tag-list">
-      <div class="tag-container">
-        <div class:list={["tag", "sds-typography-body--code"]}>sds</div>
-        <div class="sds-typography-body--s">Prefix</div>
-      </div>
-      <div class="tag-container">
-        <div class:list={["tag", "sds-typography-body--code"]}>color</div>
-        <div class="sds-typography-body--s">Type</div>
-      </div>
-      <div class="tag-container">
-        <div class:list={["tag", "sds-typography-body--code"]}>brand</div>
-        <div class="sds-typography-body--s">Category</div>
-      </div>
-      <div class="tag-container">
-        <div class:list={["tag", "sds-typography-body--code"]}>primary</div>
-        <div class="sds-typography-body--s">Name</div>
-      </div>
-      <div class="tag-container">
-        <div class:list={["tag", "sds-typography-body--code"]}>subtle</div>
-        <div class="sds-typography-body--s">Variant</div>
-      </div>
-    </div>
+    <TagList
+      tags={[
+        { tag: "sds", name: "Prefix" },
+        { tag: "color", name: "Type" },
+        { tag: "brand", name: "Category" },
+        { tag: "primary", name: "Name" },
+        { tag: "subtle", name: "Variant" },
+      ]}
+    />
 
     <Paragraph className="ds-content-max-width">
       Navngivingen på tokens er forsøkt satt opp slik at de er selvforklarende
@@ -111,24 +99,3 @@ const pageTitle = "Designtokens";
     </Paragraph>
   </Section>
 </Layout>
-
-<style>
-  .tag-list {
-    display: flex;
-    gap: var(--sds-space-gap-small);
-    flex-wrap: wrap;
-  }
-
-  .tag-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--sds-space-gap-small);
-    text-align: center;
-  }
-
-  .tag {
-    background-color: var(--sds-color-interaction-primary-subtle-default);
-    border-radius: var(--sds-space-border-radius-medium);
-    padding: var(--sds-space-padding-tiny) var(--sds-space-padding-small);
-  }
-</style>
