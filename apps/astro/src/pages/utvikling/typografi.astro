@@ -15,15 +15,15 @@ const pageTitle = "Typografi";
     heading={pageTitle}
     slot="hero"
   >
-    Sikt Designsystem har utviklet et typografisystem som skal gjøre det enklere
+    Sikt designsystem har utviklet et typografisystem som skal gjøre det enklere
     å lage produkter som er både funksjonelle og lettfattelige. Systemet skal
     ivareta lesbarhet og utseende på tvers av skjermstørrelser og tjenester.
   </Hero>
 
   <Section headingText="Fontfamilier">
     <Paragraph className="ds-content-max-width">
-      I Sikt så benytter vi oss av skriftfamilien Haffer. Vi har tre
-      forskjeliige vekter tilgjengelige, som brukes i spesifiserte kontekster.
+      Som i typografihierarkiet fra den visuelle profilen benytter vi tre vekter
+      av Haffer i utviklingskontekst, Regular, Semibold og Bold.
     </Paragraph>
 
     <Paragraph size="l" className="semibold">Haffer Semibold 600</Paragraph>
@@ -34,62 +34,98 @@ const pageTitle = "Typografi";
     </ButtonGroup>
 
     <Paragraph className="ds-content-max-width">
-      Hvis det å bruke Haffer ikke er praktisk, som for eksempel presentasjoner
-      som skal sendes ut og redigeres av eksterne bidragsytere, bruker vi
-      <Paragraph as="span" modifier="strong">Arial</Paragraph>
-      som erstatning.
+      I kontekster der det ikke er praktisk å benytte Haffer, benyttes <Paragraph
+        as="span"
+        modifier="strong">Arial</Paragraph
+      > som erstatning. Arial er tilgjengelig som systemfont på både Windows og MacOS.
     </Paragraph>
   </Section>
 
-  <Section headingText="Tokenbasert">
+  <Section headingText="Tokenbasert typografi">
     <Paragraph className="ds-content-max-width">
-      Sikt designsystem benytter seg av tokens for å holde kontroll på våre
-      typografiske attributter, gjøre vedlikehold enklere og gjøre design og
-      utviklingsprosessen enklere.
+      Sikt designsystem benytter seg av tokens for å holde kontroll på
+      typografiske variabler, gjøre vedlikehold enklere og strømlinjeforme
+      kommunikasjonen mellom design og implementasjon.
     </Paragraph>
 
     <Paragraph className="ds-content-max-width">
-      Sikt leverer semantiske typografitokens i flere kategorier: headlines,
-      body text, label og overline. Disse er bygget opp av basetokens (også
-      kjent som primitives) som definerer skriftstørrelser (fontsize), vekt
-      (fontweight), linjehøyder (lineheight). Basetokens finner du nederst på
-      denne siden.
+      Det finnes basetokens for følgende attributter: font-size, font-weight,
+      line-height og letter-spacing (se tabell over basetokens for typografi på
+      bunnen av siden).
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Sikt designsystem har også semantiske tokens for følgende innholdstyper:
+      headline, body text, label og overline. Disse er levert som
+      typografistiler i Figma.
     </Paragraph>
   </Section>
 
-  <Section headingText="Overskriftshierarki">
+  <Section headingText="Headlinetokens og -stiler">
     <Paragraph className="ds-content-max-width">
-      På bakgrunn av det enorme spennet av produkter og tjenester som sikt
-      leverer, tilbyr Sikt Designsystem to forskjellige overskriftspakker:
-      Editorial og Application.
-    </Paragraph>
-
-    <Heading level="3" size="xs">Editorial headlines</Heading>
-
-    <Paragraph className="ds-content-max-width">
-      Editorial-pakken er utgangspunktet for det fleste produktene i Sikt. Den
-      ligger størrelsesmessig tett opptil overskriftsstilene som har vært brukt
-      før. Den har høy størrelseskontrast mellom de største og de minste
-      overskriftene, slik at man kan lage både nøkterne og rolige layouter, samt
-      at man har anledning til å blåse opp overskrifter som trenger mer fokus.
-    </Paragraph>
-
-    <Heading level="3" size="xs">Application headlines</Heading>
-
-    <Paragraph className="ds-content-max-width">
-      Application-pakken er et tilbud som leveres på bakgrunn av noen teams
-      behov for å ha en stor informasjonstetthet med mindre tekststørrelser og
-      mindre luft i sine produkter. Application-pakkens overskrifter er dermed
-      en del mindre på de største nivåene, og har også mindre størrelses
-      forskjell mellom hvert trinn.
+      Sikt har et stort spenn i sine produkter og tjenester, både i
+      brukergrupper og for informasjonstetthet. Det er stor variasjon i behovene
+      fra brukerflate til brukerflate.
     </Paragraph>
 
     <Paragraph className="ds-content-max-width">
-      Uansett hvilken av pakkene man velger, kan det være et greit utgangspunkt
-      å velge overskrifter slik at man hopper over et nivå. I stedet for xxl,
-      xl, og l, kan det bli klarere for brukeren å se forskjell om man bruker
-      xl, l og s. Hva som er riktig fremgangsmåte her avhenger selvfølgelig av
-      plassbehov, og hvor mange nivåer med overskrifter man har behov for.
+      For å gjøre det enklere å komme i gang, også uten designere i teamet, har
+      vi satt sammen to pakker av headlinetokens med utgangspunkt i hva som
+      passer for henholdsvis lav og høy kompleksitet i brukerflaten. Disse
+      pakkene heter Editorial og Application, og dette er synlig i navn på både
+      tokens og tilhørende Figma-stiler.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Headline-nivåene er satt opp med modes, slik at typografien skalerer
+      utifra skjermstørrelse.
+    </Paragraph>
+
+    <Heading level="3" size="xs">Editorial</Heading>
+
+    <Paragraph className="ds-content-max-width">
+      Editorial-pakken er utgangspunktet for det fleste flatene i Sikt. Den har
+      høy størrelseskontrast mellom de største og de minste overskriftene. Med
+      Editorial kan du lage nøkterne og rolige layouter, men har også anledning
+      til å blåse opp overskrifter som trenger fokus.
+    </Paragraph>
+
+    <Heading level="3" size="xs">Application</Heading>
+
+    <Paragraph className="ds-content-max-width">
+      For team som har produkter med stor informasjonstetthet, mindre
+      tekststørrelser og mindre ledig plass i sine produkter kan man benytter
+      Application-pakken. I Application er de største nivåene skalert ned og
+      denne pakken har også mindre størrelseskontrast mellom hvert trinn.
+    </Paragraph>
+  </Section>
+
+  <Section headingText="Tilpasning og egne stiler">
+    <Paragraph className="ds-content-max-width">
+      Målet med typografitokens og -stiler har vært å gi brukerene av Sikt
+      designsystem fleksibilitet, men fortsatt benytte Sikt designsystem sine
+      basetokens. Pakkene med semantiske headlinetokens og -stiler skal gjøre
+      det enklere å komme raskt i gang for de fleste, men med token-skalaene som
+      ligger i bunn har man stor fleksibilitet ved behov.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Når man benytter pakkene står teamet fritt til å hoppe over nivåer dersom
+      innholdet tilsier at man burde forsterke hierarkiet. Det kan for eksempel
+      bety at det benyttes -application-xxl og -application-l for h1 og h2, i
+      stedet for -application-xxl og application-xl.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Det er også slik at dersom behovet oppstår, så kan man opprette egne
+      stiler lokalt, så lenge man benytter Sikt designsystem sine basetokens for
+      attributtene.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Om teamet oppretter egne overskriftsstiler anbefaler vi å sette opp
+      tilsvarende løsning for skalering etter skjermstørrelse som det vi har
+      gjort i Editorial og Application-pakken.
     </Paragraph>
   </Section>
 
