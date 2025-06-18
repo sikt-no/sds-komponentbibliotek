@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.7.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.7.0...@sikt/sds-core@4.7.1) (2025-06-18)
+
+### Bug Fixes
+
+- **typography:** no contextual font ligatures ([15061ac](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/15061ac6f66f978a2a37af689847f247b9b9cd81))
+- update @sikt/sds-tokens@5.0.0 ([4b09cdf](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4b09cdf0f10ed4f2cbbd02d19672b21e269b2c39))
+
 ## [4.7.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.6.0...@sikt/sds-core@4.7.0) (2025-05-15)
 
 ### Features
