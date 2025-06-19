@@ -203,31 +203,39 @@ const pageTitle = "Fargesystem";
       color-text-primary er standard tekstfarge for de aller fleste situasjoner.
     </Paragraph>
 
+    <div class="card-group">
+      <ColorCard token={["", tokens.color.text.primary]} />
+    </div>
+
     <Paragraph className="ds-content-max-width">
       color-text-on_strong benyttes på elementer med en bakgrunnsfarge som
       slutter med -strong eller -danger.
     </Paragraph>
+
+    <div class="card-group">
+      <ColorCard token={["", tokens.color.text.on_strong]} />
+    </div>
 
     <Paragraph className="ds-content-max-width">
       color-text-secondary benyttes for ekstra hierarki i komponenter med mye
       informasjon.
     </Paragraph>
 
+    <div class="card-group">
+      <ColorCard token={["", tokens.color.text.secondary]} />
+    </div>
+
     <Paragraph className="ds-content-max-width">
       color-text-critical benyttes for utheving av feil.
     </Paragraph>
 
+    <div class="card-group">
+      <ColorCard token={["", tokens.color.text.critical]} />
+    </div>
+
     <Paragraph className="ds-content-max-width">
       color-text-pure benyttes der man trenger ekstra kontrast.
     </Paragraph>
-
-    <div class="card-group">
-      {
-        Object.entries(tokens.color.text).map((token) => (
-          <ColorCard token={token} />
-        ))
-      }
-    </div>
   </Section>
 
   <Section headingText="Basetokens">
