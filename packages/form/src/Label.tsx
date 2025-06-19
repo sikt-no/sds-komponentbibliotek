@@ -4,7 +4,7 @@ import "./label.pcss";
 
 export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   htmlFor: string;
-  text: ReactNode;
+  text: NonNullable<ReactNode>;
   error?: boolean;
 }
 
