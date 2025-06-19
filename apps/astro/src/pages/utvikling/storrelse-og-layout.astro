@@ -15,10 +15,8 @@ import {
 import tokens from "@sikt/sds-tokens/dist/js/tokens.mjs";
 import tablet from "@sikt/sds-tokens/dist/js/tokens.tablet.mjs";
 import desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.mjs";
-import { pascalToKebab } from "../../utils/string";
-import type { TransformedToken } from "style-dictionary";
+import { tokenName } from "../../utils/token";
 
-const tokenName = (token: TransformedToken) => `--${pascalToKebab(token.name)}`;
 const pageTitle = "Størrelse og layout";
 ---
 

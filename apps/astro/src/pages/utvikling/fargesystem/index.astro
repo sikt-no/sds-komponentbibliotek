@@ -1,0 +1,262 @@
+---
+import Layout from "../../../layouts/PageLayout.astro";
+import { Hero } from "../../../components";
+import { Heading, Paragraph } from "@sikt/sds-core";
+import { ButtonGroup, Button } from "@sikt/sds-button";
+import { Section } from "@sikt/sds-section";
+import TagList from "../../../components/tag/TagList.astro";
+import tokens from "@sikt/sds-tokens/dist/js/tokens.mjs";
+import { TableCell, TableRow } from "@sikt/sds-table";
+import ColorCard from "./_components/card/ColorCard.astro";
+
+const pageTitle = "Fargesystem";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[{ title: "Designsystem", href: "/" }, { title: "Utvikling" }]}
+    heading={pageTitle}
+    slot="hero"
+  >
+    Sikt designsystem benytter to sett med tokens for farger. I bunn ligger et
+    sett med basetokens som definerer den tilgjengelige paletten, og på topp
+    ligger semantiske tokens som kobler fargeverdiene i paletten med konkrete
+    bruksområder.
+  </Hero>
+
+  <Section headingText="Merkevare / color-brand-">
+    <Paragraph className="ds-content-max-width">
+      Denne gruppen benyttes for merkevareelementer, og navigasjonskomponenter
+      på tvers av produktene.
+    </Paragraph>
+
+    <div class="card-group">
+      {
+        Object.entries(tokens.color.brand).map((category) => {
+          return Object.entries(category[1]).map((token) => (
+            <ColorCard token={token} />
+          ));
+        })
+      }
+    </div>
+  </Section>
+
+  <Section headingText="Interaktivitet / color-interaction-">
+    <Paragraph className="ds-content-max-width">
+      Denne gruppen er satt opp med to paletter, og hver av disse har tre nivåer
+      av klikkbare elementer. Palettene heter Primary og Neutral, og nivåene er
+      henholdsvis Strong, Subtle og Transparent.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Primary tar utgangspunkt i merkevarepaletten, mens neutral tilbyr et
+      visuelt mer nedtonet uttrykk, som er nyttig om du har komplekse
+      grensesnitt med mange klikkbare elementer sammen.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Hvert nivå i interaction-skalaen har egne farger for highlight (hover) og
+      pressed.
+    </Paragraph>
+
+    {
+      ["strong", "subtle", "transparent"].map((category) => {
+        return (
+          <div class="card-group">
+            {Object.entries(tokens.color.interaction.primary[category]).map(
+              (token) => (
+                <ColorCard token={token} />
+              ),
+            )}
+          </div>
+        );
+      })
+    }
+
+    {
+      ["strong", "subtle", "transparent"].map((category) => {
+        return (
+          <div class="card-group">
+            {Object.entries(tokens.color.interaction.neutral[category]).map(
+              (token) => (
+                <ColorCard token={token} />
+              ),
+            )}
+          </div>
+        );
+      })
+    }
+
+    <Heading level="3" size="xs">color-interaction-danger-</Heading>
+
+    <Paragraph className="ds-content-max-width">
+      Denne paletten benyttes for klikkbare elementer som utfører destruktive
+      operasjoner som for eksempel sletting.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Den skal ikke brukes for ikke-destruktive handlinger som lukking av
+      vinduer eller avbryting av en oppgave.
+    </Paragraph>
+
+    <div class="card-group">
+      {
+        Object.entries(tokens.color.interaction.danger).map((category) => {
+          return Object.entries(category[1]).map((token) => (
+            <ColorCard token={token} />
+          ));
+        })
+      }
+    </div>
+  </Section>
+
+  <Section headingText="Semantiske farger / color-support-">
+    <Paragraph className="ds-content-max-width">
+      De semantiske fargene benyttes for å gi tilbakemeldinger på handlinger og
+      tilleggsinformasjon til brukeren.
+    </Paragraph>
+
+    {
+      ["info", "success", "warning", "critical"].map((category) => {
+        return (
+          <div class="card-group">
+            {Object.entries(tokens.color.support[category]).map((token) => (
+              <ColorCard token={token} />
+            ))}
+          </div>
+        );
+      })
+    }
+  </Section>
+
+  <Section headingText="Layout">
+    <Heading level="3" size="xs">Sidestruktur / color-layout-page-</Heading>
+
+    <Paragraph className="ds-content-max-width">
+      Page-fargene brukes for å dele opp sider med mye informasjon der det er
+      behov for ekstra struktur.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      -default og -secondary er likestilte, men som navnet antyder bør man bruke
+      -default med mindre man også bruker -secondary. -header er reservert for
+      den øverste seksjonen på sider som har en hero-section.
+    </Paragraph>
+
+    <div class="card-group">
+      {
+        Object.entries(tokens.color.layout.page).map((token) => (
+          <ColorCard token={token} />
+        ))
+      }
+    </div>
+
+    <Heading level="3" size="xs"
+      >Komponentstruktur / color-layout-surface-</Heading
+    >
+
+    <Paragraph className="ds-content-max-width">
+      Surface-fargene benyttes for bakgrunnsfarge på komponenter, for eksempel
+      tabeller, kort eller seksjoner som inneholder klikkbare elementer. For
+      komplekse komponenter kan man benytte -surface-secondary for å strukturere
+      informasjon.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      -surface-brand er reservert som bakgrunn for Sikt sin merkevare, som for
+      eksempel illustrasjoner, visuelle elementer eller logoer. Dette vil typisk
+      være på kort eller seksjoner som henviser til Sikt sine produkter eller
+      tjenester.
+    </Paragraph>
+
+    <div class="card-group">
+      {
+        Object.entries(tokens.color.layout.background).map((token) => (
+          <ColorCard token={token} />
+        ))
+      }
+    </div>
+
+    <Heading level="3" size="xs">Skillelinjer / color-layout-divider-</Heading>
+
+    <div class="card-group">
+      {
+        Object.entries(tokens.color.layout.divider).map((token) => (
+          <ColorCard token={token} />
+        ))
+      }
+    </div>
+
+    <Heading level="3" size="xs">Fokusmarkering / color-layout-focus</Heading>
+
+    <div class="card-group">
+      {
+        Object.entries(tokens.color.layout.focus).map((token) => (
+          <ColorCard token={token} />
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section headingText="Tekstfarger / color-text-">
+    <Paragraph className="ds-content-max-width">
+      color-text-primary er standard tekstfarge for de aller fleste situasjoner.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      color-text-on_strong benyttes på elementer med en bakgrunnsfarge som
+      slutter med -strong eller -danger.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      color-text-secondary benyttes for ekstra hierarki i komponenter med mye
+      informasjon.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      color-text-critical benyttes for utheving av feil.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      color-text-pure benyttes der man trenger ekstra kontrast.
+    </Paragraph>
+
+    <div class="card-group">
+      {
+        Object.entries(tokens.color.text).map((token) => (
+          <ColorCard token={token} />
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section headingText="Basetokens">
+    <Paragraph className="ds-content-max-width">
+      Navnestruktur for basetokens i fargepaletten:
+    </Paragraph>
+
+    <TagList
+      tags={[
+        { tag: "base", name: "Base" },
+        { tag: "purple", name: "Farge" },
+        { tag: "95", name: "Lightness" },
+        { tag: "100", name: "Tint" },
+      ]}
+    />
+
+    <Paragraph className="ds-content-max-width">
+      Navnet gjør det mulig å se hvordan fargene forholder seg til hverandre,
+      purple-95-100 er lysere enn purple-90-100 og begge er solide farger, mens
+      neutral-100-10 er litt mer gjennomsiktig enn neutral-100-15.
+    </Paragraph>
+  </Section>
+</Layout>
+
+<style>
+  .card-group {
+    --color-card-border-radius: var(--sds-space-border-radius-medium);
+
+    border: 1px solid var(--sds-color-brand-neutral-subtle);
+    border-radius: var(--color-card-border-radius);
+  }
+</style>

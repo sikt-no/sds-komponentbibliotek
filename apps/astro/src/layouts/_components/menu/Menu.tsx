@@ -50,6 +50,7 @@ const utviklingMenu: MenuItemType[] = [
   },
   {
     name: "Fargesystem",
+    url: "/utvikling/fargesystem",
     icon: <PaletteIcon className="sds-icon" aria-hidden />,
   },
   {

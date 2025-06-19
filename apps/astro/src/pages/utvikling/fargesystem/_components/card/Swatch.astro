@@ -1,0 +1,13 @@
+---
+const { color } = Astro.props;
+---
+
+<div class="swatch" style={{ backgroundColor: color }}></div>
+
+<style>
+  .swatch {
+    border-radius: var(--sds-space-border-radius-full);
+    width: 32px;
+    height: 32px;
+  }
+</style>
