@@ -28,28 +28,48 @@ const { token } = Astro.props;
 </div>
 
 <style>
+  @import url("@sikt/sds-tokens/dist/css/custom-media.css");
+
   .card {
     align-items: center;
     display: grid;
     gap: var(--sds-space-padding-medium);
-    grid-template-columns: 3fr 4fr;
+    grid-template-columns: 1fr;
     justify-content: space-between;
-
-    &:first-child {
-      .item {
-        border-top-right-radius: var(--color-card-border-radius);
-      }
-    }
 
     &:last-child {
       .item {
-        border-bottom-right-radius: var(--color-card-border-radius);
+        &:first-child {
+          border-bottom-left-radius: var(--color-card-border-radius);
+        }
+
+        &:last-child {
+          border-bottom-right-radius: var(--color-card-border-radius);
+        }
+      }
+    }
+
+    @media (--sds-base-breakpoint-desktop) {
+      grid-template-columns: 3fr 4fr;
+
+      &:first-child {
+        .item {
+          &:last-child {
+            border-top-right-radius: var(--color-card-border-radius);
+          }
+        }
+      }
+
+      &:last-child {
+        .item {
+          border-bottom-left-radius: unset;
+        }
       }
     }
   }
 
   .name {
-    padding-left: var(--sds-space-padding-small);
+    padding: var(--sds-space-padding-small);
   }
 
   .content {
