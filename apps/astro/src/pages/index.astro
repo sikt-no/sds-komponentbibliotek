@@ -70,9 +70,13 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
           bruk på tvers. Disse er sammensatte av mindre byggeklosser som
           designtokens og atomer.
         </p>
-        <p>Alle komponentene i Sikt designsystem ligger i Storybook.</p>
+        <p>
+          Alle komponentene i Sikt designsystem ligger i <Link
+            href={storybookUrl}>Storybook</Link
+          >.
+        </p>
         <ButtonGroup variant="left" slot="call-to-action">
-          <ButtonLink variant="strong" href={storybookUrl}>
+          <ButtonLink variant="strong" href="/utvikling/komponenter">
             Komponenter
           </ButtonLink>
         </ButtonGroup>
