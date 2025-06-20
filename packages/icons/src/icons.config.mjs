@@ -87,12 +87,12 @@ export const config = [
   { id: "folder-plus", name: "create-folder", category: "files" },
   {
     id: "sort-ascending",
-    name: "sort-descending",
+    name: "sort-ascending",
     category: "sorting-and-filtering",
   },
   {
     id: "sort-descending",
-    name: "sort-ascending",
+    name: "sort-descending",
     category: "sorting-and-filtering",
   },
   { id: "sliders", name: "adjust-settings", category: "sorting-and-filtering" },
