@@ -15,13 +15,10 @@ import {
   FilterListItem,
   FilterListSection,
 } from "@sikt/sds-filter-list";
+import "@sikt/sds-filter-list/dist/index.css";
 ```
 
-```css
-@import url("@sikt/sds-filter-list");
-```
-
-### Stylesheets & custom markup
+#### Anatomy
 
 The FilterList component is a container of elements to present a list of filter-options.
 
