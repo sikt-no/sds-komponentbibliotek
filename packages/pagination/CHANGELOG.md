@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@2.1.0...@sikt/sds-pagination@2.1.1) (2025-06-20)
+
+### Bug Fixes
+
+- **pagination:** current page style ([1218388](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1218388eeeab26b3c319ae658ef64fb1f8434e3c))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@2.0.1...@sikt/sds-pagination@2.1.0) (2025-05-21)
 
 ### Features
