@@ -42,11 +42,11 @@ Import the [@sikt/sds-core](./packages/core/) package. It contains, among other 
 Import component & stylesheet:
 
 ```jsx
-import { PrimaryButton } from "@sikt/sds-button";
+import { Button } from "@sikt/sds-button";
 import "@sikt/sds-button/dist/index.css";
 
 return (
-  <PrimaryButton>Hello, World!</PrimaryButton>;
+  <Button variant="strong">Hello, World!</Button>;
 );
 ```
 
@@ -67,7 +67,7 @@ Import stylesheet:
 Create custom markup:
 
 ```html
-<button class="sds-button sds-button--primary">
+<button class="sds-button sds-button--strong">
   <span class="sds-button__label">Hello, World!</span>
 </button>
 ```
