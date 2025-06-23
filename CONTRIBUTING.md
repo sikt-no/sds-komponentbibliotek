@@ -47,7 +47,7 @@ Gitlab: [Issues](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issu
 
 #### Monorepo
 
-This is a monorepo built with [npm workspaces](https://docs.npmjs.com/cli/v9/using-npm/workspaces) where all directories in `/packages/*` are seperate packages with their own `package.json` & `README.md`.  
+This is a [monorepo](https://monorepo.tools/) built with [npm workspaces](https://docs.npmjs.com/cli/v9/using-npm/workspaces) & [Turborepo](https://turborepo.com/) where all directories in `/packages/*` are seperate packages with their own `package.json` & `README.md`.  
 All commands should be able to run from the project root, for example dependency installs (`npm i -s @sikt/sds-core -w packages/button`) or package builds (`npm run build` / `npm run build -w packages/button`).
 
 The reasoning behind multiple packages is rooted in micro architecture. This way, a single breaking change to one package won't affect consumers of other packages.
@@ -85,7 +85,7 @@ Example:
 }
 ```
 
-PostCSS is used to allow usage of future CSS specs, like [nesting modules](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting#readme) & [custom media queries](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media#readme). New plugins can be added when needed.
+[PostCSS](https://postcss.org/) is used to allow usage of future CSS specs, like [nesting modules](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting#readme) & [custom media queries](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media#readme). New plugins can be added when needed.
 
 #### React
 
