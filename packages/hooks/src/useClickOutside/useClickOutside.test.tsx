@@ -34,4 +34,20 @@ describe("useClickOutside", () => {
 
     expect(callback).not.toHaveBeenCalled();
   });
+
+  it("should not call callback on no current", async () => {
+    const user = userEvent.setup();
+    const ref = {};
+    const callback = jest.fn();
+
+    renderHook(() => {
+      useClickOutside(ref, callback);
+    });
+
+    expect(callback).not.toHaveBeenCalled();
+
+    await user.click(document.body);
+
+    expect(callback).not.toHaveBeenCalled();
+  });
 });

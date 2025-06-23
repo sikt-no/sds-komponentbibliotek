@@ -31,6 +31,7 @@ describe("Breadcrumbs", () => {
           <BreadcrumbItem>
             <a href="/">Level 2</a>
           </BreadcrumbItem>
+          <BreadcrumbItem>NonValidElement</BreadcrumbItem>
         </Breadcrumbs>,
       );
       expect(screen.getByTestId("test-group")).toHaveClass("sds-breadcrumbs");
@@ -40,6 +41,7 @@ describe("Breadcrumbs", () => {
         "sds-breadcrumbs-item",
       );
       expect(screen.getByTestId("test-item")).toBeInTheDocument();
+      expect(screen.queryByTestId("NonValidElement")).not.toBeInTheDocument();
     });
   });
 

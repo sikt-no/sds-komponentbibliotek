@@ -37,7 +37,23 @@ describe("Popover", () => {
       );
     });
 
-    it("calls click handler", async () => {
+    it("should not have anchor class name", async () => {
+      const user = userEvent.setup();
+      const clickHandler = jest.fn();
+      const { container } = render(
+        <Popover target="Bar" onClick={clickHandler} anchor={false}>
+          Foo
+        </Popover>,
+      );
+
+      await user.click(screen.getByText("Foo"));
+
+      expect(
+        container.querySelector(".sds-popover__target--anchor"),
+      ).not.toBeInTheDocument();
+    });
+
+    it("call click handler", async () => {
       const user = userEvent.setup();
       const clickHandler = jest.fn();
       render(
@@ -49,6 +65,16 @@ describe("Popover", () => {
       await user.click(screen.getByText("Foo"));
 
       expect(clickHandler).toHaveBeenCalled();
+    });
+
+    it("does not call click handler", async () => {
+      const user = userEvent.setup();
+      const clickHandler = jest.fn();
+      render(<Popover target="Bar">Foo</Popover>);
+
+      await user.click(screen.getByText("Foo"));
+
+      expect(clickHandler).not.toHaveBeenCalled();
     });
   });
 });

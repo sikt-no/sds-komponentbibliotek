@@ -28,6 +28,7 @@ const renderComponent = ({
         </Tab>
         <Tab>Tab 2</Tab>
         <Tab>Tab 3</Tab>
+        NonValidElement
       </TabList>
       <TabPanel>Content 1</TabPanel>
       <TabPanel>Content 2</TabPanel>
@@ -54,6 +55,7 @@ describe("Tabs", () => {
 
       expect(screen.getByText("Content 1")).toBeVisible();
       expect(screen.getByText("Content 2")).not.toBeVisible();
+      expect(screen.queryByText("NonValidElement")).not.toBeInTheDocument();
     });
 
     it("should have class name", async () => {

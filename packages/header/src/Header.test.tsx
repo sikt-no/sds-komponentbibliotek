@@ -31,10 +31,12 @@ describe("Header", () => {
           <div>
             <div>Foo</div>
           </div>
+          <HeaderNav>NonValidElement</HeaderNav>
         </Header>,
       );
 
       expect(screen.getByTestId("test")).toBeInTheDocument();
+      expect(screen.queryByTestId("NonValidElement")).not.toBeInTheDocument();
     });
 
     it("should have class name", async () => {

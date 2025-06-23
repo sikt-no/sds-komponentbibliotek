@@ -154,9 +154,16 @@ describe("FilterListExpand", () => {
       );
 
       expect(openState).toBeFalsy();
+
       await user.keyboard("[Tab]");
+      await user.keyboard("[ABC]");
+      expect(openState).toBeFalsy();
+
       await user.keyboard("[Enter]");
       expect(openState).toBeTruthy();
+
+      await user.keyboard("[Space]");
+      expect(openState).toBeFalsy();
     });
 
     it("should have clickable button in header by tab + button", async () => {
@@ -177,8 +184,51 @@ describe("FilterListExpand", () => {
 
       expect(openState).toBeFalsy();
       await user.keyboard("[Tab]");
+      await user.keyboard("[ABC]");
+      expect(openState).toBeFalsy();
+
       await user.keyboard("[Enter]");
       expect(openState).toBeTruthy();
+
+      await user.keyboard("[Space]");
+      expect(openState).toBeFalsy();
+    });
+
+    it("should call click handler", async () => {
+      const user = userEvent.setup();
+      const clickHandler = jest.fn();
+
+      render(
+        <FilterListExpand
+          header="Expand header"
+          ariaLabelExpandToggle="Expand toggle"
+          onExpandToggle={clickHandler}
+        >
+          Content
+        </FilterListExpand>,
+      );
+
+      await user.click(screen.getByLabelText("Expand toggle"));
+
+      expect(clickHandler).toHaveBeenCalled();
+    });
+
+    it("should not call click handler", async () => {
+      const user = userEvent.setup();
+      const clickHandler = jest.fn();
+
+      render(
+        <FilterListExpand
+          header="Expand header"
+          ariaLabelExpandToggle="Expand toggle"
+        >
+          Content
+        </FilterListExpand>,
+      );
+
+      await user.click(screen.getByLabelText("Expand toggle"));
+
+      expect(clickHandler).not.toHaveBeenCalled();
     });
   });
 });
