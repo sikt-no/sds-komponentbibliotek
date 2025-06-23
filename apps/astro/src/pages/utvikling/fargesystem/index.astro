@@ -3,11 +3,14 @@ import Layout from "../../../layouts/PageLayout.astro";
 import { Hero } from "../../../components";
 import { Heading, Paragraph } from "@sikt/sds-core";
 import { ButtonGroup, Button } from "@sikt/sds-button";
+import { Details } from "@sikt/sds-details";
 import { Section } from "@sikt/sds-section";
 import TagList from "../../../components/tag/TagList.astro";
 import tokens from "@sikt/sds-tokens/dist/js/tokens.mjs";
 import { TableCell, TableRow } from "@sikt/sds-table";
 import ColorCard from "./_components/card/ColorCard.astro";
+import BaseColorCard from "./_components/card/BaseColorCard.astro";
+import baseTokensJson from "../../../../../../packages/tokens/src/color/_base.json";
 
 const pageTitle = "Fargesystem";
 ---
@@ -257,6 +260,33 @@ const pageTitle = "Fargesystem";
       purple-95-100 er lysere enn purple-90-100 og begge er solide farger, mens
       neutral-100-10 er litt mer gjennomsiktig enn neutral-100-15.
     </Paragraph>
+
+    <Details size="small" summary="Basetokens">
+      <div class="details-content">
+        {
+          Object.entries(baseTokensJson._color.base).map((category) => {
+            return (
+              <div class="card-group">
+                {Object.entries(category[1]).map((token) => {
+                  return (
+                    <BaseColorCard
+                      token={[
+                        "",
+                        {
+                          name: `color-base-${category[0]}-${token[0]}`,
+                          $value: token[1].$value,
+                          original: { $value: token[1].$value },
+                        },
+                      ]}
+                    />
+                  );
+                })}
+              </div>
+            );
+          })
+        }
+      </div>
+    </Details>
   </Section>
 </Layout>
 
@@ -266,5 +296,11 @@ const pageTitle = "Fargesystem";
 
     border: 1px solid var(--sds-color-brand-neutral-subtle);
     border-radius: var(--color-card-border-radius);
+  }
+
+  .details-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-gap-small);
   }
 </style>

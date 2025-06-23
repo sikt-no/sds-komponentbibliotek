@@ -1,0 +1,82 @@
+---
+import { DarkToken, Token } from "../../../../../components";
+import Swatch from "./Swatch.astro";
+import { Badge } from "@sikt/sds-badge";
+import { tokenName } from "../../../../../utils/token";
+import { pascalToKebab } from "../../../../../utils/string";
+
+const { token } = Astro.props;
+---
+
+<div class="card">
+  <div class="name">
+    {pascalToKebab(token[1].name)}
+  </div>
+  <div class="content">
+    <div class="item" data-color-scheme="light">
+      <Swatch color={token[1].$value} />
+      <div>
+        <Token token={token[1]} />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import url("@sikt/sds-tokens/dist/css/custom-media.css");
+
+  .card {
+    align-items: center;
+    display: grid;
+    gap: var(--sds-space-padding-medium);
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+
+    &:last-child {
+      .item {
+        &:last-child {
+          border-bottom-right-radius: var(--color-card-border-radius);
+          border-bottom-left-radius: var(--color-card-border-radius);
+        }
+      }
+    }
+
+    @media (--sds-base-breakpoint-desktop) {
+      grid-template-columns: 2fr 1fr;
+
+      &:first-child {
+        .item {
+          &:last-child {
+            border-top-right-radius: var(--color-card-border-radius);
+          }
+        }
+      }
+
+      &:last-child {
+        .item {
+          &:last-child {
+            border-bottom-left-radius: unset;
+          }
+        }
+      }
+    }
+  }
+
+  .name {
+    padding: var(--sds-space-padding-small);
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .item {
+    align-items: center;
+    background-color: var(--sds-color-layout-background-default);
+    color: var(--sds-color-text-primary);
+    display: flex;
+    gap: var(--sds-space-padding-small);
+    padding: var(--sds-space-padding-small);
+  }
+</style>
