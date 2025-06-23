@@ -39,12 +39,9 @@ const { token } = Astro.props;
 
     &:last-child {
       .item {
-        &:first-child {
-          border-bottom-left-radius: var(--color-card-border-radius);
-        }
-
         &:last-child {
           border-bottom-right-radius: var(--color-card-border-radius);
+          border-bottom-left-radius: var(--color-card-border-radius);
         }
       }
     }
@@ -62,7 +59,9 @@ const { token } = Astro.props;
 
       &:last-child {
         .item {
-          border-bottom-left-radius: unset;
+          &:last-child {
+            border-bottom-left-radius: unset;
+          }
         }
       }
     }
@@ -74,7 +73,11 @@ const { token } = Astro.props;
 
   .content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media (--sds-base-breakpoint-desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   .item {
