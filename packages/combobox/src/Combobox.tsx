@@ -24,8 +24,8 @@ interface ComboboxBaseProps<T extends object>
   > {
   children: React.ReactNode | ((item: T) => React.ReactNode);
   className?: string;
-  errorText?: string;
-  helpText?: string;
+  errorText?: ReactNode;
+  helpText?: ReactNode;
   menuTrigger?: "focus" | "manual" | "input";
   popoverProps?: PopoverProps;
 }
