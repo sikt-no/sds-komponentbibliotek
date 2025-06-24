@@ -12,7 +12,7 @@ import {
 export interface ToggleSegmentOptionProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   value: string | number;
-  label: ReactNode;
+  label: NonNullable<ReactNode>;
   checked?: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
