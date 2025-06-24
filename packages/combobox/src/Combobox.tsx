@@ -15,6 +15,7 @@ import {
   Popover,
   PopoverProps,
 } from "react-aria-components";
+import reactNodeToString from "react-node-to-string";
 import "./combobox.pcss";
 
 interface ComboboxBaseProps<T extends object>
@@ -33,7 +34,7 @@ interface ComboboxBaseProps<T extends object>
 export type ComboboxProps<T extends object> = ComboboxBaseProps<T> &
   (
     | {
-        label: string;
+        label: NonNullable<ReactNode>;
         "aria-labelledby"?: never;
       }
     | {
@@ -79,7 +80,7 @@ export function Combobox<T extends object>({
       <AriaCombobox
         menuTrigger={menuTrigger}
         id={id}
-        aria-label={label}
+        aria-label={reactNodeToString(label)}
         aria-labelledby={ariaLabelledBy}
         {...props}
       >
