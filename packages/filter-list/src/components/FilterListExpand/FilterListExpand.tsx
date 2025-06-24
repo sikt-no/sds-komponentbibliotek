@@ -1,7 +1,12 @@
 import { Button } from "@sikt/sds-button";
 import { ExpandShowIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
-import { ReactNode, useId, useState } from "react";
+import {
+  KeyboardEvent as ReactKeyboardEvent,
+  ReactNode,
+  useId,
+  useState,
+} from "react";
 import "./filter-list-expand.pcss";
 
 interface FilterListExpandProps {
@@ -36,9 +41,8 @@ export function FilterListExpand({
     onToggle();
   };
 
-  const handleToggleByKeyDown = (event: KeyboardEvent) => {
-    const key = event.key;
-    if (key == "Enter" || key === " ") {
+  const handleToggleByKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    if (event.key === " " || event.key === "Enter") {
       onToggle();
     }
   };
