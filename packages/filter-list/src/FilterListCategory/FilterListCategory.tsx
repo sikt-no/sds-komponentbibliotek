@@ -42,7 +42,7 @@ export const FilterListCategory = ({
         <div className="sds-filter-list-category">
           <CheckboxInput
             className="sds-filter-list-item__input"
-            aria-describedby={id}
+            aria-describedby={hasCount ? id : undefined}
             label={
               icon ? <FilterListIconLabel label={label} icon={icon} /> : label
             }

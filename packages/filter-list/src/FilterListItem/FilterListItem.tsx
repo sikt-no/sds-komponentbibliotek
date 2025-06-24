@@ -1,12 +1,12 @@
 import { CheckboxInput } from "@sikt/sds-checkbox";
 import { RadioInput } from "@sikt/sds-radio";
-import { ChangeEvent, ReactElement, useId } from "react";
+import { ChangeEvent, ReactElement, ReactNode } from "react";
 import { FilterListIconLabel } from "../components/FilterListIconLabel/FilterListIconLabel";
 import "./filter-list-item.pcss";
 
 export interface FilterListItemProps {
   type: "radio" | "checkbox";
-  label: string;
+  label: NonNullable<ReactNode>;
   icon?: ReactElement;
   value: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -23,10 +23,15 @@ export const FilterListItem = ({
   checked,
   count,
 }: FilterListItemProps) => {
-  const id = useId();
   const hasCount = count !== undefined;
 
-  const inputLabel = hasCount ? `${label} (${count})` : label;
+  const inputLabel = hasCount ? (
+    <>
+      {label} ({count})
+    </>
+  ) : (
+    label
+  );
   const iconLabel = icon ? (
     <FilterListIconLabel label={inputLabel} icon={icon} />
   ) : (
@@ -41,7 +46,6 @@ export const FilterListItem = ({
           label={iconLabel}
           value={value}
           checked={checked}
-          aria-describedby={id}
         />
       )}
 
@@ -52,7 +56,6 @@ export const FilterListItem = ({
           value={value}
           onChange={onChange}
           checked={checked}
-          aria-describedby={id}
         />
       )}
     </div>

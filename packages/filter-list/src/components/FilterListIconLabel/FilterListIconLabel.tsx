@@ -3,7 +3,7 @@ import "./filter-list-icon-label.pcss";
 
 export interface FilterListIconLabelProps {
   icon: ReactNode;
-  label: string;
+  label: ReactNode;
 }
 
 export const FilterListIconLabel = ({
