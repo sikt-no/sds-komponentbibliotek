@@ -5,7 +5,7 @@ import "./toggle-button.pcss";
 
 export interface ToggleButtonProps {
   checked?: boolean;
-  label: ReactNode;
+  label: NonNullable<ReactNode>;
   showIcons?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   className?: string;
