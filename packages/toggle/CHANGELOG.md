@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@5.2.0...@sikt/sds-toggle@6.0.0) (2025-06-25)
+
+### ⚠ BREAKING CHANGES
+
+- **toggle-segment:** change label to NonNullable
+- **toggle-button:** change label to NonNullable
+
+### Bug Fixes
+
+- **toggle-button:** change label to NonNullable ([96f3716](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/96f37168c76bbff295eba2605c49e59da98114ac))
+- **toggle-segment:** change label to NonNullable ([3c61c3d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3c61c3da252c53f38c01f18ac3807c1c16a91ee2))
+
 ## [5.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@5.1.0...@sikt/sds-toggle@5.2.0) (2025-06-11)
 
 ### Features
