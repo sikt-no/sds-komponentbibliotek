@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.4.1...@sikt/sds-filter-list@0.5.0) (2025-06-25)
+
+### ⚠ BREAKING CHANGES
+
+- **filter-list:** change label to NonNullable<ReactNode>
+
+### Bug Fixes
+
+- **filter-list:** add gap between label & count ([b23be68](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b23be682c238e4cca9fa2115d454bef589da8af9))
+- **filter-list:** change label to NonNullable<ReactNode> ([5f215fe](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5f215feba4ce8bd2e72f9301e897f1ae92ed140e))
+- **typography:** no contextual font ligatures ([15061ac](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/15061ac6f66f978a2a37af689847f247b9b9cd81))
+
 ## [0.4.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.4.0...@sikt/sds-filter-list@0.4.1) (2025-06-01)
 
 ### Bug Fixes
