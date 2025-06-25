@@ -35,7 +35,7 @@ describe("FilterListSection", () => {
       );
 
       expect(screen.getByText("Not expandable section")).toBeInTheDocument();
-      expect(screen.getByText("Has good grades (3)")).toBeInTheDocument();
+      expect(screen.getByLabelText("Has good grades (3)")).toBeInTheDocument();
     });
 
     it("should render as expandable", async () => {

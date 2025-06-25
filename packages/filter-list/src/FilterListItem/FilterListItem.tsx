@@ -26,9 +26,9 @@ export const FilterListItem = ({
   const hasCount = count !== undefined;
 
   const inputLabel = hasCount ? (
-    <>
-      {label} ({count})
-    </>
+    <span className="sds-filter-list-item__input-label">
+      <span>{label}</span> <span>({count})</span>
+    </span>
   ) : (
     label
   );
