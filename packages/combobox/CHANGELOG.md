@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@2.2.1...@sikt/sds-combobox@3.0.0) (2025-06-25)
+
+### ⚠ BREAKING CHANGES
+
+- **combobox:** change label to NonNullable<ReactNode>
+
+### Bug Fixes
+
+- **combobox:** change label to NonNullable<ReactNode> ([49ccc24](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/49ccc2465ff16ec849630bc80be34670e373784e))
+- **combobox:** change to ReactNode for helpText & errorText ([89039ed](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/89039ed38d0d2f042f6b367ea75ce7cbd732c545))
+- **deps:** update dependency react-aria-components to ^1.10.1 ([3410e9a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3410e9a732fd077586885c4ad63d289d26d37276))
+
 ## [2.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@2.2.0...@sikt/sds-combobox@2.2.1) (2025-06-10)
 
 ### Bug Fixes
