@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.2.0...@sikt/sds-tabs@3.2.1) (2025-06-25)
+
+### Bug Fixes
+
+- **tabs:** change gap between icon & text ([18b1ff5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/18b1ff5384db89f0685f376c104977251dbc189e))
+- **tabs:** wrap on too little space ([08f7da4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/08f7da44b07aa23982dd1d76a24448cccd456781))
+
 ## [3.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.1.0...@sikt/sds-tabs@3.2.0) (2025-06-02)
 
 ### Features
