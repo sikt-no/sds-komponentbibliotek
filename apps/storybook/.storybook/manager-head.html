@@ -6,35 +6,35 @@
 
 <style>
   #root > * {
-    --header-height: 56px;
-    --top-nav-height: calc(
-      var(--sds-space-padding-tiny) * 2 +
-        var(--sds-typography-body-lineheight-regular)
-    );
-
     height: calc(
-      100dvh - calc(var(--top-nav-height) + var(--header-height))
+      100dvh - calc(var(--sikt-top-header-height) + var(--header-height))
     ) !important;
   }
 
   /* top-nav */
-  .top-nav {
-    --sikt-top-nav-padding: 2px;
+  :root {
+    --header-height: 48px;
+    --sikt-top-header-height: 28px;
 
+    @media (width >= 720px) {
+      --header-height: 72px;
+    }
+
+    @media (width >= 1024px) {
+      --sikt-top-header-height: 40px;
+    }
+  }
+  .top-nav {
     background-color: var(--sds-color-brand-accent-strong);
     display: grid;
     place-items: center center;
-    padding: var(--sikt-top-nav-padding) var(--sds-space-padding-small);
+    min-height: var(--sikt-top-header-height);
+    padding: 0 var(--sds-space-padding-small);
   }
   .top-nav__list {
     display: flex;
     gap: var(--sds-space-gap-medium);
     list-style: none;
-  }
-  @media (width >= 720px) {
-    .top-nav {
-      --sikt-top-nav-padding: var(--sds-space-padding-tiny);
-    }
   }
 </style>
 
