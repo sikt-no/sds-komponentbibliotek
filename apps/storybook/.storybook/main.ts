@@ -12,7 +12,7 @@ const config: StorybookConfig = {
     },
   }),
   stories: [
-    "../stories/*.mdx",
+    "../stories/**/*.mdx",
     "../../../packages/*/stories/**/*.mdx",
     "../../../packages/*/stories/*.stories.@(js|jsx|ts|tsx)",
   ],
