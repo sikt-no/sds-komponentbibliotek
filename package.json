@@ -82,7 +82,7 @@
     "esbuild-postcss": "^0.0.4",
     "eslint": "^9.29.0",
     "husky": "^9.1.7",
-    "jest": "^30.0.2",
+    "jest": "^30.0.3",
     "jest-axe": "^10.0.0",
     "jest-environment-jsdom": "^30.0.2",
     "jest-esm-transformer": "^1.0.0",
