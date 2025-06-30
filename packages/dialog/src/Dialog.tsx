@@ -162,6 +162,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
               <Button
                 variant="transparent"
                 icon={<CancelIcon />}
+                iconVariant={closeButtonAriaLabel ? "only" : undefined}
                 className="sds-dialog__close-button"
                 onClick={onClose}
                 aria-label={closeButtonLabel ? undefined : closeButtonAriaLabel}
