@@ -157,6 +157,58 @@ export const NonModal: Story = {
   },
 };
 
+export const Drawer: Story = {
+  args: {
+    modal: false,
+    drawer: "left",
+    heading: "Filter",
+    closeButtonAriaLabel: "Close drawer",
+    "aria-label": "Filter page list content",
+    style: { width: "400px" },
+    children: (
+      <ul>
+        <li>Yes</li>
+        <li>No</li>
+        <li>Maybe</li>
+      </ul>
+    ),
+  },
+  render: (args: DialogProps) => {
+    const [, setArgs] = useArgs();
+    return (
+      <>
+        <Button
+          variant="strong"
+          className="sds-dialog__trigger"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setArgs({ ...args, open: true });
+          }}
+        >
+          Open dialog
+        </Button>
+        {args.open && (
+          <Dialog
+            {...args}
+            footer={[
+              <Button variant="transparent" key="0">
+                Reset filters
+              </Button>,
+              <Button variant="strong" key="1">
+                Apply filters
+              </Button>,
+            ]}
+            onClose={() => {
+              setArgs({ ...args, open: false });
+            }}
+          />
+        )}
+      </>
+    );
+  },
+};
+
 const shortContent = (
   <p>
     Sign up for our newsletter to receive the latest updates, articles, and

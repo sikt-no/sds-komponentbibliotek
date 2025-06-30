@@ -31,6 +31,7 @@ export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
   open: boolean;
   subheading?: string;
   modal?: boolean;
+  drawer?: "left" | "right";
 }
 
 export type DialogProps = DialogBaseProps &
@@ -64,6 +65,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
       footer,
       heading,
       modal = true,
+      drawer,
       onClose,
       open,
       subheading,
@@ -139,6 +141,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
         className={clsx(
           "sds-dialog",
           isScrolling && "sds-dialog--scrollable",
+          drawer && `sds-dialog--drawer sds-dialog--drawer-${drawer}`,
           className,
         )}
         aria-labelledby={contentLabel ? undefined : headingId}
