@@ -86,6 +86,79 @@ export const Default: Story = {
   },
 };
 
+export const NonModal: Story = {
+  args: {
+    modal: false,
+    heading: "Welcome to Our Newsletter",
+    subheading: "Stay Informed and Inspired",
+    closeButtonLabel: "Close dialog",
+    "aria-label": "Newsletter Subscription Modal",
+    dismissable: true,
+    children: (
+      <p>
+        Sign up for our newsletter to receive the latest updates, articles, and
+        insights from our experts. Stay connected with the trends shaping your
+        industry and gain valuable knowledge to enhance your skills and career.
+      </p>
+    ),
+  },
+  render: (args: DialogProps) => {
+    const [, setArgs] = useArgs();
+    return (
+      <>
+        <Button
+          variant="strong"
+          className="sds-dialog__trigger"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setArgs({ ...args, open: true });
+          }}
+        >
+          Open dialog
+        </Button>
+        {args.open && (
+          <Dialog
+            {...args}
+            footer={[
+              <Button
+                variant="transparent"
+                onClick={() => {
+                  setArgs({ ...args, children: shortContent });
+                }}
+                key="0"
+              >
+                Show short content
+              </Button>,
+              <Button
+                variant="subtle"
+                onClick={() => {
+                  setArgs({ ...args, children: longContent });
+                }}
+                key="1"
+              >
+                Change content length
+              </Button>,
+              <Button
+                variant="strong"
+                key="2"
+                onClick={() => {
+                  setArgs({ ...args, open: false });
+                }}
+              >
+                Close
+              </Button>,
+            ]}
+            onClose={() => {
+              setArgs({ ...args, open: false });
+            }}
+          />
+        )}
+      </>
+    );
+  },
+};
+
 const shortContent = (
   <p>
     Sign up for our newsletter to receive the latest updates, articles, and

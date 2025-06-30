@@ -29,11 +29,13 @@ export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
    * - Clicking on the overlay
    * - Clicking on the close button
    */
+  dismissable?: boolean;
   footer?: ReactNode;
   heading: string;
   onClose: () => void;
   open: boolean;
   subheading?: string;
+  modal?: boolean;
 }
 
 export type DialogProps = DialogBaseProps &
@@ -66,6 +68,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
       dismissable = true,
       footer,
       heading,
+      modal = true,
       onClose,
       open,
       subheading,
@@ -86,13 +89,13 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     );
 
     const handleBackdropClick = () => {
-      if (dismissable && isOpen) {
+      if (modal && dismissable && isOpen) {
         onClose();
       }
     };
 
     const handleEscapeKey = () => {
-      if (dismissable && isOpen) {
+      if (modal && dismissable && isOpen) {
         onClose();
       }
     };
@@ -100,19 +103,23 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     useEffect(() => {
       if (dialogRef.current) {
         if (open) {
-          dialogRef.current.showModal();
+          if (modal) {
+            dialogRef.current.showModal();
+          } else {
+            dialogRef.current.show();
+          }
         } else {
           dialogRef.current.close();
         }
       }
 
       setIsOpen(open);
-      document.body.style.overflow = open ? "hidden" : "unset";
+      document.body.style.overflow = open && modal ? "hidden" : "unset";
 
       return () => {
         document.body.style.overflow = "unset";
       };
-    }, [open]);
+    }, [open, modal]);
 
     const checkScroll = () => {
       if (contentRef.current) {
