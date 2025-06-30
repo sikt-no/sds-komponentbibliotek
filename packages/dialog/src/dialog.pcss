@@ -22,8 +22,7 @@
     max-width: var(--sds-base-breakpoint-tablet);
 
     &--scrollable {
-      border-radius: var(--modal-border-radius) var(--modal-border-radius) 0
-        var(--modal-border-radius);
+      border-radius: var(--modal-border-radius) 0 0 var(--modal-border-radius);
     }
   }
 
@@ -41,11 +40,6 @@
       var(--sds-space-gap-medium) var(--sds-space-padding-large);
   }
 
-  &--scrollable &__header {
-    border-bottom: var(--sds-space-border-weight-regular) solid
-      var(--sds-color-layout-divider-strong);
-  }
-
   &__heading {
     display: flex;
     flex-direction: column;
@@ -59,7 +53,6 @@
   &__content-wrapper {
     flex-grow: 1;
     display: flex;
-    overflow: auto;
     flex-direction: column;
   }
 

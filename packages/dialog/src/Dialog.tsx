@@ -95,6 +95,14 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
       }
     };
 
+    const checkScroll = () => {
+      if (dialogRef.current) {
+        setIsScrolling(
+          dialogRef.current.clientHeight < dialogRef.current.scrollHeight,
+        );
+      }
+    };
+
     useEffect(() => {
       if (dialogRef.current) {
         if (open) {
@@ -108,6 +116,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
         }
       }
 
+      checkScroll();
       setIsOpen(open);
       document.body.style.overflow = open && modal ? "hidden" : "unset";
 
@@ -115,14 +124,6 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
         document.body.style.overflow = "unset";
       };
     }, [open, modal]);
-
-    const checkScroll = () => {
-      if (contentRef.current) {
-        setIsScrolling(
-          contentRef.current.clientHeight < contentRef.current.scrollHeight,
-        );
-      }
-    };
 
     const id = useId();
     const headingId = `${id}-heading`;
