@@ -23,13 +23,8 @@ export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
    * This property should only be used when the heading alone is not enough to provide an adequate description of the content.
    */
   "aria-label"?: string;
-  /**
-   * Specifies whether the modal is dismissable or not. When set to `false`, the user is required to take an action and cannot dismiss the modal using the following methods:
-   * - Pressing the "Esc" key
-   * - Clicking on the overlay
-   * - Clicking on the close button
-   */
-  dismissable?: boolean;
+  /* TODO: Replace with attribute on <dialog> when full native support https://caniuse.com/?search=closedby */
+  closedby?: "any" | "closerequest" | "none";
   footer?: ReactNode;
   heading: string;
   onClose: () => void;
@@ -41,17 +36,17 @@ export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
 export type DialogProps = DialogBaseProps &
   (
     | {
-        dismissable: false;
+        closedby: "none";
         closeButtonLabel?: never;
         closeButtonAriaLabel?: never;
       }
     | {
-        dismissable?: true;
+        closedby?: "any" | "closerequest";
         closeButtonLabel: string;
         closeButtonAriaLabel?: never;
       }
     | {
-        dismissable?: true;
+        closedby?: "any" | "closerequest";
         closeButtonLabel?: never;
         closeButtonAriaLabel: string;
       }
@@ -65,7 +60,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
       "aria-label": contentLabel,
       closeButtonLabel,
       closeButtonAriaLabel,
-      dismissable = true,
+      closedby = "any",
       footer,
       heading,
       modal = true,
@@ -89,13 +84,13 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     );
 
     const handleBackdropClick = () => {
-      if (modal && dismissable && isOpen) {
+      if (modal && closedby == "any" && isOpen) {
         onClose();
       }
     };
 
     const handleEscapeKey = () => {
-      if (modal && dismissable && isOpen) {
+      if (modal && closedby != "none" && isOpen) {
         onClose();
       }
     };
@@ -162,7 +157,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
               {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
             </div>
 
-            {dismissable && (
+            {closedby != "none" && (
               <Button
                 variant="transparent"
                 icon={<CancelIcon />}

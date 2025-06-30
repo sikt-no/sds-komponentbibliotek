@@ -35,7 +35,6 @@ describe("Dialog", () => {
           subheading={subheadingText}
           closeButtonLabel="Close dialog"
           footer={<button key="primary">Click me!</button>}
-          dismissable
         >
           <p>Dialog content</p>
         </Dialog>,
@@ -56,7 +55,6 @@ describe("Dialog", () => {
           open
           aria-label={ariaLabel}
           closeButtonLabel="Close dialog"
-          dismissable
         >
           <p>Dialog content</p>
         </Dialog>,
@@ -78,7 +76,6 @@ describe("Dialog", () => {
           subheading={subheadingText}
           onClose={jest.fn()}
           closeButtonLabel="Close dialog"
-          dismissable
           open
         >
           <p>Dialog content</p>
@@ -104,7 +101,6 @@ describe("Dialog", () => {
           heading={headingText}
           closeButtonAriaLabel={closeButtonText}
           footer={[<button key="primary">Click me!</button>]}
-          dismissable
         >
           <p>Dialog Content</p>
         </Dialog>,
@@ -140,7 +136,7 @@ describe("Dialog", () => {
 
       const { rerender } = render(
         <Dialog
-          dismissable={false}
+          closedby="none"
           open
           onClose={handleClose}
           heading="Test heading"
@@ -177,7 +173,6 @@ describe("Dialog", () => {
           open={false}
           onClose={handleClose}
           heading="Test heading"
-          dismissable
           closeButtonLabel="Close dialog"
         >
           <p>Dialog Content</p>
@@ -194,7 +189,6 @@ describe("Dialog", () => {
           open
           onClose={handleClose}
           heading="Test heading"
-          dismissable
           closeButtonLabel="Close dialog"
         >
           <p>Dialog Content</p>
@@ -214,7 +208,6 @@ describe("Dialog", () => {
         open
         onClose={handleClose}
         heading="Test heading"
-        dismissable
         closeButtonLabel="Close dialog"
       >
         <p>Dialog Content</p>
@@ -232,7 +225,7 @@ describe("Dialog", () => {
       <Dialog
         footer={[<button key="primary">Click me!</button>]}
         open
-        dismissable={false}
+        closedby="none"
         onClose={handleClose}
         heading="Test heading"
       >
@@ -253,7 +246,6 @@ describe("Dialog", () => {
         open
         onClose={handleClose}
         heading="Test heading"
-        dismissable
         closeButtonLabel="Close dialog"
         data-testid="test"
       >

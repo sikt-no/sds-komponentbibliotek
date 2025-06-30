@@ -20,7 +20,6 @@ export const Default: Story = {
     subheading: "Stay Informed and Inspired",
     closeButtonLabel: "Close dialog",
     "aria-label": "Newsletter Subscription Modal",
-    dismissable: true,
     children: (
       <p>
         Sign up for our newsletter to receive the latest updates, articles, and
@@ -93,7 +92,6 @@ export const NonModal: Story = {
     subheading: "Stay Informed and Inspired",
     closeButtonLabel: "Close dialog",
     "aria-label": "Newsletter Subscription Modal",
-    dismissable: true,
     children: (
       <p>
         Sign up for our newsletter to receive the latest updates, articles, and
