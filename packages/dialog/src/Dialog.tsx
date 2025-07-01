@@ -23,14 +23,26 @@ export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
    * This property should only be used when the heading alone is not enough to provide an adequate description of the content.
    */
   "aria-label"?: string;
-  /* TODO: Replace with attribute on <dialog> when full native support https://caniuse.com/?search=closedby */
+  /**
+   * - any (default): The dialog can be dismissed with a light dismiss user action, a platform-specific user action, or a developer-specified mechanism.
+   * - closerequest: The dialog can be dismissed with a platform-specific user action or a developer-specified mechanism.
+   * - none: The dialog can only be dismissed with a developer-specified mechanism.
+   */
   closedby?: "any" | "closerequest" | "none";
   footer?: ReactNode;
   heading: string;
   onClose: () => void;
   open: boolean;
   subheading?: string;
+  /**
+   * - true (default): Modal dialog.
+   * - false: Non-modal dialog.
+   */
   modal?: boolean;
+  /**
+   * - left: Left side drawer.
+   * - right: Right side drawer.
+   */
   drawer?: "left" | "right";
 }
 
