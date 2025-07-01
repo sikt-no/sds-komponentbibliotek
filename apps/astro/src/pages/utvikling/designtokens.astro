@@ -15,53 +15,60 @@ const pageTitle = "Designtokens";
     heading={pageTitle}
     slot="hero"
   >
-    Designtokens er verdier koblet til et navn, og sørger for at ting blir likt
-    på tvers av design, utvikling, og tjenester.
+    Et designtoken er koblingen av en verdi med et navn som er lett å forstå.
   </Hero>
 
   <Section headingText="Hva er designtokens?">
     <Paragraph className="ds-content-max-width">
-      Designtokens er små byggeklosser bestående av designattributter som
-      farger, typografi, størrelser, avstander, former osv. De er ikke begrenset
-      til en spesifikk teknologi eller et designverktøy, men er fleksible
-      variabler som kan benyttes av alle. Ved å bruke designtokens sørger vi for
-      at både designere og utviklere arbeider etter de samme reglene og
-      retningslinjene. Dette forenkler vedlikeholdet av designet og sikrer en
-      helhetlig visuell fremstilling på tvers av produkter.
+      Designtokens er de minste byggeklossene i designet, verdier som farger,
+      typografivalg, størrelser og så videre. Målet med designtokens er å gjøre
+      det enkelt å gjenbruke, kommunisere og kontrollere designbeslutninger på
+      tvers av designverktøy og kode, uavhengig av teknologivalg.
     </Paragraph>
 
-    <Paragraph modifier="emphasis" className="ds-content-max-width">
-      Fra <Link href="https://aksel.nav.no" isExternal>aksel.nav.no</Link>
+    <Paragraph className="ds-content-max-width">
+      Token med navn som inneholder informasjon om hvor eller hvordan verdien
+      skal brukes, for eksempel --sds-color-text-primary, kalles semantiske.
     </Paragraph>
   </Section>
 
   <Section headingText="Designtokens i Figma">
     <Paragraph className="ds-content-max-width">
-      Sikt leverer semantiske typografitokens i flere kategorier: headlines,
-      body text, label og overline. Vi bruker den innebygde funksjonaliteten for
-      designtokens som Figma kaller “variables”. Denne funksjonaliteten er
-      fremdeles i beta-versjon og under utvikling, men det gir oss en større
-      sikkerhet i forhold til kompatibilitet og mindre avhengigheter.
+      Sikt benytter Figma sin innebygde designtoken-funksjonalitet, som i Figma
+      kalles Variabler (Variables på engelsk), for å tilby tokens for
+      størrelser, layout, farge og typografi.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Det anbefales sterkt å benytte eksisterende variabler i SDS for å definere
+      designattributter også for lokale komponenter.
     </Paragraph>
   </Section>
 
-  <Section headingText="Collections og modes">
+  <Section headingText="Collections og Modes">
     <Paragraph className="ds-content-max-width">
-      I Figma brukes terminologien collections og modes om å gruppere variabler
-      i sett (collections) og å kunne gi et token flere verdier (mode, f.eks.
-      dark- og light-mode).
+      I Figma brukes termene Collections og Modes om grupperinger av variabler
+      (collections) og kontekst-avhengige, alternative verdier for hver variabel
+      (mode).
     </Paragraph>
 
     <Paragraph className="ds-content-max-width">
-      Vi har gruppert et sett tokens i “Base”-collection som kun er tilgjengelig
-      i selve bibliotek-filen, da disse ikke skal brukes direkte men inneholder
-      de grunnleggende verdiene de andre tokensene baserer seg på.
+      Collections samler variabler/tokens av samme type, f.eks farge eller
+      størrelse.
     </Paragraph>
 
     <Paragraph className="ds-content-max-width">
-      De andre tokensene er gruppert i farger (Color) og størrelser/avstander
-      (Space) slik at man enkelt kan bytte mellom de forskjellige modusene de
-      inneholder (dark / light, og desktop / tablet / mobile).
+      Mode lar deg sette opp ytterligere kontekster hvor et token har en
+      alternativ referanseverdi. Modes kan settes på artboard-nivå, på
+      komponentnivå eller på layer-nivå, og lar deg for eksempel bytte mellom
+      light-mode og dark-mode.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Merk at hver collection har egne modes, siden forskjellige typer variabler
+      ofte har forskjellige kontekster (for eksempel light/dark-mode for
+      fargevariabler, mens typografi- eller space-variabler har modes for
+      forskjellige skjermstørrelser).
     </Paragraph>
   </Section>
 
@@ -94,8 +101,7 @@ const pageTitle = "Designtokens";
     <Paragraph className="ds-content-max-width">
       Dette er et token fra Sikt Design System (sds), en farge (color) som
       brukes til interaksjoner (interaction), og er basert på hovedfargen
-      (primary), med gjennomsiktighet (transparent) i standard variasjon
-      (default).
+      (primary), med nivå (transparent) i standard variasjon (default).
     </Paragraph>
   </Section>
 </Layout>
