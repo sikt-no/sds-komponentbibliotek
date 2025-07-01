@@ -43,43 +43,41 @@ export const Default: Story = {
         >
           Open dialog
         </Button>
-        {args.open && (
-          <Dialog
-            {...args}
-            footer={[
-              <Button
-                variant="transparent"
-                onClick={() => {
-                  setArgs({ ...args, children: shortContent });
-                }}
-                key="0"
-              >
-                Show short content
-              </Button>,
-              <Button
-                variant="subtle"
-                onClick={() => {
-                  setArgs({ ...args, children: longContent });
-                }}
-                key="1"
-              >
-                Change content length
-              </Button>,
-              <Button
-                variant="strong"
-                key="2"
-                onClick={() => {
-                  setArgs({ ...args, open: false });
-                }}
-              >
-                Close
-              </Button>,
-            ]}
-            onClose={() => {
-              setArgs({ ...args, open: false });
-            }}
-          />
-        )}
+        <Dialog
+          {...args}
+          footer={[
+            <Button
+              variant="transparent"
+              onClick={() => {
+                setArgs({ ...args, children: shortContent });
+              }}
+              key="0"
+            >
+              Show short content
+            </Button>,
+            <Button
+              variant="subtle"
+              onClick={() => {
+                setArgs({ ...args, children: longContent });
+              }}
+              key="1"
+            >
+              Change content length
+            </Button>,
+            <Button
+              variant="strong"
+              key="2"
+              onClick={() => {
+                setArgs({ ...args, open: false });
+              }}
+            >
+              Close
+            </Button>,
+          ]}
+          onClose={() => {
+            setArgs({ ...args, open: false });
+          }}
+        />
       </>
     );
   },
@@ -115,43 +113,41 @@ export const NonModal: Story = {
         >
           Open dialog
         </Button>
-        {args.open && (
-          <Dialog
-            {...args}
-            footer={[
-              <Button
-                variant="transparent"
-                onClick={() => {
-                  setArgs({ ...args, children: shortContent });
-                }}
-                key="0"
-              >
-                Show short content
-              </Button>,
-              <Button
-                variant="subtle"
-                onClick={() => {
-                  setArgs({ ...args, children: longContent });
-                }}
-                key="1"
-              >
-                Change content length
-              </Button>,
-              <Button
-                variant="strong"
-                key="2"
-                onClick={() => {
-                  setArgs({ ...args, open: false });
-                }}
-              >
-                Close
-              </Button>,
-            ]}
-            onClose={() => {
-              setArgs({ ...args, open: false });
-            }}
-          />
-        )}
+        <Dialog
+          {...args}
+          footer={[
+            <Button
+              variant="transparent"
+              onClick={() => {
+                setArgs({ ...args, children: shortContent });
+              }}
+              key="0"
+            >
+              Show short content
+            </Button>,
+            <Button
+              variant="subtle"
+              onClick={() => {
+                setArgs({ ...args, children: longContent });
+              }}
+              key="1"
+            >
+              Change content length
+            </Button>,
+            <Button
+              variant="strong"
+              key="2"
+              onClick={() => {
+                setArgs({ ...args, open: false });
+              }}
+            >
+              Close
+            </Button>,
+          ]}
+          onClose={() => {
+            setArgs({ ...args, open: false });
+          }}
+        />
       </>
     );
   },
@@ -188,22 +184,20 @@ export const Drawer: Story = {
         >
           Open dialog
         </Button>
-        {args.open && (
-          <Dialog
-            {...args}
-            footer={[
-              <Button variant="transparent" key="0">
-                Reset filters
-              </Button>,
-              <Button variant="strong" key="1">
-                Apply filters
-              </Button>,
-            ]}
-            onClose={() => {
-              setArgs({ ...args, open: false });
-            }}
-          />
-        )}
+        <Dialog
+          {...args}
+          footer={[
+            <Button variant="transparent" key="0">
+              Reset filters
+            </Button>,
+            <Button variant="strong" key="1">
+              Apply filters
+            </Button>,
+          ]}
+          onClose={() => {
+            setArgs({ ...args, open: false });
+          }}
+        />
       </>
     );
   },

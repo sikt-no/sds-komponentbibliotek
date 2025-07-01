@@ -1,40 +1,53 @@
 @import url("@sikt/sds-tokens/dist/css/custom-media.css");
 
 .sds-dialog {
+  --modal-border-radius: 16px;
+
   background-color: var(--sds-color-layout-background-default);
   border: none;
   box-shadow: var(--sds-effect-shadow-elevated-default);
   color: var(--sds-color-text-primary);
+  flex-direction: column;
   padding: 0;
+  width: 100%;
   z-index: var(--sds-base-zindex-modal);
+  transition:
+    display var(--sds-effect-animation-duration-medium) allow-discrete,
+    overlay var(--sds-effect-animation-duration-medium) allow-discrete;
 
-  &:not(&--drawer) {
-    --modal-border-radius: 16px;
+  @media (--sds-base-breakpoint-tablet) {
+    border-radius: var(--modal-border-radius);
+    max-width: var(--sds-base-breakpoint-tablet);
 
-    box-shadow: var(--sds-effect-shadow-elevated-default);
+    &.sds-dialog--scrollable {
+      border-radius: var(--modal-border-radius) 0 0 var(--modal-border-radius);
+    }
+  }
+
+  &::backdrop {
+    background-color: transparent;
+    transition:
+      background-color var(--sds-effect-animation-duration-medium)
+        var(--sds-effect-animation-easing-default),
+      display var(--sds-effect-animation-duration-medium) allow-discrete,
+      overlay var(--sds-effect-animation-duration-medium) allow-discrete;
+  }
+
+  &[open] {
     display: flex;
-    flex-direction: column;
-    width: 100%;
 
     &:focus-visible {
       outline: var(--sds-focus-outline);
     }
 
-    @media (--sds-base-breakpoint-tablet) {
-      border-radius: var(--modal-border-radius);
-      max-width: var(--sds-base-breakpoint-tablet);
-
-      &.sds-dialog--scrollable {
-        border-radius: var(--modal-border-radius) 0 0 var(--modal-border-radius);
-      }
+    &::backdrop {
+      background-color: rgb(0 0 0 / 60%);
     }
   }
 
-  &::backdrop {
-    background-color: rgb(0 0 0 / 60%);
-  }
-
   &--drawer {
+    --modal-border-radius: 0;
+
     margin: 0;
     height: 100vh;
     overflow: auto;
@@ -63,6 +76,15 @@
 
     &-left {
       left: 0;
+      translate: -100% 0;
+
+      &[open] {
+        translate: 0 0;
+
+        @starting-style {
+          translate: -100% 0;
+        }
+      }
     }
   }
 
