@@ -29,7 +29,10 @@ const merkevareMenu: MenuItemType[] = [
 
 const visuellIdentitetMenu: MenuItemType[] = [
   { name: "Fargepalett" },
-  { name: "Logoer" },
+  {
+    name: "Logoer",
+    url: "/visuell-identitet/logoer",
+  },
   { name: "Typografi" },
   { name: "Illustrasjoner" },
   { name: "Bilder" },

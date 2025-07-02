@@ -1,0 +1,192 @@
+---
+import Layout from "../../../layouts/PageLayout.astro";
+import { Hero } from "../../../components";
+import { Button, ButtonGroup } from "@sikt/sds-button";
+import { Paragraph } from "@sikt/sds-core";
+import { Section } from "@sikt/sds-section";
+import LogoCard from "./_components/card/LogoCard.astro";
+import { Picture } from "astro:assets";
+import primaryLogo from "../../../assets/images/visuell-identitet/logoer/primary.png";
+import secondaryLogo from "../../../assets/images/visuell-identitet/logoer/secondary.png";
+import bleedLogo from "../../../assets/images/visuell-identitet/logoer/beskyttelsesomraade.png";
+import ikonLogo from "../../../assets/images/visuell-identitet/logoer/ikon.png";
+import produktLogo from "../../../assets/images/visuell-identitet/logoer/produkt.png";
+
+const pageTitle = "Logoer";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[
+      { title: "Designsystem", href: "/" },
+      { title: "Visuell identitet" },
+    ]}
+    heading={pageTitle}
+    slot="hero"
+  >
+    <Paragraph className="ds-content-max-width">
+      I Sikt har vi én hovedlogo som brukes for å kommunisere vår merkevare,
+      samt underlogoer med tilpasninger knyttet til produkter og tjenester.
+    </Paragraph>
+
+    <ButtonGroup>
+      <Button variant="strong" disabled>Last ned logopakke</Button>
+    </ButtonGroup>
+  </Hero>
+
+  <Section headingText="Primærlogo">
+    <Paragraph className="ds-content-max-width">
+      Primærlogoen er den varianten av logoen som blir vist på de fleste flatene
+      i Sikt. Her vises navnet vårt sammen med ikonet.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Primærlogoen vår skal kun brukes i fargene Sikt Mørk og Sikt Lys uavhengig
+      av hvilken bakgrunnsfarge den plasseres mot.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      For å sikre tydelighet og leselighet er det definert en minimumstørrelse
+      for primærlogoen vår både for print og digitale flater.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Minimumsstørrelse på skjerm: 60 px bredde<br />
+      Minimumsstørrelse på trykk: 20 mm bredde<br />
+    </Paragraph>
+
+    <LogoCard>
+      <Picture
+        src={primaryLogo}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </LogoCard>
+  </Section>
+
+  <Section headingText="Sekundærlogo">
+    <Paragraph className="ds-content-max-width">
+      Av og til trengervi en logo med en dypere forklaring av merkevaren vår.
+      Derfor viser sekundærlogoen hele merkevarenavnet vårt fordelt på tre
+      linjer.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      I denne versjonen skiller vi ut tykkelsen av fonten på navnet Sikt for å
+      skape balanse mot logoikonet samtidig som vi kommuniserer overordnet at
+      Sikt er Kunnskapssektorens tjenesteleverandør.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Vi har også varianter på engelsk, nynorsk, finsk og samisk For å sikre
+      tydelighet og leselighet er det definert en minimumstørrelse for
+      sekundærlogoen vår både for print og digitale flater.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Minimumsstørrelse på skjerm: 90 px bredde<br />
+      Minimumsstørrelse på trykk: 35 mm bredde<br />
+    </Paragraph>
+
+    <LogoCard>
+      <Picture
+        src={secondaryLogo}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </LogoCard>
+  </Section>
+
+  <Section headingText="Ikon">
+    <Paragraph className="ds-content-max-width">
+      Logoikonet vårt er laget for å fungere både i bevegelse og statisk, og vil
+      i samtlige varianter tydeliggjøre mulighetsrommet.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Typisk bruk av logoikonet for seg selv vil være i et profilbilde på
+      Facebook, Instagram eller nettside. Med andre ord steder der
+      merkevarenavnet vårt (Sikt) vil være synlig i sammenheng med ikonet.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      For å sikre tydelighet og leselighet er det deﬁnert en minimumstørrelse
+      for logoikonet vår både for print og digitale flater.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Minimumsstørrelse på skjerm: 25 px bredde<br />
+      Minimumsstørrelse på trykk: 8 mm bredde<br />
+    </Paragraph>
+
+    <LogoCard>
+      <Picture
+        src={ikonLogo}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </LogoCard>
+  </Section>
+
+  <Section headingText="Beskyttelsesområde">
+    <Paragraph className="ds-content-max-width">
+      Det er deﬁnert et beskyttelsesområde rundt logoene for å sikre god
+      synlighet. Beskyttelsesområdet er deﬁnert ut fra høyden på firkanten i
+      logoen. Dette området skaleres proporsjonalt med logoen. Ingen elementer
+      skal plasseres nærmere logoikonet enn det som er deﬁnert.
+    </Paragraph>
+
+    <LogoCard>
+      <Picture
+        src={bleedLogo}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </LogoCard>
+  </Section>
+
+  <Section headingText="Tjenester og produkter">
+    <Paragraph className="ds-content-max-width">
+      Sikts merkevarestrategi statuerer at alle nye produkter og tjenester som
+      Sikt utvikler skal bruke Sikt-ikonet sammen med tjenestenavnet.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Eksisterende produkter med egen visuell profil også skal ta i bruk Sikts
+      visuelle identitet og logo, men endringen kan skje stegvis og over tid.
+      Endringer i eksisterende profil gjøres på en slik at måte at vi ivaretar
+      tilliten brukerne har til produktet. Endringer skjer for eksempel ved
+      oppgraderinger, modernisering og nødvendige omskrivinger av frontend på
+      produktene.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Tjenester vi leverer og utvikler i samarbeid med andre, hvor Sikt ikke er
+      eneste leverandør, må vurderes individuelt.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Minimumsstørrelse på trykk: 6 mm høyde<br />
+      Minimumsstørrelse på skjerm: Defineres av komponent i komponentbiblioteket<br
+      />
+    </Paragraph>
+
+    <LogoCard>
+      <Picture
+        src={produktLogo}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </LogoCard>
+  </Section>
+</Layout>

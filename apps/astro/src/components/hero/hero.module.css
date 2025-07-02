@@ -4,3 +4,9 @@
   gap: var(--sds-space-gap-medium);
   max-width: var(--sds-space-grid-full);
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-space-gap-medium);
+}
