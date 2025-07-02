@@ -30,7 +30,7 @@ export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
    */
   closedby?: "any" | "closerequest" | "none";
   footer?: ReactNode;
-  heading: string;
+  heading: ReactNode;
   onClose: () => void;
   open: boolean;
   subheading?: string;
