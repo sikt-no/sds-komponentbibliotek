@@ -1,16 +1,16 @@
 ---
-import Layout from "../../../layouts/PageLayout.astro";
-import { Hero } from "../../../components";
+import Layout from "../../layouts/PageLayout.astro";
+import { Hero } from "../../components";
 import { Button, ButtonGroup } from "@sikt/sds-button";
 import { Paragraph } from "@sikt/sds-core";
 import { Section } from "@sikt/sds-section";
-import LogoCard from "./_components/card/LogoCard.astro";
+import ImageCard from "../../components/card/ImageCard.astro";
 import { Picture } from "astro:assets";
-import primaryLogo from "../../../assets/images/visuell-identitet/logoer/primary.png";
-import secondaryLogo from "../../../assets/images/visuell-identitet/logoer/secondary.png";
-import bleedLogo from "../../../assets/images/visuell-identitet/logoer/beskyttelsesomraade.png";
-import ikonLogo from "../../../assets/images/visuell-identitet/logoer/ikon.png";
-import produktLogo from "../../../assets/images/visuell-identitet/logoer/produkt.png";
+import primaryLogo from "../../assets/images/visuell-identitet/logoer/primary.png";
+import secondaryLogo from "../../assets/images/visuell-identitet/logoer/secondary.png";
+import bleedLogo from "../../assets/images/visuell-identitet/logoer/beskyttelsesomraade.png";
+import ikonLogo from "../../assets/images/visuell-identitet/logoer/ikon.png";
+import produktLogo from "../../assets/images/visuell-identitet/logoer/produkt.png";
 
 const pageTitle = "Logoer";
 ---
@@ -55,7 +55,7 @@ const pageTitle = "Logoer";
       Minimumsstørrelse på trykk: 20 mm bredde<br />
     </Paragraph>
 
-    <LogoCard>
+    <ImageCard>
       <Picture
         src={primaryLogo}
         formats={["avif", "webp"]}
@@ -63,7 +63,7 @@ const pageTitle = "Logoer";
         alt=""
         aria-hidden
       />
-    </LogoCard>
+    </ImageCard>
   </Section>
 
   <Section headingText="Sekundærlogo">
@@ -90,7 +90,7 @@ const pageTitle = "Logoer";
       Minimumsstørrelse på trykk: 35 mm bredde<br />
     </Paragraph>
 
-    <LogoCard>
+    <ImageCard>
       <Picture
         src={secondaryLogo}
         formats={["avif", "webp"]}
@@ -98,7 +98,7 @@ const pageTitle = "Logoer";
         alt=""
         aria-hidden
       />
-    </LogoCard>
+    </ImageCard>
   </Section>
 
   <Section headingText="Ikon">
@@ -123,7 +123,7 @@ const pageTitle = "Logoer";
       Minimumsstørrelse på trykk: 8 mm bredde<br />
     </Paragraph>
 
-    <LogoCard>
+    <ImageCard>
       <Picture
         src={ikonLogo}
         formats={["avif", "webp"]}
@@ -131,7 +131,7 @@ const pageTitle = "Logoer";
         alt=""
         aria-hidden
       />
-    </LogoCard>
+    </ImageCard>
   </Section>
 
   <Section headingText="Beskyttelsesområde">
@@ -142,7 +142,7 @@ const pageTitle = "Logoer";
       skal plasseres nærmere logoikonet enn det som er deﬁnert.
     </Paragraph>
 
-    <LogoCard>
+    <ImageCard>
       <Picture
         src={bleedLogo}
         formats={["avif", "webp"]}
@@ -150,7 +150,7 @@ const pageTitle = "Logoer";
         alt=""
         aria-hidden
       />
-    </LogoCard>
+    </ImageCard>
   </Section>
 
   <Section headingText="Tjenester og produkter">
@@ -179,7 +179,7 @@ const pageTitle = "Logoer";
       />
     </Paragraph>
 
-    <LogoCard>
+    <ImageCard>
       <Picture
         src={produktLogo}
         formats={["avif", "webp"]}
@@ -187,6 +187,6 @@ const pageTitle = "Logoer";
         alt=""
         aria-hidden
       />
-    </LogoCard>
+    </ImageCard>
   </Section>
 </Layout>

@@ -1,0 +1,154 @@
+---
+import Layout from "../../layouts/PageLayout.astro";
+import { Hero } from "../../components";
+import { Paragraph, Link } from "@sikt/sds-core";
+import { Section } from "@sikt/sds-section";
+import ImageCard from "../../components/card/ImageCard.astro";
+import { Picture } from "astro:assets";
+import fargesystemImage from "../../assets/images/visuell-identitet/fargepalett/fargesystem.png";
+import hovedfargerImage from "../../assets/images/visuell-identitet/fargepalett/hovedfarger.png";
+import stoettefargerImage from "../../assets/images/visuell-identitet/fargepalett/stoettefarger.png";
+import fargehierarkiImage from "../../assets/images/visuell-identitet/fargepalett/fargehierarki.png";
+import illustrasjonImage from "../../assets/images/visuell-identitet/fargepalett/illustrasjon.svg";
+
+const pageTitle = "Fargepalett";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[
+      { title: "Designsystem", href: "/" },
+      { title: "Visuell identitet" },
+    ]}
+    heading={pageTitle}
+    slot="hero"
+  >
+    <Paragraph className="ds-content-max-width">
+      Denne siden gir et overordnet blikk på hvordan Sikt bruker farger i sin
+      visuelle identitet, og er spesielt aktuell for de som jobber med
+      produksjon av trykksaker, kommunikasjon og innhold til sosiale medier.
+    </Paragraph>
+
+    <Paragraph modifier="emphasis" className="ds-content-max-width">
+      I digital produktutvikling bruker vi et
+      <Link href="/utvikling/fargesystem">tokenbasert fargesystem</Link>.
+    </Paragraph>
+  </Hero>
+
+  <Section headingText="Fargesystem">
+    <Paragraph className="ds-content-max-width">
+      Sikt sine farger består av en primærpalett i lilla, samt flere
+      sekundærfarger. Det vi produserer skal i hovedsak basere seg på
+      hovedfargene, men man kan bruke støttefarger som “krydder”, og for å
+      utvide antallet farger der det trengs, for eksempel ved datavisualisering.
+    </Paragraph>
+
+    <ImageCard>
+      <Picture
+        src={fargesystemImage}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </ImageCard>
+  </Section>
+
+  <Section headingText="Hovedfarger">
+    <Paragraph className="ds-content-max-width">
+      Hovedfargene våre baserer seg i hovedsak rundt en lilla fargepalett. Den
+      lilla fargen er et av våre sterkeste virkemidler for å skape identietet og
+      gjenkjennelse, og hjelper oss med å skille oss ut fra konkurrenter og
+      andre organisasjoner.
+    </Paragraph>
+
+    <ImageCard>
+      <Picture
+        src={hovedfargerImage}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </ImageCard>
+  </Section>
+
+  <Section headingText="Støttefarger">
+    <Paragraph className="ds-content-max-width">
+      I tillegg til de lilla hovedfargene har Sikt en palett av støttefarger man
+      kan bruke. Typiske bruksområder for dette kan være trykksaker,
+      illustrasjoner, innhold til sosiale medier og datavisualisering/grafikk.
+      Husk at lilla er fargen som skal assosieres med Sikt.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Vær forsiktig med bruk av farger som lett kan tolkes. For eksempel kan det
+      å bruke oransje og grønn i en datavisualisering gi en semantisk antydning
+      om at et resultat er bra eller dårlig.
+    </Paragraph>
+
+    <ImageCard>
+      <Picture
+        src={stoettefargerImage}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </ImageCard>
+  </Section>
+
+  <Section headingText="Fargehierarki">
+    <Paragraph className="ds-content-max-width">
+      Når vi lager innhold til Sikt som overordnet avsender skal hovedfargene
+      alltid brukes i størst grad. Samtidig har vi mulighet til å trekke inn små
+      drypp fra støttefargene våre for å skape mer variasjon og fleksibilitet.
+    </Paragraph>
+
+    <ImageCard>
+      <Picture
+        src={fargehierarkiImage}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </ImageCard>
+
+    <ImageCard>
+      <Picture
+        src={illustrasjonImage}
+        formats={["avif", "webp"]}
+        widths={[240, 540]}
+        alt=""
+        aria-hidden
+      />
+    </ImageCard>
+
+    <Paragraph size="s" className="ds-content-max-width">
+      Illustrasjoner er eksempler på materiale som benytter seg av primærfarger
+      sammen med støttefarger.
+    </Paragraph>
+  </Section>
+
+  <Section headingText="Produkter og tjenester med egne farger">
+    <Paragraph className="ds-content-max-width">
+      Sikts merkevarestrategi sier at produkter og tjenester som utvikles, skal
+      ha Sikt som avsender. Dermed skal de ha Sikt-branding, og benytte seg av
+      våre lilla hovedfarger.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Noen produkter i Sikt har så sterke egne merkevarer at dette ikke er
+      aktuelt. Vi arbeider nå med å lage et utvidet fargesystem som gir disse
+      produktene anledning til å lage fargetemaer basert på deres egne
+      merkevarefarger. På den måten kan vi få disse produktene til å passe inn i
+      Sikt-familien.
+    </Paragraph>
+
+    <Paragraph className="ds-content-max-width">
+      Hvis du er nysgjerrig på å ta i bruk Sikts designsystem og mener at det
+      gjelder ditt team, vennligst ta kontakt med designsystem-teamet.
+    </Paragraph>
+  </Section>
+</Layout>
