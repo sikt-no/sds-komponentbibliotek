@@ -9,11 +9,8 @@
       var(--sds-color-layout-divider-subtle);
     display: flex;
     flex-direction: column;
+    gap: var(--sds-space-gap-medium);
     padding-bottom: var(--sds-space-gap-large);
-  }
-
-  &__heading {
-    padding-bottom: var(--sds-space-gap-medium);
   }
 
   &__cta {
@@ -27,13 +24,9 @@
 
   @media (--sds-base-breakpoint-tablet) {
     &__header {
+      align-items: center;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
-    }
-
-    &__heading {
-      padding-bottom: 0;
     }
   }
 }
