@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@3.1.1...@sikt/sds-section@3.1.2) (2025-07-02)
+
+### Bug Fixes
+
+- **section:** heading mobile space reduced when no call to action ([59dc9f6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/59dc9f60f96412639dc7a0932fabd7fe48936b48))
+
 ## [3.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@3.1.0...@sikt/sds-section@3.1.1) (2025-06-01)
 
 ### Bug Fixes
