@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@1.0.3...@sikt/sds-dialog@2.0.0) (2025-07-02)
+
+### ⚠ BREAKING CHANGES
+
+- **dialog:** replace prop dismissable with native closedby
+
+### Features
+
+- **dialog:** add drawer prop & styling ([23f2db6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/23f2db65b5c33b25037f5756111d78e875b05758))
+- **dialog:** add prop modal for setting the component to modal or dialog ([d9d5253](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d9d5253333330a8a0d8fa2f16b8538da4139aca1))
+- **dialog:** change heading type from string to ReactNode ([998f1c9](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/998f1c9f6052215b05ea04349085f75121e995a3))
+- **dialog:** replace prop dismissable with native closedby ([6e338ca](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6e338ca2211aef64d90ffa8eb2700c9518aaeb64))
+
+### Bug Fixes
+
+- **dialog:** close button icon only ([9933acc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9933acce88cce41885ebd2292477d8a100c3f00d))
+- **dialog:** remove the need to conditionally render dialog component & add transitions ([49db04d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/49db04db14180158b03f102f3272e57ae1301692))
+- **dialog:** scrollable styling ([625aac0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/625aac0fa8b07fd251c34535e2a92c19b8381cac))
+
 ## [1.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@1.0.2...@sikt/sds-dialog@1.0.3) (2025-05-13)
 
 ### Bug Fixes
