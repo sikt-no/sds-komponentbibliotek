@@ -72,6 +72,7 @@ export const Popover = ({
         className={clsx(
           "sds-popover__target",
           anchor && "sds-popover__target--anchor",
+          "sds-typography-body",
         )}
         id={id}
         // INFO: This is a hack to solve that React/TypeScript does not support this native attribute
