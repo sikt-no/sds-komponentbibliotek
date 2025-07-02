@@ -23,7 +23,7 @@ interface MenuItemType extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 const merkevareMenu: MenuItemType[] = [
-  { name: "Merkevarestrategi" },
+  { name: "Merkevarestrategi", url: "/merkevare/merkevarestrategi" },
   { name: "Stil og tone" },
 ];
 
