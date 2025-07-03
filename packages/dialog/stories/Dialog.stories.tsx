@@ -155,7 +155,6 @@ export const NonModal: Story = {
 
 export const Drawer: Story = {
   args: {
-    modal: false,
     drawer: "left",
     heading: "Filter",
     closeButtonAriaLabel: "Close drawer",
@@ -182,7 +181,7 @@ export const Drawer: Story = {
             setArgs({ ...args, open: true });
           }}
         >
-          Open dialog
+          Open drawer
         </Button>
         <Dialog
           {...args}
