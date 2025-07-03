@@ -99,6 +99,25 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
 
     <div class:list={["section", "section-double"]}>
       <Card>
+        <Heading2 slot="heading">Designlab</Heading2>
+        <p>
+          Fagmiljøet for alle designere i Sikt. Sammen utvikler vi produkter med
+          høy brukskvalitet - altså nyttige, effektive og som skaper gode
+          brukeropplevelser. Vi jobber for å skape helhet på tvers av Sikt, og
+          det gjør vi med alt fra piksler til strategi.
+        </p>
+
+        <ButtonGroup variant="left" slot="call-to-action">
+          <ButtonLink
+            variant="strong"
+            href="https://over.sikt.no/seksjon/3c9b54ac-a4a7-4938-b164-261c20e5c8f4?tab=Ansatte"
+          >
+            Designlab <ScreenReaderOnly>fagnettverk</ScreenReaderOnly>
+          </ButtonLink>
+        </ButtonGroup>
+      </Card>
+
+      <Card>
         <Heading2 slot="heading">Fagnettverk for frontendutvikling</Heading2>
         <p>
           Ett nettverk for å bygge kompetanse og synergi på tvers av Sikt sine
