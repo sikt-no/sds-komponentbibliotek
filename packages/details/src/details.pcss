@@ -13,7 +13,6 @@
   &--large {
     --details-border: var(--sds-space-border-weight-regular) solid
       var(--sds-color-layout-divider-subtle);
-    --details-indentation: var(--sds-space-padding-medium);
     --summary-border-radius: 0;
     --summary-font-size: var(--sds-typography-editorial-headline-s-fontsize);
     --summary-font-weight: var(
@@ -22,13 +21,11 @@
     --summary-line-height: var(
       --sds-typography-editorial-headline-s-lineheight
     );
-    --summary-padding: var(--sds-space-padding-medium)
-      var(--details-indentation);
+    --summary-padding: var(--sds-space-padding-small);
   }
 
   &--small {
     --details-border: none;
-    --details-indentation: var(--sds-space-padding-small);
     --summary-border-radius: var(--sds-space-border-radius-small);
     --summary-font-size: var(--sds-typography-editorial-headline-xxs-fontsize);
     --summary-font-weight: var(
@@ -37,8 +34,7 @@
     --summary-line-height: var(
       --sds-typography-editorial-headline-xxs-lineheight
     );
-    --summary-padding: var(--sds-space-padding-minimal)
-      var(--details-indentation);
+    --summary-padding: var(--sds-space-padding-minimal);
   }
 
   &__summary {
@@ -49,8 +45,7 @@
     display: flex;
     font-size: var(--summary-font-size);
     font-weight: var(--summary-font-weight);
-    gap: var(--sds-space-gap-medium);
-    justify-content: space-between;
+    gap: var(--sds-space-gap-tiny);
     line-height: var(--summary-line-height);
     padding: var(--summary-padding);
     text-align: start;
@@ -96,7 +91,7 @@
     color: var(--sds-color-text-primary);
     height: 0;
     overflow: hidden;
-    padding: var(--sds-space-padding-tiny) var(--details-indentation) 0;
+    padding: var(--sds-space-padding-tiny) var(--summary-padding) 0;
     transition: all var(--sds-effect-animation-duration-medium)
       var(--sds-effect-animation-easing-default);
   }

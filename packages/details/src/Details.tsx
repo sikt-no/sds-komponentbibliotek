@@ -24,10 +24,10 @@ export const Details = ({
       {...rest}
     >
       <summary className="sds-details__summary">
-        {summary}
         <span>
           <ExpandShowAltIcon className="sds-details__icon" />
         </span>
+        {summary}
       </summary>
       <div className="sds-details__content">{children}</div>
     </details>
