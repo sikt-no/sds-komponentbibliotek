@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-details@1.2.1...@sikt/sds-details@1.2.2) (2025-07-03)
+
+### Bug Fixes
+
+- **details:** move icon to left side ([cc30f61](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cc30f619e947767c75674d6d1624cb4f3489fb20))
+
 ## [1.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-details@1.2.0...@sikt/sds-details@1.2.1) (2025-06-01)
 
 ### Bug Fixes
