@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.0...@sikt/sds-dialog@2.0.1) (2025-07-03)
+
+### Bug Fixes
+
+- **dialog:** fix drawer height as modal ([baa54a1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/baa54a1a51223fd2f2fb4a4798b45a8facb4e95f))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@1.0.3...@sikt/sds-dialog@2.0.0) (2025-07-02)
 
 ### ⚠ BREAKING CHANGES
