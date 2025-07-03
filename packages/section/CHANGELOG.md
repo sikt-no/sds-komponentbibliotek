@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@3.1.2...@sikt/sds-section@3.1.3) (2025-07-03)
+
+### Bug Fixes
+
+- **section:** change gap to padding for more responsive mobile styling ([1de6010](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1de601035cdbe7e3983dc770a0d2157e7059379b))
+
 ## [3.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-section@3.1.1...@sikt/sds-section@3.1.2) (2025-07-02)
 
 ### Bug Fixes
