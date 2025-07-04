@@ -38,12 +38,151 @@ import { Section } from "@sikt/sds-section";
   ]}
   heading={frontmatter.pageTitle}
 >
-  For å sikre likt utseende på tvers av løsninger og grensesnitt har vi definert
-  et sett med størrelser og avstander som design tokens.
+  Alle skal kunne bruke Sikts løsninger, uavhengig av funksjonsevne.
 </Hero>
 
-<Section headingText="Testing out JSX">Test</Section>
+<Section headingText="Hva er universell utforming?">
+      Universell utforming er å planlegge produkter, omgivelser, programmer og tjenester slik at de kan brukes av så mange mennesker som mulig på en likeverdig måte.
+      Alle skal kunne bruke Sikts nettsider – uavhengig av funksjonsnedsettelser på syn, hørsel, lammelser, konsentrasjon, leseferdigheter mm.
 
-[test](https://google.com)
+      Nettsider og apper som Sikt lager eller kjøper må være kodet slik at hjelpemiddelteknologi kan lese og bruke dem.
+      Sikt er lovpålagt å oppfylle kravene i [WCAG 2.1](https://www.w3.org/TR/WCAG21/) på nivå A og AA,
+      og lage [tilgjengelighetserklæringer](https://www.uutilsynet.no/veiledning/tilgjengelighetserklaering/1127)
+      som beskriver hvordan vi følger reglene og hva vi gjør med eventuelle brudd.
+      Nye løsninger i Sikt lages i henhold til de forbedrede kravene i [WCAG 2.2](https://www.w3.org/TR/WCAG22/).
 
-![Sjef](/images/contributors/andreas.png)
+</Section>
+
+<Section headingText="Fagnettverk og undervisning">
+  Sikt har et fagnettverk for universell utforming i internettløsninger.
+  Nettverket besto opprinnelig av utviklere, men i dag er designere og testere
+  og alle andre velkomne.
+  
+  Vi har jevnlige møter i Teams. Hvert møte tar opp et tema som
+  overskrifter, skjermleser eller tastaturnavigering. Vi går ganske detaljert
+  igjennom temaet mht relevante funksjonsnedsettelser, WCAG-regler, og best practice for
+  design og kode.
+  
+  En gang iblant har vi workshops på HellTech eller andre
+  Sikt-samlinger. Vi har også Teams- og Slack-kanaler for å utveksle erfaringer
+  og tipse hverandre om nyttige verktøy, møter og konferanser. Ta kontakt med
+  Eivind Riise på Teams om du vil bli med i fagnettverket.
+</Section>
+
+<Section headingText="Rådgivning og testing">
+  Sikt har en fagekspert på universell utforming. Alle produktteam kan be om
+  faglig bistand til å lykkes bedre med universell utforming. Ta gjerne kontakt
+  med Eivind Riise på Teams eller kall inn til en prat.  
+  
+  Universell utforming er viktig bl.a. på disse områdene:
+  
+  - nettside-design
+  - front end utvikling
+  - testing
+  - tilgjengelighetserklæring
+  - innkjøp av IT-løsninger
+  
+  Spør gjerne  også om:
+  
+  - lover og WCAG-regler
+  - tilgjengelighetserklæring
+  - funksjonsnedsettelser vi må ta hensyn til
+  - skjermlesere / hjelpemiddelteknologi
+</Section>
+
+<Section headingText="Lovkrav og WCAG">
+  I Norge og mange andre land er det lovfestet å følge WCAG (Web Content Accessibility Guidelines).
+  WCAG er et sett med retningslinjer som sikrer at nettsteder er tilgjengelige for personer med funksjonsnedsettelser.
+  Private nettsteder skal følge 35 krav i WCAG versjon 2.0.
+  Offentlige nettsteder skal følge 49 krav i WCAG versjon 2.1.
+  
+  - norsk lov
+    - [Forskrift om universell utforming av IKT-løsninger](https://lovdata.no/dokument/SF/forskrift/2013-06-21-732)
+    - [Forklaring av forskriften (uutilsynet)](https://www.uutilsynet.no/regelverk/kva-seier-forskrifta/153)
+  - [WCAG 2.0](https://www.w3.org/TR/WCAG20/)
+    - 35 krav er lovpålagt for private virksomheter
+  - [WCAG 2.1](https://www.w3.org/TR/WCAG21/)
+    - 49 av 50 krav på nivå A og AA er lovpålagt i det offentlige.
+    - Krav 1.2.4 om teksting av direktesendt video er unntatt fra forskriften
+  - [WCAG 2.2 (foreløpig ikke en del av norsk lov)](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22)
+
+  Offentlige nettsteder og apper skal ha tilgjengelighetserklæring.
+
+  - WCAG-kravene skal testes på nettstedet. Ta skjermbilder og lag oppfølgingssaker underveis.
+  - Dokumenter hvordan vi overholder kravene på [uustatus](https://uustatus.no).
+  - Så lager vi en lenke i footeren på nettstedet vårt til den ferdige erklæringen på uustatus
+  - Tilgjengelighetserklæring ressurser
+    - [Informasjonssider (uutilsynet)](https://www.uutilsynet.no/veiledning/tilgjengelighetserklaering/1127)
+    - [Testprosedyrer (uutilsynet)](https://www.uutilsynet.no/regelverk/testprosedyrar-nettstader-og-appar/709)
+    - [WCAG-sjekkliste i Excel (uutilsynet)](https://www.uutilsynet.no/tilgjengelighetserklaering/wcag-sjekklister-utfylling-av-tilgjengelighetserklaering/1333) - [Rapporteringsverktøy fra W3C](https://www.w3.org/WAI/eval/report-tool/)
+    - [Fyll inn erklæringen på uustatus.no](https://uustatus.no/).
+      Logg inn med ID-porten, og oppgi organisasjonsnummer 919477822 og PIN-kode (spør Eivind).
+</Section>
+
+<Section headingText="Test-metoder">
+  - Tastatur (legg vekk musa, bruk tab og piltaster)
+    - Fungerer alt?
+    - Kan alt avbrytes?
+    - Er fokus godt markert?
+    - Logisk fokus-rekkefølge?
+    - Forsvinner fokusmarkeringen på noen tab-stopp?
+  - Overskrifter
+    - HeadingsMap viser overskrift-struktur og landemerker
+      - [HeadingsMap for Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi)
+      - [HeadingsMap for Firefox](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/)
+      - [HeadingsMap for Edge](https://microsoftedge.microsoft.com/addons/detail/headingsmap/bokekiiaddinealohkmhjcgfanndmcgo)
+    - Vises alle synlige overskrifter i HeadingsMap-oversikten?
+    - Har siden én h1 som beskriver sidens innhold?
+    - Følger overskriftene et hierarki uten hopp?
+  - Forstørring
+    - Responsiv design: zoom til 400% (WCAG 1.4.10). Sjekk om innhold overlapper, blir borte eller om det blir horisontal scrolling
+    - Text-zoom til 200% (WCAG 1.4.4)
+      - Firefox: Vis -> Skalering -> Forstørr bare tekst 
+      - Chrome: Innstillilnger -> Utseende -> Skriftstørrelse: "Veldig stor"
+  - Navn
+    - input-felter: trykk på label -> sjekk at feltet får fokusmarkering
+    - knapper, lenker og input-felter: utviklerverktøy (F12)
+      - Høyreklikk på et element -> Inspect (accessibility) -> marker riktig element i kodevisningen -> Ta frem visningen "accessibility"
+      - Sjekk om elementet har et "Navn", og at det er det samme som det synlige navnet.
+  - Bilder - alternativtekst
+    - [Web Developer (mange gode utviklerverktøy)](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=no)
+      - Images - Display Alt Attributes
+      - Sjekk at informative bilder har god alternativtekst
+      - Sjekk at dekorative bilder har tom alternativtekst  
+  - Kontrast
+    - [Tekst-kontrast, hex-verdier (WebAIM)](https://webaim.org/resources/contrastchecker/).
+    Minstekravet er WCAG 1.4.3, men mange svaksynte og også funksjonsfriske har stor nytte av å følge det forbedrede kravet i WCAG 1.4.6.
+    - [Lenke-kontrast, hex-verdier (WebAIM)](https://webaim.org/resources/linkcontrastchecker/)
+    - [Finn ny farge som overholder kravene (Accessible Colors)](https://accessible-colors.com/). Velg AAA.
+    - Ikke tekstlig kontrast (WCAG 1.4.11). Kravet gjelder fokusmarkering, grafer, informative bilder mm.
+    - Automatiske verktøy er ganske gode på å finne kontrastfeil.
+  - Automatiske verktøy (finner ca 20-30% av problemene)
+    - [Axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
+    - [Wave](https://wave.webaim.org/extension/)
+    - [Arc Toolkit](https://chrome.google.com/webstore/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce)
+    - [Axe Accessibility Linter](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter)
+  - [Web Developer (mange gode utviklerverktøy)](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=no)
+  - Skjermlesere
+    - [demo og nybegynneropplæring i de vanligste skjermleserene (ca 10 min)](https://axesslab.com/what-is-a-screen-reader/)
+    - [NVDA (PC)](https://www.nvaccess.org/download/)
+    - VoiceOver (Apple)
+    - TalkBack (Android)
+</Section>
+
+<Section headingText="Tekniske løsninger">
+  - [ARIA Authoring Practices Guide - Patterns (W3C)](https://www.w3.org/WAI/ARIA/apg/patterns/)
+  - [Løsningsforslag for nettsider (uutilsynet)](https://www.uutilsynet.no/nettsteder/losningsforslag-nettsider/36)
+  - [Usynlig tekst kun for skjermlesere (WebAIM)](https://webaim.org/techniques/css/invisiblecontent/)
+  - [Tilgjengelig navn (TGPI)](https://www.tpgi.com/what-is-an-accessible-name/)
+</Section>
+
+<Section headingText="Kurs, konferanser og sertifisering">
+  - [Universell utforming av IKT for utviklere og testledere (DFØ)](https://laeringsplattformen.dfo.no/kursoversikt/universell-utforming-av-ikt-utviklere-og-testledere) er et meget godt og grundig kurs. Kurset har 10 moduler. Beregn ca en halv dag per modul.
+  - NAV: [Mangfold i mai](https://navikt.github.io/mangfold-i-mai/)
+  - [Axe-con](https://www.deque.com/axe-con/) har mange gode foredrag blandet med foredrag om egne produkter
+  - IAAP sertifiseringer
+    - [Web Accessibility Specialist (WAS)](https://www.accessibilityassociation.org/s/wascertification). For utviklere.
+    - [Certified Professional in Accessibility Core Competencies (CPACC)](https://www.accessibilityassociation.org/s/certified-professional). For tilgjengelighetseksperter.
+    - [Certified Professional in Web Accessibility (CPWA)](https://www.accessibilityassociation.org/s/certified-professional-web-accessibility). WAS + CPACC = CPWA
+    - [Accessible Document Specialist (ADS)](https://www.accessibilityassociation.org/ads-exam)
+</Section>

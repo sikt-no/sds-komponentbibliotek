@@ -2,6 +2,7 @@ coverage
 build
 dist
 apps/astro/.astro
+apps/astro/**/*.mdx
 apps/storybook/storybook-static
 .cache
 turbo/generators/template

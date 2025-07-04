@@ -81,9 +81,8 @@ const utviklingMenu: MenuItemType[] = [
 const tilgjengelighetMenu: MenuItemType[] = [
   {
     name: "Tilgjengelighet",
-    url: "https://isikt.sharepoint.com/sites/Universellutforming",
+    url: "/tilgjengelighet",
     icon: <WheelchairIcon className="sds-icon" aria-hidden />,
-    target: "_blank",
   },
 ];
 
