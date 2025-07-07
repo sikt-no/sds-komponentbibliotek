@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-logo@2.1.0...@sikt/sds-logo@2.2.0) (2025-07-07)
+
+### Features
+
+- **logo:** add productName prop for product logo support ([e9a97fd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e9a97fdd816aff4b20b5d4cab1b1985dc5746d26))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-logo@2.0.1...@sikt/sds-logo@2.1.0) (2025-05-20)
 
 ### Features
