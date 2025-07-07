@@ -15,3 +15,9 @@ export const Default: Story = {
     variant: "primary",
   },
 };
+
+export const Product: Story = {
+  args: {
+    productName: "My product",
+  },
+};

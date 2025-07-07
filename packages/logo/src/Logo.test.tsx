@@ -58,5 +58,11 @@ describe("Logo", () => {
         "SiktNorwegian Agency for Shared Services in Education and Research",
       );
     });
+
+    it("should render product logo", async () => {
+      render(<Logo data-testid="test" productName="My product" />);
+
+      expect(screen.getByTestId("test")).toHaveTextContent("My product");
+    });
   });
 });

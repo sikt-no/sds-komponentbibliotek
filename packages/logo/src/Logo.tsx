@@ -9,6 +9,7 @@ export interface LogoProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   lang?: "nb" | "nn" | "en" | "se" | "smj" | "sma" | "fkv";
   variant?: LogoVariant;
+  productName?: string;
 }
 
 const i18n = {
@@ -34,19 +35,24 @@ const addLinebreak = (lang: keyof typeof i18n) => {
 
 export const Logo = ({
   variant = "primary",
+  productName,
   className,
   lang = "nb",
   ...rest
 }: LogoProps) => {
-  const isSecondary = variant === "secondary";
+  const isSecondary = variant === "secondary" && !productName;
   return (
     <div
-      className={clsx("sds-logo", `sds-logo--${variant}`, className)}
+      className={clsx(
+        "sds-logo",
+        `sds-logo--${productName ? "product" : variant}`,
+        className,
+      )}
       {...rest}
     >
       <LogoSvg className="sds-logo__icon" aria-hidden />
       <div>
-        <div className="sds-logo__title">Sikt</div>
+        <div className="sds-logo__title">{productName ?? "Sikt"}</div>
         {isSecondary && (
           <div className="sds-logo__subtitle">{addLinebreak(lang)}</div>
         )}

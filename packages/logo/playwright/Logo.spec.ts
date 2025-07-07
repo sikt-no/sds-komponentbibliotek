@@ -26,5 +26,21 @@ test.describe("Logo", () => {
 
       await expect(page.locator(".sds-logo")).toHaveScreenshot();
     });
+
+    test("logo secondary should have screenshot", async ({ page }) => {
+      await page.goto(
+        "/iframe.html?viewMode=story&id=components-logo--default&args=variant:secondary",
+      );
+
+      await expect(page.locator(".sds-logo")).toHaveScreenshot();
+    });
+
+    test("logo product should have screenshot", async ({ page }) => {
+      await page.goto(
+        "/iframe.html?viewMode=story&id=components-logo--product",
+      );
+
+      await expect(page.locator(".sds-logo")).toHaveScreenshot();
+    });
   });
 });
