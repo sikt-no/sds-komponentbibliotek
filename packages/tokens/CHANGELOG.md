@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@5.0.0...@sikt/sds-tokens@5.1.0) (2025-07-08)
+
+### Features
+
+- **typography:** change typography body l & add xl ([222c9bd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/222c9bd9e9e20820743da0295a0653e27883a253))
+
 ## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@4.2.1...@sikt/sds-tokens@5.0.0) (2025-06-03)
 
 ### ⚠ BREAKING CHANGES
