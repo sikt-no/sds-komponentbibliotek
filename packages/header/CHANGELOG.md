@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.1.0...@sikt/sds-header@3.1.1) (2025-07-08)
+
+### Bug Fixes
+
+- **header:** logo text typography ([3f68a63](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3f68a636b416096ffb39baa2d2c40f1a6bbf6e4c))
+
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.0.6...@sikt/sds-header@3.1.0) (2025-05-21)
 
 ### Features
