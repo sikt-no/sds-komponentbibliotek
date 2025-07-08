@@ -41,7 +41,9 @@ export const Card = ({
         <H id={id} className="sds-typography-editorial-headline--xs">
           {headingText}
         </H>
-        {leadText && <span className="sds-typography-body--l">{leadText}</span>}
+        {leadText && (
+          <span className="sds-typography-body--xl">{leadText}</span>
+        )}
         {children && <div className="sds-typography-body">{children}</div>}
         {callToAction && <div className="sds-card__cta">{callToAction}</div>}
       </div>

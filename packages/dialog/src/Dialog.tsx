@@ -190,7 +190,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
             <div
               id={contentId}
               data-testid="content"
-              className="sds-typography-body--l sds-dialog__content"
+              className="sds-typography-body--xl sds-dialog__content"
             >
               {children}
             </div>
