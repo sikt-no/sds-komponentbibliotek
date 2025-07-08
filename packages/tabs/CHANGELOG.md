@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.2.1...@sikt/sds-tabs@3.3.0) (2025-07-08)
+
+### Features
+
+- **tabs:** change padding-top/bottom from medium to small ([17fc71a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/17fc71a2e300a30aa4dc7a97e3180f2bc6d3e10f))
+- **tabs:** change typography from label l to body l ([84a4a7f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/84a4a7fcafa6f193e3090ac56cd9cfbbc1af29eb))
+
 ## [3.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.2.0...@sikt/sds-tabs@3.2.1) (2025-06-25)
 
 ### Bug Fixes
