@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.1...@sikt/sds-dialog@2.0.2) (2025-07-08)
+
 ## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.0...@sikt/sds-dialog@2.0.1) (2025-07-03)
 
 ### Bug Fixes
