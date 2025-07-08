@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.2.0...@sikt/sds-button@4.3.0) (2025-07-08)
+
+### Features
+
+- **button:** change typography from label l to body l & label default to body default ([673bd2e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/673bd2e1580128656e738f6ebda068499f1a5b4b))
+
 ## [4.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.1.0...@sikt/sds-button@4.2.0) (2025-05-20)
 
 ### Features
