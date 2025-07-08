@@ -25,6 +25,17 @@
       },
       "l": {
         "fontsize": {
+          "$value": "{typography.fontsize.400}"
+        },
+        "fontweight": {
+          "$value": "{typography.fontweight.regular}"
+        },
+        "lineheight": {
+          "$value": "{typography.lineheight.m}"
+        }
+      },
+      "xl": {
+        "fontsize": {
           "$value": "{typography.fontsize.500}"
         },
         "fontweight": {
