@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.8.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.7.1...@sikt/sds-core@4.8.0) (2025-07-08)
+
+### Features
+
+- **typography:** add typography body xl ([c82666a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c82666a55ddea2023ca289bf5737994f54f24c11))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-tokens@5.1.0 ([8c2b795](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c2b7958a5d943bf0f4bcc722ce4c84a9deceb04))
+
 ## [4.7.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.7.0...@sikt/sds-core@4.7.1) (2025-06-18)
 
 ### Bug Fixes
