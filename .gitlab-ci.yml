@@ -97,8 +97,8 @@ test-e2e:
   extends: .npm_cache
   parallel:
     matrix:
-      - SHARD_INDEX: [1, 2, 3, 4, 5]
-        SHARD_TOTAL: 5
+      - SHARD_INDEX: [1, 2, 3, 4, 5, 6]
+        SHARD_TOTAL: 6
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
