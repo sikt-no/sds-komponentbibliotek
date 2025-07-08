@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@2.1.1...@sikt/sds-pagination@2.2.0) (2025-07-08)
+
+### Features
+
+- **paginagion:** change typography from label l to body l ([4e3f2ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4e3f2ae9e35c653c1b6f3e5fc4a8a9f61e139604))
+
 ## [2.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@2.1.0...@sikt/sds-pagination@2.1.1) (2025-06-20)
 
 ### Bug Fixes
