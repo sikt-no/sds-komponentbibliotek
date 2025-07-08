@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.0.0...@sikt/sds-toggle@6.1.0) (2025-07-08)
+
+### Features
+
+- **toggle-button:** change typography from label default to body l ([7343d7f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7343d7f018973d502870015ef61ef0d579b33fe6))
+- **toggle-segment:** change typography from label default to body default ([092e559](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/092e55973779046581ba1d2277aaf1e147bdbeaf))
+
 ## [6.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@5.2.0...@sikt/sds-toggle@6.0.0) (2025-06-25)
 
 ### ⚠ BREAKING CHANGES
