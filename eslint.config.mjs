@@ -7,9 +7,16 @@ import sdsConfig from "./packages/eslint-config/index.mjs";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, ".gitignore");
+const gitignoreAstroPath = path.resolve(__dirname, "apps/astro/.gitignore");
+const gitignoreStorybookPath = path.resolve(
+  __dirname,
+  "apps/storybook/.gitignore",
+);
 
 export default [
   includeIgnoreFile(gitignorePath),
+  includeIgnoreFile(gitignoreAstroPath),
+  includeIgnoreFile(gitignoreStorybookPath),
   {
     ignores: [
       "**/eslint.config.mjs",
