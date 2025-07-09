@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@3.0.0...@sikt/sds-combobox@3.0.1) (2025-07-09)
+
+### Bug Fixes
+
+- **combobox:** fix broken version 3.0.0: replace outdated deps with internal code ([bb9827e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bb9827ef59cbe6c6e398c97f561cd62b9a58b16f))
+
 ## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@2.2.1...@sikt/sds-combobox@3.0.0) (2025-06-25)
 
 ### ⚠ BREAKING CHANGES
