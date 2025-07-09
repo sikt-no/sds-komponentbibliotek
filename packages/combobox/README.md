@@ -11,7 +11,7 @@ npm i -s @sikt/sds-{combobox,form}
 #### With dynamic content
 
 ```js
-import { Combobox, ComboBoxItem } from "@sikt/sds-combobox";
+import { Combobox, ComboboxItem } from "@sikt/sds-combobox";
 import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-combobox/dist/index.css";
 
@@ -22,7 +22,7 @@ import "@sikt/sds-combobox/dist/index.css";
     { title: "baz", id: 2 },
   ]}
 >
-  {(item) => <ComboBoxItem>{item.title}</ComboBoxItem>}
+  {(item) => <ComboboxItem>{item.title}</ComboboxItem>}
 </Combobox>;
 ```
 
@@ -30,8 +30,8 @@ import "@sikt/sds-combobox/dist/index.css";
 
 ```js
 <Combobox label="...">
-  <ComboBoxItem id="Foo">Foo</ComboBoxItem>
-  <ComboBoxItem id="Baz">Baz</ComboBoxItem>
+  <ComboboxItem id="Foo">Foo</ComboboxItem>
+  <ComboboxItem id="Baz">Baz</ComboboxItem>
 </Combobox>
 ```
 
