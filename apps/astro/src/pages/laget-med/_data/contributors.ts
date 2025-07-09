@@ -61,5 +61,7 @@ export const contributors: Contributors[] = [
     { name: "Solveig", role: "Teknologi", team: "Feide Kundeportal" },
     { name: "John-Magne", role: "Teknologi", team: "Feide Kundeportal" },
   ],
+  [{ name: "Jesper", role: "Design", team: "Læremiddelkatalogen" }],
+  [{ name: "Magnus", role: "Teknologi", team: "KI-chat" }],
   [{ name: "Deg", role: "Din rolle", team: "Din produkt" }],
 ].reverse();
