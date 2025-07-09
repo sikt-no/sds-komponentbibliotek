@@ -15,15 +15,15 @@ import {
   Popover,
   PopoverProps,
 } from "react-aria-components";
-import reactNodeToString from "react-node-to-string";
 import "./combobox.pcss";
+import { reactNodeToString } from "./reactNodeToString";
 
 interface ComboboxBaseProps<T extends object>
   extends Omit<
     AriaComboboxProps<T>,
     "children" | "menuTrigger" | "aria-label" | "aria-labelledby"
   > {
-  children: React.ReactNode | ((item: T) => React.ReactNode);
+  children: ReactNode | ((item: T) => ReactNode);
   className?: string;
   errorText?: ReactNode;
   helpText?: ReactNode;
@@ -58,6 +58,7 @@ export function Combobox<T extends object>({
   const errorTextId = `${id}-error-text`;
   const helpTextId = `${id}-help-text`;
 
+  const ariaLabel = reactNodeToString(label);
   const ariaDescribedBy =
     [errorText && errorTextId, helpText && helpTextId]
       .filter(Boolean)
@@ -80,7 +81,7 @@ export function Combobox<T extends object>({
       <AriaCombobox
         menuTrigger={menuTrigger}
         id={id}
-        aria-label={reactNodeToString(label)}
+        aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         {...props}
       >
