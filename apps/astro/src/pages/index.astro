@@ -8,6 +8,16 @@ import { Picture } from "astro:assets";
 import heroImage from "../assets/images/hero.png";
 import komponenterImage from "../assets/images/komponenter.png";
 import designprinsipperImage from "../assets/images/designprinsipper.png";
+import { team } from "./laget-med/_data/contributors.ts";
+
+const moderatedTeam = team[0].slice(0, -1);
+const randomIndex = Math.floor(Math.random() * moderatedTeam.length);
+const randomMember = moderatedTeam[randomIndex];
+const randomMemberImgName = randomMember.name
+  .toLowerCase()
+  .replaceAll(" ", "-")
+  .replaceAll(".", "");
+const randomMemberImgSrc = `/images/contributors/${randomMemberImgName}-200x200.jpeg`;
 
 const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
 ---
@@ -151,6 +161,23 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
           </ButtonLink>
         </ButtonGroup>
       </Card>
+
+      <Card className={["reverse"]}>
+        <div slot="image">
+          <img
+            class="team-member-image"
+            src={randomMemberImgSrc}
+            alt=""
+            aria-hidden
+          />
+        </div>
+        <Heading2 slot="heading">Vi er også folk 👋</Heading2>
+        <p>
+          Vi som lager Sikt designsystem er også folk. Si hei til {
+            randomMember.name
+          }!
+        </p>
+      </Card>
     </div>
   </div>
 </Layout>
@@ -178,5 +205,9 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
     display: flex;
     flex-direction: column;
     gap: var(--sds-space-padding-medium);
+  }
+
+  .team-member-image {
+    width: 100%;
   }
 </style>
