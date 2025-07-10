@@ -8,6 +8,7 @@ export type Contributors = Contributor[];
 
 export const team: Contributors[] = [
   [
+    { name: "Sandra", role: "Design", team: "Designsystem" },    
     {
       name: "Sigve",
       role: "Design",
