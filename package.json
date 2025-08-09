@@ -97,7 +97,7 @@
     "rimraf": "^6.0.1",
     "stylelint": "^16.22.0",
     "terser": "^5.43.1",
-    "ts-jest": "^29.4.0",
+    "ts-jest": "^29.4.1",
     "tsup": "^8.5.0",
     "turbo": "^2.5.5",
     "typescript": "^5.8.3"
