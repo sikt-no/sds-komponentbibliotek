@@ -51,7 +51,7 @@ const { title } = Astro.props;
   .menu-mobile {
     padding: var(--sds-space-padding-small);
 
-    @media (--sds-base-breakpoint-desktop) {
+    @media (--sds-base-breakpoint-tablet) {
       display: none;
     }
   }
@@ -59,7 +59,7 @@ const { title } = Astro.props;
   .menu-desktop {
     display: none;
 
-    @media (--sds-base-breakpoint-desktop) {
+    @media (--sds-base-breakpoint-tablet) {
       display: flex;
       padding: var(--sds-space-padding-large);
     }
