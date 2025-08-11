@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@4.0.1...@sikt/sds-form@4.0.2) (2025-08-11)
+
+### Bug Fixes
+
+- **form-field:** position of post label slot ([ec7792a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ec7792a5cfa62af7b4fa72d9ff89bb20a3636d64))
+- **label:** change text prop type to non nullable ([2c4ceef](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2c4ceefcc96d9b1e56665ee4ae60d3640790f764))
+
 ## [4.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@4.0.0...@sikt/sds-form@4.0.1) (2025-06-10)
 
 ### Bug Fixes
