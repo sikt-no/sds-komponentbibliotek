@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.1.1...@sikt/sds-input@4.1.2) (2025-08-11)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-form@4.0.2 ([4daa4d7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4daa4d7212ac394e66e6231fa6e9ecd3153c336f))
+- **form-field:** position of post label slot ([ec7792a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ec7792a5cfa62af7b4fa72d9ff89bb20a3636d64))
+
 ## [4.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.1.0...@sikt/sds-input@4.1.1) (2025-06-10)
 
 ### Bug Fixes
