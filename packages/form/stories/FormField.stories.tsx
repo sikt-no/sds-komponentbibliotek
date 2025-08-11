@@ -44,3 +44,11 @@ export const WithError: Story = {
     ),
   },
 };
+
+export const WithPostLabelSlot: Story = {
+  args: {
+    ...Default.args,
+    postLabelSlot: <button>Action</button>,
+    children: <input id="input" aria-describedby="input-help-text" />,
+  },
+};

@@ -5,13 +5,19 @@
   &-field {
     position: relative;
 
-    &__after {
-      display: flex;
-      gap: var(--sds-space-gap-tiny);
-      padding: calc(var(--input-padding) + var(--input-border-width));
-      position: absolute;
-      bottom: 0;
-      right: 0;
+    &__label {
+      &-wrapper {
+        position: relative;
+      }
+
+      &-after {
+        display: flex;
+        gap: var(--sds-space-gap-tiny);
+        padding: calc(var(--input-padding) + var(--input-border-width));
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
     }
   }
 }

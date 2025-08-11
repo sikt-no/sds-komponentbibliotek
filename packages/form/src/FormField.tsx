@@ -48,21 +48,23 @@ export const FormField = ({
         className,
       )}
     >
-      {label !== undefined ? (
-        <Label
-          text={label}
-          error={Boolean(errorText)}
-          htmlFor={htmlFor}
-          {...rest}
-        >
-          {children}
-        </Label>
-      ) : (
-        children
-      )}
-      {postLabelSlot && (
-        <div className="sds-form-field__after">{postLabelSlot}</div>
-      )}
+      <div className="sds-form-field__label-wrapper">
+        {label !== undefined ? (
+          <Label
+            text={label}
+            error={Boolean(errorText)}
+            htmlFor={htmlFor}
+            {...rest}
+          >
+            {children}
+          </Label>
+        ) : (
+          children
+        )}
+        {postLabelSlot && (
+          <div className="sds-form-field__label-after">{postLabelSlot}</div>
+        )}
+      </div>
       {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}
       {errorText && (
         <HelpText id={errorTextId} error>
