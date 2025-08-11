@@ -53,8 +53,8 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
@@ -71,8 +71,8 @@
     "@types/jest": "^30.0.0",
     "@types/jest-axe": "^3.5.9",
     "@types/node": "^22.17.1",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
     "autoprefixer": "^10.4.21",
     "browserslist": "^4.25.2",
     "browserslist-to-esbuild": "^2.1.1",
