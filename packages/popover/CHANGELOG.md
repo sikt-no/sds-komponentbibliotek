@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.1.1...@sikt/sds-popover@1.1.2) (2025-08-12)
+
+### Bug Fixes
+
+- **popover:** positioning when closer to right or bottom of screen ([0f1b5b0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0f1b5b017c7dab8362dfbff6f18e8bc35c283ce7))
+
 ## [1.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.1.0...@sikt/sds-popover@1.1.1) (2025-07-02)
 
 ### Bug Fixes
