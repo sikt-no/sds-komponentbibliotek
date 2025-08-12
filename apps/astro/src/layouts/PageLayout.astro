@@ -36,10 +36,6 @@ const { title } = Astro.props;
 
   .page {
     display: grid;
-
-    @media (--sds-base-breakpoint-tablet) {
-      grid-template-columns: 338px auto;
-    }
   }
 
   .menu {
@@ -50,16 +46,22 @@ const { title } = Astro.props;
 
   .menu-mobile {
     padding: var(--sds-space-padding-small);
-
-    @media (--sds-base-breakpoint-tablet) {
-      display: none;
-    }
   }
 
   .menu-desktop {
     display: none;
+  }
 
-    @media (--sds-base-breakpoint-tablet) {
+  @media (--sds-base-breakpoint-tablet) {
+    .page {
+      grid-template-columns: 338px auto;
+    }
+
+    .menu-mobile {
+      display: none;
+    }
+
+    .menu-desktop {
       display: flex;
       padding: var(--sds-space-padding-large);
     }
