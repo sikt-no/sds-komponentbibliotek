@@ -76,5 +76,27 @@ describe("Popover", () => {
 
       expect(clickHandler).not.toHaveBeenCalled();
     });
+
+    it("should be correct positioned", async () => {
+      const user = userEvent.setup();
+      window.HTMLElement.prototype.getBoundingClientRect = () =>
+        ({
+          bottom: window.innerHeight,
+          height: 0,
+          left: 0,
+          right: window.innerWidth,
+          top: 0,
+          width: 0,
+        }) as DOMRect;
+
+      render(<Popover target="Bar">Foo</Popover>);
+
+      await user.click(screen.getByText("Foo"));
+
+      expect(screen.getByText("Bar")).toHaveAttribute(
+        "style",
+        `inset: auto -${window.innerWidth}px -${window.innerHeight}px auto;`,
+      );
+    });
   });
 });

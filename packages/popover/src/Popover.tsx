@@ -31,17 +31,44 @@ export const Popover = ({
 }: PopoverProps) => {
   const id = useId();
   const buttonRef = useRef<HTMLButtonElement | null>(null);
-  const [top, setTop] = useState(0);
-  const [left, setLeft] = useState(0);
+  const [inset, setInset] = useState<string | number>("auto auto auto auto");
   const popovertargetAttr = { popoverTarget: id };
   const popoverAttr = { popover };
 
   // TODO: Replace with https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor when good browser support
   const setPopoverStylePosition = useCallback(() => {
     if (buttonRef.current) {
-      const bounding = buttonRef.current.getBoundingClientRect();
-      setTop(bounding.top + bounding.height + window.scrollY);
-      setLeft(bounding.left);
+      const buttonRect = buttonRef.current.getBoundingClientRect();
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      const scrollbarHeight =
+        window.innerHeight - document.documentElement.clientHeight;
+      const distanceToTop = buttonRect.top;
+      const distanceToBottom =
+        window.innerHeight - scrollbarHeight - buttonRect.bottom;
+      const distanceToRight =
+        window.innerWidth - scrollbarWidth - buttonRect.right;
+      const distanceToLeft = buttonRect.left;
+      const position = {
+        top: "auto",
+        right: "auto",
+        bottom: "auto",
+        left: "auto",
+      };
+
+      if (distanceToBottom < distanceToTop) {
+        position.bottom = `${distanceToBottom + buttonRect.height - window.scrollY}px`;
+      } else {
+        position.top = `${buttonRect.top + buttonRect.height + window.scrollY}px`;
+      }
+
+      if (distanceToRight < distanceToLeft) {
+        position.right = `${distanceToRight - window.scrollX}px`;
+      } else {
+        position.left = `${buttonRect.left + window.scrollX}px`;
+      }
+
+      setInset(Object.values(position).join(" "));
     }
   }, []);
 
@@ -77,7 +104,7 @@ export const Popover = ({
         id={id}
         // INFO: This is a hack to solve that React/TypeScript does not support this native attribute
         {...popoverAttr}
-        style={{ top, left }}
+        style={{ inset }}
       >
         {target}
       </span>
