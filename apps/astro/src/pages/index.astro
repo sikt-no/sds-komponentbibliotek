@@ -173,41 +173,43 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
         </div>
         <Heading2 slot="heading">Vi er også folk 👋</Heading2>
         <p>
-          Vi som lager Sikt designsystem er også folk. Si hei til {
-            randomMember.name
-          }!
+          Vi som lager Sikt designsystem er også folk. Si hei til <Link
+            href={`https://over.sikt.no/ansatt/${randomMember.id}`}
+            >{randomMember.name}
+          </Link>!
         </p>
       </Card>
     </div>
   </div>
-</Layout>
 
-<style>
-  @import url("@sikt/sds-tokens/dist/css/custom-media.css");
+  <style>
+    @import url("@sikt/sds-tokens/dist/css/custom-media.css");
 
-  .container {
-    display: grid;
-    gap: 48px;
-  }
-
-  .section {
-    display: grid;
-    gap: 48px;
-  }
-
-  .section-double {
-    @media (--sds-base-breakpoint-desktop) {
-      grid-template-columns: 1fr 1fr;
+    .container {
+      display: grid;
+      gap: 48px;
     }
-  }
 
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    gap: var(--sds-space-padding-medium);
-  }
+    .section {
+      display: grid;
+      gap: 48px;
+    }
 
-  .team-member-image {
-    width: 100%;
-  }
-</style>
+    .section-double {
+      @media (--sds-base-breakpoint-desktop) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sds-space-padding-medium);
+    }
+
+    .team-member-image {
+      max-width: 200px;
+      width: 100%;
+    }
+  </style>
+</Layout>

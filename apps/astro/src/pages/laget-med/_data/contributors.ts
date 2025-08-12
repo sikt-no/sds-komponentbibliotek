@@ -2,15 +2,36 @@ export interface Contributor {
   name: string;
   role: string;
   team: string;
+  id?: string;
 }
 export type Contributors = Contributor[];
 
 export const team: Contributors[] = [
   [
-    { name: "Sigve", role: "Design", team: "Designsystem" },
-    { name: "Kim", role: "Design", team: "Designsystem" },
-    { name: "Eivind", role: "Inkludering", team: "Designsystem" },
-    { name: "Kristoffer", role: "Teknologi", team: "Designsystem" },
+    {
+      name: "Sigve",
+      role: "Design",
+      team: "Designsystem",
+      id: "3c0ef45c-1308-4819-a376-4491af62c917",
+    },
+    {
+      name: "Kim",
+      role: "Design",
+      team: "Designsystem",
+      id: "0fe4eba1-3490-4d6a-b9f9-c822dab9b066",
+    },
+    {
+      name: "Eivind",
+      role: "Inkludering",
+      team: "Designsystem",
+      id: "e5aa21b0-bedb-43d0-9503-beecad3ac9c8",
+    },
+    {
+      name: "Kristoffer",
+      role: "Teknologi",
+      team: "Designsystem",
+      id: "935f7afe-a5f0-46cb-8398-b6eee80ec89d",
+    },
     { name: "Andreas", role: "Sjef", team: "Designsystem" },
   ],
 ];
