@@ -14,7 +14,6 @@ type Story = StoryObj<TextAreaProps>;
 export const Default: Story = {
   args: {
     label: "Label",
-    placeholder: "",
     rows: 2,
   },
 };

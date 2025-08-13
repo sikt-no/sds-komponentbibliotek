@@ -22,7 +22,6 @@ type Story = StoryObj<typeof meta>;
 export const Default = {
   args: {
     label: "Label",
-    placeholder: "",
   },
 } satisfies Story;
 

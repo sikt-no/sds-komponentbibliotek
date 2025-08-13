@@ -43,7 +43,6 @@ export const Default: Story = {
   render: SearchInputWrapper,
   args: {
     label: "Label",
-    placeholder: "",
     actionProps: {
       onClick: () => {
         console.log("search");
