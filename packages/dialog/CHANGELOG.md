@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.2...@sikt/sds-dialog@2.0.3) (2025-08-13)
+
+### Bug Fixes
+
+- **dialog:** modal dialog positioning ([4eb748a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4eb748ad630fd238e6bc29da93a106f5e2a31f76))
+
 ## [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.1...@sikt/sds-dialog@2.0.2) (2025-07-08)
 
 ## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.0...@sikt/sds-dialog@2.0.1) (2025-07-03)
