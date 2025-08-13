@@ -11,9 +11,6 @@
   padding: 0;
   width: 100%;
   z-index: var(--sds-base-zindex-modal);
-  transition:
-    display var(--sds-effect-animation-duration-medium) allow-discrete,
-    overlay var(--sds-effect-animation-duration-medium) allow-discrete;
 
   @media (--sds-base-breakpoint-tablet) {
     border-radius: var(--modal-border-radius);
@@ -31,6 +28,10 @@
         var(--sds-effect-animation-easing-default),
       display var(--sds-effect-animation-duration-medium) allow-discrete,
       overlay var(--sds-effect-animation-duration-medium) allow-discrete;
+  }
+
+  &:modal {
+    position: fixed;
   }
 
   &[open] {
