@@ -129,6 +129,11 @@
       min-width: 44px;
       padding: var(--button-padding);
 
+      &[data-today] {
+        text-decoration: underline;
+        text-decoration-thickness: var(--sds-space-border-weight-regular);
+      }
+
       &[data-outside-month] {
         display: none;
       }
