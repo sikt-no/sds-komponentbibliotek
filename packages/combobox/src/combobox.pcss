@@ -48,6 +48,19 @@
         outline: var(--sds-focus-outline);
         outline-offset: 0;
       }
+
+      &:disabled {
+        background: repeating-linear-gradient(
+          -45deg,
+          var(--sds-color-layout-background-default),
+          var(--sds-color-layout-background-default) var(--sds-base-size-s),
+          var(--sds-color-interaction-neutral-subtle-default)
+            var(--sds-base-size-s),
+          var(--sds-color-interaction-neutral-subtle-default)
+            calc(var(--sds-base-size-s) * 2)
+        );
+        cursor: not-allowed;
+      }
     }
 
     &-button {
