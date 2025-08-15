@@ -191,27 +191,6 @@ describe("InputFile", () => {
       expect(file2).toHaveProperty("error", ["multiple"]);
     });
 
-    it("accept wildcard type", async () => {
-      const user = userEvent.setup();
-      const changeHandler = jest.fn();
-      const { container } = render(
-        <InputFile
-          label="Foo"
-          aria-label="Foo"
-          accept=".bar,image/*"
-          onChange={changeHandler}
-        />,
-      );
-
-      const file = new File(["hello"], "hello.png", { type: "image/png" });
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const input = container.querySelector("input")!;
-
-      await user.upload(input, file);
-
-      expect(file).not.toHaveProperty("error", ["type"]);
-    });
-
     it("should accept file type", async () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
@@ -230,6 +209,29 @@ describe("InputFile", () => {
 
       await user.upload(input, file);
 
+      expect(changeHandler).toHaveBeenCalledTimes(1);
+      expect(file).not.toHaveProperty("error", ["type"]);
+    });
+
+    it("should accept wildcard type", async () => {
+      const user = userEvent.setup();
+      const changeHandler = jest.fn();
+      const { container } = render(
+        <InputFile
+          label="Foo"
+          aria-label="Foo"
+          accept=".bar,image/*"
+          onChange={changeHandler}
+        />,
+      );
+
+      const file = new File(["hello"], "hello.png", { type: "image/png" });
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const input = container.querySelector("input")!;
+
+      await user.upload(input, file);
+
+      expect(changeHandler).toHaveBeenCalledTimes(1);
       expect(file).not.toHaveProperty("error", ["type"]);
     });
 
@@ -251,6 +253,7 @@ describe("InputFile", () => {
 
       await user.upload(input, file);
 
+      expect(changeHandler).toHaveBeenCalledTimes(1);
       expect(file).not.toHaveProperty("error", ["type"]);
     });
   });
