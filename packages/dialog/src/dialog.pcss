@@ -56,10 +56,8 @@
     --modal-border-radius: 0;
 
     margin: 0;
-    max-height: unset;
     min-height: 100vh;
     overflow: auto;
-    position: fixed;
     top: 0;
     bottom: 0;
     transition:
@@ -69,6 +67,9 @@
       display var(--sds-effect-animation-duration-medium) allow-discrete;
 
     &-right {
+      /* INFO: needed for animation to not push the page */
+      position: fixed;
+      max-height: 100vh;
       right: 0;
       left: unset;
       translate: 100% 0;
