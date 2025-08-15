@@ -22,7 +22,7 @@ export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
    * Specifies the ARIA label for the modal when the heading alone does not sufficiently describe the content.
    * This property should only be used when the heading alone is not enough to provide an adequate description of the content.
    */
-  "aria-label"?: string;
+  "aria-label"?: NonNullable<string>;
   /**
    * - any (default): The dialog can be dismissed with a light dismiss user action, a platform-specific user action, or a developer-specified mechanism.
    * - closerequest: The dialog can be dismissed with a platform-specific user action or a developer-specified mechanism.
@@ -55,13 +55,13 @@ export type DialogProps = DialogBaseProps &
       }
     | {
         closedby?: "any" | "closerequest";
-        closeButtonLabel: string;
+        closeButtonLabel: NonNullable<string>;
         closeButtonAriaLabel?: never;
       }
     | {
         closedby?: "any" | "closerequest";
         closeButtonLabel?: never;
-        closeButtonAriaLabel: string;
+        closeButtonAriaLabel: NonNullable<string>;
       }
   );
 
