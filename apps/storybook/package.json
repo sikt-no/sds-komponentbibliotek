@@ -11,10 +11,10 @@
     "copy:css:logo": "cpy ../../packages/logo/dist/*.css static/dist --flat --rename=logo.css"
   },
   "devDependencies": {
-    "@storybook/addon-docs": "^9.1.1",
+    "@storybook/addon-docs": "^9.1.2",
     "@storybook/addon-styling-webpack": "^2.0.0",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
-    "@storybook/react-webpack5": "^9.1.1",
+    "@storybook/react-webpack5": "^9.1.2",
     "@svgr/webpack": "^8.1.0",
     "@whitespace/storybook-addon-html": "^7.0.0",
     "cpy-cli": "^5.0.0",
