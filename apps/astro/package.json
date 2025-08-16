@@ -11,9 +11,9 @@
     "copy:icons": "cpy ../../packages/icons/dist/assets public/images/sds-icons --flat"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.3",
+    "@astrojs/mdx": "^4.3.4",
     "@astrojs/react": "^4.3.0",
-    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/sitemap": "^3.5.0",
     "@phosphor-icons/react": "^2.1.10",
     "@sikt/sds-badge": "^2.0.3",
     "@sikt/sds-breadcrumbs": "^2.0.3",
@@ -29,7 +29,7 @@
     "@sikt/sds-table": "^2.0.2",
     "@sikt/sds-tabs": "^3.0.4",
     "@sikt/sds-tokens": "^5.1.0",
-    "astro": "^5.12.9",
+    "astro": "^5.13.2",
     "astro-matomo": "^1.9.0",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
