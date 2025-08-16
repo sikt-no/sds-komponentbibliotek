@@ -67,7 +67,7 @@
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
-    "@turbo/gen": "^2.5.5",
+    "@turbo/gen": "^2.5.6",
     "@types/jest": "^30.0.0",
     "@types/jest-axe": "^3.5.9",
     "@types/node": "^22.17.2",
@@ -99,7 +99,7 @@
     "terser": "^5.43.1",
     "ts-jest": "^29.4.1",
     "tsup": "^8.5.0",
-    "turbo": "^2.5.5",
+    "turbo": "^2.5.6",
     "typescript": "^5.9.2"
   }
 }
