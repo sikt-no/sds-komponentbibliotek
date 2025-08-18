@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@1.0.1...@sikt/sds-input-file@1.1.0) (2025-08-18)
+
+### Features
+
+- **file-list:** change styling of loading, success & error items ([a2578d0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a2578d0ba5de15df48cdf4912abffd631e375c15))
+
+### Bug Fixes
+
+- **deps:** update dependency react-aria-components to ^1.11.0 ([09d4b8f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/09d4b8f01b36bcc26124710a4c2ca86be0c4abaf))
+
 ## [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@1.0.0...@sikt/sds-input-file@1.0.1) (2025-06-10)
 
 ### Bug Fixes
