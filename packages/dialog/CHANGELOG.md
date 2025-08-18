@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.3...@sikt/sds-dialog@2.0.4) (2025-08-18)
+
+### Bug Fixes
+
+- **dialog:** drawer scroll ([06e2ed8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/06e2ed89f99406144f0638b36c2fea09fd1ea6ef))
+- **dialog:** full max width & height on mobile ([fb7ece1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fb7ece1235b26f682b42254cadb7da89f8af995b))
+
 ## [2.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.2...@sikt/sds-dialog@2.0.3) (2025-08-13)
 
 ### Bug Fixes
