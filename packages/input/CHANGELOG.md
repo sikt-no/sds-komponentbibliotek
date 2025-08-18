@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.1.2...@sikt/sds-input@4.2.0) (2025-08-18)
+
+### Features
+
+- **input:** mouse wheel event blurs input ([1141aa5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1141aa55ca5ce9052702a2031ba6d75e5981c2e7))
+
 ## [4.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.1.1...@sikt/sds-input@4.1.2) (2025-08-11)
 
 ### Bug Fixes
