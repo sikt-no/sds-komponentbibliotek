@@ -11,24 +11,20 @@
   }
 
   &__item {
-    background-color: var(--sds-color-layout-background-primary);
+    background-color: var(--sds-color-interaction-neutral-subtle-default);
     border-radius: var(--sds-space-border-radius-small);
+    color: var(--sds-color-text-primary);
     display: flex;
     flex-flow: row wrap;
     gap: var(--sds-space-padding-tiny);
     justify-content: space-between;
-    padding: calc(
-        var(--sds-space-padding-minimal) + var(--sds-space-padding-minimal)
-      )
-      calc(var(--sds-space-padding-minimal) + var(--sds-space-padding-small));
+    padding: var(--sds-space-padding-minimal);
     padding-right: var(--sds-space-padding-small);
 
-    &--error {
-      background-color: var(--sds-color-layout-page-default);
-    }
-
     &-start {
-      max-width: 50%;
+      display: flex;
+      flex-flow: row wrap;
+      gap: var(--sds-space-padding-tiny);
     }
 
     &-end {
@@ -39,13 +35,52 @@
     }
 
     &-icon {
-      font-size: var(--sds-typography-fontsize-700);
-      line-height: 1em;
-      padding: var(--sds-space-padding-minimal);
+      --input-file-list-icon-background-color: var(
+        --sds-color-support-success-strong
+      );
+      --input-file-list-icon-color: var(--sds-color-text-on-strong);
+
+      align-items: center;
+      background-color: var(--input-file-list-icon-background-color);
+      border-radius: var(--sds-space-border-radius-full);
+      color: var(--input-file-list-icon-color);
+      display: flex;
+      font-size: var(--sds-typography-fontsize-500);
+      justify-content: center;
+      height: var(--sds-typography-fontsize-700);
+      min-width: var(--sds-typography-fontsize-700);
+
+      &--loading {
+        --input-file-list-icon-background-color: var(
+          --sds-color-interaction-neutral-transparent-pressed
+        );
+        --input-file-list-icon-color: var(--sds-color-text-primary);
+      }
+    }
+
+    &-size {
+      color: var(--sds-color-text-secondary);
+      font-size: var(--sds-typography-fontsize-200);
     }
 
     &-error {
-      padding: var(--sds-space-padding-minimal) 0;
+      padding: 0;
+
+      .sds-input-file-list__item-icon {
+        --input-file-list-icon-background-color: var(
+          --sds-color-support-critical-strong
+        );
+      }
+    }
+
+    &--error {
+      background-color: var(--sds-color-support-critical-subtle);
+
+      .sds-input-file-list__item-icon {
+        --input-file-list-icon-background-color: var(
+          --sds-color-support-critical-strong
+        );
+      }
     }
   }
 }

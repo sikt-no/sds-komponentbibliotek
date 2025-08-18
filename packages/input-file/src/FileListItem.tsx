@@ -1,6 +1,12 @@
 import { Button, ButtonProps } from "@sikt/sds-button";
 import { HelpText } from "@sikt/sds-form";
-import { SpinnerIcon, DeleteIcon, CancelIcon } from "@sikt/sds-icons";
+import {
+  SpinnerIcon,
+  DeleteIcon,
+  CancelIcon,
+  FailedIcon,
+  SuccessIcon,
+} from "@sikt/sds-icons";
 import { clsx } from "clsx";
 import { LiHTMLAttributes, ReactNode } from "react";
 
@@ -56,21 +62,39 @@ export const FileListItem = ({
       className={clsx(
         "sds-input-file-list__item",
         Boolean(errorText) && "sds-input-file-list__item--error",
-        "ssds-typography-body",
+        "sds-typography-body",
         className,
       )}
       {...rest}
     >
       <div className="sds-input-file-list__item-start">
-        <div className="sds-input-file-list__item-name sds-typography-label">
-          {children}
+        <div>
+          <div
+            className={clsx(
+              "sds-input-file-list__item-icon",
+              loading && "sds-input-file-list__item-icon--loading",
+            )}
+          >
+            {loading ? (
+              <SpinnerIcon />
+            ) : errorText ? (
+              <FailedIcon />
+            ) : (
+              <SuccessIcon />
+            )}
+          </div>
         </div>
-        {size && <div>{size}</div>}
-        {errorText && (
-          <HelpText error className="sds-input-file-list__item-error">
-            {errorText}
-          </HelpText>
-        )}
+        <div>
+          <div className="sds-input-file-list__item-name sds-typography-body sds-typography--strong">
+            {children}
+          </div>
+          {size && <div className="sds-input-file-list__item-size">{size}</div>}
+          {errorText && (
+            <HelpText error className="sds-input-file-list__item-error">
+              {errorText}
+            </HelpText>
+          )}
+        </div>
       </div>
       <div className="sds-input-file-list__item-end">
         {progressProps && (
@@ -93,11 +117,6 @@ export const FileListItem = ({
           >
             {removeActionProps.label}
           </Button>
-        )}
-        {loading && (
-          <div className="sds-input-file-list__item-icon">
-            <SpinnerIcon />
-          </div>
         )}
       </div>
     </li>
