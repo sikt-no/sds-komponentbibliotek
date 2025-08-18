@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { createRef, forwardRef, useState } from "react";
@@ -192,6 +192,22 @@ describe("Input", () => {
       );
 
       expect(screen.getByLabelText("Tøm søketekst")).toBeInTheDocument();
+    });
+
+    it("blurs input on mouse wheel", async () => {
+      const user = userEvent.setup();
+      render(
+        <TextInput label="Foo" data-testid="test" onChange={() => jest.fn()} />,
+      );
+      const inputElement = screen.getByTestId("test");
+
+      await user.click(screen.getByLabelText("Foo"));
+
+      expect(inputElement).toHaveFocus();
+
+      fireEvent.wheel(inputElement);
+
+      expect(inputElement).not.toHaveFocus();
     });
   });
 });

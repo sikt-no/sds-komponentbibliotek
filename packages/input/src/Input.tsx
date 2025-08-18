@@ -144,6 +144,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             type={type}
             placeholder={placeholder}
             onChange={onChange && changeHandler}
+            onWheel={(e) => {
+              e.currentTarget.blur();
+            }}
             value={value}
             aria-labelledby={ariaLabelledBy}
             aria-describedby={ariaDescribedBy}
