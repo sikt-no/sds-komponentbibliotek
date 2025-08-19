@@ -10,6 +10,9 @@
         },
         "lineheight": {
           "$value": "{typography.lineheight.xs}"
+        },
+        "texttransform": {
+          "$value": "uppercase"
         }
       }
     }
