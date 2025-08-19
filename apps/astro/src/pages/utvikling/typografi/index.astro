@@ -1,10 +1,12 @@
 ---
-import Layout from "../../layouts/PageLayout.astro";
-import { Hero } from "../../components";
+import Layout from "../../../layouts/PageLayout.astro";
+import { Hero } from "../../../components";
 import { Heading, Paragraph } from "@sikt/sds-core";
 import { ButtonGroup, Button } from "@sikt/sds-button";
 import { Section } from "@sikt/sds-section";
-import { HeadlineTabs } from "../../components";
+import { HeadlineTabs } from "./_components/headline/HeadlineTabs.tsx";
+import { clsx } from "clsx/clsx";
+import { TypographyPanel } from "./_components/typography/TypographyPanel";
 
 const pageTitle = "Typografi";
 ---
@@ -135,6 +137,18 @@ const pageTitle = "Typografi";
 
   <Section headingText="Application headlines">
     <HeadlineTabs type="application" client:load />
+  </Section>
+
+  <Section headingText="Label">
+    <TypographyPanel type="label" />
+  </Section>
+
+  <Section headingText="Body">
+    <TypographyPanel type="body" />
+  </Section>
+
+  <Section headingText="Overline">
+    <TypographyPanel type="overline" />
   </Section>
 </Layout>
 

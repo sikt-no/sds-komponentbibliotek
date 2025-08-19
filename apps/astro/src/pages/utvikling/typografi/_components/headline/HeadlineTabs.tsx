@@ -4,7 +4,7 @@ import {
   DeviceTabletIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Tabs, TabList, Tab, TabPanel } from "@sikt/sds-tabs";
-import { capitalize } from "../../utils/string.ts";
+import { capitalize } from "../../../../../utils/string.ts";
 import { HeadlineTabPanel } from "./HeadlineTabPanel.tsx";
 
 export const HeadlineTabs = ({

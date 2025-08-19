@@ -10,9 +10,9 @@ import desktop from "@sikt/sds-tokens/dist/js/tokens.desktop.mjs";
 import tokens from "@sikt/sds-tokens/dist/js/tokens.mjs";
 import tablet from "@sikt/sds-tokens/dist/js/tokens.tablet.mjs";
 import { clsx } from "clsx/lite";
-import { Token } from "../token/Token.tsx";
-import styles from "./headline-tabs.module.css";
-import { HeadlineCard } from "./HeadlineCard.tsx";
+import { Token } from "../../../../../components";
+import styles from "../typography/typography-panel.module.css";
+import { TypographyCard } from "../typography/TypographyCard.tsx";
 
 export const HeadlineTabPanel = ({
   type = "editorial",
@@ -42,7 +42,7 @@ export const HeadlineTabPanel = ({
           }
 
           return (
-            <HeadlineCard
+            <TypographyCard
               key={group[0]}
               heading={
                 <>
@@ -59,7 +59,7 @@ export const HeadlineTabPanel = ({
                 lineHeight: data.lineheight?.$value,
               }}
             >
-              <Table caption="Designtokens for editorial headline">
+              <Table caption={`Designtokens for ${type} headline`}>
                 <TableHead>
                   <TableRow>
                     <TableHeader>Type</TableHeader>
@@ -85,7 +85,7 @@ export const HeadlineTabPanel = ({
                   })}
                 </TableBody>
               </Table>
-            </HeadlineCard>
+            </TypographyCard>
           );
         })}
     </div>

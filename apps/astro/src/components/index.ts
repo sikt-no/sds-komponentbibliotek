@@ -5,4 +5,3 @@ export { SlackButton } from "./button/SlackButton";
 export { Hero } from "./hero/Hero";
 export { Token } from "./token/Token";
 export { DarkToken } from "./token/DarkToken";
-export { HeadlineTabs } from "./headline/HeadlineTabs";

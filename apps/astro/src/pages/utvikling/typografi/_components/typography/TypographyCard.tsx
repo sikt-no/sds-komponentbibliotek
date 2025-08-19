@@ -1,8 +1,8 @@
 import type { ReactNode, CSSProperties } from "react";
 import { useId } from "react";
-import styles from "./headline-card.module.css";
+import styles from "./typography-card.module.css";
 
-export const HeadlineCard = ({
+export const TypographyCard = ({
   heading,
   children,
   style,
