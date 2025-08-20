@@ -32,8 +32,7 @@ export const TypographyPanel = ({
               key={group[0]}
               heading={
                 <>
-                  {type}/<wbr />
-                  headline-{group[0]}
+                  {type}-{group[0]}
                 </>
               }
               style={{
