@@ -24,8 +24,8 @@ export const Details = ({
       {...rest}
     >
       <summary className="sds-details__summary">
-        <span>
-          <ExpandShowAltIcon className="sds-details__icon" />
+        <span className="sds-details__icon">
+          <ExpandShowAltIcon />
         </span>
         {summary}
       </summary>
