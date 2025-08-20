@@ -7,15 +7,15 @@
     "type": "git",
     "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
   },
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "index.mjs",
   "files": [
     "CHANGELOG.md",
-    "index.js",
+    "index.mjs",
     "README.md"
   ],
   "scripts": {},
   "peerDependencies": {
-    "prettier": "^2.0.0 || ^3.0.0"
+    "prettier": "^3.0.0"
   }
 }

@@ -11,14 +11,22 @@ npm i -D @sikt/prettier-config-sds
 In `prettier.config.js`:
 
 ```js
-module.exports = "@sikt/prettier-config-sds";
+export default "@sikt/prettier-config-sds";
 ```
 
 #### Custom rules
 
 ```js
-module.exports = {
-  ...require("@sikt/prettier-config-sds"),
-  // custom rules
+import sdsConfig from "@sikt/prettier-config-sds";
+
+/**
+ * @see https://prettier.io/docs/configuration
+ * @type {import("prettier").Config}
+ */
+const config = {
+  ...sdsConfig,
+  /* custom rules */
 };
+
+export default config;
 ```

@@ -6,4 +6,4 @@ const config = {
   /* purposefully empty to point out that default prettier config is used */
 };
 
-module.exports = config;
+export default config;
