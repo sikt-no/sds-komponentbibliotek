@@ -80,5 +80,20 @@ describe("ButtonLink", () => {
       expect(screen.getByTestId("test")).toHaveAccessibleName("Foo");
       expect(screen.queryByText("Foo")).not.toBeInTheDocument();
     });
+
+    it("should have aria-label", async () => {
+      render(
+        <ButtonLink
+          data-testid="test"
+          icon="icon"
+          iconVariant="only"
+          aria-label="Foo"
+        />,
+      );
+
+      expect(screen.getByText("icon")).toHaveClass("sds-button__icon");
+      expect(screen.getByTestId("test")).toHaveAccessibleName("Foo");
+      expect(screen.queryByText("Foo")).not.toBeInTheDocument();
+    });
   });
 });

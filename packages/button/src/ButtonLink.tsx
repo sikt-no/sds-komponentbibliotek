@@ -8,7 +8,6 @@ export type ButtonLinkProps =
   | ButtonLinkAriaLabelProps;
 
 interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: ReactNode;
   className?: string;
   icon?: ReactNode;
   iconVariant?: ButtonIconVariant;
