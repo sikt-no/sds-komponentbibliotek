@@ -80,12 +80,6 @@ describe("TextArea", () => {
       expect(helpEl).toHaveClass("sds-form__help-text", { exact: false });
     });
 
-    it("should have icon element", async () => {
-      render(<TextArea label="Foo" icon="icon" />);
-
-      expect(screen.getByText("icon")).toBeInTheDocument();
-    });
-
     it("should have aria attributes set correctly when help and error text is not set", async () => {
       render(<TextArea label="Foo" data-testid="test" />);
 
@@ -95,6 +89,12 @@ describe("TextArea", () => {
       expect(textAreaEl).not.toHaveAttribute("aria-describedby");
 
       expect(screen.getByRole("textbox")).not.toBeInvalid();
+    });
+
+    it("should have icon element", async () => {
+      render(<TextArea label="Foo" icon="icon" />);
+
+      expect(screen.getByText("icon")).toBeInTheDocument();
     });
 
     it("should support aria-labelledby", () => {

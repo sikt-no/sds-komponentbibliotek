@@ -36,5 +36,18 @@ describe("Badge", () => {
       expect(screen.getByText("icon")).toHaveClass("sds-badge__icon");
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
+
+    it("should have data-color-scheme=light on variant=warning", async () => {
+      render(
+        <Badge data-testid="test" variant="warning">
+          Foo
+        </Badge>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveAttribute(
+        "data-color-scheme",
+        "light",
+      );
+    });
   });
 });

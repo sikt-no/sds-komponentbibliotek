@@ -109,5 +109,15 @@ describe("FormField", () => {
         container.getElementsByClassName("sds-form-field")[0],
       ).toBeInTheDocument();
     });
+
+    it("should have post label element", () => {
+      render(
+        <FormField label="Foo" htmlFor="input" postLabelSlot={<>Baz</>}>
+          <input id="input" />
+        </FormField>,
+      );
+
+      expect(screen.getByText("Baz")).toBeInTheDocument();
+    });
   });
 });

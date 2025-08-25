@@ -30,20 +30,14 @@ export const TabList = ({
       aria-label={ariaLabel}
       {...rest}
     >
-      {Children.map(arrayChildren, (child, index) => {
-        if (isValidElement(child)) {
-          return (
-            <>
-              {cloneElement(
-                child as ReactElement<TabProps & { index: number }>,
-                {
-                  index,
-                },
-              )}
-            </>
-          );
-        }
-      })}
+      {Children.map(
+        arrayChildren,
+        (child, index) =>
+          isValidElement(child) &&
+          cloneElement(child as ReactElement<TabProps & { index: number }>, {
+            index,
+          }),
+      )}
     </div>
   );
 };

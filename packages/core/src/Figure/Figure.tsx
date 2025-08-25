@@ -40,11 +40,12 @@ export const Figure = ({
 
   return (
     <figure className={clsx("sds-figure", className)} {...rest}>
-      {Children.map(children, (child) => {
-        if (isValidElement(child)) {
-          return addClassToChildren(child as ReactElement<ChildProps>);
-        }
-      })}
+      {Children.map(
+        children,
+        (child) =>
+          isValidElement(child) &&
+          addClassToChildren(child as ReactElement<ChildProps>),
+      )}
       {figCaption && (
         <figcaption className="sds-figure__caption">{figCaption}</figcaption>
       )}
