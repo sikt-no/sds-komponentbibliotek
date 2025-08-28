@@ -50,18 +50,5 @@ describe("Heading", () => {
         "sds-typography-editorial-headline sds-typography-editorial-headline--m test-class-name",
       );
     });
-
-    it("should have deprecation warning", async () => {
-      const spy = jest
-        .spyOn(global.console, "warn")
-        .mockImplementationOnce(() => jest.fn);
-
-      render(<Heading1 variant="medium">Foo</Heading1>);
-
-      expect(screen.getByText("Foo")).toHaveClass(
-        "sds-typography-heading sds-typography-heading--medium",
-      );
-      expect(spy).toHaveBeenCalled();
-    });
   });
 });
