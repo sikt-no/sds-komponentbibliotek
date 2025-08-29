@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@2.2.0...@sikt/sds-input-datepicker@2.2.1) (2025-08-29)
+
+### Bug Fixes
+
+- **input-datepicker:** update react-aria-components to 1.12.0 to fix date placeholder for bokmål ([e85bd66](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e85bd66bca3797e06336c3b3825031f8a1cbf132))
+
 ## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@2.1.1...@sikt/sds-input-datepicker@2.2.0) (2025-08-13)
 
 ### Features
