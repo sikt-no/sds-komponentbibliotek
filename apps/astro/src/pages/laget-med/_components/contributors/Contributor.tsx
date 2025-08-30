@@ -56,7 +56,7 @@ export const Contributor = ({
         />
       )}
       <div>{name}</div>
-      <div className="sds-typography-body--small">{role}</div>
+      <div className="sds-typography-body--s">{role}</div>
     </div>
   );
 };
