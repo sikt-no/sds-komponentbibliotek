@@ -1,5 +1,6 @@
 .sds-toggle-segment {
-  --toggle-segment-border: var(--sds-space-border-weight-regular) solid
+  --toggle-segment-border-width: var(--sds-space-border-weight-regular);
+  --toggle-segment-border: var(--toggle-segment-border-width) solid
     var(--sds-color-interaction-primary-strong-default);
 
   &--horizontal &__fieldset {
@@ -14,9 +15,11 @@
   &__group {
     border-radius: var(--sds-space-border-radius-small);
     display: inline-grid;
+    gap: var(--toggle-segment-border-width);
     grid-auto-flow: column;
+    padding: var(--sds-space-padding-minimal);
     outline: var(--toggle-segment-border);
-    outline-offset: calc(var(--sds-space-border-weight-regular) * -1);
+    outline-offset: calc(var(--toggle-segment-border-width) * -1);
   }
 
   &--fixed &__group {
@@ -25,22 +28,10 @@
 
   &__option {
     align-items: center;
+    border-radius: var(--sds-space-border-radius-minimal);
     display: flex;
     justify-content: center;
-
-    &:first-child {
-      border-radius: var(--sds-space-border-radius-small) 0 0
-        var(--sds-space-border-radius-small);
-    }
-
-    &:last-child {
-      border-radius: 0 var(--sds-space-border-radius-small)
-        var(--sds-space-border-radius-small) 0;
-    }
-
-    + .sds-toggle-segment__option {
-      border-left: var(--toggle-segment-border);
-    }
+    padding: var(--sds-space-padding-minimal) var(--sds-space-padding-tiny);
 
     &:hover {
       background: var(--sds-color-interaction-primary-transparent-highlight);
@@ -69,15 +60,14 @@
   }
 
   &__label {
-    border-radius: var(--sds-space-border-radius-small);
+    display: flex;
     cursor: pointer;
     font-size: var(--sds-typography-body-default-fontsize);
     font-weight: var(--sds-typography-body-default-fontweight);
+    justify-content: center;
     line-height: var(--sds-typography-body-default-lineheight);
     min-width: 44px;
-    padding: var(--sds-space-padding-small);
     position: relative;
-    text-align: center;
     width: 100%;
   }
 
