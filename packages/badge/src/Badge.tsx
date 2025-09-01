@@ -2,12 +2,20 @@ import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
 import "./badge.pcss";
 
-export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
+export type BadgeProps = BadgeChildrenProps | BadgeAriaLabelProps;
+interface BadgeBaseProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;
-  children: ReactNode;
   variant?: "primary" | "success" | "critical" | "warning" | "info";
   visibility?: "strong" | "subtle";
   icon?: ReactNode;
+}
+
+interface BadgeAriaLabelProps extends BadgeBaseProps {
+  "aria-label": NonNullable<string>;
+}
+
+interface BadgeChildrenProps extends BadgeBaseProps {
+  children: ReactNode;
 }
 
 export const Badge = ({
@@ -27,10 +35,11 @@ export const Badge = ({
         className,
       )}
       data-color-scheme={variant === "warning" && "light"}
+      role={!children ? "img" : undefined}
       {...rest}
     >
       {icon && <span className="sds-badge__icon">{icon}</span>}
-      {children}
+      {children && <span className="sds-badge__label">{children}</span>}
     </span>
   );
 };

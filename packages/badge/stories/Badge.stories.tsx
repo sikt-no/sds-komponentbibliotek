@@ -25,3 +25,12 @@ export const IconLeft: Story = {
     icon: <ConfirmIcon />,
   },
 };
+
+export const IconOnly: Story = {
+  args: {
+    ...Default.args,
+    children: undefined,
+    icon: <ConfirmIcon />,
+    "aria-label": "Badge",
+  },
+};

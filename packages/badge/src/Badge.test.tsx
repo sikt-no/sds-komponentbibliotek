@@ -49,5 +49,11 @@ describe("Badge", () => {
         "light",
       );
     });
+
+    it("should have img role", async () => {
+      render(<Badge icon="icon" aria-label="Foo" />);
+
+      expect(screen.getByLabelText("Foo")).toHaveAttribute("role", "img");
+    });
   });
 });

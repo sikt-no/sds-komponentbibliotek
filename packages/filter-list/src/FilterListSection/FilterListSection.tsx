@@ -31,9 +31,12 @@ export const FilterListSection = ({
     >
       <span className="sds-filter-list-section__label">{label}</span>
       {hasCount && (
-        <Badge visibility="strong" className="sds-filter-list__badge">
-          {count}
-        </Badge>
+        <Badge
+          visibility="strong"
+          className="sds-filter-list__badge"
+          icon={count}
+          aria-label={`${count}`}
+        />
       )}
     </div>
   );

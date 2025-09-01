@@ -40,6 +40,20 @@ test.describe("Badge", () => {
 
       expect(accessibilityScanResults.violations).toEqual([]);
     });
+
+    test("icon only badge should be accessible", async ({ page }) => {
+      await page.goto(
+        "/iframe.html?viewMode=story&id=components-badge--icon-only",
+      );
+
+      await page.locator(componentSelector).waitFor();
+
+      const accessibilityScanResults = await new AxeBuilder({ page })
+        .include(componentSelector)
+        .analyze();
+
+      expect(accessibilityScanResults.violations).toEqual([]);
+    });
   });
 
   test.describe("visual", () => {
@@ -60,6 +74,14 @@ test.describe("Badge", () => {
     test("icon left badge should have screenshot", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-badge--icon-left",
+      );
+
+      await expect(page.locator(componentSelector)).toHaveScreenshot();
+    });
+
+    test("icon only badge should have screenshot", async ({ page }) => {
+      await page.goto(
+        "/iframe.html?viewMode=story&id=components-badge--icon-only",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

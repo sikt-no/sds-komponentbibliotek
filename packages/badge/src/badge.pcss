@@ -7,11 +7,12 @@
   border-radius: var(--sds-space-border-radius-large);
   color: var(--badge-color);
   display: inline-flex;
-  gap: var(--sds-space-gap-minimal);
-  padding: var(--sds-space-padding-infinitesimal) var(--sds-space-padding-tiny);
   font-size: var(--sds-typography-body-s-fontsize);
   font-weight: var(--sds-typography-body-s-fontweight);
+  justify-content: center;
   line-height: var(--sds-typography-body-s-lineheight);
+  min-height: 24px;
+  padding: 0 var(--sds-space-padding-minimal);
 
   &--visibility-strong {
     --badge-background-color: var(--sds-color-brand-primary-strong);
@@ -56,5 +57,11 @@
     display: inline-flex;
     font-size: var(--sds-typography-fontsize-300);
     justify-content: center;
+    width: 1em;
+    height: 1em;
+  }
+
+  &__label {
+    padding: 0 var(--sds-space-padding-minimal);
   }
 }

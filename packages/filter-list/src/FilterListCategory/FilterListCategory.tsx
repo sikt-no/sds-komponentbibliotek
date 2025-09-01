@@ -59,9 +59,9 @@ export const FilterListCategory = ({
               visibility="strong"
               className="sds-filter-list__badge"
               id={id}
-            >
-              {count}
-            </Badge>
+              icon={count}
+              aria-label={`${count}`}
+            />
           )}
         </div>
       }
