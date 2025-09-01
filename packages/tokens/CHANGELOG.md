@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@5.1.0...@sikt/sds-tokens@5.2.0) (2025-09-01)
+
+### Features
+
+- **typography:** add texttransform token to overline ([15e71be](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/15e71beeb201ef7cd5b8d83ff626bc66d6c1371d))
+
 ## [5.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@5.0.0...@sikt/sds-tokens@5.1.0) (2025-07-08)
 
 ### Features
