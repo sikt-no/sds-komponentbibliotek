@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@3.0.1...@sikt/sds-combobox@3.1.0) (2025-09-01)
+
+### Features
+
+- **combobox:** add disabled style ([f53c6ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f53c6aee752278439dd58558689fa4afcfb0c7e7))
+
+### Bug Fixes
+
+- **deps:** update dependency react-aria-components to ^1.11.0 ([09d4b8f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/09d4b8f01b36bcc26124710a4c2ca86be0c4abaf))
+- **deps:** update dependency react-aria-components to ^1.12.1 ([62cc507](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/62cc5079bd51b3150b9cc635d20c09fe0c07ac0c))
+
 ## [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@3.0.0...@sikt/sds-combobox@3.0.1) (2025-07-09)
 
 ### Bug Fixes
