@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.1.0...@sikt/sds-toggle@6.1.1) (2025-09-01)
+
+### Bug Fixes
+
+- **toggle-segment:** change styling for better visibility on selected item ([e957ebe](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e957ebeb96374d12088940b5b5b7d59f89b860b6))
+
 ## [6.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.0.0...@sikt/sds-toggle@6.1.0) (2025-07-08)
 
 ### Features
