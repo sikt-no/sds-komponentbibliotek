@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.3.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.3.0...@sikt/sds-button@4.3.1) (2025-09-01)
+
+### Bug Fixes
+
+- **button-group:** align items to allow for different sizes in same group ([10234c9](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/10234c9406cbb631716514076d7ae60b412c5f14))
+- **button-link:** make child prop optional if aria-label present ([1d9034a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1d9034a59457678b4ec76a97ba70582066b9ba83))
+
 ## [4.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.2.0...@sikt/sds-button@4.3.0) (2025-07-08)
 
 ### Features
