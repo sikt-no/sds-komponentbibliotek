@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.8.0...@sikt/sds-core@5.0.0) (2025-09-01)
+
+### ⚠ BREAKING CHANGES
+
+- **typography:** remove deprecated classes & Heading variants
+
+### Features
+
+- **typography:** remove deprecated classes & Heading variants ([203c127](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/203c1274cec170c32779630246731d2afc847b44))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-tokens@5.2.0 ([55feeb8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/55feeb81b9c02d8ef701f0987369c1bbafabba9d))
+
 ## [4.8.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.7.1...@sikt/sds-core@4.8.0) (2025-07-08)
 
 ### Features
