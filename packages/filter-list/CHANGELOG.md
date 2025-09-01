@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.0...@sikt/sds-filter-list@0.5.1) (2025-09-01)
+
+### Features
+
+- **badge:** make children optional for icon only badge ([b62e639](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b62e6395459f3c600a85eb7681d068f2005f285a))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-badge@2.2.0 ([e978f69](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e978f692f6dcd2453d1f220ba7e14cb955ed3197))
+
 ## [0.5.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.4.1...@sikt/sds-filter-list@0.5.0) (2025-06-25)
 
 ### ⚠ BREAKING CHANGES
