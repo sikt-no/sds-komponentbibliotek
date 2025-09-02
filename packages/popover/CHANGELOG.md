@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.1.2...@sikt/sds-popover@1.1.3) (2025-09-02)
+
+### Bug Fixes
+
+- **popover:** remove text align center ([68de7bc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/68de7bc5930313d9578516d68e70151c4e904da2))
+
 ## [1.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.1.1...@sikt/sds-popover@1.1.2) (2025-08-12)
 
 ### Bug Fixes
