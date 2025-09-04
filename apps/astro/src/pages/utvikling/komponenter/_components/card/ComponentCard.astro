@@ -45,8 +45,12 @@ const imgSrc = `/images/components/${imgName}.svg`;
 
   .image {
     align-items: center;
-    background-color: var(--sds-color-layout-background-default);
-    background-image: url("/images/components/background.svg");
+    background: conic-gradient(
+        from 90deg at 1px 1px,
+        var(--sds-color-layout-background-default) 90deg,
+        var(--sds-color-layout-background-primary) 0
+      )
+      0 0/18px 18px;
     border: 1px solid var(--sds-color-interaction-primary-strong-default);
     border-radius: var(--sds-space-border-radius-small);
     display: flex;
