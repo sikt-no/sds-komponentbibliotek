@@ -15,7 +15,7 @@ export default {
       },
       critical: {
         $value: "{_color.base.red.36-100}",
-        dark: "{_color.base.red.40-100}",
+        dark: "{_color.base.red.68-100}",
       },
     },
   },
