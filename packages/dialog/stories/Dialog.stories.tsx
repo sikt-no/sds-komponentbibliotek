@@ -30,6 +30,8 @@ export const Default: Story = {
   },
   render: (args: DialogProps) => {
     const [, setArgs] = useArgs();
+    const id = "id";
+
     return (
       <>
         <Button
@@ -40,10 +42,13 @@ export const Default: Story = {
             e.stopPropagation();
             setArgs({ ...args, open: true });
           }}
+          aria-controls={id}
+          aria-expanded={args.open}
         >
           Open dialog
         </Button>
         <Dialog
+          id={id}
           {...args}
           footer={[
             <Button
@@ -100,6 +105,8 @@ export const NonModal: Story = {
   },
   render: (args: DialogProps) => {
     const [, setArgs] = useArgs();
+    const id = "id";
+
     return (
       <>
         <Button
@@ -110,10 +117,13 @@ export const NonModal: Story = {
             e.stopPropagation();
             setArgs({ ...args, open: true });
           }}
+          aria-controls={id}
+          aria-expanded={args.open}
         >
           Open dialog
         </Button>
         <Dialog
+          id={id}
           {...args}
           footer={[
             <Button
@@ -170,6 +180,8 @@ export const Drawer: Story = {
   },
   render: (args: DialogProps) => {
     const [, setArgs] = useArgs();
+    const id = "id";
+
     return (
       <>
         <Button
@@ -180,10 +192,13 @@ export const Drawer: Story = {
             e.stopPropagation();
             setArgs({ ...args, open: true });
           }}
+          aria-controls={id}
+          aria-expanded={args.open}
         >
           Open drawer
         </Button>
         <Dialog
+          id={id}
           {...args}
           footer={[
             <Button variant="transparent" key="0">
