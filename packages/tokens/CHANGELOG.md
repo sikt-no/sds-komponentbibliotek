@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@5.2.0...@sikt/sds-tokens@5.3.0) (2025-09-08)
+
+### Features
+
+- **color:** change text critical dark mode color ([e8d21d7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e8d21d7e3c4f79f27952c5d96a0bccf2d6529f2e))
+
 ## [5.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@5.1.0...@sikt/sds-tokens@5.2.0) (2025-09-01)
 
 ### Features
