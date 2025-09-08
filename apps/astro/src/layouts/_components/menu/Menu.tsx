@@ -6,7 +6,6 @@ import {
   SquaresFourIcon,
   GridFourIcon,
   TextAaIcon,
-  WheelchairIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { Nav } from "./nav/Nav";
@@ -82,7 +81,10 @@ const tilgjengelighetMenu: MenuItemType[] = [
   {
     name: "Tilgjengelighet",
     url: "/tilgjengelighet",
-    icon: <WheelchairIcon className="sds-icon" aria-hidden />,
+  },
+  {
+    name: "Tilgjengelighetstesting",
+    url: "/tilgjengelighet/tilgjengelighetstesting",
   },
 ];
 

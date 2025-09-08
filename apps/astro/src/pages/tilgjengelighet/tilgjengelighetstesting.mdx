@@ -1,0 +1,215 @@
+---
+layout: "../../layouts/MdxLayout.astro"
+pageTitle: "Tilgjengelighetstesting"
+---
+
+import {
+  Link,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
+  Paragraph,
+} from "@sikt/sds-core";
+import { ListItem, OrderedList, UnorderedList } from "@sikt/sds-list";
+export const components = {
+  a: Link,
+  h1: Heading1,
+  h2: Heading2,
+  h3: Heading3,
+  h4: Heading4,
+  h5: Heading5,
+  h6: Heading6,
+  li: ListItem,
+  ol: OrderedList,
+  p: Paragraph,
+  ul: UnorderedList,
+};
+
+import { Hero } from "../../components";
+import { Section } from "@sikt/sds-section";
+
+<Hero
+  breadcrumbs={[
+    { title: "Designsystem", href: "/" },
+    { title: "Tilgjengelighetstesting" },
+  ]}
+  heading={frontmatter.pageTitle}
+>
+  Gjør disse grunnleggende testene for tilgjengelighet på nettsidene dere lager!<br />
+  Automatiske testverktøy finner ca 30% av tilgjengelighetsproblemene.<br />
+  Metodene nedenfor er nyttige for å bedre tilgjengeligheten ytterligere.
+</Hero>
+
+<Section headingText="Hva ligger til grunn for testingen?">
+  - norsk lov (WCAG versjon 2.1, nivå AA).
+  - WCAG versjon 2.2
+  - Enkelte AAA-krav
+  - god praksis for tilgjengelighet
+</Section>
+
+<Section headingText="Lett å bruke">
+  - Er siden enkel å bruke for alle?
+  - Er det forutsigart hva som skjer når man aktiverer menyvalg, knapper og lenker?
+  - Er det lett å holde oversikt?
+  - Gis det gode bekreftelser og feilmeldinger når man har gjort noe?
+</Section>
+
+<Section headingText="Tastaturnavigering">
+  
+    Bruk tab, piltaster, enter, escape og space. Legg vekk musa.
+  
+  <Heading3 size="xs">Tastatur</Heading3>
+  - Kommer man til alle funksjoner med tastatur? <sup>WCAG 2.1.1</sup>
+  - Fungerer det? <sup>WCAG 2.1.1</sup>
+  - Kan det avbrytes? <sup>WCAG 2.1.2</sup>
+  
+  <Heading3 size="xs">Fokusmarkering</Heading3>
+  - Er fokus alltid synlig når man tabber igjennom siden? <sup>WCAG 2.4.7</sup>
+  - Har fokusmarkeringen god kontrast mot bakgrunnen? <sup>WCAG 1.4.11</sup>
+  - Kommer elementene i en logisk rekkefølge? <sup>WCAG 2.4.3</sup>
+  - Er et element tildekket idet det får fokus? <sup>WCAG 2.4.11</sup>
+  - Er fokusmarkeringen stor nok? <sup>WCAG 2.4.13 (AAA)</sup>
+
+  <Heading3 size="xs">Modalvinduer</Heading3>
+  - Kan modalvinduer lukkes med escape? <sup>WCAG 2.1.2</sup>
+  - Kan modalvinduer lukkes med en knapp? <sup>WCAG 2.1.2</sup>
+  - Settes fokus tilake til knappen som åpnet modalvinduet når modalvinduet lukkes? <sup>WCAG 2.4.3</sup>
+</Section>
+
+<Section headingText="Overskrifter">
+  <Heading3 size="xs">Testverktøy: HeadingsMap</Heading3>
+
+    HeadingsMap er et nettlesertillegg som viser overskrift-struktur og landemerker.
+    Sammenlign overskriftene på siden med det HeadingsMap viser.
+    
+  - [HeadingsMap for Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi)
+  - [HeadingsMap for Firefox](https://addons.mozilla.org/en-GB/firefox/addon/headingsmap/)
+  - [HeadingsMap for Edge](https://microsoftedge.microsoft.com/addons/detail/headingsmap/bokekiiaddinealohkmhjcgfanndmcgo)
+  
+  <Heading3 size="xs">Tester for overskrifter</Heading3>
+  - Er alle synlige overskrifter på siden også vist i HeadingsMap-oversikten? <sup>WCAG 1.3.1</sup>
+  - Har siden én h1 som beskriver sidens innhold?
+  - Følger overskriftene et hierarki uten hopp?
+  - Er overskrift-strukturen logisk bygget opp? <sup>WCAG 1.3.1</sup>
+  - Gir overskriftene en god beskrivende av innholdet? <sup>WCAG 2.4.6</sup>
+</Section>
+
+<Section headingText="Forstørring">
+  <Heading3 size="xs">200% tekst-zoom</Heading3>
+  - Firefox: Meny -> Vis -> Skalering -> Forstørr bare tekst
+  - Chrome: Innstillinger -> Utseende -> Skriftstørrelse: "Veldig stor"
+
+  Sjekk at all tekst forstørres <sup>WCAG 1.4.4</sup><br />
+  Sjekk at ikke noe overlapper / forsvinner. <sup>WCAG 1.4.4</sup>
+
+  <Heading3 size="xs">400% vanlig zoom</Heading3>
+  - Sett skjermstørrelsen til 1280px bredde og 1024px høyde med 400% zoom.<br />
+  Nettleser-tillegget Web Developer har en funksjon Resize som kan hjelpe deg med å sette vindu-størrelsen.<br />
+  Denne [bookmarkleten viser vindustørrlsen](https://coderwall.com/p/7vlbtw/bookmarklet-debug-window-width-height).
+  - eller sett 320px bredde og 256px høyde.<br />
+  Bruk for eksempel Utviklerverktøy (F12) - Device Toolbar.
+
+  Sjekk at ikke noe overlapper / forsvinner. <sup>WCAG 1.4.10</sup><br />
+  Sjekk at det ikke blir både vertikal og horisontal scrolling. <sup>WCAG 1.4.10</sup>
+  
+</Section>
+
+<Section headingText="Navn"  className="ds-content-max-width">
+  <Heading3 size="xs">Kobling mellom feltnavn og felt</Heading3>
+  
+    Trykk på synlig feltnavn. Sjekk at feltet får fokusmarkering. <sup>WCAG 1.3.1</sup>
+  
+  <Heading3 size="xs">Synlig navn</Heading3>
+    - Finnes det et synlig navn? <sup>WCAG 3.3.2</sup>
+    - Gir navnet god beskrivelse av feltet, knappe-funksjonen eller siden det lenkes til? <sup>WCAG 2.4.6</sup>
+
+  <Heading3 size="xs">Tilgjengelig navn</Heading3>
+
+    Tilgjengelig navn brukes i hjelpemiddelteknnologi som stemmestyring og skjermlesere.
+  
+    God praksis er at synlig navn og tilgjengelig navn er like.<sup>WCAG 2.5.3</sup> 
+    Tekst-innholdet i knapper og lenker blir automatisk både synlig og tilgjengelig navn. Unngå å overstyre det med f.eks. aria-label. 
+
+    <Heading4 size="xxs">Bruk utviklerverktøy for å finne tilgjengelig navn</Heading4>
+    {/*    Høyreklikk på et element
+    -> Inspect (accessibility)
+    -> Sjekk at riktig element er markert i kodevisningen
+    -> ta frem visningen "accessibility".
+*/}
+    - Høyreklikk på et element
+    - Inspect (accessibility)
+    - Sjekk at riktig element er markert i kodevisningen
+    - Velg visningen "Accessibility".
+    - Har elementet tilgjengelig navn? <sup>WCAG 4.1.2</sup>
+    - Er tilgjengelig navn likt synlig navn? <sup>WCAG 2.5.3</sup>
+    
+    ![Utviklerverktøy viser tilgjengelig navn og hvilken kilde det kommer fra.](/images/tilgjengelighet/tilgjengelig-navn.png)
+
+</Section>
+
+<Section headingText="Bilder">
+  <Heading3 size="xs">Test-verktøy</Heading3>
+    <p>alt-attributtet er oligatorisk i HTML, og er ofte det beste metoden for å angi alternativtekst.
+    Automatiske testverktøy som Axe DevTools og ARC Toolkit kan fortelle om alt-attributt mangler helt.
+      Nettleser-tillegget Web Developer --> Images --> "Display alt attributes" viser teksten i alt-attriuttet sammen med bildet, slik at man selv kan vurdere om teksten gir god informasjon.</p>
+  <Heading3 size="xs">Dekorative bilder</Heading3>
+    <p>Sjekk at dekorative bilder har tom alternativtekst: alt="".<br />
+      Et bilde er dekorativt når det ikke tilfører noe ekstra meningsinnhold til siden.</p>
+  <Heading3 size="xs">Funksjonelle bilder</Heading3>
+    <p>Sjekk at alt-teksten bør beskriver funksjonen, ikke bildet. <sup>WCAG 1.1.1</sup><br />
+    Bilder i lenker bør ha alt-tekst som beskriver siden det lenkes til.<br />
+      Bilder i knapper bør ha alt-tekst som beskriver knappefunksjonen.</p>
+  <Heading3 size="xs">Informative bilder</Heading3>
+    <p>Sjekk at informative bilder har alt-tekst som gir informasjonen, i stedet for å beskrive bildet. <sup>WCAG 1.1.1</sup></p>
+  <Heading3 size="xs">SVG-ikoner</Heading3>
+    <p>SVG fungerer bra som ikon-format siden det skalerer ved zoom, og dermed beholder nøyaktigheten.<br />
+    title-taggen gir alternativ-tekst til meningsbærende SVG.
+    Et alternativ er å skjule ikonet med aria-hidden, og legge til et navn direkte på en knappen som inneholder ikonet.</p>
+</Section>
+
+<Section headingText="Kontrast">
+  <Heading3 size="xs">Test-verktøy</Heading3>
+    <p>Kontrast mellom tekst og ensfarget bakgrunn testes bra av automatiske verktøy som Axe DevTools, ARC Toolkit og Wave.</p>
+    <p>Kontrast i lenker, fokusmarkering, hover, grafer og ikoner gjøres best manuelt.<br />
+      Når kontrasten ser svak ut, kan man undersøk om de overholder kravene med verktøyene nedenfor.</p>
+  - Utviklerverktøy(F12) kan være nyttig for å finne fargekode på tekst og bakgrunn.  
+  - [Undersøk konstrasten mellom to hex-verdier (WebAIM)](https://webaim.org/resources/contrastchecker/).<br/>
+    Minstekravet er [WCAG 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Både svaksynte og funksjonsfriske har stor nytte av å følge det forbedrede kravet i [WCAG 1.4.6](https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html).
+  - [Undersøk kontrasten mellom lenke, bakgrunn og teksten rundt (WebAIM)](https://webaim.org/resources/linkcontrastchecker/)
+  - [Finn ny farge som overholder kravene (Accessible Colors)](https://accessible-colors.com/). Velg AAA.
+  - Ikke tekstlig kontrast skal være minst 3:1 iht [WCAG 1.4.11](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html). Kravet gjelder fokusmarkering, grafer, informative bilder mm.
+  - Kontrastkravene gjelder også ulike statuser som hover og fokus. Utviklerverktøy i Firefox har en egen :hov-seksjon der man kan velge disse for å få sjekket fargekodene. 
+</Section>
+
+<Section headingText="Automatiske test-verktøy">
+  <p>Det finnes mange verktøy som kan scanne igjennom en side. De er fine for en rask gjennomgang av noen problemer.
+    Tilgjengelighetseksperter vurderer at de finner 20-40 % av prolemene, så man må sjekke manuelt også.</p>
+  - [Axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
+  - [Wave](https://wave.webaim.org/extension/)
+  - [Arc Toolkit](https://chrome.google.com/webstore/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce)
+  - [Axe Accessibility Linter](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter)
+</Section>
+<Section headingText="Skjermlesere">
+  <p>Skjermlesere leser opp nettsider så man kan høre innholdet i stedet for å se det.<br />
+    Skjermlesere er spesielt nyttige for blinde, svaksynte og dyslektikere.</p>
+  <Heading3 size="xs">Ekstra viktig å teste med skjermleser</Heading3>
+  - Statusmeldinger
+    - "436 søkeresultater funnet."
+    - "Skjemaet ble lagret vellykket."
+    - "venter - 2 av 5 dokumenter er lastet opp."
+  - chatbot
+  - ikon-knapper
+  - Ekspandering av innhold. Sjekk bl.a. at ekspanderingsknappen sier om innholdet er ekspandert eller sammentrukket.
+  - Dialogbokser som legger seg over annet innhold.
+  - Alt annet som ikke har vanlig tekst som innhold
+  <p></p>
+
+  <Heading3 size="xs">Noen skjermlesere du kan teste med</Heading3>
+    - [Demo og nybegynneropplæring i de vanligste skjermleserene (ca 10 min)](https://axesslab.com/what-is-a-screen-reader/)
+    - [NVDA (PC)](https://www.nvaccess.org/download/)
+    - VoiceOver (Apple)
+    - TalkBack (Android)
+</Section>
