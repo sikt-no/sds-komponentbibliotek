@@ -25,6 +25,7 @@ const merkevareMenu: MenuItemType[] = [
   { name: "Merkevarestrategi", url: "/merkevare/merkevarestrategi" },
   { name: "Merkevareprinsipper", url: "/merkevare/merkevareprinsipper" },
   { name: "Stil og tone", url: "/merkevare/stil-og-tone" },
+  { name: "Navngiving", url: "/merkevare/navngiving" },
 ];
 
 const visuellIdentitetMenu: MenuItemType[] = [
