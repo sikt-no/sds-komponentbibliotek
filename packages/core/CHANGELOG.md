@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.0.0...@sikt/sds-core@5.0.1) (2025-09-08)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-tokens@5.3.0 ([513108d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/513108d6881c2998e2f27de71070d7d4356b8dd2))
+
 ## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@4.8.0...@sikt/sds-core@5.0.0) (2025-09-01)
 
 ### ⚠ BREAKING CHANGES
