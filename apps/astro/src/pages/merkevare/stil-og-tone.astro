@@ -1,0 +1,253 @@
+---
+import Layout from "../../layouts/PageLayout.astro";
+import { Heading3, Heading4, Paragraph, Link } from "@sikt/sds-core";
+import { UnorderedList, ListItem } from "@sikt/sds-list";
+import { Section } from "@sikt/sds-section";
+import { Hero } from "../../components";
+
+const pageTitle = "Stil og tone";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[{ title: "Designsystem", href: "/" }, { title: "Merkevare" }]}
+    heading={pageTitle}
+    slot="hero"
+  />
+
+  <Section headingText="Klarspråk" className="ds-content-max-width">
+    <Paragraph>
+      Å skrive klart og tydelig reduserer misforståelser og sparer oss for tid.
+      Det er også et viktig demokratisk prinsipp, og bidrar til at innbyggerne
+      forstår hva staten driver med. Prinsippene for klarspråk er retningslinjer
+      utarbeidet av Språkrådet, som skal gjøre det enklere å skrive – og enklere
+      å forstå! På denne siden finner du noen enkle skrivetips som hjelper deg
+      på vei, og lenker til flere ressurser.
+    </Paragraph>
+
+    <Paragraph>
+      Vi har to hovedmål for språk i Sikt:
+
+      <UnorderedList>
+        <ListItem>
+          Sikt skal bruke et enkelt og aktivt språk, med en hyggelig og direkte
+          tone.
+        </ListItem>
+        <ListItem>
+          Vi bruker ikke flere eller vanskeligere ord enn vi trenger, men nok
+          til at leseren forstår hva vi mener.
+        </ListItem>
+      </UnorderedList>
+    </Paragraph>
+
+    <Heading3 size="xs">7 enkle prinsipp for klarspråk</Heading3>
+
+    <UnorderedList>
+      <ListItem>
+        <strong class="sds-typography--strong">
+          Se for deg hvem du skriver for
+        </strong><br />
+        Hvem er målgruppen? Hva vil du at leseren skal gjøre eller vite etter å ha
+        lest teksten?<br />
+        Tenk på hvilken situasjon leseren er i: Har de gått inn på en nettside for
+        å finne informasjon, eller er de mottaker av en epost i en hektisk hverdag?<br
+        />
+        Det å se for seg leserne og hva du vil at de skal gjøre, hjelper deg med
+        å spisse budskapet. Det kan også gjøre det enklere å unngå stammespråk og
+        tekniske uttrykk.
+      </ListItem>
+      <ListItem>
+        <strong class="sds-typography--strong"> Ha et aktivt språk </strong><br
+        />
+        Ha aktive verb, og vær tydelig på hvem som skal gjøre hva i teksten.<br
+        />
+        Eksempler:<br />
+        Ikke «Det anbefales å (...)», men «Vi anbefaler at du (...)»<br />
+        Ikke «Det gjennomføres årlig rapportering i helseforetakene på (...)», men
+        «Helseforetakene rapporterer årlig på (...)».<br />
+        Ikke «Det vil utarbeides en plan» men «Styret utarbeider en plan».<br />
+      </ListItem>
+      <ListItem>
+        <strong class="sds-typography--strong">
+          Bruk enkle ord og forklar faguttrykk
+        </strong><br />
+        Sløyf unødvendige og fremmedgjørende ord. Hvis du må bruke tekniske eller
+        juridiske begrep, forklar dem.<br />
+        Hold det så enkelt og muntlig som mulig.<br />
+        Eksempler:<br />
+        «For eksempel» heller enn «Eksempelvis»<br />
+        «Det er viktig at» heller enn «Det er avgjørende at»<br />
+        «Husk også» heller enn «Videre er det viktig at»<br />
+        Når du introduserer en forkortelse eller et begrep: Skriv forklaringen helt
+        ut første gang.
+      </ListItem>
+      <ListItem>
+        <strong class="sds-typography--strong"> Sett punktum </strong><br />
+        Det er lett å gå seg vill i lange setninger. Punktum er din venn!<br />
+        Del opp lange setninger, og hjelp leseren til å skjønne poenget.
+      </ListItem>
+      <ListItem>
+        <strong class="sds-typography--strong"> Løft fram poenget </strong><br
+        />
+        Når vi leser på skjerm, så skumleser vi oftere. Poenget må derfor løftes
+        fram i setningen.<br />
+        For eksempel slik: Flytt poenget til starten av setningen, siden vi ofte
+        skumleser på skjerm.<br />
+        Tenk over hva som er viktigst i teksten din. Løft poenget fram og opp – i
+        emnefeltet, i mellomtitler, i starten av setningen, eller i starten av avsnittet.
+        Du skjønner poenget.
+      </ListItem>
+      <ListItem>
+        <strong class="sds-typography--strong"
+          >Bruk mellomtitler og del opp store tekstbolker</strong
+        ><br />
+        Hvis teksten blir lang, del opp med mellomtitler og linjeskift. Mellomtitler
+        hjelper til med å strukturere innhold og løfte fram poeng.<br />
+        Flere avsnitt gir bedre lesbarhet, særlig på nett. Maks fire linjer per avsnitt
+        og maks fire avsnitt før ny mellomtittel er hovedregelen. Du kan gjerne ha
+        hyppigere mellomtitler, men helst ikke sjeldnere.
+      </ListItem>
+      <ListItem>
+        <strong class="sds-typography--strong">Ha en hyggelig tone</strong><br
+        />
+        Konkrete og aktive verb, korte setninger og direkte tiltale (du-form) gir
+        en mindre formell stil. Det gjør også avstanden mellom tekst og leser mindre.<br
+        />
+        Følger du de syv tipsene på denne siden, hjelper det deg på god vei til en
+        hyggelig tone.
+      </ListItem>
+    </UnorderedList>
+
+    <Heading3 size="xs">Når vi skriver for nett</Heading3>
+
+    <Paragraph
+      >Når vi skriver tekst for nettsider, er det også et par andre tips som
+      gjelder.</Paragraph
+    >
+
+    <Heading4 size="xxs">1. Lenking i tekst</Heading4>
+
+    <Paragraph>
+      Lenker skal ikke stå i overskrifter. De skal heller ikke stå i ingresser,
+      men i den løpende teksten. Husk at øynene våre søker seg mot lenker, så
+      vær bevisst på bruken.
+    </Paragraph>
+
+    <Paragraph>
+      Vi skiller mellom hjelpelenker og handlingsdrivende lenker:<br />
+
+      Hjelpelenker er ressurser som du legger inn i teksten, for eksempel på et
+      bestemt ord, for å vise at det finnes mer informasjon om dette temaet
+      andre steder.<br />
+
+      Handlingsdrivende lenker er lenker du vil at leseren skal klikke på. En
+      god lenketekst er mellom 4 og 12 ord og har en beskrivelse av hva som
+      skjer når du klikker på lenken.<br />
+      For eksempel: Ikke “Les mer her”, men “Les hvordan du fører timer i DFØ”.
+    </Paragraph>
+
+    <Paragraph>
+      Lenketeksten skal beskrive lenkemålet. Bruk gjerne tittelen til lenkemålet
+      som inspirasjon. Husk også at vi ønsker å beholde leseren på våre sider,
+      så bruk henvisninger til sikt.no dersom det finnes.
+    </Paragraph>
+
+    <Paragraph>
+      Blinde og svaksynte får lest opp lenker, da hjelper det ikke med en drøss
+      lenker som sier "les mer her". <Link
+        href="https://www.uutilsynet.no/veiledning/lenker/214"
+        >God lenketekst, UU-tilsynet</Link
+      >
+    </Paragraph>
+
+    <Paragraph>
+      PS! Hvis du skal utheve tekst, bruk kursiv eller fet skrift (men ikke
+      overdriv). Ikke bruk understreking, da dette kan bli oppfattet som lenker.
+    </Paragraph>
+
+    <Heading4 size="xxs">2. Konsekvent begrepsbruk</Heading4>
+
+    <Paragraph>
+      Det er et WCAG-krav (Web Content Accessability Guidelines) om konsekvent
+      begrepsbruk på komponenter. De skal ha samme navn hver gang.<br />
+      Det kan gjerne også videreføres til begreper generelt: Bruk samme ord om samme
+      fenomen hver gang.
+    </Paragraph>
+
+    <Heading4 size="xxs">3. Søkemotoroptimalisering – SEO</Heading4>
+
+    <Paragraph
+      >SEO handler om at Google og andre søkemotorer finner fram til sidene
+      våre. Da må vi legge til informasjon på bestemte steder, og bruke ord som
+      brukerne våre bruker.</Paragraph
+    >
+
+    <Paragraph>
+      Identifiser søkeordet og bruk det i:
+
+      <UnorderedList>
+        <ListItem>Artiklenes titler, metatitler og metabeskrivelser</ListItem>
+        <ListItem>Det første avsnittet av artikkeltekstene</ListItem>
+        <ListItem>Minst én overskrift i artikkelteksten</ListItem>
+        <ListItem>Alt-tekst på bilder</ListItem>
+        <ListItem>Nær slutten på artikkelen/siden</ListItem>
+      </UnorderedList>
+    </Paragraph>
+
+    <Paragraph
+      >Bruk også søkeordet jevnlig gjennom teksten for å oppnå
+      “søkeordstetthet”. Denne kan ligge på rundt 2 %.</Paragraph
+    >
+
+    <Paragraph>
+      Hvis det er flere søkeord:
+
+      <UnorderedList>
+        <ListItem
+          >Lag en artikkel/nettside per søkeord. Men du kan benytte 3–4
+          relaterte søkeord i teksten, som du har identifisert for relaterte
+          tema.
+        </ListItem>
+        <ListItem
+          >Lag interne lenker til andre relevante sider hos sikt.no som er
+          relatert til temaet.
+        </ListItem>
+      </UnorderedList>
+    </Paragraph>
+
+    <Heading3 size="xs">Sjekkliste for teksten</Heading3>
+
+    <Paragraph>
+      Når du skriver, tenk gjennom følgende:
+
+      <UnorderedList>
+        <ListItem>
+          Hva vil du at leseren skal skjønne eller gjøre etter å ha lest
+          teksten?
+        </ListItem>
+        <ListItem>
+          Må du introdusere leseren for en kontekst for at de skal forstå hva du
+          mener?
+        </ListItem>
+        <ListItem> Blir ord og uttrykk forklart godt nok? </ListItem>
+        <ListItem>
+          Er innholdet relevant for de som skal lese teksten?
+        </ListItem>
+        <ListItem> Får leserne all informasjonen de trenger? </ListItem>
+      </UnorderedList>
+    </Paragraph>
+
+    <Heading3 size="xs">Les høyt, og få noen andre til å lese gjennom</Heading3>
+
+    <UnorderedList>
+      <ListItem
+        >Når du leser teksten høyt, oppdager du lettere hvor du må sette
+        punktum, eller formulere deg enklere.</ListItem
+      >
+      <ListItem
+        >Andre ser lettere hvor du må forklare mer eller mindre. I tillegg får
+        du hjelp til å luke ut skrivefeil.</ListItem
+      >
+    </UnorderedList>
+  </Section>
+</Layout>
