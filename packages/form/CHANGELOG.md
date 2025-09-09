@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@4.0.2...@sikt/sds-form@4.1.0) (2025-09-09)
+
+### Features
+
+- **help-text:** change error text color ([1ba0bc5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1ba0bc59846c7b1494b9bef7dc7ffb01dfe9e4fe))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-core@5.0.1 ([6e8d9b5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6e8d9b568e8b00adb9fb63c41f4f2f48f0299631))
+
 ## [4.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@4.0.1...@sikt/sds-form@4.0.2) (2025-08-11)
 
 ### Bug Fixes
