@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@3.1.0...@sikt/sds-combobox@3.2.0) (2025-09-09)
+
+### Features
+
+- **help-text:** change error text color ([1ba0bc5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1ba0bc59846c7b1494b9bef7dc7ffb01dfe9e4fe))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-form@4.1.0 ([dc490db](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/dc490dbc3a74aa8c5f1101514c6476c99b66add4))
+
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@3.0.1...@sikt/sds-combobox@3.1.0) (2025-09-01)
 
 ### Features
