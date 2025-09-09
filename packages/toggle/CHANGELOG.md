@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.1.1...@sikt/sds-toggle@6.1.2) (2025-09-09)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-form@4.1.0 ([dc490db](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/dc490dbc3a74aa8c5f1101514c6476c99b66add4))
+
 ## [6.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.1.0...@sikt/sds-toggle@6.1.1) (2025-09-01)
 
 ### Bug Fixes
