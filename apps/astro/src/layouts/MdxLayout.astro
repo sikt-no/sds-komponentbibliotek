@@ -4,5 +4,29 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.pageTitle}>
-  <slot />
+  <div class="mdx">
+    <slot />
+  </div>
 </Layout>
+
+<style>
+  .mdx {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-gap-medium);
+
+    > :first-child {
+      padding-bottom: var(--sds-space-gap-medium);
+    }
+
+    > h2 {
+      border-bottom: var(--sds-space-border-weight-regular) solid
+        var(--sds-color-layout-divider-subtle);
+      padding: var(--sds-space-padding-large) 0;
+
+      & + * {
+        padding-top: var(--sds-space-padding-medium);
+      }
+    }
+  }
+</style>
