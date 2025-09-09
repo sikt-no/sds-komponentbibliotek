@@ -69,8 +69,12 @@ figma.connect(
         false: undefined,
       }),
       value: figma.string("Input value"),
-      errorText: figma.boolean("Show helper", {
+      helpText: figma.boolean("Show helper", {
         true: figma.string("Helper text"),
+        false: undefined,
+      }),
+      errorText: figma.boolean("Show helper", {
+        true: figma.string("Error Message"),
         false: undefined,
       }),
     },
@@ -78,7 +82,7 @@ figma.connect(
       html`<div
         class="sds-form-field sds-input sds-input--text sds-input--error"
       >
-        <label class="sds-form__label" for="unique-id"> ${label} </label>
+        <label class="sds-form__label" for="unique-id">${label}</label>
         <div class="sds-form__help-text" id=":unique-id-help-text">
           ${helpText}
         </div>
@@ -115,7 +119,7 @@ figma.connect(
     },
     example: ({ label, value }) =>
       html`<div class="sds-form-field sds-input sds-input--search">
-        <label class="sds-form__label" for="unique-id"> ${label} </label>
+        <label class="sds-form__label" for="unique-id">${label}</label>
         <span class="sds-input__wrapper">
           <input
             class="sds-input__input"

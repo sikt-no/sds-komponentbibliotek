@@ -23,6 +23,8 @@ figma.connect(
         Subtle: "subtle",
         Transparent: "transparent",
         Danger: "critical",
+        "Subtle Neutral": "neutral",
+        "Transparent Neutral": "neutral-transparent",
       }),
       size: figma.enum("Size", {
         Default: undefined,
