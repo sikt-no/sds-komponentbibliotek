@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@1.2.0...@sikt/sds-input-file@1.3.0) (2025-09-10)
+
+### Features
+
+- **input-file:** add min file size 0 validation ([3444986](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/34449863b981a75b01eec406b32937648c50ac23))
+
 ## [1.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@1.1.0...@sikt/sds-input-file@1.2.0) (2025-09-09)
 
 ### Features
