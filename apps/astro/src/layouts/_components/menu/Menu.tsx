@@ -8,8 +8,8 @@ import {
   TextAaIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
-import { Nav } from "./nav/Nav";
-import { NavButtonLink } from "./nav/NavButtonLink";
+import { MenuButtonLink } from "./_components/MenuButtonLink";
+import { MenuGroup } from "./_components/MenuGroup";
 
 interface PathnameType {
   pathname: string;
@@ -100,49 +100,49 @@ const MenuItem = ({
   ...rest
 }: MenuItemType & PathnameType) => (
   <li>
-    <NavButtonLink
+    <MenuButtonLink
       icon={icon}
       href={url}
       aria-current={url === pathname && "page"}
       {...rest}
     >
       {name}
-    </NavButtonLink>
+    </MenuButtonLink>
   </li>
 );
 
 export const Menu = ({ pathname }: PathnameType) => {
   return (
     <>
-      <Nav aria-label="Sidenavigasjon, Merkevare" heading="Merkevare">
+      <MenuGroup aria-label="Sidenavigasjon, Merkevare" heading="Merkevare">
         {merkevareMenu.map((item) => (
           <MenuItem key={item.name} {...item} pathname={pathname} />
         ))}
-      </Nav>
+      </MenuGroup>
 
-      <Nav
+      <MenuGroup
         aria-label="Sidenavigasjon, Visuell identitet"
         heading="Visuell identitet"
       >
         {visuellIdentitetMenu.map((item) => (
           <MenuItem key={item.name} {...item} pathname={pathname} />
         ))}
-      </Nav>
+      </MenuGroup>
 
-      <Nav aria-label="Sidenavigasjon, Utvikling" heading="Utvikling">
+      <MenuGroup aria-label="Sidenavigasjon, Utvikling" heading="Utvikling">
         {utviklingMenu.map((item) => (
           <MenuItem key={item.name} {...item} pathname={pathname} />
         ))}
-      </Nav>
+      </MenuGroup>
 
-      <Nav
+      <MenuGroup
         aria-label="Sidenavigasjon, Tilgjengelighet"
         heading="Tilgjengelighet"
       >
         {tilgjengelighetMenu.map((item) => (
           <MenuItem key={item.name} {...item} pathname={pathname} />
         ))}
-      </Nav>
+      </MenuGroup>
     </>
   );
 };

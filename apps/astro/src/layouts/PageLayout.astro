@@ -9,14 +9,16 @@ const { title } = Astro.props;
 
 <Layout title={title}>
   <div class="page">
-    <Details className="menu-mobile" size="small" summary="Meny">
-      <div class="menu">
+    <nav aria-label="Sidenavigasjon">
+      <Details className="menu-mobile" size="small" summary="Meny">
+        <div class="menu">
+          <Menu pathname={pathname} />
+        </div>
+      </Details>
+      <div class:list={["menu", "menu-desktop"]}>
         <Menu pathname={pathname} />
       </div>
-    </Details>
-    <div class:list={["menu", "menu-desktop"]}>
-      <Menu pathname={pathname} />
-    </div>
+    </nav>
     <div class="content">
       <div class="container">
         <div class="wrapper">
