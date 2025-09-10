@@ -1,4 +1,4 @@
-import { parseDate } from "@internationalized/date";
+import { parseDate, parseAbsoluteToLocal } from "@internationalized/date";
 import {
   TableHead,
   TableRow,
@@ -32,6 +32,14 @@ export const WithDate = {
   args: {
     ...Default.args,
     value: parseDate(new Date().toISOString().substring(0, 10)),
+  },
+} satisfies Story;
+
+export const WithTime: Story = {
+  args: {
+    ...Default.args,
+    value: parseAbsoluteToLocal(new Date().toISOString()),
+    granularity: "minute",
   },
 } satisfies Story;
 
