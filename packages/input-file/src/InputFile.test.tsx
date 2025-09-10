@@ -123,7 +123,7 @@ describe("InputFile", () => {
       });
     });
 
-    it("return validation error for file size", async () => {
+    it("return validation error for max file size", async () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
       const { container } = render(
@@ -140,6 +140,36 @@ describe("InputFile", () => {
         type: ".bar",
       });
       Object.defineProperty(file, "size", { value: 101 });
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const input = container.querySelector("input")!;
+
+      await user.upload(input, file);
+
+      expect(input.files?.[0]).toBe(file);
+      expect(input.files?.item(0)).toBe(file);
+      expect(input.files).toHaveLength(1);
+      expect(changeHandler).toHaveBeenCalledTimes(1);
+      expect(changeHandler).toHaveBeenLastCalledWith([file]);
+      expect(file).toHaveProperty("error", ["size"]);
+    });
+
+    it("return validation error for min file size", async () => {
+      const user = userEvent.setup();
+      const changeHandler = jest.fn();
+      const { container } = render(
+        <InputFile
+          label="Foo"
+          aria-label="Foo"
+          accept=".bar"
+          maxFileSize={100}
+          onChange={changeHandler}
+        />,
+      );
+
+      const file = new File(["hello"], "hello.bar", {
+        type: ".bar",
+      });
+      Object.defineProperty(file, "size", { value: 0 });
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const input = container.querySelector("input")!;
 

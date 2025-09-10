@@ -68,6 +68,7 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
     const inputId = { id };
     const acceptedFileTypes =
       typeof accept === "string" ? accept.split(",") : accept;
+    const minFileSize = 0;
 
     const ariaDescribedBy =
       [errorText && errorTextId, helpText && helpTextId]
@@ -95,6 +96,10 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
         }
 
         if (maxFileSize && maxFileSize < file.size) {
+          errors.push("size");
+        }
+
+        if (minFileSize >= file.size) {
           errors.push("size");
         }
 
