@@ -5,6 +5,7 @@ const { name, url } = Astro.props;
 
 const imgName = name.toLowerCase().replaceAll(" ", "-").replaceAll(".", "");
 const imgSrc = `/images/components/${imgName}.svg`;
+const imgSrcDark = `/images/components/${imgName}--dark.svg`;
 ---
 
 <a href={url} class="card">
@@ -12,7 +13,10 @@ const imgSrc = `/images/components/${imgName}.svg`;
     <Heading2 variant="application" size="s">{name}</Heading2>
   </div>
   <div class="image">
-    <img src={imgSrc} alt="" aria-hidden loading="lazy" />
+    <picture>
+      <source srcset={imgSrcDark} media="(prefers-color-scheme: dark)" />
+      <img src={imgSrc} alt="" aria-hidden loading="lazy" />
+    </picture>
   </div>
 </a>
 
