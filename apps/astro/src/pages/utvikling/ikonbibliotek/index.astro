@@ -2,7 +2,7 @@
 import Layout from "../../../layouts/PageLayout.astro";
 import { Hero } from "../../../components";
 import IconCard from "./_components/card/IconCard.astro";
-import { Link } from "@sikt/sds-core";
+import { Link, Paragraph } from "@sikt/sds-core";
 import { Section } from "@sikt/sds-section";
 import { config } from "../../../../../../packages/icons/src/icons.config.mjs";
 import { kebabToString } from "../../../utils/string";
@@ -17,11 +17,13 @@ const categories = [...new Set(config.map((item) => item.category))];
     heading={pageTitle}
     slot="hero"
   >
-    Sikt bruker ikonsettet <Link
-      href="https://phosphoricons.com/"
-      target="_blank">Phosphor Icons</Link
-    >. Vi har gjort et utvalg fra ikonsettet for å definere hvilke ikoner som
-    brukes til hva.
+    <Paragraph>
+      Sikt bruker ikonsettet <Link
+        href="https://phosphoricons.com/"
+        target="_blank">Phosphor Icons</Link
+      >. Vi har gjort et utvalg fra ikonsettet for å definere hvilke ikoner som
+      brukes til hva.
+    </Paragraph>
   </Hero>
 
   {
