@@ -16,7 +16,7 @@ import { LinkedInLogo } from "../index";
 ## Icons
 
 <IconGallery>
-  {config.map(({name}) => {
+  {config.sort((a, b) => a.name.localeCompare(b.name)).map(({name}) => {
     const iconName = `${name
       .split("-")
       .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)

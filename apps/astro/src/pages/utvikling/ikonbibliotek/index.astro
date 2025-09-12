@@ -32,6 +32,7 @@ const categories = [...new Set(config.map((item) => item.category))];
         <div class="ocean">
           {config
             .filter((item) => item.category === category)
+            .sort((a, b) => a.name.localeCompare(b.name))
             .map(({ name }) => (
               <IconCard name={name} />
             ))}
