@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@4.0.0...@sikt/sds-icons@4.1.0) (2025-09-12)
+
+### Features
+
+- **icons:** add ai icon ([d9d240d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d9d240dfcf6e87e2f5a77ad6b576cad66017d2f3))
+
 ## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@3.2.0...@sikt/sds-icons@4.0.0) (2025-06-20)
 
 ### ⚠ BREAKING CHANGES
