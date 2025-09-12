@@ -10,6 +10,7 @@ export const config = [
   { id: "question", name: "help", category: "ui" },
   { id: "user-circle-plus", name: "user-add", category: "ui" },
   { id: "user-circle-minus", name: "user-remove", category: "ui" },
+  { id: "sparkle", name: "ai", category: "ui" },
   { id: "arrow-right", name: "navigate-to-next", category: "navigation" },
   {
     id: "arrow-circle-right",
