@@ -17,6 +17,7 @@
   },
   "updateLockFiles": true,
   "rangeStrategy": "bump",
+  "minimumReleaseAge": "5 days",
   "ignorePaths": ["**/node_modules/**", "**/__example__/**", "turbo/**"],
   "packageRules": [
     {
