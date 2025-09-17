@@ -19,10 +19,15 @@ figma.connect(
           Subtle: "sds-badge--visibility-subtle",
         }),
       ]),
-      label: figma.string("Label"),
+      label: figma.boolean("Show label", {
+        true: figma.string("Label"),
+        false: undefined,
+      }),
     },
     example: ({ className, label }) =>
-      html`<span class=${className}>${label}</span>`,
+      html`<span class=${className}>
+        <span class="sds-badge__label">${label}</span>
+      </span>`,
   },
 );
 
@@ -45,12 +50,16 @@ figma.connect(
           Medium: "sds-badge--visibility-subtle",
         }),
       ]),
-      label: figma.string("Label"),
+      label: figma.boolean("Show label", {
+        true: figma.string("Label"),
+        false: undefined,
+      }),
       icon: figma.instance("Icon"),
     },
     example: ({ className, label, icon }) =>
       html`<span class=${className}>
-        <span class="sds-badge__icon">${icon}</span> ${label}
+        <span class="sds-badge__icon">${icon}</span>
+        <span class="sds-badge__label">${label}</span>
       </span>`,
   },
 );
