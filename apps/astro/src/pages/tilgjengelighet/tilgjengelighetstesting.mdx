@@ -33,7 +33,7 @@ import { Hero } from "../../components";
 <Hero
   breadcrumbs={[
     { title: "Designsystem", href: "/" },
-    { title: "Tilgjengelighetstesting" },
+    { title: "Tilgjengelighet" },
   ]}
   heading={frontmatter.pageTitle}
 >
@@ -106,18 +106,18 @@ Sammenlign overskriftene på siden med det HeadingsMap viser.
 - Firefox: Meny -> Vis -> Skalering -> Forstørr bare tekst
 - Chrome: Innstillinger -> Utseende -> Skriftstørrelse: "Veldig stor"
 
-Sjekk at all tekst forstørres <sup>WCAG 1.4.4</sup><br />
+Sjekk at all tekst forstørres <sup>WCAG 1.4.4</sup>  
 Sjekk at ikke noe overlapper / forsvinner. <sup>WCAG 1.4.4</sup>
 
 ### 400% vanlig zoom
 
-- Sett skjermstørrelsen til 1280px bredde og 1024px høyde med 400% zoom.<br />
-  Nettleser-tillegget Web Developer har en funksjon Resize som kan hjelpe deg med å sette vindu-størrelsen.<br />
+- Sett skjermstørrelsen til 1280px bredde og 1024px høyde med 400% zoom.  
+  Nettleser-tillegget Web Developer har en funksjon Resize som kan hjelpe deg med å sette vindu-størrelsen.  
   Denne [bookmarkleten viser vindustørrlsen](https://coderwall.com/p/7vlbtw/bookmarklet-debug-window-width-height).
-- eller sett 320px bredde og 256px høyde.<br />
+- eller sett 320px bredde og 256px høyde.  
   Bruk for eksempel Utviklerverktøy (F12) - Device Toolbar.
 
-Sjekk at ikke noe overlapper / forsvinner. <sup>WCAG 1.4.10</sup><br />
+Sjekk at ikke noe overlapper / forsvinner. <sup>WCAG 1.4.10</sup>  
 Sjekk at det ikke blir både vertikal og horisontal scrolling. <sup>WCAG 1.4.10</sup>
 
 ## Navn
@@ -159,13 +159,13 @@ Nettleser-tillegget Web Developer --> Images --> "Display alt attributes" viser 
 
 ### Dekorative bilder
 
-Sjekk at dekorative bilder har tom alternativtekst: alt="".<br />
+Sjekk at dekorative bilder har tom alternativtekst: alt="".  
 Et bilde er dekorativt når det ikke tilfører noe ekstra meningsinnhold til siden.
 
 ### Funksjonelle bilder
 
-Sjekk at alt-teksten bør beskriver funksjonen, ikke bildet. <sup>WCAG 1.1.1</sup><br />
-Bilder i lenker bør ha alt-tekst som beskriver siden det lenkes til.<br />
+Sjekk at alt-teksten bør beskriver funksjonen, ikke bildet. <sup>WCAG 1.1.1</sup>  
+Bilder i lenker bør ha alt-tekst som beskriver siden det lenkes til.  
 Bilder i knapper bør ha alt-tekst som beskriver knappefunksjonen.
 
 ### Informative bilder
@@ -174,7 +174,7 @@ Sjekk at informative bilder har alt-tekst som gir informasjonen, i stedet for å
 
 ### SVG-ikoner
 
-SVG fungerer bra som ikon-format siden det skalerer ved zoom, og dermed beholder nøyaktigheten.<br />
+SVG fungerer bra som ikon-format siden det skalerer ved zoom, og dermed beholder nøyaktigheten.  
 title-taggen gir alternativ-tekst til meningsbærende SVG.
 Et alternativ er å skjule ikonet med aria-hidden, og legge til et navn direkte på en knappen som inneholder ikonet.
 
@@ -184,11 +184,11 @@ Et alternativ er å skjule ikonet med aria-hidden, og legge til et navn direkte 
 
 Kontrast mellom tekst og ensfarget bakgrunn testes bra av automatiske verktøy som Axe DevTools, ARC Toolkit og Wave.
 
-Kontrast i lenker, fokusmarkering, hover, grafer og ikoner gjøres best manuelt.<br />
+Kontrast i lenker, fokusmarkering, hover, grafer og ikoner gjøres best manuelt.  
 Når kontrasten ser svak ut, kan man undersøk om de overholder kravene med verktøyene nedenfor.
 
 - Utviklerverktøy(F12) kan være nyttig for å finne fargekode på tekst og bakgrunn.
-- [Undersøk konstrasten mellom to hex-verdier (WebAIM)](https://webaim.org/resources/contrastchecker/).<br/>
+- [Undersøk konstrasten mellom to hex-verdier (WebAIM)](https://webaim.org/resources/contrastchecker/).  
   Minstekravet er [WCAG 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Både svaksynte og funksjonsfriske har stor nytte av å følge det forbedrede kravet i [WCAG 1.4.6](https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html).
 - [Undersøk kontrasten mellom lenke, bakgrunn og teksten rundt (WebAIM)](https://webaim.org/resources/linkcontrastchecker/)
 - [Finn ny farge som overholder kravene (Accessible Colors)](https://accessible-colors.com/). Velg AAA.
@@ -207,7 +207,7 @@ Tilgjengelighetseksperter vurderer at de finner 20-40 % av prolemene, så man m�
 
 ## Skjermlesere
 
-Skjermlesere leser opp nettsider så man kan høre innholdet i stedet for å se det.<br />
+Skjermlesere leser opp nettsider så man kan høre innholdet i stedet for å se det.  
 Skjermlesere er spesielt nyttige for blinde, svaksynte og dyslektikere.
 
 ### Ekstra viktig å teste med skjermleser
