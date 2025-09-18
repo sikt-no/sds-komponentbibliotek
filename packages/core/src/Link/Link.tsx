@@ -1,3 +1,4 @@
+import { Slot } from "@radix-ui/react-slot";
 import { clsx } from "clsx/lite";
 import { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
 
@@ -7,6 +8,7 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   isNavigation?: boolean;
   isExternal?: boolean;
   noIcon?: boolean;
+  asChild?: boolean;
 }
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
@@ -17,12 +19,15 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
       isNavigation,
       isExternal,
       noIcon,
+      asChild = false,
       ...rest
     }: LinkProps,
     ref,
   ) => {
+    const Comp = asChild ? Slot : "a";
+
     return (
-      <a
+      <Comp
         ref={ref}
         className={clsx(
           "sds-typography-link",
@@ -34,7 +39,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
         {...rest}
       >
         {children}
-      </a>
+      </Comp>
     );
   },
 );

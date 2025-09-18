@@ -70,5 +70,16 @@ describe("Link", () => {
         "sds-typography-link sds-typography-link--no-icon",
       );
     });
+
+    it("should change component with asChild", async () => {
+      render(
+        <Link href="#" data-testid="test" asChild>
+          <button>Foo</button>
+        </Link>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveRole("button");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
   });
 });

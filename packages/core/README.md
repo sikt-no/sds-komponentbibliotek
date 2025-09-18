@@ -23,25 +23,25 @@ import "@sikt/sds-core/dist/index.css";
 
 ## Link
 
-Different routing systems may affect the usage of the `<Link />` component. Make sure to read your frameworks documentation 🤓
+Different routing systems may affect the usage of the `<Link />` component. Make sure to read your frameworks documentation 🤓 Or use the `asChild` prop.
 
 ### Next.js
 
 [Next.js Docs](https://nextjs.org/docs/pages/api-reference/components/link#if-the-child-is-a-custom-component-that-wraps-an-a-tag)
 
 ```js
-import { Link as SdsLink, LinkProps as SdsLinkProps } from "@sikt/sds-core";
-import { default as NextLink, LinkProps } from "next/link";
+import { Link as SdsLink } from "@sikt/sds-core";
+import { default as NextLink, LinkProps as NextLinkProps } from "next/link";
 
 export const Link = ({
                        href,
                        children,
                        ...rest
-                     }: Omit<SdsLinkProps, "href"> & LinkProps) => {
+                     }: NextLinkProps & { children: ReactNode }) => {
   return (
-    <NextLink href={href} passHref legacyBehavior>
-      <SdsLink {...rest}>{children}</SdsLink>
-    </NextLink>
+    <SdsLink asChild>
+      <NextLink href={href} {...rest}>{children}</NextLink>
+    </SdsLink>
   );
 };
 ```
@@ -52,45 +52,19 @@ export const Link = ({
 
 ```js
 import { Link as SdsLink } from "@sikt/sds-core";
-import { forwardRef } from "react";
-import { useHref, useLinkClickHandler, LinkProps } from "react-router-dom";
+import { Link as RouterLink, LinkProps as RouterLinkProps } from "react-router";
 
-export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
-  (
-    {
-      children,
-      className,
-      onClick,
-      replace = false,
-      state,
-      target,
-      to,
-      ...rest
-    },
-    ref,
-  ) => {
-    const href = useHref(to);
-    const handleClick = useLinkClickHandler(to, { replace, state, target });
-
-    return (
-      <SdsLink
-        {...rest}
-        href={href}
-        onClick={(event) => {
-          onClick?.(event);
-          if (!event.defaultPrevented) {
-            handleClick(event);
-          }
-        }}
-        ref={ref}
-        target={target}
-        className={className}
-      >
-        {children}
-      </SdsLink>
-    );
-  },
-);
+export const Link = ({
+                       to,
+                       children,
+                       ...rest
+                     }: RouterLinkProps) => {
+  return (
+    <SdsLink asChild>
+      <RouterLink to={to} {...rest}>{children}</RouterLink>
+    </SdsLink>
+  );
+};
 ```
 
 ## Color Scheme
