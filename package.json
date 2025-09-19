@@ -6,7 +6,7 @@
   "description": "Sikt component library",
   "homepage": "https://designsystem.sikt.no/",
   "bugs": {
-    "url": "https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues"
+    "url": "https://sikt.atlassian.net/jira/software/projects/SDS/boards/266"
   },
   "repository": {
     "type": "git",
