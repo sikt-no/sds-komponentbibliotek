@@ -35,7 +35,7 @@ export const Badge = ({
         className,
       )}
       data-color-scheme={variant === "warning" && "light"}
-      role={!children ? "img" : undefined}
+      role={children === null || children === undefined ? "img" : undefined}
       {...rest}
     >
       {icon && <span className="sds-badge__icon">{icon}</span>}
