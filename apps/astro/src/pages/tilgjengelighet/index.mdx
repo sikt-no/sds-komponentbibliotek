@@ -14,9 +14,10 @@ import {
   Paragraph,
 } from "@sikt/sds-core";
 import { ListItem, OrderedList, UnorderedList } from "@sikt/sds-list";
+import ImageCard from "../../components/card/ImageCard.astro";
 export const components = {
   a: Link,
-  h1: (props) => <Heading1 {...props} />,
+  h1: Heading1,
   h2: (props) => <Heading2 {...props} size="s" />,
   h3: (props) => <Heading3 {...props} size="xs" />,
   h4: (props) => <Heading4 {...props} size="xxs" />,
@@ -26,6 +27,11 @@ export const components = {
   ol: OrderedList,
   p: Paragraph,
   ul: UnorderedList,
+  img: (props) => (
+    <ImageCard>
+      <img {...props} />
+    </ImageCard>
+  ),
 };
 
 import { Hero } from "../../components";
