@@ -27,7 +27,7 @@ export const components = [
   },
   {
     name: "Checkbox Input",
-    url: `${storybookUrl}?path=/docs/components-card--docs`,
+    url: `${storybookUrl}?path=/docs/components-checkbox-checkbox--docs`,
   },
   {
     name: "Combobox Input",
