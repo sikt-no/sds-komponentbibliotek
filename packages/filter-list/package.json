@@ -35,7 +35,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@sikt/sds-badge": "^2.2.0",
+    "@sikt/sds-badge": "^2.2.1",
     "@sikt/sds-button": "^4.2.0",
     "@sikt/sds-checkbox": "^3.2.0",
     "@sikt/sds-core": "^4.7.0",
