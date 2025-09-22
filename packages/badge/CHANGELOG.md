@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-badge@2.2.0...@sikt/sds-badge@2.2.1) (2025-09-22)
+
+### Bug Fixes
+
+- **badge:** avoid setting role="img" when children is the number 0 ([cd7c0bb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cd7c0bb43a957136b341915a2d6e9c7018f6325d))
+
 ## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-badge@2.1.0...@sikt/sds-badge@2.2.0) (2025-09-01)
 
 ### Features
