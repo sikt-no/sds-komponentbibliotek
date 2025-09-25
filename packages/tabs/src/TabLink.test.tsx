@@ -74,5 +74,16 @@ describe("TabLink", () => {
       expect(screen.getByText("badge")).toHaveClass("sds-tabs__tab-badge");
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
+
+    it("should change component with asChild", async () => {
+      render(
+        <TabLink href="#" data-testid="test" asChild>
+          <button>Foo</button>
+        </TabLink>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveRole("button");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
   });
 });

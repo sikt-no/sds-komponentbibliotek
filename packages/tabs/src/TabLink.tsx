@@ -1,3 +1,4 @@
+import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type BadgeProps } from "@sikt/sds-badge";
 import { clsx } from "clsx/lite";
 import {
@@ -17,6 +18,7 @@ export interface TabLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   icon?: ReactNode;
   badge?: ReactNode;
   isSelected?: boolean;
+  asChild?: boolean;
 }
 
 export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
@@ -28,12 +30,15 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
       badge,
       href,
       isSelected,
+      asChild = false,
       ...rest
     }: TabLinkProps,
     ref,
   ) => {
+    const Comp = asChild ? Slot : "a";
+
     return (
-      <a
+      <Comp
         className={clsx(
           "sds-tabs__tab",
           "sds-tab-link",
@@ -45,7 +50,7 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
         {...rest}
       >
         {icon && <div className="sds-tabs__tab-icon">{icon}</div>}
-        {children}
+        <Slottable>{children}</Slottable>
         {badge && (
           <div className="sds-tabs__tab-badge">
             {isSelected
@@ -57,7 +62,7 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
               : badge}
           </div>
         )}
-      </a>
+      </Comp>
     );
   },
 );
