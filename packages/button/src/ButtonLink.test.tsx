@@ -95,5 +95,16 @@ describe("ButtonLink", () => {
       expect(screen.getByTestId("test")).toHaveAccessibleName("Foo");
       expect(screen.queryByText("Foo")).not.toBeInTheDocument();
     });
+
+    it("should change component with asChild", async () => {
+      render(
+        <ButtonLink href="#" data-testid="test" asChild>
+          <button>Foo</button>
+        </ButtonLink>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveRole("button");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
   });
 });

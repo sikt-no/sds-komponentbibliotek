@@ -45,6 +45,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const ariaLabel = typeof children === "string" ? children : undefined;
+    const iconOnly = iconVariant === "only";
+    const iconLeft = iconVariant === "left";
+
     return (
       <button
         ref={ref}
@@ -52,21 +55,24 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           "sds-button",
           `sds-button--${variant}`,
           size !== "default" && `sds-button--${size}`,
+          iconLeft && "sds-button--icon-left",
           className,
         )}
         onClick={onClick}
-        aria-label={iconVariant === "only" ? ariaLabel : undefined}
+        aria-label={iconOnly ? ariaLabel : undefined}
         type={type}
         {...rest}
       >
-        {icon && (iconVariant === "left" || iconVariant === "only") && (
-          <span className="sds-button__icon">{icon}</span>
-        )}
-        {(!icon || iconVariant !== "only") && (
-          <span className="sds-button__label">{children}</span>
-        )}
-        {icon && iconVariant === "right" && (
-          <span className="sds-button__icon">{icon}</span>
+        {(!icon || !iconOnly) && children}
+        {icon && (
+          <span
+            className={clsx(
+              "sds-button__icon",
+              `sds-button__icon--${iconVariant}`,
+            )}
+          >
+            {icon}
+          </span>
         )}
       </button>
     );

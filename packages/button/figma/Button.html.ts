@@ -20,9 +20,7 @@ figma.connect(
       label: figma.string("Label text"),
     },
     example: ({ className, label }) =>
-      html`<button class="${className}">
-        <span class="sds-button__label">${label}</span>
-      </button>`,
+      html`<button class="${className}">${label}</button>`,
   },
 );
 
@@ -48,7 +46,7 @@ figma.connect(
     },
     example: ({ className, label, icon }) =>
       html`<button class="${className}">
-        <span class="sds-button__label">${label}</span>
+        ${label}
         <span class="sds-button__icon">${icon}</span>
       </button>`,
   },
@@ -61,6 +59,7 @@ figma.connect(
     props: {
       className: figma.className([
         "sds-button",
+        "sds-button--icon-left",
         figma.enum("Visibilty", {
           Strong: "sds-button--strong",
           Subtle: "sds-button--subtle",
@@ -76,8 +75,8 @@ figma.connect(
     },
     example: ({ className, label, icon }) =>
       html`<button class="${className}">
+        ${label}
         <span class="sds-button__icon">${icon}</span>
-        <span class="sds-button__label">${label}</span>
       </button>`,
   },
 );

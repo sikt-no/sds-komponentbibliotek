@@ -12,21 +12,36 @@
   font-size: var(--sds-typography-body-l-fontsize);
   font-weight: var(--sds-typography-body-l-fontweight);
   line-height: var(--sds-typography-body-l-lineheight);
-  padding: var(--button-padding);
-
-  &__label {
-    padding: 0 var(--button-padding);
-  }
+  gap: var(--button-padding);
+  padding: var(--button-padding)
+    calc(var(--button-padding) + var(--button-padding));
 
   &__icon {
     align-items: center;
     display: flex;
     font-size: var(--sds-typography-fontsize-700);
     justify-content: center;
+
+    &--left {
+      margin-left: calc(var(--button-padding) * -1);
+    }
+
+    &--right {
+      margin-right: calc(var(--button-padding) * -1);
+    }
+
+    &--only {
+      margin-right: calc(var(--button-padding) * -1);
+      margin-left: calc(var(--button-padding) * -1);
+    }
   }
 
   &:focus-visible {
     outline: var(--sds-focus-outline);
+  }
+
+  &--icon-left {
+    flex-direction: row-reverse;
   }
 
   &--strong {
@@ -120,7 +135,6 @@
     font-size: var(--sds-typography-body-default-fontsize);
     font-weight: var(--sds-typography-body-default-fontweight);
     line-height: var(--sds-typography-body-default-lineheight);
-    padding: var(--sds-space-padding-minimal);
   }
 
   &:disabled {
