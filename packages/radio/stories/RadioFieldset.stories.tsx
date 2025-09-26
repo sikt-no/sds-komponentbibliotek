@@ -34,7 +34,7 @@ export const Default = {
       <RadioFieldset
         {...args}
         onChange={(event) => {
-          console.log(event.target.value);
+          console.log(event);
           setSelected(event.target.value);
         }}
         value={selected}

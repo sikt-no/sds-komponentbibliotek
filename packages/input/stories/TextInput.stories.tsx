@@ -22,6 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const Default = {
   args: {
     label: "Label",
+    onChange: console.log,
   },
 } satisfies Story;
 

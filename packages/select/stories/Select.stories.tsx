@@ -35,6 +35,7 @@ export const Default = {
       <Select
         {...args}
         onChange={(event) => {
+          console.log(event);
           setArgs({ value: event.target.value });
         }}
       />

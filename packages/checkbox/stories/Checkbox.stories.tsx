@@ -22,6 +22,7 @@ export const Checked: Story = {
   args: {
     isChecked: true,
     label: "Checked checkbox",
+    onChange: console.log,
   },
 };
 

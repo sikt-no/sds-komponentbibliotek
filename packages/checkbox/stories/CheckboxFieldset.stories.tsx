@@ -25,6 +25,7 @@ const templateArgs = {
     <CheckboxInput key={2} label="Checkbox label 2" />,
     <CheckboxInput key={3} isChecked label="Checkbox label 3" />,
   ],
+  onChange: console.log,
 } satisfies Partial<Story["args"]>;
 
 export const Default = {
