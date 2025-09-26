@@ -39,7 +39,9 @@ export const Hero = ({
           )}
         </Breadcrumbs>
       )}
-      <Heading1 size="xl">{heading}</Heading1>
+      <Heading1 size="xl" className={styles.heading}>
+        {heading}
+      </Heading1>
       {children && (
         <div className={clsx(styles.content, "ds-content-max-width")}>
           {children}
