@@ -5,6 +5,8 @@
 
 - [Code of conduct](#code-of-conduct)
 - [Feedback](#feedback)
+  - [Templates](#templates)
+  - [Work process](#work-process)
 - [Design](#design)
 - [Development](#development)
   - [Architecture](#architecture)
@@ -25,8 +27,35 @@ _">0.1 ratio smileys to text"_ -developer @Sikt
 ## Feedback
 
 Please give us feedback and submit feature requests. We are dependent on your help & are very friendly 🤗  
-Slack: [#komponentbibliotek](https://sikt-no.slack.com/archives/C04K82KES0J)  
-Gitlab: [Issues](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues)
+Slack: [#designsystem](https://sikt-no.slack.com/archives/C04K82KES0J)  
+Jira: [Backlog](https://sikt.atlassian.net/jira/software/projects/SDS/boards/266)
+
+### Templates
+
+#### Discussion
+
+_TODO_
+
+#### Feature
+
+_TODO_
+
+#### Issue
+
+_TODO_
+
+### Work process
+
+1. Feature/fix request
+2. Design
+   1. Designing
+   2. Design critique
+
+3. Development
+   1. Code draft (this could be a discussion w/o any real code)
+   2. Coding
+   3. Testing
+   4. Code review
 
 ## Design
 
