@@ -32,21 +32,15 @@ Jira: [Backlog](https://sikt.atlassian.net/jira/software/projects/SDS/boards/266
 
 ### Templates
 
-#### Discussion
+Good starting point templates for filing bugs, discussions or requests. Fill out as much as possible:
 
-_TODO_
-
-#### Feature
-
-_TODO_
-
-#### Issue
-
-_TODO_
+- [Bug report](./.gitlab/issue_templates/bug_report.md)
+- [Discussion](./.gitlab/issue_templates/discussion.md)
+- [Feature request](./.gitlab/issue_templates/feature_request.md)
 
 ### Work process
 
-1. Feature/fix request
+1. Feature request/bug report
 2. Design
    1. Designing
    2. Design critique
