@@ -11,7 +11,7 @@ export default {
   },
   overrides: [
     {
-      files: ["**/*.module.css"],
+      files: ["**/*.module.css", "**/stories/*.css"],
       rules: {
         "selector-class-pattern": "",
       },

@@ -1,0 +1,9 @@
+.mobile-only {
+  display: none;
+}
+
+@media (width >= 1024px) {
+  .mobile-only {
+    display: unset;
+  }
+}

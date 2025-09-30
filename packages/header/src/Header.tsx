@@ -28,15 +28,11 @@ export const Header = ({
   skipLinkId = "main",
   skipLinkText = "Gå til innhold",
   logoHref,
-  logoText,
+  logoText = "Sikt",
   ...rest
 }: HeaderProps) => {
-  const logoElement = logoText ? (
-    <span className="sds-header__logo-text sds-typography-body--xl">
-      {logoText}
-    </span>
-  ) : (
-    <Logo variant="primary" className="sds-header__logo" />
+  const logoElement = (
+    <Logo productName={logoText} className="sds-header__logo" />
   );
 
   return (

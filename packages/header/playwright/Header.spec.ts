@@ -19,39 +19,9 @@ test.describe("Header", () => {
       expect(accessibilityScanResults.violations).toEqual([]);
     });
 
-    test("header with link should be accessible", async ({ page }) => {
+    test("header with product name should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-link",
-      );
-
-      await page.locator(componentSelector).waitFor();
-
-      const accessibilityScanResults = await new AxeBuilder({ page })
-        .include(componentSelector)
-        .analyze();
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    });
-
-    test("header with text should be accessible", async ({ page }) => {
-      await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-text",
-      );
-
-      await page.locator(componentSelector).waitFor();
-
-      const accessibilityScanResults = await new AxeBuilder({ page })
-        .include(componentSelector)
-        .analyze();
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    });
-
-    test("header with collapsible menu should be accessible", async ({
-      page,
-    }) => {
-      await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-collapsible-menu",
+        "/iframe.html?viewMode=story&id=components-header--with-product-name",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -73,27 +43,11 @@ test.describe("Header", () => {
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
-    test("header with link should have screenshot", async ({ page }) => {
-      await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-link",
-      );
-
-      await expect(page.locator(componentSelector)).toHaveScreenshot();
-    });
-
-    test("header with text should have screenshot", async ({ page }) => {
-      await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-text",
-      );
-
-      await expect(page.locator(componentSelector)).toHaveScreenshot();
-    });
-
-    test("header with collapsible menu should have screenshot", async ({
+    test("header with product name should have screenshot", async ({
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-collapsible-menu",
+        "/iframe.html?viewMode=story&id=components-header--with-product-name",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

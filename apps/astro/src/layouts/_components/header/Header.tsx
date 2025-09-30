@@ -5,6 +5,8 @@ import styles from "./header.module.css";
 export const Header = ({ currentHref }: { currentHref: string }) => {
   return (
     <SdsHeader
+      logoText="Designsystem"
+      logoHref="/"
       topSlot={
         <nav
           className={styles.nav}

@@ -2,8 +2,8 @@
 
 .sds-header {
   align-items: center;
-  position: relative;
   background-color: var(--sds-color-layout-background-primary);
+  position: relative;
 
   --header-height: 48px;
 
@@ -16,24 +16,19 @@
   }
 
   &__content {
-    min-height: var(--header-height);
-    padding: 0 var(--sds-space-padding-medium);
+    align-items: center;
     display: grid;
     gap: 0 var(--sds-space-padding-small);
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-  }
+    grid-template-columns: 1fr auto;
+    min-height: var(--header-height);
+    padding: 0 var(--sds-space-padding-medium);
 
-  &__header-item {
-    display: none;
-
-    @media (--sds-base-breakpoint-tablet) {
-      display: unset;
+    > :last-child:not(:first-child) {
+      justify-self: flex-end;
     }
 
-    &--last-item {
-      width: fit-content;
-      justify-self: end;
+    @media (--sds-base-breakpoint-desktop) {
+      grid-template-columns: 1fr auto 1fr;
     }
   }
 
@@ -43,68 +38,7 @@
     z-index: 1;
   }
 
-  &-collapsible {
-    &__button {
-      grid-column: -2 / -1;
-      justify-self: end;
-      width: fit-content;
-      margin: var(--sds-focus-outline-width) 0;
-
-      &.sds-button {
-        @media (--sds-base-breakpoint-tablet) {
-          display: none;
-        }
-      }
-    }
-
-    &__menu {
-      display: none;
-      gap: var(--sds-space-gap-medium);
-      flex-direction: column;
-      overflow: auto;
-      width: 100%;
-      border-top: var(--sds-space-border-weight-thin) solid
-        var(--sds-color-interaction-primary-strong-default);
-      padding: var(--sds-space-padding-medium);
-
-      .sds-header__nav-list {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    &__dropdown {
-      position: absolute;
-      top: calc(var(--header-height) + 2 * var(--sds-focus-outline-width));
-      left: 0;
-      background-color: var(--sds-color-layout-background-primary);
-      z-index: calc(var(--sds-base-zindex-drawer) + 1);
-      height: 100vh;
-      width: 100%;
-      max-height: 0;
-      transition: max-height 0.25s ease;
-      overflow: hidden;
-      grid-column: 1 / -1;
-
-      &--open {
-        max-height: calc(100vh - var(--header-height));
-      }
-
-      @media (--sds-base-breakpoint-tablet) {
-        display: none;
-      }
-
-      &.sds-header-collapsible__dropdown--open {
-        .sds-header-collapsible__menu {
-          display: flex;
-        }
-      }
-    }
-  }
-
   .sds-header__logo {
-    font-size: var(--sds-typography-fontsize-700);
-
     &-link {
       background-color: unset;
       color: inherit;

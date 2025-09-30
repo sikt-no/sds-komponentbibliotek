@@ -1,12 +1,6 @@
-import { Button } from "@sikt/sds-button";
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import {
-  Header,
-  HeaderCollapsibleMenu,
-  HeaderNav,
-  HeaderNavProps,
-  HeaderProps,
-} from "../index";
+import { Header, HeaderProps } from "../index";
+import "./header-stories.css";
 
 const meta: Meta = {
   title: "Components/Header",
@@ -15,38 +9,29 @@ const meta: Meta = {
 
 export default meta;
 
-type Story = StoryObj<HeaderProps & HeaderNavProps>;
+type Story = StoryObj<HeaderProps>;
 
 export const Default: Story = {
-  args: {},
-};
-
-export const WithLink: Story = {
   args: {
     logoHref: "//sikt.no",
   },
 };
 
-export const WithText: Story = {
+export const WithProductName: Story = {
   args: {
-    logoHref: "//sikt.no",
-    logoText: "Hello, World!",
+    ...Default.args,
+    logoText: "My product",
   },
 };
 
-export const WithCollapsibleMenu: Story = {
+export const WithChildren: Story = {
   args: {
-    logoHref: "//sikt.no",
+    ...Default.args,
     children: [
-      <HeaderCollapsibleMenu key={1}>
-        <HeaderNav>
-          <a href="#link1" aria-current="page">
-            Link 1
-          </a>
-          <a href="#link2">Link 2</a>
-        </HeaderNav>
-        <Button>Button</Button>
-      </HeaderCollapsibleMenu>,
+      <div key={0} className="mobile-only">
+        Bar
+      </div>,
+      <div key={1}>Foo</div>,
     ],
   },
 };
