@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.1...@sikt/sds-filter-list@0.5.2) (2025-09-30)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-badge@2.2.1 ([3491335](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/349133584513eb02eb1c877b0c1a63b67be128a3))
+
 ## [0.5.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.0...@sikt/sds-filter-list@0.5.1) (2025-09-01)
 
 ### Features
