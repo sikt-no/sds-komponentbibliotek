@@ -11,10 +11,10 @@ npm i -s @sikt/sds-logo
 #### React
 
 ```js
-import { PrimaryLogo } from "@sikt/sds-logo";
+import { Logo } from "@sikt/sds-logo";
 import "@sikt/sds-logo/dist/index.css";
 
-<PrimaryLogo />;
+<Logo />;
 ```
 
 Supported languages: Norwegian Bokmål (nb), Norwegian Nynorsk (nn), English (en), Northern Sámi (se), Lule Sámi (smj), Southern Sámi (sma), Kven (fkv).
