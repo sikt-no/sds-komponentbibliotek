@@ -25,4 +25,8 @@
 2.
 3.
 
+## Environement
+
+<!-- Operating system, browser, screen width, color scheme, etc if applicable -->
+
 ## Details
