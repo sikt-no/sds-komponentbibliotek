@@ -82,6 +82,7 @@ const produktutviklingMenu: MenuItemType[] = [
   },
   {
     name: "Mønstre",
+    url: "/produktutvikling/monstre",
     icon: <GridFourIcon className="sds-icon" aria-hidden />,
   },
 ];

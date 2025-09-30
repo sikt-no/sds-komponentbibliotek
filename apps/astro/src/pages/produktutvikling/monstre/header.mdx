@@ -1,0 +1,121 @@
+---
+layout: "../../../layouts/MdxLayout.astro"
+pageTitle: "Header"
+---
+
+import { Picture } from "astro:assets";
+import ImageCard from "../../../components/card/ImageCard.astro";
+import { MdxComponents } from "../../../layouts/_components/mdx/MdxComponents";
+export const components = {
+  ...MdxComponents,
+  img: (props) => (
+    <ImageCard>
+      <Picture formats={["avif", "webp"]} widths={[240, 540]} {...props} />
+    </ImageCard>
+  ),
+};
+
+import { Hero } from "../../../components";
+import { GuidePanel } from "@sikt/sds-message";
+
+<Hero
+  breadcrumbs={[
+    { title: "Designsystem", href: "/" },
+    { title: "Produktutvikling" },
+    { title: "Mønstre", href: "/produktutvikling/monstre" },
+  ]}
+  heading={frontmatter.pageTitle}
+/>
+
+<GuidePanel variant="warning">
+  Dette mønstret er under utvikling og kan endres uten forvarsel. Vi ønsker
+  gjerne at dere tester mønsteret og gir oss tilbakemeldinger på hvordan dere
+  tilpasser det i deres produkt. Sist oppdatert 29 September 2025.
+</GuidePanel>
+
+Header er et svært vanlig pattern både på nettsider og i webapplikasjoner.
+
+Headeren sørger for lett tilgjengelig navigasjon, og er ofte “sticky” som betyr at den følger med når brukeren scroller nedover siden. I tillegg til navigasjon inneholder header-komponenter ofte funksjonalitet som innlogging og søk.
+
+Siden det er stor variasjon i innhold og funksjon i header på tvers av løsninger ville en enkelt komponent blitt veldig kompleks. I stedet har vi laget en enkel komponent som gir felles layout, og kan inneholde subkomponenter etter behov.
+
+## Retningslinjer og veiledning
+
+Selv om headeren er et vanlig pattern er det stor variasjon i innhold og funksjonalitet fra header til header, også mellom to produkter fra samme leverandør. Lenker, funksjonalitet og spesielt innhold bør være veldig viktig for å få plass i headeren.
+
+### Passer bra til
+
+- Produktlogo
+- Hovednavigasjon, som direktelenker eller gjennom å åpne en meny
+- Søk
+- Innlogginglenke eller -funksjon med visning av profilinformasjon for innlogget bruker
+- Språkvalg
+- Varsler/Notifications
+
+### Passer mindre bra til
+
+- Ikke-klikkbart innhold
+
+### Vanlige innholdstyper for header
+
+| Navn                       | Påkrevd | Beskrivelse                                                                                                           |
+| -------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------- |
+| Produktlogo                | Ja      | Logo, bruker [logo-komponent]()                                                                                       |
+| Navigasjon/Meny            | Nei     | Om siden/applikasjonen har en hovednavigasjon bør den ligge i header                                                  |
+| Søk                        | Nei     | Om siden/applikasjonen har søkefunksjon er det sterkt anbefalt at den ligger i header                                 |
+| Innloggingslenke/-funksjon | Nei     | Om det finnes skal den ligge i header                                                                                 |
+| Språkvalg                  | Nei     | Om det finnes skal den ligge i header, med mindre den ligger i footer eller det finnes en egen side for innstillinger |
+| Varsler/Notifications      | Nei     | Om det finnes skal den ligge i header                                                                                 |
+
+### Plassering og prioritering av innhold
+
+Det er viktig at plasseringen av innhold i header er konsekvent, og at den tar høyde for at noen innholdstyper har dynamisk størrelse. Du kan tenke på headeren om den har to eller tre kolonner.
+
+Dersom du inkluderer de følgende innholdstyper skal de plasseres slik, og følge denne rekkefølgen.
+
+#### Venstre kolonne
+
+- Hovednavigasjon
+- Produktlogo
+
+#### Høyre kolonne
+
+- Søk
+- Språkvalg
+- Varsler/Notifications
+- Innloggingslenke/-funksjon
+- Enkel hovednavigasjon (2-3 lenker)
+
+Plasseringen av søk mot midten lar deg åpne et tekstfelt som skalerer mot venstre, uten å forskyve annet innhold.
+
+#### Midtstilt kolonne
+
+- Om du har en enkel navigasjon kan hovednavigasjonen bestå av synlige lenker i en tredje, midtstilt kolonne. Anbefales for 2-3 lenker, ikke flere.
+
+### Designtips for gode brukeropplevelser
+
+#### Navigering fra produktlogo
+
+Å klikke på logoen for å gå “tilbake til start” er en veldig innarbeidet konvensjon på internett. Logoen skal som regel være en navigasjonslenke tilbake til landingssiden, eller en annen side som gir mening for vanlig bruksmønster i applikasjonen, som en oversikttside eller et dashboard.
+
+Ikke bruk produktlogoen som lenke for å åpne menyen eller annen modal funksjonalitet, selv om det kan være fristende for å spare plass.
+
+#### Søkefunksjon
+
+Søk er en alternativ navigasjonsmetode for nettsiden eller applikasjonen.
+
+Dersom du har en nettside med mange teksttunge sider og artikler kan det være en fordel å legge selve søkefunksjonaliteten til en egen side, i stedet for at bruksflyten skjer inne i header. Da får du mer plass til forhåndsvisning av artiklene, og det blir enklere for brukeren å finne riktig innhold.
+
+#### Språkvalg
+
+Språkvalg i header er best egnet til løsninger med 2-3 alternativer. Vi vet at noen av løsningene i Sikt kan ha betydelig flere en dette. Da bør man både vurdere om header er riktig plassering og benytte et mer effektivt pattern for sitt behov.
+
+## Header-komponent
+
+Vi har laget en forenklet [header-komponent]() som kun inneholder produktlogo.
+
+## Subkomponenter for header-pattern
+
+De følgende komponentene er laget for å få deg raskt opp å gå med vennlige innfoldstyper for header.
+
+{/* TODO: [Hovednavigasjon]() [Søkefunksjon]() [Språkvalg]() [Varsler/Notifications]() [Innloggingslenke/funksjon]() [Enkel hovednavigasjon]() */}

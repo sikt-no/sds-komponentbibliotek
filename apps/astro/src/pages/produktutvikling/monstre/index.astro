@@ -1,0 +1,32 @@
+---
+import Layout from "../../../layouts/PageLayout.astro";
+import { Hero } from "../../../components";
+import ComponentCard from "../komponenter/_components/card/ComponentCard.astro";
+import { patterns } from "./_data/patterns.ts";
+import { Link, Paragraph } from "@sikt/sds-core";
+
+const pageTitle = "Mønstre";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[
+      { title: "Designsystem", href: "/" },
+      { title: "Produktutvikling" },
+    ]}
+    heading={pageTitle}
+    slot="hero"
+  />
+
+  <div class="ocean">
+    {patterns.map(({ name, url }) => <ComponentCard name={name} url={url} />)}
+  </div>
+</Layout>
+
+<style>
+  .ocean {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sds-space-gap-medium);
+  }
+</style>
