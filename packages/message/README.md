@@ -32,10 +32,14 @@ Den en vanlig del av sidens statiske innhold som er formgitt for å skille seg u
 
 For eksempel: et skjema som automatisk fylles med data fra en ekstern kilde,  der man ber brukeren sjekke at skjemaet er korrekt utfylt. I dette tilfellet har ikke systemet mulighet til å vite om informasjonen er riktig, og vi er avhengige av at brukeren selv går gjennom skjemaet og korrigerer eventuelle feil.
 
+#### MessageButton & MessageButtonLink
+
+Use this button or link for `callToAction`.
+
 ### React
 
 ```js
-import { Alert } from "@sikt/sds-message";
+import { Alert, MessageButton } from "@sikt/sds-message";
 import "@sikt/sds-message/dist/index.css";
 
 <Alert callToAction={<MessageButton>Action</MessageButton>}>Message</Alert>;
@@ -48,14 +52,14 @@ Do not use conditional rendering of these components since they need to be in th
 Do:
 
 ```jsx
-<Alert callToAction={handleOnClick}>{shouldRender && message}</Alert>
+<Alert {...rest}>{shouldRender && message}</Alert>
 ```
 
 Don't:
 
 ```jsx
 {
-  shouldRender && <Alert callToAction={handleOnClick}>{message}</Alert>;
+  shouldRender && <Alert {...rest}>{message}</Alert>;
 }
 ```
 
