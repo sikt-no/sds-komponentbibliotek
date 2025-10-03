@@ -32,6 +32,20 @@ test.describe("Header", () => {
 
       expect(accessibilityScanResults.violations).toEqual([]);
     });
+
+    test("header with slots should be accessible", async ({ page }) => {
+      await page.goto(
+        "/iframe.html?viewMode=story&id=components-header--with-slots",
+      );
+
+      await page.locator(componentSelector).waitFor();
+
+      const accessibilityScanResults = await new AxeBuilder({ page })
+        .include(componentSelector)
+        .analyze();
+
+      expect(accessibilityScanResults.violations).toEqual([]);
+    });
   });
 
   test.describe("visual", () => {
@@ -48,6 +62,14 @@ test.describe("Header", () => {
     }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-header--with-product-name",
+      );
+
+      await expect(page.locator(componentSelector)).toHaveScreenshot();
+    });
+
+    test("header with slots should have screenshot", async ({ page }) => {
+      await page.goto(
+        "/iframe.html?viewMode=story&id=components-header--with-slots",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

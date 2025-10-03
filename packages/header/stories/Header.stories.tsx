@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Header, HeaderProps } from "../index";
-import "./header-stories.css";
 
 const meta: Meta = {
   title: "Components/Header",
@@ -24,14 +23,11 @@ export const WithProductName: Story = {
   },
 };
 
-export const WithChildren: Story = {
+export const WithSlots: Story = {
   args: {
     ...Default.args,
-    children: [
-      <div key={0} className="mobile-only">
-        Bar
-      </div>,
-      <div key={1}>Foo</div>,
-    ],
+    leftSlot: <div>Foo</div>,
+    rightSlot: <div>Bar</div>,
+    children: <div>Baz</div>,
   },
 };

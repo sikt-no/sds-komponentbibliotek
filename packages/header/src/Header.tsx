@@ -15,6 +15,8 @@ export interface HeaderProps extends HTMLAttributes<HTMLElement> {
     | ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>
     | ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>[];
   topSlot?: ReactNode;
+  leftSlot?: ReactNode;
+  rightSlot?: ReactNode;
   skipLinkId?: string;
   skipLinkText?: string;
   logoHref?: string;
@@ -24,6 +26,8 @@ export interface HeaderProps extends HTMLAttributes<HTMLElement> {
 export const Header = ({
   children,
   topSlot,
+  leftSlot,
+  rightSlot,
   className,
   skipLinkId = "main",
   skipLinkText = "Gå til innhold",
@@ -43,15 +47,24 @@ export const Header = ({
       {topSlot}
       <header className={clsx("sds-header", className)} {...rest}>
         <div className="sds-header__content">
-          {logoHref ? (
-            <Link href={logoHref} className="sds-header__logo-link">
-              {logoElement}
-            </Link>
-          ) : (
-            logoElement
+          <div className="sds-header__content-left">
+            {logoHref ? (
+              <Link href={logoHref} className="sds-header__logo-link">
+                {logoElement}
+              </Link>
+            ) : (
+              logoElement
+            )}
+            {leftSlot && (
+              <div className="sds-header__content-left-item">{leftSlot}</div>
+            )}
+          </div>
+          {children && (
+            <div className="sds-header__content-mid">{children}</div>
           )}
-
-          {children}
+          {rightSlot && (
+            <div className="sds-header__content-right">{rightSlot}</div>
+          )}
         </div>
       </header>
     </>
