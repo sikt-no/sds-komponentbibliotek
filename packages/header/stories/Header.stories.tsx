@@ -1,5 +1,7 @@
+import { ApplicationStatus } from "@sikt/sds-message";
 import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Header, HeaderProps } from "../index";
+import "@sikt/sds-message/dist/index.css";
 
 const meta: Meta = {
   title: "Components/Header",
@@ -29,5 +31,14 @@ export const WithSlots: Story = {
     leftSlot: <div>Foo</div>,
     rightSlot: <div>Bar</div>,
     children: <div>Baz</div>,
+  },
+};
+
+export const WithApplicationStatus: Story = {
+  args: {
+    ...Default.args,
+    applicationStatus: (
+      <ApplicationStatus variant="warning">Status message</ApplicationStatus>
+    ),
   },
 };

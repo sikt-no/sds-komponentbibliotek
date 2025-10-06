@@ -17,6 +17,7 @@ export interface HeaderProps extends HTMLAttributes<HTMLElement> {
   topSlot?: ReactNode;
   leftSlot?: ReactNode;
   rightSlot?: ReactNode;
+  applicationStatus?: ReactNode;
   skipLinkId?: string;
   skipLinkText?: string;
   logoHref?: string;
@@ -28,6 +29,7 @@ export const Header = ({
   topSlot,
   leftSlot,
   rightSlot,
+  applicationStatus,
   className,
   skipLinkId = "main",
   skipLinkText = "Gå til innhold",
@@ -67,6 +69,7 @@ export const Header = ({
           )}
         </div>
       </header>
+      {applicationStatus}
     </>
   );
 };
