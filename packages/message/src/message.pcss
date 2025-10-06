@@ -4,6 +4,7 @@
     transparent,
     var(--message-icon-background-color)
   );
+  --message-icon-padding: var(--sds-space-padding-minimal);
 
   background-color: var(--message-background-color);
   box-shadow: inset 0 0 0 var(--sds-space-border-weight-regular)
@@ -24,6 +25,7 @@
     justify-content: center;
     height: var(--sds-typography-fontsize-900);
     min-width: var(--sds-typography-fontsize-900);
+    padding: var(--message-icon-padding);
 
     & > .sds-icon {
       color: var(--message-icon-color);
@@ -53,6 +55,9 @@
   &--warning {
     --message-icon-color: var(--sds-color-text-primary);
     --message-icon-background-color: var(--sds-color-support-warning-default);
+    --message-icon-padding: calc(var(--sds-space-padding-minimal) - 1px)
+      var(--sds-space-padding-minimal)
+      calc(var(--sds-space-padding-minimal) + 1px);
     --message-background-color: var(--sds-color-support-warning-subtle);
   }
 
