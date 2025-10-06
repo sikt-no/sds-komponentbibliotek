@@ -1,3 +1,4 @@
+import { Header } from "@sikt/sds-header";
 import { Meta, StoryObj } from "@storybook/react-webpack5";
 import {
   ApplicationStatus as Component,
@@ -18,4 +19,12 @@ export const ApplicationStatus: Story = {
     children: "Message",
     variant: "info",
   },
+};
+
+export const ApplicationStatusWithHeader: Story = {
+  args: {
+    children: "Message",
+    variant: "info",
+  },
+  render: (args) => <Header applicationStatus={<Component {...args} />} />,
 };
