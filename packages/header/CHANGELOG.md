@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.1.1...@sikt/sds-header@4.0.0) (2025-10-06)
+
+### ⚠ BREAKING CHANGES
+
+- **header:** remove header nav & collapsible menu
+
+### Features
+
+- **header:** add application status slot ([222bdd8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/222bdd802e99d96eed1d872fd6b0c009fa6baff3))
+- **header:** add slots for left & right content ([948307f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/948307fda27ee0fd610e4d2941cf029b7d6741fa))
+- **header:** remove header nav & collapsible menu ([e76ba09](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e76ba09d3d5147276a6c5208978800c4301b0f8b))
+
 ## [3.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@3.1.0...@sikt/sds-header@3.1.1) (2025-07-08)
 
 ### Bug Fixes
