@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-progress-indicator@2.1.0...@sikt/sds-progress-indicator@3.0.0) (2025-10-06)
+
+### ⚠ BREAKING CHANGES
+
+- **progress-indicator:** replace old component with new, read docs
+
+### Features
+
+- **progress-indicator:** replace old component with new ([a92934f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a92934f07b6eed6659f06ec029e8e71194de3942))
+- **progress-step-link:** add asChild prop for Next.js 16 next/link support ([a92934f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a92934f07b6eed6659f06ec029e8e71194de3942))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-progress-indicator@2.0.2...@sikt/sds-progress-indicator@2.1.0) (2025-05-21)
 
 ### Features
