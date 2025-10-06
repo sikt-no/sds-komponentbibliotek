@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.0.1...@sikt/sds-core@5.1.0) (2025-10-06)
+
+### Features
+
+- **link:** add asChild prop for Next.js 16 next/link support ([63c8d57](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/63c8d57291def06d3222f61d0b07dc7c49e7c3fa))
+
 ## [5.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.0.0...@sikt/sds-core@5.0.1) (2025-09-08)
 
 ### Bug Fixes
