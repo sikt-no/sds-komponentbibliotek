@@ -433,7 +433,7 @@ release-report:
     - RELEASE_NOTES=$(cat "./packages/${PACKAGE_NAME}/CHANGELOG.md" | awk '/^## / && !f {f=1; print; next} /^## / && f {exit} f')
   script:
     - >
-      curl --request POST --header "Content-Type: application/json" --data "{\"text\":\"Release <https://${CI_SERVER_HOST}/${CI_PROJECT_PATH}/-/releases/${CI_COMMIT_TAG}|$CI_COMMIT_TAG> succeeded on $CI_COMMIT_BRANCH <$CI_PIPELINE_URL|$CI_PIPELINE_ID>\n\n\`\`\`${RELEASE_NOTES}\`\`\`\"}" "${SLACK_WEBHOOK_URL_PUBLIC}"
+      curl --request POST --header "Content-Type: application/json" --data "{\"type\":\"mrkdwn\",\"text\":\"Release <https://${CI_SERVER_HOST}/${CI_PROJECT_PATH}/-/releases/${CI_COMMIT_TAG}|$CI_COMMIT_TAG> succeeded on $CI_COMMIT_BRANCH <$CI_PIPELINE_URL|$CI_PIPELINE_ID>\n\n${RELEASE_NOTES}\"}" "${SLACK_WEBHOOK_URL_PUBLIC}"
   dependencies:
     - release-prepare
   needs:
