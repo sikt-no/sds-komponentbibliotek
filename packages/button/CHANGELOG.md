@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.3.1...@sikt/sds-button@4.4.0) (2025-10-06)
+
+### Features
+
+- **button-link:** add asChild prop for Next.js 16 next/link support ([f347bed](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f347bedcafa1b4b086300286c88e22b8ca39a69c))
+
 ## [4.3.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.3.0...@sikt/sds-button@4.3.1) (2025-09-01)
 
 ### Bug Fixes
