@@ -1,6 +1,6 @@
 {
   "name": "@sikt/sds-message",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "UNLICENSED",
   "description": "Message component, Sikt component library",
   "homepage": "https://designsystem.sikt.no/",

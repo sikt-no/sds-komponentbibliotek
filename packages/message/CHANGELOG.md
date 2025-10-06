@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@2.0.0...@sikt/sds-message@2.0.1) (2025-10-06)
+
+### Bug Fixes
+
+- **message:** change warning message icon position ([cfeb005](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cfeb00561147d7519c34378b58d4328e939cac4b))
+
 ## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@1.2.1...@sikt/sds-message@2.0.0) (2025-06-11)
 
 ### ⚠ BREAKING CHANGES
