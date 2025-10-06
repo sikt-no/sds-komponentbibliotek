@@ -1,56 +1,52 @@
-import { MoveToNextIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import { HTMLAttributes } from "react";
-import "./progress-step.pcss";
+import {
+  cloneElement,
+  HTMLAttributes,
+  isValidElement,
+  PropsWithChildren,
+  ReactElement,
+  ReactNode,
+} from "react";
+import { ProgressStepButtonProps } from "./ProgressStepButton";
+import { ProgressStepLinkProps } from "./ProgressStepLink";
 
 export interface ProgressStepProps extends HTMLAttributes<HTMLLIElement> {
-  value: number;
-  label: string;
-  status?: "complete" | "current" | "incomplete";
+  children: ReactNode;
   className?: string;
-  showNumber?: boolean;
-  showLabel?: boolean;
-  accessibleCompleteString?: string;
+  current?: boolean;
+  index?: number;
 }
 
 export const ProgressStep = ({
-  value,
-  label,
-  status = "incomplete",
+  children,
   className,
-  showNumber = true,
-  showLabel = true,
-  accessibleCompleteString = "Fullført",
+  current,
+  index = 0,
   ...rest
 }: ProgressStepProps) => {
   return (
     <li
-      className={clsx(
-        "sds-progress-step",
-        (status === "complete" || status === "current") &&
-          "sds-progress-step--selected",
-        className,
-      )}
-      aria-current={status === "current" ? "step" : "false"}
+      className={clsx("sds-progress-indicator__step-details-item", className)}
       {...rest}
     >
-      <span className="sds-progress-step__separator-icon">
-        <MoveToNextIcon />
-      </span>
-      {status === "complete" && (
-        <span className="sds-screen-reader-only">
-          {accessibleCompleteString}
+      {isValidElement(children) ? (
+        cloneElement(
+          children as ReactElement<
+            PropsWithChildren<ProgressStepButtonProps | ProgressStepLinkProps>
+          >,
+          {
+            current,
+            index,
+          },
+        )
+      ) : (
+        <span
+          className="sds-progress-indicator__step-details-content"
+          aria-current={current ? "step" : undefined}
+        >
+          {index + 1}.&nbsp;{children}
         </span>
       )}
-      {showNumber && <div className="sds-progress-step__number">{value}</div>}
-      <span
-        className={clsx(
-          "sds-progress-step__label",
-          !showLabel && "sds-screen-reader-only",
-        )}
-      >
-        {label}
-      </span>
     </li>
   );
 };

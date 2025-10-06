@@ -1,15 +1,26 @@
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import { ProgressIndicator } from "./ProgressIndicator";
-import { ProgressStep } from "./ProgressStep";
+import {
+  ProgressIndicator,
+  ProgressStep,
+  ProgressStepButton,
+  ProgressStepLink,
+} from "../index";
 
 describe("Progress indicator", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(
-        <ProgressIndicator>
-          <ProgressStep value={1} label="First step" status="complete" />
-          <ProgressStep value={2} label="Second step" status="current" />
+        <ProgressIndicator currentIndex={1} heading="Second step">
+          <ProgressStep>
+            <ProgressStepButton onClick={jest.fn()}>
+              First step
+            </ProgressStepButton>
+          </ProgressStep>
+          <ProgressStep>
+            <ProgressStepLink href="/">Second step</ProgressStepLink>
+          </ProgressStep>
+          <ProgressStep>Third step</ProgressStep>
         </ProgressIndicator>,
       );
 
@@ -18,93 +29,197 @@ describe("Progress indicator", () => {
   });
 
   describe("api", () => {
-    it("should mark the correct steps as selected when controlled by parent element", async () => {
-      render(
-        <ProgressIndicator>
-          <ProgressStep
-            data-testid="progress-step-1"
-            value={1}
-            label="First step"
-            status="complete"
-          />
-          <ProgressStep
-            data-testid="progress-step-2"
-            value={2}
-            label="Second step"
-            status="current"
-          />
-          <ProgressStep
-            data-testid="progress-step-3"
-            value={3}
-            label="Third step"
-          />
-        </ProgressIndicator>,
+    it("should render", async () => {
+      const { container } = render(
+        <ProgressIndicator
+          count={2}
+          currentIndex={1}
+          heading="Second step"
+          data-testid="test"
+        />,
       );
 
-      const step1 = screen.getByTestId("progress-step-1");
-      const step2 = screen.getByTestId("progress-step-2");
-      const step3 = screen.getByTestId("progress-step-3");
+      const heading = container.querySelector(
+        ".sds-progress-indicator__heading",
+      );
 
-      expect(step1).toHaveClass("sds-progress-step--selected");
-      expect(step1.getAttribute("aria-current")).toBe("false");
-      expect(step1).toHaveTextContent("Fullført");
-
-      expect(step2).toHaveClass("sds-progress-step--selected");
-      expect(step2.getAttribute("aria-current")).toBe("step");
-
-      expect(step3).not.toHaveClass("sds-progress-step--selected");
-      expect(step3.getAttribute("aria-current")).toBe("false");
+      expect(screen.getByTestId("test")).toHaveClass("sds-progress-indicator");
+      expect(screen.getByTestId("test")).toBeInTheDocument();
+      expect(screen.queryByText("1. First step")).not.toBeInTheDocument();
+      expect(heading).toHaveTextContent("2.Second step");
+      expect(heading).toBeInTheDocument();
     });
 
-    it("should mark the correct steps as selected when controlled manually", async () => {
+    it("should have class name", async () => {
       render(
-        <ProgressIndicator>
-          <ProgressStep
-            data-testid="progress-step-1"
-            status="incomplete"
-            value={1}
-            label="First step"
-          />
-          <ProgressStep
-            data-testid="progress-step-2"
-            value={2}
-            label="Second step"
-          />
-          <ProgressStep
-            data-testid="progress-step-3"
-            status="current"
-            value={3}
-            label="Third step"
-          />
-        </ProgressIndicator>,
+        <ProgressIndicator
+          count={2}
+          currentIndex={1}
+          heading="Second step"
+          data-testid="test"
+          className="test-class-name"
+        />,
       );
 
-      const step1 = screen.getByTestId("progress-step-1");
-      const step2 = screen.getByTestId("progress-step-2");
-      const step3 = screen.getByTestId("progress-step-3");
-
-      expect(step1).not.toHaveClass("sds-progress-step--selected");
-      expect(step1.getAttribute("aria-current")).toBe("false");
-
-      expect(step2).not.toHaveClass("sds-progress-step--selected");
-      expect(step1.getAttribute("aria-current")).toBe("false");
-
-      expect(step3).toHaveClass("sds-progress-step--selected");
-      expect(step3.getAttribute("aria-current")).toBe("step");
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-progress-indicator test-class-name",
+      );
     });
 
-    it("should not show label", async () => {
+    it("should mark step 1 as current", async () => {
       render(
-        <ProgressIndicator>
-          <ProgressStep value={1} label="First" showLabel={false} />
-          <ProgressStep value={2} label="Second" />
+        <ProgressIndicator currentIndex={0} heading="Second step">
+          <ProgressStep>
+            <ProgressStepButton onClick={jest.fn()}>
+              First step
+            </ProgressStepButton>
+          </ProgressStep>
+          <ProgressStep>
+            <ProgressStepLink href="/">Second step</ProgressStepLink>
+          </ProgressStep>
+          <ProgressStep>Third step</ProgressStep>
         </ProgressIndicator>,
       );
 
-      expect(screen.getByText("First")).toHaveClass("sds-screen-reader-only");
-      expect(screen.getByText("Second")).not.toHaveClass(
-        "sds-screen-reader-only",
+      expect(screen.getByText("1. First step")).toHaveAttribute(
+        "aria-current",
+        "step",
       );
+      expect(screen.getByText("2. Second step")).not.toHaveAttribute(
+        "aria-current",
+        "step",
+      );
+      expect(screen.getByText("3. Third step")).not.toHaveAttribute(
+        "aria-current",
+        "step",
+      );
+    });
+
+    it("should mark step 2 as current", async () => {
+      render(
+        <ProgressIndicator currentIndex={1} heading="Second step">
+          <ProgressStep>
+            <ProgressStepButton onClick={jest.fn()}>
+              First step
+            </ProgressStepButton>
+          </ProgressStep>
+          <ProgressStep>
+            <ProgressStepLink href="/">Second step</ProgressStepLink>
+          </ProgressStep>
+          <ProgressStep>Third step</ProgressStep>
+        </ProgressIndicator>,
+      );
+
+      expect(screen.getByText("1. First step")).not.toHaveAttribute(
+        "aria-current",
+        "step",
+      );
+      expect(screen.getByText("2. Second step")).toHaveAttribute(
+        "aria-current",
+        "step",
+      );
+      expect(screen.getByText("3. Third step")).not.toHaveAttribute(
+        "aria-current",
+        "step",
+      );
+    });
+
+    it("should mark step 3 as current", async () => {
+      render(
+        <ProgressIndicator currentIndex={2} heading="Second step">
+          <ProgressStep>
+            <ProgressStepButton onClick={jest.fn()}>
+              First step
+            </ProgressStepButton>
+          </ProgressStep>
+          <ProgressStep>
+            <ProgressStepLink href="/">Second step</ProgressStepLink>
+          </ProgressStep>
+          <ProgressStep>Third step</ProgressStep>
+        </ProgressIndicator>,
+      );
+
+      expect(screen.getByText("1. First step")).not.toHaveAttribute(
+        "aria-current",
+        "step",
+      );
+      expect(screen.getByText("2. Second step")).not.toHaveAttribute(
+        "aria-current",
+        "step",
+      );
+      expect(screen.getByText("3. Third step")).toHaveAttribute(
+        "aria-current",
+        "step",
+      );
+    });
+
+    it("should render correct number of bars", async () => {
+      const { container } = render(
+        <ProgressIndicator
+          count={2}
+          currentIndex={1}
+          heading="Second step"
+          data-testid="test"
+        />,
+      );
+
+      expect(
+        container.getElementsByClassName(
+          "sds-progress-indicator__step-bar-item",
+        ),
+      ).toHaveLength(2);
+      expect(
+        container.getElementsByClassName(
+          "sds-progress-indicator__step-bar-item",
+        )[1],
+      ).toHaveClass("sds-progress-indicator__step-bar-item--current");
+    });
+
+    it("should render with actions", async () => {
+      render(
+        <ProgressIndicator currentIndex={1} heading="Second step">
+          <ProgressStep>
+            <ProgressStepButton onClick={jest.fn()}>
+              First step
+            </ProgressStepButton>
+          </ProgressStep>
+          <ProgressStep>
+            <ProgressStepLink href="/">Second step</ProgressStepLink>
+          </ProgressStep>
+          <ProgressStep>Third step</ProgressStep>
+        </ProgressIndicator>,
+      );
+
+      expect(screen.getByText("1. First step")).toHaveRole("button");
+      expect(screen.getByText("2. Second step")).toHaveRole("link");
+    });
+
+    it("should render expandable", async () => {
+      render(
+        <ProgressIndicator
+          currentIndex={1}
+          heading="Second step"
+          expandable
+          data-testid="test"
+        >
+          <ProgressStep>
+            <ProgressStepButton onClick={jest.fn()}>
+              First step
+            </ProgressStepButton>
+          </ProgressStep>
+          <ProgressStep>
+            <ProgressStepLink href="/">Second step</ProgressStepLink>
+          </ProgressStep>
+          <ProgressStep>Third step</ProgressStep>
+        </ProgressIndicator>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sds-progress-indicator sds-progress-indicator--expandable",
+      );
+      expect(screen.getByTestId("test")).toHaveRole("group");
+      expect(screen.getByText("1. First step")).not.toBeVisible();
+      expect(screen.getByText("2. Second step")).not.toBeVisible();
     });
   });
 });

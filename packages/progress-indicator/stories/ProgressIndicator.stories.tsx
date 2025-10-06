@@ -3,7 +3,8 @@ import {
   ProgressIndicator,
   ProgressIndicatorProps,
   ProgressStep,
-  ProgressStepProps,
+  ProgressStepButton,
+  ProgressStepLink,
 } from "../index";
 
 const meta: Meta = {
@@ -13,61 +14,59 @@ const meta: Meta = {
 
 export default meta;
 
-type Story = StoryObj<ProgressIndicatorProps & ProgressStepProps>;
+type Story = StoryObj<ProgressIndicatorProps>;
 
 export const Default: Story = {
   args: {
+    heading: <>Second step</>,
+    currentIndex: 1,
     children: [
-      <ProgressStep key={1} value={1} label="First step" status="complete" />,
-      <ProgressStep key={2} value={2} label="Second step" status="current" />,
-      <ProgressStep key={3} value={3} label="Third step" />,
-      <ProgressStep key={4} value={4} label="Fourth step" />,
+      <ProgressStep key={1}>
+        <ProgressStepButton
+          onClick={() => {
+            console.log("click");
+          }}
+        >
+          First step
+        </ProgressStepButton>
+      </ProgressStep>,
+      <ProgressStep key={2}>
+        <ProgressStepLink href="#">Second step</ProgressStepLink>
+      </ProgressStep>,
+      <ProgressStep key={3}>Third step</ProgressStep>,
+      <ProgressStep key={4}>Fourth step</ProgressStep>,
     ],
   },
 };
 
-export const HideNumbers: Story = {
+export const WithoutDetails: Story = {
   args: {
-    children: [
-      <ProgressStep
-        key={1}
-        value={1}
-        label="First step"
-        status="complete"
-        showNumber={false}
-      />,
-      <ProgressStep
-        key={2}
-        value={2}
-        label="Second step"
-        status="current"
-        showNumber={false}
-      />,
-      <ProgressStep key={3} value={3} label="Third step" showNumber={false} />,
-      <ProgressStep key={4} value={4} label="Fourth step" showNumber={false} />,
-    ],
+    heading: <>Second step</>,
+    currentIndex: 1,
+    count: 4,
   },
 };
 
-export const HideLabels: Story = {
+export const Expandable: Story = {
   args: {
+    heading: <>Second step</>,
+    currentIndex: 1,
+    expandable: true,
     children: [
-      <ProgressStep
-        key={1}
-        value={1}
-        label="First step"
-        status="complete"
-        showLabel={false}
-      />,
-      <ProgressStep
-        key={2}
-        value={2}
-        label="Second step"
-        status="current"
-        showLabel={false}
-      />,
-      <ProgressStep key={3} value={3} label="Third step" showLabel={false} />,
-      <ProgressStep key={4} value={4} label="Fourth step" showLabel={false} />,
+      <ProgressStep key={1}>
+        <ProgressStepButton
+          onClick={() => {
+            console.log("click");
+          }}
+        >
+          First step
+        </ProgressStepButton>
+      </ProgressStep>,
+      <ProgressStep key={2}>
+        <ProgressStepLink href="#">Second step</ProgressStepLink>
+      </ProgressStep>,
+      <ProgressStep key={3}>Third step</ProgressStep>,
+      <ProgressStep key={4}>Fourth step</ProgressStep>,
     ],
   },
 };
