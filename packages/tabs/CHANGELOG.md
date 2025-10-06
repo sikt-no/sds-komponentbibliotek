@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.3.0...@sikt/sds-tabs@3.4.0) (2025-10-06)
+
+### Features
+
+- **badge:** make children optional for icon only badge ([b62e639](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b62e6395459f3c600a85eb7681d068f2005f285a))
+- **tab-link:** add asChild prop for Next.js 16 next/link support ([1994e2a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1994e2a691d2f1503397698fc87f899e26c376d5))
+
 ## [3.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.2.1...@sikt/sds-tabs@3.3.0) (2025-07-08)
 
 ### Features
