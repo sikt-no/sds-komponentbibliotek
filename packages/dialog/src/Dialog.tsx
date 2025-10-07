@@ -163,7 +163,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
         {...rest}
       >
         <div ref={wrapperRef}>
-          <header className="sds-dialog__header">
+          <div className="sds-dialog__header">
             <div
               id={headingId}
               data-testid="headings"
@@ -185,7 +185,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
                 {closeButtonLabel}
               </Button>
             )}
-          </header>
+          </div>
           <div className="sds-dialog__content-wrapper" ref={contentRef}>
             <div
               id={contentId}
