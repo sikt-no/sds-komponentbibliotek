@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.4...@sikt/sds-dialog@2.0.5) (2025-10-07)
+
+### Bug Fixes
+
+- **dialog:** change header element to div since not allowed in dialog element ([42f2cee](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/42f2cee51d1e4cf6a2bb0867e2c9beeaf57da76f))
+- **dialog:** change outline offset to be visible with backdrop ([ff94b4f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ff94b4f39ca7d422cc5afac8ebd000eb05c4ba04))
+
 ## [2.0.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.3...@sikt/sds-dialog@2.0.4) (2025-08-18)
 
 ### Bug Fixes
