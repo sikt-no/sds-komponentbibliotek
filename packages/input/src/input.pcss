@@ -1,5 +1,5 @@
 .sds-input {
-  --input-border-color: var(--sds-color-interaction-neutral-strong-default);
+  --input-border-color: var(--sds-color-layout-divider-strong);
   --input-border-width: var(--sds-space-border-weight-regular);
   --input-padding: calc(
     var(--sds-space-padding-tiny) - var(--input-border-width)
@@ -20,13 +20,11 @@
 
     &:hover,
     &:focus-visible {
-      --input-border-color: var(
-        --sds-color-interaction-neutral-strong-highlight
-      );
+      --input-border-color: var(--sds-color-layout-divider-strong);
     }
 
     &:active {
-      --input-border-color: var(--sds-color-interaction-neutral-strong-pressed);
+      --input-border-color: var(--sds-color-layout-divider-strong);
     }
 
     &:has(:disabled) {

@@ -6,12 +6,8 @@
   --toggle-padding: var(--sds-space-padding-minimal);
   --toggle-thumb-offset: var(--toggle-padding);
   --toggle-track-background-color: var(--sds-color-layout-background-default);
-  --toggle-track-border-color: var(
-    --sds-color-interaction-neutral-strong-default
-  );
-  --toggle-thumb-background-color: var(
-    --sds-color-interaction-neutral-strong-default
-  );
+  --toggle-track-border-color: var(--sds-color-layout-divider-strong);
+  --toggle-thumb-background-color: var(--sds-color-layout-divider-strong);
   --toggle-thumb-color: var(--sds-color-text-on-strong);
   --toggle-thumb-position: 0;
 
@@ -23,21 +19,13 @@
   }
 
   &:hover {
-    --toggle-track-border-color: var(
-      --sds-color-interaction-neutral-strong-highlight
-    );
-    --toggle-thumb-background-color: var(
-      --sds-color-interaction-neutral-strong-highlight
-    );
+    --toggle-track-border-color: var(--sds-color-layout-divider-strong);
+    --toggle-thumb-background-color: var(--sds-color-layout-divider-strong);
   }
 
   &:active {
-    --toggle-track-border-color: var(
-      --sds-color-interaction-neutral-strong-pressed
-    );
-    --toggle-thumb-background-color: var(
-      --sds-color-interaction-neutral-strong-pressed
-    );
+    --toggle-track-border-color: var(--sds-color-layout-divider-strong);
+    --toggle-thumb-background-color: var(--sds-color-layout-divider-strong);
   }
 
   &--checked {

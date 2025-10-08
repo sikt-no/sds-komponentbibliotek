@@ -1,6 +1,6 @@
 .sds-radio {
   --radio-background-color: var(--sds-color-layout-background-default);
-  --radio-border-color: var(--sds-color-interaction-neutral-strong-default);
+  --radio-border-color: var(--sds-color-layout-divider-strong);
   --radio-size: var(--sds-typography-fontsize-700);
 
   display: flex;
@@ -32,13 +32,11 @@
 
     &:hover,
     &:focus-visible {
-      --radio-border-color: var(
-        --sds-color-interaction-neutral-strong-highlight
-      );
+      --radio-border-color: var(--sds-color-layout-divider-strong);
     }
 
     &:active {
-      --radio-border-color: var(--sds-color-interaction-neutral-strong-pressed);
+      --radio-border-color: var(--sds-color-layout-divider-strong);
     }
 
     &:focus-visible {

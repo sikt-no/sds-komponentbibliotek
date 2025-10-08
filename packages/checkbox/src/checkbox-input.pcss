@@ -1,6 +1,6 @@
 .sds-checkbox {
   --checkbox-background-color: var(--sds-color-layout-background-default);
-  --checkbox-border-color: var(--sds-color-interaction-neutral-strong-default);
+  --checkbox-border-color: var(--sds-color-layout-divider-strong);
   --checkbox-size: var(--sds-typography-fontsize-700);
 
   display: flex;
@@ -33,15 +33,11 @@
 
     &:hover,
     &:focus-visible {
-      --checkbox-border-color: var(
-        --sds-color-interaction-neutral-strong-highlight
-      );
+      --checkbox-border-color: var(--sds-color-layout-divider-strong);
     }
 
     &:active {
-      --checkbox-border-color: var(
-        --sds-color-interaction-neutral-strong-pressed
-      );
+      --checkbox-border-color: var(--sds-color-layout-divider-strong);
     }
 
     &:focus-visible {
