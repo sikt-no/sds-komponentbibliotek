@@ -37,6 +37,6 @@
     "build:tokens": "node bin/build.mjs"
   },
   "devDependencies": {
-    "style-dictionary": "^5.0.4"
+    "style-dictionary": "^5.1.0"
   }
 }
