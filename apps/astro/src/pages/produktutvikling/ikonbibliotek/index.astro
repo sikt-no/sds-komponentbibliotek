@@ -13,7 +13,10 @@ const categories = [...new Set(config.map((item) => item.category))];
 
 <Layout title={pageTitle}>
   <Hero
-    breadcrumbs={[{ title: "Designsystem", href: "/" }, { title: "Utvikling" }]}
+    breadcrumbs={[
+      { title: "Designsystem", href: "/" },
+      { title: "Produktutvikling" },
+    ]}
     heading={pageTitle}
     slot="hero"
   >

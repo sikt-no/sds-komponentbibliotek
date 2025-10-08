@@ -44,35 +44,35 @@ const visuellIdentitetMenu: MenuItemType[] = [
   { name: "Komposisjon" },
 ];
 
-const utviklingMenu: MenuItemType[] = [
+const produktutviklingMenu: MenuItemType[] = [
   {
     name: "Designtokens",
-    url: "/utvikling/designtokens",
+    url: "/produktutvikling/designtokens",
     icon: <NutIcon className="sds-icon" aria-hidden />,
   },
   {
     name: "Størrelse og layout",
-    url: "/utvikling/storrelse-og-layout",
+    url: "/produktutvikling/storrelse-og-layout",
     icon: <ArrowsInLineHorizontalIcon className="sds-icon" aria-hidden />,
   },
   {
     name: "Fargesystem",
-    url: "/utvikling/fargesystem",
+    url: "/produktutvikling/fargesystem",
     icon: <PaletteIcon className="sds-icon" aria-hidden />,
   },
   {
     name: "Typografi",
-    url: "/utvikling/typografi",
+    url: "/produktutvikling/typografi",
     icon: <TextAaIcon className="sds-icon" aria-hidden />,
   },
   {
     name: "Ikonbibliotek",
-    url: "/utvikling/ikonbibliotek",
+    url: "/produktutvikling/ikonbibliotek",
     icon: <DotsNineIcon className="sds-icon" aria-hidden />,
   },
   {
     name: "Komponenter",
-    url: "/utvikling/komponenter",
+    url: "/produktutvikling/komponenter",
     icon: <SquaresFourIcon className="sds-icon" aria-hidden />,
   },
   {
@@ -129,8 +129,11 @@ export const Menu = ({ pathname }: PathnameType) => {
         ))}
       </MenuGroup>
 
-      <MenuGroup aria-label="Sidenavigasjon, Utvikling" heading="Utvikling">
-        {utviklingMenu.map((item) => (
+      <MenuGroup
+        aria-label="Sidenavigasjon, Produktutvikling"
+        heading="Produktutvikling"
+      >
+        {produktutviklingMenu.map((item) => (
           <MenuItem key={item.name} {...item} pathname={pathname} />
         ))}
       </MenuGroup>
