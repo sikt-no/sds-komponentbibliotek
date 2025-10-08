@@ -3,8 +3,8 @@ export default {
     layout: {
       page: {
         default: {
-          $value: "{_color.base.neutral.97-100}",
-          dark: "{_color.base.neutral.0-100}",
+          $value: "{_color.base.neutral.95-100}",
+          dark: "{_color.base.neutral.10-100}",
         },
         overlay: {
           $value: "{_color.base.neutral.0-25}",
@@ -30,11 +30,11 @@ export default {
       background: {
         default: {
           $value: "{_color.base.neutral.100-100}",
-          dark: "{_color.base.neutral.14-100}",
+          dark: "{_color.base.neutral.15-100}",
         },
         primary: {
           $value: "{_color.base.purple.95-100}",
-          dark: "{_color.base.neutral.19-100}",
+          dark: "{_color.base.neutral.25-100}",
         },
         neutral: {
           $value: "{_color.base.neutral.92-100}",

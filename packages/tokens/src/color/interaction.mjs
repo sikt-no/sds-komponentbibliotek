@@ -71,7 +71,7 @@ export default {
           },
           pressed: {
             $value: "{_color.base.neutral.80-100}",
-            dark: "{_color.base.neutral.24-100}",
+            dark: "{_color.base.neutral.25-100}",
           },
         },
         transparent: {
@@ -85,7 +85,7 @@ export default {
           },
           pressed: {
             $value: "{_color.base.neutral.80-100}",
-            dark: "{_color.base.neutral.24-100}",
+            dark: "{_color.base.neutral.25-100}",
           },
         },
       },
