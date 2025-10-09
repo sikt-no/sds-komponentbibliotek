@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.3.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.3.0...@sikt/sds-checkbox@3.3.1) (2025-10-09)
+
+### Bug Fixes
+
+- update border color token ([629a582](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/629a582023f405acdec8bede427e285847795891))
+
 ## [3.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.2.1...@sikt/sds-checkbox@3.3.0) (2025-09-09)
 
 ### Features
