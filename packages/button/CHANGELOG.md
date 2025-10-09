@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.4.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.4.0...@sikt/sds-button@4.4.1) (2025-10-09)
+
+### Bug Fixes
+
+- **button:** justify content correctly on mobile for icon left button ([0f0bae4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0f0bae4ecfad9bc337782880c9177be0db4199ab))
+
 ## [4.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.3.1...@sikt/sds-button@4.4.0) (2025-10-06)
 
 ### Features
