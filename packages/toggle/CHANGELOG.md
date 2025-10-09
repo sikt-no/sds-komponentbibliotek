@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.1.2...@sikt/sds-toggle@6.1.3) (2025-10-09)
+
+### Bug Fixes
+
+- update border color token ([629a582](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/629a582023f405acdec8bede427e285847795891))
+
 ## [6.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.1.1...@sikt/sds-toggle@6.1.2) (2025-09-09)
 
 ### Bug Fixes
