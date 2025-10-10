@@ -9,6 +9,14 @@ import {
   Paragraph,
 } from "@sikt/sds-core";
 import { ListItem, OrderedList, UnorderedList } from "@sikt/sds-list";
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableHeader,
+  TableCell,
+  TableRow,
+} from "@sikt/sds-table";
 export const MdxComponents = {
   a: Link,
   h1: Heading1,
@@ -21,4 +29,10 @@ export const MdxComponents = {
   ol: OrderedList,
   p: Paragraph,
   ul: UnorderedList,
+  table: Table,
+  thead: TableHead,
+  tbody: TableBody,
+  th: TableHeader,
+  td: TableCell,
+  tr: TableRow,
 };
