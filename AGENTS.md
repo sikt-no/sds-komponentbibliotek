@@ -73,3 +73,4 @@ packages/component/
 - `npm run test` Run unit tests: API & accessibility (Jest)
 - `npm run test:unit -- -- packages/component/**/*.test.tsx` Run single component unit test suite
 - `npm run test:e2e` Run end-to-end tests: visual regression & accessibility (Playwright)
+- `npm run test:e2e -- -- packages/component/` Run single component end-to-end test suite
