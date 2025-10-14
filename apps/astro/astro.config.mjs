@@ -24,7 +24,6 @@ export default defineConfig({
     }),
   ],
   site: siteUrl,
-  trailingSlash: "never",
   server: {
     open: true,
     headers: {
