@@ -15,11 +15,13 @@ export const components = {
   ),
 };
 
-import { Button, ButtonGroup } from "@sikt/sds-button";
 import { Hero } from "../../components";
 
 <Hero
-  breadcrumbs={[{ title: "Designsystem", href: "/" }, { title: "Visuell identitet" }]}
+  breadcrumbs={[
+    { title: "Designsystem", href: "/" },
+    { title: "Visuell identitet" },
+  ]}
   heading={frontmatter.pageTitle}
 >
   Sikt som virksomhet kan ikke styre hvordan omverden oppfatter oss – merkevaren
@@ -27,10 +29,6 @@ import { Hero } from "../../components";
   mennesker opplever og deler dette. Derfor er det viktig å være konsekvent,
   oppriktig og helhetlig. På den måten øker sjansene for at publikums oppfatning
   samsvarer med det vi som virksomhet ønsker å kommunisere.
-
-  <ButtonGroup>
-    <Button variant="strong" disabled>Last ned logopakke</Button>
-  </ButtonGroup>
 </Hero>
 
 ## Primærlogo
