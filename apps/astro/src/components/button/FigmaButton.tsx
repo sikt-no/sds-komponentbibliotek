@@ -10,7 +10,7 @@ export const FigmaButton = ({
       variant={variant}
       iconVariant={iconVariant}
       icon={<FigmaLogoIcon className="sds-icon" aria-hidden />}
-      href="https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem"
+      href="https://www.figma.com/files/1167338716494500240/project/466688625"
     >
       Se skisser i Figma
     </ButtonLink>
