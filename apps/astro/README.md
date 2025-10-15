@@ -95,32 +95,19 @@ pageTitle: "The title of the page"
 ---
 ```
 
-And a component mapping:
+And component mapping:
 
 ```jsx
-import {
-  Link,
-  Heading1,
-  Heading2,
-  Heading3,
-  Heading4,
-  Heading5,
-  Heading6,
-  Paragraph,
-} from "@sikt/sds-core";
-import { ListItem, OrderedList, UnorderedList } from "@sikt/sds-list";
+import { Picture } from "astro:assets";
+import ImageCard from "../../components/card/ImageCard.astro";
+import { MdxComponents } from "../../layouts/_components/mdx/MdxComponents";
 export const components = {
-  a: Link,
-  h1: Heading1,
-  h2: Heading2,
-  h3: Heading3,
-  h4: Heading4,
-  h5: Heading5,
-  h6: Heading6,
-  li: ListItem,
-  ol: OrderedList,
-  p: Paragraph,
-  ul: UnorderedList,
+  ...MdxComponents,
+  img: (props) => (
+    <ImageCard>
+      <Picture formats={["avif", "webp"]} widths={[240, 540]} {...props} />
+    </ImageCard>
+  ),
 };
 ```
 
