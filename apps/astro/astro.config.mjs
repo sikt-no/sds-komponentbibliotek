@@ -42,6 +42,5 @@ export default defineConfig({
   },
   vite: {
     plugins: [svgr()],
-    ssr: { external: ["@sikt/sds-tokens"] },
   },
 });
