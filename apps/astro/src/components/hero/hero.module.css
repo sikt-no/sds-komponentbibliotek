@@ -10,7 +10,3 @@
   flex-direction: column;
   gap: var(--sds-space-gap-medium);
 }
-
-.heading {
-  word-break: break-all;
-}
