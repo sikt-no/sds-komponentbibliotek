@@ -28,16 +28,20 @@ Guidelines for coding agents.
 ## Component structure
 
 ```
-packages/component/
-├── playwright/
-└── Component.spec.ts
-├── src/
-├── Component.tsx
-├── Component.test.tsx
-└── component.pcss
-├── stories/
-└── Component.stories.tsx
-└── index.ts
+/
+├── packages/component/
+│   ├── playwright/
+│   │   └── Component.spec.ts
+│   ├── src/
+│   │   ├── Component.tsx
+│   │   ├── Component.test.tsx
+│   │   └── component.pcss
+│   ├── stories/
+│   │   └── Component.stories.tsx
+│   ├── CHANGELOG.md
+│   ├── index.ts
+│   ├── package.json
+│   └── README.md
 ```
 
 ## Setup
