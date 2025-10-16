@@ -5,7 +5,13 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import matomo from "astro-matomo";
 import svgr from "vite-plugin-svgr";
+import { loadEnv } from "vite";
 
+const { PUBLIC_STORYBOOK_URL } = loadEnv(
+  process.env.NODE_ENV ?? "",
+  process.cwd(),
+  "",
+);
 const siteUrl = "https://designsystem.sikt.no";
 
 // https://astro.build/config
@@ -39,6 +45,10 @@ export default defineConfig({
       "X-Frame-Options": "DENY",
       "X-XSS-Protection": "1; mode=block",
     },
+  },
+  redirects: {
+    "/produktutvikling/komponenter/dialog": `${PUBLIC_STORYBOOK_URL}?path=/docs/components-dialog--docs`,
+    "/produktutvikling/komponenter/header": `${PUBLIC_STORYBOOK_URL}?path=/docs/components-header--docs`,
   },
   vite: {
     plugins: [svgr()],
