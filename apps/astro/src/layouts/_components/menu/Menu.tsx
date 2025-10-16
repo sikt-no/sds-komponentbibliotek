@@ -61,6 +61,11 @@ const produktutviklingMenu: MenuItemType[] = [
     icon: <PaletteIcon className="sds-icon" aria-hidden />,
   },
   {
+    name: "Fargetokens",
+    url: "/produktutvikling/fargetokens",
+    icon: <PaletteIcon className="sds-icon" aria-hidden />,
+  },
+  {
     name: "Typografi",
     url: "/produktutvikling/typografi",
     icon: <TextAaIcon className="sds-icon" aria-hidden />,
