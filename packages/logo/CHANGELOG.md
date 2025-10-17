@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-logo@2.2.1...@sikt/sds-logo@2.2.2) (2025-10-17)
+
+### Bug Fixes
+
+- **logo:** correct color ([52d66f1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/52d66f1c6453a6d5e03a7efdef3a50c7a6371a84))
+
 ## [2.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-logo@2.2.0...@sikt/sds-logo@2.2.1) (2025-09-30)
 
 ### Bug Fixes
