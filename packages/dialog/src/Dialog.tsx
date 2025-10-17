@@ -89,7 +89,6 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     const wrapperRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [isScrolling, setIsScrolling] = useState<boolean>(false);
-    const [isOpen, setIsOpen] = useState<boolean>(open);
 
     useImperativeHandle(
       ref,
@@ -98,13 +97,13 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     );
 
     const handleBackdropClick = () => {
-      if (modal && closedby == "any" && isOpen) {
+      if (modal && closedby == "any" && open) {
         onClose();
       }
     };
 
     const handleEscapeKey = () => {
-      if (modal && closedby != "none" && isOpen) {
+      if (modal && closedby != "none" && open) {
         onClose();
       }
     };
@@ -131,7 +130,6 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
       }
 
       checkScroll();
-      setIsOpen(open);
       document.body.style.overflow = open && modal ? "hidden" : "unset";
 
       return () => {
