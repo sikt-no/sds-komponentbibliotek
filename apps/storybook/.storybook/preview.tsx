@@ -48,6 +48,9 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    docs: {
+      codePanel: true,
+    },
     options: {
       storySort: {
         order: [
