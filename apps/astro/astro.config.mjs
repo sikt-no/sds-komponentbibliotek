@@ -49,6 +49,7 @@ export default defineConfig({
   redirects: {
     "/produktutvikling/komponenter/dialog": `${PUBLIC_STORYBOOK_URL}?path=/docs/components-dialog--docs`,
     "/produktutvikling/komponenter/header": `${PUBLIC_STORYBOOK_URL}?path=/docs/components-header--docs`,
+    "/produktutvikling/komponenter/logo": `${PUBLIC_STORYBOOK_URL}?path=/docs/components-logo--docs`,
   },
   vite: {
     plugins: [svgr()],

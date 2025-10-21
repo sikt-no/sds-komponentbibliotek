@@ -35,7 +35,7 @@ import { GuidePanel } from "@sikt/sds-message";
 
 Header er et svært vanlig pattern både på nettsider og i webapplikasjoner.
 
-Headeren sørger for lett tilgjengelig navigasjon, og er ofte “sticky” som betyr at den følger med når brukeren scroller nedover siden. I tillegg til navigasjon inneholder header-komponenter ofte funksjonalitet som innlogging og søk.
+Headeren sørger for lett tilgjengelig navigasjon, og er ofte "sticky" som betyr at den følger med når brukeren scroller nedover siden. I tillegg til navigasjon inneholder header-komponenter ofte funksjonalitet som innlogging og søk.
 
 Siden det er stor variasjon i innhold og funksjon i header på tvers av løsninger ville en enkelt komponent blitt veldig kompleks. I stedet har vi laget en enkel komponent som gir felles layout, og kan inneholde subkomponenter etter behov.
 
@@ -60,7 +60,7 @@ Selv om headeren er et vanlig pattern er det stor variasjon i innhold og funksjo
 
 | Navn                       | Påkrevd | Beskrivelse                                                                                                           |
 | -------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------- |
-| Produktlogo                | Ja      | Logo, bruker [logo-komponent]()                                                                                       |
+| Produktlogo                | Ja      | Logo, bruker [logo-komponent](/produktutvikling/komponenter/logo)                                                     |
 | Navigasjon/Meny            | Nei     | Om siden/applikasjonen har en hovednavigasjon bør den ligge i header                                                  |
 | Søk                        | Nei     | Om siden/applikasjonen har søkefunksjon er det sterkt anbefalt at den ligger i header                                 |
 | Innloggingslenke/-funksjon | Nei     | Om det finnes skal den ligge i header                                                                                 |
@@ -96,7 +96,7 @@ Plasseringen av søk mot midten lar deg åpne et tekstfelt som skalerer mot vens
 
 #### Navigering fra produktlogo
 
-Å klikke på logoen for å gå “tilbake til start” er en veldig innarbeidet konvensjon på internett. Logoen skal som regel være en navigasjonslenke tilbake til landingssiden, eller en annen side som gir mening for vanlig bruksmønster i applikasjonen, som en oversikttside eller et dashboard.
+Å klikke på logoen for å gå "tilbake til start" er en veldig innarbeidet konvensjon på internett. Logoen skal som regel være en navigasjonslenke tilbake til landingssiden, eller en annen side som gir mening for vanlig bruksmønster i applikasjonen, som en oversikttside eller et dashboard.
 
 Ikke bruk produktlogoen som lenke for å åpne menyen eller annen modal funksjonalitet, selv om det kan være fristende for å spare plass.
 
