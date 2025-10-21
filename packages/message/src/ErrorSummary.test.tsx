@@ -13,16 +13,20 @@ describe("Message ErrorSummary", () => {
 
   describe("api", () => {
     it("should render", async () => {
-      render(<ErrorSummary data-testid="test">Foo</ErrorSummary>);
+      render(<ErrorSummary>Foo</ErrorSummary>);
 
       expect(screen.getByText("Foo")).toHaveClass("sds-message__message");
     });
   });
 
   it("should render container", async () => {
-    render(<ErrorSummary data-testid="test" />);
+    render(<ErrorSummary data-testid="test">Foo</ErrorSummary>);
 
-    expect(screen.getByTestId("test")).toHaveAttribute("aria-live", "polite");
+    expect(screen.getByTestId("test")).toHaveAttribute("tabindex", "-1");
+    expect(screen.getByTestId("test").parentElement).toHaveAttribute(
+      "aria-live",
+      "polite",
+    );
   });
 
   it("should have class name", async () => {

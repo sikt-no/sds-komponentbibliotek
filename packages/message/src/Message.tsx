@@ -46,10 +46,12 @@ const Message = ({
   callToAction,
   variant,
   type,
+  role,
+  "aria-live": ariaLive,
   ...rest
 }: MessageProps) => {
   return (
-    <div {...rest}>
+    <div role={role} aria-live={ariaLive}>
       {children && (
         <div
           className={clsx(
@@ -58,6 +60,7 @@ const Message = ({
             `sds-message--${type}`,
             className,
           )}
+          {...rest}
         >
           <span
             className="sds-message__icon"
@@ -95,7 +98,13 @@ export const ApplicationStatus = ({
 );
 
 export const ErrorSummary = (props: ErrorSummaryProps) => (
-  <Message aria-live="polite" {...props} variant="critical" type="box" />
+  <Message
+    aria-live="polite"
+    tabIndex={-1}
+    {...props}
+    variant="critical"
+    type="box"
+  />
 );
 
 export const GuidePanel = (props: GuidePanelProps) => (

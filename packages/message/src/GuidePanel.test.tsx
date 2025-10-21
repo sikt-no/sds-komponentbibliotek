@@ -28,7 +28,9 @@ describe("Message GuidePanel", () => {
 
     it("should have class name", async () => {
       const { container } = render(
-        <GuidePanel className="test-class-name">Foo</GuidePanel>,
+        <GuidePanel variant="info" className="test-class-name">
+          Foo
+        </GuidePanel>,
       );
 
       expect(

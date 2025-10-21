@@ -31,3 +31,23 @@ export const ErrorSummary: Story = {
     ),
   },
 };
+
+export const ErrorSummaryWithSubmit: Story = {
+  args: {
+    ...ErrorSummary.args,
+  },
+  render: (args) => {
+    return (
+      <>
+        <Component {...args} id="id" />
+        <button
+          onClick={() => {
+            document.getElementById("id")?.focus();
+          }}
+        >
+          Submit with error
+        </button>
+      </>
+    );
+  },
+};

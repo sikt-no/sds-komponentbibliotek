@@ -33,15 +33,17 @@ describe("Message Alert", () => {
     });
 
     it("should render container", async () => {
-      render(<Alert data-testid="test" />);
+      render(<Alert variant="critical" />);
 
-      expect(screen.getByTestId("test")).toHaveRole("alert");
+      expect(screen.getByRole("alert")).toBeInTheDocument();
       expect(screen.queryByText("Bar")).not.toBeInTheDocument();
     });
 
     it("should have class name", async () => {
       const { container } = render(
-        <Alert className="test-class-name">Foo</Alert>,
+        <Alert variant="critical" className="test-class-name">
+          Foo
+        </Alert>,
       );
 
       expect(
