@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@2.0.2...@sikt/sds-message@2.1.0) (2025-10-21)
+
+### Features
+
+- **error-summary:** add tabindex=-1 & focus style ([fb27dff](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fb27dffbc425f5d7431828ef8c66bf424111e29c))
+
+### Bug Fixes
+
+- **link:** underline position ([45992d7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/45992d7dad0bf762f115dfcd43ee602d87fc7219))
+
 ## [2.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-message@2.0.1...@sikt/sds-message@2.0.2) (2025-10-06)
 
 ### Bug Fixes
