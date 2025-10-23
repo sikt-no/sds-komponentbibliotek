@@ -57,3 +57,4 @@ export const FilterListSection = ({
     </>
   );
 };
+FilterListSection.displayName = "FilterListSection";

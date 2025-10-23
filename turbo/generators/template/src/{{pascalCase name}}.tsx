@@ -16,3 +16,5 @@ export const {{pascalCase name}} = ({ className, ...rest }: {{pascalCase name}}P
     />
   );
 };
+
+{{pascalCase name}}.displayName = "{{pascalCase name}}";

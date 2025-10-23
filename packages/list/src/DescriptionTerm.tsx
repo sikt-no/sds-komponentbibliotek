@@ -16,3 +16,4 @@ export const DescriptionTerm = ({
     </dt>
   );
 };
+DescriptionTerm.displayName = "DescriptionTerm";

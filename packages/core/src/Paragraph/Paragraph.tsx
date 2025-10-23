@@ -79,3 +79,4 @@ export const Paragraph = ({
     </Component>
   );
 };
+Paragraph.displayName = "Paragraph";

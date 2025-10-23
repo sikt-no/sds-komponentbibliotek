@@ -107,3 +107,4 @@ export const Pagination = ({
     </nav>
   );
 };
+Pagination.displayName = "Pagination";

@@ -9,3 +9,5 @@ export interface TableHeaderProps
 export const TableHeader = ({ className, ...rest }: TableHeaderProps) => {
   return <th className={clsx("sds-table__header", className)} {...rest} />;
 };
+
+TableHeader.displayName = "TableHeader";

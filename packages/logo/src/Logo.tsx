@@ -60,3 +60,4 @@ export const Logo = ({
     </div>
   );
 };
+Logo.displayName = "Logo";

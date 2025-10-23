@@ -122,3 +122,4 @@ export const FileListItem = ({
     </li>
   );
 };
+FileListItem.displayName = "FileListItem";

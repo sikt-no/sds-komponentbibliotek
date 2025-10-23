@@ -32,3 +32,5 @@ export const BreadcrumbItem = ({
     </li>
   );
 };
+
+BreadcrumbItem.displayName = "BreadcrumbItem";

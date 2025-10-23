@@ -41,3 +41,5 @@ export const TabList = ({
     </div>
   );
 };
+
+TabList.displayName = "TabList";

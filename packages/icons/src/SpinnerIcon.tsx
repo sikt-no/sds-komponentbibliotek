@@ -7,3 +7,4 @@ export const SpinnerIcon = ({ className, ...rest }: IconProps) => (
     {...rest}
   />
 );
+SpinnerIcon.displayName = "SpinnerIcon";

@@ -33,3 +33,5 @@ export const Table = ({
     </div>
   );
 };
+
+Table.displayName = "Table";

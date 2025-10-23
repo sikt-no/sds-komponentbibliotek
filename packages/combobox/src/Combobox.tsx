@@ -103,6 +103,7 @@ export function Combobox<T extends object>({
     </FormField>
   );
 }
+Combobox.displayName = "Combobox";
 
 export function ComboboxItem({
   className,
@@ -112,11 +113,14 @@ export function ComboboxItem({
     <ListBoxItem className={clsx("sds-combobox__item", className)} {...props} />
   );
 }
+ComboboxItem.displayName = "ComboboxItem";
 
 export function ComboboxHeader({ children }: { children: ReactNode }) {
   return <Header className="sds-combobox__header">{children}</Header>;
 }
+ComboboxHeader.displayName = "ComboboxHeader";
 
 export function ComboboxSection({ children }: { children: ReactNode }) {
   return <ListBoxSection>{children}</ListBoxSection>;
 }
+ComboboxSection.displayName = "ComboboxSection";

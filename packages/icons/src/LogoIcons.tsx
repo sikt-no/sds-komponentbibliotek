@@ -17,3 +17,4 @@ export const LinkedInLogo = ({ color, className, ...rest }: LogoIconsProps) => (
     {...rest}
   />
 );
+LinkedInLogo.displayName = "LinkedInLogo";

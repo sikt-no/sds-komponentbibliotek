@@ -87,3 +87,5 @@ export const Tabs = ({
     </TabsContext.Provider>
   );
 };
+
+Tabs.displayName = "Tabs";

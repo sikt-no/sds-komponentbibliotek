@@ -8,3 +8,5 @@ export interface TableRowProps extends HTMLAttributes<HTMLTableRowElement> {
 export const TableRow = ({ className, ...rest }: TableRowProps) => {
   return <tr className={clsx("sds-table__row", className)} {...rest} />;
 };
+
+TableRow.displayName = "TableRow";

@@ -70,3 +70,4 @@ export const FilterListCategory = ({
     </FilterListExpand>
   );
 };
+FilterListCategory.displayName = "FilterListCategory";

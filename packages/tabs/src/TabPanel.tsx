@@ -35,3 +35,5 @@ export const TabPanel = ({ children, className, ...rest }: TabPanelProps) => {
     </div>
   );
 };
+
+TabPanel.displayName = "TabPanel";

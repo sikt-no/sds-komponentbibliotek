@@ -9,3 +9,5 @@ export interface TableFootProps
 export const TableFoot = ({ className, ...rest }: TableFootProps) => {
   return <tfoot className={clsx("sds-table__foot", className)} {...rest} />;
 };
+
+TableFoot.displayName = "TableFoot";

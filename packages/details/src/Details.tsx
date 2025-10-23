@@ -33,3 +33,4 @@ export const Details = ({
     </details>
   );
 };
+Details.displayName = "Details";

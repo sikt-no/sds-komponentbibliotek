@@ -9,3 +9,5 @@ export interface TableCellProps extends TdHTMLAttributes<HTMLTableCellElement> {
 export const TableCell = ({ className, ...rest }: TableCellProps) => {
   return <td className={clsx("sds-table__cell", className)} {...rest} />;
 };
+
+TableCell.displayName = "TableCell";

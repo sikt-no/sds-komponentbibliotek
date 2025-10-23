@@ -36,7 +36,12 @@ const List = ({
 
 export const UnorderedList = (props: ListProps) =>
   List({ ...props, listType: "unordered" });
+UnorderedList.displayName = "UnorderedList";
+
 export const OrderedList = (props: ListProps) =>
   List({ ...props, listType: "ordered" });
+OrderedList.displayName = "OrderedList";
+
 export const DescriptionList = (props: ListProps) =>
   List({ ...props, listType: "description" });
+DescriptionList.displayName = "DescriptionList";

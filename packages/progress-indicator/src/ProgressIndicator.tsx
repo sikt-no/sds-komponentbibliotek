@@ -103,3 +103,4 @@ export const ProgressIndicator = ({
     </E>
   );
 };
+ProgressIndicator.displayName = "ProgressIndicator";

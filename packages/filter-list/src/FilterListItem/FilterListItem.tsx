@@ -61,3 +61,4 @@ export const FilterListItem = ({
     </div>
   );
 };
+FilterListItem.displayName = "FilterListItem";

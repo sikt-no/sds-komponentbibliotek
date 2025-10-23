@@ -31,3 +31,5 @@ export const ButtonGroup = ({
     </div>
   );
 };
+
+ButtonGroup.displayName = "ButtonGroup";

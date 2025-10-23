@@ -10,3 +10,4 @@ export interface FilterListProps {
 export const FilterList = ({ children, className }: FilterListProps) => {
   return <div className={clsx("sds-filter-list", className)}>{children}</div>;
 };
+FilterList.displayName = "FilterList";

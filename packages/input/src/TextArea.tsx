@@ -40,7 +40,7 @@ export type TextAreaProps = TextAreaBaseProps &
       }
   );
 
-const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (
     {
       className,
@@ -109,5 +109,3 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   },
 );
 TextArea.displayName = "TextArea";
-
-export { TextArea };

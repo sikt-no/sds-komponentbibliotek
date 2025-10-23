@@ -41,3 +41,4 @@ export const Section = ({
     </section>
   );
 };
+Section.displayName = "Section";

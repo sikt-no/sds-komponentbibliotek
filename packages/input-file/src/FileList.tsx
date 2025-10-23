@@ -25,3 +25,4 @@ export const FileList = ({
     </figure>
   );
 };
+FileList.displayName = "FileList";

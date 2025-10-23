@@ -116,3 +116,5 @@ export const Tab = ({
     </button>
   );
 };
+
+Tab.displayName = "Tab";

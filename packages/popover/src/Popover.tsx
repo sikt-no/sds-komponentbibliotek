@@ -111,3 +111,4 @@ export const Popover = ({
     </>
   );
 };
+Popover.displayName = "Popover";

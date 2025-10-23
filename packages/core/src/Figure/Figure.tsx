@@ -52,3 +52,4 @@ export const Figure = ({
     </figure>
   );
 };
+Figure.displayName = "Figure";

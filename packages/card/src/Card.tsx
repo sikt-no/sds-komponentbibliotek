@@ -50,3 +50,5 @@ export const Card = ({
     </section>
   );
 };
+
+Card.displayName = "Card";

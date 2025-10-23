@@ -43,3 +43,5 @@ export const Badge = ({
     </span>
   );
 };
+
+Badge.displayName = "Badge";

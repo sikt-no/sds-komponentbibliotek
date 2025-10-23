@@ -18,3 +18,4 @@ export const HelpText = ({ className, error, ...rest }: HelpTextProps) => {
     />
   );
 };
+HelpText.displayName = "HelpText";

@@ -50,3 +50,4 @@ export const ProgressStep = ({
     </li>
   );
 };
+ProgressStep.displayName = "ProgressStep";

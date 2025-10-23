@@ -84,6 +84,7 @@ const Message = ({
 export const Alert = (props: AlertProps) => (
   <Message role="alert" {...props} type="box" />
 );
+Alert.displayName = "Alert";
 
 export const ApplicationStatus = ({
   className,
@@ -96,6 +97,7 @@ export const ApplicationStatus = ({
     className={clsx("sds-message--application-status", className)}
   />
 );
+ApplicationStatus.displayName = "ApplicationStatus";
 
 export const ErrorSummary = (props: ErrorSummaryProps) => (
   <Message
@@ -106,7 +108,9 @@ export const ErrorSummary = (props: ErrorSummaryProps) => (
     type="box"
   />
 );
+ErrorSummary.displayName = "ErrorSummary";
 
 export const GuidePanel = (props: GuidePanelProps) => (
   <Message {...props} type="box" />
 );
+GuidePanel.displayName = "GuidePanel";
