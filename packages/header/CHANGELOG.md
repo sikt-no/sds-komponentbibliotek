@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@4.0.1...@sikt/sds-header@4.0.2) (2025-10-27)
+
+### Bug Fixes
+
+- **header:** right slot should always be right ([2d4b63f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2d4b63fd74627b48266f52da142ac66ed431b20c))
+
 ## [4.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@4.0.0...@sikt/sds-header@4.0.1) (2025-10-17)
 
 ### Bug Fixes
