@@ -61,9 +61,7 @@ export const Header = ({
               <div className="sds-header__content-left-item">{leftSlot}</div>
             )}
           </div>
-          {children && (
-            <div className="sds-header__content-mid">{children}</div>
-          )}
+          <div className="sds-header__content-mid">{children}</div>
           {rightSlot && (
             <div className="sds-header__content-right">{rightSlot}</div>
           )}
