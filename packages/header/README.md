@@ -8,65 +8,29 @@ npm i -s @sikt/sds-header
 
 ### React
 
-The Header uses a grid layout to position two children in the middle and on the right side of the header, while the left is used for a logo, link or text as defined in the props of the `Header` element.
-
-Links inserted in the `HeaderNav` element will automatically be styled as `TabLink`s in desktop view, with the mobile menu view remaining unstyled. The `HeaderNav` element is optional, but should only be used when also using the `HeaderCollapsibleMenu` element.
-
-When using the header with navigation links, the following pattern can be used to insert content into a collapsible menu that supports mobile view.
-
-```jsx
-import { Header, HeaderCollapsibleMenu, HeaderNav } from "@sikt/sds-header";
-import "@sikt/sds-header/dist/index.css";
-import "@sikt/sds-logo/dist/index.css";
-
-<Header>
-  <HeaderCollapsibleMenu>
-    <HeaderNav>
-      <a href="">Link 1</a>
-      <a href="">Link 2</a>
-    </HeaderNav>
-    <Button>Button</Button>
-  </HeaderCollapsibleMenu>
-</Header>;
-```
-
-The menu automatically closes if a link, button or form inside the menu is clicked or submitted, this also accounts for keyboard navigation. Should you want to ensure the menu closes on some other condition, it's possible to use the `setMenuOpen` method, which is provided together with `menuOpen` through React context.
-
-```jsx
-import { useContext } from "react";
-import { HeaderCollapsibleMenu } from "@sikt/sds-header";
-
-const { menuOpen, setMenuOpen } = useContext(MenuOpenContext);
-```
-
-To use the header with general content, do the following. This does not include the collapsible mobile menu.
+Simple header
 
 ```jsx
 import { Header } from "@sikt/sds-header";
 import "@sikt/sds-header/dist/index.css";
 import "@sikt/sds-logo/dist/index.css";
 
-<Header>
-  <div>This content is positioned in the middle of the header</div>
-  <div>This content is positioned on the right side of the header</div>
-</Header>;
+<Header />;
 ```
 
-### Stylesheets & custom markup
+Header with product name
 
-Import stylesheet:
-
-```css
-@import url("@sikt/sds-header");
-@import url("@sikt/sds-logo");
+```jsx
+<Header logoText="Min produkt" logoHref="//path/to/my/product" />
 ```
 
-Create custom markup:
+Header with hamburger that can be positioned left `leftSlot` or right `rigthSlot`.  
+Children are positioned in the middle.
 
-```html
-<header class="sds-header">
-  <div class="sds-header__content">
-    <!-- content goes here -->
-  </div>
-</header>
+```jsx
+<Header leftSlot={<MyOwnHamburgerComponent />}>
+  Content positioned in the middle of the header
+</Header>
 ```
+
+There is also a `topSlot` for adding an external menu above the header and a `applicationStatus` prop for adding a status below the header.
