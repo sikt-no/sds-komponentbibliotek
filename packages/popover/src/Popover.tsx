@@ -8,6 +8,7 @@ import {
   useId,
   useRef,
   useState,
+  RefObject,
 } from "react";
 import { useFocusWithin } from "react-aria";
 import "./popover.pcss";
@@ -19,6 +20,8 @@ export interface PopoverProps extends HTMLAttributes<HTMLButtonElement> {
   popover?: "" | "auto" | "manual";
   anchor?: boolean;
   onClick?: (e: MouseEvent) => void;
+  targetProps?: HTMLAttributes<HTMLElement>;
+  targetRef?: RefObject<HTMLElement | null>;
 }
 
 export type TooltipProps = PopoverProps;
@@ -31,6 +34,8 @@ export const Popover = ({
   anchor = true,
   onClick,
   tooltip = false,
+  targetProps,
+  targetRef,
   ...rest
 }: PopoverProps & { tooltip?: boolean }) => {
   const id = useId();
@@ -128,7 +133,12 @@ export const Popover = ({
         {children}
       </button>
       <span
-        ref={popoverRef}
+        ref={(node) => {
+          popoverRef.current = node;
+          if (targetRef) {
+            targetRef.current = node;
+          }
+        }}
         className={clsx(
           "sds-popover__target",
           anchor && "sds-popover__target--anchor",
@@ -137,6 +147,7 @@ export const Popover = ({
         id={id}
         // INFO: This is a hack to solve that React/TypeScript does not support this native attribute
         {...popoverAttr}
+        {...targetProps}
         style={{ inset }}
       >
         {target}
