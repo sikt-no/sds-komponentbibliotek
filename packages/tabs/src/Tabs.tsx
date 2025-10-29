@@ -47,6 +47,11 @@ export const Tabs = ({
   const id = useId();
 
   useEffect(() => {
+    setSelectedIndex(defaultIndex);
+    setPreviousIndex(defaultIndex);
+  }, [defaultIndex]);
+
+  useEffect(() => {
     if (onChange && previousIndex !== selectedIndex) {
       onChange(selectedIndex);
     }
@@ -68,7 +73,8 @@ export const Tabs = ({
     >
       <div className={clsx("sds-tabs", className)} {...rest}>
         {Children.map(arrayChildren, (child, index) => {
-          if (isValidElement(child) && index > 0) {
+          const isTabListElement = index === 0;
+          if (isValidElement(child) && !isTabListElement) {
             return (
               <>
                 {cloneElement(

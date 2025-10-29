@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { useState } from "react";
 import { Badge } from "../../badge/index";
 import { InfoIcon } from "../../icons/index";
 import { Tab, TabList, TabPanel, Tabs, TabsProps } from "../index";
@@ -50,5 +51,33 @@ export const WithBadge: Story = {
       <TabPanel key={1}>First Content</TabPanel>,
       <TabPanel key={2}>Second Content</TabPanel>,
     ],
+  },
+};
+
+export const Controlled: Story = {
+  args: {
+    ...Default.args,
+  },
+  render: (args) => {
+    const [defaultIndex, setDefaultIndex] = useState(0);
+
+    return (
+      <>
+        <button
+          onClick={() => {
+            setDefaultIndex(defaultIndex + 1);
+          }}
+        >
+          Change index+1
+        </button>
+        <Tabs
+          {...args}
+          defaultIndex={defaultIndex}
+          onChange={(selectedIndex) => {
+            setDefaultIndex(selectedIndex);
+          }}
+        />
+      </>
+    );
   },
 };
