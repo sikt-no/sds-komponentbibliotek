@@ -23,4 +23,5 @@ export default defineConfig({
   minify: "terser",
   sourcemap: true,
   treeshake: true,
+  tsconfig: "./tsconfig.tsup.json",
 });
