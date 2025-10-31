@@ -17,6 +17,14 @@ export const components = {
 
 import { Hero } from "../../../components";
 import { GuidePanel } from "@sikt/sds-message";
+import {
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  Table,
+} from "@sikt/sds-table";
 
 <Hero
   breadcrumbs={[
@@ -58,14 +66,61 @@ Selv om headeren er et vanlig pattern er det stor variasjon i innhold og funksjo
 
 ### Vanlige innholdstyper for header
 
-| Navn                       | Påkrevd | Beskrivelse                                                                                                           |
-| -------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------- |
-| Produktlogo                | Ja      | Logo, bruker [logo-komponent](/produktutvikling/komponenter/logo)                                                     |
-| Navigasjon/Meny            | Nei     | Om siden/applikasjonen har en hovednavigasjon bør den ligge i header                                                  |
-| Søk                        | Nei     | Om siden/applikasjonen har søkefunksjon er det sterkt anbefalt at den ligger i header                                 |
-| Innloggingslenke/-funksjon | Nei     | Om det finnes skal den ligge i header                                                                                 |
-| Språkvalg                  | Nei     | Om det finnes skal den ligge i header, med mindre den ligger i footer eller det finnes en egen side for innstillinger |
-| Varsler/Notifications      | Nei     | Om det finnes skal den ligge i header                                                                                 |
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableHeader>Navn</TableHeader>
+      <TableHeader>Påkrevd</TableHeader>
+      <TableHeader>Beskrivelse</TableHeader>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell data-th="Navn">Produktlogo</TableCell>
+      <TableCell data-th="Påkrevd">Ja</TableCell>
+      <TableCell data-th="Beskrivelse">
+        Logo, bruker [logo-komponent](/produktutvikling/komponenter/logo)
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell data-th="Navn">Navigasjon/Meny</TableCell>
+      <TableCell data-th="Påkrevd">Nei</TableCell>
+      <TableCell data-th="Beskrivelse">
+        Om siden/applikasjonen har en hovednavigasjon bør den ligge i header
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell data-th="Navn">Søk</TableCell>
+      <TableCell data-th="Påkrevd">Nei</TableCell>
+      <TableCell data-th="Beskrivelse">
+        Om siden/applikasjonen har søkefunksjon er det sterkt anbefalt at den
+        ligger i header
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell data-th="Navn">Innloggingslenke/-funksjon</TableCell>
+      <TableCell data-th="Påkrevd">Nei</TableCell>
+      <TableCell data-th="Beskrivelse">
+        Om det finnes skal den ligge i header
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell data-th="Navn">Språkvalg</TableCell>
+      <TableCell data-th="Påkrevd">Nei</TableCell>
+      <TableCell data-th="Beskrivelse">
+        Om det finnes skal den ligge i header, med mindre den ligger i footer
+        eller det finnes en egen side for innstillinger
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell data-th="Navn">Varsler/Notifications</TableCell>
+      <TableCell data-th="Påkrevd">Nei</TableCell>
+      <TableCell data-th="Beskrivelse">
+        Om det finnes skal den ligge i header
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 
 ### Plassering og prioritering av innhold
 

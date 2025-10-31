@@ -33,6 +33,6 @@ export const MdxComponents = {
   thead: TableHead,
   tbody: TableBody,
   th: TableHeader,
-  td: TableCell,
+  td: (props) => <TableCell {...props} data-th={undefined} />,
   tr: TableRow,
 };
