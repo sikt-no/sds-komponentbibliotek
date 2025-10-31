@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.5.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.4.0...@sikt/sds-tabs@3.5.0) (2025-10-31)
+
+### Features
+
+- **tabs:** make tabs controlled by changing defaultIndex ([0a0b2de](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0a0b2de8d8fcb4d765b71dd75ded7561069c278b))
+
 ## [3.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.3.0...@sikt/sds-tabs@3.4.0) (2025-10-06)
 
 ### Features
