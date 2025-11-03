@@ -1,5 +1,5 @@
 default:
-  image: node:22.21.0
+  image: node:24.11.0
   interruptible: true
 
 include:
