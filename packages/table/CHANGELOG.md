@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-table@2.1.0...@sikt/sds-table@2.1.1) (2025-11-03)
+
+### Bug Fixes
+
+- **table:** mobile style wrap & cell gap ([d78b31c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d78b31cc82422575bee56d0a66a4283950db4273))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-table@2.0.2...@sikt/sds-table@2.1.0) (2025-05-20)
 
 ### Features
