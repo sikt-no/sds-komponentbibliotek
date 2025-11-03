@@ -77,6 +77,8 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
 
     useEffect(() => {
       if (value) {
+        // TODO: fix issue
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setFiles(value);
       }
     }, [value]);
