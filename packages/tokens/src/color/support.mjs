@@ -22,7 +22,7 @@ export default {
         },
       },
       warning: {
-        default: {
+        strong: {
           $value: "{_color.base.yellow.50-100}",
           dark: "{_color.base.yellow.50-100}",
         },
