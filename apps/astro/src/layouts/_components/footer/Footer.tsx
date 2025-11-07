@@ -31,8 +31,8 @@ export const Footer = ({ currentHref }: { currentHref: string }) => {
           </li>
           <li>
             <Link
-              href="/laget-med/"
-              aria-current={currentHref === "/laget-med/" && "page"}
+              href="/laget-med-kjaerlighet/"
+              aria-current={currentHref === "/laget-med-kjaerlighet/" && "page"}
             >
               Laget med kjærlighet ❤️{isJune && <>🧡💛💚💙💜</>}
             </Link>

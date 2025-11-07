@@ -21,12 +21,6 @@ export const team: Contributors[] = [
       id: "3c0ef45c-1308-4819-a376-4491af62c917",
     },
     {
-      name: "Kim",
-      role: "Design",
-      team: "Designsystem",
-      id: "0fe4eba1-3490-4d6a-b9f9-c822dab9b066",
-    },
-    {
       name: "Eivind",
       role: "Tilgjengelighet",
       team: "Designsystem",
@@ -44,6 +38,12 @@ export const team: Contributors[] = [
 
 export const contributors: Contributors[] = [
   [
+    {
+      name: "Kim",
+      role: "Design",
+      team: "Designsystem",
+      id: "0fe4eba1-3490-4d6a-b9f9-c822dab9b066",
+    },
     { name: "Vegar", role: "Teknologi", team: "Designsystem" },
     { name: "Hanne", role: "Design", team: "Designsystem" },
     { name: "Petter S.", role: "Design", team: "Designsystem" },
