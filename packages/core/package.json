@@ -35,7 +35,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-slot": "^1.2.4",
     "@sikt/sds-tokens": "^5.3.0",
     "sanitize.css": "^13.0.0"
   },
