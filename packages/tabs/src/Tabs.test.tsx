@@ -13,6 +13,8 @@ const renderComponent = ({
   defaultIndex,
   isSelectOnFocus,
   onChange,
+  onClick,
+  ...rest
 }: Partial<TabsProps> & Partial<TabProps>) =>
   render(
     <Tabs
@@ -21,9 +23,10 @@ const renderComponent = ({
       defaultIndex={defaultIndex}
       isSelectOnFocus={isSelectOnFocus}
       onChange={onChange}
+      {...rest}
     >
       <TabList aria-label="test-aria-label">
-        <Tab icon={icon} badge={badge}>
+        <Tab icon={icon} badge={badge} onClick={onClick}>
           Tab 1
         </Tab>
         <Tab>Tab 2</Tab>
@@ -105,6 +108,16 @@ describe("Tabs", () => {
 
       expect(changeHandler).toHaveBeenCalled();
       expect(changeHandler).toHaveBeenCalledWith(1);
+    });
+
+    it("calls click handler", async () => {
+      const user = userEvent.setup();
+      const clickHandler = jest.fn();
+      renderComponent({ onClick: clickHandler });
+
+      await user.click(screen.getByText("Tab 1"));
+
+      expect(clickHandler).toHaveBeenCalled();
     });
 
     it("handles keyboard navigation", async () => {
