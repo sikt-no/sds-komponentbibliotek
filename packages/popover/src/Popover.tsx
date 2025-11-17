@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { useFocusWithin } from "react-aria";
 import "./popover.pcss";
 
 export interface PopoverProps extends HTMLAttributes<HTMLButtonElement> {
@@ -20,6 +21,8 @@ export interface PopoverProps extends HTMLAttributes<HTMLButtonElement> {
   onClick?: (e: MouseEvent) => void;
 }
 
+export type TooltipProps = PopoverProps;
+
 export const Popover = ({
   className,
   children,
@@ -27,13 +30,38 @@ export const Popover = ({
   popover = "auto",
   anchor = true,
   onClick,
+  tooltip = false,
   ...rest
-}: PopoverProps) => {
+}: PopoverProps & { tooltip?: boolean }) => {
   const id = useId();
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const popoverRef = useRef<HTMLSpanElement | null>(null);
   const [inset, setInset] = useState<string | number>("auto auto auto auto");
   const popovertargetAttr = { popoverTarget: id };
   const popoverAttr = { popover };
+
+  const handleOnFocus = () => {
+    if (!tooltip) {
+      return;
+    }
+
+    if (anchor) {
+      setPopoverStylePosition();
+    }
+    popoverRef.current?.showPopover();
+  };
+  const handleOnBlur = () => {
+    if (!tooltip) {
+      return;
+    }
+
+    popoverRef.current?.hidePopover();
+  };
+
+  const { focusWithinProps } = useFocusWithin({
+    onFocusWithin: handleOnFocus,
+    onBlurWithin: handleOnBlur,
+  });
 
   // TODO: Replace with https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor when good browser support
   const setPopoverStylePosition = useCallback(() => {
@@ -77,7 +105,11 @@ export const Popover = ({
   });
 
   return (
-    <>
+    <span
+      {...focusWithinProps}
+      onMouseEnter={handleOnFocus}
+      onMouseLeave={handleOnBlur}
+    >
       <button
         ref={buttonRef}
         className={clsx("sds-popover", className)}
@@ -96,6 +128,7 @@ export const Popover = ({
         {children}
       </button>
       <span
+        ref={popoverRef}
         className={clsx(
           "sds-popover__target",
           anchor && "sds-popover__target--anchor",
@@ -108,7 +141,10 @@ export const Popover = ({
       >
         {target}
       </span>
-    </>
+    </span>
   );
 };
 Popover.displayName = "Popover";
+
+export const Tooltip = (props: PopoverProps) => <Popover {...props} tooltip />;
+Tooltip.displayName = "Tooltip";

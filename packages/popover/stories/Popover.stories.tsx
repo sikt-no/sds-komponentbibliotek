@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import { Popover, PopoverProps } from "../index";
+import { Popover, PopoverProps, Tooltip as TooltipComp } from "../index";
 
 const meta: Meta = {
   title: "Components/Popover",
@@ -22,4 +22,12 @@ export const Abbreviation: Story = {
     children: <abbr>SDS</abbr>,
     target: "Sikt Design System",
   },
+};
+
+export const Tooltip: Story = {
+  args: {
+    children: "Tooltip",
+    target: "Target",
+  },
+  render: (args) => <TooltipComp {...args} />,
 };

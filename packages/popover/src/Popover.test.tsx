@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import { Popover } from "./Popover";
+import { Popover, Tooltip } from "./Popover";
 
 describe("Popover", () => {
   describe("a11y", () => {
@@ -97,6 +97,102 @@ describe("Popover", () => {
         "style",
         `inset: auto -${window.innerWidth}px -${window.innerHeight}px auto;`,
       );
+    });
+
+    it("should call show/hide popover on focus/blur for tooltip", () => {
+      const showPopover = jest.fn();
+      const hidePopover = jest.fn();
+      HTMLElement.prototype.showPopover = showPopover;
+      HTMLElement.prototype.hidePopover = hidePopover;
+
+      render(
+        <Tooltip target="Bar" data-testid="test">
+          Foo
+        </Tooltip>,
+      );
+
+      act(() => {
+        screen.getByText("Foo").focus();
+      });
+
+      expect(showPopover).toHaveBeenCalled();
+
+      act(() => {
+        screen.getByText("Foo").blur();
+      });
+
+      expect(hidePopover).toHaveBeenCalled();
+    });
+
+    it("should not call show/hide popover on focus/blur", () => {
+      const showPopover = jest.fn();
+      const hidePopover = jest.fn();
+      HTMLElement.prototype.showPopover = showPopover;
+      HTMLElement.prototype.hidePopover = hidePopover;
+
+      render(
+        <Popover target="Bar" data-testid="test">
+          Foo
+        </Popover>,
+      );
+
+      act(() => {
+        screen.getByText("Foo").focus();
+      });
+
+      expect(showPopover).not.toHaveBeenCalled();
+
+      act(() => {
+        screen.getByText("Foo").blur();
+      });
+
+      expect(hidePopover).not.toHaveBeenCalled();
+    });
+
+    it("should call show/hide popover on mouseenter/leave for tooltip", async () => {
+      const user = userEvent.setup();
+
+      const showPopover = jest.fn();
+      const hidePopover = jest.fn();
+      HTMLElement.prototype.showPopover = showPopover;
+      HTMLElement.prototype.hidePopover = hidePopover;
+
+      render(
+        <Tooltip target="Bar" data-testid="test" anchor={false}>
+          Foo
+        </Tooltip>,
+      );
+
+      await user.hover(screen.getByText("Foo"));
+
+      expect(showPopover).toHaveBeenCalled();
+
+      await user.unhover(screen.getByText("Foo"));
+
+      expect(hidePopover).toHaveBeenCalled();
+    });
+
+    it("should not call show/hide popover on mouseenter/leave", async () => {
+      const user = userEvent.setup();
+
+      const showPopover = jest.fn();
+      const hidePopover = jest.fn();
+      HTMLElement.prototype.showPopover = showPopover;
+      HTMLElement.prototype.hidePopover = hidePopover;
+
+      render(
+        <Popover target="Bar" data-testid="test">
+          Foo
+        </Popover>,
+      );
+
+      await user.hover(screen.getByText("Foo"));
+
+      expect(showPopover).not.toHaveBeenCalled();
+
+      await user.unhover(screen.getByText("Foo"));
+
+      expect(hidePopover).not.toHaveBeenCalled();
     });
   });
 });
