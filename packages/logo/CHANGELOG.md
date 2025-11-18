@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-logo@2.2.2...@sikt/sds-logo@2.2.3) (2025-11-18)
+
+### Bug Fixes
+
+- **logo:** remove clipPath and the need for id in logo svg ([0699563](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/06995637f38e2941ec66fd3b8f9722a1be03ab0d))
+
 ## [2.2.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-logo@2.2.1...@sikt/sds-logo@2.2.2) (2025-10-17)
 
 ### Bug Fixes
