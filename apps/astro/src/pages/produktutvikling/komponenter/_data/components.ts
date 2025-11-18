@@ -145,4 +145,8 @@ export const components = [
     name: "Toggle Switch",
     url: `${storybookUrl}?path=/docs/components-toggle-toggleswitch--docs`,
   },
+  {
+    name: "Tooltip",
+    url: `${storybookUrl}?path=/docs/components-popover--docs#tooltip`,
+  },
 ];
