@@ -29,7 +29,7 @@
     "@sikt/sds-section": "^3.0.1",
     "@sikt/sds-table": "^2.1.0",
     "@sikt/sds-tabs": "^3.0.4",
-    "@sikt/sds-tokens": "^5.2.0",
+    "@sikt/sds-tokens": "^6.0.0",
     "astro": "^5.15.4",
     "astro-matomo": "^1.9.0",
     "canvas-confetti": "^1.9.4",
