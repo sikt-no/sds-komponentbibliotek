@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.1.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.1.2...@sikt/sds-core@5.1.3) (2025-11-18)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-tokens ([ec890fc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ec890fcef908d4eba1595b0482e94f169bf22aac))
+- **deps:** update dependency @radix-ui/react-slot to ^1.2.4 ([ef6ac55](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ef6ac55b200e006b30638c7ec6a3050ce099ff9f))
+
 ## [5.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.1.1...@sikt/sds-core@5.1.2) (2025-10-31)
 
 ### Bug Fixes
