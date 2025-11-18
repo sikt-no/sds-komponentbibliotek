@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@5.3.0...@sikt/sds-tokens@6.0.0) (2025-11-18)
+
+### ⚠ BREAKING CHANGES
+
+- **color:** fix incorrect name on support-warning-default to -strong
+
+### Features
+
+- **color:** change neutral base tokens ([7fdd27e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7fdd27e4cf91e3ba59bd5502db3af2fb7f79b3ce))
+
+### Bug Fixes
+
+- **color:** fix incorrect name on support-warning-default to -strong ([82ee051](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/82ee0511b216e33c1d93742cbcd2f236a26ec3c3))
+
 ## [5.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@5.2.0...@sikt/sds-tokens@5.3.0) (2025-09-08)
 
 ### Features
