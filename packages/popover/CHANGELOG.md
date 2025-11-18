@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.1.3...@sikt/sds-popover@1.2.0) (2025-11-18)
+
+### Features
+
+- **popover:** add tooltip component ([a48801f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a48801fc4e9731e1d0196a2ac12a3a3996fd3668))
+
 ## [1.1.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.1.2...@sikt/sds-popover@1.1.3) (2025-09-02)
 
 ### Bug Fixes
