@@ -9,7 +9,7 @@ const { title } = Astro.props;
 
 <Layout title={title}>
   <div class="page">
-    <nav aria-label="Sidenavigasjon">
+    <nav aria-label="Sidenavigasjon" class="nav">
       <Details className="menu-mobile" size="small" summary="Meny">
         <div class="menu">
           <Menu pathname={pathname} />
@@ -38,6 +38,10 @@ const { title } = Astro.props;
 
   .page {
     display: grid;
+  }
+
+  .nav {
+    background-color: var(--sds-color-layout-background-default);
   }
 
   .menu {
