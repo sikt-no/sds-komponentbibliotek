@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.5.0...@sikt/sds-tabs@4.0.0) (2025-11-19)
+
+### ⚠ BREAKING CHANGES
+
+- **tabs:** add forwardref and onClick to tab component
+
+### Features
+
+- **tabs:** add forwardref and onClick to tab component ([8a80e40](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8a80e4044bbe4efc778e228366a30743cbf507d6))
+- **tabs:** collapse tabs when too small space ([c6f36da](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c6f36daccf0025dfecb048fa30f2fa9dfd0a4bab))
+
 ## [3.5.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.4.0...@sikt/sds-tabs@3.5.0) (2025-10-31)
 
 ### Features
