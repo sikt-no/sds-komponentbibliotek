@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.1.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.1.3...@sikt/sds-core@5.1.4) (2025-11-19)
+
+### Bug Fixes
+
+- root background color to page-default ([bb10545](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bb10545b6a95751df31090ab7d0651a052051a23)), closes [#187](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/187)
+
 ## [5.1.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.1.2...@sikt/sds-core@5.1.3) (2025-11-18)
 
 ### Bug Fixes
