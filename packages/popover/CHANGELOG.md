@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.2.0...@sikt/sds-popover@1.3.0) (2025-11-19)
+
+### Features
+
+- **popover:** add target element props ([0d38c75](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0d38c75faf392dfadcb215bbd7ee8d27e37b2110))
+
 ## [1.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.1.3...@sikt/sds-popover@1.2.0) (2025-11-18)
 
 ### Features
