@@ -17,6 +17,8 @@ export const components = {
 
 import { Hero } from "../../../components";
 import { GuidePanel } from "@sikt/sds-message";
+import { Link } from "@sikt/sds-core";
+export const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
 
 <Hero
   breadcrumbs={[
@@ -79,6 +81,14 @@ Denne typen har alltid lukkeknapp og minst én action-knapp. Action-knappen vil 
 - Varsling om kritisk feil
 - Bekrefte innsending av skjema som ikke kan endres etter innsending
 
+![Modal dialog som visuelt blokkerer innhold](../../../assets/images/produktutvikling/monstre/dialog/modal.svg)
+
+<p>
+  <Link href={`${storybookUrl}?path=/story/components-dialog--default`}>
+    Eksempel på modal dialog som visuelt blokkerer innhold i Storybook
+  </Link>
+</p>
+
 {/* TODO: [Link til demo av skjema-bekreftelse]() */}
 
 ### Modal dialog som ikke visuelt blokkerer innhold
@@ -87,6 +97,8 @@ Denne typen har ofte lukkeknapp eller toggle, men lukkes også om du klikker ute
 
 - Lokal navigasjon som legger seg oppå sideinnhold
 - Dropdown-lister for select, comboboks etc.
+
+![Modal dialog som ikke visuelt blokkerer innhold](../../../assets/images/produktutvikling/monstre/dialog/modal-without-backdrop.svg)
 
 {/* TODO: [Link til demo av lokal navigasjon]() */}
 
@@ -97,6 +109,14 @@ Har lukkeknapp og ofte én eller flere action-knapper. Du kan fortsatt bruke res
 - Chatbot-vindu
 - Feedback-skjema
 
+![Ikke-modal dialog som legger seg oppå innhold](../../../assets/images/produktutvikling/monstre/dialog/non-modal.svg)
+
+<p>
+  <Link href={`${storybookUrl}?path=/story/components-dialog--non-modal`}>
+    Eksempel på ikke-modal dialog i Storybook
+  </Link>
+</p>
+
 {/* TODO: [Link til demo av feedbackskjema]() */}
 
 ### Ikke-modal dialog som legger seg inne i sideinnholdet, i stedet for oppå
@@ -106,5 +126,7 @@ Denne typen har lukkeknapp eller toggle for å vise/skjule dialogen. Den har oft
 - Toolbars
 - Filtreringspaneler for lister eller tabeller
 - Oppsummering av skjemaer
+
+![Ikke-modal dialog som legger seg inne i sideinnholdet](../../../assets/images/produktutvikling/monstre/dialog/inside-content.svg)
 
 {/* TODO: [Link til demo av filterpanel]() */}
