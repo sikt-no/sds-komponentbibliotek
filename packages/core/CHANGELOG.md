@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.1.4...@sikt/sds-core@5.2.0) (2025-11-24)
+
+### Features
+
+- **link:** add icon prop ([5f07eb2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5f07eb26b5bfe4a85ac3a81c36016d01269629ad))
+
+### Bug Fixes
+
+- **blockquote:** change missing font sizes ([92d02b4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/92d02b4e972dc4708f3002558858c4abe4265d92))
+- **breadcrumbs:** update @sikt/sds-core with link icon ([7e63c46](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7e63c46dcd5b0343d6755325478da7bebecf10db)), closes [#188](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/188)
+- **link:** correct gap ([5c669c4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5c669c49f79f8eb807e011dfe5eeb08e75c69686))
+
 ## [5.1.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.1.3...@sikt/sds-core@5.1.4) (2025-11-19)
 
 ### Bug Fixes
