@@ -39,7 +39,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
           isNavigation && "sds-typography-link--navigation",
           isExternal && "sds-typography-link--external",
           noIcon && "sds-typography-link--no-icon",
-          iconLeft && "sds-typography-link--icon-left",
+          icon && iconLeft && "sds-typography-link--icon-left",
           className,
         )}
         {...rest}
