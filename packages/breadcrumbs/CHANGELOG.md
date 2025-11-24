@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-breadcrumbs@2.1.0...@sikt/sds-breadcrumbs@2.1.1) (2025-11-24)
+
+### Bug Fixes
+
+- **breadcrumbs:** update @sikt/sds-core with link icon ([7e63c46](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7e63c46dcd5b0343d6755325478da7bebecf10db)), closes [#188](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/188)
+- **link:** underline position ([45992d7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/45992d7dad0bf762f115dfcd43ee602d87fc7219))
+
 ## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-breadcrumbs@2.0.3...@sikt/sds-breadcrumbs@2.1.0) (2025-05-20)
 
 ### Features
