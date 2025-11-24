@@ -81,5 +81,27 @@ describe("Link", () => {
       expect(screen.getByTestId("test")).toHaveRole("button");
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
+
+    it("should have left icon element", async () => {
+      render(
+        <Link href="#" data-testid="test" icon="icon" iconVariant="left">
+          Foo
+        </Link>,
+      );
+
+      expect(screen.getByText("icon")).toHaveClass("sds-typography-link__icon");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
+
+    it("should have right icon element", async () => {
+      render(
+        <Link href="#" data-testid="test" icon="icon" iconVariant="right">
+          Foo
+        </Link>,
+      );
+
+      expect(screen.getByText("icon")).toHaveClass("sds-typography-link__icon");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
   });
 });

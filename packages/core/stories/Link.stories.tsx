@@ -1,3 +1,4 @@
+import { NavigateToNextIcon } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Link, LinkProps } from "../index";
 
@@ -42,5 +43,12 @@ export const Mail: Story = {
   args: {
     ...Default.args,
     href: "mailto:#",
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    ...Default.args,
+    icon: <NavigateToNextIcon />,
   },
 };

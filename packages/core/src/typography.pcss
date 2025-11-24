@@ -191,8 +191,28 @@
     --link-icon-margin: var(--sds-space-gap-minimal);
 
     color: var(--sds-color-text-primary);
+    display: inline-flex;
     gap: var(--link-icon-margin);
     text-decoration: underline;
+
+    &--icon-left {
+      flex-direction: row-reverse;
+    }
+
+    &__icon {
+      align-items: center;
+      display: inline-flex;
+      font-size: var(--link-icon-size);
+      justify-content: center;
+
+      &--right {
+        margin-left: var(--link-icon-margin);
+      }
+
+      &--left {
+        margin-right: var(--link-icon-margin);
+      }
+    }
 
     &::after,
     &::before {
@@ -221,6 +241,7 @@
     &--external,
     &--navigation {
       &::after {
+        align-self: center;
         content: "";
         display: inline-block;
         mask-position: center right;
@@ -251,6 +272,7 @@
     &[href^="mailto:"],
     &[href^="tel:"] {
       &::before {
+        align-self: center;
         content: "";
         display: inline-block;
         mask-position: center left;
@@ -280,6 +302,7 @@
     &--no-icon {
       &[target="_blank"] {
         &::after {
+          align-self: unset;
           content: unset;
           mask-image: unset;
           margin: unset;
@@ -294,6 +317,7 @@
       &[href^="mailto:"],
       &[href^="tel:"] {
         &::before {
+          align-self: unset;
           content: unset;
           mask-image: unset;
           margin: unset;

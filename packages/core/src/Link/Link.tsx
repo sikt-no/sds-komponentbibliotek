@@ -1,4 +1,4 @@
-import { Slot } from "@radix-ui/react-slot";
+import { Slot, Slottable } from "@radix-ui/react-slot";
 import { clsx } from "clsx/lite";
 import { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
 
@@ -9,6 +9,8 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   isExternal?: boolean;
   noIcon?: boolean;
   asChild?: boolean;
+  icon?: ReactNode;
+  iconVariant?: "right" | "left";
 }
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
@@ -19,12 +21,15 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
       isNavigation,
       isExternal,
       noIcon,
+      icon,
+      iconVariant = "right",
       asChild = false,
       ...rest
     }: LinkProps,
     ref,
   ) => {
     const Comp = asChild ? Slot : "a";
+    const iconLeft = iconVariant === "left";
 
     return (
       <Comp
@@ -34,11 +39,22 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
           isNavigation && "sds-typography-link--navigation",
           isExternal && "sds-typography-link--external",
           noIcon && "sds-typography-link--no-icon",
+          iconLeft && "sds-typography-link--icon-left",
           className,
         )}
         {...rest}
       >
-        {children}
+        <Slottable>{children}</Slottable>
+        {icon && (
+          <span
+            className={clsx(
+              "sds-typography-link__icon",
+              `sds-typography-link__icon--${iconVariant}`,
+            )}
+          >
+            {icon}
+          </span>
+        )}
       </Comp>
     );
   },
