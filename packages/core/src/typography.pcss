@@ -188,11 +188,10 @@
 
   &-link {
     --link-icon-size: 1.3em;
-    --link-icon-margin: var(--sds-space-gap-minimal);
 
     color: var(--sds-color-text-primary);
     display: inline-flex;
-    gap: var(--link-icon-margin);
+    gap: var(--sds-space-gap-minimal);
     text-decoration: underline;
 
     &--icon-left {
@@ -204,14 +203,6 @@
       display: inline-flex;
       font-size: var(--link-icon-size);
       justify-content: center;
-
-      &--right {
-        margin-left: var(--link-icon-margin);
-      }
-
-      &--left {
-        margin-right: var(--link-icon-margin);
-      }
     }
 
     &::after,
@@ -251,7 +242,6 @@
         min-height: var(--link-icon-size);
         width: var(--link-icon-size);
         height: var(--link-icon-size);
-        margin-left: var(--link-icon-margin);
         vertical-align: sub;
       }
     }
@@ -282,7 +272,6 @@
         min-height: var(--link-icon-size);
         width: var(--link-icon-size);
         height: var(--link-icon-size);
-        margin-right: var(--link-icon-margin);
         vertical-align: sub;
       }
     }
