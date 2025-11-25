@@ -19,14 +19,10 @@
 }
 
 .sds-icon-logo {
-  --icon-color: #000;
+  --icon-color: light-dark(#000, #fff);
 
   fill: var(--icon-color);
   stroke: var(--icon-color);
-
-  @media (prefers-color-scheme: dark) {
-    --icon-color: #fff;
-  }
 
   &--color-white {
     --icon-color: #fff;
@@ -34,33 +30,5 @@
 
   &--color-black {
     --icon-color: #000;
-  }
-}
-
-[data-color-scheme="dark"] {
-  .sds-icon-logo {
-    --icon-color: #fff;
-
-    &--color-white {
-      --icon-color: #fff;
-    }
-
-    &--color-black {
-      --icon-color: #000;
-    }
-  }
-}
-
-[data-color-scheme="light"] {
-  .sds-icon-logo {
-    --icon-color: #000;
-
-    &--color-white {
-      --icon-color: #fff;
-    }
-
-    &--color-black {
-      --icon-color: #000;
-    }
   }
 }
