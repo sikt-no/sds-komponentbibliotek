@@ -22,7 +22,7 @@ export const Footer = ({
 
   return (
     <footer className={clsx("sds-footer", className)} {...rest}>
-      <div className="sds-footer__content" data-color-scheme="dark">
+      <div className="sds-footer__content">
         <div>
           {logoHref ? (
             <Link href={logoHref} className="sds-footer__logo-link">

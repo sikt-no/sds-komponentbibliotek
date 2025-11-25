@@ -12,7 +12,7 @@ export const Header = ({ currentHref }: { currentHref: string }) => {
           className={styles.nav}
           aria-label="Navigasjon, tekniskt dokumentasjon"
         >
-          <ul className={styles.ul} data-color-scheme="dark">
+          <ul className={styles.ul}>
             <li>
               <Link href="/" aria-current={currentHref === "/" && "page"}>
                 Designsystem

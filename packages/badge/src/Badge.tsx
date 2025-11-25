@@ -34,7 +34,6 @@ export const Badge = ({
         `sds-badge--visibility-${visibility}`,
         className,
       )}
-      data-color-scheme={variant === "warning" && "light"}
       role={children === null || children === undefined ? "img" : undefined}
       {...rest}
     >

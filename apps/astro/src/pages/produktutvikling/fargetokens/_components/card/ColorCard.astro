@@ -12,13 +12,13 @@ const { token } = Astro.props;
     <Badge visibility="strong">{tokenName(token[1])}</Badge>
   </div>
   <div class="content">
-    <div class="item" data-color-scheme="light">
+    <div class="item item-light">
       <Swatch color={token[1].$value} />
       <div>
         <Token token={token[1]} />
       </div>
     </div>
-    <div class="item" data-color-scheme="dark">
+    <div class="item item-dark">
       <Swatch color={token[1].dark} />
       <div>
         <DarkToken token={token[1]} />
@@ -87,5 +87,13 @@ const { token } = Astro.props;
     display: flex;
     gap: var(--sds-space-padding-small);
     padding: var(--sds-space-padding-small);
+  }
+
+  .item-light {
+    color-scheme: only light;
+  }
+
+  .item-dark {
+    color-scheme: only dark;
   }
 </style>

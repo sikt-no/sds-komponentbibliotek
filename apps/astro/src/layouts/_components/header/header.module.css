@@ -15,6 +15,7 @@
 }
 
 .ul {
+  color-scheme: only dark;
   display: flex;
   gap: var(--sds-space-gap-medium);
   list-style: none;

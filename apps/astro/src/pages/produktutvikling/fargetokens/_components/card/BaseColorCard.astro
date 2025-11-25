@@ -13,7 +13,7 @@ const { token } = Astro.props;
     {pascalToKebab(token[1].name)}
   </div>
   <div class="content">
-    <div class="item" data-color-scheme="light">
+    <div class="item">
       <Swatch color={token[1].$value} />
       <div>
         <Token token={token[1]} />
@@ -75,6 +75,7 @@ const { token } = Astro.props;
     align-items: center;
     background-color: var(--sds-color-layout-background-default);
     color: var(--sds-color-text-primary);
+    color-scheme: only light;
     display: flex;
     gap: var(--sds-space-padding-small);
     padding: var(--sds-space-padding-small);

@@ -37,19 +37,6 @@ describe("Badge", () => {
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
 
-    it("should have data-color-scheme=light on variant=warning", async () => {
-      render(
-        <Badge data-testid="test" variant="warning">
-          Foo
-        </Badge>,
-      );
-
-      expect(screen.getByTestId("test")).toHaveAttribute(
-        "data-color-scheme",
-        "light",
-      );
-    });
-
     it("should have img role", async () => {
       render(<Badge icon="icon" aria-label="Foo" />);
 
