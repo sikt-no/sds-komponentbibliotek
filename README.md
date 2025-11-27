@@ -7,9 +7,11 @@ A component library for [Sikt designsystem](https://isikt.sharepoint.com/sites/I
 
 - [Consume](#consume)
   - [Core & Design Tokens](#core--design-tokens)
+    - [Tailwind CSS](#tailwind-css)
   - [React](#react)
-  - [Vue](#vue)
   - [Stylesheets & custom markup](#stylesheets--custom-markup)
+    - htmx
+  - [Vue](#vue)
 - [Accessibility](#accessibility)
 - [Contribute](#contribute)
 - [Security](#security)
@@ -22,7 +24,7 @@ A component library for [Sikt designsystem](https://isikt.sharepoint.com/sites/I
 Install package to be consumed:
 
 ```sh
-npm i -s @sikt/sds-core @sikt/sds-<package-name>
+npm i -s @sikt/sds-{core,<package-name>}
 ```
 
 ### Core & Design Tokens
@@ -37,6 +39,10 @@ Import the [@sikt/sds-core](./packages/core/) package. It contains, among other 
 
 **Note** Design Tokens can be imported in the needed format directly from [@sikt/sds-tokens](./packages/tokens/).
 
+#### Tailwind CSS
+
+[Tailwind CSS](./packages/tokens/README.md#tailwind-css)
+
 ### React
 
 Import component & stylesheet:
@@ -49,10 +55,6 @@ return (
   <Button variant="strong">Hello, World!</Button>;
 );
 ```
-
-### Vue
-
-See custom markup below or go to the [Vue component example](./docs/VUE.md).
 
 ### Stylesheets & custom markup
 
@@ -71,6 +73,18 @@ Create custom markup:
   <span class="sds-button__label">Hello, World!</span>
 </button>
 ```
+
+### Vue
+
+See custom markup below or go to the [Vue component example](./docs/VUE.md).
+
+## Examples
+
+These are example web applications to see how things can be built with Sikt designsystem:
+
+- [designsystem.sikt.no](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/apps/astro) (Astro)
+- [Min kompetanse](https://gitlab.sikt.no/fs/min-kompetanse) (Next.js)
+- [FS Admin](https://gitlab.sikt.no/studieadm/fs-admin) (Next.js)
 
 ## Accessibility
 
