@@ -1,0 +1,70 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../../layouts/PageLayout.astro";
+import { Hero } from "../../../components";
+import { components } from "./_data/components.ts";
+import { ButtonGroup, ButtonLink } from "@sikt/sds-button";
+
+export const prerender = true;
+export async function getStaticPaths() {
+  const komponenter = await getCollection("komponenter");
+  return komponenter.map((entry) => ({
+    params: { id: entry.data.id },
+    props: { entry },
+  }));
+}
+
+const { id } = Astro.params;
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const pkg = await import(
+  `../../../../../../packages/${entry.data.package}/package.json`
+);
+const data = components.find((item) => item.id === id);
+---
+
+<Layout title={entry.data.title}>
+  <Hero
+    breadcrumbs={[
+      { title: "Designsystem", href: "/" },
+      { title: "Produktutvikling" },
+      { title: "Komponenter", href: "/produktutvikling/komponenter" },
+    ]}
+    heading={entry.data.title}
+    slot="hero"
+  >
+    <ButtonGroup variant="left">
+      {
+        data?.figma && (
+          <ButtonLink size="small" href={data.figma}>
+            Figma
+          </ButtonLink>
+        )
+      }
+      <ButtonLink
+        size="small"
+        href={`https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/packages/${entry.data.package}`}
+      >
+        GitLab
+      </ButtonLink>
+      {
+        data?.storybook && (
+          <ButtonLink size="small" href={data.storybook}>
+            Storybook
+          </ButtonLink>
+        )
+      }
+    </ButtonGroup>
+    <ButtonGroup variant="left">
+      <ButtonLink
+        variant="neutral-transparent"
+        size="small"
+        href={`https://www.npmjs.com/package/${pkg.name}`}
+        >{pkg.name}@{pkg.version}</ButtonLink
+      >
+    </ButtonGroup>
+  </Hero>
+
+  <Content />
+</Layout>
