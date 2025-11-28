@@ -6,11 +6,11 @@ include:
   - component: gitlab.sikt.no/platon/ci-components/docker/docker@3.0.0
     inputs:
       ci-registry-image: $CI_REGISTRY_IMAGE
-  - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@3.0.0
+  - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@3.0.2
     inputs:
       image: $CI_REGISTRY_IMAGE
       image_tag: $CI_REGISTRY_TAG
-  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@2.0.0
+  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@2.0.1
     inputs:
       prod-domain: "designsystem.sikt.no"
       test-id: "komponentbibliotek"
