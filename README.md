@@ -56,6 +56,8 @@ return (
 );
 ```
 
+**Note** How you import stylesheets depends on your framework and build tools, make sure to read and understand your frameworks documentation 🤓
+
 ### Stylesheets & custom markup
 
 If you are not able to use the React components, for example if you are using Vue, Angular, Svelte, htmx or even PHP 😱. You can still benefit by using the stylesheets and building your own markup and functionality based on the components CSS class names.
