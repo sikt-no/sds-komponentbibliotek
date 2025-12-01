@@ -62,22 +62,22 @@ export const Controlled: Story = {
     ...Default.args,
   },
   render: (args) => {
-    const [defaultIndex, setDefaultIndex] = useState(0);
+    const [controlledIndex, setControlledIndex] = useState(0);
 
     return (
       <>
         <button
           onClick={() => {
-            setDefaultIndex(defaultIndex + 1);
+            setControlledIndex(controlledIndex + 1);
           }}
         >
           Change index+1
         </button>
         <Tabs
           {...args}
-          defaultIndex={defaultIndex}
+          controlledIndex={controlledIndex}
           onChange={(selectedIndex) => {
-            setDefaultIndex(selectedIndex);
+            setControlledIndex(selectedIndex);
           }}
         />
       </>

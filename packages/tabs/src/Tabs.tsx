@@ -28,6 +28,7 @@ export const TabsContext = createContext<TabsContextType | null>(null);
 export interface TabsProps
   extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
   defaultIndex?: number;
+  controlledIndex?: number;
   isSelectOnFocus?: boolean;
   onChange?: (index: number) => void;
   children: ReactNode;
@@ -36,6 +37,7 @@ export interface TabsProps
 
 export const Tabs = ({
   defaultIndex = 0,
+  controlledIndex,
   onChange,
   isSelectOnFocus = false,
   children,
@@ -47,9 +49,12 @@ export const Tabs = ({
   const id = useId();
 
   useEffect(() => {
-    setSelectedIndex(defaultIndex);
-    setPreviousIndex(defaultIndex);
-  }, [defaultIndex]);
+    if (controlledIndex) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setSelectedIndex(controlledIndex);
+      setPreviousIndex(controlledIndex);
+    }
+  }, [controlledIndex]);
 
   useEffect(() => {
     if (onChange && previousIndex !== selectedIndex) {
