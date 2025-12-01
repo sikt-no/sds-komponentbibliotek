@@ -26,11 +26,11 @@ export const components = [
     url: `${storybookUrl}?path=/docs/components-card--docs`,
   },
   {
-    name: "Checkbox Input",
+    name: "Checkbox",
     url: `${storybookUrl}?path=/docs/components-checkbox-checkbox--docs`,
   },
   {
-    name: "Combobox Input",
+    name: "Combobox",
     url: `${storybookUrl}?path=/docs/components-combobox--docs`,
   },
   {
@@ -102,7 +102,7 @@ export const components = [
     url: `${storybookUrl}?path=/docs/components-progressindicator--docs`,
   },
   {
-    name: "Radio Input",
+    name: "Radio",
     url: `${storybookUrl}?path=/docs/components-radio-radiofieldset--docs`,
   },
   {
@@ -114,7 +114,7 @@ export const components = [
     url: `${storybookUrl}?path=/docs/components-section--docs`,
   },
   {
-    name: "Select Input",
+    name: "Select",
     url: `${storybookUrl}?path=/docs/components-select--docs`,
   },
   {
