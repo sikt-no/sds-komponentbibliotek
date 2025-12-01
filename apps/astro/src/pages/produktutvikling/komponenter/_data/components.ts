@@ -103,7 +103,7 @@ export const components = [
   },
   {
     name: "Radio Input",
-    url: `${storybookUrl}?path=/docs/components-progressindicator--docs`,
+    url: `${storybookUrl}?path=/docs/components-radio-radiofieldset--docs`,
   },
   {
     name: "Screen Reader Only",
