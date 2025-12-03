@@ -11,5 +11,12 @@ export default meta;
 type Story = StoryObj<BadgeProps>;
 
 export const Default: Story = {
+  args: {
+    count: 10,
+    maxCount: 9,
+  },
+};
+
+export const WithoutCount: Story = {
   args: {},
 };

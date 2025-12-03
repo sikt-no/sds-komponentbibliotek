@@ -12,7 +12,6 @@ describe("Badge", () => {
   });
 
   describe("api", () => {
-    /* tests goes here */
     it("should render", async () => {
       render(<Badge data-testid="test" />);
 
@@ -25,6 +24,18 @@ describe("Badge", () => {
       expect(screen.getByTestId("test")).toHaveClass(
         "sds-badge test-class-name",
       );
+    });
+
+    it("should have count", async () => {
+      render(<Badge count={100} />);
+
+      expect(screen.getByText("100")).toBeInTheDocument();
+    });
+
+    it("should have max count", async () => {
+      render(<Badge count={100} maxCount={99} />);
+
+      expect(screen.getByText("99+")).toBeInTheDocument();
     });
   });
 });

@@ -5,7 +5,6 @@ test.describe("Badge", () => {
   const componentSelector = ".sds-badge";
 
   test.describe("a11y", () => {
-    /* tests goes here */
     test("should be accessible", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-badge--default",
@@ -22,10 +21,17 @@ test.describe("Badge", () => {
   });
 
   test.describe("visual", () => {
-    /* tests goes here */
     test("should have screenshot", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-badge--default",
+      );
+
+      await expect(page.locator(componentSelector)).toHaveScreenshot();
+    });
+
+    test("should have screenshot without count", async ({ page }) => {
+      await page.goto(
+        "/iframe.html?viewMode=story&id=components-badge--without-count",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
