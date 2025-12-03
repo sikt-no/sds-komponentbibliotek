@@ -2,6 +2,7 @@
   "name": "@sikt/sds-badge",
   "version": "2.2.1",
   "license": "UNLICENSED",
+  "description": "Badge component, Sikt component library",
   "homepage": "https://designsystem.sikt.no/",
   "repository": {
     "type": "git",
@@ -35,7 +36,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@sikt/sds-core": "^4.6.0"
+    "@sikt/sds-core": "^5.0.0"
   },
   "peerDependencies": {
     "@types/react": "^18.0.0 || ^19.0.0",
