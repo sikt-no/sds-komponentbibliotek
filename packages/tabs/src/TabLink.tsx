@@ -1,15 +1,6 @@
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { type BadgeProps } from "@sikt/sds-badge";
 import { clsx } from "clsx/lite";
-import {
-  AnchorHTMLAttributes,
-  ReactElement,
-  ReactNode,
-  cloneElement,
-  forwardRef,
-  isValidElement,
-  PropsWithChildren,
-} from "react";
+import { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
 import "./tab-link.pcss";
 
 export interface TabLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -51,17 +42,7 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
       >
         {icon && <div className="sds-tabs__tab-icon">{icon}</div>}
         <Slottable>{children}</Slottable>
-        {badge && (
-          <div className="sds-tabs__tab-badge">
-            {isSelected
-              ? isValidElement(badge) &&
-                cloneElement(
-                  badge as ReactElement<PropsWithChildren<BadgeProps>>,
-                  { visibility: "strong" },
-                )
-              : badge}
-          </div>
-        )}
+        {badge && <div className="sds-tabs__tab-badge">{badge}</div>}
       </Comp>
     );
   },

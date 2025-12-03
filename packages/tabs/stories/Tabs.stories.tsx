@@ -48,7 +48,7 @@ export const WithBadge: Story = {
   args: {
     children: [
       <TabList key={0} aria-label="Sample Tabs">
-        <Tab badge={<Badge>Badge</Badge>}>First Tab</Tab>
+        <Tab badge={<Badge count={10} maxCount={9} />}>First Tab</Tab>
         <Tab>Second Tab</Tab>
       </TabList>,
       <TabPanel key={1}>First Content</TabPanel>,

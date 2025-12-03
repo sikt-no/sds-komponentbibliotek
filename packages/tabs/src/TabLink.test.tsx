@@ -35,14 +35,9 @@ describe("TabLink", () => {
       );
     });
 
-    it("should have selected modifier & badge", async () => {
+    it("should have selected modifier", async () => {
       render(
-        <TabLink
-          href="#"
-          isSelected
-          badge={<span>badge</span>}
-          data-testid="test"
-        >
+        <TabLink href="#" isSelected data-testid="test">
           Foo
         </TabLink>,
       );
@@ -50,7 +45,6 @@ describe("TabLink", () => {
       expect(screen.getByTestId("test")).toHaveClass(
         "sds-tab-link sds-tab-link--selected",
       );
-      expect(screen.getByText("badge")).toHaveAttribute("visibility", "strong");
     });
 
     it("should have icon element", async () => {

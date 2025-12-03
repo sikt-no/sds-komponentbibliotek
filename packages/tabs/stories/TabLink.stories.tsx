@@ -30,6 +30,6 @@ export const WithIcon: Story = {
 export const WithBadge: Story = {
   args: {
     ...Default.args,
-    badge: <Badge>Badge</Badge>,
+    badge: <Badge count={10} maxCount={9} />,
   },
 };

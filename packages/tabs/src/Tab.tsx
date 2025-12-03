@@ -1,14 +1,9 @@
-import { type BadgeProps } from "@sikt/sds-badge";
 import { clsx } from "clsx/lite";
 import {
   HTMLAttributes,
   KeyboardEvent,
-  ReactElement,
   ReactNode,
-  cloneElement,
-  isValidElement,
   useContext,
-  PropsWithChildren,
   MouseEvent,
   forwardRef,
 } from "react";
@@ -112,17 +107,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
       >
         {icon && <span className="sds-tabs__tab-icon">{icon}</span>}
         {children}
-        {badge && (
-          <span className="sds-tabs__tab-badge">
-            {isValidElement(badge) &&
-              cloneElement(
-                badge as ReactElement<PropsWithChildren<BadgeProps>>,
-                {
-                  visibility: "strong",
-                },
-              )}
-          </span>
-        )}
+        {badge && <span className="sds-tabs__tab-badge">{badge}</span>}
       </button>
     );
   },
