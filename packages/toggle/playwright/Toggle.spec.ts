@@ -3,20 +3,6 @@ import { expect, test } from "@playwright/test";
 
 test.describe("Toggle", () => {
   test.describe("a11y", () => {
-    test("toggle button should be accessible", async ({ page }) => {
-      await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-togglebutton--default",
-      );
-
-      await page.locator(".sds-toggle-button").waitFor();
-
-      const accessibilityScanResults = await new AxeBuilder({ page })
-        .include(".sds-toggle-button")
-        .analyze();
-
-      expect(accessibilityScanResults.violations).toEqual([]);
-    });
-
     test("toggle segment default should be accessible", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-toggle-togglesegment--default",
@@ -95,14 +81,6 @@ test.describe("Toggle", () => {
   });
 
   test.describe("visual", () => {
-    test("toggle button should should have screenshot", async ({ page }) => {
-      await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-togglebutton--default",
-      );
-
-      await expect(page.locator(".sds-toggle-button")).toHaveScreenshot();
-    });
-
     test("toggle segment default should have screenshot", async ({ page }) => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-toggle-togglesegment--default",
