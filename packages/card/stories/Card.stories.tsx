@@ -22,16 +22,16 @@ export const Default: Story = {
     image: (
       <picture>
         <source
-          srcSet="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII="
+          srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAD0lEQVR4AWK6d+/efxAGAAAA//8tpnlSAAAABklEQVQDACAZBzUcVQ5LAAAAAElFTkSuQmCC"
           type="image/avif"
         />
         <source
-          srcSet="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII="
+          srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAD0lEQVR4AWK6d+/efxAGAAAA//8tpnlSAAAABklEQVQDACAZBzUcVQ5LAAAAAElFTkSuQmCC"
           type="image/webp"
         />
         <img
-          src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAADklEQVR42mNk+A+EQAAADAYCAElV3d0AAAAASUVORK5CYII="
-          alt="Green color"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAD0lEQVR4AWK6d+/efxAGAAAA//8tpnlSAAAABklEQVQDACAZBzUcVQ5LAAAAAElFTkSuQmCC"
+          alt="Placeholder"
         />
       </picture>
     ),
