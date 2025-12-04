@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@4.0.0...@sikt/sds-tabs@5.0.0) (2025-12-04)
+
+### ⚠ BREAKING CHANGES
+
+- **tabs:** change controlled tabs prop from defaultIndex to controlledIndex
+
+### Bug Fixes
+
+- **tabs:** change controlled tabs prop from defaultIndex to controlledIndex ([895388a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/895388ad8d1be193bf819e85803b2a5e9c926942))
+
 ## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@3.5.0...@sikt/sds-tabs@4.0.0) (2025-11-19)
 
 ### ⚠ BREAKING CHANGES
