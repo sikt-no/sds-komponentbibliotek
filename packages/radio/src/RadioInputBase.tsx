@@ -8,11 +8,10 @@ import {
 } from "react";
 import "./radio.pcss";
 
-interface RadioInputBaseBaseProps
-  extends Omit<
-    InputHTMLAttributes<HTMLInputElement>,
-    "onChange" | "aria-label" | "aria-labelledby"
-  > {
+interface RadioInputBaseBaseProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "aria-label" | "aria-labelledby"
+> {
   className?: string;
   name?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;

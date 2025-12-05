@@ -12,14 +12,18 @@ interface BaseParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
   color?: Exclude<keyof typeof tokens.color.text, "on_strong">;
 }
 
-export interface LabelProps
-  extends Omit<BaseParagraphProps, "variant" | "size"> {
+export interface LabelProps extends Omit<
+  BaseParagraphProps,
+  "variant" | "size"
+> {
   variant: "label";
   size?: "default" | "l";
 }
 
-export interface OverlineProps
-  extends Omit<BaseParagraphProps, "variant" | "size"> {
+export interface OverlineProps extends Omit<
+  BaseParagraphProps,
+  "variant" | "size"
+> {
   variant: "overline";
   size?: "default";
 }
@@ -29,8 +33,10 @@ export interface BodyProps extends Omit<BaseParagraphProps, "variant"> {
   size?: "s" | "default" | "l";
 }
 
-export interface DeprecatedParagraphProps
-  extends Omit<BaseParagraphProps, "variant" | "size"> {
+export interface DeprecatedParagraphProps extends Omit<
+  BaseParagraphProps,
+  "variant" | "size"
+> {
   variant?: "small" | "regular" | "large" | "lead";
   size?: undefined;
 }

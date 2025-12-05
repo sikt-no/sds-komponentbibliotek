@@ -4,11 +4,10 @@ import { FieldsetContext } from "./FieldsetContext";
 import "./fieldset.pcss";
 import { HelpText } from "./HelpText";
 
-interface FieldsetBaseProps
-  extends Omit<
-    HTMLAttributes<HTMLFieldSetElement>,
-    "aria-label" | "aria-labelledby"
-  > {
+interface FieldsetBaseProps extends Omit<
+  HTMLAttributes<HTMLFieldSetElement>,
+  "aria-label" | "aria-labelledby"
+> {
   className?: string;
   name?: string;
   errorText?: ReactNode;

@@ -13,11 +13,10 @@ import {
 } from "react";
 import "./checkbox-input.pcss";
 
-interface CheckboxInputBaseProps
-  extends Omit<
-    InputHTMLAttributes<HTMLInputElement>,
-    "onChange" | "aria-label" | "aria-labelledby"
-  > {
+interface CheckboxInputBaseProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "aria-label" | "aria-labelledby"
+> {
   isChecked?: boolean;
   indeterminate?: boolean;
   error?: boolean;

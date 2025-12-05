@@ -4,8 +4,10 @@ import { HelpText } from "./HelpText";
 import { Label } from "./Label";
 import "./form-field.pcss";
 
-export interface FormFieldProps
-  extends Omit<HTMLAttributes<HTMLLabelElement>, "onChange"> {
+export interface FormFieldProps extends Omit<
+  HTMLAttributes<HTMLLabelElement>,
+  "onChange"
+> {
   className?: string;
   /**
    * A label is required, but undefined is allowed for use when a label is provided via `aria-labelledby`.

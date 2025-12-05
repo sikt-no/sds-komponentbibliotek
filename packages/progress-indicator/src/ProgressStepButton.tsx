@@ -1,8 +1,7 @@
 import { clsx } from "clsx/lite";
 import { ButtonHTMLAttributes, forwardRef } from "react";
 
-export interface ProgressStepButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ProgressStepButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   current?: boolean;
   index?: number;
 }

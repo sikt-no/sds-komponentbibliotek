@@ -37,8 +37,10 @@ import {
 } from "react-aria-components";
 import "./input-datepicker.pcss";
 
-interface InputDatepickerBaseProps
-  extends Omit<DatePickerProps<DateValue>, "aria-label" | "aria-labelledby"> {
+interface InputDatepickerBaseProps extends Omit<
+  DatePickerProps<DateValue>,
+  "aria-label" | "aria-labelledby"
+> {
   errorText?: ReactNode;
   helpText?: ReactNode;
   className?: string;

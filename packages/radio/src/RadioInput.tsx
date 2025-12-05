@@ -2,11 +2,10 @@ import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 import useRadioFieldset from "./RadioFieldsetContext";
 import { RadioInputBase } from "./RadioInputBase";
 
-interface RadioInputBaseProps
-  extends Omit<
-    InputHTMLAttributes<HTMLInputElement>,
-    "onChange" | "aria-label" | "aria-labelledby"
-  > {
+interface RadioInputBaseProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "aria-label" | "aria-labelledby"
+> {
   className?: string;
   value: string;
 }

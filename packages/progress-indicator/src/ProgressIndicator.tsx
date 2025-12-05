@@ -13,8 +13,9 @@ import {
 import type { ProgressStepProps } from "./ProgressStep";
 import "./progress-indicator.pcss";
 
-export interface ProgressIndicatorBaseProps
-  extends HTMLAttributes<HTMLDivElement | HTMLDetailsElement> {
+export interface ProgressIndicatorBaseProps extends HTMLAttributes<
+  HTMLDivElement | HTMLDetailsElement
+> {
   className?: string;
   currentIndex: number;
   heading: NonNullable<ReactNode>;

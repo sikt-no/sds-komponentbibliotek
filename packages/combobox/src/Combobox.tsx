@@ -18,11 +18,10 @@ import {
 import "./combobox.pcss";
 import { reactNodeToString } from "./reactNodeToString";
 
-interface ComboboxBaseProps<T extends object>
-  extends Omit<
-    AriaComboboxProps<T>,
-    "children" | "menuTrigger" | "aria-label" | "aria-labelledby"
-  > {
+interface ComboboxBaseProps<T extends object> extends Omit<
+  AriaComboboxProps<T>,
+  "children" | "menuTrigger" | "aria-label" | "aria-labelledby"
+> {
   children: ReactNode | ((item: T) => ReactNode);
   className?: string;
   errorText?: ReactNode;

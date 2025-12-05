@@ -25,8 +25,10 @@ export interface TabsContextType {
 
 export const TabsContext = createContext<TabsContextType | null>(null);
 
-export interface TabsProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
+export interface TabsProps extends Omit<
+  HTMLAttributes<HTMLDivElement>,
+  "onChange"
+> {
   defaultIndex?: number;
   controlledIndex?: number;
   isSelectOnFocus?: boolean;

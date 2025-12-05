@@ -18,11 +18,10 @@ import {
 } from "react";
 import "./input.pcss";
 
-interface InputBaseProps
-  extends Omit<
-    InputHTMLAttributes<HTMLInputElement>,
-    "onChange" | "aria-label" | "aria-labelledby"
-  > {
+interface InputBaseProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "aria-label" | "aria-labelledby"
+> {
   className?: string;
   placeholder?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void;

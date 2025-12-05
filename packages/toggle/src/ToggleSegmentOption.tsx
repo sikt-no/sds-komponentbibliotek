@@ -8,8 +8,10 @@ import {
   useId,
 } from "react";
 
-export interface ToggleSegmentOptionProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
+export interface ToggleSegmentOptionProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "onChange"
+> {
   value: string | number;
   label: NonNullable<ReactNode>;
   checked?: boolean;

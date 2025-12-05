@@ -3,8 +3,7 @@ import { clsx } from "clsx/lite";
 import { DetailsHTMLAttributes, ReactNode } from "react";
 import "./details.pcss";
 
-export interface DetailsProps
-  extends DetailsHTMLAttributes<HTMLDetailsElement> {
+export interface DetailsProps extends DetailsHTMLAttributes<HTMLDetailsElement> {
   className?: string;
   children: ReactNode;
   size?: "small" | "large";

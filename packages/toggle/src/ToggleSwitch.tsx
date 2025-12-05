@@ -9,11 +9,10 @@ import {
 } from "react";
 import "./toggle-switch.pcss";
 
-interface ToggleSwitchBaseProps
-  extends Omit<
-    InputHTMLAttributes<HTMLInputElement>,
-    "onChange" | "aria-label" | "aria-labelledby"
-  > {
+interface ToggleSwitchBaseProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "aria-label" | "aria-labelledby"
+> {
   checked?: boolean;
   showIcons?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;

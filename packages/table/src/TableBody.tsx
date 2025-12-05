@@ -1,8 +1,7 @@
 import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
 
-export interface TableBodyProps
-  extends HTMLAttributes<HTMLTableSectionElement> {
+export interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
   className?: string;
 }
 

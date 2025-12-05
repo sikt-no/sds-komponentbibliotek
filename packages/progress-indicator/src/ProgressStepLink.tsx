@@ -2,8 +2,7 @@ import { Slot, Slottable } from "@radix-ui/react-slot";
 import { clsx } from "clsx/lite";
 import { AnchorHTMLAttributes, forwardRef } from "react";
 
-export interface ProgressStepLinkProps
-  extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface ProgressStepLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   current?: boolean;
   index?: number;
   asChild?: boolean;

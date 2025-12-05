@@ -11,11 +11,10 @@ import {
 } from "react";
 import "./select.pcss";
 
-interface SelectBaseProps
-  extends Omit<
-    SelectHTMLAttributes<HTMLSelectElement>,
-    "onChange" | "aria-label" | "aria-labelledby"
-  > {
+interface SelectBaseProps extends Omit<
+  SelectHTMLAttributes<HTMLSelectElement>,
+  "onChange" | "aria-label" | "aria-labelledby"
+> {
   className?: string;
   options: Omit<OptionHTMLAttributes<HTMLOptionElement>, "selected">[];
   errorText?: ReactNode;

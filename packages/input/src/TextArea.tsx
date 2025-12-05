@@ -10,11 +10,10 @@ import {
 } from "react";
 import "./input.pcss";
 
-interface TextAreaBaseProps
-  extends Omit<
-    InputHTMLAttributes<HTMLTextAreaElement>,
-    "onChange" | "aria-label" | "aria-labelledby"
-  > {
+interface TextAreaBaseProps extends Omit<
+  InputHTMLAttributes<HTMLTextAreaElement>,
+  "onChange" | "aria-label" | "aria-labelledby"
+> {
   className?: string;
   placeholder?: string;
   onChange?: (

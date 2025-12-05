@@ -4,8 +4,7 @@ import type { AnchorHTMLAttributes, ElementType, ReactNode } from "react";
 import { forwardRef } from "react";
 import styles from "./menu-button.module.css";
 
-export interface MenuButtonLinkProps
-  extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface MenuButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   icon?: ReactNode;
   children: ReactNode;
 }

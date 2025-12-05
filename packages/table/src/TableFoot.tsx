@@ -1,8 +1,7 @@
 import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
 
-export interface TableFootProps
-  extends HTMLAttributes<HTMLTableSectionElement> {
+export interface TableFootProps extends HTMLAttributes<HTMLTableSectionElement> {
   className?: string;
 }
 
