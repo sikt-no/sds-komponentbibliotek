@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@6.0.0...@sikt/sds-tokens@6.1.0) (2025-12-05)
+
+### Features
+
+- **color:** add dataviz tokens ([7ef75f2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7ef75f296372aba025dfd8d3cb1fac563a98a7cc))
+
 ## [6.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@5.3.0...@sikt/sds-tokens@6.0.0) (2025-11-18)
 
 ### ⚠ BREAKING CHANGES
