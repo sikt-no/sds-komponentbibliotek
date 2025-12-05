@@ -114,6 +114,28 @@ import * as dark from "../dist/js/color.dark.js";
   })}
 </ColorPalette>
 
+## Dataviz
+
+<ColorPalette>
+  {Object.entries(tokens.color.datavisualization).map((token, index) => {
+    return Object.entries(token[1]).map((subtoken, subindex) => {
+      return (
+        <ColorItem
+          title={`${token[0]} / ${subtoken[0]}`}
+          subtitle={`--sds-${Object.values(subtoken[1].path).join("-")}`}
+          colors={{
+            "light-mode": subtoken[1].$value,
+            "dark-mode":
+              dark.color.datavisualization?.[token[0]]?.[subtoken[0]].$value ??
+              "",
+          }}
+          key={`${index}-${subindex}`}
+        />
+      );
+    });
+  })}
+</ColorPalette>
+
 ## Shadow
 
 <ColorPalette>

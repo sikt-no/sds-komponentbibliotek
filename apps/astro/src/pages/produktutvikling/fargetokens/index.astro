@@ -244,6 +244,16 @@ const pageTitle = "Fargetokens";
     </Paragraph>
   </Section>
 
+  <Section headingText="Datavisualisering">
+    <div class="card-group">
+      {
+        Object.entries(tokens.color.datavisualization.category).map((token) => (
+          <ColorCard token={token} />
+        ))
+      }
+    </div>
+  </Section>
+
   <Section headingText="Basetokens">
     <Paragraph className="ds-content-max-width">
       Navnestruktur for basetokens i fargepaletten:

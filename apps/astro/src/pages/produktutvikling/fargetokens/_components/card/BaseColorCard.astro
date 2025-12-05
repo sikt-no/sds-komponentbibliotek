@@ -1,16 +1,14 @@
 ---
-import { DarkToken, Token } from "../../../../../components";
+import { Token } from "../../../../../components";
 import Swatch from "./Swatch.astro";
-import { Badge } from "@sikt/sds-badge";
-import { tokenName } from "../../../../../utils/token";
-import { pascalToKebab } from "../../../../../utils/string";
+import { pascalToKebabExcludeNumbers } from "../../../../../utils/string";
 
 const { token } = Astro.props;
 ---
 
 <div class="card">
   <div class="name">
-    {pascalToKebab(token[1].name)}
+    {pascalToKebabExcludeNumbers(token[1].name)}
   </div>
   <div class="content">
     <div class="item">

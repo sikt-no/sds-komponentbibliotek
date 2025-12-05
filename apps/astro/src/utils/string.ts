@@ -11,7 +11,10 @@ export const kebabToPascal = (str: string) =>
     .join("");
 
 export const pascalToKebab = (str: string) =>
-  str.replace(/([a-z0–9])([A-Z])/g, "$1-$2").toLowerCase();
+  str.replace(/([a-z0–9])([A-Z0-9])/g, "$1-$2").toLowerCase();
+
+export const pascalToKebabExcludeNumbers = (str: string) =>
+  str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 
 export const dotToKebab = (str: string) => str.split(".").join("-");
 

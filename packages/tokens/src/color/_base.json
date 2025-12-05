@@ -280,6 +280,40 @@
           "$value": "#001D4D",
           "$type": "color"
         }
+      },
+      "datavisualization": {
+        "category-1": {
+          "$value": "#FF957A",
+          "$type": "color"
+        },
+        "category-2": {
+          "$value": "#FFAC70",
+          "$type": "color"
+        },
+        "category-3": {
+          "$value": "#FBC774",
+          "$type": "color"
+        },
+        "category-4": {
+          "$value": "#FBE774",
+          "$type": "color"
+        },
+        "category-5": {
+          "$value": "#82E3CB",
+          "$type": "color"
+        },
+        "category-6": {
+          "$value": "#75C7F0",
+          "$type": "color"
+        },
+        "category-7": {
+          "$value": "#CCA3F5",
+          "$type": "color"
+        },
+        "category-8": {
+          "$value": "#F5A3CC",
+          "$type": "color"
+        }
       }
     }
   }
