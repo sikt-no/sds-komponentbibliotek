@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.2.0...@sikt/sds-core@5.2.1) (2025-12-05)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-tokens with new data visualization colors ([c793906](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c793906a7fbd1dedbec33ee65a1cca75041b86a8))
+
 ## [5.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.1.4...@sikt/sds-core@5.2.0) (2025-11-24)
 
 ### Features
