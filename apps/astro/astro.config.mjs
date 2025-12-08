@@ -6,6 +6,7 @@ import { defineConfig } from "astro/config";
 import matomo from "astro-matomo";
 import svgr from "vite-plugin-svgr";
 import { loadEnv } from "vite";
+import pagefind from "astro-pagefind";
 
 const { PUBLIC_STORYBOOK_URL } = loadEnv(
   process.env.NODE_ENV ?? "",
@@ -28,13 +29,14 @@ export default defineConfig({
     sitemap({
       customPages: [`${siteUrl}/storybook/`],
     }),
+    pagefind(),
   ],
   site: siteUrl,
   server: {
     open: true,
     headers: {
       "Content-Security-Policy":
-        "default-src 'self'; connect-src 'self' https://matomo.sikt.no/; script-src 'self' https://matomo.sikt.no/ 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://static.sikt.no/; img-src 'self' https://matomo.sikt.no/ data:; media-src 'self'; frame-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; worker-src blob:;",
+        "default-src 'self'; connect-src 'self' https://matomo.sikt.no/ ws: wss:; script-src 'self' https://matomo.sikt.no/ 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' https://static.sikt.no/; img-src 'self' https://matomo.sikt.no/ data:; media-src 'self'; frame-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; worker-src blob:;",
       "Permissions-Policy":
         "accelerometer=(), autoplay=(), camera=(), display-capture=(), fullscreen=(), geolocation=(), gyroscope=(), microphone=(), payment=(), storage-access=(), web-share=(), xr-spatial-tracking=()",
       "Referrer-Policy": "strict-origin-when-cross-origin",

@@ -1,5 +1,7 @@
+import { ButtonLink } from "@sikt/sds-button";
 import { Link } from "@sikt/sds-core";
 import { Header as SdsHeader } from "@sikt/sds-header";
+import { SearchIcon } from "@sikt/sds-icons";
 import styles from "./header.module.css";
 
 export const Header = ({ currentHref }: { currentHref: string }) => {
@@ -26,6 +28,14 @@ export const Header = ({ currentHref }: { currentHref: string }) => {
             </li>
           </ul>
         </nav>
+      }
+      rightSlot={
+        <ButtonLink
+          iconVariant="only"
+          icon={<SearchIcon />}
+          aria-label="Søk"
+          href="/sok"
+        />
       }
     />
   );

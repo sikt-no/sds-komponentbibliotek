@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/PageLayout.astro";
+import { Hero } from "../../components";
+import Search from "astro-pagefind/components/Search";
+
+const pageTitle = "Søk";
+---
+
+<Layout title={pageTitle}>
+  <Hero
+    breadcrumbs={[{ title: "Designsystem", href: "/" }]}
+    heading={pageTitle}
+  />
+
+  <Search uiOptions={{ showImages: false }} />
+</Layout>
+
+<style is:global>
+  .pagefind-ui {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: #034ad8;
+    --pagefind-ui-text: var(--sds-color-text-primary);
+    --pagefind-ui-background: var(--sds-color-layout-background-default);
+    --pagefind-ui-border: var(--sds-color-layout-divider-strong);
+    --pagefind-ui-tag: #eeeeee;
+    --pagefind-ui-border-width: var(--sds-space-border-weight-regular);
+    --pagefind-ui-border-radius: var(--sds-space-border-radius-medium);
+    --pagefind-ui-image-border-radius: 8px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: Haffer, Arial, sans-serif;
+  }
+
+  .pagefind-ui__search-input {
+    &:focus-visible {
+      outline: var(--sds-focus-outline);
+    }
+  }
+
+  .pagefind-ui__search-clear {
+  }
+
+  .pagefind-ui__result-link {
+  }
+
+  .pagefind-ui__button {
+  }
+</style>
