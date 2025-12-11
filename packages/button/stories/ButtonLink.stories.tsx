@@ -44,3 +44,13 @@ export const Small: Story = {
     size: "small",
   },
 };
+
+export const AsChild: Story = {
+  args: {
+    ...Default.args,
+    children: <a href="/path/to/target">Link</a>,
+    asChild: true,
+    icon: <NavigateToNextIcon />,
+    iconVariant: "only",
+  },
+};

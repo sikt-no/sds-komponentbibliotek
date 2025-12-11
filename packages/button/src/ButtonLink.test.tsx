@@ -106,5 +106,33 @@ describe("ButtonLink", () => {
       expect(screen.getByTestId("test")).toHaveRole("button");
       expect(screen.getByText("Foo")).toBeInTheDocument();
     });
+
+    it("should have icon with asChild", async () => {
+      render(
+        <ButtonLink href="#" data-testid="test" icon="icon" asChild>
+          <button>Foo</button>
+        </ButtonLink>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveRole("button");
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
+
+    it("should have iconOnly with asChild", async () => {
+      render(
+        <ButtonLink
+          href="#"
+          data-testid="test"
+          icon="icon"
+          iconVariant="only"
+          asChild
+        >
+          <button>Foo</button>
+        </ButtonLink>,
+      );
+
+      expect(screen.getByTestId("test")).toHaveRole("button");
+      expect(screen.getByLabelText("Foo")).toBeInTheDocument();
+    });
   });
 });

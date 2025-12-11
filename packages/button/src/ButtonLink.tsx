@@ -1,6 +1,13 @@
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { clsx } from "clsx/lite";
-import { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
+import {
+  AnchorHTMLAttributes,
+  ReactNode,
+  forwardRef,
+  cloneElement,
+  isValidElement,
+} from "react";
+import { reactNodeToString } from "../../core/src/utils/reactNodeToString";
 import type { ButtonIconVariant, ButtonSize, ButtonVariant } from "./Button";
 import "./button-link.pcss";
 
@@ -41,9 +48,16 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
     ref,
   ) => {
     const Comp = asChild ? Slot : "a";
-    const ariaLabel = typeof children === "string" ? children : undefined;
+    const ariaLabel = children ? reactNodeToString(children) : undefined;
     const iconOnly = iconVariant === "only";
     const iconLeft = iconVariant === "left";
+    const iconElement = icon && (
+      <span
+        className={clsx("sds-button__icon", `sds-button__icon--${iconVariant}`)}
+      >
+        {icon}
+      </span>
+    );
 
     return (
       <Comp
@@ -61,16 +75,14 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
         {...rest}
       >
         {(!icon || !iconOnly) && <Slottable>{children}</Slottable>}
-        {icon && (
-          <span
-            className={clsx(
-              "sds-button__icon",
-              `sds-button__icon--${iconVariant}`,
-            )}
-          >
-            {icon}
-          </span>
-        )}
+        {icon &&
+          (iconOnly && asChild && isValidElement(children) ? (
+            <Slottable>
+              {cloneElement(children, children.props ?? {}, iconElement)}
+            </Slottable>
+          ) : (
+            iconElement
+          ))}
       </Comp>
     );
   },
