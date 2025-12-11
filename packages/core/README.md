@@ -23,7 +23,7 @@ import "@sikt/sds-core/dist/index.css";
 
 ## Link
 
-Different routing systems may affect the usage of the `<Link />` component. Make sure to read your frameworks documentation 🤓 Or use the `asChild` prop.
+Different routing systems may affect the usage of the `<Link />` component. Make sure to read your frameworks documentation 🤓 Or use the `asChild` prop that uses [Radix UI Slot](https://www.radix-ui.com/primitives/docs/utilities/slot).
 
 ### Next.js
 
