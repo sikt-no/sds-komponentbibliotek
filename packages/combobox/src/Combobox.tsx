@@ -16,7 +16,7 @@ import {
   PopoverProps,
 } from "react-aria-components";
 import "./combobox.pcss";
-import { reactNodeToString } from "./reactNodeToString";
+import { reactNodeToString } from "../../core/src/utils/reactNodeToString";
 
 interface ComboboxBaseProps<T extends object> extends Omit<
   AriaComboboxProps<T>,
