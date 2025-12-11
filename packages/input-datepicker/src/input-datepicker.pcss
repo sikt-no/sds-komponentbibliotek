@@ -2,6 +2,8 @@
   position: relative;
 
   &__wrapper {
+    gap: var(--sds-space-gap-small);
+
     &:has(.sds-input-datepicker__input-segment:focus-visible) {
       outline: var(--sds-focus-outline);
     }
@@ -9,6 +11,7 @@
 
   &__input {
     display: flex;
+    font-variant-numeric: tabular-nums;
     width: 100%;
 
     &-segment {
@@ -20,6 +23,10 @@
         margin: calc(-1 * var(--sds-space-padding-infinitesimal));
         padding: var(--sds-space-padding-infinitesimal);
       }
+    }
+
+    &--end {
+      justify-content: end;
     }
   }
 

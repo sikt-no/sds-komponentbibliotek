@@ -2,12 +2,12 @@ import { parseDate } from "@internationalized/date";
 import { act, render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
-import { InputDatepicker } from "./InputDatepicker";
+import { InputDaterangepicker } from "./InputDaterangepicker";
 
-describe("InputDatepicker", () => {
+describe("InputDaterangepicker", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
-      const { container } = render(<InputDatepicker label="Foo" />);
+      const { container } = render(<InputDaterangepicker label="Foo" />);
 
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -15,7 +15,7 @@ describe("InputDatepicker", () => {
 
   describe("api", () => {
     it("should render", async () => {
-      render(<InputDatepicker label="Foo" data-testid="test" />);
+      render(<InputDaterangepicker label="Foo" data-testid="test" />);
 
       expect(screen.getByTestId("test")).toHaveClass(
         "sds-input sds-input-datepicker",
@@ -26,7 +26,7 @@ describe("InputDatepicker", () => {
 
     it("should show error text", async () => {
       render(
-        <InputDatepicker
+        <InputDaterangepicker
           label="test-label"
           errorText="Error"
           data-testid="test"
@@ -39,7 +39,7 @@ describe("InputDatepicker", () => {
 
     it("should show help text", async () => {
       render(
-        <InputDatepicker
+        <InputDaterangepicker
           label="test-label"
           helpText="Help"
           data-testid="test"
@@ -53,7 +53,7 @@ describe("InputDatepicker", () => {
     it("should have a calendar", async () => {
       const user = userEvent.setup();
 
-      render(<InputDatepicker label="Foo" data-testid="test" />);
+      render(<InputDaterangepicker label="Foo" data-testid="test" />);
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
 
@@ -66,6 +66,7 @@ describe("InputDatepicker", () => {
         selector: ".sds-input-datepicker__calendar-cell",
       })[0];
 
+      await user.click(calendarCell);
       await user.click(calendarCell);
 
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
@@ -80,7 +81,7 @@ describe("InputDatepicker", () => {
 
     it("should close calendar on keydown Escape", async () => {
       const user = userEvent.setup();
-      render(<InputDatepicker label="Foo" data-testid="test" />);
+      render(<InputDaterangepicker label="Foo" data-testid="test" />);
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
 
       const calendarButton = screen.getByRole("button");
@@ -95,7 +96,7 @@ describe("InputDatepicker", () => {
 
     it("should close calendar on outside click", async () => {
       const user = userEvent.setup();
-      render(<InputDatepicker label="Foo" data-testid="test" />);
+      render(<InputDaterangepicker label="Foo" data-testid="test" />);
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
 
       const calendarButton = screen.getByRole("button");
@@ -112,7 +113,7 @@ describe("InputDatepicker", () => {
       render(
         <>
           <div id="label">Foo</div>
-          <InputDatepicker aria-labelledby="label" />
+          <InputDaterangepicker aria-labelledby="label" />
         </>,
       );
 
@@ -122,9 +123,12 @@ describe("InputDatepicker", () => {
     it("should render a clear button", async () => {
       const dateString = new Date().toISOString().substring(0, 10);
       render(
-        <InputDatepicker
+        <InputDaterangepicker
           label="Foo"
-          value={parseDate(dateString)}
+          value={{
+            start: parseDate(dateString),
+            end: parseDate(dateString),
+          }}
           clearActionProps={{ onClick: jest.fn() }}
         />,
       );
@@ -137,9 +141,12 @@ describe("InputDatepicker", () => {
       const clickHandler = jest.fn();
       const dateString = new Date().toISOString().substring(0, 10);
       render(
-        <InputDatepicker
+        <InputDaterangepicker
           label="Foo"
-          value={parseDate(dateString)}
+          value={{
+            start: parseDate(dateString),
+            end: parseDate(dateString),
+          }}
           clearActionProps={{ "aria-label": "Bar", onClick: clickHandler }}
         />,
       );
@@ -148,7 +155,7 @@ describe("InputDatepicker", () => {
 
       expect(clickHandler).toHaveBeenCalled();
       expect(
-        screen.getByRole("spinbutton", { name: "dag, Foo" }),
+        screen.getByRole("spinbutton", { name: "dag, Startdato, Foo" }),
       ).toHaveFocus();
     });
 
@@ -157,9 +164,12 @@ describe("InputDatepicker", () => {
       const clickHandler = jest.fn();
       const dateString = new Date().toISOString().substring(0, 10);
       render(
-        <InputDatepicker
+        <InputDaterangepicker
           label="Foo"
-          value={parseDate(dateString)}
+          value={{
+            start: parseDate(dateString),
+            end: parseDate(dateString),
+          }}
           clearActionProps={{ "aria-label": "Bar", onClick: clickHandler }}
         />,
       );
@@ -171,7 +181,7 @@ describe("InputDatepicker", () => {
 
       expect(clickHandler).toHaveBeenCalled();
       expect(
-        screen.getByRole("spinbutton", { name: "dag, Foo" }),
+        screen.getByRole("spinbutton", { name: "dag, Startdato, Foo" }),
       ).toHaveFocus();
     });
 
@@ -180,9 +190,12 @@ describe("InputDatepicker", () => {
       const clickHandler = jest.fn();
       const dateString = new Date().toISOString().substring(0, 10);
       render(
-        <InputDatepicker
+        <InputDaterangepicker
           label="Foo"
-          value={parseDate(dateString)}
+          value={{
+            start: parseDate(dateString),
+            end: parseDate(dateString),
+          }}
           clearActionProps={{ "aria-label": "Bar", onClick: clickHandler }}
         />,
       );
@@ -194,7 +207,7 @@ describe("InputDatepicker", () => {
 
       expect(clickHandler).toHaveBeenCalled();
       expect(
-        screen.getByRole("spinbutton", { name: "dag, Foo" }),
+        screen.getByRole("spinbutton", { name: "dag, Startdato, Foo" }),
       ).toHaveFocus();
     });
   });

@@ -11,7 +11,7 @@ import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { InputDatepicker } from "../index";
 
 const meta = {
-  title: "Components/InputDatepicker",
+  title: "Components/InputDatepicker/InputDatepicker",
   component: InputDatepicker,
 } satisfies Meta<typeof InputDatepicker>;
 
@@ -76,7 +76,6 @@ export const WithCustomLocale: Story = {
 export const WithClearOption: Story = {
   args: {
     ...Default.args,
-    value: parseDate(new Date().toISOString().substring(0, 10)),
     clearActionProps: {
       "aria-label": "Clear date",
       onClick: () => {

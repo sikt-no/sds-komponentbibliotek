@@ -7,7 +7,7 @@ test.describe("InputDatepicker", () => {
   test.describe("a11y", () => {
     test("default input datepicker should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputdatepicker--default",
+        "/iframe.html?viewMode=story&id=components-inputdatepicker-inputdatepicker--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("InputDatepicker", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputdatepicker--with-help-text",
+        "/iframe.html?viewMode=story&id=components-inputdatepicker-inputdatepicker--with-help-text",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -39,7 +39,7 @@ test.describe("InputDatepicker", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputdatepicker--with-error",
+        "/iframe.html?viewMode=story&id=components-inputdatepicker-inputdatepicker--with-error",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -55,7 +55,7 @@ test.describe("InputDatepicker", () => {
   test.describe("visual", () => {
     test("input datepicker should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputdatepicker--default",
+        "/iframe.html?viewMode=story&id=components-inputdatepicker-inputdatepicker--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -65,7 +65,7 @@ test.describe("InputDatepicker", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputdatepicker--with-help-text",
+        "/iframe.html?viewMode=story&id=components-inputdatepicker-inputdatepicker--with-help-text",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -75,7 +75,7 @@ test.describe("InputDatepicker", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputdatepicker--with-error",
+        "/iframe.html?viewMode=story&id=components-inputdatepicker-inputdatepicker--with-error",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

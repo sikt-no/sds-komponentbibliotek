@@ -20,25 +20,25 @@ import {
   KeyboardEvent as ReactKeyboardEvent,
 } from "react";
 import {
-  Calendar,
+  type DateRangePickerProps,
+  RangeCalendar,
   CalendarCell,
   CalendarGrid,
   DateInput,
-  type DatePickerProps,
   DateSegment,
   DateValue,
   Group,
   Heading,
   Button as ReactAriaButton,
-  DatePicker as ReactAriaDatePicker,
+  DateRangePicker as ReactAriaDatePicker,
   Label as ReactAriaLabel,
   Text,
-  DatePickerStateContext,
+  DateRangePickerStateContext,
 } from "react-aria-components";
 import "./input-datepicker.pcss";
 
-interface InputDatepickerBaseProps extends Omit<
-  DatePickerProps<DateValue>,
+interface InputDaterangepickerBaseProps extends Omit<
+  DateRangePickerProps<DateValue>,
   "aria-label" | "aria-labelledby"
 > {
   errorText?: ReactNode;
@@ -48,12 +48,20 @@ interface InputDatepickerBaseProps extends Omit<
   previousMonthLabel?: string;
   openCalendarLabel?: ReactNode;
   lang?: string;
-  value?: DateValue;
-  onChange?: (value: DateValue | null) => void;
+  value?: {
+    start: DateValue;
+    end: DateValue;
+  };
+  onChange?: (
+    dates: {
+      start: DateValue | null;
+      end: DateValue | null;
+    } | null,
+  ) => void;
   clearActionProps?: ClearActionProps;
 }
 
-export type InputDatepickerProps = InputDatepickerBaseProps &
+export type InputDaterangepickerProps = InputDaterangepickerBaseProps &
   (
     | {
         label: NonNullable<ReactNode>;
@@ -71,7 +79,7 @@ export type ClearActionProps = Pick<
 >;
 
 export const ClearButton = (clearActionProps?: ClearActionProps) => {
-  const state = useContext(DatePickerStateContext);
+  const state = useContext(DateRangePickerStateContext);
 
   const handleClearClick = (event: ReactMouseEvent<HTMLButtonElement>) => {
     if (clearActionProps?.onClick) {
@@ -87,7 +95,7 @@ export const ClearButton = (clearActionProps?: ClearActionProps) => {
     }
   };
 
-  if (!state || state.value) {
+  if (!state || state.value.start || state.value.end) {
     return (
       <Button
         size="small"
@@ -104,7 +112,10 @@ export const ClearButton = (clearActionProps?: ClearActionProps) => {
   }
 };
 
-export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
+export const InputDaterangepicker = forwardRef<
+  HTMLDivElement,
+  InputDaterangepickerProps
+>(
   (
     {
       label,
@@ -170,7 +181,28 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
             </ReactAriaLabel>
           )}
           <Group className="sds-input__wrapper sds-input-datepicker__wrapper">
-            <DateInput ref={inputRef} className="sds-input-datepicker__input">
+            <DateInput
+              ref={inputRef}
+              className="sds-input-datepicker__input"
+              slot="start"
+            >
+              {(segment) => (
+                <DateSegment
+                  className="sds-input-datepicker__input-segment"
+                  segment={segment}
+                />
+              )}
+            </DateInput>
+            <span
+              className="sds-input-datepicker__separator"
+              aria-hidden="true"
+            >
+              –
+            </span>
+            <DateInput
+              className="sds-input-datepicker__input sds-input-datepicker__input--end"
+              slot="end"
+            >
               {(segment) => (
                 <DateSegment
                   className="sds-input-datepicker__input-segment"
@@ -223,7 +255,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
           )}
 
           {calendarOpen && (
-            <Calendar
+            <RangeCalendar
               ref={calendarRef}
               onChange={() => {
                 setCalendarOpen(false);
@@ -257,7 +289,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
                   />
                 )}
               </CalendarGrid>
-            </Calendar>
+            </RangeCalendar>
           )}
         </ReactAriaDatePicker>
       </I18nProvider>
@@ -265,4 +297,4 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
   },
 );
 
-InputDatepicker.displayName = "InputDatepicker";
+InputDaterangepicker.displayName = "InputDaterangepicker";

@@ -52,6 +52,7 @@ export const components = [
     storybook: `${storybookUrl}?path=/docs/components-checkbox-checkbox--docs`,
   },
   {
+    id: "combobox",
     name: "Combobox",
     url: `${storybookUrl}?path=/docs/components-combobox--docs`,
     storybook: `${storybookUrl}?path=/docs/components-combobox--docs`,
@@ -59,6 +60,12 @@ export const components = [
   {
     id: "input-datepicker",
     name: "Datepicker Input",
+    url: `${storybookUrl}?path=/docs/components-inputdatepicker--docs`,
+    storybook: `${storybookUrl}?path=/docs/components-inputdatepicker--docs`,
+  },
+  {
+    id: "input-daterangepicker",
+    name: "Daterangepicker Input",
     url: `${storybookUrl}?path=/docs/components-inputdatepicker--docs`,
     storybook: `${storybookUrl}?path=/docs/components-inputdatepicker--docs`,
   },
