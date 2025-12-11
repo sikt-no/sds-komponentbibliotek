@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.4.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.4.1...@sikt/sds-button@4.4.2) (2025-12-11)
+
+### Bug Fixes
+
+- **button-link:** iconVariant only asChild error ([dd3a060](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/dd3a060d14408118d776700db6db6cc93af8da7e))
+- **button:** justify center for full length buttons ([4041bcc](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4041bccc1807932359074b76580d8468c20dbb5b))
+
 ## [4.4.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.4.0...@sikt/sds-button@4.4.1) (2025-10-09)
 
 ### Bug Fixes
