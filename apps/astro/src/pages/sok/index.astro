@@ -18,30 +18,182 @@ const pageTitle = "Søk";
 <style is:global>
   .pagefind-ui {
     --pagefind-ui-scale: 1;
-    --pagefind-ui-primary: #034ad8;
+    --pagefind-ui-primary: var(--sds-color-text-primary);
     --pagefind-ui-text: var(--sds-color-text-primary);
     --pagefind-ui-background: var(--sds-color-layout-background-default);
     --pagefind-ui-border: var(--sds-color-layout-divider-strong);
-    --pagefind-ui-tag: #eeeeee;
+    --pagefind-ui-tag: var(--sds-color-layout-divider-subtle);
     --pagefind-ui-border-width: var(--sds-space-border-weight-regular);
     --pagefind-ui-border-radius: var(--sds-space-border-radius-medium);
-    --pagefind-ui-image-border-radius: 8px;
+    --pagefind-ui-image-border-radius: var(--sds-space-border-radius-medium);
     --pagefind-ui-image-box-ratio: 3 / 2;
     --pagefind-ui-font: Haffer, Arial, sans-serif;
   }
 
+  .pagefind-ui__form {
+    &::before {
+      display: none !important;
+    }
+  }
+
   .pagefind-ui__search-input {
+    --input-border-color: var(--sds-color-layout-divider-strong);
+    --input-border-width: var(--sds-space-border-weight-regular);
+    --input-padding: calc(
+      var(--sds-space-padding-tiny) - var(--input-border-width)
+    );
+
+    display: flex;
+    align-items: center;
+    background-color: var(--sds-color-layout-background-default) !important;
+    border: var(--input-border-width) solid var(--input-border-color) !important;
+    border-radius: var(--sds-space-border-radius-medium) !important;
+    cursor: text;
+    padding: calc(
+      var(--input-padding) + var(--sds-space-padding-minimal)
+    ) !important;
+
+    color: var(--sds-color-text-primary);
+    font-size: var(--sds-typography-body-default-fontsize) !important;
+    font-weight: var(--sds-typography-body-default-fontweight) !important;
+    line-height: var(--sds-typography-body-default-lineheight);
+
+    height: unset !important;
+    padding-right: calc(70px * var(--pagefind-ui-scale)) !important;
+
+    &::placeholder {
+      color: var(--sds-color-text-secondary) !important;
+      opacity: 1 !important;
+    }
+
+    &:hover,
+    &:focus-visible {
+      --input-border-color: var(--sds-color-layout-divider-strong);
+    }
+
+    &:active {
+      --input-border-color: var(--sds-color-layout-divider-strong);
+    }
+
     &:focus-visible {
       outline: var(--sds-focus-outline);
     }
   }
 
   .pagefind-ui__search-clear {
+    --input-border-width: var(--sds-space-border-weight-regular);
+    --input-padding: calc(
+      var(--sds-space-padding-tiny) - var(--input-border-width)
+    );
+    --button-border-radius: var(--sds-space-border-radius-minimal);
+    --button-padding: var(--sds-space-padding-minimal);
+
+    align-items: center;
+    background-color: transparent;
+    border: 0 none;
+    border-radius: var(--button-border-radius) !important;
+    color: var(--sds-color-text-primary);
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    gap: var(--button-padding);
+    padding: var(--button-padding)
+      calc(var(--button-padding) + var(--button-padding)) !important;
+
+    font-size: var(--sds-typography-body-default-fontsize) !important;
+    font-weight: var(--sds-typography-body-default-fontweight) !important;
+    line-height: var(--sds-typography-body-default-lineheight);
+
+    height: unset !important;
+    margin: calc(var(--input-padding) - 1.5px) !important;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+    }
+
+    &:active {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-pressed
+      );
+    }
+  }
+
+  .pagefind-ui__results-area {
+    display: flex;
+    flex-direction: column;
   }
 
   .pagefind-ui__result-link {
+    text-decoration: underline !important;
+
+    &::after,
+    &::before {
+      background-color: var(--sds-color-text-primary);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+    }
+
+    &:active {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-pressed
+      );
+    }
+
+    &:focus-visible {
+      outline: var(--sds-focus-outline);
+      outline-offset: 0;
+    }
   }
 
   .pagefind-ui__button {
+    --button-border-radius: var(--sds-space-border-radius-full);
+    --button-padding: var(--sds-space-padding-small);
+
+    align-items: center;
+    background-color: var(
+      --sds-color-interaction-primary-subtle-default
+    ) !important;
+    border: 0 none !important;
+    border-radius: var(--button-border-radius) !important;
+    color: var(--sds-color-text-primary);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: var(--sds-typography-body-l-fontsize) !important;
+    font-weight: var(--sds-typography-body-l-fontweight) !important;
+    justify-content: center;
+    line-height: var(--sds-typography-body-l-lineheight);
+    gap: var(--button-padding);
+    padding: var(--button-padding)
+      calc(var(--button-padding) + var(--button-padding)) !important;
+
+    align-self: center;
+    height: unset !important;
+    text-align: unset !important;
+    width: unset !important;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(
+        --sds-color-interaction-primary-subtle-highlight
+      ) !important;
+    }
+
+    &:active {
+      background-color: var(
+        --sds-color-interaction-primary-subtle-pressed
+      ) !important;
+    }
+
+    &:focus-visible {
+      outline: var(--sds-focus-outline);
+    }
   }
 </style>
