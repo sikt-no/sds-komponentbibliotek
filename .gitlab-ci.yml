@@ -3,19 +3,21 @@ default:
   interruptible: true
 
 include:
-  - component: gitlab.sikt.no/platon/ci-components/docker/docker@3.0.0
-    inputs:
-      ci-registry-image: $CI_REGISTRY_IMAGE
-  - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@3.0.2
+  - component: gitlab.sikt.no/platon/ci-components/docker/docker@4.0.0
     inputs:
       image: $CI_REGISTRY_IMAGE
-      image_tag: $CI_REGISTRY_TAG
+      image-tag: $CI_REGISTRY_TAG
+  - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@4.0.0
+    inputs:
+      image: $CI_REGISTRY_IMAGE
+      image-tag: $CI_REGISTRY_TAG
   - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@2.0.1
     inputs:
       prod-domain: "designsystem.sikt.no"
       test-id: "komponentbibliotek"
 
 variables:
+  CI_REGISTRY_TAG: $CI_COMMIT_SHA-$CI_PIPELINE_ID
   HTTP_PORT: "80"
   REPLICAS: "1"
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
