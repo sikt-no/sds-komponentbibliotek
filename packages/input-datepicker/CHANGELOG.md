@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@2.3.0...@sikt/sds-input-datepicker@2.4.0) (2025-12-17)
+
+### Features
+
+- **input-daterangepicker:** add date range picker component ([ca911ca](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ca911ca9d4925229efb83a6d9b03e455ad3b3ee0))
+
+### Bug Fixes
+
+- **deps:** update dependency react-aria-components to ^1.12.2 ([d6c8b67](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d6c8b67afbb193c3237a467b1c5be94dfb90734d))
+- **deps:** update dependency react-aria-components to ^1.13.0 ([2171536](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2171536113068938f1701912ddd0e03ff5cc773f))
+
 ## [2.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@2.2.1...@sikt/sds-input-datepicker@2.3.0) (2025-09-09)
 
 ### Features
