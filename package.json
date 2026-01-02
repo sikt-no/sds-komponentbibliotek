@@ -53,8 +53,8 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
