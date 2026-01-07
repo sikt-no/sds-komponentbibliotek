@@ -23,7 +23,7 @@ export const Contributor = ({
         <div className={styles.crown}>👑</div>
       )}
       {showEasterEggs && name === "Kristoffer" && (
-        <div className={styles.glasses}>🕶️</div>
+        <div className={styles.glasses}>🕶</div>
       )}
       {showEasterEggs && name === "Hilde" && (
         <div className={styles.confetti}>🎉️</div>
@@ -37,7 +37,7 @@ export const Contributor = ({
       {showEasterEggs && name === "Sondre L." && (
         <div className={styles.balloon}>🎈️</div>
       )}
-      {showEasterEggs && name === "Petter" && (
+      {showEasterEggs && name === "Petter S." && (
         <div className={styles.crown}>🎩️</div>
       )}
       {name === "Deg" && (

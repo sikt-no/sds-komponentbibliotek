@@ -57,7 +57,7 @@
 .glasses {
   display: flex;
   justify-content: center;
-  margin: 10px 0 -35px;
+  margin: 10px -4px -37px 4px;
   transform: scale(2);
 }
 
