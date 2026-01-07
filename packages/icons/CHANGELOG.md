@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@4.1.0...@sikt/sds-icons@4.2.0) (2026-01-07)
+
+### Features
+
+- **icons:** add back in time icon ([44ec460](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/44ec460999cd3e390ac736bd66204db88368d54a))
+
 ## [4.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@4.0.0...@sikt/sds-icons@4.1.0) (2025-09-12)
 
 ### Features
