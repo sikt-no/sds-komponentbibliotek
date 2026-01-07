@@ -82,6 +82,11 @@ export const config = [
   { id: "calendar-blank", name: "date-calendar", category: "time-and-date" },
   { id: "calendar-plus", name: "add-to-calendar", category: "time-and-date" },
   { id: "clock", name: "time", category: "time-and-date" },
+  {
+    id: "clock-counter-clockwise",
+    name: "back-in-time",
+    category: "time-and-date",
+  },
   { id: "paperclip", name: "attachment", category: "files" },
   { id: "image", name: "image-placeholder", category: "files" },
   { id: "folder", name: "folder", category: "files" },
