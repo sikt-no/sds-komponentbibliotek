@@ -13,17 +13,52 @@ import "./header.pcss";
 
 export interface HeaderProps extends HTMLAttributes<HTMLElement> {
   className?: string;
+  /**
+   * Slot for adding content to the center of the Header.
+   *
+   * @default undefined
+   */
   children?:
     | ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>
     | ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>[];
+  /**
+   * Slot for adding content above the header, like a global menu between services.
+   *
+   * @default undefined
+   */
   topSlot?: ReactNode;
+  /**
+   * Slot for adding content to the left side of the Header.
+   *
+   * @default undefined
+   */
   leftSlot?: ReactNode;
+  /**
+   * Slot for adding content to the right side of the Header.
+   *
+   * @default undefined
+   */
   rightSlot?: ReactNode;
+  /**
+   * Slot for adding an `<ApplicationStatus />`.
+   *
+   * @default undefined
+   */
   applicationStatus?: ReactNode;
+  /**
+   * Id for main content element where the skip link will anchor link.
+   *
+   * @default "main"
+   */
   skipLinkId?: string;
+  /**
+   * Text for the skip link anchor link.
+   *
+   * @default "Gå til innhold"
+   */
   skipLinkText?: string;
   /**
-   * Element to wrap logotype. Can be any framework routing Link, like `next/link` or `react-router`.
+   * Element to wrap logotype. Can be any framework routing `<Link />`, like `next/link` or `react-router`.
    * Should have className `sds-typography-link`.
    * Children will be overwritten with `logoText` prop.
    *
