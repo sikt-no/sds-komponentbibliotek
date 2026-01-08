@@ -18,6 +18,9 @@ export type RadioInputProps = RadioInputBaseProps &
       }
     | {
         label?: never;
+        /**
+         * Id (or id's) that identifies the element (or elements) that labels the element it is applied to. For accessibility these should NOT be visually hidden.
+         */
         "aria-labelledby": string;
       }
   );
