@@ -1,3 +1,4 @@
+import { Link } from "@sikt/sds-core";
 import { ApplicationStatus } from "@sikt/sds-message";
 import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Header, HeaderProps } from "../index";
@@ -14,7 +15,7 @@ type Story = StoryObj<HeaderProps>;
 
 export const Default: Story = {
   args: {
-    logoHref: "//sikt.no",
+    logoLink: <Link href="//sikt.no">will be overwritten</Link>,
   },
 };
 

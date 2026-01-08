@@ -21,7 +21,17 @@ import "@sikt/sds-logo/dist/index.css";
 Header with product name
 
 ```jsx
-<Header logoText="Min produkt" logoHref="//path/to/my/product" />
+<Header logoText="Min produkt" />
+```
+
+Header with link on logotype. Should have `sds-typography-link` class, but can otherwise be any framework link (like Link from `next/link` or `react-router`).
+
+```jsx
+const logoText = "Min produkt";
+<Header
+  logoText={logoText}
+  logoLink={<Link href="//path/to/my/product">{logoText}</Link>}
+/>;
 ```
 
 Header with hamburger that can be positioned left `leftSlot` or right `rigthSlot`.  

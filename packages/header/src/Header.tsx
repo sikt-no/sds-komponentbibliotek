@@ -6,6 +6,8 @@ import {
   HTMLAttributes,
   ReactElement,
   ReactNode,
+  cloneElement,
+  isValidElement,
 } from "react";
 import "./header.pcss";
 
@@ -20,7 +22,14 @@ export interface HeaderProps extends HTMLAttributes<HTMLElement> {
   applicationStatus?: ReactNode;
   skipLinkId?: string;
   skipLinkText?: string;
-  logoHref?: string;
+  /**
+   * Element to wrap logotype. Can be any framework routing Link, like `next/link` or `react-router`.
+   * Should have className `sds-typography-link`.
+   * Children will be overwritten with `logoText` prop.
+   *
+   * @default undefined
+   */
+  logoLink?: ReactNode;
   logoText?: string;
 }
 
@@ -33,7 +42,7 @@ export const Header = ({
   className,
   skipLinkId = "main",
   skipLinkText = "Gå til innhold",
-  logoHref,
+  logoLink,
   logoText = "Sikt",
   ...rest
 }: HeaderProps) => {
@@ -50,13 +59,9 @@ export const Header = ({
       <header className={clsx("sds-header", className)} {...rest}>
         <div className="sds-header__content">
           <div className="sds-header__content-left">
-            {logoHref ? (
-              <Link href={logoHref} className="sds-header__logo-link">
-                {logoElement}
-              </Link>
-            ) : (
-              logoElement
-            )}
+            {logoLink && isValidElement(logoLink)
+              ? cloneElement(logoLink, logoLink.props ?? {}, logoElement)
+              : logoElement}
             {leftSlot && (
               <div className="sds-header__content-left-item">{leftSlot}</div>
             )}

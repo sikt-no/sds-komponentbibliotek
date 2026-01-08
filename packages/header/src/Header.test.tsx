@@ -37,14 +37,11 @@ describe("Header", () => {
 
     it("should have link", async () => {
       render(
-        <Header logoHref="#">
+        <Header logoLink={<a href="#bar">noop</a>}>
           <div>Foo</div>
         </Header>,
       );
 
-      expect(screen.getByRole("link", { name: "Sikt" })).toHaveClass(
-        "sds-header__logo-link",
-      );
       expect(screen.getByRole("link", { name: "Sikt" })).toBeInTheDocument();
     });
 
