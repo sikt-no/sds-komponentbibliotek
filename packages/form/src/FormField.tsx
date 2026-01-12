@@ -13,11 +13,17 @@ export interface FormFieldProps extends Omit<
    * A label is required, but undefined is allowed for use when a label is provided via `aria-labelledby`.
    */
   label: NonNullable<ReactNode> | undefined;
+  /**
+   * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.
+   */
   errorText?: ReactNode;
   /**
    * ID for error text element, needs to be set if there is an error text.
    */
   errorTextId?: string;
+  /**
+   * Text to show to help the user enter correct value. It's a better pattern to have enough information in the `label`.
+   */
   helpText?: ReactNode;
   /**
    * ID for help text element, needs to be set if there is a help text.

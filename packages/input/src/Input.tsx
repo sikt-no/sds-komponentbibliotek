@@ -29,7 +29,13 @@ interface InputBaseProps extends Omit<
   icon?: ReactNode;
   clearActionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
   actionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
+  /**
+   * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.
+   */
   errorText?: ReactNode;
+  /**
+   * Text to show to help the user enter correct value. It's a better pattern to have enough information in the `label`.
+   */
   helpText?: ReactNode;
 }
 

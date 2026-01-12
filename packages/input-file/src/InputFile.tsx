@@ -22,7 +22,13 @@ export interface FileWithError extends File {
 export interface InputFileProps extends DropZoneProps {
   label: NonNullable<ReactNode>;
   "aria-label": NonNullable<string>;
+  /**
+   * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.
+   */
   errorText?: ReactNode;
+  /**
+   * Text to show to help the user enter correct value. It's a better pattern to have enough information in the `label`.
+   */
   helpText?: ReactNode;
   children?: ReactNode;
   className?: string;

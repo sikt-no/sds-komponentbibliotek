@@ -14,6 +14,9 @@ export type ByteConversion = "binary" | "decimal";
 
 export interface FileListItemProps extends LiHTMLAttributes<HTMLLIElement> {
   children: ReactNode;
+  /**
+   * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.
+   */
   errorText?: ReactNode;
   fileSize?: number;
   bytesConversion?: ByteConversion;

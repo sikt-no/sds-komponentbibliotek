@@ -10,7 +10,13 @@ interface FieldsetBaseProps extends Omit<
 > {
   className?: string;
   name?: string;
+  /**
+   * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.
+   */
   errorText?: ReactNode;
+  /**
+   * Text to show to help the user enter correct value. It's a better pattern to have enough information in the `legend`.
+   */
   helpText?: ReactNode;
   children: ReactNode;
 }
