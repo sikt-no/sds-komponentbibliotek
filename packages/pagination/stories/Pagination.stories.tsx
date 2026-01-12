@@ -15,8 +15,8 @@ export const Default: Story = {
     "aria-label": "Sample pagination",
     count: 10,
     currentIndex: 0,
-    handleClick: (index: number) => {
-      alert(`click handler index ${index}`);
+    onClick: (event, index: number) => {
+      console.log(event, `click handler index ${index}`);
     },
   },
 };

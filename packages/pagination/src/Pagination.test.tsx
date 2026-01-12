@@ -11,7 +11,7 @@ describe("Pagination", () => {
           aria-label="foo"
           count={10}
           currentIndex={0}
-          handleClick={jest.fn()}
+          onClick={jest.fn()}
         />,
       );
 
@@ -26,7 +26,7 @@ describe("Pagination", () => {
           aria-label="foo"
           count={10}
           currentIndex={0}
-          handleClick={jest.fn()}
+          onClick={jest.fn()}
           data-testid="test"
         />,
       );
@@ -43,14 +43,14 @@ describe("Pagination", () => {
           aria-label="foo"
           count={10}
           currentIndex={0}
-          handleClick={clickHandler}
+          onClick={clickHandler}
         />,
       );
 
       await user.click(screen.getByText("2"));
 
       expect(clickHandler).toHaveBeenCalled();
-      expect(clickHandler).toHaveBeenCalledWith(1);
+      expect(clickHandler).toHaveBeenCalledWith(expect.anything(), 1);
     });
 
     it("calls click handler for previous button", async () => {
@@ -61,14 +61,14 @@ describe("Pagination", () => {
           aria-label="foo"
           count={10}
           currentIndex={1}
-          handleClick={clickHandler}
+          onClick={clickHandler}
         />,
       );
 
       await user.click(screen.getByLabelText("Vis forrige side 1"));
 
       expect(clickHandler).toHaveBeenCalled();
-      expect(clickHandler).toHaveBeenCalledWith(0);
+      expect(clickHandler).toHaveBeenCalledWith(expect.anything(), 0);
     });
 
     it("calls click handler for next button", async () => {
@@ -79,14 +79,14 @@ describe("Pagination", () => {
           aria-label="foo"
           count={10}
           currentIndex={0}
-          handleClick={clickHandler}
+          onClick={clickHandler}
         />,
       );
 
       await user.click(screen.getByLabelText("Vis neste side 2"));
 
       expect(clickHandler).toHaveBeenCalled();
-      expect(clickHandler).toHaveBeenCalledWith(1);
+      expect(clickHandler).toHaveBeenCalledWith(expect.anything(), 1);
     });
 
     it("should have class name", async () => {
@@ -95,7 +95,7 @@ describe("Pagination", () => {
           aria-label="foo"
           count={10}
           currentIndex={0}
-          handleClick={jest.fn()}
+          onClick={jest.fn()}
           className="test-class-name"
           data-testid="test"
         />,

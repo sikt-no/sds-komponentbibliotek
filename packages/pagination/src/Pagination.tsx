@@ -1,18 +1,49 @@
 import { MoveToPreviousIcon, MoveToNextIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, MouseEvent } from "react";
 import "./pagination.pcss";
 
-export interface PaginationProps extends HTMLAttributes<HTMLElement> {
+export interface PaginationProps extends Omit<
+  HTMLAttributes<HTMLElement>,
+  "onClick"
+> {
+  /**
+   * Label for pagination navigation element.
+   */
   "aria-label": NonNullable<string>;
+  /**
+   * Label for previuos item button.
+   *
+   * @default "Vis forrige side"
+   */
   ariaLabelPrevious?: string;
+  /**
+   * Label for next item button.
+   *
+   * @default "Vis neste side"
+   */
   ariaLabelNext?: string;
+  /**
+   * Label item button.
+   *
+   * @default "Vis side"
+   */
   ariaLabelItem?: string;
+  /**
+   * Totalt number of pages.
+   */
   count: number;
   currentIndex: number;
-  /** Total limit of elements, this includes previous/next/first/last. Minimum is 7 (previous/next/first/last/current/) */
+  /**
+   * Total limit of elements, this includes previous/next/first/last. Minimum is 7 (previous/next/first/last/current/)
+   */
   limit?: number;
-  handleClick: (index: number) => void;
+  /**
+   * Function for when the user clicks a pagination button.
+   *
+   * @default undefined
+   */
+  onClick: (event: MouseEvent<HTMLButtonElement>, index: number) => void;
   className?: string;
 }
 
@@ -24,7 +55,7 @@ export const Pagination = ({
   count,
   currentIndex,
   limit = 7,
-  handleClick,
+  onClick,
   className,
   ...rest
 }: PaginationProps) => {
@@ -55,8 +86,8 @@ export const Pagination = ({
             className="sds-pagination__button"
             aria-label={`${ariaLabelPrevious} ${currentIndex}`}
             disabled={currentIndex === 0}
-            onClick={() => {
-              handleClick(currentIndex - 1);
+            onClick={(event) => {
+              onClick(event, currentIndex - 1);
             }}
           >
             <MoveToPreviousIcon />
@@ -75,8 +106,8 @@ export const Pagination = ({
                   aria-current={value === currentIndex ? true : undefined}
                   aria-label={`${ariaLabelItem} ${value + 1}`}
                   disabled={value === currentIndex}
-                  onClick={() => {
-                    handleClick(value);
+                  onClick={(event) => {
+                    onClick(event, value);
                   }}
                 >
                   {value + 1}
@@ -96,8 +127,8 @@ export const Pagination = ({
             className="sds-pagination__button"
             aria-label={`${ariaLabelNext} ${currentIndex + 2}`}
             disabled={currentIndex === count - 1}
-            onClick={() => {
-              handleClick(currentIndex + 1);
+            onClick={(event) => {
+              onClick(event, currentIndex + 1);
             }}
           >
             <MoveToNextIcon />
