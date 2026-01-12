@@ -15,10 +15,34 @@ import "./popover.pcss";
 
 export interface PopoverProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string;
+  /**
+   * ReactNode of the popover trigger element.
+   */
   children: ReactNode;
+  /**
+   * ReactNode of the popover target element, the element opened when clicking the trigger.
+   */
   target: ReactNode;
+  /**
+   * The popover attribute can take one of the following values:
+   * - Setting an empty value for popover — popover or popover="" — is equivalent to setting popover="auto".
+   * - **auto** popovers can be "light dismissed" — this means that you can hide the popover by clicking outside it or pressing the Esc key. Showing an auto popover will generally close other auto popovers that are already displayed, unless they are nested.
+   * - **manual** popovers cannot be "light dismissed" and are not automatically closed. Popovers must explicitly be displayed and closed using declarative show/hide/toggle buttons or JavaScript. Multiple independent manual popovers can be shown simultaneously.
+   *
+   *  @default "auto"
+   */
   popover?: "" | "auto" | "manual";
+  /**
+   * Boolean that anchors the popover to the trigger element.
+   *
+   *  @default true
+   */
   anchor?: boolean;
+  /**
+   * Function called when a user clicks the tigger element.
+   *
+   * @default undefined
+   */
   onClick?: (e: MouseEvent) => void;
   targetProps?: HTMLAttributes<HTMLElement>;
   targetRef?: RefObject<HTMLElement | null>;
@@ -42,8 +66,6 @@ export const Popover = ({
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const popoverRef = useRef<HTMLSpanElement | null>(null);
   const [inset, setInset] = useState<string | number>("auto auto auto auto");
-  const popovertargetAttr = { popoverTarget: id };
-  const popoverAttr = { popover };
 
   const handleOnFocus = () => {
     if (!tooltip) {
@@ -118,8 +140,7 @@ export const Popover = ({
       <button
         ref={buttonRef}
         className={clsx("sds-popover", className)}
-        // INFO: This is a hack to solve that React/TypeScript does not support this native attribute
-        {...popovertargetAttr}
+        popoverTarget={id}
         {...rest}
         onClick={(event) => {
           if (anchor) {
@@ -145,8 +166,7 @@ export const Popover = ({
           "sds-typography-body",
         )}
         id={id}
-        // INFO: This is a hack to solve that React/TypeScript does not support this native attribute
-        {...popoverAttr}
+        popover={popover}
         {...targetProps}
         style={{ inset }}
       >
