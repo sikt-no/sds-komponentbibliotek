@@ -5,21 +5,23 @@ import { SearchIcon } from "@sikt/sds-icons";
 import styles from "./header.module.css";
 
 export const Header = ({ currentHref }: { currentHref: string }) => {
+  const home = (
+    <Link href="/" aria-current={currentHref === "/" ? "page" : undefined}>
+      Designsystem
+    </Link>
+  );
+
   return (
     <SdsHeader
       logoText="Designsystem"
-      logoHref="/"
+      logoLink={home}
       topSlot={
         <nav
           className={styles.nav}
           aria-label="Navigasjon, tekniskt dokumentasjon"
         >
           <ul className={styles.ul}>
-            <li>
-              <Link href="/" aria-current={currentHref === "/" && "page"}>
-                Designsystem
-              </Link>
-            </li>
+            <li>{home}</li>
             <li>
               <Link href="https://platon.sikt.no/">Utvikerplattform</Link>
             </li>

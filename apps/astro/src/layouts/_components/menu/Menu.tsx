@@ -109,7 +109,7 @@ const MenuItem = ({
     <MenuButtonLink
       icon={icon}
       href={url}
-      aria-current={url === pathname && "page"}
+      aria-current={url === pathname ? "page" : undefined}
       {...rest}
     >
       {name}

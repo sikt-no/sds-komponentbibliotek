@@ -14,7 +14,7 @@ export const Footer = ({ currentHref }: { currentHref: string }) => {
           <li>
             <Link
               href="/personvern/"
-              aria-current={currentHref === "/personvern/" && "page"}
+              aria-current={currentHref === "/personvern/" ? "page" : undefined}
             >
               Personvern og informasjons&shy;kapsler
             </Link>
@@ -23,7 +23,9 @@ export const Footer = ({ currentHref }: { currentHref: string }) => {
             <Link
               href="/tilgjengelighetserklaring/"
               aria-current={
-                currentHref === "/tilgjengelighetserklaring/" && "page"
+                currentHref === "/tilgjengelighetserklaring/"
+                  ? "page"
+                  : undefined
               }
             >
               Tilgjengelighets&shy;erklæring
@@ -32,7 +34,9 @@ export const Footer = ({ currentHref }: { currentHref: string }) => {
           <li>
             <Link
               href="/laget-med-kjaerlighet/"
-              aria-current={currentHref === "/laget-med-kjaerlighet/" && "page"}
+              aria-current={
+                currentHref === "/laget-med-kjaerlighet/" ? "page" : undefined
+              }
             >
               Laget med kjærlighet ❤️{isJune && <>🧡💛💚💙💜</>}
             </Link>
