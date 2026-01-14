@@ -21,7 +21,7 @@
     "@sikt/sds-core": "^5.0.0",
     "@sikt/sds-details": "^1.2.1",
     "@sikt/sds-footer": "^2.1.2",
-    "@sikt/sds-header": "^4.0.3",
+    "@sikt/sds-header": "^5.0.0",
     "@sikt/sds-icons": "^4.0.0",
     "@sikt/sds-list": "^2.1.1",
     "@sikt/sds-logo": "^2.2.3",
