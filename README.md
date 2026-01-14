@@ -87,6 +87,7 @@ These are example web applications to see how things can be built with Sikt desi
 - [designsystem.sikt.no](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/apps/astro) (Astro)
 - [Min kompetanse](https://gitlab.sikt.no/fs/min-kompetanse) (Next.js)
 - [FS Admin](https://gitlab.sikt.no/studieadm/fs-admin) (Next.js)
+- [htmx+TailwindCSS](https://gitlab.sikt.no/designsystem/htmx-tailwindcss) (htmx & TailwindCSS)
 
 ## Accessibility
 
