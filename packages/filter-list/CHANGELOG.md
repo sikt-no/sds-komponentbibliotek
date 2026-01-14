@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.2...@sikt/sds-filter-list@0.5.4) (2026-01-14)
+
+### Bug Fixes
+
+- **filter-list:** remove background color on filter-list component ([5b972c3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5b972c31143a47d998d43e601c0729352e8a0b5e))
+
 ## [0.5.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.1...@sikt/sds-filter-list@0.5.2) (2025-09-30)
 
 ### Bug Fixes
