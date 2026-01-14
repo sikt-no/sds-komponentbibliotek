@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@2.2.0...@sikt/sds-pagination@3.0.0) (2026-01-14)
+
+### ⚠ BREAKING CHANGES
+
+- **pagination:** rename handleClick prop to onClick to align with other components
+
+### Bug Fixes
+
+- **pagination:** rename handleClick prop to onClick to align with other components ([2a6ccf5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2a6ccf5fc9ce3c4356270b65992cd423b5e14a8a))
+
 ## [2.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@2.1.1...@sikt/sds-pagination@2.2.0) (2025-07-08)
 
 ### Features
