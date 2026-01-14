@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@4.0.3...@sikt/sds-header@5.0.0) (2026-01-14)
+
+### ⚠ BREAKING CHANGES
+
+- **header:** remove prop logoHref & add prop logoLink
+
+### Features
+
+- **header:** remove prop logoHref & add prop logoLink ([4da4302](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4da4302e14e9af07f9fbeb54dccb814e075a1242))
+
 ## [4.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@4.0.2...@sikt/sds-header@4.0.3) (2025-11-18)
 
 ### Bug Fixes
