@@ -1,7 +1,7 @@
 import { FormField } from "@sikt/sds-form";
 import { ExpandShowAltIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import { ReactNode, useId } from "react";
+import { InputHTMLAttributes, ReactNode, useId } from "react";
 import {
   ComboBox as AriaCombobox,
   ComboBoxProps as AriaComboboxProps,
@@ -34,6 +34,7 @@ interface ComboboxBaseProps<T extends object> extends Omit<
   helpText?: ReactNode;
   menuTrigger?: "focus" | "manual" | "input";
   popoverProps?: PopoverProps;
+  inputProps?: InputHTMLAttributes<HTMLInputElement>;
 }
 
 export type ComboboxProps<T extends object> = ComboboxBaseProps<T> &
@@ -60,6 +61,7 @@ export function Combobox<T extends object>({
   "aria-labelledby": ariaLabelledBy,
   menuTrigger = "focus",
   popoverProps,
+  inputProps,
   ...props
 }: ComboboxProps<T>) {
   const id = useId();
@@ -99,6 +101,7 @@ export function Combobox<T extends object>({
             aria-describedby={ariaDescribedBy}
             aria-invalid={Boolean(errorText)}
             aria-errormessage={errorText ? errorTextId : undefined}
+            {...inputProps}
           />
           <Button className="sds-combobox__combobox-button">
             <ExpandShowAltIcon />
