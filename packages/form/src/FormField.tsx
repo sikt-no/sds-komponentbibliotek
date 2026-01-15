@@ -33,6 +33,9 @@ export interface FormFieldProps extends Omit<
    * ID of the form element inside children.
    */
   htmlFor: string;
+  /**
+   * Slot for adding content after the label, for example buttons for preforming actions with the field.
+   */
   postLabelSlot?: ReactNode;
 }
 
