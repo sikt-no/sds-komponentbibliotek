@@ -34,7 +34,7 @@ figma.connect(
     links: [
       {
         name: "Storybook",
-        url: "https://designsystem.sikt.no/storybook/?path=/docs/components-inputdatepicker--docs",
+        url: "https://designsystem.sikt.no/storybook/?path=/docs/components-inputdatepicker-inputdatepicker--docs",
       },
     ],
   },

@@ -60,14 +60,14 @@ export const components = [
   {
     id: "input-datepicker",
     name: "Datepicker Input",
-    url: `${storybookUrl}?path=/docs/components-inputdatepicker--docs`,
-    storybook: `${storybookUrl}?path=/docs/components-inputdatepicker--docs`,
+    url: `${storybookUrl}?path=/docs/components-inputdatepicker-inputdatepicker--docs`,
+    storybook: `${storybookUrl}?path=/docs/components-inputdatepicker-inputdatepicker--docs`,
   },
   {
     id: "input-daterangepicker",
     name: "Daterangepicker Input",
-    url: `${storybookUrl}?path=/docs/components-inputdatepicker--docs`,
-    storybook: `${storybookUrl}?path=/docs/components-inputdatepicker--docs`,
+    url: `${storybookUrl}?path=/docs/components-inputdatepicker-inputdaterangepicker--docs`,
+    storybook: `${storybookUrl}?path=/docs/components-inputdatepicker-inputdaterangepicker--docs`,
   },
   {
     id: "details",
