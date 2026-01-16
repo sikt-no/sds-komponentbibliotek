@@ -39,6 +39,7 @@ export const Header = ({ currentHref }: { currentHref: string }) => {
           href="/sok"
         />
       }
+      skipLinkId="content"
     />
   );
 };
