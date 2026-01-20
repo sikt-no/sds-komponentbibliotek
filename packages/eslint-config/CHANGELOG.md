@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/eslint-config-sds@2.2.5...@sikt/eslint-config-sds@2.2.6) (2026-01-20)
+
+### Bug Fixes
+
+- **deps:** update dependency eslint-plugin-jest to ^29.1.0 ([c4da3af](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c4da3af64f2d03a9c088c711017067f81df52ed4))
+- **deps:** update dependency eslint-plugin-jest to ^29.12.0 ([1a7e36c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1a7e36c433b694bfeba3ef6e81ae02168d0d8111))
+- **deps:** update dependency eslint-plugin-jest to ^29.12.1 ([3421d2a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3421d2a8f64c12aea5a685054e324c42876f799b))
+- **deps:** update dependency eslint-plugin-jest to ^29.2.1 ([cfabb66](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cfabb66bae3d71ddf9e3f07aa2f9df07c30d1a1b))
+- **deps:** update dependency globals to v17 ([81f2b5e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/81f2b5e624d5ce709ed3c54a1296abd50e4b7f15))
+- **deps:** update dependency typescript-eslint to ^8.47.0 ([288c0d9](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/288c0d9d8e4f05a41b01a1f678656b0cf5c80478))
+- **deps:** update dependency typescript-eslint to ^8.48.1 ([a470a1e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a470a1ec7152b48343375829da4752cf40028a02))
+- **deps:** update dependency typescript-eslint to ^8.49.0 ([c40b36a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c40b36a1c6ef48da29b204911b83c0332d6f68bd))
+- **deps:** update dependency typescript-eslint to ^8.51.0 ([92684be](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/92684be9684762af8e0d9343e29777c55b8a3337))
+- **deps:** update eslint ([db2bc8b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/db2bc8b98ad827b1207494cb5eff593ab8a65581))
+- **deps:** update eslint ([d4d8677](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d4d8677a44228888a6b14754e224b9ad6f35a636))
+- **deps:** update eslint ([07964fb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/07964fb51655a19ecd9d96ad9ecc958c967d9ee0))
+- **deps:** update eslint ([b0014b4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b0014b45116595ad22d2d41343c84c7d5f790c10))
+- **deps:** update jest ([823f079](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/823f0798bd74c402ee1c7e877f13ec3b812b1474))
+
 ## [2.2.5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/eslint-config-sds@2.2.4...@sikt/eslint-config-sds@2.2.5) (2025-11-18)
 
 ### Bug Fixes
