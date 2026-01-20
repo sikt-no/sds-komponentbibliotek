@@ -1,12 +1,7 @@
 import { Button } from "@sikt/sds-button";
 import { ExpandShowIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
-import {
-  KeyboardEvent as ReactKeyboardEvent,
-  ReactNode,
-  useId,
-  useState,
-} from "react";
+import { ReactNode, useId, useState } from "react";
 import "./filter-list-expand.pcss";
 
 interface FilterListExpandProps {
@@ -27,6 +22,8 @@ export function FilterListExpand({
   children,
 }: FilterListExpandProps) {
   const id = useId();
+  const titleId = `${id}-title`;
+  const contentId = `${id}-content`;
   const [expanded, setExpanded] = useState(initialExpanded);
 
   const onToggle = () => {
@@ -41,12 +38,6 @@ export function FilterListExpand({
     onToggle();
   };
 
-  const handleToggleByKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
-    if (event.key === " " || event.key === "Enter") {
-      onToggle();
-    }
-  };
-
   const icon = (
     <ExpandShowIcon
       className={clsx(
@@ -59,21 +50,18 @@ export function FilterListExpand({
   return (
     <div className="sds-filter-list-expand">
       {clickableHeader ? (
-        <div
+        <button
           className="sds-filter-list-expand__header sds-filter-list-expand__header-clickable"
           onClick={handleToggleByClick}
-          onKeyDown={handleToggleByKeyDown}
-          tabIndex={0}
-          role="button"
-          id={`${id}-title`}
+          id={titleId}
+          aria-controls={contentId}
           aria-expanded={expanded}
-          aria-controls={`${id}-content`}
         >
           {header}
           <div className="sds-filter-list-expand--icon-container">{icon}</div>
-        </div>
+        </button>
       ) : (
-        <div className="sds-filter-list-expand__header" id={`${id}-title`}>
+        <div className="sds-filter-list-expand__header" id={titleId}>
           {header}
           <Button
             variant="transparent"
@@ -82,7 +70,7 @@ export function FilterListExpand({
             iconVariant="only"
             onClick={handleToggleByClick}
             aria-expanded={expanded}
-            aria-controls={`${id}-content`}
+            aria-controls={contentId}
           >
             {ariaLabelExpandToggle}
           </Button>
@@ -97,8 +85,8 @@ export function FilterListExpand({
       >
         <div
           role="region"
-          id={`${id}-content`}
-          aria-labelledby={`${id}-title`}
+          id={contentId}
+          aria-labelledby={titleId}
           hidden={!expanded}
         >
           {children}
