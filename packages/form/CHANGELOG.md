@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@4.1.0...@sikt/sds-form@4.1.1) (2026-01-20)
+
 ## [4.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-form@4.0.2...@sikt/sds-form@4.1.0) (2025-09-09)
 
 ### Features
