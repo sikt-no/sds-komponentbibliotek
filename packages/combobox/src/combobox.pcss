@@ -40,12 +40,12 @@
     &:hover,
     &:focus-visible {
       --chip-border-color: var(
-        --sds-color-interaction-primary-subtle-highlight
+        --sds-color-interaction-primary-strong-highlight
       );
     }
 
     &:active {
-      --chip-border-color: var(--sds-color-interaction-primary-subtle-pressed);
+      --chip-border-color: var(--sds-color-interaction-primary-strong-pressed);
     }
 
     &::after {
@@ -174,13 +174,13 @@
 
     &:hover,
     &:focus-visible {
-      background-color: var(
+      --combobox-button-background-color: var(
         --sds-color-interaction-primary-transparent-highlight
       );
     }
 
     &:active {
-      background-color: var(
+      --combobox-button-background-color: var(
         --sds-color-interaction-primary-transparent-pressed
       );
     }
@@ -279,7 +279,7 @@
       );
     }
 
-    &-button {
+    .sds-combobox__button {
       &:hover,
       &:focus {
         --combobox-border-color: var(

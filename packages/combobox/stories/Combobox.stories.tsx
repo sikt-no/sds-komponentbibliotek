@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { useState } from "react";
 import { Combobox, type ComboboxProps } from "../index";
 
 const meta = {
@@ -41,5 +42,33 @@ export const WithHelpText: Story = {
   args: {
     ...Default.args,
     helpText: "Helpful text",
+  },
+};
+
+export const WithError: Story = {
+  args: {
+    ...Default.args,
+    helpText: "Helpful text",
+    errorText: "Error: Message",
+  },
+};
+
+export const Controlled: Story = {
+  args: {
+    ...Default.args,
+  },
+  render: (args) => {
+    const [options, setOptions] = useState([...(Default.args?.options ?? [])]);
+    return (
+      <Combobox
+        {...args}
+        multiple
+        options={options}
+        onChange={(e, o) => {
+          console.log(e, o);
+          setOptions(o);
+        }}
+      />
+    );
   },
 };
