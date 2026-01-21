@@ -7,130 +7,171 @@
     var(--sds-space-padding-tiny) + var(--sds-space-padding-minimal) -
       var(--combobox-border-width)
   );
+  --combobox-icon-size: var(--sds-typography-fontsize-700);
 
-  display: inline-flex;
-  flex-direction: column;
-  width: 100%;
+  /* INFO: override u-components styling for sds-chip */
+  /* stylelint-disable selector-max-type */
+  data {
+    --chip-border-color: var(--sds-color-interaction-primary-strong-default);
 
-  &__combobox {
     align-items: center;
-    display: flex;
-    position: relative;
+    border: var(--sds-space-border-weight-regular) solid
+      var(--chip-border-color);
+    border-radius: var(--sds-space-border-radius-full);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: var(--sds-typography-body-l-fontsize);
+    font-weight: var(--sds-typography-body-l-fontweight);
+    gap: var(--sds-space-padding-minimal);
+    justify-content: center;
+    line-height: var(--sds-typography-body-l-lineheight);
+    padding: var(--sds-space-padding-minimal);
+    padding-left: var(--sds-space-padding-tiny);
+    margin: 0 var(--sds-space-padding-tiny) var(--sds-space-padding-tiny) 0;
 
-    &-input {
-      appearance: none;
-      background-image: none;
-      background-color: var(--sds-color-layout-background-default);
-      border: var(--combobox-border-width) solid var(--combobox-border-color);
-      border-radius: var(--sds-space-border-radius-medium);
-      color: var(--sds-color-text-primary);
-      flex: 1;
-      font-size: var(--sds-typography-body-default-fontsize);
-      font-weight: var(--sds-typography-body-default-fontweight);
-      line-height: var(--sds-typography-body-default-lineheight);
-      padding: var(--combobox-padding);
-
-      &:hover,
-      &:focus-visible {
-        --combobox-border-color: var(--sds-color-layout-divider-strong);
-      }
-
-      &:active {
-        --combobox-border-color: var(--sds-color-layout-divider-strong);
-      }
-
-      &[data-focus-visible],
-      &:focus-visible {
-        outline: var(--sds-focus-outline);
-        outline-offset: 0;
-      }
-
-      &:disabled {
-        background: repeating-linear-gradient(
-          -45deg,
-          var(--sds-color-layout-background-default),
-          var(--sds-color-layout-background-default) var(--sds-base-size-s),
-          var(--sds-color-interaction-neutral-subtle-default)
-            var(--sds-base-size-s),
-          var(--sds-color-interaction-neutral-subtle-default)
-            calc(var(--sds-base-size-s) * 2)
-        );
-        cursor: not-allowed;
-      }
+    &:focus {
+      outline: unset;
     }
 
-    &-button {
-      --combobox-button-font-size: var(--sds-typography-fontsize-700);
-      --combobox-button-size: calc(
-        var(--combobox-button-font-size) +
-          calc(var(--sds-space-padding-minimal) * 2)
-      );
-
-      align-items: center;
-      border: 0;
-      background-color: var(--combobox-button-background-color);
-      border-radius: var(--sds-space-border-radius-minimal);
-      color: var(--combobox-button-color);
-      display: flex;
-      font-size: var(--combobox-button-font-size);
-      justify-content: center;
-      padding: var(--sds-space-padding-minimal);
-      position: absolute;
-      right: var(--combobox-padding);
-      width: var(--combobox-button-size);
-      height: var(--combobox-button-size);
-
-      &:hover,
-      &:focus-visible {
-        --combobox-button-background-color: var(
-          --sds-color-interaction-primary-transparent-highlight
-        );
-      }
-    }
-  }
-
-  &__listbox {
-    display: block;
-    width: unset;
-    max-height: 15rem;
-    min-height: unset;
-    overflow: auto;
-  }
-
-  &__popover {
-    padding: var(--sds-space-padding-small);
-    margin-top: var(--sds-space-gap-small);
-    margin-bottom: var(--sds-space-gap-small);
-    background-color: var(--sds-color-layout-background-default);
-    box-shadow: var(--sds-effect-shadow-elevated-default);
-    border-radius: var(--sds-space-border-radius-medium);
-
-    /* INFO: this custom property is set by React Aria */
-    width: var(--trigger-width);
-  }
-
-  &__header {
-    border-bottom: var(--sds-space-border-weight-thin) solid
-      var(--sds-color-layout-divider-subtle);
-    font-size: var(--sds-typography-editorial-headline-xxs-fontsize);
-    font-weight: var(--sds-typography-editorial-headline-xxs-fontweight);
-    line-height: var(--sds-typography-editorial-headline-xxs-lineheight);
-    padding: var(--sds-space-padding-small);
-    margin: var(--sds-space-gap-tiny);
-  }
-
-  &__item {
-    padding: var(--sds-space-padding-small);
-    margin: var(--sds-space-gap-tiny);
-    border-radius: var(--sds-space-border-radius-medium);
-
-    &[data-focus-visible],
     &:focus-visible {
       outline: var(--sds-focus-outline);
     }
 
-    &[data-hovered],
-    &[data-focus-visible],
+    &:hover,
+    &:focus-visible {
+      --chip-border-color: var(
+        --sds-color-interaction-primary-subtle-highlight
+      );
+    }
+
+    &:active {
+      --chip-border-color: var(--sds-color-interaction-primary-subtle-pressed);
+    }
+
+    &::after {
+      align-items: center;
+      background-color: var(--sds-color-text-primary);
+      content: "";
+      display: inline-block;
+      font-size: var(--combobox-icon-size);
+      justify-content: center;
+      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"/></svg>');
+      mask-position: center right;
+      mask-repeat: no-repeat;
+      mask-size: var(--combobox-icon-size);
+      transform: rotateY(0deg) rotate(-45deg);
+      min-width: var(--combobox-icon-size);
+      min-height: var(--combobox-icon-size);
+      width: var(--combobox-icon-size);
+      height: var(--combobox-icon-size);
+      vertical-align: sub;
+    }
+    /* stylelint-enable selector-max-type */
+  }
+
+  &__combobox {
+    display: flex;
+    flex-wrap: wrap;
+    pointer-events: none;
+
+    &:not([data-multiple]),
+    &[data-multiple="false"] {
+      /* INFO: override u-components styling */
+      /* stylelint-disable-next-line */
+      data {
+        display: none;
+      }
+    }
+  }
+
+  &__input {
+    appearance: none;
+    background-image: none;
+    background-color: var(--sds-color-layout-background-default);
+    border: var(--combobox-border-width) solid var(--combobox-border-color);
+    border-radius: var(--sds-space-border-radius-medium);
+    color: var(--sds-color-text-primary);
+    display: flex;
+    font-size: var(--sds-typography-body-default-fontsize);
+    font-weight: var(--sds-typography-body-default-fontweight);
+    line-height: var(--sds-typography-body-default-lineheight);
+    padding: var(--combobox-padding);
+    padding-right: calc(
+      var(--combobox-padding) + var(--combobox-icon-size) +
+        var(--sds-space-padding-tiny)
+    );
+    pointer-events: auto;
+    width: 100%;
+
+    &:hover,
+    &:focus-visible {
+      --combobox-border-color: var(--sds-color-layout-divider-strong);
+    }
+
+    &:active {
+      --combobox-border-color: var(--sds-color-layout-divider-strong);
+    }
+
+    &:focus-visible {
+      outline: var(--sds-focus-outline);
+      outline-offset: 0;
+    }
+
+    &:disabled {
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--sds-color-layout-background-default),
+        var(--sds-color-layout-background-default) var(--sds-base-size-s),
+        var(--sds-color-interaction-neutral-subtle-default)
+          var(--sds-base-size-s),
+        var(--sds-color-interaction-neutral-subtle-default)
+          calc(var(--sds-base-size-s) * 2)
+      );
+      cursor: not-allowed;
+    }
+  }
+
+  &__button {
+    --button-border-radius: var(--sds-space-border-radius-minimal);
+    --button-padding: var(--sds-space-padding-minimal);
+    --button-width: calc(
+      var(--combobox-icon-size) + var(--button-padding) +
+        var(--combobox-border-width)
+    );
+
+    align-items: center;
+    background-color: var(--combobox-button-background-color);
+    border: 0 none;
+    border-radius: var(--button-border-radius);
+    color: var(--combobox-button-color);
+    cursor: pointer;
+    font-size: var(--sds-typography-body-default-fontsize);
+    font-weight: var(--sds-typography-body-default-fontweight);
+    justify-content: center;
+    line-height: var(--sds-typography-body-default-lineheight);
+    gap: var(--button-padding);
+    padding: var(--button-padding)
+      calc(var(--button-padding) + var(--button-padding));
+
+    /* INFO: override u-components styling */
+    /* stylelint-disable-next-line */
+    del& {
+      pointer-events: auto;
+    }
+
+    &-icon {
+      align-items: center;
+      display: flex;
+      font-size: var(--combobox-icon-size);
+      justify-content: center;
+      margin-right: calc(var(--button-padding) * -1);
+      margin-left: calc(var(--button-padding) * -1);
+    }
+
+    &:focus-visible {
+      outline: var(--sds-focus-outline);
+    }
+
     &:hover,
     &:focus-visible {
       background-color: var(
@@ -138,16 +179,77 @@
       );
     }
 
-    &[data-pressed],
     &:active {
       background-color: var(
         --sds-color-interaction-primary-transparent-pressed
       );
     }
 
-    &[data-selected] {
-      background-color: var(--sds-color-interaction-primary-strong-pressed);
-      color: var(--sds-color-text-on-strong);
+    align-self: center;
+    margin-left: calc(calc(var(--combobox-padding) + var(--button-width)) * -1);
+
+    &:not([hidden]) + .sds-combobox__button {
+      display: none;
+    }
+
+    /*
+    &:has(+ .sds-combobox__datalist:not([hidden])) {
+      transform: rotateY(0deg) rotate(180deg);
+    }
+    */
+  }
+
+  &__datalist {
+    background-color: var(--sds-color-layout-background-default);
+    box-shadow: var(--sds-effect-shadow-elevated-default);
+    border-radius: var(--sds-space-border-radius-medium);
+    inset: 100% 0 auto;
+    margin-top: var(--sds-space-gap-small);
+    margin-bottom: var(--sds-space-gap-small);
+    max-height: 15rem;
+    overflow-y: auto;
+    padding: var(--sds-space-padding-small);
+    pointer-events: auto;
+    position: absolute;
+    z-index: var(--sds-base-zindex-modal);
+
+    &:has(&-option:not([aria-hidden="false"])) {
+      display: none;
+    }
+
+    &:not([hidden]):has(&-option:not([aria-hidden="true"])) {
+      display: block;
+    }
+
+    &-option {
+      padding: var(--sds-space-padding-small);
+      margin: var(--sds-space-gap-tiny);
+      border-radius: var(--sds-space-border-radius-medium);
+
+      &:focus {
+        outline: unset;
+      }
+
+      &:focus-visible {
+        outline: var(--sds-focus-outline);
+      }
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(
+          --sds-color-interaction-primary-transparent-highlight
+        );
+      }
+
+      &:active {
+        background-color: var(
+          --sds-color-interaction-primary-transparent-pressed
+        );
+      }
+
+      &[selected] {
+        background-color: var(--sds-color-interaction-primary-subtle-pressed);
+      }
     }
   }
 
