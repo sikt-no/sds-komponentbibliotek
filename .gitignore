@@ -14,8 +14,8 @@ node_modules
 # logs
 *.log
 
-# local env files
-.env*.local
+# local settings files
+*.local*
 
 # testing
 coverage
