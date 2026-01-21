@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@4.0.0...@sikt/sds-combobox@4.0.1) (2026-01-21)
+
+### Bug Fixes
+
+- **combobox:** invalid hover & focus state ([1e7db34](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1e7db3496ec20ff1f6ae182df3512d710186b0e5))
+
 ## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@3.3.0...@sikt/sds-combobox@4.0.0) (2026-01-21)
 
 ### ⚠ BREAKING CHANGES
