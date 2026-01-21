@@ -3,7 +3,7 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-{combobox,form}
+npm i -s @sikt/sds-{combobox,form,icons}
 ```
 
 ### React
@@ -13,6 +13,7 @@ This component is build on top of [u-elements](https://u-elements.github.io/u-el
 ```js
 import { Combobox } from "@sikt/sds-combobox";
 import "@sikt/sds-form/dist/index.css";
+import "@sikt/sds-icons/dist/index.css";
 import "@sikt/sds-combobox/dist/index.css";
 
 <Combobox
@@ -41,6 +42,7 @@ Import stylesheet:
 
 ```css
 @import url("@sikt/sds-form");
+@import url("@sikt/sds-icons");
 @import url("@sikt/sds-combobox");
 ```
 

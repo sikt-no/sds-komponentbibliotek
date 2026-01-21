@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@3.3.0...@sikt/sds-combobox@4.0.0) (2026-01-21)
+
+### ⚠ BREAKING CHANGES
+
+- **combobox:** add new combobox component with multiple option
+
+#### Migration
+
+Read API documentation in [README](./README.md), Storybook & [diff](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/80582a2f849f361d0d89e192af245d537f4440d6). GLHF!
+
+### Features
+
+- **combobox:** add new combobox component with multiple option ([80582a2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/80582a2f849f361d0d89e192af245d537f4440d6))
+
 ## [3.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@3.2.1...@sikt/sds-combobox@3.3.0) (2026-01-14)
 
 ### Features
