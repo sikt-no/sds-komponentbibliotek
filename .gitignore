@@ -32,3 +32,6 @@ results.xml
 # build
 build
 dist
+
+# mise
+.mise.local.toml

@@ -127,6 +127,24 @@ Build all packages with `npm run build` from root.
 
 ### Setup
 
+#### Prerequisites
+
+This project supports both [nvm](https://github.com/nvm-sh/nvm) and [mise](https://mise.jdx.dev/) for Node.js version management.
+
+Using nvm:
+
+```sh
+nvm use
+```
+
+Using mise:
+
+```sh
+mise install
+```
+
+#### Installation
+
 ```sh
 npm ci
 npm run build
@@ -134,6 +152,8 @@ npm run dev
 ```
 
 Storybook will run on http://localhost:6006 and [Astro (designsystem.sikt.no)](./apps/astro/README.md) on http://localhost:4321
+
+**Note:** If you don't have mise installed, ensure you're using Node.js 24.12.0 and npm 11.7.0 as specified in `package.json`
 
 ### Change request
 
