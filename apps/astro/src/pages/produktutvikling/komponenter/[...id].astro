@@ -66,5 +66,31 @@ const data = components.find((item) => item.id === id);
     </ButtonGroup>
   </Hero>
 
-  <Content />
+  <div class="mdx">
+    <Content />
+  </div>
 </Layout>
+
+<style>
+  .mdx {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-gap-medium);
+    max-width: 720px;
+    width: 100%;
+
+    > :first-child {
+      padding-bottom: var(--sds-space-gap-medium);
+    }
+
+    > h2 {
+      border-bottom: var(--sds-space-border-weight-regular) solid
+        var(--sds-color-layout-divider-subtle);
+      padding: var(--sds-space-padding-large) 0;
+
+      & + * {
+        padding-top: var(--sds-space-padding-medium);
+      }
+    }
+  }
+</style>
