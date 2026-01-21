@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.4...@sikt/sds-filter-list@0.5.5) (2026-01-21)
+
+### Bug Fixes
+
+- **filter-list:** change from role=button to button element for better accessibility & less logic
+
 ## [0.5.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.2...@sikt/sds-filter-list@0.5.4) (2026-01-14)
 
 ### Bug Fixes
