@@ -25,48 +25,48 @@ const data = components.find((item) => item.id === id);
 ---
 
 <Layout title={entry.data.title}>
-  <Hero
-    breadcrumbs={[
-      { title: "Designsystem", href: "/" },
-      { title: "Produktutvikling" },
-      { title: "Komponenter", href: "/produktutvikling/komponenter" },
-    ]}
-    heading={entry.data.title}
-    slot="hero"
-  >
-    <ButtonGroup variant="left">
-      {
-        data?.figma && (
-          <ButtonLink size="small" href={data.figma}>
-            Figma
-          </ButtonLink>
-        )
-      }
-      <ButtonLink
-        size="small"
-        href={`https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/packages/${entry.data.package}`}
-      >
-        GitLab
-      </ButtonLink>
-      {
-        data?.storybook && (
-          <ButtonLink size="small" href={data.storybook}>
-            Storybook
-          </ButtonLink>
-        )
-      }
-    </ButtonGroup>
-    <ButtonGroup variant="left">
-      <ButtonLink
-        variant="neutral-transparent"
-        size="small"
-        href={`https://www.npmjs.com/package/${pkg.name}`}
-        >{pkg.name}@{pkg.version}</ButtonLink
-      >
-    </ButtonGroup>
-  </Hero>
-
   <div class="mdx">
+    <Hero
+      breadcrumbs={[
+        { title: "Designsystem", href: "/" },
+        { title: "Produktutvikling" },
+        { title: "Komponenter", href: "/produktutvikling/komponenter" },
+      ]}
+      heading={entry.data.title}
+      slot="hero"
+    >
+      <ButtonGroup variant="left">
+        {
+          data?.figma && (
+            <ButtonLink size="small" href={data.figma}>
+              Figma
+            </ButtonLink>
+          )
+        }
+        <ButtonLink
+          size="small"
+          href={`https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/packages/${entry.data.package}`}
+        >
+          GitLab
+        </ButtonLink>
+        {
+          data?.storybook && (
+            <ButtonLink size="small" href={data.storybook}>
+              Storybook
+            </ButtonLink>
+          )
+        }
+      </ButtonGroup>
+      <ButtonGroup variant="left">
+        <ButtonLink
+          variant="neutral-transparent"
+          size="small"
+          href={`https://www.npmjs.com/package/${pkg.name}`}
+          >{pkg.name}@{pkg.version}</ButtonLink
+        >
+      </ButtonGroup>
+    </Hero>
+
     <Content />
   </div>
 </Layout>
