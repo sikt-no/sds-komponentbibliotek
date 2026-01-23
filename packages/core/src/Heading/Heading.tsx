@@ -6,8 +6,15 @@ export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
    * Represents two sets of heading styles. These should in most cases be used separately.
    * - Editorial is for applications with low complexity and enough space - that strive for a calm user interface.
    * - Application is for more compact, information dense and complex applications.
+   *
+   * @default "editorial"
    */
   variant?: "editorial" | "application";
+  /**
+   * Visual size of the heading.
+   *
+   * @default "m"
+   */
   size?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl";
   className?: string;
   children: ReactNode;
