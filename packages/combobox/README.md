@@ -18,7 +18,7 @@ import "@sikt/sds-combobox/dist/index.css";
 
 <Combobox
   label="Label"
-  onChange={() => {}}
+  onChange={(event, values) => setValue(values)}
   options={[{ label: "Value 1", value: "1" }]}
 />;
 ```
@@ -32,6 +32,7 @@ i18n are set with the following props from [u-elements](https://u-elements.githu
 - `data-sr-found="Navigate left to find %d selected"` announces where to find amount of selected items.
 - `data-sr-invalid="Invalid value"` announces if trying to select invalid value.
 - `data-sr-of="of"` separates "number of total" in announcements.
+- `data-sr-items="Selected"` aria-label for listbox containing selected items.
 - `data-sr-singular="%d hit"` announces single hit
 - `data-sr-plural="%d hits"` announces multiple hits
 - `data-sr-clear="Clear text"` announces clear button.

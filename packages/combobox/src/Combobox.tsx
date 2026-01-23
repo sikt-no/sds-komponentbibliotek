@@ -65,6 +65,7 @@ export interface ComboboxBaseProps extends Omit<
   "data-sr-found"?: string;
   "data-sr-invalid"?: string;
   "data-sr-of"?: string;
+  "data-sr-items"?: string;
   "data-sr-singular"?: string;
   "data-sr-plural"?: string;
   "data-sr-clear"?: string;
@@ -103,6 +104,7 @@ export const Combobox = ({
   "data-sr-found": dataSrFound = "Naviger til venstre for å finne %d valgte",
   "data-sr-invalid": dataSrInvalid = "Ugyldig verdi",
   "data-sr-of": dataSrOf = "av",
+  "data-sr-items": dataSrItems = "Valgte",
   "data-sr-singular": dataSrSingular = "%d treff",
   "data-sr-plural": dataSrPlural = "%d treff",
   "data-sr-clear": dataSrClear = "Fjern tekst",
@@ -165,6 +167,7 @@ export const Combobox = ({
           data-sr-found={dataSrFound}
           data-sr-invalid={dataSrInvalid}
           data-sr-of={dataSrOf}
+          data-sr-items={dataSrItems}
           {...rest}
         >
           {options

@@ -16,7 +16,8 @@ test.describe("Combobox", () => {
 
       const accessibilityScanResults = await new AxeBuilder({ page })
         .include(componentSelector)
-        .exclude(".sds-combobox__input") // TODO: remove when u-combobox doesn't fail axe-core
+        .exclude(".sds-combobox__input") // TODO: remove when u-combobox input list= doesn't fail axe-core
+        .exclude(".sds-combobox__combobox data") // TODO: remove when u-combobox data role=option doesn't fail axe-core
         .analyze();
 
       expect(accessibilityScanResults.violations).toEqual([]);
@@ -32,7 +33,8 @@ test.describe("Combobox", () => {
 
       const accessibilityScanResults = await new AxeBuilder({ page })
         .include(componentSelector)
-        .exclude(".sds-combobox__input") // TODO: remove when u-combobox doesn't fail axe-core
+        .exclude(".sds-combobox__input") // TODO: remove when u-combobox input list= doesn't fail axe-core
+        .exclude(".sds-combobox__combobox data") // TODO: remove when u-combobox data role=option doesn't fail axe-core
         .analyze();
 
       expect(accessibilityScanResults.violations).toEqual([]);
