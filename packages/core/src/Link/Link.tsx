@@ -5,9 +5,21 @@ import { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
 export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
   children: ReactNode;
+  /**
+   * Will add icon to navigation links.
+   */
   isNavigation?: boolean;
+  /**
+   * Will add icon to external links. These are default added to `target="_blank"`.
+   */
   isExternal?: boolean;
+  /**
+   * Will hide default icons for `target="_blank"`, `href="mailto:"` & `href="tel:"`.
+   */
   noIcon?: boolean;
+  /**
+   * Use the asChild prop to compose onto alternative React components.
+   */
   asChild?: boolean;
   icon?: ReactNode;
   iconVariant?: "right" | "left";

@@ -4,6 +4,9 @@ import { HTMLAttributes, ReactNode } from "react";
 export interface ScreenReaderOnlyProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;
   children: ReactNode;
+  /**
+   * Will make the element visible when navigated to with keyboard.
+   */
   isFocusable?: boolean;
 }
 

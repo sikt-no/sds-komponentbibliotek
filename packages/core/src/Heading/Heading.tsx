@@ -2,6 +2,11 @@ import { clsx } from "clsx/lite";
 import { ElementType, HTMLAttributes, ReactNode } from "react";
 
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
+  /**
+   * Represents two sets of heading styles. These should in most cases be used separately.
+   * - Editorial is for applications with low complexity and enough space - that strive for a calm user interface.
+   * - Application is for more compact, information dense and complex applications.
+   */
   variant?: "editorial" | "application";
   size?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl";
   className?: string;
@@ -9,6 +14,10 @@ export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
 }
 
 interface HeadingLevels {
+  /**
+   * Represent six levels of section headings. `<h1>` is the highest section level and `<h6> is the lowest.
+   * A common navigation technique for users of screen reading software is to quickly jump from heading to heading in order to determine the content of the page. Because of this, it is important to not skip one or more heading levels.
+   */
   level: "1" | "2" | "3" | "4" | "5" | "6";
 }
 

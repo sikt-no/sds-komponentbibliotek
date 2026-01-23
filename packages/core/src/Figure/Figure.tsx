@@ -12,6 +12,9 @@ export interface FigureProps extends HTMLAttributes<HTMLElement> {
   aspectRatio?: "16x9";
   children: ReactNode;
   className?: string;
+  /**
+   *  A caption or legend describing the rest of the contents of its parent `<figure>` element.
+   */
   figCaption?: string;
 }
 
