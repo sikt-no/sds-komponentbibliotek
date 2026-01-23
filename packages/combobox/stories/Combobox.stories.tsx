@@ -14,6 +14,7 @@ type Story = StoryObj<ComboboxProps>;
 export const Default: Story = {
   args: {
     label: "Choose flavor of ice cream",
+    lang: "en",
     name: "icecream",
     options: [
       { label: "Coconut", value: "1" },

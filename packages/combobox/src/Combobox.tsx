@@ -58,17 +58,12 @@ export interface ComboboxBaseProps extends Omit<
     newValue: OptionHTMLAttributes<HTMLOptionElement>[],
   ) => void;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
-  "data-sr-added"?: string;
-  "data-sr-removed"?: string;
-  "data-sr-remove"?: string;
-  "data-sr-empty"?: string;
-  "data-sr-found"?: string;
-  "data-sr-invalid"?: string;
-  "data-sr-of"?: string;
-  "data-sr-items"?: string;
-  "data-sr-singular"?: string;
-  "data-sr-plural"?: string;
-  "data-sr-clear"?: string;
+  /**
+   * Sets language for accessible texts.
+   *
+   * @default "nb"
+   */
+  lang?: "nb" | "nn" | "en";
 }
 
 export type ComboboxProps = ComboboxBaseProps &
@@ -86,6 +81,49 @@ export type ComboboxProps = ComboboxBaseProps &
       }
   );
 
+const i18n = {
+  nb: {
+    "data-sr-added": "Lagt til",
+    "data-sr-removed": "Fjernet",
+    "data-sr-remove": "Trykk for å fjerne",
+    "data-sr-empty": "Ingen valgte",
+    "data-sr-found": "Naviger til venstre for å finne %d valgte",
+    "data-sr-invalid": "Ugyldig verdi",
+    "data-sr-of": "av",
+    "data-sr-singular": "%d treff",
+    "data-sr-plural": "%d treff",
+    "data-sr-clear": "Fjern tekst",
+  },
+  nn: {
+    "data-sr-added": "Lagt til",
+    "data-sr-removed": "Fjerna",
+    "data-sr-remove": "Trykk for å fjerne",
+    "data-sr-empty": "Ingen valde",
+    "data-sr-found": "Naviger til venstre for å finne %d valde",
+    "data-sr-invalid": "Ugyldig verdi",
+    "data-sr-of": "av",
+    "data-sr-singular": "%d treff",
+    "data-sr-plural": "%d treff",
+    "data-sr-clear": "Fjern tekst",
+  },
+  en: {
+    "data-sr-added": "Added",
+    "data-sr-removed": "Removed",
+    "data-sr-remove": "Press to remove",
+    "data-sr-empty": "No selected",
+    "data-sr-found": "Navigate left to find %d selected",
+    "data-sr-invalid": "Invalid value",
+    "data-sr-of": "of",
+    "data-sr-singular": "%d hit",
+    "data-sr-plural": "%d hits",
+    "data-sr-clear": "Clear text",
+  },
+};
+
+const getTextProps = (lang: keyof typeof i18n) => {
+  return i18n[lang];
+};
+
 export const Combobox = ({
   className,
   errorText,
@@ -97,17 +135,7 @@ export const Combobox = ({
   name,
   onChange,
   inputProps,
-  "data-sr-added": dataSrAdded = "Lagt til",
-  "data-sr-removed": dataSrRemoved = "Fjernet",
-  "data-sr-remove": dataSrRemove = "Trykk for å fjerne",
-  "data-sr-empty": dataSrEmpty = "Ingen valgte",
-  "data-sr-found": dataSrFound = "Naviger til venstre for å finne %d valgte",
-  "data-sr-invalid": dataSrInvalid = "Ugyldig verdi",
-  "data-sr-of": dataSrOf = "av",
-  "data-sr-items": dataSrItems = "Valgte",
-  "data-sr-singular": dataSrSingular = "%d treff",
-  "data-sr-plural": dataSrPlural = "%d treff",
-  "data-sr-clear": dataSrClear = "Fjern tekst",
+  lang = "nb",
   ...rest
 }: ComboboxProps) => {
   const comboboxRef = useRef<UHTMLComboboxElement>(null);
@@ -115,6 +143,7 @@ export const Combobox = ({
   const errorTextId = `${id}-error-text`;
   const helpTextId = `${id}-help-text`;
   const listId = `${id}-list`;
+  const textProps = getTextProps(lang);
 
   useEffect(() => {
     const handleOnChange = (e: CustomEvent<HTMLDataElement>) => {
@@ -160,14 +189,7 @@ export const Combobox = ({
           className="sds-combobox__combobox"
           data-multiple={multiple}
           ref={comboboxRef}
-          data-sr-added={dataSrAdded}
-          data-sr-removed={dataSrRemoved}
-          data-sr-remove={dataSrRemove}
-          data-sr-empty={dataSrEmpty}
-          data-sr-found={dataSrFound}
-          data-sr-invalid={dataSrInvalid}
-          data-sr-of={dataSrOf}
-          data-sr-items={dataSrItems}
+          {...textProps}
           {...rest}
         >
           {options
@@ -185,7 +207,7 @@ export const Combobox = ({
             aria-labelledby={ariaLabelledBy}
           />
           <del className="sds-combobox__button">
-            <ScreenReaderOnly>{dataSrClear}</ScreenReaderOnly>
+            <ScreenReaderOnly>{textProps["data-sr-clear"]}</ScreenReaderOnly>
             <span className="sds-combobox__button-icon">
               <CancelIcon />
             </span>
@@ -198,8 +220,8 @@ export const Combobox = ({
           <u-datalist
             className="sds-combobox__datalist"
             id={listId}
-            data-sr-singular={dataSrSingular}
-            data-sr-plural={dataSrPlural}
+            data-sr-singular={textProps["data-sr-singular"]}
+            data-sr-plural={textProps["data-sr-plural"]}
           >
             {options.map((option) => (
               <u-option
