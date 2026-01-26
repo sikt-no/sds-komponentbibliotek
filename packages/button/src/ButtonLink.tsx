@@ -74,7 +74,21 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
         aria-label={iconOnly ? ariaLabel : undefined}
         {...rest}
       >
-        {(!icon || !iconOnly) && <Slottable>{children}</Slottable>}
+        {(!icon || !iconOnly) &&
+          (asChild && isValidElement(children) ? (
+            <Slottable>
+              {cloneElement(
+                children,
+                children.props ?? {},
+                <span className="sds-button__label">
+                  {/* @ts-expect-error Property does not exist on type */}
+                  {children.props?.children}
+                </span>,
+              )}
+            </Slottable>
+          ) : (
+            <span className="sds-button__label">{children}</span>
+          ))}
         {icon &&
           (iconOnly && asChild && isValidElement(children) ? (
             <Slottable>

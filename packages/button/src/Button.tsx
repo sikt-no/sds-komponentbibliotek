@@ -63,7 +63,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         type={type}
         {...rest}
       >
-        {(!icon || !iconOnly) && children}
+        {(!icon || !iconOnly) && (
+          <span className="sds-button__label">{children}</span>
+        )}
         {icon && (
           <span
             className={clsx(
