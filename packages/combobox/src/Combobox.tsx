@@ -146,6 +146,8 @@ export const Combobox = ({
   const textProps = getTextProps(lang);
 
   useEffect(() => {
+    const currentRef = comboboxRef.current;
+
     const handleOnChange = (e: CustomEvent<HTMLDataElement>) => {
       e.preventDefault();
 
@@ -159,15 +161,9 @@ export const Combobox = ({
       onChange?.(e, options);
     };
 
-    comboboxRef.current?.addEventListener(
-      "comboboxafterselect",
-      handleOnChange,
-    );
+    currentRef?.addEventListener("comboboxafterselect", handleOnChange);
     return () => {
-      comboboxRef.current?.removeEventListener(
-        "comboboxafterselect",
-        handleOnChange,
-      );
+      currentRef?.removeEventListener("comboboxafterselect", handleOnChange);
     };
   }, [options, onChange]);
 
