@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@4.0.1...@sikt/sds-combobox@5.0.0) (2026-01-26)
+
+### ⚠ BREAKING CHANGES
+
+- **combobox:** add predefined i18n
+
+### Features
+
+- **combobox:** add predefined i18n ([bb977ed](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bb977ed806ed361c9bf467af3d603d6b38b28aef))
+
+### Bug Fixes
+
+- **deps:** update @u-elements/u-combobox for better nvda support ([f827457](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f827457a9b64fab8592d5c6e63b3f1a8a2a98fde))
+
 ## [4.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@4.0.0...@sikt/sds-combobox@4.0.1) (2026-01-21)
 
 ### Bug Fixes
