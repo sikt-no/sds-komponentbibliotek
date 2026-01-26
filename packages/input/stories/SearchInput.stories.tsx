@@ -40,7 +40,6 @@ const SearchInputWrapper = (props: InputProps) => {
 };
 
 export const Default: Story = {
-  render: SearchInputWrapper,
   args: {
     label: "Label",
     actionProps: {
@@ -51,6 +50,7 @@ export const Default: Story = {
       type: "submit",
     },
   },
+  render: (args) => <SearchInputWrapper {...args} />,
 };
 
 export const WithClearButton: Story = {
@@ -73,23 +73,23 @@ export const WithClearButton: Story = {
 };
 
 export const WithCustomIcon: Story = {
-  render: SearchInputWrapper,
   args: {
     ...Default.args,
     icon: <LocationIcon />,
   },
+  render: (args) => <SearchInputWrapper {...args} />,
 };
 
 export const WithHelpText: Story = {
-  render: SearchInputWrapper,
   args: { ...Default.args, helpText: "Helpful text" },
+  render: (args) => <SearchInputWrapper {...args} />,
 };
 
 export const WithError: Story = {
-  render: SearchInputWrapper,
   args: {
     ...Default.args,
     helpText: "Helpful text",
     errorText: "Error: Message",
   },
+  render: (args) => <SearchInputWrapper {...args} />,
 };
