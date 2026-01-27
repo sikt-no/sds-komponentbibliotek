@@ -3,7 +3,7 @@ import figma, { html } from "@figma/code-connect/html";
 figma.connect(
   "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=422-4494",
   {
-    variant: { Label: true },
+    variant: { "Show label": true },
     props: {
       className: figma.className([
         "sds-button",
@@ -27,7 +27,7 @@ figma.connect(
 figma.connect(
   "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=422%3A4494",
   {
-    variant: { Label: true, "Show icon / Right": true },
+    variant: { "Show label": true, "Show icon / Right": true },
     props: {
       className: figma.className([
         "sds-button",
@@ -55,7 +55,7 @@ figma.connect(
 figma.connect(
   "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=422%3A4494",
   {
-    variant: { Label: true, "Show icon / Left": true },
+    variant: { "Show label": true, "Show icon / Left": true },
     props: {
       className: figma.className([
         "sds-button",
@@ -84,7 +84,7 @@ figma.connect(
 figma.connect(
   "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=422%3A4494",
   {
-    variant: { Label: false, "Show icon / Right": true },
+    variant: { "Show label": false, "Show icon / Right": true },
     props: {
       className: figma.className([
         "sds-button",
