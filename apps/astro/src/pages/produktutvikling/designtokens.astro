@@ -1,8 +1,8 @@
 ---
 import Layout from "../../layouts/PageLayout.astro";
 import { Hero } from "../../components";
-import { Link, Paragraph } from "@sikt/sds-core";
-import { Badge } from "@sikt/sds-badge";
+import { Paragraph } from "@sikt/sds-core";
+import { TagStatus } from "@sikt/sds-tag";
 import { Section } from "@sikt/sds-section";
 import TagList from "../../components/tag/TagList.astro";
 
@@ -96,9 +96,9 @@ const pageTitle = "Designtokens";
       <span class="sds-typography-label sds-typography-label--l">
         Eksempel:
       </span>
-      <Badge visibility="strong">
+      <TagStatus visibility="strong">
         --sds-color-interaction-primary-transparent-default
-      </Badge>
+      </TagStatus>
     </Paragraph>
 
     <Paragraph className="ds-content-max-width">

@@ -2,7 +2,7 @@
 import Layout from "../../layouts/PageLayout.astro";
 import { Hero, Token } from "../../components";
 import { Paragraph } from "@sikt/sds-core";
-import { Badge } from "@sikt/sds-badge";
+import { TagStatus } from "@sikt/sds-tag";
 import { Section } from "@sikt/sds-section";
 import {
   Table,
@@ -62,7 +62,9 @@ const pageTitle = "Størrelse og layout";
                 <TableCell data-th="Navn">{token[0]}</TableCell>
                 <TableCell data-th="Verdi">{token[1].$value}</TableCell>
                 <TableCell data-th="Token">
-                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                  <TagStatus visibility="strong">
+                    {tokenName(token[1])}
+                  </TagStatus>
                 </TableCell>
               </TableRow>
             );
@@ -111,7 +113,9 @@ const pageTitle = "Størrelse og layout";
                   <Token token={desktopToken} />
                 </TableCell>
                 <TableCell data-th="Token">
-                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                  <TagStatus visibility="strong">
+                    {tokenName(token[1])}
+                  </TagStatus>
                 </TableCell>
               </TableRow>
             );
@@ -159,7 +163,9 @@ const pageTitle = "Størrelse og layout";
                   <Token token={desktopToken} />
                 </TableCell>
                 <TableCell data-th="Token">
-                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                  <TagStatus visibility="strong">
+                    {tokenName(token[1])}
+                  </TagStatus>
                 </TableCell>
               </TableRow>
             );
@@ -204,7 +210,9 @@ const pageTitle = "Størrelse og layout";
                   <Token token={desktopToken} />
                 </TableCell>
                 <TableCell data-th="Token">
-                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                  <TagStatus visibility="strong">
+                    {tokenName(token[1])}
+                  </TagStatus>
                 </TableCell>
               </TableRow>
             );
@@ -250,7 +258,9 @@ const pageTitle = "Størrelse og layout";
                   <Token token={desktopToken} />
                 </TableCell>
                 <TableCell data-th="Token">
-                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                  <TagStatus visibility="strong">
+                    {tokenName(token[1])}
+                  </TagStatus>
                 </TableCell>
               </TableRow>
             );
@@ -284,7 +294,9 @@ const pageTitle = "Størrelse og layout";
                 <TableCell data-th="Navn">{token[0]}</TableCell>
                 <TableCell data-th="Verdi">{token[1].$value}</TableCell>
                 <TableCell data-th="Token">
-                  <Badge visibility="strong">{tokenName(token[1])}</Badge>
+                  <TagStatus visibility="strong">
+                    {tokenName(token[1])}
+                  </TagStatus>
                 </TableCell>
               </TableRow>
             );

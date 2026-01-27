@@ -1,7 +1,7 @@
 ---
 import { DarkToken, Token } from "../../../../../components";
 import Swatch from "./Swatch.astro";
-import { Badge } from "@sikt/sds-badge";
+import { TagStatus } from "@sikt/sds-tag";
 import { tokenName } from "../../../../../utils/token";
 
 const { token } = Astro.props;
@@ -9,7 +9,7 @@ const { token } = Astro.props;
 
 <div class="card">
   <div class="name">
-    <Badge visibility="strong">{tokenName(token[1])}</Badge>
+    <TagStatus visibility="strong">{tokenName(token[1])}</TagStatus>
   </div>
   <div class="content">
     <div class="item item-light">
