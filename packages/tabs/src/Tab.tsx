@@ -13,12 +13,11 @@ export interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   className?: string;
   icon?: ReactNode;
-  badge?: ReactNode;
   onClick?: (e: MouseEvent) => void;
 }
 
 export const Tab = forwardRef<HTMLButtonElement, TabProps>(
-  ({ children, className, icon, badge, onClick, ...rest }: TabProps, ref) => {
+  ({ children, className, icon, onClick, ...rest }: TabProps, ref) => {
     const { index } = rest as { index: number };
     const context = useContext(TabsContext);
 
@@ -107,7 +106,6 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
       >
         {icon && <span className="sds-tabs__tab-icon">{icon}</span>}
         {children}
-        {badge && <span className="sds-tabs__tab-badge">{badge}</span>}
       </button>
     );
   },

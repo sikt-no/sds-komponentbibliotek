@@ -9,7 +9,6 @@ import { Tabs, TabsProps } from "./Tabs";
 const renderComponent = ({
   className,
   icon,
-  badge,
   defaultIndex,
   isSelectOnFocus,
   onChange,
@@ -26,7 +25,7 @@ const renderComponent = ({
       {...rest}
     >
       <TabList aria-label="test-aria-label">
-        <Tab icon={icon} badge={badge} onClick={onClick}>
+        <Tab icon={icon} onClick={onClick}>
           Tab 1
         </Tab>
         <Tab>Tab 2</Tab>
@@ -73,12 +72,6 @@ describe("Tabs", () => {
       renderComponent({ icon: "icon" });
 
       expect(screen.getByText("icon")).toHaveClass("sds-tabs__tab-icon");
-    });
-
-    it("should have badge element", async () => {
-      renderComponent({ badge: <span>badge</span> });
-
-      expect(screen.getByText("badge")).toBeInTheDocument();
     });
 
     it("shows tab set by defaultIndex", async () => {

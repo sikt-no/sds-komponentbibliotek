@@ -2,6 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { useState } from "react";
 import { Badge } from "../../badge/index";
 import { InfoIcon } from "../../icons/index";
+import { TagStatus } from "../../tag/index";
 import { Tab, TabList, TabPanel, Tabs, TabsProps } from "../index";
 import "@sikt/sds-popover/dist/index.css";
 
@@ -48,7 +49,24 @@ export const WithBadge: Story = {
   args: {
     children: [
       <TabList key={0} aria-label="Sample Tabs">
-        <Tab badge={<Badge count={10} maxCount={9} />}>First Tab</Tab>
+        <Tab>
+          First Tab <Badge count={10} maxCount={9} />
+        </Tab>
+        <Tab>Second Tab</Tab>
+      </TabList>,
+      <TabPanel key={1}>First Content</TabPanel>,
+      <TabPanel key={2}>Second Content</TabPanel>,
+    ],
+  },
+};
+
+export const WithTag: Story = {
+  args: {
+    children: [
+      <TabList key={0} aria-label="Sample Tabs">
+        <Tab>
+          First Tab <TagStatus>Status</TagStatus>
+        </Tab>
         <Tab>Second Tab</Tab>
       </TabList>,
       <TabPanel key={1}>First Content</TabPanel>,

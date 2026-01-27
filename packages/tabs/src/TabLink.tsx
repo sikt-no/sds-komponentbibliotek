@@ -7,7 +7,6 @@ export interface TabLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
   className?: string;
   icon?: ReactNode;
-  badge?: ReactNode;
   isSelected?: boolean;
   asChild?: boolean;
 }
@@ -18,7 +17,6 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
       children,
       className,
       icon,
-      badge,
       href,
       isSelected,
       asChild = false,
@@ -42,7 +40,6 @@ export const TabLink = forwardRef<HTMLAnchorElement, TabLinkProps>(
       >
         {icon && <div className="sds-tabs__tab-icon">{icon}</div>}
         <Slottable>{children}</Slottable>
-        {badge && <div className="sds-tabs__tab-badge">{badge}</div>}
       </Comp>
     );
   },

@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Badge } from "../../badge/index";
 import { InfoIcon } from "../../icons/index";
+import { TagStatus } from "../../tag/index";
 import { TabLink, TabLinkProps } from "../index";
 
 const meta: Meta = {
@@ -30,6 +31,23 @@ export const WithIcon: Story = {
 export const WithBadge: Story = {
   args: {
     ...Default.args,
-    badge: <Badge count={10} maxCount={9} />,
+    children: (
+      <>
+        Tab Link
+        <Badge count={10} maxCount={9} />
+      </>
+    ),
+  },
+};
+
+export const WithTag: Story = {
+  args: {
+    ...Default.args,
+    children: (
+      <>
+        Tab Link
+        <TagStatus>Status</TagStatus>
+      </>
+    ),
   },
 };
