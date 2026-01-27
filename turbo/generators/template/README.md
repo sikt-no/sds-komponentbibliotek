@@ -26,5 +26,5 @@ Import stylesheet:
 Create custom markup:
 
 ```html
-<!-- html example goes here -->
+<!-- see html example in Storybook -->
 ```
