@@ -89,17 +89,23 @@
     rotate: 180deg;
   }
 
-  &__content {
-    color: var(--sds-color-text-primary);
-    height: 0;
-    overflow: hidden;
-    padding: var(--sds-space-padding-tiny) var(--summary-padding) 0;
-    transition: all var(--sds-effect-animation-duration-medium)
-      var(--sds-effect-animation-easing-default);
+  &::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      content-visibility var(--sds-effect-animation-duration-medium)
+        allow-discrete,
+      height var(--sds-effect-animation-duration-medium)
+        var(--sds-effect-animation-easing-default);
   }
 
-  &[open] &__content {
+  &[open]::details-content {
     height: auto;
-    padding-bottom: var(--sds-space-padding-medium);
+  }
+
+  &__content {
+    color: var(--sds-color-text-primary);
+    padding: var(--sds-space-padding-tiny) var(--summary-padding)
+      var(--sds-space-padding-medium);
   }
 }
