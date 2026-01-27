@@ -4,6 +4,9 @@ import "./{{kebabCase name}}.pcss";
 
 export interface {{pascalCase name}}Props extends HTMLAttributes<HTMLDivElement> {
   /* props goes here */
+  /**
+   * JSDoc explaining important prop
+   */
   className?: string;
 }
 
