@@ -11,7 +11,7 @@ figma.connect(
         true: figma.instance("Icon / Right"),
         false: figma.instance("Icon / Left"),
       }),
-      iconVariant: figma.boolean("Label", {
+      iconVariant: figma.boolean("Show label", {
         true: figma.boolean("Show icon / Left", {
           true: "left",
           false: undefined,
