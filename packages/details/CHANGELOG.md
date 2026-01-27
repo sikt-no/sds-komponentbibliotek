@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-details@1.2.2...@sikt/sds-details@1.2.3) (2026-01-27)
+
+### Bug Fixes
+
+- **details:** correct height animation using details-content pseudo-element ([bc79e9d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bc79e9de1e1bab3d8095ee5f02b328599809f95b))
+
 ## [1.2.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-details@1.2.1...@sikt/sds-details@1.2.2) (2025-07-03)
 
 ### Bug Fixes
