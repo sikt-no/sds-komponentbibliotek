@@ -1,16 +1,16 @@
-# `@sikt/sds-badge`
+# `@sikt/sds-notification`
 
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-badge
+npm i -s @sikt/sds-notification
 ```
 
 ### React
 
 ```js
-import { Badge } from "@sikt/sds-badge";
-import "@sikt/sds-badge/dist/index.css";
+import { Notification } from "packages/notification";
+import "@sikt/sds-notification/dist/index.css";
 
 /* jsx example goes here */
 ```
@@ -20,7 +20,7 @@ import "@sikt/sds-badge/dist/index.css";
 Import stylesheet:
 
 ```css
-@import url("@sikt/sds-badge");
+@import url("@sikt/sds-notification");
 ```
 
 Create custom markup:

@@ -1,13 +1,13 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
 
-test.describe("Badge", () => {
-  const componentSelector = ".sds-badge";
+test.describe("Notification", () => {
+  const componentSelector = ".sds-notification";
 
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-badge--default",
+        "/iframe.html?viewMode=story&id=components-notification--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Badge", () => {
   test.describe("visual", () => {
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-badge--default",
+        "/iframe.html?viewMode=story&id=components-notification--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -31,7 +31,7 @@ test.describe("Badge", () => {
 
     test("should have screenshot without count", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-badge--without-count",
+        "/iframe.html?viewMode=story&id=components-notification--without-count",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

@@ -1,8 +1,8 @@
 {
-  "name": "@sikt/sds-badge",
-  "version": "3.0.0",
+  "name": "@sikt/sds-notification",
+  "version": "0.1.0",
   "license": "UNLICENSED",
-  "description": "Badge component, Sikt component library",
+  "description": "Notification component, Sikt component library",
   "homepage": "https://designsystem.sikt.no/",
   "repository": {
     "type": "git",

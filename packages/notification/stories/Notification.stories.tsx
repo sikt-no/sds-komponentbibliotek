@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import { Badge, BadgeProps } from "../index";
+import { Notification, NotificationProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Badge",
-  component: Badge,
+  title: "Components/Notification",
+  component: Notification,
 };
 
 export default meta;
 
-type Story = StoryObj<BadgeProps>;
+type Story = StoryObj<NotificationProps>;
 
 export const Default: Story = {
   args: {
