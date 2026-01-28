@@ -14,14 +14,6 @@ export const components = [
     storybook: `${storybookUrl}?path=/docs/components-message-application-status--docs`,
   },
   {
-    id: "badge",
-    name: "Badge",
-    url: `${storybookUrl}?path=/docs/components-badge--docs`,
-    figma:
-      "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=13122-2522",
-    storybook: `${storybookUrl}?path=/docs/components-badge--docs`,
-  },
-  {
     id: "breadcrumbs",
     name: "Breadcrumbs",
     url: `${storybookUrl}?path=/docs/components-breadcrumbs--docs`,
@@ -44,6 +36,12 @@ export const components = [
     figma:
       "https://www.figma.com/design/RMhyuuEhXZ4vbKVrLQr4t4/SDS-Komponentbibliotek-2.0.0?node-id=13122-14044",
     storybook: `${storybookUrl}?path=/docs/components-card--docs`,
+  },
+  {
+    id: "chip",
+    name: "Chip",
+    url: `${storybookUrl}?path=/docs/components-chip-button--docs`,
+    storybook: `${storybookUrl}?path=/docs/components-chip-button--docs`,
   },
   {
     id: "checkbox",
@@ -142,6 +140,12 @@ export const components = [
     storybook: `${storybookUrl}?path=/docs/components-logo--docs`,
   },
   {
+    id: "notification",
+    name: "Notification",
+    url: `${storybookUrl}?path=/docs/components-notification--docs`,
+    storybook: `${storybookUrl}?path=/docs/components-notification--docs`,
+  },
+  {
     id: "pagination",
     name: "Pagination",
     url: `${storybookUrl}?path=/docs/components-pagination--docs`,
@@ -200,6 +204,12 @@ export const components = [
     name: "Tabs",
     url: `${storybookUrl}?path=/docs/components-tabs--docs`,
     storybook: `${storybookUrl}?path=/docs/components-tabs--docs`,
+  },
+  {
+    id: "tag",
+    name: "Tag",
+    url: `${storybookUrl}?path=/docs/components-tag-status--docs`,
+    storybook: `${storybookUrl}?path=/docs/components-tag-status--docs`,
   },
   {
     id: "text-area",
