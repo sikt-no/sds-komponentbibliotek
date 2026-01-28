@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@5.0.0...@sikt/sds-tabs@6.0.0) (2026-01-28)
+
+### ⚠ BREAKING CHANGES
+
+- **tabs:** remove badge prop, use children
+
+### Bug Fixes
+
+- **tabs:** change to new badge ([8db2897](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8db289755492f5b66e8c0b564cd76aae5c3e487f))
+- **tabs:** remove badge prop, use children ([14dbf9d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/14dbf9dfa7e617192ca5895fc4c9342c626fec5a))
+
 ## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@4.0.0...@sikt/sds-tabs@5.0.0) (2025-12-04)
 
 ### ⚠ BREAKING CHANGES
