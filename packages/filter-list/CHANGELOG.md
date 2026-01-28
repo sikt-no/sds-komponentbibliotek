@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.6.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.5...@sikt/sds-filter-list@0.6.0) (2026-01-28)
+
+### ⚠ BREAKING CHANGES
+
+- **deps:** update from @sikt/sds-badge to @sikt/sds-notification. requires installation & import of @sikt/sds-notification style sheets
+
+### Bug Fixes
+
+- **deps:** update from @sikt/sds-badge to @sikt/sds-notification ([fc70069](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fc700692e32fe20f17f4838708108b5545752b8a))
+
 ## [0.5.5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.4...@sikt/sds-filter-list@0.5.5) (2026-01-21)
 
 ### Bug Fixes
