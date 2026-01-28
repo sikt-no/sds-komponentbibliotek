@@ -37,6 +37,15 @@ Import the [@sikt/sds-core](./packages/core/) package. It contains, among other 
 
 **Note** This package may be required whether you use the React components or not. Unless you import design tokens directly and make the setup yourself.
 
+**Note** Using [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer) when importing CSS is a good way to handle specificity when you have a need to override styles.
+
+```css
+@layer sds, my-own-more-specific-layer;
+
+@import url("@sikt/sds-core") layer(sds);
+@import url("@sikt/sds-button") layer(sds);
+```
+
 **Note** Design Tokens can be imported in the needed format directly from [@sikt/sds-tokens](./packages/tokens/).
 
 #### Tailwind CSS
