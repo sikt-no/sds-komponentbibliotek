@@ -1,4 +1,4 @@
-import { Badge } from "@sikt/sds-badge";
+import { Notification } from "@sikt/sds-notification";
 import { clsx } from "clsx";
 import { ReactNode } from "react";
 import { FilterListExpand } from "../components/FilterListExpand/FilterListExpand";
@@ -30,14 +30,7 @@ export const FilterListSection = ({
       )}
     >
       <span className="sds-filter-list-section__label">{label}</span>
-      {hasCount && (
-        <Badge
-          visibility="strong"
-          className="sds-filter-list__badge"
-          icon={count}
-          aria-label={`${count}`}
-        />
-      )}
+      {hasCount && <Notification count={count} />}
     </div>
   );
 

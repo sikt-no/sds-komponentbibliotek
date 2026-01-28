@@ -3,7 +3,7 @@
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-filter-list
+npm i -s @sikt/sds-{filter-list,notification}
 ```
 
 ### React

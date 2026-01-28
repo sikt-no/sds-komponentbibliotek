@@ -1,5 +1,5 @@
-import { Badge } from "@sikt/sds-badge";
 import { CheckboxInput } from "@sikt/sds-checkbox";
+import { Notification } from "@sikt/sds-notification";
 import { ReactNode, useId } from "react";
 import { FilterListExpand } from "../components/FilterListExpand/FilterListExpand";
 import { FilterListIconLabel } from "../components/FilterListIconLabel/FilterListIconLabel";
@@ -54,15 +54,7 @@ export const FilterListCategory = ({
             indeterminate={indeterminate}
             checked={checked}
           />
-          {hasCount && (
-            <Badge
-              visibility="strong"
-              className="sds-filter-list__badge"
-              id={id}
-              icon={count}
-              aria-label={`${count}`}
-            />
-          )}
+          {hasCount && <Notification id={id} count={count} />}
         </div>
       }
     >
