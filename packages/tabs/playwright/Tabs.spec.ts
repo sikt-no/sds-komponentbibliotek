@@ -33,9 +33,9 @@ test.describe("Tabs", () => {
       expect(accessibilityScanResults.violations).toEqual([]);
     });
 
-    test("tabs with badge should be accessible", async ({ page }) => {
+    test("tabs with tag should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tabs--with-badge",
+        "/iframe.html?viewMode=story&id=components-tabs--with-tag",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -65,9 +65,9 @@ test.describe("Tabs", () => {
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
-    test("tabs with badge should have screenshot", async ({ page }) => {
+    test("tabs with tag should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tabs--with-badge",
+        "/iframe.html?viewMode=story&id=components-tabs--with-tag",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
