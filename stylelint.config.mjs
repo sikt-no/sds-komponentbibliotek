@@ -8,6 +8,7 @@ export default {
         resolveNestedSelectors: true,
       },
     ],
+    "no-descending-specificity": null,
   },
   overrides: [
     {

@@ -7,8 +7,12 @@
     "type": "git",
     "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
   },
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.js"
+    }
+  },
   "scripts": {},
   "files": [
     "CHANGELOG.md",
@@ -16,9 +20,9 @@
     "README.md"
   ],
   "dependencies": {
-    "stylelint-config-standard": "^39.0.1"
+    "stylelint-config-standard": "^40.0.0"
   },
   "peerDependencies": {
-    "stylelint": "^16.23.0"
+    "stylelint": "^17.0.0"
   }
 }
