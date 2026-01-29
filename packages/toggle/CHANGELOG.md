@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.1.3...@sikt/sds-toggle@7.0.0) (2026-01-29)
+
+### ⚠ BREAKING CHANGES
+
+- **toggle-button:** deprecate component, replaced by ChipToggle in @sikt/sds-chip
+
+### Features
+
+- **toggle-button:** deprecate component, replaced by ChipToggle in @sikt/sds-chip ([a31ce84](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a31ce848ac5c2e5f4b535c934c47fe9d65b5eef8))
+
 ## [6.1.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.1.2...@sikt/sds-toggle@6.1.3) (2025-10-09)
 
 ### Bug Fixes
