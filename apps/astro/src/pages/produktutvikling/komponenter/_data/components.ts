@@ -224,12 +224,6 @@ export const components = [
     storybook: `${storybookUrl}?path=/docs/components-input-text--docs`,
   },
   {
-    id: "toggle-button",
-    name: "Toggle Button",
-    url: `${storybookUrl}?path=/docs/components-toggle-togglebutton--docs`,
-    storybook: `${storybookUrl}?path=/docs/components-toggle-togglebutton--docs`,
-  },
-  {
     id: "toggle-segment",
     name: "Toggle Segment",
     url: `${storybookUrl}?path=/docs/components-toggle-togglesegment--docs`,
