@@ -1,0 +1,17 @@
+<!-- Logo image card with always-white background for proper logo display in dark mode -->
+<div class="card">
+  <slot />
+</div>
+
+<style>
+  .card {
+    align-items: center;
+    /* Always white background to ensure logos are visible in both light and dark mode */
+    background-color: var(--sds-color-text-on-strong);
+    border-radius: var(--sds-space-border-radius-large);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sds-space-gap-large);
+    padding: var(--sds-space-padding-large);
+  }
+</style>

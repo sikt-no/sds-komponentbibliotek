@@ -4,14 +4,15 @@ pageTitle: "Logoer"
 ---
 
 import { Picture } from "astro:assets";
-import ImageCard from "../../components/card/ImageCard.astro";
+import LogoImageCard from "../../components/card/LogoImageCard.astro";
 import { MdxComponents } from "../../layouts/_components/mdx/MdxComponents";
+
 export const components = {
   ...MdxComponents,
   img: (props) => (
-    <ImageCard>
+    <LogoImageCard>
       <Picture formats={["avif", "webp"]} widths={[240, 540]} {...props} />
-    </ImageCard>
+    </LogoImageCard>
   ),
 };
 
