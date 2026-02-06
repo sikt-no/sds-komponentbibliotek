@@ -11,7 +11,7 @@ include:
     inputs:
       image: $CI_REGISTRY_IMAGE
       image-tag: $CI_REGISTRY_TAG
-  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@2.0.2
+  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@2.0.3
     inputs:
       prod-domain: "designsystem.sikt.no"
       test-id: "komponentbibliotek"
