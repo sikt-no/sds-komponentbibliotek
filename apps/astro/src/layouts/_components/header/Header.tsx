@@ -21,13 +21,20 @@ export const Header = ({ currentHref }: { currentHref: string }) => {
           aria-label="Navigasjon, tekniskt dokumentasjon"
         >
           <ul className={styles.ul}>
+            <li>
+              <Link href="https://platon.sikt.no/">Platon</Link>
+            </li>
+            <li>
+              <Link href="https://platon.sikt.no/feide/">
+                Autentisering & API
+              </Link>
+            </li>
+            <li>
+              <Link href="https://platon.sikt.no/brukskvalitet/">
+                Brukskvalitet
+              </Link>
+            </li>
             <li>{home}</li>
-            <li>
-              <Link href="https://platon.sikt.no/">Utvikerplattform</Link>
-            </li>
-            <li>
-              <Link href="https://docs.feide.no/">Autentisering</Link>
-            </li>
           </ul>
         </nav>
       }
