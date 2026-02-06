@@ -129,5 +129,13 @@ test.describe("Button", () => {
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
+
+    test("with-notification should have screenshot", async ({ page }) => {
+      await page.goto(
+        "/iframe.html?viewMode=story&id=components-button-button--with-notification",
+      );
+
+      await expect(page.locator(componentSelector)).toHaveScreenshot();
+    });
   });
 });

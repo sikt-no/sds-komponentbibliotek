@@ -22,6 +22,12 @@ interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   asChild?: boolean;
+  /**
+   * Notification element to display on the button.
+   * Should be a `@sikt/sds-notification` element.
+   * The notification element should handle aria attributes itself.
+   */
+  notification?: ReactNode;
 }
 
 interface ButtonLinkAriaLabelProps extends ButtonLinkBaseProps {
@@ -42,6 +48,7 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
       href,
       icon,
       iconVariant = "right",
+      notification,
       asChild = false,
       ...rest
     }: ButtonLinkProps,
@@ -97,6 +104,10 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
           ) : (
             iconElement
           ))}
+
+        {notification && (
+          <span className="sds-button__notification">{notification}</span>
+        )}
       </Comp>
     );
   },

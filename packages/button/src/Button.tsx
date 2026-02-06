@@ -19,6 +19,12 @@ interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   iconVariant?: "right" | "left" | "only";
   variant?: ButtonVariant;
   size?: ButtonSize;
+  /**
+   * Notification element to display on the button.
+   * Should be a `@sikt/sds-notification` element.
+   * The notification element should handle aria attributes itself.
+   */
+  notification?: ReactNode;
 }
 
 interface ButtonAriaLabelProps extends ButtonBaseProps {
@@ -39,6 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       onClick,
       icon,
       iconVariant = "right",
+      notification,
       type = "button",
       ...rest
     }: ButtonProps,
@@ -66,6 +73,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {(!icon || !iconOnly) && (
           <span className="sds-button__label">{children}</span>
         )}
+
         {icon && (
           <span
             className={clsx(
@@ -75,6 +83,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           >
             {icon}
           </span>
+        )}
+
+        {notification && (
+          <span className="sds-button__notification">{notification}</span>
         )}
       </button>
     );

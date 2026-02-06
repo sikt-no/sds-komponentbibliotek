@@ -1,6 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import { NavigateToNextIcon, NavigateToPreviousIcon } from "../../icons/index";
+import {
+  NavigateToNextIcon,
+  NavigateToPreviousIcon,
+  AlertIcon,
+  EmailIcon,
+  MessageIcon,
+  FeedbackIcon,
+} from "../../icons/index";
+import { Notification } from "../../notification/index";
 import { ButtonLink, ButtonLinkProps } from "../index";
+import "../../notification/dist/index.css";
 
 const meta: Meta = {
   title: "Components/Button/Link",
@@ -52,5 +61,49 @@ export const AsChild: Story = {
     asChild: true,
     icon: <NavigateToNextIcon />,
     iconVariant: "only",
+  },
+};
+
+export const WithNotification: Story = {
+  args: {
+    children: "View alerts",
+    href: "#alerts",
+    variant: "subtle",
+    icon: <AlertIcon />,
+    iconVariant: "only",
+    notification: <Notification count={5} />,
+  },
+};
+
+export const WithNotificationMaxCount: Story = {
+  args: {
+    children: "Inbox",
+    href: "#inbox",
+    variant: "transparent",
+    icon: <EmailIcon />,
+    iconVariant: "only",
+    notification: <Notification count={150} maxCount={99} />,
+  },
+};
+
+export const WithNotificationAndText: Story = {
+  args: {
+    children: "View all messages",
+    href: "#messages",
+    variant: "subtle",
+    icon: <MessageIcon />,
+    iconVariant: "right",
+    notification: <Notification count={12} maxCount={9} />,
+  },
+};
+
+export const WithFeedbackNotification: Story = {
+  args: {
+    children: "User feedback",
+    href: "#feedback",
+    variant: "subtle",
+    icon: <FeedbackIcon />,
+    iconVariant: "left",
+    notification: <Notification count={3} />,
   },
 };

@@ -134,5 +134,70 @@ describe("ButtonLink", () => {
       expect(screen.getByTestId("test")).toHaveRole("button");
       expect(screen.getByLabelText("Foo")).toBeInTheDocument();
     });
+
+    it("should render notification element", async () => {
+      render(
+        <ButtonLink
+          href="#"
+          data-testid="test"
+          notification={<span data-testid="notification">5</span>}
+        >
+          Foo
+        </ButtonLink>,
+      );
+
+      expect(screen.getByTestId("notification")).toBeInTheDocument();
+      expect(screen.getByTestId("notification").parentElement).toHaveClass(
+        "sds-button__notification",
+      );
+      expect(screen.getByText("Foo")).toBeInTheDocument();
+    });
+
+    it("should render without notification when not provided", async () => {
+      const { container } = render(
+        <ButtonLink href="#" data-testid="test">
+          Foo
+        </ButtonLink>,
+      );
+
+      expect(
+        container.querySelector(".sds-button__notification"),
+      ).not.toBeInTheDocument();
+    });
+
+    it("should render notification with icon only variant", async () => {
+      render(
+        <ButtonLink
+          href="#"
+          data-testid="test"
+          icon="icon"
+          iconVariant="only"
+          notification={<span data-testid="notification">3</span>}
+        >
+          Foo
+        </ButtonLink>,
+      );
+
+      expect(screen.getByTestId("notification")).toBeInTheDocument();
+      expect(screen.getByText("icon")).toBeInTheDocument();
+      expect(screen.queryByText("Foo")).not.toBeInTheDocument();
+    });
+
+    it("notification should be accessible", async () => {
+      const { container } = render(
+        <ButtonLink
+          href="#"
+          notification={
+            <span role="status" aria-label="3 notifications">
+              3
+            </span>
+          }
+        >
+          Foo
+        </ButtonLink>,
+      );
+
+      expect(await axe(container)).toHaveNoViolations();
+    });
   });
 });

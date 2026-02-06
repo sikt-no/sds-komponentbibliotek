@@ -1,6 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import { NavigateToNextIcon, NavigateToPreviousIcon } from "../../icons/index";
+import {
+  NavigateToNextIcon,
+  NavigateToPreviousIcon,
+  AlertIcon,
+  EmailIcon,
+  NotificationIcon,
+  UserProfileIcon,
+} from "../../icons/index";
+import { Notification } from "../../notification/index";
 import { Button, ButtonProps } from "../index";
+import "../../notification/dist/index.css";
 
 const meta: Meta = {
   title: "Components/Button/Button",
@@ -50,5 +59,53 @@ export const Small: Story = {
   args: {
     ...Default.args,
     size: "small",
+  },
+};
+
+export const WithNotification: Story = {
+  args: {
+    children: "Alerts",
+    variant: "subtle",
+    icon: <AlertIcon />,
+    iconVariant: "only",
+    notification: <Notification count={5} />,
+  },
+};
+
+export const WithNotificationMaxCount: Story = {
+  args: {
+    children: "Inbox",
+    variant: "transparent",
+    icon: <EmailIcon />,
+    iconVariant: "only",
+    notification: <Notification count={150} maxCount={99} />,
+  },
+};
+
+export const WithNotificationNoCount: Story = {
+  args: {
+    children: "Messages",
+    variant: "transparent",
+    icon: <NotificationIcon />,
+    iconVariant: "only",
+    notification: <Notification />,
+  },
+};
+
+export const WithNotificationAndText: Story = {
+  args: {
+    children: "View feedback",
+    variant: "subtle",
+    notification: <Notification count={3} />,
+  },
+};
+
+export const WithNotificationIconLeft: Story = {
+  args: {
+    children: "User activity",
+    variant: "subtle",
+    icon: <UserProfileIcon />,
+    iconVariant: "left",
+    notification: <Notification count={25} maxCount={9} />,
   },
 };

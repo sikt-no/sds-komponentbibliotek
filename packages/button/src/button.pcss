@@ -17,6 +17,22 @@
   padding: var(--button-padding)
     calc(var(--button-padding) + var(--button-padding));
 
+  /* Only apply position: relative when button has a notification */
+  &:has(.sds-button__notification) {
+    position: relative;
+  }
+
+  &__notification {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(25%, -10%);
+  }
+
+  &--small .sds-button__notification {
+    transform: translate(80%, 0%);
+  }
+
   &__icon {
     align-items: center;
     display: flex;
