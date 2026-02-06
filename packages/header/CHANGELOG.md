@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@5.0.0...@sikt/sds-header@5.0.1) (2026-02-06)
+
+### Bug Fixes
+
+- **header:** left slot border even if logo do not have link ([08d1d25](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/08d1d25a803d163d3dcb07ba4b7725a4555480c9))
+
 ## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-header@4.0.3...@sikt/sds-header@5.0.0) (2026-01-14)
 
 ### ⚠ BREAKING CHANGES
