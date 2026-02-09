@@ -23,7 +23,7 @@ const templateArgs = {
   children: [
     <CheckboxInput
       key={1}
-      isChecked
+      checked
       label="Checkbox label"
       onChange={() => null}
     />,

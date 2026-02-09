@@ -17,7 +17,7 @@ interface CheckboxInputBaseProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,
   "onChange" | "aria-label" | "aria-labelledby"
 > {
-  isChecked?: boolean;
+  checked?: boolean;
   indeterminate?: boolean;
   error?: boolean;
   name?: string;
@@ -54,7 +54,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
       className,
       name,
       disabled,
-      isChecked,
+      checked,
       indeterminate,
       onChange,
       label,
@@ -100,7 +100,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
           value={value}
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledby}
-          checked={isChecked ?? false}
+          checked={checked ?? false}
           disabled={disabled}
           aria-invalid={(error ?? context.error) ? true : false}
           {...(indeterminate && { "aria-checked": "mixed" })}

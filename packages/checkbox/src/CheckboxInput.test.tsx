@@ -18,7 +18,7 @@ describe("CheckboxInput,", () => {
 describe("api", () => {
   it("checked checkbox should render", async () => {
     render(
-      <CheckboxInput label="Foo" value="foo" isChecked onChange={jest.fn()} />,
+      <CheckboxInput label="Foo" value="foo" checked onChange={jest.fn()} />,
     );
 
     const checkbox = screen.getByRole("checkbox", { name: "Foo" });
@@ -33,7 +33,7 @@ describe("api", () => {
       <CheckboxInput
         label="Foo"
         value="foo"
-        isChecked={false}
+        checked={false}
         onChange={jest.fn()}
         disabled
       />,
@@ -73,7 +73,7 @@ describe("api", () => {
         label="Foo"
         value="foo"
         error
-        isChecked
+        checked
         onChange={jest.fn()}
       />,
     );
@@ -92,7 +92,7 @@ describe("api", () => {
         label="Foo"
         value="foo"
         error
-        isChecked={false}
+        checked={false}
         onChange={jest.fn()}
       />,
     );
@@ -109,7 +109,7 @@ describe("api", () => {
         label="Foo"
         value="foo"
         className="test-class-name"
-        isChecked
+        checked
         onChange={jest.fn()}
       />,
     );

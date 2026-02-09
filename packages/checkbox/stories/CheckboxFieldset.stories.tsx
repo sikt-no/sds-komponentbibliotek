@@ -21,9 +21,9 @@ type Story = StoryObj<typeof meta>;
 
 const templateArgs = {
   children: [
-    <CheckboxInput key={1} isChecked label="Checkbox label 1" />,
+    <CheckboxInput key={1} checked label="Checkbox label 1" />,
     <CheckboxInput key={2} label="Checkbox label 2" />,
-    <CheckboxInput key={3} isChecked label="Checkbox label 3" />,
+    <CheckboxInput key={3} checked label="Checkbox label 3" />,
   ],
   onChange: console.log,
 } satisfies Partial<Story["args"]>;
@@ -52,7 +52,7 @@ export const WithError = {
     children: [
       <CheckboxInput
         key={1}
-        isChecked
+        checked
         label="Checkbox label"
         error
         onChange={() => null}
@@ -100,9 +100,9 @@ export const HorizontalLayout = {
     ...templateArgs,
     children: (
       <div style={{ display: "flex" }}>
-        <CheckboxInput key={1} isChecked label="Checkbox label 1" />
+        <CheckboxInput key={1} checked label="Checkbox label 1" />
         <CheckboxInput key={2} label="Checkbox label 2" />
-        <CheckboxInput key={3} isChecked label="Checkbox label 3" />
+        <CheckboxInput key={3} checked label="Checkbox label 3" />
       </div>
     ),
     legend: "Legend",

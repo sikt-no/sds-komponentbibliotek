@@ -20,7 +20,7 @@ type Story = StoryObj<typeof CheckboxInput>;
 
 export const Checked: Story = {
   args: {
-    isChecked: true,
+    checked: true,
     label: "Checked checkbox",
     onChange: console.log,
   },
@@ -28,7 +28,7 @@ export const Checked: Story = {
 
 export const Unchecked: Story = {
   args: {
-    isChecked: false,
+    checked: false,
     label: "Unchecked checkbox",
   },
 };
@@ -42,14 +42,14 @@ export const Indeterminate: Story = {
 
 export const WithAriaLabel: Story = {
   args: {
-    isChecked: true,
+    checked: true,
     "aria-label": "Label",
   },
 };
 
 export const WithAriaLabelledby: Story = {
   args: {
-    isChecked: true,
+    checked: true,
     "aria-labelledby": "rowTitle columnTitle",
   },
   render: (args) => {
