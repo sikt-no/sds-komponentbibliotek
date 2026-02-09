@@ -71,7 +71,7 @@ describe("InputFile", () => {
           aria-label="Foo"
           accept=".bar"
           value={[value]}
-          onChange={changeHandler}
+          onValueChange={changeHandler}
         />,
       );
 
@@ -96,7 +96,7 @@ describe("InputFile", () => {
           aria-label="Foo"
           accept=".bar"
           data-testid="test"
-          onChange={changeHandler}
+          onValueChange={changeHandler}
         />,
       );
 
@@ -132,7 +132,7 @@ describe("InputFile", () => {
           aria-label="Foo"
           accept=".bar"
           maxFileSize={100}
-          onChange={changeHandler}
+          onValueChange={changeHandler}
         />,
       );
 
@@ -162,7 +162,7 @@ describe("InputFile", () => {
           aria-label="Foo"
           accept=".bar"
           maxFileSize={100}
-          onChange={changeHandler}
+          onValueChange={changeHandler}
         />,
       );
 
@@ -191,7 +191,7 @@ describe("InputFile", () => {
           aria-label="Foo"
           accept=".bar"
           data-testid="test"
-          onChange={changeHandler}
+          onValueChange={changeHandler}
         />,
       );
 
@@ -229,7 +229,7 @@ describe("InputFile", () => {
           label="Foo"
           aria-label="Foo"
           accept=".bar,image/gif"
-          onChange={changeHandler}
+          onValueChange={changeHandler}
         />,
       );
 
@@ -251,7 +251,7 @@ describe("InputFile", () => {
           label="Foo"
           aria-label="Foo"
           accept=".bar,image/*"
-          onChange={changeHandler}
+          onValueChange={changeHandler}
         />,
       );
 
@@ -273,7 +273,7 @@ describe("InputFile", () => {
           label="Foo"
           aria-label="Foo"
           accept={[".bar", "image/gif"]}
-          onChange={changeHandler}
+          onValueChange={changeHandler}
         />,
       );
 

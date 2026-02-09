@@ -20,7 +20,7 @@ export const Default: Story = {
     placeholder: "Drop file here,",
     placeholderBridge: "or",
     triggerText: "Open file explorer",
-    onChange: (value) => {
+    onValueChange: (value) => {
       console.log(value);
     },
     accept: ".doc,.docx,image/png,image/jpg",

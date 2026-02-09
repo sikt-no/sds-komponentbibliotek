@@ -95,7 +95,7 @@ describe("Tabs", () => {
     it("calls change handler", async () => {
       const user = userEvent.setup();
       const changeHandler = jest.fn();
-      renderComponent({ onChange: changeHandler });
+      renderComponent({ onValueChange: changeHandler });
 
       await user.click(screen.getByText("Tab 2"));
 

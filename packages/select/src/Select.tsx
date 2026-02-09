@@ -2,7 +2,7 @@ import { FormField } from "@sikt/sds-form";
 import { ExpandShowAltIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
-  ChangeEventHandler,
+  ChangeEvent,
   OptionHTMLAttributes,
   ReactNode,
   SelectHTMLAttributes,
@@ -25,7 +25,7 @@ interface SelectBaseProps extends Omit<
    * Text to show to help the user enter correct value. It's a better pattern to have enough information in the `label`.
    */
   helpText?: ReactNode;
-  onChange?: ChangeEventHandler<HTMLSelectElement>;
+  onChange?: (event: ChangeEvent<HTMLSelectElement>, value: string) => void;
 }
 
 export type SelectProps = SelectBaseProps &
@@ -90,7 +90,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             aria-invalid={Boolean(errorText)}
             aria-errormessage={errorText ? errorTextId : undefined}
             onChange={(e) => {
-              onChange?.(e);
+              onChange?.(e, e.target.value);
             }}
             {...rest}
           >

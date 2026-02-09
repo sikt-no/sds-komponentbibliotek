@@ -58,7 +58,7 @@ interface InputDaterangepickerBaseProps extends Omit<
     start: DateValue;
     end: DateValue;
   };
-  onChange?: (
+  onValueChange?: (
     dates: {
       start: DateValue | null;
       end: DateValue | null;
@@ -138,6 +138,7 @@ export const InputDaterangepicker = forwardRef<
       lang = "nb-NO",
       value,
       clearActionProps,
+      onValueChange,
       ...rest
     },
     ref,
@@ -172,6 +173,7 @@ export const InputDaterangepicker = forwardRef<
           shouldForceLeadingZeros
           ref={ref}
           value={value}
+          onChange={onValueChange}
           isInvalid={Boolean(errorText)}
           aria-labelledby={ariaLabelledBy}
           aria-describedby={ariaDescribedBy}

@@ -55,7 +55,7 @@ interface InputDatepickerBaseProps extends Omit<
   openCalendarLabel?: ReactNode;
   lang?: string;
   value?: DateValue;
-  onChange?: (value: DateValue | null) => void;
+  onValueChange?: (value: DateValue | null) => void;
   clearActionProps?: ClearActionProps;
 }
 
@@ -127,6 +127,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
       lang = "nb-NO",
       value,
       clearActionProps,
+      onValueChange,
       ...rest
     },
     ref,
@@ -161,6 +162,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
           shouldForceLeadingZeros
           ref={ref}
           value={value}
+          onChange={onValueChange}
           isInvalid={Boolean(errorText)}
           aria-labelledby={ariaLabelledBy}
           aria-describedby={ariaDescribedBy}

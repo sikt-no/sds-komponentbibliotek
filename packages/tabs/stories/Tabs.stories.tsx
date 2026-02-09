@@ -78,7 +78,7 @@ export const Controlled: Story = {
         <Tabs
           {...args}
           controlledIndex={controlledIndex}
-          onChange={(selectedIndex) => {
+          onValueChange={(selectedIndex) => {
             setControlledIndex(selectedIndex);
           }}
         />

@@ -14,7 +14,7 @@ interface RadioInputBaseBaseProps extends Omit<
 > {
   className?: string;
   name?: string;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>, value: string) => void;
   value: string;
   checked?: boolean;
   error?: boolean;
@@ -65,7 +65,7 @@ export const RadioInputBase = forwardRef<HTMLInputElement, RadioInputBaseProps>(
         id={id}
         name={name}
         type="radio"
-        onChange={onChange}
+        onChange={(e) => onChange?.(e, e.target.value)}
         value={value}
         aria-labelledby={ariaLabelledby}
         checked={checked}

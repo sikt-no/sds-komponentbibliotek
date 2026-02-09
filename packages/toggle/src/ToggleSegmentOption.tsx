@@ -15,7 +15,10 @@ export interface ToggleSegmentOptionProps extends Omit<
   value: string | number;
   label: NonNullable<ReactNode>;
   checked?: boolean;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (
+    event: ChangeEvent<HTMLInputElement>,
+    value: string | number,
+  ) => void;
 }
 
 export const ToggleSegmentOption = forwardRef<
@@ -39,7 +42,9 @@ export const ToggleSegmentOption = forwardRef<
         name={name}
         ref={ref}
         type="radio"
-        onChange={onChange}
+        onChange={(e) => {
+          onChange(e, value);
+        }}
         className="sds-toggle-segment__input"
         value={value}
         checked={checked}

@@ -35,7 +35,7 @@ export interface InputFileProps extends DropZoneProps {
   placeholder?: string;
   placeholderBridge?: string;
   triggerText?: ReactNode;
-  onChange?: (newValue: (File | FileWithError)[]) => void;
+  onValueChange?: (newValue: (File | FileWithError)[]) => void;
   accept: string | string[];
   multiple?: boolean;
   capture?: "user" | "environment";
@@ -57,7 +57,7 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
       placeholder = "Dra og slipp filer her,",
       placeholderBridge = "eller",
       triggerText = "Åpne filutforskeren",
-      onChange,
+      onValueChange,
       accept,
       multiple = false,
       capture,
@@ -127,7 +127,7 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
     const handleOnChange = (input: File[]) => {
       const output = validateFiles(input);
       setFiles([...files, ...output]);
-      onChange?.([...files, ...output]);
+      onValueChange?.([...files, ...output]);
     };
 
     const handleOnDrop = (e: DropEvent) => {

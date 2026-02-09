@@ -22,7 +22,7 @@ interface CheckboxInputBaseProps extends Omit<
   error?: boolean;
   name?: string;
   value?: string | number;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>, isChecked: boolean) => void;
   className?: string;
 }
 
@@ -96,7 +96,7 @@ export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
           id={id}
           name={name ?? context.name}
           type="checkbox"
-          onChange={onChange}
+          onChange={(e) => onChange?.(e, e.target.checked)}
           value={value}
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledby}

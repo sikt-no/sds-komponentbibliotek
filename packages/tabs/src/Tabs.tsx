@@ -32,7 +32,7 @@ export interface TabsProps extends Omit<
   defaultIndex?: number;
   controlledIndex?: number;
   isSelectOnFocus?: boolean;
-  onChange?: (index: number) => void;
+  onValueChange?: (index: number) => void;
   children: ReactNode;
   className?: string;
 }
@@ -40,7 +40,7 @@ export interface TabsProps extends Omit<
 export const Tabs = ({
   defaultIndex = 0,
   controlledIndex,
-  onChange,
+  onValueChange,
   isSelectOnFocus = false,
   children,
   className,
@@ -59,10 +59,10 @@ export const Tabs = ({
   }, [controlledIndex]);
 
   useEffect(() => {
-    if (onChange && previousIndex !== selectedIndex) {
-      onChange(selectedIndex);
+    if (onValueChange && previousIndex !== selectedIndex) {
+      onValueChange(selectedIndex);
     }
-  }, [onChange, previousIndex, selectedIndex]);
+  }, [onValueChange, previousIndex, selectedIndex]);
 
   const arrayChildren = Children.toArray(children);
   const count = arrayChildren.length - 1;
