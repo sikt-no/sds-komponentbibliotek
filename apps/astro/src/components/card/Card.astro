@@ -1,12 +1,12 @@
 ---
 const { className } = Astro.props;
-const id = Math.random().toString(36);
+const headingId = `card-heading-${crypto.randomUUID()}`;
 ---
 
-<section class:list={["card", className]} aria-labelledby={id}>
+<section class:list={["card", className]} aria-labelledby={headingId}>
   <slot name="image" />
   <div class="content">
-    <div id={id}>
+    <div id={headingId}>
       <slot name="heading" />
     </div>
     <slot />
