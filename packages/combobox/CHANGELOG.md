@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.0.0...@sikt/sds-combobox@5.0.1) (2026-02-17)
+
+### Bug Fixes
+
+- **combobox:** prevent double badges and crash in multiselect ([9b44a53](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9b44a5382a0667655f628b0556a84ac08735c9c1))
+- **deps:** update dependency @u-elements/u-combobox to ^1.0.7 ([6738a3c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6738a3cfcfe6d3676795929349cfdea8acfd7f9a))
+- **deps:** update dependency @u-elements/u-datalist to ^1.1.0 ([e5940c7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/e5940c7d4d601034ab21bb2a6001634de404487e))
+
 ## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@4.0.1...@sikt/sds-combobox@5.0.0) (2026-01-26)
 
 ### ⚠ BREAKING CHANGES
