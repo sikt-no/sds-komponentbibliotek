@@ -11,6 +11,7 @@ import {
   useEffect,
   useId,
   useRef,
+  useState,
 } from "react";
 import "@u-elements/u-combobox";
 import "@u-elements/u-datalist";
@@ -139,33 +140,60 @@ export const Combobox = ({
   ...rest
 }: ComboboxProps) => {
   const comboboxRef = useRef<UHTMLComboboxElement>(null);
+  const optionsRef = useRef(options);
+  const onChangeRef = useRef(onChange);
+  const hasInteracted = useRef(false);
   const id = useId();
   const errorTextId = `${id}-error-text`;
   const helpTextId = `${id}-help-text`;
   const listId = `${id}-list`;
   const textProps = getTextProps(lang);
 
+  const [initialSelectedOptions, setInitialSelectedOptions] = useState(() =>
+    options.filter((option) => option.selected),
+  );
+
+  useEffect(() => {
+    optionsRef.current = options;
+    if (initialSelectedOptions.length === 0 && !hasInteracted.current) {
+      const selected = options.filter((option) => option.selected);
+      if (selected.length > 0) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: sync async-arriving selected options into initial badge state before user interaction
+        setInitialSelectedOptions(selected);
+      }
+    }
+  }, [options, initialSelectedOptions.length]);
+
+  useEffect(() => {
+    onChangeRef.current = onChange;
+  }, [onChange]);
+
   useEffect(() => {
     const currentRef = comboboxRef.current;
 
     const handleOnChange = (e: CustomEvent<HTMLDataElement>) => {
       e.preventDefault();
+      hasInteracted.current = true;
 
-      const index = options.findIndex((item) => item.value === e.detail.value);
-      const newOption = options[index];
+      const currentOptions = optionsRef.current;
+      const index = currentOptions.findIndex(
+        (item) => item.value === e.detail.value,
+      );
+      if (index === -1) return;
+      const newOption = currentOptions[index];
       if (e.detail.isConnected) {
-        newOption.selected = e.detail.isConnected;
+        newOption.selected = true;
       } else {
         delete newOption.selected;
       }
-      onChange?.(e, options);
+      onChangeRef.current?.(e, currentOptions);
     };
 
     currentRef?.addEventListener("comboboxafterselect", handleOnChange);
     return () => {
       currentRef?.removeEventListener("comboboxafterselect", handleOnChange);
     };
-  }, [options, onChange]);
+  }, []);
 
   return (
     <div
@@ -188,13 +216,11 @@ export const Combobox = ({
           {...textProps}
           {...rest}
         >
-          {options
-            .filter((option) => option.selected)
-            .map((option) => (
-              <data key={option.value?.toString()} value={option.value}>
-                {option.label}
-              </data>
-            ))}
+          {initialSelectedOptions.map((option) => (
+            <data key={option.value?.toString()} value={option.value}>
+              {option.label}
+            </data>
+          ))}
           <input
             className="sds-combobox__input"
             id={id}

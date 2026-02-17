@@ -1,13 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
+import type { OptionHTMLAttributes } from "react";
+import { useState } from "react";
 import { Combobox } from "./Combobox";
 
 const options = [
   { label: "Bar", value: "1" },
   { label: "Baz", value: "2" },
-  // TODO: 96.77 |      100 |    87.5 |   96.55 | :131 data/selected:true which makes render fail
-  // { label: "Baz", value: "2", selected: true },
+];
+
+const optionsWithSelected = [
+  { label: "Bar", value: "1" },
+  { label: "Baz", value: "2", selected: true },
 ];
 
 describe("Combobox", () => {
@@ -84,6 +89,47 @@ describe("Combobox", () => {
 
       expect(screen.getByText("Qux")).toBeInTheDocument();
       expect(screen.getByText("Quux")).toBeInTheDocument();
+    });
+
+    it("should render initial selected options as data elements", async () => {
+      const { container } = render(
+        <Combobox label="Foo" options={optionsWithSelected} multiple />,
+      );
+
+      const dataElements = container.querySelectorAll("data");
+      expect(dataElements).toHaveLength(1);
+      expect(dataElements[0]).toHaveTextContent("Baz");
+      expect(dataElements[0]).toHaveAttribute("value", "2");
+    });
+
+    it("should not render duplicate badges in controlled mode", async () => {
+      function ControlledCombobox() {
+        const [opts, setOpts] = useState<
+          OptionHTMLAttributes<HTMLOptionElement>[]
+        >([
+          { label: "Bar", value: "1" },
+          { label: "Baz", value: "2" },
+        ]);
+        return (
+          <Combobox
+            label="Foo"
+            options={opts}
+            multiple
+            onChange={(_e, o) => {
+              setOpts([...o]);
+            }}
+          />
+        );
+      }
+
+      const { container } = render(<ControlledCombobox />);
+
+      const user = userEvent.setup();
+      await user.click(screen.getByRole("combobox"));
+      await user.click(screen.getByText("Bar", { selector: "u-option" }));
+
+      const dataElements = container.querySelectorAll("data");
+      expect(dataElements).toHaveLength(1);
     });
   });
 });
