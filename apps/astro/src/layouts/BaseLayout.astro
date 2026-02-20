@@ -106,13 +106,14 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
 </style>
 
 <script>
-  import { onCLS, onINP, onLCP } from "web-vitals";
+  import { onCLS, onINP, onLCP, type Metric } from "web-vitals";
 
-  const sendToAnalytics = ({ name, delta, value, id }) => {
-    if (!_paq) {
+  const sendToAnalytics = ({ name, delta, value, id }: Metric) => {
+    if (!globalThis._paq) {
       return;
     }
-    _paq.push(["trackEvent", name, id, delta, value]);
+
+    globalThis._paq.push(["trackEvent", name, id, delta, value]);
   };
 
   onCLS(sendToAnalytics);
