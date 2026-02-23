@@ -26,7 +26,7 @@ export const Header = ({ currentHref }: { currentHref: string }) => {
             </li>
             <li>
               <Link href="https://platon.sikt.no/feide/">
-                Autentisering & API
+                Autentisering&nbsp;&&nbsp;API
               </Link>
             </li>
             <li>
