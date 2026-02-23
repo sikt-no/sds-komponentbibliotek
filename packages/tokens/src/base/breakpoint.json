@@ -2,13 +2,16 @@
   "base": {
     "breakpoint": {
       "tablet": {
-        "$value": "720px"
+        "$value": "720px",
+        "$type": "dimension"
       },
       "desktop": {
-        "$value": "1024px"
+        "$value": "1024px",
+        "$type": "dimension"
       },
       "ultrawide": {
-        "$value": "1440px"
+        "$value": "1440px",
+        "$type": "dimension"
       }
     }
   }

@@ -105,7 +105,7 @@ StyleDictionary.registerFormat({
   format: ({ dictionary, options }) => {
     return (
       defaultFileHeader +
-      `@media (min-width: ${
+      `@media (width >= ${
         dictionary.tokens.base.breakpoint[options.atMedia].$value
       }) {
   :root {
