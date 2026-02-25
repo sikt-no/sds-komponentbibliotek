@@ -60,16 +60,35 @@ export const Controlled: Story = {
   },
   render: (args) => {
     const [options, setOptions] = useState([...(Default.args?.options ?? [])]);
+
     return (
-      <Combobox
-        {...args}
-        multiple
-        options={options}
-        onChange={(e, o) => {
-          console.log(e, o);
-          setOptions(o);
-        }}
-      />
+      <>
+        <button
+          onClick={() => {
+            setOptions([
+              { label: "Coconut", value: "1" },
+              { label: "Strawberries", value: "2" },
+              { label: "Chocolate", value: "3" },
+              { label: "Vanilla", value: "4", selected: true },
+              { label: "Licorice", value: "5" },
+              { label: "Pistachios", value: "6" },
+              { label: "Mango", value: "7" },
+              { label: "Hazelnut", value: "8" },
+            ]);
+          }}
+        >
+          Change values
+        </button>
+        <Combobox
+          {...args}
+          multiple
+          options={options}
+          onChange={(e, newValue) => {
+            console.log(e, newValue);
+            setOptions(newValue);
+          }}
+        />
+      </>
     );
   },
 };
