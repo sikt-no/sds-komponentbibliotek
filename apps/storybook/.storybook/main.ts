@@ -49,6 +49,7 @@ const config: StorybookConfig = {
       },
     },
     "@storybook/addon-webpack5-compiler-swc",
+    "@storybook/addon-mcp",
   ],
   core: {
     disableTelemetry: true,
@@ -79,6 +80,9 @@ const config: StorybookConfig = {
     });
 
     return config;
+  },
+  features: {
+    experimentalComponentsManifest: true,
   },
 };
 

@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@storybook/addon-docs": "^10.2.9",
+    "@storybook/addon-mcp": "^0.3.2",
     "@storybook/addon-styling-webpack": "^3.0.0",
     "@storybook/addon-webpack5-compiler-swc": "^4.0.2",
     "@storybook/react-webpack5": "^10.2.9",
