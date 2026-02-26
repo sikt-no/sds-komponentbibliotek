@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@6.1.0...@sikt/sds-tokens@6.2.0) (2026-02-26)
+
+### Features
+
+- **tokens:** change breakpoints from px to rem for better accessibility ([0c666b3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0c666b33dae6cb30704cc20060e8084fa5b06698))
+
+### Bug Fixes
+
+- **tokens:** missing dynamic size on tablet/desktop ([f2742b8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f2742b8d38feaefcedf97aa4a7e859fe701fcb89))
+
 ## [6.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@6.0.0...@sikt/sds-tokens@6.1.0) (2025-12-05)
 
 ### Features
