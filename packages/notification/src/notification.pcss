@@ -1,14 +1,46 @@
 .sds-notification {
+  --notification-background-color: var(--sds-color-support-info-strong);
+  --notification-color: var(--sds-color-text-on-strong);
+
   align-items: center;
-  background-color: var(--sds-color-support-info-strong);
+  background-color: var(--notification-background-color);
   border-radius: var(--sds-space-border-radius-full);
-  color: var(--sds-color-text-on-strong);
+  color: var(--notification-color);
   display: inline-flex;
   font-size: var(--sds-typography-fontsize-300);
   justify-content: center;
   padding: 0 var(--sds-space-padding-infinitesimal);
   min-width: 1em;
   min-height: 1em;
+
+  &--brand {
+    --notification-background-color: var(--sds-color-brand-primary-strong);
+  }
+
+  &--neutral {
+    --notification-background-color: var(
+      --sds-color-interaction-neutral-strong-default
+    );
+  }
+
+  &--success {
+    --notification-background-color: var(--sds-color-support-success-strong);
+  }
+
+  &--info {
+    --notification-background-color: var(--sds-color-support-info-strong);
+  }
+
+  &--warning {
+    --notification-background-color: var(--sds-color-support-warning-strong);
+    --notification-color: var(--sds-color-text-primary);
+
+    color-scheme: only light;
+  }
+
+  &--critical {
+    --notification-background-color: var(--sds-color-support-critical-strong);
+  }
 
   &__count {
     align-items: center;
