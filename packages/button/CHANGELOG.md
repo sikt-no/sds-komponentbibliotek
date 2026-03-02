@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.5.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.4.2...@sikt/sds-button@4.5.0) (2026-03-02)
+
+### Features
+
+- **button:** add notification prop to button and button-link ([f59c9ce](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f59c9ce73556f2250ec0882480eaf9d8bed1eb53))
+
+### Bug Fixes
+
+- **button:** gap with use of screen reader only elements ([d183e0b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d183e0b94d02bd6d1c4d7a39282dc1aa0f9bef27))
+
 ## [4.4.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.4.1...@sikt/sds-button@4.4.2) (2025-12-11)
 
 ### Bug Fixes
