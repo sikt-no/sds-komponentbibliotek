@@ -1,0 +1,43 @@
+.vuln:
+  stage: test
+  extends: .platon-imagescan
+  script:
+    - trivy fs --cache-dir .trivycache/ --dependency-tree ./
+    - trivy fs --cache-dir .trivycache/ -f json -o gl-container-scanning-report.json ./
+    - trivy fs --cache-dir .trivycache/ -f cyclonedx -o gl-sbom.cdx.json ./
+    - trivy fs --cache-dir .trivycache/ --severity MEDIUM,HIGH,CRITICAL --exit-code 1 ./
+  cache:
+    paths:
+      - .trivycache/
+  artifacts:
+    expire_in: 1 days
+    when: always
+    reports:
+      container_scanning: gl-container-scanning-report.json
+      cyclonedx: gl-sbom.cdx.json
+  needs: []
+
+vuln:
+  extends: .vuln
+  allow_failure: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+    - when: on_success
+
+vuln-schedule:
+  extends: .vuln
+  allow_failure: false
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+vuln-schedule-report:
+  stage: .post
+  script:
+    - >
+      curl --request POST --header "Content-Type: application/json" --data "{\"text\":\"Vulnerability audit failed on $CI_COMMIT_BRANCH <$CI_PIPELINE_URL|$CI_PIPELINE_ID>\"}" "${SLACK_WEBHOOK_URL_PRIVATE}"
+  needs:
+    - vuln-schedule
+  when: on_failure
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"

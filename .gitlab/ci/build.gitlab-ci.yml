@@ -1,0 +1,114 @@
+packages:
+  stage: build
+  extends:
+    - .npm_cache
+  script:
+    - npm pkg delete scripts.prepare
+    - npm ci --cache .npm
+    - npm run build
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - .npm
+      policy: pull
+    - key: "$CI_JOB_NAME-$CI_COMMIT_BRANCH"
+      paths:
+        - .turbo/cache
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+    expire_in: 1 days
+    paths:
+      - packages/**/dist
+      - packages/**/README.md
+      - packages/**/LICENSE.md
+      - packages/**/CHANGELOG.md
+      - packages/**/*.png
+      - packages/**/*.svg
+      - packages/**/index.js
+  needs:
+    - install
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+    - when: on_success
+
+storybook:
+  stage: build
+  extends: .npm_cache
+  script:
+    - npm pkg delete scripts.prepare
+    - npm ci --cache .npm
+    - npm run build:storybook
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - .npm
+      policy: pull
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+    expire_in: 1 days
+    paths:
+      - apps/storybook/storybook-static
+  needs:
+    - install
+    - packages
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+    - if: $CI_COMMIT_TAG
+      when: never
+    - when: on_success
+
+astro:
+  stage: build
+  extends: .npm_cache
+  script:
+    - npm pkg delete scripts.prepare
+    - npm ci --cache .npm
+    - npm run build:astro
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - .npm
+      policy: pull
+    - key: "$CI_JOB_NAME-$CI_COMMIT_BRANCH"
+      paths:
+        - apps/astro/dist/
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+    expire_in: 1 days
+    paths:
+      - apps/astro/dist
+  dependencies:
+    - packages
+  needs:
+    - install
+    - packages
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+    - if: $CI_COMMIT_TAG
+      when: never
+    - when: on_success
+
+docker:
+  stage: build
+  extends: .platon-docker-build
+  dependencies:
+    - astro
+    - storybook
+  needs:
+    - astro
+    - storybook
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+    - if: $CI_COMMIT_TAG
+      when: never
+    - when: on_success

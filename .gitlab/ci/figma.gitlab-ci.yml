@@ -1,0 +1,28 @@
+publish-figma:
+  stage: .post
+  extends:
+    - .npm_cache
+  id_tokens:
+    VAULT_ID_TOKEN:
+      aud: $VAULT_SERVER_URL
+  secrets:
+    FIGMA_TOKEN:
+      vault: "gitlab/${CI_PROJECT_PATH}/figma-token@secret"
+      token: $VAULT_ID_TOKEN
+      file: false
+  script:
+    - npm pkg delete scripts.prepare
+    - npm pkg delete scripts.postinstall
+    - npm ci --cache .npm
+    - npx figma connect publish --token ${FIGMA_TOKEN}
+    - npx figma connect publish --token ${FIGMA_TOKEN} --config figma.html.config.json
+  needs:
+    - install
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - packages/**/figma/*.figma.tsx
+        - packages/**/figma/*.react.tsx
+        - packages/**/figma/*.html.ts
