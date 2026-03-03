@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.6.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.6.0...@sikt/sds-filter-list@0.6.1) (2026-03-03)
+
+### Bug Fixes
+
+- **filter-list:** align label count ([25c4443](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/25c4443d15e1d4040f9d398202aa2d4b7d23da63))
+- **filter-list:** change notification color ([5e6021b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5e6021b6aeca1218982e4020d45a97dec8daf126))
+
 ## [0.6.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.5.5...@sikt/sds-filter-list@0.6.0) (2026-01-28)
 
 ### ⚠ BREAKING CHANGES
