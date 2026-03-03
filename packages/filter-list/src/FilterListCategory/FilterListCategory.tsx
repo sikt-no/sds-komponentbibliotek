@@ -54,7 +54,7 @@ export const FilterListCategory = ({
             indeterminate={indeterminate}
             checked={checked}
           />
-          {hasCount && <Notification id={id} count={count} />}
+          {hasCount && <Notification id={id} variant="brand" count={count} />}
         </div>
       }
     >

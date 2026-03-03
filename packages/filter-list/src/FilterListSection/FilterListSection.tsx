@@ -30,7 +30,7 @@ export const FilterListSection = ({
       )}
     >
       <span className="sds-filter-list-section__label">{label}</span>
-      {hasCount && <Notification count={count} />}
+      {hasCount && <Notification variant="brand" count={count} />}
     </div>
   );
 

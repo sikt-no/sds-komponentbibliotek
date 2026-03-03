@@ -39,7 +39,7 @@
     "@sikt/sds-checkbox": "^3.2.0",
     "@sikt/sds-core": "^4.7.0",
     "@sikt/sds-icons": "^3.1.0",
-    "@sikt/sds-notification": "^1.0.0",
+    "@sikt/sds-notification": "^1.1.0",
     "@sikt/sds-radio": "^4.0.0"
   },
   "peerDependencies": {
