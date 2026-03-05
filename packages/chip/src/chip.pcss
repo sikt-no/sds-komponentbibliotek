@@ -14,12 +14,17 @@
   padding-left: var(--sds-space-padding-tiny);
 
   &:focus-visible {
+    --chip-border-color: var(--sds-color-interaction-neutral-subtle-highlight);
+
     outline: var(--sds-focus-outline);
   }
 
-  &:hover,
-  &:focus-visible {
-    --chip-border-color: var(--sds-color-interaction-neutral-subtle-highlight);
+  @media (pointer: fine) {
+    &:hover {
+      --chip-border-color: var(
+        --sds-color-interaction-neutral-subtle-highlight
+      );
+    }
   }
 
   &:active {
@@ -30,11 +35,18 @@
   &[aria-pressed="true"] {
     --chip-border-color: var(--sds-color-interaction-primary-strong-default);
 
-    &:hover,
     &:focus-visible {
       --chip-border-color: var(
         --sds-color-interaction-primary-strong-highlight
       );
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --chip-border-color: var(
+          --sds-color-interaction-primary-strong-highlight
+        );
+      }
     }
 
     &:active {

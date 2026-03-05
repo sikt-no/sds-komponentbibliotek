@@ -31,18 +31,21 @@
       padding: var(--sds-space-padding-small) var(--sds-space-padding-tiny);
     }
 
-    &:hover,
     &:focus-visible {
       --checkbox-border-color: var(--sds-color-layout-divider-strong);
+
+      outline: var(--sds-focus-outline);
+      outline-offset: 0;
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --checkbox-border-color: var(--sds-color-layout-divider-strong);
+      }
     }
 
     &:active {
       --checkbox-border-color: var(--sds-color-layout-divider-strong);
-    }
-
-    &:focus-visible {
-      outline: var(--sds-focus-outline);
-      outline-offset: 0;
     }
 
     &:disabled {
@@ -60,11 +63,18 @@
       );
       --checkbox-border-color: transparent;
 
-      &:hover,
       &:focus-visible {
         --checkbox-background-color: var(
           --sds-color-interaction-primary-strong-highlight
         );
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          --checkbox-background-color: var(
+            --sds-color-interaction-primary-strong-highlight
+          );
+        }
       }
 
       &:active {
@@ -79,11 +89,18 @@
   &--error &__input {
     --checkbox-border-color: var(--sds-color-interaction-danger-strong-default);
 
-    &:hover,
     &:focus-visible {
       --checkbox-border-color: var(
         --sds-color-interaction-danger-strong-highlight
       );
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --checkbox-border-color: var(
+          --sds-color-interaction-danger-strong-highlight
+        );
+      }
     }
 
     &:active {
@@ -98,11 +115,18 @@
         --sds-color-interaction-danger-strong-default
       );
 
-      &:hover,
       &:focus-visible {
         --checkbox-background-color: var(
           --sds-color-interaction-danger-strong-highlight
         );
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          --checkbox-background-color: var(
+            --sds-color-interaction-danger-strong-highlight
+          );
+        }
       }
 
       &:active {

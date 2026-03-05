@@ -18,9 +18,11 @@
     gap: var(--sds-space-padding-small);
   }
 
-  &:hover {
-    --toggle-track-border-color: var(--sds-color-layout-divider-strong);
-    --toggle-thumb-background-color: var(--sds-color-layout-divider-strong);
+  @media (pointer: fine) {
+    &:hover {
+      --toggle-track-border-color: var(--sds-color-layout-divider-strong);
+      --toggle-thumb-background-color: var(--sds-color-layout-divider-strong);
+    }
   }
 
   &:active {
@@ -40,23 +42,24 @@
         var(--toggle-thumb-offset)
     );
 
-    &:hover,
+    @media (pointer: fine) {
+      &:hover {
+        --toggle-thumb-background-color: var(
+          --sds-color-layout-background-default
+        );
+        --toggle-track-background-color: var(
+          --sds-color-interaction-primary-strong-highlight
+        );
+        --toggle-track-border-color: var(
+          --sds-color-interaction-primary-strong-highlight
+        );
+      }
+    }
+
     &:active {
       --toggle-thumb-background-color: var(
         --sds-color-layout-background-default
       );
-    }
-
-    &:hover {
-      --toggle-track-background-color: var(
-        --sds-color-interaction-primary-strong-highlight
-      );
-      --toggle-track-border-color: var(
-        --sds-color-interaction-primary-strong-highlight
-      );
-    }
-
-    &:active {
       --toggle-track-background-color: var(
         --sds-color-interaction-primary-strong-pressed
       );

@@ -34,14 +34,19 @@
     }
 
     &:focus-visible {
-      outline: var(--sds-focus-outline);
-    }
-
-    &:hover,
-    &:focus-visible {
       --chip-border-color: var(
         --sds-color-interaction-primary-strong-highlight
       );
+
+      outline: var(--sds-focus-outline);
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --chip-border-color: var(
+          --sds-color-interaction-primary-strong-highlight
+        );
+      }
     }
 
     &:active {
@@ -103,18 +108,21 @@
     pointer-events: auto;
     width: 100%;
 
-    &:hover,
     &:focus-visible {
       --combobox-border-color: var(--sds-color-layout-divider-strong);
+
+      outline: var(--sds-focus-outline);
+      outline-offset: 0;
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --combobox-border-color: var(--sds-color-layout-divider-strong);
+      }
     }
 
     &:active {
       --combobox-border-color: var(--sds-color-layout-divider-strong);
-    }
-
-    &:focus-visible {
-      outline: var(--sds-focus-outline);
-      outline-offset: 0;
     }
 
     &:disabled {
@@ -169,14 +177,19 @@
     }
 
     &:focus-visible {
-      outline: var(--sds-focus-outline);
-    }
-
-    &:hover,
-    &:focus-visible {
       --combobox-button-background-color: var(
         --sds-color-interaction-primary-transparent-highlight
       );
+
+      outline: var(--sds-focus-outline);
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --combobox-button-background-color: var(
+          --sds-color-interaction-primary-transparent-highlight
+        );
+      }
     }
 
     &:active {
@@ -231,14 +244,18 @@
       }
 
       &:focus-visible {
-        outline: var(--sds-focus-outline);
-      }
-
-      &:hover,
-      &:focus-visible {
         background-color: var(
           --sds-color-interaction-primary-transparent-highlight
         );
+        outline: var(--sds-focus-outline);
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          background-color: var(
+            --sds-color-interaction-primary-transparent-highlight
+          );
+        }
       }
 
       &:active {
@@ -260,7 +277,6 @@
       --sds-color-interaction-danger-strong-default
     );
 
-    &:hover,
     &:focus-within {
       --combobox-border-color: var(
         --sds-color-interaction-danger-strong-highlight
@@ -268,6 +284,17 @@
       --combobox-button-background-color: var(
         --sds-color-interaction-danger-strong-highlight
       );
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --combobox-border-color: var(
+          --sds-color-interaction-danger-strong-highlight
+        );
+        --combobox-button-background-color: var(
+          --sds-color-interaction-danger-strong-highlight
+        );
+      }
     }
 
     &:active {
@@ -280,7 +307,6 @@
     }
 
     .sds-combobox__button {
-      &:hover,
       &:focus {
         --combobox-border-color: var(
           --sds-color-interaction-danger-strong-highlight
@@ -288,6 +314,17 @@
         --combobox-button-background-color: var(
           --sds-color-interaction-danger-strong-highlight
         );
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          --combobox-border-color: var(
+            --sds-color-interaction-danger-strong-highlight
+          );
+          --combobox-button-background-color: var(
+            --sds-color-interaction-danger-strong-highlight
+          );
+        }
       }
     }
   }

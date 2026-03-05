@@ -29,9 +29,14 @@
     width: fit-content;
 
     &:active,
-    &:focus-visible,
-    &:hover {
+    &:focus-visible {
       background-color: unset;
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        background-color: unset;
+      }
     }
   }
 

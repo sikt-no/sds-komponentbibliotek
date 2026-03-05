@@ -20,21 +20,28 @@
       border: unset;
       padding: unset;
 
-      &:hover,
       &:focus-visible {
         background: var(--sds-color-interaction-neutral-transparent-highlight);
         cursor: pointer;
+        outline: var(--sds-focus-outline);
       }
 
-      &:focus-visible {
-        outline: var(--sds-focus-outline);
+      @media (pointer: fine) {
+        &:hover {
+          background: var(
+            --sds-color-interaction-neutral-transparent-highlight
+          );
+          cursor: pointer;
+        }
       }
     }
 
-    &:has(.sds-filter-list-item__input:hover) {
-      --filter-list-item-background-color: var(
-        --sds-color-interaction-neutral-transparent-highlight
-      );
+    @media (pointer: fine) {
+      &:has(.sds-filter-list-item__input:hover) {
+        --filter-list-item-background-color: var(
+          --sds-color-interaction-neutral-transparent-highlight
+        );
+      }
     }
   }
 

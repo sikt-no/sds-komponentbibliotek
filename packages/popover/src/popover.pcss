@@ -9,19 +9,23 @@
   text-decoration: underline dotted;
   text-underline-position: under;
 
-  &:focus-visible,
-  &:hover {
+  &:focus-visible {
     background-color: var(
       --sds-color-interaction-primary-transparent-highlight
     );
+    outline: var(--sds-focus-outline);
+  }
+
+  @media (pointer: fine) {
+    &:hover {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+    }
   }
 
   &:active {
     background-color: var(--sds-color-interaction-primary-transparent-pressed);
-  }
-
-  &:focus-visible {
-    outline: var(--sds-focus-outline);
   }
 
   &__target {

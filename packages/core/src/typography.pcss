@@ -210,22 +210,26 @@
       background-color: var(--sds-color-text-primary);
     }
 
-    &:hover,
     &:focus-visible {
       background-color: var(
         --sds-color-interaction-primary-transparent-highlight
       );
+      outline: var(--sds-focus-outline);
+      outline-offset: 0;
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        background-color: var(
+          --sds-color-interaction-primary-transparent-highlight
+        );
+      }
     }
 
     &:active {
       background-color: var(
         --sds-color-interaction-primary-transparent-pressed
       );
-    }
-
-    &:focus-visible {
-      outline: var(--sds-focus-outline);
-      outline-offset: 0;
     }
 
     &[target="_blank"],

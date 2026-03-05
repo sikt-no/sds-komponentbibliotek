@@ -65,7 +65,12 @@
     background-color: var(--sds-color-interaction-primary-strong-default);
     color: var(--sds-color-text-on-strong);
 
-    &:hover,
+    @media (pointer: fine) {
+      &:hover {
+        background-color: var(--sds-color-interaction-primary-strong-highlight);
+      }
+    }
+
     &:focus-visible {
       background-color: var(--sds-color-interaction-primary-strong-highlight);
     }
@@ -78,7 +83,12 @@
   &--subtle {
     background-color: var(--sds-color-interaction-primary-subtle-default);
 
-    &:hover,
+    @media (pointer: fine) {
+      &:hover {
+        background-color: var(--sds-color-interaction-primary-subtle-highlight);
+      }
+    }
+
     &:focus-visible {
       background-color: var(--sds-color-interaction-primary-subtle-highlight);
     }
@@ -89,7 +99,14 @@
   }
 
   &--transparent {
-    &:hover,
+    @media (pointer: fine) {
+      &:hover {
+        background-color: var(
+          --sds-color-interaction-primary-transparent-highlight
+        );
+      }
+    }
+
     &:focus-visible {
       background-color: var(
         --sds-color-interaction-primary-transparent-highlight
@@ -107,7 +124,12 @@
     background-color: var(--sds-color-interaction-danger-strong-default);
     color: var(--sds-color-text-on-strong);
 
-    &:hover,
+    @media (pointer: fine) {
+      &:hover {
+        background-color: var(--sds-color-interaction-danger-strong-highlight);
+      }
+    }
+
     &:focus-visible {
       background-color: var(--sds-color-interaction-danger-strong-highlight);
     }
@@ -120,7 +142,12 @@
   &--neutral {
     background-color: var(--sds-color-interaction-neutral-subtle-default);
 
-    &:hover,
+    @media (pointer: fine) {
+      &:hover {
+        background-color: var(--sds-color-interaction-neutral-subtle-highlight);
+      }
+    }
+
     &:focus-visible {
       background-color: var(--sds-color-interaction-neutral-subtle-highlight);
     }
@@ -131,7 +158,14 @@
   }
 
   &--neutral-transparent {
-    &:hover,
+    @media (pointer: fine) {
+      &:hover {
+        background-color: var(
+          --sds-color-interaction-neutral-transparent-highlight
+        );
+      }
+    }
+
     &:focus-visible {
       background-color: var(
         --sds-color-interaction-neutral-transparent-highlight

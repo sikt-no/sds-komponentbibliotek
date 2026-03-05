@@ -80,11 +80,18 @@
 
       &[data-hovered],
       &[data-focus-visible],
-      &:hover,
       &:focus-visible {
         background-color: var(
           --sds-color-interaction-primary-transparent-highlight
         );
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          background-color: var(
+            --sds-color-interaction-primary-transparent-highlight
+          );
+        }
       }
 
       &[data-pressed],
@@ -152,11 +159,18 @@
 
       &[data-hovered],
       &[data-focus-visible],
-      &:hover,
       &:focus-visible {
         background-color: var(
           --sds-color-interaction-primary-transparent-highlight
         );
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          background-color: var(
+            --sds-color-interaction-primary-transparent-highlight
+          );
+        }
       }
 
       &[data-pressed],

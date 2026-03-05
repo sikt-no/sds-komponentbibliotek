@@ -33,8 +33,10 @@
     justify-content: center;
     padding: var(--sds-space-padding-minimal) var(--sds-space-padding-tiny);
 
-    &:hover {
-      background: var(--sds-color-interaction-primary-transparent-highlight);
+    @media (pointer: fine) {
+      &:hover {
+        background: var(--sds-color-interaction-primary-transparent-highlight);
+      }
     }
 
     &:active {
@@ -45,8 +47,12 @@
       background-color: var(--sds-color-interaction-primary-strong-default);
       color: var(--sds-color-text-on-strong);
 
-      &:hover {
-        background-color: var(--sds-color-interaction-primary-strong-highlight);
+      @media (pointer: fine) {
+        &:hover {
+          background-color: var(
+            --sds-color-interaction-primary-strong-highlight
+          );
+        }
       }
 
       &:active {

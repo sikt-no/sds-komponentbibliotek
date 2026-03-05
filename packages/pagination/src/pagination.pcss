@@ -34,15 +34,20 @@
     height: var(--sds-typography-fontsize-1200);
     padding: 0;
 
-    &:hover,
     &:focus-visible {
       --pagination-background-color: var(
         --sds-color-interaction-neutral-subtle-highlight
       );
+
+      outline: var(--sds-focus-outline);
     }
 
-    &:focus-visible {
-      outline: var(--sds-focus-outline);
+    @media (pointer: fine) {
+      &:hover {
+        --pagination-background-color: var(
+          --sds-color-interaction-neutral-subtle-highlight
+        );
+      }
     }
 
     &:active {
@@ -66,9 +71,14 @@
       cursor: inherit;
 
       &:active,
-      &:hover,
       &:focus-visible {
         --pagination-background-color: initial;
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          --pagination-background-color: initial;
+        }
       }
     }
 
@@ -82,11 +92,18 @@
       text-decoration-thickness: var(--sds-space-border-weight-regular);
 
       &:active,
-      &:hover,
       &:focus-visible {
         --pagination-background-color: var(
           --sds-color-interaction-primary-subtle-default
         );
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          --pagination-background-color: var(
+            --sds-color-interaction-primary-subtle-default
+          );
+        }
       }
     }
   }

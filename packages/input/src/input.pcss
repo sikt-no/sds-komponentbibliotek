@@ -18,9 +18,14 @@
     cursor: text;
     padding: var(--input-padding);
 
-    &:hover,
     &:focus-visible {
       --input-border-color: var(--sds-color-layout-divider-strong);
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --input-border-color: var(--sds-color-layout-divider-strong);
+      }
     }
 
     &:active {
@@ -81,11 +86,18 @@
   &--error &__wrapper {
     --input-border-color: var(--sds-color-interaction-danger-strong-default);
 
-    &:hover,
     &:focus-visible {
       --input-border-color: var(
         --sds-color-interaction-danger-strong-highlight
       );
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --input-border-color: var(
+          --sds-color-interaction-danger-strong-highlight
+        );
+      }
     }
 
     &:active {

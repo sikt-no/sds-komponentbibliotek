@@ -47,18 +47,23 @@
   &--expandable &__summary {
     cursor: pointer;
 
-    &:hover,
     &:focus-visible {
       --summary-button-background-color: var(
         --sds-color-interaction-neutral-transparent-highlight
       );
-    }
 
-    &:focus-visible {
       outline: none;
 
       .sds-progress-indicator__heading-button {
         outline: var(--sds-focus-outline);
+      }
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --summary-button-background-color: var(
+          --sds-color-interaction-neutral-transparent-highlight
+        );
       }
     }
 
@@ -140,15 +145,19 @@
       cursor: pointer;
       text-decoration: none;
 
-      &:hover,
       &:focus-visible {
         background-color: var(
           --sds-color-interaction-neutral-transparent-highlight
         );
+        outline: var(--sds-focus-outline);
       }
 
-      &:focus-visible {
-        outline: var(--sds-focus-outline);
+      @media (pointer: fine) {
+        &:hover {
+          background-color: var(
+            --sds-color-interaction-neutral-transparent-highlight
+          );
+        }
       }
 
       &:active {

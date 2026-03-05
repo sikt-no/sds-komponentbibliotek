@@ -45,18 +45,20 @@
       border-color: var(--sds-color-interaction-primary-strong-default);
     }
 
-    &:hover,
     &:focus-visible {
       background-color: var(--tab-hover-background-color);
+      outline: var(--sds-focus-outline);
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        background-color: var(--tab-hover-background-color);
+      }
     }
 
     &:active {
       background-color: var(--tab-active-background-color);
       border-color: var(--sds-color-interaction-primary-strong-pressed);
-    }
-
-    &:focus-visible {
-      outline: var(--sds-focus-outline);
     }
   }
 
@@ -90,14 +92,18 @@
     padding: var(--sds-space-padding-small);
 
     &:focus-visible {
-      outline: var(--sds-focus-outline);
-    }
-
-    &:hover,
-    &:focus-visible {
       background-color: var(
         --sds-color-interaction-primary-transparent-highlight
       );
+      outline: var(--sds-focus-outline);
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        background-color: var(
+          --sds-color-interaction-primary-transparent-highlight
+        );
+      }
     }
 
     &:active {
