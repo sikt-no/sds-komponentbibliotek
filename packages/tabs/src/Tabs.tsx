@@ -51,7 +51,7 @@ export const Tabs = ({
   const id = useId();
 
   useEffect(() => {
-    if (controlledIndex) {
+    if (controlledIndex !== undefined) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedIndex(controlledIndex);
       setPreviousIndex(controlledIndex);

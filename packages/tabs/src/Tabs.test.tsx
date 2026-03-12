@@ -10,8 +10,9 @@ const renderComponent = ({
   className,
   icon,
   defaultIndex,
+  controlledIndex,
   isSelectOnFocus,
-  onChange,
+  onValueChange,
   onClick,
   ...rest
 }: Partial<TabsProps> & Partial<TabProps>) =>
@@ -20,8 +21,9 @@ const renderComponent = ({
       data-testid="test"
       className={className}
       defaultIndex={defaultIndex}
+      controlledIndex={controlledIndex}
       isSelectOnFocus={isSelectOnFocus}
-      onChange={onChange}
+      onValueChange={onValueChange}
       {...rest}
     >
       <TabList aria-label="test-aria-label">
@@ -191,6 +193,57 @@ describe("Tabs", () => {
       expect(screen.getByText("Tab 1")).toHaveFocus();
       expect(screen.getByText("Content 1")).toBeVisible();
       expect(screen.getByText("Content 3")).not.toBeVisible();
+    });
+
+    it("respects controlledIndex={0}", async () => {
+      renderComponent({ defaultIndex: 2, controlledIndex: 0 });
+
+      expect(screen.getByText("Content 1")).toBeVisible();
+      expect(screen.getByText("Content 2")).not.toBeVisible();
+      expect(screen.getByText("Content 3")).not.toBeVisible();
+    });
+
+    it("respects controlledIndex with different values", async () => {
+      renderComponent({ defaultIndex: 0, controlledIndex: 2 });
+
+      expect(screen.getByText("Content 1")).not.toBeVisible();
+      expect(screen.getByText("Content 2")).not.toBeVisible();
+      expect(screen.getByText("Content 3")).toBeVisible();
+    });
+
+    it("updates display when controlledIndex changes", async () => {
+      const changeHandler = jest.fn();
+      const { rerender } = render(
+        <Tabs controlledIndex={1} onValueChange={changeHandler}>
+          <TabList aria-label="test-aria-label">
+            <Tab>Tab 1</Tab>
+            <Tab>Tab 2</Tab>
+            <Tab>Tab 3</Tab>
+          </TabList>
+          <TabPanel>Content 1</TabPanel>
+          <TabPanel>Content 2</TabPanel>
+          <TabPanel>Content 3</TabPanel>
+        </Tabs>,
+      );
+
+      expect(screen.getByText("Content 2")).toBeVisible();
+      expect(screen.getByText("Content 1")).not.toBeVisible();
+
+      rerender(
+        <Tabs controlledIndex={0} onValueChange={changeHandler}>
+          <TabList aria-label="test-aria-label">
+            <Tab>Tab 1</Tab>
+            <Tab>Tab 2</Tab>
+            <Tab>Tab 3</Tab>
+          </TabList>
+          <TabPanel>Content 1</TabPanel>
+          <TabPanel>Content 2</TabPanel>
+          <TabPanel>Content 3</TabPanel>
+        </Tabs>,
+      );
+
+      expect(screen.getByText("Content 1")).toBeVisible();
+      expect(screen.getByText("Content 2")).not.toBeVisible();
     });
   });
 });
