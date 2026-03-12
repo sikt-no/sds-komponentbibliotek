@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.3.0...@sikt/sds-popover@1.4.0) (2026-03-12)
+
+### Features
+
+- prevent hover states on touch devices ([8c5f556](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c5f5569c8fa6aadc3395448b6c388b1692b9742))
+
+### Bug Fixes
+
+- **deps:** update react ([3d6fe8c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3d6fe8c749fe2c5e24ca3c46a213f765257c8ce4))
+- **deps:** update react ([c700c90](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c700c90eaf952b364afa072af15bd46f2414aef7))
+
 ## [1.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.2.0...@sikt/sds-popover@1.3.0) (2025-11-19)
 
 ### Features
