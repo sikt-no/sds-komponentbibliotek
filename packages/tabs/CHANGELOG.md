@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@6.0.0...@sikt/sds-tabs@7.0.0) (2026-03-12)
+
+### ⚠ BREAKING CHANGES
+
+- standardize onChange signatures across components
+
+### Features
+
+- prevent hover states on touch devices ([8c5f556](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c5f5569c8fa6aadc3395448b6c388b1692b9742))
+- standardize onChange signatures across components ([9944d83](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9944d83cf6b2b3d8aac2249b9394639e4ee186fb))
+
+### Bug Fixes
+
+- **tabs:** respect controlledIndex={0} prop ([b6542d0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b6542d05236085d6bce62c6aa9b500ec84a0fafe)), closes [#196](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/196)
+
 ## [6.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@5.0.0...@sikt/sds-tabs@6.0.0) (2026-01-28)
 
 ### ⚠ BREAKING CHANGES
