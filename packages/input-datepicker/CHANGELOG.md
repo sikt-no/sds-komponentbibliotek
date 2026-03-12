@@ -15,7 +15,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 ### Bug Fixes
 
-- **astro:** new url to datepicker ([b5dffe4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b5dffe44c4fa4a48d1c5ad2b46b2083f19bf5d0d))
 - **deps:** update dependency react-aria-components to ^1.14.0 ([323d4b6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/323d4b610cb823a48b66ee99d0090300d719e275))
 - **deps:** update dependency react-aria-components to ^1.15.1 ([4e3612c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4e3612c7f0fc7b42194f8a4b97616a67cf4895db))
 
