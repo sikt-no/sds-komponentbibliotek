@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.3.1...@sikt/sds-checkbox@4.0.0) (2026-03-12)
+
+### ⚠ BREAKING CHANGES
+
+- standardize onChange signatures across components
+- **checkbox:** rename isChecked prop to checked
+
+### Features
+
+- **checkbox:** rename isChecked prop to checked ([a86f10c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a86f10c1bf44257bc806670b0ff72dc60a0974a4))
+- prevent hover states on touch devices ([8c5f556](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c5f5569c8fa6aadc3395448b6c388b1692b9742))
+- standardize onChange signatures across components ([9944d83](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9944d83cf6b2b3d8aac2249b9394639e4ee186fb))
+
 ## [3.3.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-checkbox@3.3.0...@sikt/sds-checkbox@3.3.1) (2025-10-09)
 
 ### Bug Fixes
