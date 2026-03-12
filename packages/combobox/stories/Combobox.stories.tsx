@@ -54,6 +54,47 @@ export const WithError: Story = {
   },
 };
 
+export const WithGroupedOptions: Story = {
+  args: {
+    label: "Choose a food item",
+    lang: "en",
+    name: "food",
+    options: [
+      {
+        label: "Fruits",
+        options: [
+          { label: "Apple", value: "apple" },
+          { label: "Banana", value: "banana" },
+          { label: "Mango", value: "mango" },
+          { label: "Strawberry", value: "strawberry" },
+        ],
+      },
+      {
+        label: "Vegetables",
+        options: [
+          { label: "Broccoli", value: "broccoli" },
+          { label: "Carrot", value: "carrot" },
+          { label: "Spinach", value: "spinach" },
+        ],
+      },
+      {
+        label: "Other",
+        options: [{ label: "Pizza", value: "pizza" }],
+      },
+    ],
+    onChange: (e, newValue) => {
+      console.log(e, newValue);
+    },
+  },
+};
+
+export const WithGroupedOptionsMultiple: Story = {
+  args: {
+    ...WithGroupedOptions.args,
+    multiple: true,
+  },
+};
+
 export const Controlled: Story = {
   args: {
     ...Default.args,

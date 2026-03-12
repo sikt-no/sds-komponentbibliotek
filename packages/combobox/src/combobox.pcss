@@ -234,6 +234,36 @@
       display: block;
     }
 
+    &-group {
+      /* Hide the group when all its options are filtered out */
+      &:not(:has(.sds-combobox__datalist-option:not([aria-hidden="true"]))) {
+        display: none;
+      }
+    }
+
+    /* Replicate shadow DOM ::slotted styles for options nested inside a group */
+    &-group &-option {
+      cursor: pointer;
+      display: block;
+
+      &[aria-hidden="true"] {
+        display: none !important;
+      }
+    }
+
+    &-group-label {
+      display: block;
+      font-size: var(--sds-typography-label-default-fontsize);
+      font-weight: var(--sds-typography-label-default-fontweight);
+      line-height: var(--sds-typography-label-default-lineheight);
+      padding: var(--sds-space-padding-small);
+      margin: var(--sds-space-gap-tiny);
+      pointer-events: none;
+      user-select: none;
+      border-bottom: var(--sds-space-border-weight-thin) solid
+        var(--sds-color-brand-neutral-subtle);
+    }
+
     &-option {
       padding: var(--sds-space-padding-small);
       margin: var(--sds-space-gap-tiny);

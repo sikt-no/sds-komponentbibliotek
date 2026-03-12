@@ -15,10 +15,28 @@ const optionsWithSelected = [
   { label: "Baz", value: "2", selected: true },
 ];
 
+const groupedOptions = [
+  {
+    label: "Group",
+    options: [
+      { label: "Bar", value: "1" },
+      { label: "Baz", value: "2" },
+    ],
+  },
+];
+
 describe("Combobox", () => {
   describe("a11y", () => {
     it("should be accessible", async () => {
       const { container } = render(<Combobox label="Foo" options={options} />);
+
+      expect(await axe(container)).toHaveNoViolations();
+    });
+
+    it("should be accessible with grouped options", async () => {
+      const { container } = render(
+        <Combobox label="Foo" options={groupedOptions} />,
+      );
 
       expect(await axe(container)).toHaveNoViolations();
     });
@@ -130,6 +148,12 @@ describe("Combobox", () => {
 
       const dataElements = container.querySelectorAll("data");
       expect(dataElements).toHaveLength(1);
+    });
+
+    it("should render with grouped options", async () => {
+      render(<Combobox label="Foo" options={groupedOptions} />);
+
+      expect(screen.getByText("Group")).toBeInTheDocument();
     });
   });
 });

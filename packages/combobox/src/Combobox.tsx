@@ -17,6 +17,31 @@ import "@u-elements/u-combobox";
 import "@u-elements/u-datalist";
 import "./combobox.pcss";
 
+export interface ComboboxOptionGroupProps {
+  /**
+   * Label for the section heading.
+   */
+  label: string;
+  /**
+   * Options within this section.
+   */
+  options: OptionHTMLAttributes<HTMLOptionElement>[];
+}
+
+export type ComboboxOption =
+  | OptionHTMLAttributes<HTMLOptionElement>
+  | ComboboxOptionGroupProps;
+
+const isOptionGroup = (
+  item: ComboboxOption,
+): item is ComboboxOptionGroupProps =>
+  "options" in item && Array.isArray(item.options);
+
+const flattenOptions = (
+  items: ComboboxOption[],
+): OptionHTMLAttributes<HTMLOptionElement>[] =>
+  items.flatMap((item) => (isOptionGroup(item) ? item.options : [item]));
+
 export interface ComboboxBaseProps extends Omit<
   HTMLAttributes<UHTMLComboboxElement>,
   "onChange"
@@ -31,12 +56,13 @@ export interface ComboboxBaseProps extends Omit<
    */
   helpText?: ReactNode;
   /**
-   * A list of option objects:
-   * - **label** This attribute is text for the label indicating the meaning of the option.
-   * - **value** The content of this attribute represents the value to be submitted with the form, should this option be selected.
-   * - **selected** If present, this Boolean attribute indicates that the option is initially selected.
+   * A list of option objects or section objects containing grouped options:
+   * - **label** Text for the option label or section heading.
+   * - **value** The value submitted with the form (options only).
+   * - **selected** Whether the option is initially selected (options only).
+   * - **options** Grouped options within a section (sections only).
    */
-  options: OptionHTMLAttributes<HTMLOptionElement>[];
+  options: ComboboxOption[];
   /**
    * Indicates that multiple options can be selected in the list. If it is not specified, then only one option can be selected at a time.
    *
@@ -121,8 +147,41 @@ const i18n = {
   },
 };
 
-const getTextProps = (lang: keyof typeof i18n) => {
-  return i18n[lang];
+const getTextProps = (lang: keyof typeof i18n) => i18n[lang];
+
+const Option = ({
+  label,
+  value,
+  ...rest
+}: OptionHTMLAttributes<HTMLOptionElement>) => {
+  return (
+    <u-option className="sds-combobox__datalist-option" value={value} {...rest}>
+      {label}
+    </u-option>
+  );
+};
+
+const OptionGroup = ({
+  id,
+  label,
+  options,
+}: { id: string } & ComboboxOptionGroupProps) => {
+  const groupId = `${id}-${label}`;
+
+  return (
+    <div className="sds-combobox__datalist-group" role="group">
+      <span className="sds-combobox__datalist-group-label" id={groupId}>
+        {label}
+      </span>
+      {options.map((option) => (
+        <Option
+          key={option.value?.toString()}
+          aria-describedby={groupId}
+          {...option}
+        />
+      ))}
+    </div>
+  );
 };
 
 export const Combobox = ({
@@ -139,8 +198,9 @@ export const Combobox = ({
   lang = "nb",
   ...rest
 }: ComboboxProps) => {
+  const flattenedOptions = flattenOptions(options);
   const comboboxRef = useRef<UHTMLComboboxElement>(null);
-  const optionsRef = useRef(options);
+  const optionsRef = useRef(flattenedOptions);
   const onChangeRef = useRef(onChange);
   const hasInteracted = useRef(false);
   const id = useId();
@@ -150,13 +210,14 @@ export const Combobox = ({
   const textProps = getTextProps(lang);
 
   const [initialSelectedOptions, setInitialSelectedOptions] = useState(() =>
-    options.filter((option) => option.selected),
+    flattenedOptions.filter((option) => option.selected),
   );
 
   useEffect(() => {
-    optionsRef.current = options;
+    const flattenedOptions = flattenOptions(options);
+    optionsRef.current = flattenedOptions;
     if (initialSelectedOptions.length === 0 && !hasInteracted.current) {
-      const selected = options.filter((option) => option.selected);
+      const selected = flattenedOptions.filter((option) => option.selected);
       if (selected.length > 0) {
         // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: sync async-arriving selected options into initial badge state before user interaction
         setInitialSelectedOptions(selected);
@@ -245,15 +306,18 @@ export const Combobox = ({
             data-sr-singular={textProps["data-sr-singular"]}
             data-sr-plural={textProps["data-sr-plural"]}
           >
-            {options.map((option) => (
-              <u-option
-                className="sds-combobox__datalist-option"
-                key={option.value?.toString()}
-                value={option.value}
-              >
-                {option.label}
-              </u-option>
-            ))}
+            {options.map((option) =>
+              isOptionGroup(option) ? (
+                <OptionGroup
+                  key={option.label}
+                  id={id}
+                  label={option.label}
+                  options={option.options}
+                />
+              ) : (
+                <Option key={option.value?.toString()} {...option} />
+              ),
+            )}
           </u-datalist>
           {!!name && <select name={name} aria-hidden hidden />}
         </u-combobox>
