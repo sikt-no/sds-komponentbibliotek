@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [8.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@7.0.0...@sikt/sds-toggle@8.0.0) (2026-03-12)
+
+### ⚠ BREAKING CHANGES
+
+- standardize onChange signatures across components
+
+### Features
+
+- prevent hover states on touch devices ([8c5f556](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c5f5569c8fa6aadc3395448b6c388b1692b9742))
+- standardize onChange signatures across components ([9944d83](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9944d83cf6b2b3d8aac2249b9394639e4ee186fb))
+
 ## [7.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@6.1.3...@sikt/sds-toggle@7.0.0) (2026-01-29)
 
 ### ⚠ BREAKING CHANGES
