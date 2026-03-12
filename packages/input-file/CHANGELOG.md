@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@1.3.1...@sikt/sds-input-file@2.0.0) (2026-03-12)
+
+### ⚠ BREAKING CHANGES
+
+- standardize onChange signatures across components
+
+### Features
+
+- standardize onChange signatures across components ([9944d83](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9944d83cf6b2b3d8aac2249b9394639e4ee186fb))
+
+### Bug Fixes
+
+- **deps:** update dependency eslint-plugin-react-hooks to v7 ([7c3497d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7c3497d84dfb5c8814a1219093e6691fdd83cf44))
+- **deps:** update dependency react-aria-components to ^1.13.0 ([2171536](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2171536113068938f1701912ddd0e03ff5cc773f))
+- **deps:** update dependency react-aria-components to ^1.14.0 ([323d4b6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/323d4b610cb823a48b66ee99d0090300d719e275))
+- **deps:** update dependency react-aria-components to ^1.15.1 ([4e3612c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4e3612c7f0fc7b42194f8a4b97616a67cf4895db))
+
 ## [1.3.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-file@1.3.0...@sikt/sds-input-file@1.3.1) (2025-10-09)
 
 ### Bug Fixes
