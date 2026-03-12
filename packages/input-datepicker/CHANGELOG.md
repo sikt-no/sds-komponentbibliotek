@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@2.4.0...@sikt/sds-input-datepicker@3.0.0) (2026-03-12)
+
+### ⚠ BREAKING CHANGES
+
+- standardize onChange signatures across components
+
+### Features
+
+- prevent hover states on touch devices ([8c5f556](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c5f5569c8fa6aadc3395448b6c388b1692b9742))
+- standardize onChange signatures across components ([9944d83](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9944d83cf6b2b3d8aac2249b9394639e4ee186fb))
+
+### Bug Fixes
+
+- **astro:** new url to datepicker ([b5dffe4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b5dffe44c4fa4a48d1c5ad2b46b2083f19bf5d0d))
+- **deps:** update dependency react-aria-components to ^1.14.0 ([323d4b6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/323d4b610cb823a48b66ee99d0090300d719e275))
+- **deps:** update dependency react-aria-components to ^1.15.1 ([4e3612c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4e3612c7f0fc7b42194f8a4b97616a67cf4895db))
+
 ## [2.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@2.3.0...@sikt/sds-input-datepicker@2.4.0) (2025-12-17)
 
 ### Features
