@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-progress-indicator@3.0.1...@sikt/sds-progress-indicator@3.1.0) (2026-03-12)
+
+### Features
+
+- prevent hover states on touch devices ([8c5f556](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c5f5569c8fa6aadc3395448b6c388b1692b9742))
+
+### Bug Fixes
+
+- **deps:** update dependency @radix-ui/react-slot to ^1.2.4 ([ef6ac55](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ef6ac55b200e006b30638c7ec6a3050ce099ff9f))
+
 ## [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-progress-indicator@3.0.0...@sikt/sds-progress-indicator@3.0.1) (2025-10-09)
 
 ### Bug Fixes
