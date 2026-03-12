@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.0.1...@sikt/sds-combobox@5.1.0) (2026-03-12)
+
+### Features
+
+- **combobox:** add option groups ([b89186e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b89186eaf608f98223055079d8da1b084d3cbbef))
+- prevent hover states on touch devices ([8c5f556](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c5f5569c8fa6aadc3395448b6c388b1692b9742))
+
 ## [5.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.0.0...@sikt/sds-combobox@5.0.1) (2026-02-17)
 
 ### Bug Fixes
