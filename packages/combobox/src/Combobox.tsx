@@ -161,22 +161,18 @@ const Option = ({
   );
 };
 
-const OptionGroup = ({
-  id,
-  label,
-  options,
-}: { id: string } & ComboboxOptionGroupProps) => {
-  const groupId = `${id}-${label}`;
+const OptionGroup = ({ label, options }: ComboboxOptionGroupProps) => {
+  const id = useId();
 
   return (
     <div className="sds-combobox__datalist-group" role="group">
-      <span className="sds-combobox__datalist-group-label" id={groupId}>
+      <span className="sds-combobox__datalist-group-label" id={id}>
         {label}
       </span>
       {options.map((option) => (
         <Option
           key={option.value?.toString()}
-          aria-describedby={groupId}
+          aria-describedby={id}
           {...option}
         />
       ))}
@@ -310,7 +306,6 @@ export const Combobox = ({
               isOptionGroup(option) ? (
                 <OptionGroup
                   key={option.label}
-                  id={id}
                   label={option.label}
                   options={option.options}
                 />
