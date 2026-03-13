@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.5...@sikt/sds-dialog@2.0.6) (2026-03-13)
+
+### Bug Fixes
+
+- **dialog:** remove excess useState ([0d1bbce](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0d1bbcea6ccf21d2878022bb76b6a9bb89d95933))
+- update @sikt/sds packages ([cf35fab](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cf35fabce72896bf98f10e2dc13c2c8015e239e7))
+
 ## [2.0.5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.4...@sikt/sds-dialog@2.0.5) (2025-10-07)
 
 ### Bug Fixes
