@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@7.0.0...@sikt/sds-tabs@7.0.1) (2026-03-13)
+
+### Bug Fixes
+
+- update @sikt/sds packages ([cf35fab](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cf35fabce72896bf98f10e2dc13c2c8015e239e7))
+
 ## [7.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@6.0.0...@sikt/sds-tabs@7.0.0) (2026-03-12)
 
 ### ⚠ BREAKING CHANGES
