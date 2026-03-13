@@ -1,5 +1,6 @@
 import { clsx } from "clsx/lite";
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+import { reactNodeToString } from "../../core/src/utils/reactNodeToString";
 import "./button.pcss";
 
 export type ButtonProps = ButtonChildrenProps | ButtonAriaLabelProps;
@@ -51,7 +52,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }: ButtonProps,
     ref,
   ) => {
-    const ariaLabel = typeof children === "string" ? children : undefined;
+    const ariaLabel = children ? reactNodeToString(children) : undefined;
     const iconOnly = iconVariant === "only";
     const iconLeft = iconVariant === "left";
 
