@@ -35,7 +35,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@sikt/sds-core": "^5.2.0"
+    "@sikt/sds-core": "^5.3.0"
   },
   "peerDependencies": {
     "@types/react": "^18.0.0 || ^19.0.0",
