@@ -7,6 +7,11 @@ interface ChipBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   checked?: boolean;
   children: ReactNode;
+  /**
+   * When true the Chip has two states (on/off), otherwise it is only dismissible and should be removed when not active.
+   *
+   * @default undefined
+   */
   toggle?: boolean;
 }
 
