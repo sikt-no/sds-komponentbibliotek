@@ -21,8 +21,9 @@
 
 ## Code of conduct
 
-Be nice! 😊  
-_">0.1 ratio smileys to text"_ -developer @Sikt
+- Be nice! 😊
+- You are people - We are also people 🤗
+- _">0.1 ratio smileys to text"_ -developer @Sikt
 
 ## Feedback
 

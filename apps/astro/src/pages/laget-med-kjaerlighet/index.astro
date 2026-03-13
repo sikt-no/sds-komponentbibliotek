@@ -2,6 +2,9 @@
 import Layout from "../../layouts/PageLayout.astro";
 import { Contributors } from "./_components/contributors/Contributors";
 import { Hero } from "../../components";
+import { Section } from "@sikt/sds-section";
+import { Paragraph } from "@sikt/sds-core";
+import { ListItem, UnorderedList } from "@sikt/sds-list";
 
 const pageTitle = "Laget med kjærlighet";
 const isJune = new Date().getMonth() === 5;
@@ -14,6 +17,15 @@ const titleSuffix = isJune ? "🧡💛💚💙💜" : "";
     heading=`Laget med kjærlighet ❤️${titleSuffix}`
     slot="hero"
   />
+
+  <Section headingText="Æreskodeks">
+    <Paragraph className="ds-content-max-width">
+      <UnorderedList>
+        <ListItem>Vær snill 😊</ListItem>
+        <ListItem>Dere er folk - Vi er også folk 🤗</ListItem>
+      </UnorderedList>
+    </Paragraph>
+  </Section>
 
   <Contributors client:load />
 </Layout>
