@@ -9,6 +9,9 @@ export interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs = ({
+  /**
+   * Unique label to be used to identify navigation landmark for assistive technology
+   */
   "aria-label": ariaLabel,
   className,
   children,
