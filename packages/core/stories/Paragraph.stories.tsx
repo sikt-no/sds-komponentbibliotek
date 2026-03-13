@@ -4,6 +4,14 @@ import { Paragraph, ParagraphProps } from "../index";
 const meta: Meta = {
   title: "Core/Paragraph",
   component: Paragraph,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

@@ -5,6 +5,14 @@ import { Details, DetailsProps } from "../index";
 const meta: Meta = {
   title: "Components/Details",
   component: Details,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

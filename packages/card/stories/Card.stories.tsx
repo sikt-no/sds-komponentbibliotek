@@ -6,6 +6,14 @@ import { Card, CardProps } from "../index";
 const meta: Meta = {
   title: "Components/Card",
   component: Card,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

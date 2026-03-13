@@ -10,6 +10,14 @@ import {
 const meta: Meta = {
   title: "Components/Message/Application Status",
   component: Component,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

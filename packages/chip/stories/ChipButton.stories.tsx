@@ -5,6 +5,14 @@ import { ChipButton, ChipButtonProps } from "../index";
 const meta: Meta = {
   title: "Components/Chip/Button",
   component: ChipButton,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

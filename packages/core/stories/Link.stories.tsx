@@ -5,6 +5,14 @@ import { Link, LinkProps } from "../index";
 const meta: Meta = {
   title: "Core/Link",
   component: Link,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

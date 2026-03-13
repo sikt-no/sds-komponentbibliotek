@@ -6,6 +6,14 @@ const meta: Meta = {
   title: "Components/Message/Alert",
   component: Component,
   subcomponents: { MessageButton },
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

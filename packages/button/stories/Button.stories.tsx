@@ -14,6 +14,14 @@ import "../../notification/dist/index.css";
 const meta: Meta = {
   title: "Components/Button/Button",
   component: Button,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

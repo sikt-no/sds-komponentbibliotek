@@ -4,6 +4,14 @@ import { GuidePanel as Component, GuidePanelProps } from "../index";
 const meta: Meta = {
   title: "Components/Message/Guide Panel",
   component: Component,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

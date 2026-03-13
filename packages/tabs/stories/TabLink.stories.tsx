@@ -6,6 +6,14 @@ import { TabLink, TabLinkProps } from "../index";
 const meta: Meta = {
   title: "Components/Tabs/TabLink",
   component: TabLink,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

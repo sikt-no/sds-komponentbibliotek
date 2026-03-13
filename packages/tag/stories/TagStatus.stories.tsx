@@ -5,6 +5,14 @@ import { TagStatus, TagStatusProps } from "../index";
 const meta: Meta = {
   title: "Components/Tag/Status",
   component: TagStatus,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;

@@ -4,6 +4,14 @@ import { Popover, PopoverProps, Tooltip as TooltipComp } from "../index";
 const meta: Meta = {
   title: "Components/Popover",
   component: Popover,
+  argTypes: {
+    children: {
+      control: { type: "text" },
+      table: {
+        type: { summary: "ReactNode" },
+      },
+    },
+  },
 };
 
 export default meta;
