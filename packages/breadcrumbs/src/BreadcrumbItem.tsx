@@ -10,7 +10,6 @@ import {
 
 export interface BreadcrumbItemProps {
   className?: string;
-  isLastElement?: boolean;
   children?: ReactNode;
 }
 
