@@ -18,7 +18,9 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
    */
   noIcon?: boolean;
   /**
-   * Use the asChild prop to compose onto alternative React components.
+   * Use to change element type into alternative React component. Useful with libraries that require their own routing components.
+   *
+   * For example `<Link asChild><NextLink>` would result in a `<NextLink>` with all properties of this component.
    */
   asChild?: boolean;
   icon?: ReactNode;

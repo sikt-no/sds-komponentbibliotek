@@ -5,10 +5,13 @@ import "./chip.pcss";
 
 interface ChipBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
+  /**
+   * If the component is in a checked, active, pressed state or not.
+   */
   checked?: boolean;
   children: ReactNode;
   /**
-   * When true the Chip has two states (on/off), otherwise it is only dismissible and should be removed when not active.
+   * When true the component has two states (on/off), otherwise it is only dismissible and should be removed when not active.
    *
    * @default undefined
    */
