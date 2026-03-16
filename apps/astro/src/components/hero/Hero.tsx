@@ -48,3 +48,4 @@ export const Hero = ({
     </div>
   );
 };
+Hero.displayName = "Hero";

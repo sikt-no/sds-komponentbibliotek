@@ -16,3 +16,4 @@ export const SlackButton = ({
     </ButtonLink>
   );
 };
+SlackButton.displayName = "SlackButton";

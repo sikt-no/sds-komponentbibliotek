@@ -13,3 +13,4 @@ export const DarkToken = ({ token }: { token: TransformedToken }) => {
     token.dark
   );
 };
+DarkToken.displayName = "DarkToken";

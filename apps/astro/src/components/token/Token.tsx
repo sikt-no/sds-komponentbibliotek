@@ -13,3 +13,4 @@ export const Token = ({ token }: { token: TransformedToken }) => {
     token.$value
   );
 };
+Token.displayName = "Token";

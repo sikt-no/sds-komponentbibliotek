@@ -16,3 +16,4 @@ export const FigmaButton = ({
     </ButtonLink>
   );
 };
+FigmaButton.displayName = "FigmaButton";

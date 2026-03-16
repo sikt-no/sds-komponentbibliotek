@@ -16,3 +16,4 @@ export const GitlabButton = ({
     </ButtonLink>
   );
 };
+GitlabButton.displayName = "GitlabButton";

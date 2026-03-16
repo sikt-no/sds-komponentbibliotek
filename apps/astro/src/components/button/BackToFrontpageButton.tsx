@@ -13,3 +13,4 @@ export const BackToFrontpageButton = () => {
     </ButtonLink>
   );
 };
+BackToFrontpageButton.displayName = "BackToFrontpageButton";
