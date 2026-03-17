@@ -78,11 +78,19 @@ const Message = ({
   );
 };
 
+/**
+ * Is used to give instant feedback on a user action, for example posting a form or saving changes.
+ * It should be placed in context of that action, and not be placed above other content.
+ */
 export const Alert = (props: AlertProps) => (
   <Message role="alert" {...props} type="box" />
 );
 Alert.displayName = "Alert";
 
+/**
+ * Is used to indicate status on application level. Typically placed under the header or main menu.
+ * It can, in most cases, not be dismissed by the user since it is needed to show the current system status.
+ */
 export const ApplicationStatus = ({
   className,
   ...props
@@ -96,6 +104,9 @@ export const ApplicationStatus = ({
 );
 ApplicationStatus.displayName = "ApplicationStatus";
 
+/**
+ * Is used to summarize errors in a form. Should help the user find errors if there are many.
+ */
 export const ErrorSummary = (props: ErrorSummaryProps) => (
   <Message
     aria-live="polite"
@@ -107,6 +118,11 @@ export const ErrorSummary = (props: ErrorSummaryProps) => (
 );
 ErrorSummary.displayName = "ErrorSummary";
 
+/**
+ * Is used to give to give reasurment and additional information to a task or work flow.
+ * For example where users struggle, where irreversible changes are made,
+ * where there are error sources like fetched data or where manual validation is needed.
+ */
 export const GuidePanel = (props: GuidePanelProps) => (
   <Message {...props} type="box" />
 );
