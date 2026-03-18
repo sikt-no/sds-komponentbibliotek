@@ -1,3 +1,4 @@
+import { AlertIcon, FailedIcon, InfoIcon, SuccessIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
 import "./tag.pcss";
@@ -11,6 +12,24 @@ interface TagBaseProps extends HTMLAttributes<HTMLSpanElement> {
   icon?: ReactNode;
 }
 
+interface TagVariantWithIcon {
+  variant?: "brand" | "neutral";
+  icon?: ReactNode;
+}
+
+interface TagVariantWithoutIcon {
+  variant: "success" | "info" | "warning" | "critical";
+  /**
+   * Will be overridden by the default icon for this variant.
+   */
+  icon?: never;
+}
+
+export type TagStatusProps = Omit<TagBaseProps, "category" | "icon"> &
+  (TagVariantWithIcon | TagVariantWithoutIcon);
+
+export type TagCategoryProps = Omit<TagBaseProps, "variant" | "visibility">;
+
 const TagBase = ({
   variant = "brand",
   visibility = "subtle",
@@ -20,6 +39,10 @@ const TagBase = ({
   icon,
   ...rest
 }: TagBaseProps) => {
+  const hasDefaultIcon = ["info", "warning", "success", "critical"].includes(
+    variant,
+  );
+
   return (
     <span
       className={clsx(
@@ -31,16 +54,22 @@ const TagBase = ({
       )}
       {...rest}
     >
-      {icon && <span className="sds-tag__icon">{icon}</span>}
+      {(hasDefaultIcon || icon) && (
+        <span className="sds-tag__icon">
+          {variant === "info" && <InfoIcon />}
+          {variant === "warning" && <AlertIcon />}
+          {variant === "success" && <SuccessIcon />}
+          {variant === "critical" && <FailedIcon />}
+          {!hasDefaultIcon && icon}
+        </span>
+      )}
       <span className="sds-tag__label">{children}</span>
     </span>
   );
 };
 
-export type TagStatusProps = Omit<TagBaseProps, "category">;
 export const TagStatus = (props: TagStatusProps) => <TagBase {...props} />;
 TagStatus.displayName = "TagStatus";
 
-export type TagCategoryProps = Omit<TagBaseProps, "variant" | "visibility">;
 export const TagCategory = (props: TagCategoryProps) => <TagBase {...props} />;
 TagCategory.displayName = "TagCategory";

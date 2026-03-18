@@ -12,10 +12,40 @@ describe("Tag", () => {
   });
 
   describe("api", () => {
-    it("should render", async () => {
-      render(<TagStatus data-testid="test">Foo</TagStatus>);
+    [undefined, "brand", "neutral"].map((variant) => {
+      it(`${variant} should render`, async () => {
+        render(
+          <TagStatus
+            // @ts-expect-error This is a valid type
+            variant={variant}
+            icon="icon"
+            data-testid="test"
+          >
+            Foo
+          </TagStatus>,
+        );
 
-      expect(screen.getByTestId("test")).toHaveClass("sds-tag");
+        expect(screen.getByTestId("test")).toHaveClass("sds-tag");
+        expect(screen.getByText("icon")).toHaveClass("sds-tag__icon");
+      });
+    });
+
+    ["info", "warning", "success", "critical"].map((variant) => {
+      it(`${variant} should render`, async () => {
+        render(
+          <TagStatus
+            // @ts-expect-error This is a valid type
+            variant={variant}
+            icon="icon"
+            data-testid="test"
+          >
+            Foo
+          </TagStatus>,
+        );
+
+        expect(screen.getByTestId("test")).toHaveClass("sds-tag");
+        expect(screen.queryByText("icon")).not.toBeInTheDocument();
+      });
     });
 
     it("should have class name", async () => {
@@ -38,13 +68,6 @@ describe("Tag", () => {
       expect(screen.getByTestId("test")).toHaveClass(
         "sds-tag sds-tag--category-1",
       );
-    });
-
-    it("should have icon element", async () => {
-      render(<TagStatus icon="icon">Foo</TagStatus>);
-
-      expect(screen.getByText("icon")).toHaveClass("sds-tag__icon");
-      expect(screen.getByText("Foo")).toBeInTheDocument();
     });
   });
 });
