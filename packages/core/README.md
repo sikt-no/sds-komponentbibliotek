@@ -70,3 +70,7 @@ export const Link = ({
 ## Color Scheme
 
 Color scheme is default light and can be changed by the users color scheme setting. If a web page or parts of a web page should be locked to one mode it can be done with the CSS property `color-scheme: only <scheme>;` or (deprecated) HTML attribute `data-color-scheme="<scheme>"`, remember to set a background if used on a partial pages as the root background otherwise will affect your partial page.
+
+### Caveats
+
+Next.js 16 used Turbopack by default which in turn uses LightningCSS with a [bug related to light-dark()](https://github.com/parcel-bundler/lightningcss/issues/873). A work around is to add `@csstools/postcss-light-dark-function`.
