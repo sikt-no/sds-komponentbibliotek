@@ -11,9 +11,7 @@ describe("Breadcrumbs", () => {
           <BreadcrumbItem>
             <a href="/">Level 1</a>
           </BreadcrumbItem>
-          <BreadcrumbItem>
-            <a href="/">Level 2</a>
-          </BreadcrumbItem>
+          <BreadcrumbItem>Current page</BreadcrumbItem>
         </Breadcrumbs>,
       );
 
@@ -28,10 +26,8 @@ describe("Breadcrumbs", () => {
           <BreadcrumbItem data-testid="test-item">
             <a href="/">Level 1</a>
           </BreadcrumbItem>
-          <BreadcrumbItem>
-            <a href="/">Level 2</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem>NonValidElement</BreadcrumbItem>
+          <BreadcrumbItem>Current page</BreadcrumbItem>
+          <BreadcrumbItem>ValidElement</BreadcrumbItem>
         </Breadcrumbs>,
       );
       expect(screen.getByTestId("test-group")).toHaveClass("sds-breadcrumbs");
@@ -41,7 +37,7 @@ describe("Breadcrumbs", () => {
         "sds-breadcrumbs-item",
       );
       expect(screen.getByTestId("test-item")).toBeInTheDocument();
-      expect(screen.queryByTestId("NonValidElement")).not.toBeInTheDocument();
+      expect(screen.getByText("Current page")).toBeInTheDocument();
     });
   });
 
@@ -58,9 +54,7 @@ describe("Breadcrumbs", () => {
         >
           <a href="/">Level 1</a>
         </BreadcrumbItem>
-        <BreadcrumbItem>
-          <a href="/">Level 2</a>
-        </BreadcrumbItem>
+        <BreadcrumbItem>Current page</BreadcrumbItem>
       </Breadcrumbs>,
     );
     expect(screen.getByTestId("test-group")).toHaveClass(

@@ -25,9 +25,7 @@ const Template: Story = {
       <BreadcrumbItem>
         <Link href="/">Level 2</Link>
       </BreadcrumbItem>
-      <BreadcrumbItem>
-        <Link href="/">Level 3</Link>
-      </BreadcrumbItem>
+      <BreadcrumbItem>Current page</BreadcrumbItem>
     </Breadcrumbs>
   ),
 };
@@ -46,9 +44,7 @@ export const WithIcon: Story = {
       <BreadcrumbItem>
         <Link href="/">Level 2</Link>
       </BreadcrumbItem>
-      <BreadcrumbItem>
-        <Link href="/">Level 3</Link>
-      </BreadcrumbItem>
+      <BreadcrumbItem>Current page</BreadcrumbItem>
     </Breadcrumbs>
   ),
 };
