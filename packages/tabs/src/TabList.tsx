@@ -11,7 +11,6 @@ import {
   isValidElement,
   useRef,
   useEffect,
-  RefObject,
   useState,
   useContext,
 } from "react";
@@ -23,6 +22,12 @@ export interface TabListProps extends HTMLAttributes<HTMLDivElement> {
   "aria-label": NonNullable<string>;
   className?: string;
 }
+
+const isTabElement = (
+  child: ReactNode,
+): child is ReactElement<TabProps & { index?: number }> => {
+  return isValidElement(child);
+};
 
 export const TabList = ({
   children,
@@ -97,26 +102,19 @@ export const TabList = ({
         ref={tabListRef}
         {...rest}
       >
-        {Children.map(
-          arrayChildren,
-          (child, index) =>
-            isValidElement(child) &&
-            cloneElement(
-              child as ReactElement<
-                TabProps & {
-                  ref: RefObject<HTMLButtonElement>;
-                  index: number;
-                }
-              >,
-              {
-                index,
-                className:
-                  index !== selectedIndex && index >= listCutIndex
-                    ? "sds-screen-reader-only sds-screen-reader-only--focusable"
-                    : "",
-              },
+        {Children.map(arrayChildren, (child, index) => {
+          if (!isTabElement(child)) return null;
+
+          return cloneElement(child, {
+            index,
+            className: clsx(
+              index !== selectedIndex && index >= listCutIndex
+                ? "sds-screen-reader-only sds-screen-reader-only--focusable"
+                : "",
+              child.props.className,
             ),
-        )}
+          });
+        })}
       </div>
       {listCutIndex !== listLength && (
         <Popover
@@ -124,22 +122,21 @@ export const TabList = ({
           targetRef={popoverTargetRef}
           target={
             <div className="sds-tabs__popover-target">
-              {Children.map(
-                arrayChildren,
-                (child, index) =>
-                  isValidElement(child) &&
-                  cloneElement(
-                    child as ReactElement<TabProps & { index: number }>,
-                    {
-                      index,
-                      onClick: handleTogglePopover,
-                      className: "sds-tabs__tab-button",
-                      style: {
-                        display: listCutIndex > index ? "none" : "",
-                      },
-                    },
+              {Children.map(arrayChildren, (child, index) => {
+                if (!isTabElement(child)) return null;
+
+                return cloneElement(child, {
+                  index,
+                  onClick: handleTogglePopover,
+                  className: clsx(
+                    "sds-tabs__tab-button",
+                    child.props.className,
                   ),
-              )}
+                  style: {
+                    display: listCutIndex > index ? "none" : "",
+                  },
+                });
+              })}
             </div>
           }
           tabIndex={-1}
