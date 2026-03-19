@@ -39,3 +39,12 @@ export const WithError: Story = {
     errorText: "Error: Message",
   },
 };
+
+export const Readonly: Story = {
+  args: {
+    ...Default.args,
+    value: "Value",
+    readOnly: true,
+    helpText: "Readonly",
+  },
+};

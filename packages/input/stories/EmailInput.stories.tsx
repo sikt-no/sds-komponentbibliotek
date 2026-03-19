@@ -38,3 +38,12 @@ export const WithError: Story = {
     errorText: "Error: Message",
   },
 };
+
+export const Readonly: Story = {
+  args: {
+    ...Input.args,
+    value: "example@sikt.no",
+    readOnly: true,
+    helpText: "Readonly",
+  },
+};

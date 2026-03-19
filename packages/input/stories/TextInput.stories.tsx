@@ -76,3 +76,12 @@ export const WithAriaLabelledby = {
     );
   },
 } satisfies Story;
+
+export const Readonly = {
+  args: {
+    ...Default.args,
+    value: "Value",
+    readOnly: true,
+    helpText: "Readonly",
+  },
+} satisfies Story;

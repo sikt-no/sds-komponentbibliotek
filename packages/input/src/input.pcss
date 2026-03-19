@@ -44,6 +44,10 @@
       );
       cursor: not-allowed;
     }
+
+    &:has([readonly]) {
+      background: var(--sds-color-layout-page-default);
+    }
   }
 
   &__input {
@@ -64,6 +68,10 @@
 
     &:focus-visible {
       outline: none;
+    }
+
+    &[readonly] {
+      resize: none;
     }
 
     /* Hide native clear search button in Chrome and Safari */
