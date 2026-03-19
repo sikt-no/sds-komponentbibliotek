@@ -1,3 +1,4 @@
+import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { clsx } from "clsx/lite";
 import {
   Children,
@@ -7,9 +8,7 @@ import {
   cloneElement,
   createContext,
   isValidElement,
-  useEffect,
   useId,
-  useState,
 } from "react";
 import "./tabs.pcss";
 import { TabPanelProps } from "./TabPanel";
@@ -20,7 +19,6 @@ export interface TabsContextType {
   isSelectOnFocus: boolean;
   selectedIndex: number;
   setSelectedIndex: (index: number) => void;
-  setPreviousIndex: (index: number) => void;
 }
 
 export const TabsContext = createContext<TabsContextType | null>(null);
@@ -46,23 +44,13 @@ export const Tabs = ({
   className,
   ...rest
 }: TabsProps) => {
-  const [selectedIndex, setSelectedIndex] = useState(defaultIndex);
-  const [previousIndex, setPreviousIndex] = useState(defaultIndex);
+  const [selectedIndex, setSelectedIndex] = useControllableState({
+    prop: controlledIndex,
+    defaultProp: defaultIndex,
+    onChange: onValueChange,
+  });
+
   const id = useId();
-
-  useEffect(() => {
-    if (controlledIndex !== undefined) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setSelectedIndex(controlledIndex);
-      setPreviousIndex(controlledIndex);
-    }
-  }, [controlledIndex]);
-
-  useEffect(() => {
-    if (onValueChange && previousIndex !== selectedIndex) {
-      onValueChange(selectedIndex);
-    }
-  }, [onValueChange, previousIndex, selectedIndex]);
 
   const arrayChildren = Children.toArray(children);
   const count = arrayChildren.length - 1;
@@ -75,7 +63,6 @@ export const Tabs = ({
         isSelectOnFocus,
         selectedIndex,
         setSelectedIndex,
-        setPreviousIndex,
       }}
     >
       <div className={clsx("sds-tabs", className)} {...rest}>

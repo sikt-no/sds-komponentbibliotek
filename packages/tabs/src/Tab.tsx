@@ -28,19 +28,12 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
       return null;
     }
 
-    const {
-      id,
-      count,
-      isSelectOnFocus,
-      selectedIndex,
-      setSelectedIndex,
-      setPreviousIndex,
-    } = context;
+    const { id, count, isSelectOnFocus, selectedIndex, setSelectedIndex } =
+      context;
 
     const isSelected = index === selectedIndex;
     const handleSelect = (index: number) => {
       if (isSelectOnFocus) {
-        setPreviousIndex(selectedIndex);
         setSelectedIndex(index);
       }
     };
@@ -94,7 +87,6 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
         id={`tab-${id}-${index}`}
         tabIndex={isSelected ? 0 : -1}
         onClick={(event) => {
-          setPreviousIndex(selectedIndex);
           setSelectedIndex(index);
 
           if (onClick) {
