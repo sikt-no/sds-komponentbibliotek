@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@7.0.1...@sikt/sds-tabs@7.0.2) (2026-03-19)
+
+### Bug Fixes
+
+- **tabs:** preserve Tab className in TabList ([5f2048e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5f2048e51e2144db6e84b3da634d385933c97a1b)), closes [#197](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/197)
+- **tabs:** prevent feedback loops in controlled mode ([c7696d5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c7696d586d9e981721510228ca99ecffdb1784ba)), closes [#198](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/198)
+
 ## [7.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@7.0.0...@sikt/sds-tabs@7.0.1) (2026-03-13)
 
 ### Bug Fixes
