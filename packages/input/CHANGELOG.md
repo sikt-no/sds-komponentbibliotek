@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.5.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.4.1...@sikt/sds-input@4.5.0) (2026-03-19)
+
+### Features
+
+- add readonly styling to inputs ([92246ad](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/92246adb096a05be495c92a45791daee3eb293e4))
+
+### Bug Fixes
+
+- **textarea:** change size according to content ([59f83ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/59f83ae16cdd02d4ec944f6b34b70e22faade215))
+
 ## [4.4.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.4.0...@sikt/sds-input@4.4.1) (2026-03-13)
 
 ### Bug Fixes
