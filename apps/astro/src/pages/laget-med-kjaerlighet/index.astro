@@ -4,7 +4,11 @@ import { Contributors } from "./_components/contributors/Contributors";
 import { Hero } from "../../components";
 import { Section } from "@sikt/sds-section";
 import { Paragraph } from "@sikt/sds-core";
-import { ListItem, UnorderedList } from "@sikt/sds-list";
+import {
+  DescriptionDetails,
+  DescriptionTerm,
+  DescriptionList,
+} from "@sikt/sds-list";
 
 const pageTitle = "Laget med kjærlighet";
 const isJune = new Date().getMonth() === 5;
@@ -18,13 +22,79 @@ const titleSuffix = isJune ? "🧡💛💚💙💜" : "";
     slot="hero"
   />
 
-  <Section headingText="Æreskodeks">
+  <Section headingText="Æreskodeks" id="aereskodeks">
     <Paragraph className="ds-content-max-width">
-      <UnorderedList>
-        <ListItem>Vær snill 😊</ListItem>
-        <ListItem>Dere er folk - Vi er også folk 🤗</ListItem>
-      </UnorderedList>
+      Bak Sikt designsystem sitter et team som gjør sitt beste for å hjelpe deg
+      og teamet ditt. Vi forstår at ting tar tid og at det kan være
+      frustrerende. En god dialog hjelper oss å hjelpe deg bedre. Vi er også
+      folk ❤️{titleSuffix}
     </Paragraph>
+
+    <DescriptionList className="ds-content-max-width">
+      <DescriptionTerm>Retningslinjer for fellesskapet 🧑‍🤝‍🧑</DescriptionTerm>
+      <DescriptionDetails
+        >Sikt designsystem er et fellesskap. Vi lager verktøy og retningslinjer
+        som mange team bruker, og det vi leverer blir bedre jo tettere vi
+        samarbeider med dere. Derfor har vi satt opp noen enkle retningslinjer
+        for å få samarbeidet til å fungere godt. De bygger på ett prinsipp: god
+        kommunikasjon og respekt for hverandre gjør hverdagen bedre for alle.<br
+        /><br />
+        Her er hva vi håper alle som deltar i fellesskapet tar med seg.</DescriptionDetails
+      >
+
+      <DescriptionTerm>Møt andre med respekt 🤝</DescriptionTerm>
+      <DescriptionDetails>
+        Vi er mennesker med ulike bakgrunner, erfaringsnivåer og arbeidsdager.
+        Snakk til andre slik du selv ønsker å bli snakket til, spesielt når noe
+        er frustrerende eller ikke går som planlagt.
+      </DescriptionDetails>
+
+      <DescriptionTerm>Ingen dumme spørsmål 🙋</DescriptionTerm>
+      <DescriptionDetails>
+        Noen er nye til Sikt designsystem, andre har brukt det lenge. Alle
+        spørsmål er velkomne, uansett hvor lang erfaring du har. Oppmuntre
+        gjerne andre til å spørre også.
+      </DescriptionDetails>
+
+      <DescriptionTerm>Sett deg inn i konteksten 🤓</DescriptionTerm>
+      <DescriptionDetails>
+        Les gjerne hva andre har skrevet før du spør eller svarer. Spørsmålet
+        ditt kan allerede være besvart, eller diskusjonen kan inneholde relevant
+        informasjon. Har du et innspill som ikke passer i en pågående diskusjon,
+        start en ny tråd. Det gjør det enklere for alle å finne frem og holder
+        samtalene fokuserte.
+      </DescriptionDetails>
+
+      <DescriptionTerm>Gi konstruktive tilbakemeldinger 🙆</DescriptionTerm>
+      <DescriptionDetails>
+        Fortell gjerne hva du tenker og hvorfor. Konkrete tilbakemeldinger gjør
+        det enklere for oss å forstå behovet ditt og hjelpe deg videre.
+      </DescriptionDetails>
+
+      <DescriptionTerm>Ta del i fellesskapet 🤗</DescriptionTerm>
+      <DescriptionDetails>
+        Sikt designsystem blir bedre når flere engasjerer seg. Du trenger ikke
+        ha en ferdig løsning for å bidra, en observasjon, et spørsmål eller en
+        erfaring fra teamet ditt kan være like verdifullt som et konkret
+        forslag. Ta turen innom Office Hours, meld inn feil eller forbedringer i
+        Jira, eller send inn spørsmål og forslag i Slack-kanalen vår. Jo flere
+        som deltar, jo bedre blir designsystemet for alle!
+      </DescriptionDetails>
+
+      <DescriptionTerm>Vær tålmodig 🤹</DescriptionTerm>
+      <DescriptionDetails>
+        Vi er et lite team med mange å hjelpe. Vi leser alle innspill og tar oss
+        tid til å svare skikkelig, men klarer ikke alltid å svare like raskt.
+      </DescriptionDetails>
+
+      <DescriptionTerm>Si ifra 👂</DescriptionTerm>
+      <DescriptionDetails>
+        Opplever du at noen ikke følger disse retningslinjene, ta det gjerne opp
+        direkte med den det gjelder. Du kan også sende oss en direktemelding på
+        Slack eller Teams. Blir det nødvendig tar vi en samtale med den (eller
+        de) det gjelder for å finne en god løsning sammen.
+      </DescriptionDetails>
+    </DescriptionList>
   </Section>
 
   <Contributors client:load />
