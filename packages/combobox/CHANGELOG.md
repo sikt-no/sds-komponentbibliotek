@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.1.0...@sikt/sds-combobox@5.2.0) (2026-03-20)
+
+### Features
+
+- **combobox:** add controlled state ([2301285](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2301285ae073caa1132d0ea71e8759827e3fd75a))
+
+### Bug Fixes
+
+- **combobox:** hydration warnings on server side render ([95411b8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/95411b8e489dcceee6bb05c09b856fbc57830ef2))
+- update @sikt/sds packages ([cf35fab](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cf35fabce72896bf98f10e2dc13c2c8015e239e7))
+
 ## [5.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.0.1...@sikt/sds-combobox@5.1.0) (2026-03-12)
 
 ### Features
