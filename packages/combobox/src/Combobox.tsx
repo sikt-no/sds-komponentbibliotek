@@ -1,6 +1,4 @@
-import { ScreenReaderOnly } from "@sikt/sds-core";
 import { Label, HelpText } from "@sikt/sds-form";
-import { CancelIcon, ExpandShowAltIcon } from "@sikt/sds-icons";
 import type { UHTMLComboboxElement } from "@u-elements/u-combobox";
 import { clsx } from "clsx/lite";
 import {
@@ -12,10 +10,27 @@ import {
   useId,
   useRef,
   useState,
+  forwardRef,
 } from "react";
 import "@u-elements/u-combobox";
 import "@u-elements/u-datalist";
 import "./combobox.pcss";
+import { ClearButton } from "./ClearButton";
+import { ExpandButton } from "./ExpandButton";
+import { Option } from "./Option";
+import { OptionGroup } from "./OptionGroup";
+import {
+  isOptionGroup,
+  flattenOptions,
+  sanitizeItems,
+  nextItems,
+  getTextProps,
+} from "./utils";
+
+export interface ComboboxItem {
+  label: string;
+  value: string;
+}
 
 export interface ComboboxOptionGroupProps {
   /**
@@ -32,20 +47,11 @@ export type ComboboxOption =
   | OptionHTMLAttributes<HTMLOptionElement>
   | ComboboxOptionGroupProps;
 
-const isOptionGroup = (
-  item: ComboboxOption,
-): item is ComboboxOptionGroupProps =>
-  "options" in item && Array.isArray(item.options);
+type ComboboxValue<T extends { multiple: boolean }> = T["multiple"] extends true
+  ? (string | ComboboxItem)[]
+  : string | ComboboxItem;
 
-const flattenOptions = (
-  items: ComboboxOption[],
-): OptionHTMLAttributes<HTMLOptionElement>[] =>
-  items.flatMap((item) => (isOptionGroup(item) ? item.options : [item]));
-
-export interface ComboboxBaseProps extends Omit<
-  HTMLAttributes<UHTMLComboboxElement>,
-  "onChange"
-> {
+type ComboboxBaseProps = {
   className?: string;
   /**
    * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.
@@ -60,30 +66,14 @@ export interface ComboboxBaseProps extends Omit<
    * - **label** Text for the option label or section heading.
    * - **value** The value submitted with the form (options only).
    * - **selected** Whether the option is initially selected (options only).
-   * - **options** Grouped options within a section (sections only).
    */
   options: ComboboxOption[];
-  /**
-   * Indicates that multiple options can be selected in the list. If it is not specified, then only one option can be selected at a time.
-   *
-   * @default undefined
-   */
-  multiple?: boolean;
   /**
    * Name of the form control. Submitted with the form as part of a name/value pair.
    *
    * @default undefined
    */
   name?: string;
-  /**
-   * Function when a user changes the selected option.
-   *
-   * @default undefined
-   */
-  onChange?: (
-    event: CustomEvent<HTMLDataElement>,
-    newValue: OptionHTMLAttributes<HTMLOptionElement>[],
-  ) => void;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
   /**
    * Sets language for accessible texts.
@@ -91,9 +81,7 @@ export interface ComboboxBaseProps extends Omit<
    * @default "nb"
    */
   lang?: "nb" | "nn" | "en";
-}
-
-export type ComboboxProps = ComboboxBaseProps &
+} & Omit<HTMLAttributes<UHTMLComboboxElement>, "defaultValue" | "onChange"> &
   (
     | {
         label: NonNullable<ReactNode>;
@@ -108,223 +96,222 @@ export type ComboboxProps = ComboboxBaseProps &
       }
   );
 
-const i18n = {
-  nb: {
-    "data-sr-added": "Lagt til",
-    "data-sr-removed": "Fjernet",
-    "data-sr-remove": "Trykk for å fjerne",
-    "data-sr-empty": "Ingen valgte",
-    "data-sr-found": "Naviger til venstre for å finne %d valgte",
-    "data-sr-invalid": "Ugyldig verdi",
-    "data-sr-of": "av",
-    "data-sr-singular": "%d treff",
-    "data-sr-plural": "%d treff",
-    "data-sr-clear": "Fjern tekst",
-  },
-  nn: {
-    "data-sr-added": "Lagt til",
-    "data-sr-removed": "Fjerna",
-    "data-sr-remove": "Trykk for å fjerne",
-    "data-sr-empty": "Ingen valde",
-    "data-sr-found": "Naviger til venstre for å finne %d valde",
-    "data-sr-invalid": "Ugyldig verdi",
-    "data-sr-of": "av",
-    "data-sr-singular": "%d treff",
-    "data-sr-plural": "%d treff",
-    "data-sr-clear": "Fjern tekst",
-  },
-  en: {
-    "data-sr-added": "Added",
-    "data-sr-removed": "Removed",
-    "data-sr-remove": "Press to remove",
-    "data-sr-empty": "No selected",
-    "data-sr-found": "Navigate left to find %d selected",
-    "data-sr-invalid": "Invalid value",
-    "data-sr-of": "of",
-    "data-sr-singular": "%d hit",
-    "data-sr-plural": "%d hits",
-    "data-sr-clear": "Clear text",
-  },
-};
+interface ComboboxValueProps<T extends { multiple: boolean }> {
+  /**
+   * Indicates that multiple options can be selected in the list. If it is not specified, then only one option can be selected at a time.
+   *
+   * @default false
+   */
+  multiple?: T["multiple"];
+  /**
+   * The selected item of the Combobox.
+   *
+   * If `label` and `value` are the same, each item can be a `string`. Otherwise, each item must be a `ComboboxItem`.
+   *
+   * Using this makes the component controlled and it must be used in combination with `onSelectedChange`.
+   */
+  selected?: ComboboxValue<T> | null;
+  /**
+   * Default selected item when uncontrolled
+   */
+  defaultSelected?: ComboboxValue<T>;
+  /**
+   * Callback when selected items changes
+   */
+  onSelectedChange?: (
+    value: T["multiple"] extends true ? ComboboxItem[] : ComboboxItem | null,
+  ) => void;
+}
 
-const getTextProps = (lang: keyof typeof i18n) => i18n[lang];
+export type ComboboxSingleProps = ComboboxBaseProps &
+  ComboboxValueProps<{ multiple: false }>;
 
-const Option = ({
-  label,
-  value,
-  ...rest
-}: OptionHTMLAttributes<HTMLOptionElement>) => {
-  return (
-    <u-option className="sds-combobox__datalist-option" value={value} {...rest}>
-      {label}
-    </u-option>
-  );
-};
+export type ComboboxMultipleProps = ComboboxBaseProps &
+  ComboboxValueProps<{ multiple: true }> & { multiple: true };
 
-const OptionGroup = ({ label, options }: ComboboxOptionGroupProps) => {
-  const id = useId();
+export type ComboboxProps = ComboboxSingleProps | ComboboxMultipleProps;
 
-  return (
-    <div className="sds-combobox__datalist-group" role="group">
-      <span className="sds-combobox__datalist-group-label" id={id}>
-        {label}
-      </span>
-      {options.map((option) => (
-        <Option
-          key={option.value?.toString()}
-          aria-describedby={id}
-          {...option}
-        />
-      ))}
-    </div>
-  );
-};
+export type ComboboxSelected =
+  | string
+  | ComboboxItem
+  | (string | ComboboxItem)[]
+  | null;
 
-export const Combobox = ({
-  className,
-  errorText,
-  helpText,
-  label,
-  "aria-labelledby": ariaLabelledBy,
-  multiple = false,
-  options,
-  name,
-  onChange,
-  inputProps,
-  lang = "nb",
-  ...rest
-}: ComboboxProps) => {
-  const flattenedOptions = flattenOptions(options);
-  const comboboxRef = useRef<UHTMLComboboxElement>(null);
-  const optionsRef = useRef(flattenedOptions);
-  const onChangeRef = useRef(onChange);
-  const hasInteracted = useRef(false);
-  const id = useId();
-  const errorTextId = `${id}-error-text`;
-  const helpTextId = `${id}-help-text`;
-  const listId = `${id}-list`;
-  const textProps = getTextProps(lang);
+export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
+  function Combobox(
+    {
+      className,
+      errorText,
+      helpText,
+      label,
+      "aria-labelledby": ariaLabelledBy,
+      multiple = false,
+      options,
+      name,
+      inputProps,
+      lang = "nb",
+      selected,
+      defaultSelected,
+      onSelectedChange,
+      ...rest
+    },
+    ref,
+  ) {
+    const comboboxRef = useRef<UHTMLComboboxElement>(null);
+    const id = useId();
+    const errorTextId = `${id}-error-text`;
+    const helpTextId = `${id}-help-text`;
+    const listId = `${id}-list`;
+    const textProps = getTextProps(lang);
+    const noSsr = typeof window !== "undefined";
+    const isControlled = selected !== undefined;
+    const onSelectedChangeRef = useRef(onSelectedChange);
+    const selectedItemsRef = useRef<ComboboxItem[]>([]);
 
-  const [initialSelectedOptions, setInitialSelectedOptions] = useState(() =>
-    flattenedOptions.filter((option) => option.selected),
-  );
-
-  useEffect(() => {
-    const flattenedOptions = flattenOptions(options);
-    optionsRef.current = flattenedOptions;
-    if (initialSelectedOptions.length === 0 && !hasInteracted.current) {
-      const selected = flattenedOptions.filter((option) => option.selected);
-      if (selected.length > 0) {
-        // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: sync async-arriving selected options into initial badge state before user interaction
-        setInitialSelectedOptions(selected);
+    const [defaultItems, setDefaultItems] = useState<ComboboxItem[]>(() => {
+      // Priority: defaultSelected prop > selected options in options array
+      const fromProp = sanitizeItems(defaultSelected);
+      if (fromProp.length > 0) {
+        return fromProp;
       }
-    }
-  }, [options, initialSelectedOptions.length]);
 
-  useEffect(() => {
-    onChangeRef.current = onChange;
-  }, [onChange]);
+      // Extract initially selected options from the options array
+      const initiallySelectedFromOptions = flattenOptions(options)
+        .filter((option) => option.selected)
+        .map((option) => ({
+          label: (option.label ?? option.value ?? "") as string,
+          value: (option.value ?? "") as string,
+        }));
 
-  useEffect(() => {
-    const currentRef = comboboxRef.current;
+      return initiallySelectedFromOptions;
+    });
 
-    const handleOnChange = (e: CustomEvent<HTMLDataElement>) => {
-      e.preventDefault();
-      hasInteracted.current = true;
+    const selectedItems = selected ? sanitizeItems(selected) : defaultItems;
+    // Keep the ref updated with the latest callback
+    useEffect(() => {
+      selectedItemsRef.current = selectedItems;
+    }, [selectedItems]);
 
-      const currentOptions = optionsRef.current;
-      const index = currentOptions.findIndex(
-        (item) => item.value === e.detail.value,
-      );
-      if (index === -1) return;
-      const newOption = currentOptions[index];
-      if (e.detail.isConnected) {
-        newOption.selected = true;
+    useEffect(() => {
+      onSelectedChangeRef.current = onSelectedChange;
+    }, [onSelectedChange]);
+
+    // Combine refs
+    useEffect(() => {
+      if (!ref) return;
+      if (typeof ref === "function") {
+        ref(comboboxRef.current);
       } else {
-        delete newOption.selected;
+        ref.current = comboboxRef.current;
       }
-      onChangeRef.current?.(e, currentOptions);
-    };
+    }, [ref]);
 
-    currentRef?.addEventListener("comboboxafterselect", handleOnChange);
-    return () => {
-      currentRef?.removeEventListener("comboboxafterselect", handleOnChange);
-    };
-  }, []);
+    /**
+     * Listeners and handling of adding/removing
+     */
+    useEffect(() => {
+      const combobox = comboboxRef.current;
+      const beforeChange = (event: CustomEvent<HTMLDataElement>) => {
+        event.preventDefault();
+        const data = event.detail;
 
-  return (
-    <div
-      className={clsx(
-        "sds-form-field",
-        errorText && "sds-form-field--error",
-        "sds-combobox",
-        errorText && "sds-combobox--invalid",
-        className,
-      )}
-    >
-      <div className="sds-form-field__label-wrapper">
-        {label !== undefined && (
-          <Label text={label} error={Boolean(errorText)} htmlFor={id} />
+        const nextItem = nextItems(data, selectedItemsRef.current, multiple);
+
+        if (multiple) {
+          // Multiple selection: nextItem should be ComboboxItem[]
+          const callback = onSelectedChangeRef.current as
+            | ((value: ComboboxItem[]) => void)
+            | undefined;
+          callback?.(nextItem as ComboboxItem[]);
+          if (!isControlled) setDefaultItems(nextItem as ComboboxItem[]);
+        } else {
+          // Single selection: nextItem should be ComboboxItem | undefined
+          const callback = onSelectedChangeRef.current as
+            | ((value: ComboboxItem | null) => void)
+            | undefined;
+          callback?.((nextItem as ComboboxItem | undefined) ?? null);
+          if (!isControlled) setDefaultItems(sanitizeItems(nextItem));
+        }
+      };
+
+      combobox?.addEventListener(
+        "comboboxbeforeselect",
+        beforeChange as EventListener,
+      );
+      return () =>
+        combobox?.removeEventListener(
+          "comboboxbeforeselect",
+          beforeChange as EventListener,
+        );
+    }, [isControlled, multiple]);
+
+    return (
+      <div
+        className={clsx(
+          "sds-form-field",
+          errorText && "sds-form-field--error",
+          "sds-combobox",
+          errorText && "sds-combobox--invalid",
+          className,
         )}
-        <u-combobox
-          className="sds-combobox__combobox"
-          data-multiple={multiple}
-          ref={comboboxRef}
-          {...textProps}
-          {...rest}
-        >
-          {initialSelectedOptions.map((option) => (
-            <data key={option.value?.toString()} value={option.value}>
-              {option.label}
-            </data>
-          ))}
-          <input
-            className="sds-combobox__input"
-            id={id}
-            list={listId}
-            {...inputProps}
-            aria-labelledby={ariaLabelledBy}
-          />
-          <del className="sds-combobox__button">
-            <ScreenReaderOnly>{textProps["data-sr-clear"]}</ScreenReaderOnly>
-            <span className="sds-combobox__button-icon">
-              <CancelIcon />
-            </span>
-          </del>
-          <span className="sds-combobox__button">
-            <span className="sds-combobox__button-icon">
-              <ExpandShowAltIcon />
-            </span>
-          </span>
-          <u-datalist
-            className="sds-combobox__datalist"
-            id={listId}
-            data-sr-singular={textProps["data-sr-singular"]}
-            data-sr-plural={textProps["data-sr-plural"]}
+      >
+        <div className="sds-form-field__label-wrapper">
+          {label !== undefined && (
+            <Label text={label} error={Boolean(errorText)} htmlFor={id} />
+          )}
+          <u-combobox
+            className="sds-combobox__combobox"
+            data-multiple={multiple}
+            ref={comboboxRef}
+            {...textProps}
+            {...rest}
           >
-            {options.map((option) =>
-              isOptionGroup(option) ? (
-                <OptionGroup
-                  key={option.label}
-                  label={option.label}
-                  options={option.options}
-                />
-              ) : (
-                <Option key={option.value?.toString()} {...option} />
-              ),
+            {selectedItems.map((item) => (
+              <data key={item.value} value={item.value}>
+                {item.label}
+              </data>
+            ))}
+            <input
+              className="sds-combobox__input"
+              {...inputProps}
+              id={id}
+              list={listId}
+              aria-labelledby={ariaLabelledBy}
+            />
+            <ClearButton clearText={textProps["data-sr-clear"]} />
+            <ExpandButton />
+            <u-datalist
+              className="sds-combobox__datalist"
+              id={listId}
+              data-sr-singular={textProps["data-sr-singular"]}
+              data-sr-plural={textProps["data-sr-plural"]}
+            >
+              {options.map((option) =>
+                isOptionGroup(option) ? (
+                  <OptionGroup
+                    key={option.label}
+                    label={option.label}
+                    options={option.options}
+                  />
+                ) : (
+                  <Option key={option.value?.toString()} {...option} />
+                ),
+              )}
+            </u-datalist>
+            {!!name && noSsr && (
+              <select name={name} multiple={multiple} aria-hidden hidden />
             )}
-          </u-datalist>
-          {!!name && <select name={name} aria-hidden hidden />}
-        </u-combobox>
+          </u-combobox>
+        </div>
+        {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}
+        {errorText && (
+          <HelpText id={errorTextId} error>
+            {errorText}
+          </HelpText>
+        )}
       </div>
-      {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}
-      {errorText && (
-        <HelpText id={errorTextId} error>
-          {errorText}
-        </HelpText>
-      )}
-    </div>
-  );
-};
+    );
+  },
+);
 
 Combobox.displayName = "Combobox";
