@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.6.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.6.0...@sikt/sds-button@4.6.1) (2026-03-20)
+
+### Bug Fixes
+
+- **button:** make sure there is a aria-label from children ([37078f8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/37078f820ddf7d661a8582927bcb0afe9c753af3))
+- **button:** revert prevent full width buttons in vertical button groups ([10a8340](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/10a8340b360beb21284372a8bb8a42061590f1ca))
+- update @sikt/sds packages ([cf35fab](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cf35fabce72896bf98f10e2dc13c2c8015e239e7))
+
 ## [4.6.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.5.0...@sikt/sds-button@4.6.0) (2026-03-12)
 
 ### Features
