@@ -272,6 +272,7 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
               </data>
             ))}
             <input
+              suppressHydrationWarning
               className="sds-combobox__input"
               {...inputProps}
               id={id}
@@ -281,6 +282,7 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
             <ClearButton clearText={textProps["data-sr-clear"]} />
             <ExpandButton />
             <u-datalist
+              suppressHydrationWarning
               className="sds-combobox__datalist"
               id={listId}
               data-sr-singular={textProps["data-sr-singular"]}
@@ -294,7 +296,11 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
                     options={option.options}
                   />
                 ) : (
-                  <Option key={option.value?.toString()} {...option} />
+                  <Option
+                    suppressHydrationWarning
+                    key={option.value?.toString()}
+                    {...option}
+                  />
                 ),
               )}
             </u-datalist>
