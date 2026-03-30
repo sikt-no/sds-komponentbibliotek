@@ -163,10 +163,10 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
     const helpTextId = `${id}-help-text`;
     const listId = `${id}-list`;
     const textProps = getTextProps(lang);
-    const noSsr = typeof window !== "undefined";
     const isControlled = selected !== undefined;
     const onSelectedChangeRef = useRef(onSelectedChange);
     const selectedItemsRef = useRef<ComboboxItem[]>([]);
+    const [isMounted, setIsMounted] = useState(false);
 
     const [defaultItems, setDefaultItems] = useState<ComboboxItem[]>(() => {
       // Priority: defaultSelected prop > selected options in options array
@@ -191,6 +191,12 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
     useEffect(() => {
       selectedItemsRef.current = selectedItems;
     }, [selectedItems]);
+
+    // Set mounted state after hydration
+    useEffect(() => {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIsMounted(true);
+    }, []);
 
     useEffect(() => {
       onSelectedChangeRef.current = onSelectedChange;
@@ -263,11 +269,16 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
             className="sds-combobox__combobox"
             data-multiple={multiple}
             ref={comboboxRef}
+            suppressHydrationWarning
             {...textProps}
             {...rest}
           >
             {selectedItems.map((item) => (
-              <data key={item.value} value={item.value}>
+              <data
+                key={item.value}
+                value={item.value}
+                suppressHydrationWarning
+              >
                 {item.label}
               </data>
             ))}
@@ -285,6 +296,7 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
               suppressHydrationWarning
               className="sds-combobox__datalist"
               id={listId}
+              hidden
               data-sr-singular={textProps["data-sr-singular"]}
               data-sr-plural={textProps["data-sr-plural"]}
             >
@@ -304,8 +316,14 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
                 ),
               )}
             </u-datalist>
-            {!!name && noSsr && (
-              <select name={name} multiple={multiple} aria-hidden hidden />
+            {!!name && isMounted && (
+              <select
+                name={name}
+                multiple={multiple}
+                aria-hidden
+                hidden
+                suppressHydrationWarning
+              />
             )}
           </u-combobox>
         </div>

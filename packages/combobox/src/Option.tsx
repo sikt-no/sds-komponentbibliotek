@@ -6,7 +6,12 @@ export const Option = ({
   value,
   ...rest
 }: OptionHTMLAttributes<HTMLOptionElement>) => (
-  <u-option className="sds-combobox__datalist-option" value={value} {...rest}>
+  <u-option
+    className="sds-combobox__datalist-option"
+    value={value}
+    suppressHydrationWarning
+    {...rest}
+  >
     {label}
   </u-option>
 );

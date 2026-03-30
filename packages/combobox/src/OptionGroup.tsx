@@ -14,6 +14,7 @@ export const OptionGroup = ({ label, options }: ComboboxOptionGroupProps) => {
         <Option
           key={option.value?.toString()}
           aria-describedby={id}
+          suppressHydrationWarning
           {...option}
         />
       ))}
