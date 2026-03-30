@@ -36,6 +36,23 @@ describe("Tag", () => {
           <TagStatus
             // @ts-expect-error This is a valid type
             variant={variant}
+            data-testid="test"
+          >
+            Foo
+          </TagStatus>,
+        );
+
+        expect(screen.getByTestId("test")).toHaveClass("sds-tag");
+        expect(document.querySelector(".sds-tag__icon")).toBeInTheDocument();
+      });
+    });
+
+    ["info", "warning", "success", "critical"].map((variant) => {
+      it(`${variant} should render with custom icon`, async () => {
+        render(
+          <TagStatus
+            // @ts-expect-error This is a valid type
+            variant={variant}
             icon="icon"
             data-testid="test"
           >
@@ -44,7 +61,7 @@ describe("Tag", () => {
         );
 
         expect(screen.getByTestId("test")).toHaveClass("sds-tag");
-        expect(screen.queryByText("icon")).not.toBeInTheDocument();
+        expect(screen.getByText("icon")).toHaveClass("sds-tag__icon");
       });
     });
 

@@ -3,8 +3,16 @@ import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
 import "./tag.pcss";
 
+type TagVariant =
+  | "brand"
+  | "neutral"
+  | "success"
+  | "info"
+  | "warning"
+  | "critical";
+
 interface TagBaseProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: "brand" | "neutral" | "success" | "info" | "warning" | "critical";
+  variant?: TagVariant;
   visibility?: "strong" | "subtle";
   category?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8";
   className?: string;
@@ -12,23 +20,29 @@ interface TagBaseProps extends HTMLAttributes<HTMLSpanElement> {
   icon?: ReactNode;
 }
 
-interface TagVariantWithIcon {
-  variant?: "brand" | "neutral";
-  icon?: ReactNode;
-}
-
-interface TagVariantWithoutIcon {
-  variant: "success" | "info" | "warning" | "critical";
-  /**
-   * Will be overridden by the default icon for this variant.
-   */
-  icon?: never;
-}
-
-export type TagStatusProps = Omit<TagBaseProps, "category" | "icon"> &
-  (TagVariantWithIcon | TagVariantWithoutIcon);
+export type TagStatusProps = Omit<TagBaseProps, "category">;
 
 export type TagCategoryProps = Omit<TagBaseProps, "variant" | "visibility">;
+
+const getTagIcon = (variant: TagVariant, customIcon: ReactNode): ReactNode => {
+  if (customIcon) {
+    return customIcon;
+  }
+
+  switch (variant) {
+    case "info":
+      return <InfoIcon />;
+    case "success":
+      return <SuccessIcon />;
+    case "warning":
+      return <AlertIcon />;
+    case "critical":
+      return <FailedIcon />;
+    case "brand":
+    case "neutral":
+      return undefined;
+  }
+};
 
 const TagBase = ({
   variant = "brand",
@@ -39,9 +53,7 @@ const TagBase = ({
   icon,
   ...rest
 }: TagBaseProps) => {
-  const hasDefaultIcon = ["info", "warning", "success", "critical"].includes(
-    variant,
-  );
+  const tagIcon = getTagIcon(variant, icon);
 
   return (
     <span
@@ -54,15 +66,7 @@ const TagBase = ({
       )}
       {...rest}
     >
-      {(hasDefaultIcon || icon) && (
-        <span className="sds-tag__icon">
-          {variant === "info" && <InfoIcon />}
-          {variant === "warning" && <AlertIcon />}
-          {variant === "success" && <SuccessIcon />}
-          {variant === "critical" && <FailedIcon />}
-          {!hasDefaultIcon && icon}
-        </span>
-      )}
+      {tagIcon && <span className="sds-tag__icon">{tagIcon}</span>}
       <span className="sds-tag__label">{children}</span>
     </span>
   );
