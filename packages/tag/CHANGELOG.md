@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tag@1.0.1...@sikt/sds-tag@1.1.0) (2026-03-31)
+
+### Features
+
+- **tag:** allow custom icons to override defaults for all variants ([d4fb1f8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d4fb1f8cc648d82665674721c5da13e3fa034d25))
+
 ## [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tag@1.0.0...@sikt/sds-tag@1.0.1) (2026-03-19)
 
 ### Bug Fixes
