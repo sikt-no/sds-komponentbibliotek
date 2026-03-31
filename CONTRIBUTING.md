@@ -148,6 +148,7 @@ mise install
 
 ```sh
 npm ci
+npm run postinstall
 npm run build
 npm run dev
 ```
@@ -221,6 +222,7 @@ To generate baseline screenshot for the CI environment after you are done workin
 ```sh
 docker run --rm --network host -v ${PWD}:/work/ -w /work/ -it node:24 /bin/bash
 npm install
+npm run postinstall
 npx playwright install --with-deps
 CI=true npx playwright test --update-snapshots=changed
 ```
