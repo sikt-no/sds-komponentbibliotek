@@ -88,7 +88,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     const dialogRef = useRef<HTMLDialogElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
-    const [isScrolling, setIsScrolling] = useState<boolean>(false);
+    const [isScrolling, setIsScrolling] = useState(false);
 
     useImperativeHandle(
       ref,

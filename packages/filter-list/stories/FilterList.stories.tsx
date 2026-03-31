@@ -24,8 +24,8 @@ export default meta;
 
 export const ItemWithCheckbox: { render: () => React.JSX.Element } = {
   render: () => {
-    const [hasGoodGrades, setHasGoodGrades] = useState<boolean>(false);
-    const [hasBadGrades, setHasBadGrades] = useState<boolean>(true);
+    const [hasGoodGrades, setHasGoodGrades] = useState(false);
+    const [hasBadGrades, setHasBadGrades] = useState(true);
 
     const handleGradeChange = (event: ChangeEvent<HTMLInputElement>) => {
       if ("hasGoodGrades" === event.target.value)
@@ -60,7 +60,7 @@ export const ItemWithCheckbox: { render: () => React.JSX.Element } = {
 
 export const ItemWithRadio: { render: () => React.JSX.Element } = {
   render: () => {
-    const [country, setCountry] = useState<string>("norway");
+    const [country, setCountry] = useState("norway");
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       setCountry(event.target.value);
     };
@@ -98,8 +98,8 @@ export const ItemWithRadio: { render: () => React.JSX.Element } = {
 
 export const SectionExample: { render: () => React.JSX.Element } = {
   render: () => {
-    const [hasGoodGrades, setHasGoodGrades] = useState<boolean>(true);
-    const [hasBadGrades, setHasBadGrades] = useState<boolean>(true);
+    const [hasGoodGrades, setHasGoodGrades] = useState(true);
+    const [hasBadGrades, setHasBadGrades] = useState(true);
 
     const getCount = () => {
       return (hasGoodGrades ? 1 : 0) + (hasBadGrades ? 1 : 0);
@@ -165,9 +165,9 @@ export const CategoryExample: {
   render: () => React.JSX.Element;
 } = {
   render: () => {
-    const [hasGoodGrades, setHasGoodGrades] = useState<boolean>(true);
-    const [hasBadGrades, setHasBadGrades] = useState<boolean>(true);
-    const [isExpanded, setIsExpanded] = useState<boolean>(false);
+    const [hasGoodGrades, setHasGoodGrades] = useState(true);
+    const [hasBadGrades, setHasBadGrades] = useState(true);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const getIsAllOn = () => hasGoodGrades && hasBadGrades;
 

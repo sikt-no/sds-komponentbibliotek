@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import { Notification, NotificationProps } from "../index";
+import { Notification } from "../index";
 
-const meta: Meta = {
+const meta = {
   title: "Components/Notification",
   component: Notification,
-};
+} satisfies Meta<typeof Notification>;
 
 export default meta;
 
-type Story = StoryObj<NotificationProps>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {

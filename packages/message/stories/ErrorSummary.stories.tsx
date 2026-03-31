@@ -1,17 +1,17 @@
 import { Link } from "@sikt/sds-core";
 import { UnorderedList, ListItem } from "@sikt/sds-list";
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import { ErrorSummary as Component, ErrorSummaryProps } from "../index";
+import { ErrorSummary as Component } from "../index";
 
-const meta: Meta = {
+const meta = {
   title: "Components/Message/Error Summary",
   component: Component,
   subcomponents: { Link, ListItem, UnorderedList },
-};
+} satisfies Meta<typeof Component>;
 
 export default meta;
 
-type Story = StoryObj<ErrorSummaryProps>;
+type Story = StoryObj<typeof meta>;
 
 export const ErrorSummary: Story = {
   args: {

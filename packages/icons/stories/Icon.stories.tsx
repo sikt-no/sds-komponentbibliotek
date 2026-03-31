@@ -7,14 +7,14 @@ import {
   SpinnerIcon,
 } from "../index";
 
-const meta: Meta = {
+const meta = {
   title: "Components/Icons/Icon",
   component: NavigateToNextIcon,
-};
+} satisfies Meta<typeof NavigateToNextIcon>;
 
 export default meta;
 
-type Story = StoryObj<IconProps | LogoIconsProps>;
+type Story = StoryObj<typeof meta>;
 
 export const ArrowRight: Story = {
   render: (args: IconProps) => (

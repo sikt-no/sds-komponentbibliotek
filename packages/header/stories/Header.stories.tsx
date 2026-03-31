@@ -1,17 +1,17 @@
 import { Link } from "@sikt/sds-core";
 import { ApplicationStatus } from "@sikt/sds-message";
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import { Header, HeaderProps } from "../index";
+import { Header } from "../index";
 import "@sikt/sds-message/dist/index.css";
 
-const meta: Meta = {
+const meta = {
   title: "Components/Header",
   component: Header,
-};
+} satisfies Meta<typeof Header>;
 
 export default meta;
 
-type Story = StoryObj<HeaderProps>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {

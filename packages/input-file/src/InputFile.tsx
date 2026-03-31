@@ -70,7 +70,7 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
     const id = useId();
     const errorTextId = `${id}-error-text`;
     const helpTextId = `${id}-help-text`;
-    const [files, setFiles] = useState<(File | FileWithError)[]>(value ?? []);
+    const [files, setFiles] = useState(value ?? []);
     const inputId = { id };
     const acceptedFileTypes =
       typeof accept === "string" ? accept.split(",") : accept;

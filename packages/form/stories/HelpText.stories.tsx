@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import { HelpText, HelpTextProps } from "../index";
+import { HelpText } from "../index";
 
-const meta: Meta = {
+const meta = {
   title: "Components/Form/HelpText",
   component: HelpText,
-};
+} satisfies Meta<typeof HelpText>;
 
 export default meta;
 
-type Story = StoryObj<HelpTextProps>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {

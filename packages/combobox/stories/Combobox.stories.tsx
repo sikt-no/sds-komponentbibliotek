@@ -168,7 +168,7 @@ export const Controlled: Story = {
 
 export const ControlledMultiple: Story = {
   render: () => {
-    const [selected, setSelected] = useState<ComboboxItem[]>([
+    const [selected, setSelected] = useState([
       { label: "Vanilla", value: "4" },
       { label: "Chocolate", value: "3" },
     ]);
@@ -222,7 +222,7 @@ export const ControlledMultiple: Story = {
 };
 export const InForm: Story = {
   render: () => {
-    const [submittedData, setSubmittedData] = useState<string>("");
+    const [submittedData, setSubmittedData] = useState("");
 
     const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -282,7 +282,7 @@ export const InForm: Story = {
 
 export const InFormMultiple: Story = {
   render: () => {
-    const [submittedData, setSubmittedData] = useState<string>("");
+    const [submittedData, setSubmittedData] = useState("");
 
     const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
       e.preventDefault();
