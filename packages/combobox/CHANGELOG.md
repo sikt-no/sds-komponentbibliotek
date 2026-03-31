@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.2.0...@sikt/sds-combobox@5.2.1) (2026-03-31)
+
+### Bug Fixes
+
+- **combobox:** resolve SSR hydration errors and initial flash ([1b535c5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1b535c5fd286e41bfcf123ff70a669f09f8e74e1))
+- **deps:** update eslint ([a7e8284](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a7e828486c7a9a74495ec1fc4e26f3ac69845030))
+
 ## [5.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.1.0...@sikt/sds-combobox@5.2.0) (2026-03-20)
 
 ### Features
