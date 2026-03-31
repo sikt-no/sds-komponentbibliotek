@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [8.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@8.0.0...@sikt/sds-toggle@8.0.1) (2026-03-31)
+
+### Bug Fixes
+
+- **toggle-segment:** make the whole segment clickable ([eaea2bb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/eaea2bbd556f0cc2b24366d13120baa87f86c8ff)), closes [#204](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/204)
+- update @sikt/sds packages ([cf35fab](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cf35fabce72896bf98f10e2dc13c2c8015e239e7))
+
 ## [8.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-toggle@7.0.0...@sikt/sds-toggle@8.0.0) (2026-03-12)
 
 ### ⚠ BREAKING CHANGES
