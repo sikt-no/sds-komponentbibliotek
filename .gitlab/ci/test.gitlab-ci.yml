@@ -4,6 +4,7 @@ lint:
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
+    - npm run postinstall
     - npm run lint
   needs:
     - install
@@ -19,6 +20,7 @@ test-unit:
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
+    - npm run postinstall
     - npm run test
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
   artifacts:
@@ -48,6 +50,7 @@ test-e2e:
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
+    - npm run postinstall
     - npx playwright install --with-deps
     - npm run test:e2e -- --shard=$SHARD_INDEX/$SHARD_TOTAL
   artifacts:
@@ -80,6 +83,7 @@ test-e2e-update-snapshots:
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
+    - npm run postinstall
     - npx playwright install --with-deps
     - npm run test:e2e -- --update-snapshots=changed
   after_script:

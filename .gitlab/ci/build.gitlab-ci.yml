@@ -5,6 +5,7 @@ packages:
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
+    - npm run postinstall
     - npm run build
   cache:
     - key:
@@ -40,6 +41,7 @@ storybook:
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
+    - npm run postinstall
     - npm run build:storybook
   cache:
     - key:
@@ -69,6 +71,7 @@ astro:
   script:
     - npm pkg delete scripts.prepare
     - npm ci --cache .npm
+    - npm run postinstall
     - npm run build:astro
   cache:
     - key:
