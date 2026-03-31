@@ -92,7 +92,7 @@ test-e2e-update-snapshots:
     - git add "packages/**/playwright/**/*.png"
     - >
       git commit -m "test: update playwright snapshots"
-    - git remote set-url --push origin "https://$CI_TOKEN@gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+    - git remote set-url --push origin "https://CI_TOKEN:$CI_TOKEN@gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
     - git push origin HEAD:$CI_COMMIT_REF_NAME
   needs:
     - install
