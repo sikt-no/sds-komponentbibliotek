@@ -7,7 +7,12 @@ export default defineConfig({
   name: "tsup",
   entry: ["./index.ts"],
   target: [...browserslistToEsbuild()],
-  dts: true,
+  dts: {
+    compilerOptions: {
+      moduleResolution: "node",
+    },
+    resolve: true,
+  },
   format: ["esm", "cjs"],
   loader: {
     ".pcss": "css",
@@ -23,5 +28,4 @@ export default defineConfig({
   minify: "terser",
   sourcemap: true,
   treeshake: true,
-  tsconfig: "./tsconfig.tsup.json",
 });
