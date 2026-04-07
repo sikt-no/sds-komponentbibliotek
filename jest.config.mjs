@@ -1,5 +1,7 @@
-/** @returns {Promise<import('jest').Config>} */
-module.exports = {
+import { defineConfig } from "jest-config";
+
+/** @type {import('jest').Config} */
+export default defineConfig({
   collectCoverage: true,
   collectCoverageFrom: ["./packages/**/*.tsx"],
   coveragePathIgnorePatterns: [
@@ -42,4 +44,4 @@ module.exports = {
   transformIgnorePatterns: ["node_modules/(?!@sikt/*)"],
   setupFilesAfterEnv: ["<rootDir>/jest/jest.setup.ts"],
   moduleDirectories: ["node_modules", "<rootDir>/"],
-};
+});
