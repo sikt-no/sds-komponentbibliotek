@@ -3,16 +3,23 @@
 <details>
   <summary>Table of Contents</summary>
 
-- [Report](#report)
+- [Contact](#contact)
 - [Dependencies](#dependencies)
 
 </details>
 
-## Report
+## Contact
 
 Report vulnerabilities on [Slack](https://sikt-no.slack.com/archives/C04K82KES0J).
 
 ## Dependencies
+
+No execution of lifecycle scripts.  
+Minimum release age is default 5 days.
+
+### Updates
+
+A dual weekly scheduled automatic update is run by [Renovate bot](https://gitlab.sikt.no/platon/renovate/instances/designsystem/-/pipeline_schedules).
 
 ### Scan
 
