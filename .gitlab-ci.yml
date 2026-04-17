@@ -59,6 +59,7 @@ install:
     - npm pkg delete scripts.prepare
     - npm pkg delete scripts.postinstall
     - npm ci --cache .npm
+    - npm audit signatures
   cache:
     policy: pull-push
   rules:
