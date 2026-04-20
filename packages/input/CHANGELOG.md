@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.5.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.5.0...@sikt/sds-input@4.5.1) (2026-04-20)
+
+### Bug Fixes
+
+- **teaxt-area:** rows attribute should not be overridden by field-sizing ([1687410](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1687410fe8103c52fc531d4c985d74494ce9132b)), closes [#206](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/206)
+
 ## [4.5.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input@4.4.1...@sikt/sds-input@4.5.0) (2026-03-19)
 
 ### Features
