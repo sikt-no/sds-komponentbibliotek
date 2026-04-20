@@ -14,7 +14,13 @@ type Story = StoryObj<TextAreaProps>;
 export const Default: Story = {
   args: {
     label: "Label",
-    rows: 2,
+  },
+};
+
+export const WithRows: Story = {
+  args: {
+    ...Default.args,
+    rows: 10,
   },
 };
 

@@ -99,7 +99,10 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           {icon && <div className="sds-input__icon">{icon}</div>}
           <textarea
             ref={ref}
-            className="sds-input__input"
+            className={clsx(
+              "sds-input__input",
+              !rows && "sds-input__input--content-sized",
+            )}
             id={id}
             placeholder={placeholder}
             onChange={onChange && changeHandler}
