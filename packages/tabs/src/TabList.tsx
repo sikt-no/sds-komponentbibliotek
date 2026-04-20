@@ -54,7 +54,7 @@ export const TabList = ({
   const calculateListCutIndex = () => {
     const listBoundingRectRight =
       listRef.current?.getBoundingClientRect().right ?? 0;
-    const popoverTabWidth = 42;
+    const popoverTabWidth = 48;
 
     tabsBoundingRectRight.some((rect, index) => {
       const hasListRectValue = listBoundingRectRight > 0;
