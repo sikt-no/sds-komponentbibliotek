@@ -1,6 +1,6 @@
 .deploy:
   script:
-    - deploy deployment.yml
+    - deploy k8s/deployment.yml
   dependencies:
     - docker
 
