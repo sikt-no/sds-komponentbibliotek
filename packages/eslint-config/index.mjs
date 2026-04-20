@@ -1,3 +1,4 @@
+import { fixupConfigRules } from "@eslint/compat";
 import js from "@eslint/js";
 
 import restrictedGlobals from "confusing-browser-globals";
@@ -12,14 +13,15 @@ import testingLibrary from "eslint-plugin-testing-library";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-export default tseslint.config([
+export default [
   js.configs.recommended,
-  reactPlugin.configs.flat.recommended,
-  reactPlugin.configs.flat["jsx-runtime"],
-  reactHooks.configs.flat["recommended-latest"],
+  ...fixupConfigRules(reactPlugin.configs.flat.recommended),
+  ...fixupConfigRules(reactPlugin.configs.flat["jsx-runtime"]),
+  ...fixupConfigRules(reactHooks.configs.flat["recommended-latest"]),
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   jsxA11y.flatConfigs.recommended,
-  tseslint.configs.strictTypeChecked,
-  tseslint.configs.stylisticTypeChecked,
+  ...tseslint.configs.strictTypeChecked,
+  ...tseslint.configs.stylisticTypeChecked,
   eslintPluginImportX.flatConfigs.typescript,
   eslintConfigPrettier,
   {
@@ -122,4 +124,4 @@ export default tseslint.config([
       "react-hooks/rules-of-hooks": "off",
     },
   },
-]);
+];
