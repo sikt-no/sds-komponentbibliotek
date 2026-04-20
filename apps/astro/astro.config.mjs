@@ -34,6 +34,7 @@ export default defineConfig({
   site: siteUrl,
   server: {
     open: true,
+    // INFO: These should be identical to Response Headers in nginx/headers.conf
     headers: {
       "Content-Security-Policy":
         "default-src 'self'; connect-src 'self' https://matomo.sikt.no/ ws: wss:; script-src 'self' https://matomo.sikt.no/ 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' https://static.sikt.no/; img-src 'self' https://matomo.sikt.no/ data:; media-src 'self'; frame-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; worker-src blob:;",
