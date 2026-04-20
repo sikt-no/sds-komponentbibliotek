@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@7.0.2...@sikt/sds-tabs@7.0.3) (2026-04-20)
+
+### Bug Fixes
+
+- **tabs:** correct tab overflow popover button width ([6f00868](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6f00868f42d3ffff6e1590277253bcf4cec72319)), closes [#207](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/207)
+
 ## [7.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@7.0.1...@sikt/sds-tabs@7.0.2) (2026-03-19)
 
 ### Bug Fixes
