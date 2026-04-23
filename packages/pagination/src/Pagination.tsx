@@ -103,7 +103,7 @@ export const Pagination = ({
               <li className="sds-pagination__list-item" key={value}>
                 <button
                   className="sds-pagination__button"
-                  aria-current={value === currentIndex ? true : undefined}
+                  aria-current={value === currentIndex ? "page" : undefined}
                   aria-label={`${ariaLabelItem} ${value + 1}`}
                   disabled={value === currentIndex}
                   onClick={(event) => {
