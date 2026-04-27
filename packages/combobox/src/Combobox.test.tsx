@@ -48,7 +48,7 @@ describe("Combobox", () => {
 
       expect(screen.getByTestId("test")).toBeInTheDocument();
       expect(screen.getByText("Foo")).toBeInTheDocument();
-      expect(screen.getByRole("combobox")).toBeInTheDocument();
+      expect(screen.getByRole("textbox")).toBeInTheDocument();
     });
 
     it("should have class name", async () => {
@@ -79,7 +79,7 @@ describe("Combobox", () => {
         />,
       );
 
-      await user.click(screen.getByRole("combobox"));
+      await user.click(screen.getByRole("textbox"));
       await user.click(screen.getByText("Bar", { selector: "u-option" }));
 
       expect(changeHandler).toHaveBeenCalled();
@@ -141,7 +141,7 @@ describe("Combobox", () => {
       const { container } = render(<ControlledCombobox />);
 
       const user = userEvent.setup();
-      await user.click(screen.getByRole("combobox"));
+      await user.click(screen.getByRole("textbox"));
       await user.click(screen.getByText("Bar", { selector: "u-option" }));
 
       const dataElements = container.querySelectorAll("data");
@@ -156,7 +156,7 @@ describe("Combobox", () => {
 
     it("should handle aria-labelledby instead of label", async () => {
       render(<Combobox aria-labelledby="external-label" options={options} />);
-      expect(screen.getByRole("combobox")).toHaveAttribute(
+      expect(screen.getByRole("textbox")).toHaveAttribute(
         "aria-labelledby",
         "external-label",
       );
@@ -201,7 +201,7 @@ describe("Combobox", () => {
           multiple={false}
         />,
       );
-      expect(screen.getByRole("combobox")).not.toHaveAttribute("data-multiple");
+      expect(screen.getByRole("textbox")).not.toHaveAttribute("data-multiple");
     });
 
     it("should handle controlled mode with selected prop", async () => {
@@ -270,7 +270,7 @@ describe("Combobox", () => {
       );
 
       const user = userEvent.setup();
-      await user.click(screen.getByRole("combobox"));
+      await user.click(screen.getByRole("textbox"));
       await user.click(screen.getByText("Bar", { selector: "u-option" }));
 
       expect(handleChange).toHaveBeenCalled();
@@ -288,7 +288,7 @@ describe("Combobox", () => {
       );
 
       const user = userEvent.setup();
-      await user.click(screen.getByRole("combobox"));
+      await user.click(screen.getByRole("textbox"));
       await user.click(screen.getByText("Bar", { selector: "u-option" }));
 
       expect(handleChange).toHaveBeenCalled();
