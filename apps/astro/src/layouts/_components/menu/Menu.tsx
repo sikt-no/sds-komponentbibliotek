@@ -37,11 +37,6 @@ const visuellIdentitetMenu: MenuItemType[] = [
     name: "Logoer",
     url: "/visuell-identitet/logoer",
   },
-  { name: "Typografi" },
-  { name: "Illustrasjoner" },
-  { name: "Bilder" },
-  { name: "Designelementer" },
-  { name: "Komposisjon" },
 ];
 
 const produktutviklingMenu: MenuItemType[] = [
@@ -120,6 +115,15 @@ const MenuItem = ({
 export const Menu = ({ pathname }: PathnameType) => {
   return (
     <>
+      <MenuGroup
+        aria-label="Sidenavigasjon, Produktutvikling"
+        heading="Produktutvikling"
+      >
+        {produktutviklingMenu.map((item) => (
+          <MenuItem key={item.name} {...item} pathname={pathname} />
+        ))}
+      </MenuGroup>
+
       <MenuGroup aria-label="Sidenavigasjon, Merkevare" heading="Merkevare">
         {merkevareMenu.map((item) => (
           <MenuItem key={item.name} {...item} pathname={pathname} />
@@ -131,15 +135,6 @@ export const Menu = ({ pathname }: PathnameType) => {
         heading="Visuell identitet"
       >
         {visuellIdentitetMenu.map((item) => (
-          <MenuItem key={item.name} {...item} pathname={pathname} />
-        ))}
-      </MenuGroup>
-
-      <MenuGroup
-        aria-label="Sidenavigasjon, Produktutvikling"
-        heading="Produktutvikling"
-      >
-        {produktutviklingMenu.map((item) => (
           <MenuItem key={item.name} {...item} pathname={pathname} />
         ))}
       </MenuGroup>
