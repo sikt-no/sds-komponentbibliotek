@@ -1,4 +1,3 @@
-import { I18nProvider } from "@react-aria/i18n";
 import { Button, type ButtonProps } from "@sikt/sds-button";
 import { HelpText, Label } from "@sikt/sds-form";
 import { useClickOutside, useKeydown } from "@sikt/sds-hooks";
@@ -29,6 +28,7 @@ import {
   DateValue,
   Group,
   Heading,
+  I18nProvider,
   Button as ReactAriaButton,
   DatePicker as ReactAriaDatePicker,
   Label as ReactAriaLabel,
