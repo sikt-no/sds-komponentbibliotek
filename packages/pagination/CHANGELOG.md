@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@3.1.0...@sikt/sds-pagination@3.1.1) (2026-04-28)
+
+### Bug Fixes
+
+- **pagination:** use aria-current=page for better screen reader context ([a47356d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a47356dd5d910defe7b13dae418636e10b68391e))
+- update @sikt/sds packages ([cf35fab](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cf35fabce72896bf98f10e2dc13c2c8015e239e7))
+
 ## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-pagination@3.0.0...@sikt/sds-pagination@3.1.0) (2026-03-12)
 
 ### Features
