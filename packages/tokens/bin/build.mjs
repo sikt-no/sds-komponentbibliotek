@@ -1,6 +1,7 @@
 import StyleDictionary from "style-dictionary";
 import { fileHeader } from "style-dictionary/utils";
 import Color from "tinycolor2";
+import JsonToTS from "json-to-ts";
 
 const prefix = "sds";
 const sourcePath = "src/";
@@ -212,6 +213,44 @@ ${borderRadiusTokens.map((prop) => `  --radius-${prop.attributes.subitem}: var(-
   },
 });
 
+/**
+ * Custom Format: TypeScript Accurate Module Declarations
+ * This generates more accurate TypeScript types using json-to-ts.
+ * Based on the official StyleDictionary documentation pattern:
+ * https://styledictionary.com/reference/hooks/formats/predefined/
+ */
+StyleDictionary.registerFormat({
+  name: "typescript/accurate-module-declarations",
+  format: function ({ dictionary }) {
+    try {
+      const typeInterfaces = JsonToTS(dictionary.tokens);
+
+      if (!Array.isArray(typeInterfaces) || typeInterfaces.length === 0) {
+        throw new Error("JsonToTS returned invalid or empty type definitions");
+      }
+
+      return (
+        "declare const root: RootObject\n" +
+        "export default root\n" +
+        typeInterfaces.join("\n")
+      );
+    } catch (error) {
+      console.error(
+        "Error generating TypeScript types with json-to-ts:",
+        error.message,
+      );
+      console.error("Falling back to basic type declaration");
+
+      // Fallback to a basic type declaration if json-to-ts fails
+      return (
+        "declare const root: any\n" +
+        "export default root\n" +
+        "// Error: Could not generate accurate types, falling back to 'any'"
+      );
+    }
+  },
+});
+
 const dictionaryTokens = new StyleDictionary({
   /*
   log: {
@@ -255,7 +294,7 @@ const dictionaryTokens = new StyleDictionary({
           filter,
         },
         {
-          format: "typescript/module-declarations",
+          format: "typescript/accurate-module-declarations",
           destination: "js/tokens.d.ts",
           filter,
         },
@@ -334,14 +373,14 @@ const dictionaryColorDark = new StyleDictionary({
           filter: colorFilter,
         },
         {
-          format: "typescript/module-declarations",
+          format: "typescript/accurate-module-declarations",
           destination: "js/color.dark.d.ts",
           filter: colorFilter,
         },
         {
           format: "javascript/esm",
           destination: "js/color.dark.mjs",
-          filter,
+          filter: colorFilter,
         },
       ],
     },
@@ -389,7 +428,7 @@ const dictionaryMediaTablet = new StyleDictionary({
           filter,
         },
         {
-          format: "typescript/module-declarations",
+          format: "typescript/accurate-module-declarations",
           destination: "js/tokens.tablet.d.ts",
           filter,
         },
@@ -444,7 +483,7 @@ const dictionaryMediaDesktop = new StyleDictionary({
           filter,
         },
         {
-          format: "typescript/module-declarations",
+          format: "typescript/accurate-module-declarations",
           destination: "js/tokens.desktop.d.ts",
           filter,
         },
