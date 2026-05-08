@@ -7,8 +7,8 @@ import {
   cloneElement,
   isValidElement,
 } from "react";
-import { reactNodeToString } from "../../core/src/utils/reactNodeToString";
 import type { ButtonIconVariant, ButtonSize, ButtonVariant } from "./Button";
+import { reactNodeToString } from "./utils/reactNodeToString";
 import "./button-link.pcss";
 
 export type ButtonLinkProps =

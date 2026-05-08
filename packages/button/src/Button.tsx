@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
-import { reactNodeToString } from "../../core/src/utils/reactNodeToString";
+import { reactNodeToString } from "./utils/reactNodeToString";
 import "./button.pcss";
 
 export type ButtonProps = ButtonChildrenProps | ButtonAriaLabelProps;
