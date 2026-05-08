@@ -8,18 +8,17 @@ export const useKeydown = (
   useEffect(() => {
     const targetElement = ref?.current ?? document;
 
-    const listener = (event: KeyboardEvent) => {
-      if (event.key === key) {
-        event.preventDefault();
-        callback(event);
+    const listener: EventListener = (event) => {
+      const keyboardEvent = event as KeyboardEvent;
+      if (keyboardEvent.key === key) {
+        keyboardEvent.preventDefault();
+        callback(keyboardEvent);
       }
     };
 
-    // @ts-expect-error: Type '(event: KeyboardEvent) => void' is not assignable to type 'EventListener'.
     targetElement.addEventListener("keydown", listener);
 
     return () => {
-      // @ts-expect-error: Type '(event: KeyboardEvent) => void' is not assignable to type 'EventListener'.
       targetElement.removeEventListener("keydown", listener);
     };
   }, [ref, key, callback]);
