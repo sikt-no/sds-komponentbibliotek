@@ -136,13 +136,7 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
     const inputRef = useRef<HTMLDivElement>(null);
     const id = useId();
     const errorTextId = `${id}-error-text`;
-    const helpTextId = `${id}-help-text`;
     const [calendarOpen, setCalendarOpen] = useState(false);
-
-    const ariaDescribedBy =
-      [errorText && errorTextId, helpText && helpTextId]
-        .filter(Boolean)
-        .join(" ") || undefined;
 
     const handleEscapeKeydown = () => {
       setCalendarOpen(false);
@@ -165,7 +159,6 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
           onChange={onValueChange}
           isInvalid={Boolean(errorText)}
           aria-labelledby={ariaLabelledBy}
-          aria-describedby={ariaDescribedBy}
           aria-errormessage={errorText ? errorTextId : undefined}
           className={clsx(
             "sds-input",
@@ -222,12 +215,12 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
 
           {helpText && (
             <Text slot="description">
-              <HelpText id={helpTextId}>{helpText}</HelpText>
+              <HelpText>{helpText}</HelpText>
             </Text>
           )}
           {errorText && (
             <Text slot="errorMessage">
-              <HelpText id={helpTextId} error>
+              <HelpText id={errorTextId} error>
                 {errorText}
               </HelpText>
             </Text>
