@@ -15,7 +15,7 @@ import {
   useContext,
 } from "react";
 import { TabProps } from "./Tab";
-import { TabsContext } from "./Tabs";
+import { TabsContext } from "./TabsContext";
 
 export interface TabListProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;

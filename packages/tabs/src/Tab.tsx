@@ -7,7 +7,7 @@ import {
   MouseEvent,
   forwardRef,
 } from "react";
-import { TabsContext } from "./Tabs";
+import { TabsContext } from "./TabsContext";
 
 export interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;

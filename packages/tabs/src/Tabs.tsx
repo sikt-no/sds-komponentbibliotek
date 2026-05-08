@@ -6,22 +6,15 @@ import {
   ReactElement,
   ReactNode,
   cloneElement,
-  createContext,
   isValidElement,
   useId,
 } from "react";
 import "./tabs.pcss";
 import { TabPanelProps } from "./TabPanel";
+import { TabsContext } from "./TabsContext";
 
-export interface TabsContextType {
-  id: string;
-  count: number;
-  isSelectOnFocus: boolean;
-  selectedIndex: number;
-  setSelectedIndex: (index: number) => void;
-}
-
-export const TabsContext = createContext<TabsContextType | null>(null);
+export type { TabsContextType } from "./TabsContext";
+export { TabsContext };
 
 export interface TabsProps extends Omit<
   HTMLAttributes<HTMLDivElement>,

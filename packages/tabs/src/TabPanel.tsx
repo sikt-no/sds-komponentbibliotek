@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { ReactNode, useContext } from "react";
-import { TabsContext } from "./Tabs";
+import { TabsContext } from "./TabsContext";
 
 export interface TabPanelProps {
   children: ReactNode;
