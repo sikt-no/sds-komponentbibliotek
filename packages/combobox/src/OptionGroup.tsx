@@ -12,7 +12,7 @@ export const OptionGroup = ({ label, options }: ComboboxOptionGroupProps) => {
       </span>
       {options.map((option) => (
         <Option
-          key={option.value?.toString()}
+          key={`${option.value?.toString() ?? option.label?.toString()}`}
           aria-describedby={id}
           suppressHydrationWarning
           {...option}

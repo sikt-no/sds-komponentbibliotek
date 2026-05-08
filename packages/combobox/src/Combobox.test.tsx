@@ -8,11 +8,13 @@ import { Combobox } from "./Combobox";
 const options = [
   { label: "Bar", value: "1" },
   { label: "Baz", value: "2" },
+  { label: "Baz" },
 ];
 
 const optionsWithSelected = [
   { label: "Bar", value: "1" },
   { label: "Baz", value: "2", selected: true },
+  { label: "Baz" },
 ];
 
 const groupedOptions = [
@@ -21,6 +23,7 @@ const groupedOptions = [
     options: [
       { label: "Bar", value: "1" },
       { label: "Baz", value: "2" },
+      { label: "Baz" },
     ],
   },
 ];

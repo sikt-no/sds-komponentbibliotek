@@ -310,7 +310,7 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
                 ) : (
                   <Option
                     suppressHydrationWarning
-                    key={option.value?.toString()}
+                    key={`${option.value?.toString() ?? option.label?.toString()}`}
                     {...option}
                   />
                 ),
