@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.2.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.2.1...@sikt/sds-combobox@5.2.2) (2026-05-08)
+
+### Bug Fixes
+
+- **combobox:** add key to option missing value ([0056cc2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0056cc277f1249284229364a3464482e830aea09))
+- **deps:** update dependency @u-elements/u-combobox to ^2.0.3 ([ab201aa](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ab201aa1b058c3ecaa4f69475eb7862f9debce18))
+- **deps:** update dependency @u-elements/u-combobox to ^2.0.4 ([db01cfd](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/db01cfd2d3ad98be75f26b8a4e3016fa9e51217c))
+- **deps:** update dependency @u-elements/u-combobox to v2 ([a5eeb84](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a5eeb847da4a1bedd4abbe90827b8a63df907a04))
+- **deps:** update dependency @u-elements/u-datalist to v2 ([197f6ae](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/197f6aea05a04c3595ae92f959dbbb056c8135f0))
+
 ## [5.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.2.0...@sikt/sds-combobox@5.2.1) (2026-03-31)
 
 ### Bug Fixes
