@@ -2,7 +2,7 @@
 import Layout from "../layouts/PageLayout.astro";
 import { FigmaButton, GitlabButton, SlackButton } from "../components";
 import Card from "../components/card/Card.astro";
-import { Heading2, Link, ScreenReaderOnly } from "@sikt/sds-core";
+import { Heading1, Heading2, Link, ScreenReaderOnly } from "@sikt/sds-core";
 import { ButtonGroup, ButtonLink } from "@sikt/sds-button";
 import { Picture } from "astro:assets";
 import heroImage from "../assets/images/hero.png";
@@ -32,10 +32,10 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
             formats={["avif", "webp"]}
             widths={[240, 540]}
             alt=""
-            aria-hidden
+            aria-hidden="true"
           />
         </div>
-        <Heading2 size="xl" slot="heading">Lær, bruk og bidra</Heading2>
+        <Heading1 size="xl" slot="heading">Lær, bruk og bidra</Heading1>
         <p>
           Velkommen til Sikts designsystem! Dette er en sammensetning av
           <Link href="/produktutvikling/komponenter">komponenter</Link> og retningslinjer
@@ -52,10 +52,10 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
             formats={["avif", "webp"]}
             widths={[240, 540]}
             alt=""
-            aria-hidden
+            aria-hidden="true"
           />
         </div>
-        <Heading2 slot="heading">Designprisipper og byggesteiner</Heading2>
+        <Heading2 slot="heading">Designprinsipper og byggesteiner</Heading2>
 
         <ButtonGroup variant="left" slot="call-to-action">
           <ButtonLink variant="strong" href="/produktutvikling/designtokens">
@@ -175,7 +175,7 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
             class="team-member-image"
             src={randomMemberImgSrc}
             alt=""
-            aria-hidden
+            aria-hidden="true"
           />
         </div>
         <Heading2 slot="heading">Vi er også folk 👋</Heading2>

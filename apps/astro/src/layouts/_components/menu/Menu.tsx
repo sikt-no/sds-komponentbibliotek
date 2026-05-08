@@ -93,6 +93,25 @@ const tilgjengelighetMenu: MenuItemType[] = [
   },
 ];
 
+const fullMenu = [
+  {
+    name: "Produktutvikling",
+    menu: produktutviklingMenu,
+  },
+  {
+    name: "Merkevare",
+    menu: merkevareMenu,
+  },
+  {
+    name: "Visuell identitet",
+    menu: visuellIdentitetMenu,
+  },
+  {
+    name: "Tilgjengelighet",
+    menu: tilgjengelighetMenu,
+  },
+];
+
 const MenuItem = ({
   name,
   url,
@@ -112,41 +131,11 @@ const MenuItem = ({
   </li>
 );
 
-export const Menu = ({ pathname }: PathnameType) => {
-  return (
-    <>
-      <MenuGroup
-        aria-label="Sidenavigasjon, Produktutvikling"
-        heading="Produktutvikling"
-      >
-        {produktutviklingMenu.map((item) => (
-          <MenuItem key={item.name} {...item} pathname={pathname} />
-        ))}
-      </MenuGroup>
-
-      <MenuGroup aria-label="Sidenavigasjon, Merkevare" heading="Merkevare">
-        {merkevareMenu.map((item) => (
-          <MenuItem key={item.name} {...item} pathname={pathname} />
-        ))}
-      </MenuGroup>
-
-      <MenuGroup
-        aria-label="Sidenavigasjon, Visuell identitet"
-        heading="Visuell identitet"
-      >
-        {visuellIdentitetMenu.map((item) => (
-          <MenuItem key={item.name} {...item} pathname={pathname} />
-        ))}
-      </MenuGroup>
-
-      <MenuGroup
-        aria-label="Sidenavigasjon, Tilgjengelighet"
-        heading="Tilgjengelighet"
-      >
-        {tilgjengelighetMenu.map((item) => (
-          <MenuItem key={item.name} {...item} pathname={pathname} />
-        ))}
-      </MenuGroup>
-    </>
-  );
-};
+export const Menu = ({ pathname }: PathnameType) =>
+  fullMenu.map((group) => (
+    <MenuGroup aria-label={group.name} heading={group.name} key={group.name}>
+      {group.menu.map((item) => (
+        <MenuItem key={item.name} {...item} pathname={pathname} />
+      ))}
+    </MenuGroup>
+  ));

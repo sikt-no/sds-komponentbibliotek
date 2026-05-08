@@ -16,10 +16,7 @@ export const Header = ({ currentHref }: { currentHref: string }) => {
       logoText="Designsystem"
       logoLink={home}
       topSlot={
-        <nav
-          className={styles.nav}
-          aria-label="Navigasjon, tekniskt dokumentasjon"
-        >
+        <nav className={styles.nav} aria-label="Teknisk dokumentasjon">
           <ul className={styles.ul}>
             <li>
               <Link href="https://platon.sikt.no/">Platon</Link>
