@@ -37,6 +37,7 @@
     "build:tokens": "node bin/build.mjs"
   },
   "devDependencies": {
-    "style-dictionary": "^5.4.0"
+    "style-dictionary": "^5.4.0",
+    "tinycolor2": "^1.6.0"
   }
 }
