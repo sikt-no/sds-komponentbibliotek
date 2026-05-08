@@ -10,6 +10,7 @@ export default defineConfig({
   dts: {
     compilerOptions: {
       moduleResolution: "node",
+      ignoreDeprecations: "6.0",
     },
     resolve: true,
   },

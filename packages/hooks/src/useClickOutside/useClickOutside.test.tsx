@@ -41,6 +41,7 @@ describe("useClickOutside", () => {
     const callback = jest.fn();
 
     renderHook(() => {
+      // @ts-expect-error not assignable to parameter
       useClickOutside(ref, callback);
     });
 
