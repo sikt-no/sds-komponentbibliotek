@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@6.2.0...@sikt/sds-tokens@6.3.0) (2026-05-08)
+
+### Features
+
+- **tokens:** generate accurate js types ([097f07d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/097f07db4269abc0f5612201fb0e1a643600bb2b))
+
 ## [6.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tokens@6.1.0...@sikt/sds-tokens@6.2.0) (2026-02-26)
 
 ### Features
