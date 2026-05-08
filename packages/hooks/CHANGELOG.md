@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@1.0.0...@sikt/sds-hooks@1.0.1) (2026-05-08)
+
+### Bug Fixes
+
+- **hooks:** useKeydown EventListener type ([cfdf11e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cfdf11eaa4f053274350273312ff15b425d93eb3))
+
 ## [1.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@0.1.1...@sikt/sds-hooks@1.0.0) (2024-12-12)
 
 ## [0.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@0.1.0...@sikt/sds-hooks@0.1.1) (2024-12-12)
