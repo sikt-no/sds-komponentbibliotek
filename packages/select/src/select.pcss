@@ -12,6 +12,59 @@
   flex-direction: column;
   width: 100%;
 
+  /* stylelint-disable selector-max-type */
+  select,
+  ::picker(select) {
+    appearance: base-select;
+  }
+
+  select::picker-icon {
+    display: none;
+  }
+
+  ::picker(select) {
+    padding: var(--sds-space-padding-small);
+    margin-top: var(--sds-space-gap-small);
+    margin-bottom: var(--sds-space-gap-small);
+    background-color: var(--sds-color-layout-background-default);
+    box-shadow: var(--sds-effect-shadow-elevated-default);
+    border-radius: var(--sds-space-border-radius-medium);
+    border: none;
+  }
+
+  option {
+    padding: var(--sds-space-padding-small);
+    margin: var(--sds-space-gap-tiny);
+    border-radius: var(--sds-space-border-radius-medium);
+
+    &::checkmark {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: var(--sds-focus-outline);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+    }
+
+    &:active {
+      background-color: var(
+        --sds-color-interaction-primary-transparent-pressed
+      );
+    }
+
+    &:checked {
+      background-color: var(--sds-color-interaction-primary-strong-pressed);
+      color: var(--sds-color-text-on-strong);
+    }
+  }
+  /* stylelint-enable selector-max-type */
+
   &__select {
     --select-button-font-size: var(--sds-typography-fontsize-700);
     --select-button-padding: var(--sds-space-padding-minimal);
