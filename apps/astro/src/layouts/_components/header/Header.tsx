@@ -16,7 +16,7 @@ export const Header = ({ currentHref }: { currentHref: string }) => {
       logoText="Designsystem"
       logoLink={home}
       topSlot={
-        <nav className={styles.nav} aria-label="Teknisk dokumentasjon">
+        <nav className={styles.nav} aria-label="Teknisk dokumentasjon i Sikt">
           <ul className={styles.ul}>
             <li>
               <Link href="https://platon.sikt.no/">Platon</Link>
@@ -43,7 +43,7 @@ export const Header = ({ currentHref }: { currentHref: string }) => {
           href="/sok"
         />
       }
-      skipLinkId="content"
+      skipLinkId="main"
     />
   );
 };

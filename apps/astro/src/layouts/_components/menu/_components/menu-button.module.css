@@ -43,13 +43,6 @@
   }
 }
 
-.disabled {
-  background-color: var(--sds-color-interaction-neutral-transparent-default);
-  color: var(--sds-color-text-primary);
-  cursor: not-allowed;
-  opacity: 0.2;
-}
-
 .icon {
   align-items: center;
   display: flex;

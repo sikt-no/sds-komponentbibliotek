@@ -56,9 +56,12 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
   </head>
   <body class="body">
     <Header currentHref={currentPath} />
-    <main id="main">
-      <slot />
-    </main>
+    <div class="page-wrapper">
+      <slot name="sidebar" />
+      <main id="main">
+        <slot />
+      </main>
+    </div>
     <Footer currentHref={currentPath} />
   </body>
 </html>
@@ -102,6 +105,22 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+  }
+
+  .page-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  @media (width >= 45rem) {
+    .page-wrapper {
+      flex-direction: row;
+    }
+  }
+
+  .page-wrapper > :global(main) {
+    flex: 1;
   }
 </style>
 

@@ -8,24 +8,26 @@ const { title } = Astro.props;
 ---
 
 <Layout title={title}>
-  <div class="page">
-    <nav aria-label="Sidenavigasjon" class="nav">
-      <Details className="menu-mobile" size="small" summary="Meny">
-        <div class="menu">
-          <Menu pathname={pathname} />
-        </div>
-      </Details>
-      <div class:list={["menu", "menu-desktop"]}>
+  <nav
+    slot="sidebar"
+    aria-label="Dokumentasjonssider i Sikt Designsystem"
+    class="nav"
+  >
+    <Details className="menu-mobile" size="small" summary="Meny">
+      <div class="menu">
         <Menu pathname={pathname} />
       </div>
-    </nav>
-    <div id="content" class="content">
-      <div class="container">
-        <div class="wrapper">
-          {/* TODO: Hero */}
-          <slot name="hero" />
-          <slot />
-        </div>
+    </Details>
+    <div class:list={["menu", "menu-desktop"]}>
+      <Menu pathname={pathname} />
+    </div>
+  </nav>
+  <div id="content" class="content">
+    <div class="container">
+      <div class="wrapper">
+        {/* TODO: Hero */}
+        <slot name="hero" />
+        <slot />
       </div>
     </div>
   </div>
@@ -35,10 +37,6 @@ const { title } = Astro.props;
   @import url("@sikt/sds-tokens/dist/css/custom-media.css");
 
   @custom-media --breakpoint-ultrawide (width >= 1800px);
-
-  .page {
-    display: grid;
-  }
 
   .nav {
     background-color: var(--sds-color-layout-background-default);
@@ -59,8 +57,9 @@ const { title } = Astro.props;
   }
 
   @media (--sds-base-breakpoint-tablet) {
-    .page {
-      grid-template-columns: 338px auto;
+    .nav {
+      width: 338px;
+      flex-shrink: 0;
     }
 
     .menu-mobile {

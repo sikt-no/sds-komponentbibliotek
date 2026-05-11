@@ -1,11 +1,11 @@
-.figure {
+.group {
   display: flex;
   flex-direction: column;
   margin: 0;
   gap: var(--sds-space-gap-medium);
 }
 
-.figcaption {
+.groupLabel {
   color: var(--sds-color-text-secondary);
   font-size: var(--sds-typography-body-s-fontsize);
   font-weight: var(--sds-typography-body-s-fontweight);

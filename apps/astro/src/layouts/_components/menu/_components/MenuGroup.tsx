@@ -2,7 +2,7 @@ import { clsx } from "clsx/lite";
 import type { HTMLAttributes, ReactNode } from "react";
 import styles from "./menu-group.module.css";
 
-export interface MenuGroupProps extends HTMLAttributes<HTMLElement> {
+export interface MenuGroupProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   className?: string;
   heading?: string;
@@ -15,11 +15,17 @@ export const MenuGroup = ({
   ...rest
 }: MenuGroupProps) => {
   return (
-    <figure className={clsx(styles.figure, className)} {...rest}>
+    <div
+      className={clsx(styles.group, className)}
+      aria-label={heading}
+      {...rest}
+    >
       {heading && (
-        <figcaption className={styles.figcaption}>{heading}</figcaption>
+        <span className={styles.groupLabel} aria-hidden="true">
+          {heading}
+        </span>
       )}
       <ul>{children}</ul>
-    </figure>
+    </div>
   );
 };
