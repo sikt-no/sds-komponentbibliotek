@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/eslint-config-sds@3.0.0...@sikt/eslint-config-sds@3.0.1) (2026-05-12)
+
+### Bug Fixes
+
+- **deps:** update eslint ([1c05ea1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1c05ea16343216bd59e44992a8df251fbee7cfa8))
+
 ## [3.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/eslint-config-sds@2.2.6...@sikt/eslint-config-sds@3.0.0) (2026-04-20)
 
 ### ⚠ BREAKING CHANGES
