@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.4.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.4.0...@sikt/sds-popover@1.4.1) (2026-05-12)
+
+### Bug Fixes
+
+- **deps:** update dependency react-aria to ^3.47.0 ([083eca2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/083eca2cedb24e1e6b969231d5aa4663642f5be8))
+- **deps:** update dependency react-aria to ^3.48.0 ([9c6f7d4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9c6f7d4ceb579b1a2263ab3decabf4075db1b48a))
+- **popover:** replace JS positioning with CSS Anchor Positioning ([51e5a81](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/51e5a817b81d6656eb0a4946fe89f50f1cb2105c))
+- update @sikt/sds packages ([cf35fab](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cf35fabce72896bf98f10e2dc13c2c8015e239e7))
+
 ## [1.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-popover@1.3.0...@sikt/sds-popover@1.4.0) (2026-03-12)
 
 ### Features
