@@ -1,13 +1,10 @@
-import { useWindowResize } from "@sikt/sds-hooks";
 import { clsx } from "clsx/lite";
 import {
   HTMLAttributes,
   MouseEvent,
   ReactNode,
-  useCallback,
   useId,
   useRef,
-  useState,
   RefObject,
 } from "react";
 import { useFocusWithin } from "react-aria";
@@ -63,17 +60,12 @@ export const Popover = ({
   ...rest
 }: PopoverProps & { tooltip?: boolean }) => {
   const id = useId();
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const anchorName = `--popover-anchor-${id}`;
   const popoverRef = useRef<HTMLSpanElement | null>(null);
-  const [inset, setInset] = useState<string | number>("auto auto auto auto");
 
   const handleOnFocus = () => {
     if (!tooltip) {
       return;
-    }
-
-    if (anchor) {
-      setPopoverStylePosition();
     }
     popoverRef.current?.showPopover();
   };
@@ -81,54 +73,12 @@ export const Popover = ({
     if (!tooltip) {
       return;
     }
-
     popoverRef.current?.hidePopover();
   };
 
   const { focusWithinProps } = useFocusWithin({
     onFocusWithin: handleOnFocus,
     onBlurWithin: handleOnBlur,
-  });
-
-  // TODO: Replace with https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor when good browser support
-  const setPopoverStylePosition = useCallback(() => {
-    if (buttonRef.current) {
-      const buttonRect = buttonRef.current.getBoundingClientRect();
-      const scrollbarWidth =
-        window.innerWidth - document.documentElement.clientWidth;
-      const scrollbarHeight =
-        window.innerHeight - document.documentElement.clientHeight;
-      const distanceToTop = buttonRect.top;
-      const distanceToBottom =
-        window.innerHeight - scrollbarHeight - buttonRect.bottom;
-      const distanceToRight =
-        window.innerWidth - scrollbarWidth - buttonRect.right;
-      const distanceToLeft = buttonRect.left;
-      const position = {
-        top: "auto",
-        right: "auto",
-        bottom: "auto",
-        left: "auto",
-      };
-
-      if (distanceToBottom < distanceToTop) {
-        position.bottom = `${distanceToBottom + buttonRect.height - window.scrollY}px`;
-      } else {
-        position.top = `${buttonRect.top + buttonRect.height + window.scrollY}px`;
-      }
-
-      if (distanceToRight < distanceToLeft) {
-        position.right = `${distanceToRight - window.scrollX}px`;
-      } else {
-        position.left = `${buttonRect.left + window.scrollX}px`;
-      }
-
-      setInset(Object.values(position).join(" "));
-    }
-  }, []);
-
-  useWindowResize(anchor ? setPopoverStylePosition : undefined, {
-    throttleTime: 10,
   });
 
   return (
@@ -138,14 +88,11 @@ export const Popover = ({
       onMouseLeave={handleOnBlur}
     >
       <button
-        ref={buttonRef}
         className={clsx("sds-popover", className)}
         popoverTarget={id}
         {...rest}
+        style={anchor ? { anchorName } : undefined}
         onClick={(event) => {
-          if (anchor) {
-            setPopoverStylePosition();
-          }
           if (onClick) {
             onClick(event);
           }
@@ -168,7 +115,16 @@ export const Popover = ({
         id={id}
         popover={popover}
         {...targetProps}
-        style={{ inset }}
+        style={
+          anchor
+            ? {
+                positionAnchor: anchorName,
+                ...(tooltip
+                  ? { bottom: "anchor(top)", left: "anchor(left)" }
+                  : { top: "anchor(bottom)", left: "anchor(left)" }),
+              }
+            : undefined
+        }
       >
         {target}
       </span>
