@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@5.0.0...@sikt/sds-select@5.1.0) (2026-05-12)
+
+### Features
+
+- **select:** custom styling for select ([b433492](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b43349254b21e513f313a5d38618647462bd0846))
+
+### Bug Fixes
+
+- update @sikt/sds packages ([cf35fab](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cf35fabce72896bf98f10e2dc13c2c8015e239e7))
+
 ## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@4.2.1...@sikt/sds-select@5.0.0) (2026-03-12)
 
 ### ⚠ BREAKING CHANGES
