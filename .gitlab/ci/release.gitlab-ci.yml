@@ -27,6 +27,10 @@ release:
   release:
     tag_name: $CI_COMMIT_TAG
     description: $RELEASE_NOTES
+  dependencies:
+    - release-prepare
+  needs:
+    - release-prepare
 
 publish-npm:
   stage: .post
