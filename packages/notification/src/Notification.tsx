@@ -25,7 +25,7 @@ export const Notification = ({
       )}
       {...rest}
     >
-      {count && (
+      {count !== undefined && (
         <span className="sds-notification__count">
           {maxCount < count ? `${maxCount}+` : count}
         </span>
