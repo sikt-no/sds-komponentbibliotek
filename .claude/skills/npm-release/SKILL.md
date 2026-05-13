@@ -33,7 +33,21 @@ To check the current version:
 cat packages/<package-name>/package.json | grep '"version"'
 ```
 
-### 3. Dry run first — show the user what will happen
+### 3. Ensure the staging area is clean
+
+Check for any staged files that don't belong in the release commit:
+
+```sh
+git diff --staged --name-only
+```
+
+If anything is staged that is not `package.json` or `CHANGELOG.md` for the package being released, **stop and warn the user**:
+
+> "There are staged files that will be included in the release commit: [list them]. Please unstage them first with `git restore --staged <file>` before continuing."
+
+Do not proceed until the staging area is empty (or contains only intentional release-related changes).
+
+### 4. Dry run first — show the user what will happen
 
 **Always run this before the real release:**
 
@@ -119,6 +133,28 @@ The CI/CD pipeline detects the new tag and:
 
 - Creates a GitLab release
 - Publishes the package to npm as `@sikt/sds-<package-name>`
+
+### 7. Follow the pipeline and verify the release
+
+After pushing, fetch the direct URL for the pipeline triggered by the release tag:
+
+```sh
+glab api "projects/:fullpath/pipelines" --field "ref=@sikt/sds-<package-name>@<version>" | jq -r '.[0].web_url'
+```
+
+If `jq` is unavailable, fall back to listing the most recent pipeline:
+
+```sh
+glab ci list --limit 1
+```
+
+Show the user the direct link:
+
+> "The release pipeline is running. Follow it here: <pipeline-url>"
+
+Then ask the user to confirm the release landed:
+
+> "Once the pipeline finishes, please check that the release announcement has been posted in the **#designsystem-releases** Slack channel. Let me know if anything looks off."
 
 ---
 
