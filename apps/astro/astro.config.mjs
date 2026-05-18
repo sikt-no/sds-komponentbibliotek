@@ -32,6 +32,9 @@ export default defineConfig({
     pagefind(),
   ],
   site: siteUrl,
+  image: {
+    dangerouslyProcessSVG: true,
+  },
   server: {
     open: true,
     // INFO: These should be identical to Response Headers in nginx/headers.conf
