@@ -10,12 +10,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "apps",
-    "packages",
-    "types",
-    "jest",
-    "apps/storybook/.storybook/*"
-  ],
+  "include": ["packages", "types", "jest", "apps/storybook/.storybook/*"],
   "exclude": ["node_modules", "apps/storybook/storybook-static"]
 }
