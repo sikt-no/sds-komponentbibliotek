@@ -82,7 +82,7 @@ const config: StorybookConfig = {
     return config;
   },
   features: {
-    experimentalComponentsManifest: true,
+    componentsManifest: true,
   },
 };
 
