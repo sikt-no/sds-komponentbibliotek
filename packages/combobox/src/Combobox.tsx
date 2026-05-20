@@ -194,7 +194,6 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
 
     // Set mounted state after hydration
     useEffect(() => {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsMounted(true);
     }, []);
 
