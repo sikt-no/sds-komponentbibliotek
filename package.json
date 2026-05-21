@@ -61,7 +61,7 @@
     "@commitlint/cli": "^20.5.3",
     "@commitlint/config-conventional": "^20.5.3",
     "@eslint/config-helpers": "^0.6.0",
-    "@figma/code-connect": "^1.4.4",
+    "@figma/code-connect": "^1.4.5",
     "@playwright/test": "^1.60.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
