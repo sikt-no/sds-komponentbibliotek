@@ -67,6 +67,7 @@ type ComboboxBaseProps = {
    * @default "nb"
    */
   lang?: "nb" | "nn" | "en";
+  noChips?: boolean;
 } & Omit<HTMLAttributes<UHTMLComboboxElement>, "defaultValue" | "onChange"> &
   (
     | {
@@ -139,6 +140,7 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
       selected,
       defaultSelected,
       onSelectedChange,
+      noChips,
       ...rest
     },
     ref,
@@ -242,6 +244,7 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
           "sds-form-field",
           errorText && "sds-form-field--error",
           "sds-combobox",
+          noChips && "sds-combobox--no-chips",
           errorText && "sds-combobox--invalid",
           className,
         )}
