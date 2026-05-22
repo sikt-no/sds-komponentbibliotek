@@ -1,4 +1,4 @@
-import { includeIgnoreFile } from "@eslint/config-helpers";
+import { includeIgnoreFile } from "eslint/config";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
