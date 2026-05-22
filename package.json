@@ -80,7 +80,7 @@
     "commit-and-tag-version": "^12.7.3",
     "esbuild-plugin-svgr": "^3.1.1",
     "esbuild-postcss": "^0.0.4",
-    "eslint": "^10.3.0",
+    "eslint": "^10.4.0",
     "husky": "^9.1.7",
     "jest": "^30.4.2",
     "jest-axe": "^10.0.0",
