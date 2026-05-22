@@ -74,6 +74,26 @@
   }
   /* stylelint-enable selector-max-type */
 
+  &__optgroup {
+    --select-optgroup-margin-v: var(--sds-space-padding-small);
+    --select-optgroup-margin-h: var(--sds-space-padding-minimal);
+
+    font-size: var(--sds-typography-label-default-fontsize);
+    font-weight: var(--sds-typography-label-default-fontweight);
+    line-height: var(--sds-typography-label-default-lineheight);
+    margin: var(--select-optgroup-margin-v) var(--select-optgroup-margin-h) 0
+      var(--select-optgroup-margin-h);
+
+    .sds-select__option {
+      margin-right: calc(var(--select-optgroup-margin-h) * -1);
+      margin-left: calc(var(--select-optgroup-margin-h) * -1);
+
+      &:first-child {
+        margin-top: var(--select-optgroup-margin-v);
+      }
+    }
+  }
+
   &__select {
     --select-button-font-size: var(--sds-typography-fontsize-700);
     --select-button-padding: var(--sds-space-padding-minimal);

@@ -19,7 +19,7 @@ describe("Select", () => {
       render(
         <Select
           label="Foo"
-          options={[{ label: "Bar", value: "bar" }]}
+          options={[{ label: "Bar", value: "bar" }, { label: "Baz" }]}
           data-testid="test"
         />,
       );
@@ -113,6 +113,23 @@ describe("Select", () => {
       );
 
       expect(screen.getByRole("combobox", { name: "Foo" })).toBeInTheDocument();
+    });
+
+    it("should render with grouped options", async () => {
+      render(
+        <Select
+          label="Foo"
+          options={[
+            {
+              label: "Group",
+              options: [{ label: "Bar", value: "bar" }, { label: "Baz" }],
+            },
+          ]}
+        />,
+      );
+
+      const option = screen.getByRole("option", { name: "Bar" });
+      expect(option.parentElement).toHaveAttribute("label", "Group");
     });
   });
 });

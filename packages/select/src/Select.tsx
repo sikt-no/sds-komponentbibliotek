@@ -8,15 +8,24 @@ import {
   SelectHTMLAttributes,
   forwardRef,
   useId,
+  OptgroupHTMLAttributes,
 } from "react";
 import "./select.pcss";
+
+type OptionProps = OptionHTMLAttributes<HTMLOptionElement>;
+
+interface SelectOptionGroupProps extends OptgroupHTMLAttributes<HTMLOptGroupElement> {
+  options: OptionProps[];
+}
+
+type SelectOptionProps = OptionProps | SelectOptionGroupProps;
 
 interface SelectBaseProps extends Omit<
   SelectHTMLAttributes<HTMLSelectElement>,
   "onChange" | "aria-label" | "aria-labelledby"
 > {
   className?: string;
-  options: Omit<OptionHTMLAttributes<HTMLOptionElement>, "selected">[];
+  options: SelectOptionProps[];
   /**
    * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.
    */
@@ -42,6 +51,28 @@ export type SelectProps = SelectBaseProps &
         "aria-labelledby": string;
       }
   );
+
+const isOptionGroup = (
+  option: SelectOptionProps,
+): option is SelectOptionGroupProps =>
+  "options" in option && Array.isArray(option.options);
+
+const Option = ({ label, value, ...rest }: OptionProps) => (
+  <option className="sds-select__option" value={value} {...rest}>
+    {label}
+  </option>
+);
+
+const SelectOptionGroup = ({ label, options }: SelectOptionGroupProps) => (
+  <optgroup className="sds-select__optgroup" label={label}>
+    {options.map((option) => (
+      <Option
+        key={`${option.value?.toString() ?? option.label?.toString()}`}
+        {...option}
+      />
+    ))}
+  </optgroup>
+);
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
@@ -94,11 +125,16 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             }}
             {...rest}
           >
-            {options.map((option) => (
-              <option key={option.value?.toString()} {...option}>
-                {option.label}
-              </option>
-            ))}
+            {options.map((option) =>
+              isOptionGroup(option) ? (
+                <SelectOptionGroup key={option.label} {...option} />
+              ) : (
+                <Option
+                  key={`${option.value?.toString() ?? option.label?.toString()}`}
+                  {...option}
+                />
+              ),
+            )}
           </select>
           <span className="sds-select__select-button">
             <ExpandShowAltIcon />

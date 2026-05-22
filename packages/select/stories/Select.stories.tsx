@@ -43,6 +43,43 @@ export const Default = {
   },
 } satisfies Story;
 
+export const Group = {
+  args: {
+    label: "Label",
+    options: [
+      {
+        label: "First group",
+        options: [
+          { label: "First item", value: "1" },
+          { label: "Second item", value: "2" },
+          { label: "Third item", value: "3" },
+        ],
+      },
+      {
+        label: "Second group",
+        options: [
+          { label: "First item", value: "4" },
+          { label: "Second item", value: "5" },
+          { label: "Third item", value: "6" },
+        ],
+      },
+    ],
+    value: "2",
+  },
+  render: (args) => {
+    const [, setArgs] = useArgs();
+    return (
+      <Select
+        {...args}
+        onChange={(event) => {
+          console.log(event);
+          setArgs({ value: event.target.value });
+        }}
+      />
+    );
+  },
+} satisfies Story;
+
 export const WithHelpText = {
   args: {
     ...Default.args,
