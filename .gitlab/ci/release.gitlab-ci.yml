@@ -45,7 +45,7 @@ publish-npm:
       token: $VAULT_ID_TOKEN
       file: false
   before_script:
-    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
   script:
     - npm publish --workspace=packages/${PACKAGE_NAME} --access public
   dependencies:
