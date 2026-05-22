@@ -1,11 +1,9 @@
 import { OptionHTMLAttributes } from "react";
 import "@u-elements/u-datalist";
 
-export const Option = ({
-  label,
-  value,
-  ...rest
-}: OptionHTMLAttributes<HTMLOptionElement>) => (
+export type OptionProps = OptionHTMLAttributes<HTMLOptionElement>;
+
+export const Option = ({ label, value, ...rest }: OptionProps) => (
   <u-option
     className="sds-combobox__datalist-option"
     value={value}

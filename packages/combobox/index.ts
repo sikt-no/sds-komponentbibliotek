@@ -3,7 +3,7 @@ export type {
   ComboboxSingleProps,
   ComboboxMultipleProps,
   ComboboxOption,
-  ComboboxOptionGroupProps,
   ComboboxItem,
 } from "./src/Combobox";
+export type { ComboboxOptionGroupProps } from "./src/OptionGroup";
 export { Combobox } from "./src/Combobox";

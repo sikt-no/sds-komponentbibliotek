@@ -2,9 +2,9 @@ import type { OptionHTMLAttributes } from "react";
 import type {
   ComboboxItem,
   ComboboxOption,
-  ComboboxOptionGroupProps,
   ComboboxSelected,
 } from "./Combobox";
+import type { ComboboxOptionGroupProps } from "./OptionGroup";
 
 export const isOptionGroup = (
   item: ComboboxOption,

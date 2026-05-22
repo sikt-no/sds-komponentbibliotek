@@ -4,7 +4,6 @@ import { clsx } from "clsx/lite";
 import {
   InputHTMLAttributes,
   HTMLAttributes,
-  OptionHTMLAttributes,
   ReactNode,
   useEffect,
   useId,
@@ -17,8 +16,8 @@ import "@u-elements/u-datalist";
 import "./combobox.pcss";
 import { ClearButton } from "./ClearButton";
 import { ExpandButton } from "./ExpandButton";
-import { Option } from "./Option";
-import { OptionGroup } from "./OptionGroup";
+import { Option, type OptionProps } from "./Option";
+import { OptionGroup, type ComboboxOptionGroupProps } from "./OptionGroup";
 import {
   isOptionGroup,
   flattenOptions,
@@ -32,20 +31,7 @@ export interface ComboboxItem {
   value: string;
 }
 
-export interface ComboboxOptionGroupProps {
-  /**
-   * Label for the section heading.
-   */
-  label: string;
-  /**
-   * Options within this section.
-   */
-  options: OptionHTMLAttributes<HTMLOptionElement>[];
-}
-
-export type ComboboxOption =
-  | OptionHTMLAttributes<HTMLOptionElement>
-  | ComboboxOptionGroupProps;
+export type ComboboxOption = OptionProps | ComboboxOptionGroupProps;
 
 type ComboboxValue<T extends { multiple: boolean }> = T["multiple"] extends true
   ? (string | ComboboxItem)[]

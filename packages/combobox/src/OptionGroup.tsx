@@ -1,6 +1,9 @@
-import { useId } from "react";
-import type { ComboboxOptionGroupProps } from "./Combobox";
-import { Option } from "./Option";
+import { OptgroupHTMLAttributes, useId } from "react";
+import { Option, type OptionProps } from "./Option";
+
+export interface ComboboxOptionGroupProps extends OptgroupHTMLAttributes<HTMLOptGroupElement> {
+  options: OptionProps[];
+}
 
 export const OptionGroup = ({ label, options }: ComboboxOptionGroupProps) => {
   const id = useId();
