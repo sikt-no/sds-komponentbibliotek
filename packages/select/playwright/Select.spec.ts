@@ -11,6 +11,7 @@ test.describe("Select", () => {
       );
 
       await page.locator(componentSelector).waitFor();
+      await page.locator(componentSelector).click();
 
       const accessibilityScanResults = await new AxeBuilder({ page })
         .include(componentSelector)
@@ -53,7 +54,10 @@ test.describe("Select", () => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-select--default",
       );
-      await page.evaluate(() => document.fonts.ready);
+
+      await page.locator(componentSelector).waitFor();
+      await page.locator(componentSelector).click();
+
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
@@ -61,7 +65,9 @@ test.describe("Select", () => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-select--with-help-text",
       );
-      await page.evaluate(() => document.fonts.ready);
+
+      await page.locator(componentSelector).waitFor();
+
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
@@ -69,7 +75,9 @@ test.describe("Select", () => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-select--with-error",
       );
-      await page.evaluate(() => document.fonts.ready);
+
+      await page.locator(componentSelector).waitFor();
+
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
   });
