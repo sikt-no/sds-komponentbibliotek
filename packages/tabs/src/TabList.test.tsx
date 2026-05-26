@@ -43,8 +43,11 @@ describe("TabList", () => {
   });
 
   describe("overflow", () => {
+    let togglePopoverMock: jest.Mock;
+
     beforeEach(() => {
-      HTMLElement.prototype.togglePopover = jest.fn();
+      togglePopoverMock = jest.fn();
+      HTMLElement.prototype.togglePopover = togglePopoverMock;
     });
 
     it("renders overflow tabs in popover when cutIndex < tabCount", () => {
@@ -84,6 +87,8 @@ describe("TabList", () => {
 
       const overflowTabs = screen.getAllByRole("tab");
       await user.click(overflowTabs[overflowTabs.length - 1]);
+
+      expect(togglePopoverMock).toHaveBeenCalled();
     });
   });
 });
