@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@7.0.4...@sikt/sds-tabs@7.1.0) (2026-05-27)
+
+### Features
+
+- **tabs:** replace overflow logic with useTabOverflow ([673977b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/673977badaea3ae0504ff74f42eaceb2d9110d1f))
+
 ## [7.0.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@7.0.3...@sikt/sds-tabs@7.0.4) (2026-05-08)
 
 ## [7.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-tabs@7.0.2...@sikt/sds-tabs@7.0.3) (2026-04-20)
