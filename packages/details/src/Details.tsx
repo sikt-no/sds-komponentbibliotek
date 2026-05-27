@@ -8,7 +8,7 @@ export interface DetailsProps extends DetailsHTMLAttributes<HTMLDetailsElement> 
   children: ReactNode;
   size?: "small" | "large";
   /**
-   * Label for the disclosure widget and it's contents (`{children}`).
+   * Label for the disclosure widget and its contents (`{children}`).
    */
   summary: ReactNode;
   /**

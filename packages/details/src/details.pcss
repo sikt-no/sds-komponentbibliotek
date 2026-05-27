@@ -2,10 +2,6 @@
   border-top: var(--details-border);
   border-bottom: var(--details-border);
 
-  ::-webkit-details-marker {
-    display: none;
-  }
-
   & + & {
     border-top: none;
   }
@@ -39,6 +35,7 @@
 
   &__summary {
     align-items: center;
+    list-style: none;
     border-radius: var(--summary-border-radius);
     color: var(--sds-color-text-primary);
     cursor: pointer;
@@ -99,12 +96,12 @@
     transition:
       content-visibility var(--sds-effect-animation-duration-medium)
         allow-discrete,
-      height var(--sds-effect-animation-duration-medium)
+      block-size var(--sds-effect-animation-duration-medium)
         var(--sds-effect-animation-easing-default);
   }
 
   &[open]::details-content {
-    height: auto;
+    block-size: auto;
   }
 
   &__content {
