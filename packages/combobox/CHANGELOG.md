@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.2.2...@sikt/sds-combobox@5.3.0) (2026-05-28)
+
+### Features
+
+- **combobox:** add prop for hiding chips ([41bef25](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/41bef25bb25b58c9043e0cd4d00e8d76ec1964e2))
+
+### Bug Fixes
+
+- select option styling ([c5150c5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c5150c5dc19d7c9228c692354a098c6fd34448a2))
+
 ## [5.2.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.2.1...@sikt/sds-combobox@5.2.2) (2026-05-08)
 
 ### Bug Fixes
