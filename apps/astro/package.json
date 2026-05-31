@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/mdx": "^5.0.6",
     "@astrojs/react": "^5.0.5",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@phosphor-icons/react": "^2.1.10",
     "@sikt/sds-breadcrumbs": "^2.0.3",
     "@sikt/sds-button": "^4.0.1",
@@ -30,7 +30,7 @@
     "@sikt/sds-tabs": "^3.0.4",
     "@sikt/sds-tag": "^1.0.0",
     "@sikt/sds-tokens": "^6.0.0",
-    "astro": "^6.3.7",
+    "astro": "^6.3.8",
     "astro-matomo": "^1.10.0",
     "astro-pagefind": "^1.8.6",
     "canvas-confetti": "^1.9.4",
