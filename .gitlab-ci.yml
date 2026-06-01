@@ -1,6 +1,8 @@
 default:
   image: node:24.16.0
   interruptible: true
+  artifacts:
+    expire_in: 1 days
 
 include:
   - component: gitlab.sikt.no/platon/ci-components/docker/docker@4.0.0
