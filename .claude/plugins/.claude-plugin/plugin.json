@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "sikt-sds",
+  "description": "Sikt designsystem Claude plugins",
+  "version": "0.1.0"
+}

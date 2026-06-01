@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "description": "Sikt designsystem Claude marketplace",
+  "name": "sikt-sds",
+  "owner": {
+    "name": "Sikt designsystem",
+    "url": "https://designsystem.sikt.no/"
+  },
+  "plugins": [
+    {
+      "name": "sikt-sds",
+      "description": "Sikt designsystem Claude plugins",
+      "source": "./.claude/plugins"
+    }
+  ],
+  "version": "0.1.0"
+}

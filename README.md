@@ -12,6 +12,7 @@ A component library for [Sikt designsystem](https://isikt.sharepoint.com/sites/I
   - [Stylesheets & custom markup](#stylesheets--custom-markup)
     - htmx
   - [Vue](#vue)
+  - [Agents](#agents)
 - [Accessibility](#accessibility)
 - [Contribute](#contribute)
 - [Security](#security)
@@ -97,6 +98,18 @@ These are example web applications to see how things can be built with Sikt desi
 - [Min kompetanse](https://gitlab.sikt.no/fs/min-kompetanse) (Next.js)
 - [FS Admin](https://gitlab.sikt.no/studieadm/fs-admin) (Next.js)
 - [htmx+TailwindCSS](https://gitlab.sikt.no/designsystem/htmx-tailwindcss) (htmx & TailwindCSS)
+
+### Agents
+
+#### Claude Plugins
+
+Install plugins for Claude from our marketplace:
+
+```
+claude
+/plugin marketplace add https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git
+/plugin install sikt-sds@sikt-sds
+```
 
 ## Accessibility
 

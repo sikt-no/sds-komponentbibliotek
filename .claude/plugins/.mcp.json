@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "storybook-mcp": {
+      "command": "npx",
+      "args": ["-y", "storybook-mcp@latest"],
+      "env": {
+        "STORYBOOK_URL": "https://designsystem.sikt.no/storybook/index.json"
+      }
+    }
+  }
+}
