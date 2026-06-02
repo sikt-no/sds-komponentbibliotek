@@ -1,4 +1,3 @@
-import { Fieldset } from "@sikt/sds-form";
 import { RadioFieldset } from "@sikt/sds-radio";
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
@@ -29,16 +28,14 @@ describe("FilterListItem", () => {
       let value = "false";
 
       render(
-        <Fieldset legend={<>Legend</>}>
-          <FilterListItem
-            type="checkbox"
-            label="Has good grades"
-            value="true"
-            onChange={(event) => {
-              value = event.target.value;
-            }}
-          />
-        </Fieldset>,
+        <FilterListItem
+          type="checkbox"
+          label="Has good grades"
+          value="true"
+          onChange={(event) => {
+            value = event.target.value;
+          }}
+        />,
       );
 
       expect(screen.getByLabelText("Has good grades")).toBeInTheDocument();
