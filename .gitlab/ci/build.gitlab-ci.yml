@@ -55,6 +55,8 @@ storybook:
     expire_in: 1 days
     paths:
       - apps/storybook/storybook-static
+  dependencies:
+    - packages
   needs:
     - install
     - packages

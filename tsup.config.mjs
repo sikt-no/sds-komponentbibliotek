@@ -6,7 +6,7 @@ import { defineConfig } from "tsup";
 export default defineConfig({
   name: "tsup",
   entry: ["./index.ts"],
-  target: [...browserslistToEsbuild()],
+  target: browserslistToEsbuild(),
   dts: {
     compilerOptions: {
       moduleResolution: "node",

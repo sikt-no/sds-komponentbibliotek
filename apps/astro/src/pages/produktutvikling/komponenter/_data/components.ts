@@ -1,4 +1,4 @@
-const storybookUrl = `${import.meta.env.PUBLIC_STORYBOOK_URL}`;
+const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
 
 export const components = [
   {
