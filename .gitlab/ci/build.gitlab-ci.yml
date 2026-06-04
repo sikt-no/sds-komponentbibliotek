@@ -4,7 +4,7 @@ packages:
     - .npm_cache
   script:
     - npm pkg delete scripts.prepare
-    - npm ci --cache .npm
+    - npm ci --no-audit --no-fund --cache .npm
     - npm run postinstall
     - npm run build
   cache:
@@ -40,7 +40,7 @@ storybook:
   extends: .npm_cache
   script:
     - npm pkg delete scripts.prepare
-    - npm ci --cache .npm
+    - npm ci --no-audit --no-fund --cache .npm
     - npm run postinstall
     - npm run build:storybook
   cache:
@@ -77,7 +77,7 @@ astro:
   extends: .npm_cache
   script:
     - npm pkg delete scripts.prepare
-    - npm ci --cache .npm
+    - npm ci --no-audit --no-fund --cache .npm
     - npm run postinstall
     - npm run build:astro
   cache:

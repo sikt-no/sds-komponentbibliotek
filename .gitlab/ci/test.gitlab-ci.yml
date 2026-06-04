@@ -3,7 +3,7 @@ lint:
   extends: .npm_cache
   script:
     - npm pkg delete scripts.prepare
-    - npm ci --cache .npm
+    - npm ci --no-audit --no-fund --cache .npm
     - npm run postinstall
     - npm run lint
   needs:
@@ -19,7 +19,7 @@ test-unit:
   extends: .npm_cache
   script:
     - npm pkg delete scripts.prepare
-    - npm ci --cache .npm
+    - npm ci --no-audit --no-fund --cache .npm
     - npm run postinstall
     - npm run test
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
@@ -49,7 +49,7 @@ test-e2e:
         SHARD_TOTAL: 6
   script:
     - npm pkg delete scripts.prepare
-    - npm ci --cache .npm
+    - npm ci --no-audit --no-fund --cache .npm
     - npm run postinstall
     - npx playwright install --with-deps
     - npm run test:e2e -- --shard=$SHARD_INDEX/$SHARD_TOTAL
@@ -87,7 +87,7 @@ test-e2e-update-snapshots:
       file: false
   script:
     - npm pkg delete scripts.prepare
-    - npm ci --cache .npm
+    - npm ci --no-audit --no-fund --cache .npm
     - npm run postinstall
     - npx playwright install --with-deps
     - npm run test:e2e -- --update-snapshots=changed

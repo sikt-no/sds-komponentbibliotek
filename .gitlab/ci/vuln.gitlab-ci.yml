@@ -41,3 +41,11 @@ vuln-schedule-report:
   when: on_failure
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+audit:
+  stage: test
+  extends: .npm_cache
+  allow_failure: true
+  script:
+    - npm audit --omit=dev --audit-level=moderate
+  needs: []

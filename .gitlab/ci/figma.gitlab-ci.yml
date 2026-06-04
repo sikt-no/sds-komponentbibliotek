@@ -13,7 +13,7 @@ publish-figma:
   script:
     - npm pkg delete scripts.prepare
     - npm pkg delete scripts.postinstall
-    - npm ci --cache .npm
+    - npm ci --no-audit --no-fund --cache .npm
     - npx figma connect publish --token ${FIGMA_TOKEN}
     - npx figma connect publish --token ${FIGMA_TOKEN} --config figma.html.config.json
   needs:
