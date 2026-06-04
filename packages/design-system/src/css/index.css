@@ -1,0 +1,15 @@
+@import url("sanitize.css");
+@import url("sanitize.css/assets.css");
+@import url("sanitize.css/forms.css");
+@import url("sanitize.css/typography.css");
+@import url("sanitize.css/reduce-motion.css");
+
+/* @import url("@sikt/sd3-design-tokens"); */
+@import url("./reset.css");
+@import url("./font-face.css");
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none !important;
+  }
+}

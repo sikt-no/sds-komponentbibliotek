@@ -1,2 +1,11 @@
-export type { DesignSystemProps } from "./src/DesignSystem";
-export { DesignSystem } from "./src/DesignSystem";
+import "./src/css/index.css";
+
+export type {
+  Category,
+  Density,
+  IconPosition,
+  Variant,
+  Visibility,
+  Size,
+  State,
+} from "./types";

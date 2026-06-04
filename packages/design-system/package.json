@@ -9,8 +9,8 @@
     "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git",
     "directory": "packages/design-system"
   },
-  "type": "commonjs",
-  "main": "dist/index.cjs",
+  "type": "module",
+  "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "exports": {
     ".": {
@@ -36,8 +36,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {}
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.3.0",
+    "@sikt/sd3-design-tokens": "^0.1.0",
+    "sanitize.css": "^13.0.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "clsx": "^2.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
 }
