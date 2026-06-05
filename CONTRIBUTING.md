@@ -63,6 +63,10 @@ Good starting point templates for filing bugs, discussions or requests. Fill out
 
 ### Architecture
 
+#### Decisions
+
+See [Architectural Decision Record](./docs/architecture/decisions/).
+
 #### Naming
 
 - Sikt Design System's acronym, `sds`, is used as prefix for packages, classes and so on. It is used as a suffix for config packages since that is convention and a requirement for some configs.
@@ -148,7 +152,6 @@ mise install
 
 ```sh
 npm ci
-npm run postinstall
 npm run build
 npm run dev
 ```
