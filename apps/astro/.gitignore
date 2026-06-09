@@ -1,3 +1,4 @@
 # build
 .astro/
+/public/.well-known/agent-skills
 /public/images/sds-icons

@@ -4,11 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npm run copy:icons && astro dev",
-    "build": "npm run copy:icons && astro build",
+    "dev": "run-p copy:* && astro dev",
+    "build": "run-p copy:* && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "copy:icons": "cpy ../../packages/icons/dist/assets public/images/sds-icons --flat"
+    "copy:icons": "cpy ../../packages/icons/dist/assets public/images/sds-icons --flat",
+    "copy:skills": "cpy ../../.claude/plugins/skills/* public/.well-known/agent-skills"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.6",
@@ -46,6 +47,7 @@
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.5.0",
     "cpy-cli": "^7.0.0",
+    "gray-matter": "^4.0.3",
     "postcss-custom-media": "^12.0.1",
     "prettier-plugin-astro": "^0.14.1",
     "style-dictionary": "^5.4.3",

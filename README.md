@@ -90,15 +90,6 @@ Create custom markup:
 
 See custom markup below or go to the [Vue component example](./docs/VUE.md).
 
-## Examples
-
-These are example web applications to see how things can be built with Sikt designsystem:
-
-- [designsystem.sikt.no](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/apps/astro) (Astro)
-- [Min kompetanse](https://gitlab.sikt.no/fs/min-kompetanse) (Next.js)
-- [FS Admin](https://gitlab.sikt.no/studieadm/fs-admin) (Next.js)
-- [htmx+TailwindCSS](https://gitlab.sikt.no/designsystem/htmx-tailwindcss) (htmx & TailwindCSS)
-
 ### Agents
 
 #### Claude Plugins
@@ -110,6 +101,15 @@ claude
 /plugin marketplace add https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git
 /plugin install sikt-sds@sikt-sds
 ```
+
+## Examples
+
+These are example web applications to see how things can be built with Sikt designsystem:
+
+- [designsystem.sikt.no](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/apps/astro) (Astro)
+- [Min kompetanse](https://gitlab.sikt.no/fs/min-kompetanse) (Next.js)
+- [FS Admin](https://gitlab.sikt.no/studieadm/fs-admin) (Next.js)
+- [htmx+TailwindCSS](https://gitlab.sikt.no/designsystem/htmx-tailwindcss) (htmx & TailwindCSS)
 
 ## Accessibility
 
