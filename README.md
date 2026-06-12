@@ -100,6 +100,7 @@ Install plugins for Claude from our marketplace:
 claude
 /plugin marketplace add https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git
 /plugin install sikt-sds@sikt-sds
+/reload-plugins
 ```
 
 ## Examples
