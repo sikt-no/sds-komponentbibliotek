@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { ElementType, HTMLAttributes, ReactNode, useId } from "react";
-import "./card.pcss";
+import "./card.css";
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   image?: ReactNode;

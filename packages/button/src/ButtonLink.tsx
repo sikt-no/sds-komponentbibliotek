@@ -9,7 +9,7 @@ import {
 } from "react";
 import type { ButtonIconVariant, ButtonSize, ButtonVariant } from "./Button";
 import { reactNodeToString } from "./utils/reactNodeToString";
-import "./button-link.pcss";
+import "./button-link.css";
 
 export type ButtonLinkProps =
   | ButtonLinkChildrenProps

@@ -8,7 +8,7 @@ import {
   useCallback,
   useId,
 } from "react";
-import "./input.pcss";
+import "./input.css";
 
 interface TextAreaBaseProps extends Omit<
   InputHTMLAttributes<HTMLTextAreaElement>,

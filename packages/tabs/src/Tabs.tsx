@@ -9,7 +9,7 @@ import {
   isValidElement,
   useId,
 } from "react";
-import "./tabs.pcss";
+import "./tabs.css";
 import { TabPanelProps } from "./TabPanel";
 import { TabsContext } from "./TabsContext";
 

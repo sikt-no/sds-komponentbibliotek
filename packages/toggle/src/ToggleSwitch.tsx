@@ -7,7 +7,7 @@ import {
   forwardRef,
   useId,
 } from "react";
-import "./toggle-switch.pcss";
+import "./toggle-switch.css";
 
 interface ToggleSwitchBaseProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,

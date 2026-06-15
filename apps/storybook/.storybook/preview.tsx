@@ -1,15 +1,15 @@
 import type { Preview } from "@storybook/react-webpack5";
-import "../../../packages/core/src/index.pcss";
-import "../../../packages/logo/src/logo.pcss";
-import "../../../packages/icons/src/icon.pcss";
-import "../../../packages/input/src/input.pcss";
-import "../../../packages/button/src/button.pcss";
-import "../../../packages/button/src/button-link.pcss";
-import "../../../packages/form/src/fieldset.pcss";
-import "../../../packages/form/src/form-field.pcss";
-import "../../../packages/checkbox/src/checkbox-input.pcss";
-import "../../../packages/table/src/table.pcss";
-import "../../../packages/list/src/list.pcss";
+import "../../../packages/core/src/index.css";
+import "../../../packages/logo/src/logo.css";
+import "../../../packages/icons/src/icon.css";
+import "../../../packages/input/src/input.css";
+import "../../../packages/button/src/button.css";
+import "../../../packages/button/src/button-link.css";
+import "../../../packages/form/src/fieldset.css";
+import "../../../packages/form/src/form-field.css";
+import "../../../packages/checkbox/src/checkbox-input.css";
+import "../../../packages/table/src/table.css";
+import "../../../packages/list/src/list.css";
 import "./style.css";
 
 const preview: Preview = {

@@ -2,7 +2,7 @@ import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
 import { HelpText } from "./HelpText";
 import { Label } from "./Label";
-import "./form-field.pcss";
+import "./form-field.css";
 
 export interface FormFieldProps extends Omit<
   HTMLAttributes<HTMLLabelElement>,

@@ -36,12 +36,12 @@
     },
     {
       "matchPackagePatterns": [
-        "tsup",
-        "esbuild",
-        "terser",
-        "browserslist-to-esbuild"
+        "tsdown",
+        "rollup",
+        "browserslist-to-esbuild",
+        "publint"
       ],
-      "groupName": "esbuild"
+      "groupName": "rolldown"
     },
     {
       "matchPackagePatterns": ["typescript"],

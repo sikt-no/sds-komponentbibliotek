@@ -2,7 +2,7 @@ import { Button } from "@sikt/sds-button";
 import { ExpandShowIcon } from "@sikt/sds-icons";
 import clsx from "clsx";
 import { ReactNode, useId, useState } from "react";
-import "./filter-list-expand.pcss";
+import "./filter-list-expand.css";
 
 interface FilterListExpandProps {
   header: ReactNode;

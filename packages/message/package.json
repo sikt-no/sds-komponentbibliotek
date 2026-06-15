@@ -9,7 +9,7 @@
     "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
   },
   "type": "commonjs",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "exports": {
     ".": {
@@ -19,21 +19,24 @@
         "default": "./dist/index.mjs"
       },
       "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
       }
     },
     "./dist/*": "./dist/*"
   },
-  "types": "dist/index.d.ts",
+  "types": "dist/index.d.cts",
   "style": "dist/index.css",
   "files": [
     "CHANGELOG.md",
     "dist",
     "README.md"
   ],
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@sikt/sds-button": "^4.6.0",

@@ -10,7 +10,7 @@ import {
   useId,
   OptgroupHTMLAttributes,
 } from "react";
-import "./select.pcss";
+import "./select.css";
 
 type OptionProps = OptionHTMLAttributes<HTMLOptionElement>;
 

@@ -1,7 +1,7 @@
 import { ScreenReaderOnly } from "@sikt/sds-core";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode, TableHTMLAttributes } from "react";
-import "./table.pcss";
+import "./table.css";
 
 export interface TableProps extends TableHTMLAttributes<HTMLTableElement> {
   className?: string;

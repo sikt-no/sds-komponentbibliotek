@@ -2,7 +2,7 @@ import { CheckboxInput } from "@sikt/sds-checkbox";
 import { RadioInput } from "@sikt/sds-radio";
 import { ChangeEvent, ReactElement, ReactNode } from "react";
 import { FilterListIconLabel } from "../components/FilterListIconLabel/FilterListIconLabel";
-import "./filter-list-item.pcss";
+import "./filter-list-item.css";
 
 export interface FilterListItemProps {
   type: "radio" | "checkbox";

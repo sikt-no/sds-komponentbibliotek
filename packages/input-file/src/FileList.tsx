@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
-import "./file-list.pcss";
+import "./file-list.css";
 
 export interface FileListProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;

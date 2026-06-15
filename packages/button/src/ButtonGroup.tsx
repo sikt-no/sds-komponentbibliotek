@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { ReactNode } from "react";
-import "./button-group.pcss";
+import "./button-group.css";
 
 export interface ButtonGroupProps {
   children: ReactNode;

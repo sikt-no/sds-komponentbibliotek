@@ -8,7 +8,7 @@
     "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
   },
   "type": "commonjs",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "exports": {
     ".": {
@@ -18,24 +18,28 @@
         "default": "./dist/index.mjs"
       },
       "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
       }
     },
     "./dist/*": "./dist/*",
     "./*.svg": "./dist/*.svg",
     "./assets/*.svg": "./dist/assets/*.svg"
   },
-  "types": "dist/index.d.ts",
+  "types": "dist/index.d.cts",
   "style": "dist/index.css",
   "files": [
     "CHANGELOG.md",
     "dist",
     "README.md"
   ],
+  "sideEffects": [
+    "*.css",
+    "*.svg"
+  ],
   "scripts": {
     "prebuild": "run-s build:*",
-    "build": "tsup",
+    "build": "tsdown",
     "build:icons": "node bin/build.mjs",
     "build:components": "svgr  --config-file svgr/svgr.config.js -- dist/assets",
     "build:sprite": "svgstore dist/assets/*.svg -o dist/sds-icons.svg"

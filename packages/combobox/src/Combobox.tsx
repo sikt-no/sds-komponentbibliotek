@@ -13,7 +13,7 @@ import {
 } from "react";
 import "@u-elements/u-combobox";
 import "@u-elements/u-datalist";
-import "./combobox.pcss";
+import "./combobox.css";
 import { ClearButton } from "./ClearButton";
 import { ExpandButton } from "./ExpandButton";
 import { Option, type OptionProps } from "./Option";

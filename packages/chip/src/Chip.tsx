@@ -1,7 +1,7 @@
 import { AddAltIcon, SubtractAltIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { ButtonHTMLAttributes, ReactNode } from "react";
-import "./chip.pcss";
+import "./chip.css";
 
 interface ChipBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;

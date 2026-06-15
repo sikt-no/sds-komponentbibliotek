@@ -2,7 +2,7 @@ import { Notification } from "@sikt/sds-notification";
 import { clsx } from "clsx";
 import { ReactNode } from "react";
 import { FilterListExpand } from "../components/FilterListExpand/FilterListExpand";
-import "./filter-list-section.pcss";
+import "./filter-list-section.css";
 
 export interface FilterListSectionProps {
   label: string;

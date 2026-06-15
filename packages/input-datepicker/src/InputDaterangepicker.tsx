@@ -35,7 +35,7 @@ import {
   Text,
   DateRangePickerStateContext,
 } from "react-aria-components";
-import "./input-datepicker.pcss";
+import "./input-datepicker.css";
 
 interface InputDaterangepickerBaseProps extends Omit<
   DateRangePickerProps<DateValue>,

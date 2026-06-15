@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { ReactNode } from "react";
-import "./breadcrumbs.pcss";
+import "./breadcrumbs.css";
 
 export interface BreadcrumbsProps {
   "aria-label": NonNullable<string>;

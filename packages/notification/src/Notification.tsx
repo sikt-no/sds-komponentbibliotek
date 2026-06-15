@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
-import "./notification.pcss";
+import "./notification.css";
 
 export interface NotificationProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: "brand" | "neutral" | "success" | "info" | "warning" | "critical";

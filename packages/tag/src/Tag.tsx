@@ -1,7 +1,7 @@
 import { AlertIcon, FailedIcon, InfoIcon, SuccessIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
-import "./tag.pcss";
+import "./tag.css";
 
 type TagVariant =
   | "brand"

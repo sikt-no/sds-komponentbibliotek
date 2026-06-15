@@ -1,5 +1,5 @@
-@import url("./label.pcss");
-@import url("./help-text.pcss");
+@import url("./label.css");
+@import url("./help-text.css");
 
 .sds-form {
   &-field {

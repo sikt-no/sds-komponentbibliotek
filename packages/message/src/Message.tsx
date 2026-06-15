@@ -1,7 +1,7 @@
 import { SuccessIcon, InfoIcon, AlertIcon, FailedIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
-import "./message.pcss";
+import "./message.css";
 
 type MessageVariant = "info" | "warning" | "success" | "critical";
 

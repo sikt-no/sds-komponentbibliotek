@@ -9,7 +9,7 @@ import {
   cloneElement,
   isValidElement,
 } from "react";
-import "./header.pcss";
+import "./header.css";
 
 export interface HeaderProps extends HTMLAttributes<HTMLElement> {
   className?: string;

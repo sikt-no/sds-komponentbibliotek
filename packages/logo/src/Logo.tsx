@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
-import "./logo.pcss";
+import "./logo.css";
 import { ReactComponent as LogoSvg } from "../Logo.svg";
 
 export type LogoVariant = "primary" | "secondary";

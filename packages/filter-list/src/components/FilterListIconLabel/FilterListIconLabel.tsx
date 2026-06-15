@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import "./filter-list-icon-label.pcss";
+import "./filter-list-icon-label.css";
 
 export interface FilterListIconLabelProps {
   icon: ReactNode;

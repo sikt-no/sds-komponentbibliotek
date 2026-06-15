@@ -11,7 +11,7 @@ import {
   useRef,
   useImperativeHandle,
 } from "react";
-import "./checkbox-input.pcss";
+import "./checkbox-input.css";
 
 interface CheckboxInputBaseProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,

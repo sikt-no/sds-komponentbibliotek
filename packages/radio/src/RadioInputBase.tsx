@@ -6,7 +6,7 @@ import {
   forwardRef,
   useId,
 } from "react";
-import "./radio.pcss";
+import "./radio.css";
 
 interface RadioInputBaseBaseProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,

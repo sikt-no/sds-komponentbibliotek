@@ -1,7 +1,7 @@
 import { Fieldset, FieldsetProps } from "@sikt/sds-form";
 import { clsx } from "clsx/lite";
 import { ReactNode, forwardRef } from "react";
-import "./toggle-segment.pcss";
+import "./toggle-segment.css";
 
 export interface ToggleSegmentProps extends Omit<FieldsetProps, "onChange"> {
   children: ReactNode;

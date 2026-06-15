@@ -1,7 +1,7 @@
 import { ExpandShowAltIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { DetailsHTMLAttributes, ReactNode } from "react";
-import "./details.pcss";
+import "./details.css";
 
 export interface DetailsProps extends DetailsHTMLAttributes<HTMLDetailsElement> {
   className?: string;

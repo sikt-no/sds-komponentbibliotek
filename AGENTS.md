@@ -35,7 +35,7 @@ Guidelines for coding agents.
 │   ├── src/
 │   │   ├── Component.tsx
 │   │   ├── Component.test.tsx
-│   │   └── component.pcss
+│   │   └── component.css
 │   ├── stories/
 │   │   └── Component.stories.tsx
 │   ├── CHANGELOG.md

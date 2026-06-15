@@ -123,7 +123,7 @@ Write visual regression tests for components with [Playwright](https://playwrigh
 
 #### Build
 
-Export components as both CSS & React components, with [tsup](https://tsup.egoist.dev/), to allow use of both custom markup & React.  
+Export components as both CSS & React components, with [tsdown](https://tsdown.dev/), to allow use of both custom markup & React.  
 Build all packages with `npm run build` from root.
 
 #### CI/CD
@@ -179,7 +179,7 @@ npm run init
 
 If you have custom build needs, the build script and entry points may vary.  
 Run `npm i` in root to hoist dependencies.  
-Export the component from `index.ts` as this is the input for the [build](./tsup.config.mjs).  
+Export the component from `index.ts` as this is the input for the [build](./tsdown.config.mjs).  
 Create a `README.md` for documentation both near code and for import in Storybook.  
 Create a [Storybook](https://storybook.js.org/docs/react/get-started/introduction) story for live devtools of your component.
 

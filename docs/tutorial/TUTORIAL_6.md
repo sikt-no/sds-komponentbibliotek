@@ -6,7 +6,7 @@
 
 #### Create CSS file & import
 
-- Create `src/confetti-button.pcss`
+- Create `src/confetti-button.css`
 - Import CSS in component
 
 #### Add styling

@@ -3,7 +3,7 @@ import { Notification } from "@sikt/sds-notification";
 import { ReactNode, useId } from "react";
 import { FilterListExpand } from "../components/FilterListExpand/FilterListExpand";
 import { FilterListIconLabel } from "../components/FilterListIconLabel/FilterListIconLabel";
-import "./filter-list-category.pcss";
+import "./filter-list-category.css";
 
 export interface FilterListCategoryProps {
   label: string;

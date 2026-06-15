@@ -1,7 +1,7 @@
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { clsx } from "clsx/lite";
 import { AnchorHTMLAttributes, ReactNode, forwardRef } from "react";
-import "./tab-link.pcss";
+import "./tab-link.css";
 
 export interface TabLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;

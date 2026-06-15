@@ -56,11 +56,6 @@ const config: StorybookConfig = {
   },
   webpackFinal: (config) => {
     config.module?.rules?.push({
-      test: /\.pcss$/,
-      use: ["style-loader", "css-loader", "postcss-loader"],
-    });
-
-    config.module?.rules?.push({
       test: /\.svg$/,
       use: [
         {

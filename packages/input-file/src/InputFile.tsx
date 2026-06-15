@@ -11,7 +11,7 @@ import {
   FileDropItem,
   FileTrigger,
 } from "react-aria-components";
-import "./input-file.pcss";
+import "./input-file.css";
 
 export type FileError = "type" | "size" | "multiple";
 

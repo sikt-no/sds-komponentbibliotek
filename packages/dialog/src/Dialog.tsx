@@ -13,7 +13,7 @@ import {
   useImperativeHandle,
   forwardRef,
 } from "react";
-import "./dialog.pcss";
+import "./dialog.css";
 
 export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
   children: ReactNode;

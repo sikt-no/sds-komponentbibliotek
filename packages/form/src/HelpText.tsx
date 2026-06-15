@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
-import "./help-text.pcss";
+import "./help-text.css";
 
 export interface HelpTextProps extends HTMLAttributes<HTMLDivElement> {
   error?: boolean;

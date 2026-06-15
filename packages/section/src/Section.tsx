@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { ElementType, HTMLAttributes, ReactNode, useId } from "react";
-import "./section.pcss";
+import "./section.css";
 
 export interface SectionProps extends HTMLAttributes<HTMLElement> {
   headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

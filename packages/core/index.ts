@@ -1,4 +1,4 @@
-import "./src/index.pcss";
+import "./src/index.css";
 
 export type { FigureProps } from "./src/Figure/Figure";
 export { Figure } from "./src/Figure/Figure";

@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
-import "./{{kebabCase name}}.pcss";
+import "./{{kebabCase name}}.css";
 
 export interface {{pascalCase name}}Props extends HTMLAttributes<HTMLDivElement> {
   /* props goes here */

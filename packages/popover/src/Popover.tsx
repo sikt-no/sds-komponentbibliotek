@@ -8,7 +8,7 @@ import {
   RefObject,
 } from "react";
 import { useFocusWithin } from "react-aria";
-import "./popover.pcss";
+import "./popover.css";
 
 export interface PopoverProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string;

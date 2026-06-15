@@ -2,7 +2,7 @@ import { Link } from "@sikt/sds-core";
 import { Logo, LogoProps } from "@sikt/sds-logo";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, ReactNode } from "react";
-import "./footer.pcss";
+import "./footer.css";
 
 export interface FooterProps extends HTMLAttributes<HTMLElement> {
   className?: string;

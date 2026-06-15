@@ -16,7 +16,7 @@ import {
   useCallback,
   useId,
 } from "react";
-import "./input.pcss";
+import "./input.css";
 
 interface InputBaseProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,

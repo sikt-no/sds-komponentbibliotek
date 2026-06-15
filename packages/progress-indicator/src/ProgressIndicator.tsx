@@ -11,7 +11,7 @@ import {
   ReactNode,
 } from "react";
 import type { ProgressStepProps } from "./ProgressStep";
-import "./progress-indicator.pcss";
+import "./progress-indicator.css";
 
 export interface ProgressIndicatorBaseProps extends HTMLAttributes<
   HTMLDivElement | HTMLDetailsElement

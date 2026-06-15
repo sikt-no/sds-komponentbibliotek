@@ -3,12 +3,12 @@
 @import url("sanitize.css/forms.css");
 @import url("sanitize.css/typography.css");
 @import url("sanitize.css/reduce-motion.css");
-@import url("./custom-properties.pcss");
-@import url("./reset.pcss");
-@import url("./figure.pcss");
-@import url("./font-face.pcss");
-@import url("./typography.pcss");
-@import url("./screen-reader.pcss");
+@import url("./custom-properties.css");
+@import url("./reset.css");
+@import url("./figure.css");
+@import url("./font-face.css");
+@import url("./typography.css");
+@import url("./screen-reader.css");
 
 @media (prefers-reduced-motion: reduce) {
   @view-transition {

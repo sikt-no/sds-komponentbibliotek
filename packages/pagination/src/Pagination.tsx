@@ -1,7 +1,7 @@
 import { MoveToPreviousIcon, MoveToNextIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, MouseEvent } from "react";
-import "./pagination.pcss";
+import "./pagination.css";
 
 export interface PaginationProps extends Omit<
   HTMLAttributes<HTMLElement>,
