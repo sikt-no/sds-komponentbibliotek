@@ -35,8 +35,8 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.2.4",
-    "@radix-ui/react-use-controllable-state": "^1.2.2",
+    "@radix-ui/react-slot": "^1.2.5",
+    "@radix-ui/react-use-controllable-state": "^1.2.3",
     "@sikt/sds-core": "^5.3.0",
     "@sikt/sds-hooks": "^1.0.0",
     "@sikt/sds-icons": "^4.2.0",
