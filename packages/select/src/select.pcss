@@ -23,7 +23,7 @@
   }
 
   select:open {
-    + .sds-select__select-button {
+    + .sds-select__select-button .sds-icon {
       rotate: 180deg;
     }
   }
@@ -167,8 +167,11 @@
       position: absolute;
       right: var(--select-padding);
       pointer-events: none;
-      transition: rotate var(--sds-effect-animation-duration-medium)
-        var(--sds-effect-animation-easing-default);
+
+      .sds-icon {
+        transition: rotate var(--sds-effect-animation-duration-medium)
+          var(--sds-effect-animation-easing-default);
+      }
     }
   }
 
