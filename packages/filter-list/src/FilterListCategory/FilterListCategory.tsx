@@ -7,6 +7,12 @@ import "./filter-list-category.pcss";
 
 export interface FilterListCategoryProps {
   label: string;
+  /**
+   * Icon element to display on the button.
+   * Should be a `@sikt/sds-icons` element,
+   * or optionally `@phosphor-icons/react`
+   * (with `className="sds-icon" aria-hidden="true"`).
+   */
   icon?: ReactNode;
   expanded?: boolean;
   onExpandToggle?: (expanded: boolean) => void;

@@ -6,6 +6,12 @@ import "./tab-link.pcss";
 export interface TabLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
   className?: string;
+  /**
+   * Icon element to display on the button.
+   * Should be a `@sikt/sds-icons` element,
+   * or optionally `@phosphor-icons/react`
+   * (with `className="sds-icon" aria-hidden="true"`).
+   */
   icon?: ReactNode;
   isSelected?: boolean;
   asChild?: boolean;

@@ -17,6 +17,12 @@ interface TagBaseProps extends HTMLAttributes<HTMLSpanElement> {
   category?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8";
   className?: string;
   children: ReactNode;
+  /**
+   * Icon element to display on the button.
+   * Should be a `@sikt/sds-icons` element,
+   * or optionally `@phosphor-icons/react`
+   * (with `className="sds-icon" aria-hidden="true"`).
+   */
   icon?: ReactNode;
 }
 

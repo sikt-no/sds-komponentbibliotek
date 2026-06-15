@@ -21,6 +21,12 @@ interface TextAreaBaseProps extends Omit<
     newValue: string,
   ) => void;
   value?: string;
+  /**
+   * Icon element to display on the button.
+   * Should be a `@sikt/sds-icons` element,
+   * or optionally `@phosphor-icons/react`
+   * (with `className="sds-icon" aria-hidden="true"`).
+   */
   icon?: ReactNode;
   /**
    * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.

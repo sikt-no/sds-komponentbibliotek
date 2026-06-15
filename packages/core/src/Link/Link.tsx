@@ -25,6 +25,12 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
    * @default false
    */
   asChild?: boolean;
+  /**
+   * Icon element to display on the button.
+   * Should be a `@sikt/sds-icons` element,
+   * or optionally `@phosphor-icons/react`
+   * (with `className="sds-icon" aria-hidden="true"`).
+   */
   icon?: ReactNode;
   iconVariant?: "right" | "left";
 }

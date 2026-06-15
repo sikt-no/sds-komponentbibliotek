@@ -17,6 +17,12 @@ export type ButtonLinkProps =
 
 interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
+  /**
+   * Icon element to display on the button.
+   * Should be a `@sikt/sds-icons` element,
+   * or optionally `@phosphor-icons/react`
+   * (with `className="sds-icon" aria-hidden="true"`).
+   */
   icon?: ReactNode;
   iconVariant?: ButtonIconVariant;
   variant?: ButtonVariant;

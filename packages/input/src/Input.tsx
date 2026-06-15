@@ -26,6 +26,12 @@ interface InputBaseProps extends Omit<
   placeholder?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void;
   value?: string;
+  /**
+   * Icon element to display on the button.
+   * Should be a `@sikt/sds-icons` element,
+   * or optionally `@phosphor-icons/react`
+   * (with `className="sds-icon" aria-hidden="true"`).
+   */
   icon?: ReactNode;
   clearActionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
   actionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
