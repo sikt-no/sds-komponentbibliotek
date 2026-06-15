@@ -18,7 +18,7 @@ interface TagBaseProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;
   children: ReactNode;
   /**
-   * Icon element to display on the button.
+   * Icon element to display on the component.
    * Should be a `@sikt/sds-icons` element,
    * or optionally `@phosphor-icons/react`
    * (with `className="sds-icon" aria-hidden="true"`).

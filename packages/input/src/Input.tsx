@@ -27,7 +27,7 @@ interface InputBaseProps extends Omit<
   onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void;
   value?: string;
   /**
-   * Icon element to display on the button.
+   * Icon element to display on the component.
    * Should be a `@sikt/sds-icons` element,
    * or optionally `@phosphor-icons/react`
    * (with `className="sds-icon" aria-hidden="true"`).
