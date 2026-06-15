@@ -18,6 +18,12 @@ export default defineConfig({
   loader: {
     ".pcss": "css",
   },
+  esbuildOptions(options, context) {
+    options.supported = {
+      // INFO: https://github.com/evanw/esbuild/issues/4436
+      destructuring: true,
+    };
+  },
   esbuildPlugins: [
     svgr({
       exportType: "named",
