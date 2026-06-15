@@ -31,7 +31,7 @@
     "@sikt/sds-tabs": "^3.0.4",
     "@sikt/sds-tag": "^1.0.0",
     "@sikt/sds-tokens": "^6.0.0",
-    "astro": "^6.4.4",
+    "astro": "^6.4.5",
     "astro-matomo": "^1.10.0",
     "astro-pagefind": "^1.8.6",
     "canvas-confetti": "^1.9.4",
