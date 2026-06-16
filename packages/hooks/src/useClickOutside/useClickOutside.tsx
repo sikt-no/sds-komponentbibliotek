@@ -5,16 +5,29 @@ export const useClickOutside = (
   callback: (event: MouseEvent) => void,
 ) => {
   useEffect(() => {
-    const listener = (event: MouseEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
+    let isPointerdownOutside = false;
+
+    const listenerPointerdown = (event: MouseEvent) => {
+      isPointerdownOutside =
+        (ref.current && !ref.current.contains(event.target as Node)) ?? false;
+    };
+    const listenerPointerup = (event: MouseEvent) => {
+      if (
+        isPointerdownOutside &&
+        ref.current &&
+        !ref.current.contains(event.target as Node)
+      ) {
         callback(event);
       }
+      isPointerdownOutside = false;
     };
 
-    document.addEventListener("click", listener);
+    document.addEventListener("pointerdown", listenerPointerdown);
+    document.addEventListener("pointerup", listenerPointerup);
 
     return () => {
-      document.removeEventListener("click", listener);
+      document.removeEventListener("pointerdown", listenerPointerdown);
+      document.removeEventListener("pointerup", listenerPointerup);
     };
   }, [ref, callback]);
 };
