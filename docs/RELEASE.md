@@ -41,3 +41,12 @@ git push --follow-tags
 ```
 
 The following pipeline will create a release & publish the tagged package to npm.
+
+## Update internal dependencies (optional)
+
+Updates all @sikt/sds-\* dependencies in the monorepo to the latest version.
+
+```sh
+npm run deps:fix
+npm i
+```
