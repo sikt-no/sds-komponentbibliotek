@@ -1,6 +1,6 @@
 import { Link } from "@sikt/sds-core";
 import { ApplicationStatus } from "@sikt/sds-message";
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "../index";
 import "@sikt/sds-message/dist/index.css";
 

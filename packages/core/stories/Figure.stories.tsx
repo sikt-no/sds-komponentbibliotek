@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Figure, FigureProps } from "../index";
 import siktStol from "./sikt-stol.jpg";
 

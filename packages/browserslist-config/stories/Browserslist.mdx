@@ -1,6 +1,6 @@
 import { Markdown, Meta, Source } from "@storybook/addon-docs/blocks";
 import Readme from "../README.md?raw";
-import * as config from "!!raw-loader!../index";
+import config from "../index?raw";
 
 <Meta title="Config/Browserslist" />
 
@@ -8,4 +8,4 @@ import * as config from "!!raw-loader!../index";
 
 ## Config
 
-<Source code={config.default} />
+<Source code={config} />

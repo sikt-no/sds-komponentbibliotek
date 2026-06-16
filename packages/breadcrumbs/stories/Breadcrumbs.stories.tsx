@@ -1,6 +1,6 @@
 import { Link } from "@sikt/sds-core";
 import { HomeLandingIcon } from "@sikt/sds-icons";
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import type { BreadcrumbsProps } from "../index";
 import { Breadcrumbs, BreadcrumbItem } from "../index";
 

@@ -1,7 +1,7 @@
 import { Button } from "@sikt/sds-button";
 import { Link, Heading3 } from "@sikt/sds-core";
 import { UnorderedList, ListItem } from "@sikt/sds-list";
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Footer } from "../index";
 
 const meta = {

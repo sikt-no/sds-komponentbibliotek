@@ -1,5 +1,5 @@
 import { SettingsIcon } from "@sikt/sds-icons";
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { EmailInput, InputProps } from "../index";
 
 const meta: Meta = {

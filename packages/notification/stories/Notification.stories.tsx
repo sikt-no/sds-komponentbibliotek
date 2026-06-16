@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Notification } from "../index";
 
 const meta = {

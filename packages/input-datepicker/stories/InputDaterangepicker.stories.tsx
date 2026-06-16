@@ -1,5 +1,5 @@
 import { parseDate } from "@internationalized/date";
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { InputDaterangepicker } from "../index";
 
 const meta = {

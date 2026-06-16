@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Heading3 } from "../../core/index";
 import { Details, DetailsProps } from "../index";
 

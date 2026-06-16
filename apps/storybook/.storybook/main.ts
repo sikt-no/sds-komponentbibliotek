@@ -1,16 +1,11 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import type { StorybookConfig } from "@storybook/react-vite";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const config: StorybookConfig = {
-  framework: "@storybook/react-webpack5",
-  swc: () => ({
-    jsc: {
-      transform: {
-        react: {
-          runtime: "automatic",
-        },
-      },
-    },
-  }),
+  framework: "@storybook/react-vite",
   stories: [
     "../stories/**/*.mdx",
     "../../../packages/*/stories/**/*.mdx",
@@ -19,6 +14,10 @@ const config: StorybookConfig = {
   staticDirs: ["../static"],
   typescript: {
     reactDocgen: "react-docgen-typescript",
+    reactDocgenTypescriptOptions: {
+      tsconfigPath: resolve(__dirname, "../../../tsconfig.json"),
+      exclude: ["**/icons/build/**", "**/.storybook/**"],
+    },
   },
   addons: [
     {
@@ -26,54 +25,24 @@ const config: StorybookConfig = {
       options: { transcludeMarkdown: true },
     },
     "@whitespace/storybook-addon-html",
-    {
-      name: "@storybook/addon-styling-webpack",
-      options: {
-        rules: [
-          {
-            test: /\.css$/,
-            sideEffects: true,
-            use: [
-              "style-loader",
-              {
-                loader: "css-loader",
-                options: {},
-              },
-              {
-                loader: "postcss-loader",
-                options: { implementation: "postcss" },
-              },
-            ],
-          },
-        ],
-      },
-    },
-    "@storybook/addon-webpack5-compiler-swc",
     "@storybook/addon-mcp",
   ],
   core: {
     disableTelemetry: true,
   },
-  webpackFinal: (config) => {
-    config.module?.rules?.push({
-      test: /\.svg$/,
-      use: [
-        {
-          loader: "@svgr/webpack",
-        },
-        {
-          loader: "file-loader",
-          options: {
-            name: "static/media/[path][name].[ext]",
-          },
-        },
-      ],
-      type: "javascript/auto",
-      issuer: {
-        and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
-      },
-    });
-
+  viteFinal: async (config) => {
+    const { default: svgr } = await import("vite-plugin-svgr");
+    // TODO: Logo.tsx uses the CRA-style `{ ReactComponent }` named import.
+    // Scoping to **/Logo.svg is a workaround — the real fix is to migrate
+    // Logo.tsx to the Vite import syntax (`import LogoSvg from "../Logo.svg?react"`)
+    // and drop this plugin override entirely.
+    config.plugins = [
+      svgr({
+        include: "**/Logo.svg",
+        svgrOptions: { exportType: "named", namedExport: "ReactComponent" },
+      }),
+      ...(config.plugins ?? []),
+    ];
     return config;
   },
   features: {

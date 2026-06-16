@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react-webpack5";
+import type { Preview } from "@storybook/react-vite";
 import "../../../packages/core/src/index.css";
 import "../../../packages/logo/src/logo.css";
 import "../../../packages/icons/src/icon.css";

@@ -1,5 +1,5 @@
 import { Button } from "@sikt/sds-button";
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { useArgs } from "storybook/preview-api";
 
 import type { DialogProps } from "../index";

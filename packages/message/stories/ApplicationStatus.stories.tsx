@@ -1,7 +1,7 @@
 import { Header } from "@sikt/sds-header";
 import "@sikt/sds-header/dist/index.css";
 
-import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import {
   ApplicationStatus as Component,
   ApplicationStatusProps,
