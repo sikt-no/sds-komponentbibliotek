@@ -29,10 +29,15 @@ export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
    * - none: The dialog can only be dismissed with a developer-specified mechanism.
    */
   closedby?: "any" | "closerequest" | "none";
+  /** Content rendered in the footer area below the body, typically action buttons. */
   footer?: ReactNode;
+  /** Title displayed in the dialog header. Rendered as an `<h1>` visually sized at `s`. */
   heading: ReactNode;
+  /** Called when the dialog requests to close (escape key, backdrop click, or close button). Update the `open` prop in response. */
   onClose: () => void;
+  /** Controls whether the dialog is shown. Pass `true` to open, `false` to close. */
   open: boolean;
+  /** Optional subtitle rendered below the heading in smaller body text. */
   subheading?: string;
   /**
    * - true (default): Modal dialog.

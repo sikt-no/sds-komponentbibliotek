@@ -12,12 +12,15 @@ import {
 } from "react";
 import "./select.css";
 
+/** HTML `<option>` attributes. The most common are `label` and `value`. */
 type OptionProps = OptionHTMLAttributes<HTMLOptionElement>;
 
+/** Renders an `<optgroup>`. Provide a `label` and an array of `options`. */
 interface SelectOptionGroupProps extends OptgroupHTMLAttributes<HTMLOptGroupElement> {
   options: OptionProps[];
 }
 
+/** A single option `{ label, value }` or an optgroup `{ label, options: [...] }`. */
 type SelectOptionProps = OptionProps | SelectOptionGroupProps;
 
 interface SelectBaseProps extends Omit<
@@ -25,7 +28,21 @@ interface SelectBaseProps extends Omit<
   "onChange" | "aria-label" | "aria-labelledby"
 > {
   className?: string;
+  /**
+   * Options to render. Each option is `{ label, value }`. For grouped options,
+   * use `{ label, options: [{ label, value }, ...] }`.
+   *
+   * @example
+   * options={[
+   *   { label: 'First item', value: '1' },
+   *   { label: 'Second item', value: '2' },
+   * ]}
+   */
   options: SelectOptionProps[];
+  /**
+   * The controlled selected value. Must match one of the `value` fields in `options`.
+   */
+  value?: string | number | readonly string[];
   /**
    * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.
    */
@@ -34,12 +51,16 @@ interface SelectBaseProps extends Omit<
    * Text to show to help the user enter correct value. It's a better pattern to have enough information in the `label`.
    */
   helpText?: ReactNode;
+  /**
+   * Called when the user selects an option. `value` is `event.target.value` as a convenience.
+   */
   onChange?: (event: ChangeEvent<HTMLSelectElement>, value: string) => void;
 }
 
 export type SelectProps = SelectBaseProps &
   (
     | {
+        /** Visible label rendered above the select. Required unless `aria-labelledby` is set. */
         label: NonNullable<ReactNode>;
         "aria-labelledby"?: never;
       }

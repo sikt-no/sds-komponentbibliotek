@@ -1,0 +1,91 @@
+# @sikt/sds-popover
+
+Version: `1.4.1`  
+Package slug: `popover` (under `packages/popover`)
+
+## Install
+
+```sh
+npm i -s @sikt/sds-popover
+```
+
+```ts
+import { Popover } from "@sikt/sds-popover";
+```
+
+Add `@import "@sikt/sds-popover/dist/index.css";` to your app's `globals.css` — never import component CSS inside component files.
+
+## Exports
+
+- `Popover`
+- `PopoverProps`
+- `Tooltip`
+- `TooltipProps`
+
+## Components
+
+### Popover
+
+Source: `packages/popover/src/Popover.tsx`
+
+Extends: `HTMLAttributes<HTMLButtonElement>`
+
+**Props**
+
+| Prop          | Type                                             | Required | Default     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------- | ------------------------------------------------ | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `anchor`      | `boolean`                                        | no       | `true`      | Boolean that anchors the popover to the trigger element.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `children`    | `ReactNode`                                      | yes      | —           | ReactNode of the popover trigger element.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `className`   | `string`                                         | no       | —           | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `onClick`     | `((e: MouseEvent<Element, MouseEvent>) => void)` | no       | `undefined` | Function called when a user clicks the tigger element.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `popover`     | `"" \| "auto" \| "manual"`                       | no       | `auto`      | The popover attribute can take one of the following values: - Setting an empty value for popover — popover or popover="" — is equivalent to setting popover="auto". - **auto** popovers can be "light dismissed" — this means that you can hide the popover by clicking outside it or pressing the Esc key. Showing an auto popover will generally close other auto popovers that are already displayed, unless they are nested. - **manual** popovers cannot be "light dismissed" and are not automatically closed. Popovers must explicitly be displayed and closed using declarative show/hide/toggle buttons or JavaScript. Multiple independent manual popovers can be shown simultaneously. |
+| `target`      | `ReactNode`                                      | yes      | —           | ReactNode of the popover target element, the element opened when clicking the trigger.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `targetProps` | `HTMLAttributes<HTMLElement>`                    | no       | —           | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `targetRef`   | `RefObject<HTMLElement \| null>`                 | no       | —           | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `tooltip`     | `boolean`                                        | no       | `false`     | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+
+### Tooltip
+
+Source: `packages/popover/src/Popover.tsx`
+
+**Props**
+
+| Prop          | Type                                             | Required | Default     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------- | ------------------------------------------------ | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `anchor`      | `boolean`                                        | no       | `true`      | Boolean that anchors the popover to the trigger element.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `children`    | `ReactNode`                                      | yes      | —           | ReactNode of the popover trigger element.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `className`   | `string`                                         | no       | —           | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `onClick`     | `((e: MouseEvent<Element, MouseEvent>) => void)` | no       | `undefined` | Function called when a user clicks the tigger element.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `popover`     | `"" \| "auto" \| "manual"`                       | no       | `auto`      | The popover attribute can take one of the following values: - Setting an empty value for popover — popover or popover="" — is equivalent to setting popover="auto". - **auto** popovers can be "light dismissed" — this means that you can hide the popover by clicking outside it or pressing the Esc key. Showing an auto popover will generally close other auto popovers that are already displayed, unless they are nested. - **manual** popovers cannot be "light dismissed" and are not automatically closed. Popovers must explicitly be displayed and closed using declarative show/hide/toggle buttons or JavaScript. Multiple independent manual popovers can be shown simultaneously. |
+| `target`      | `ReactNode`                                      | yes      | —           | ReactNode of the popover target element, the element opened when clicking the trigger.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `targetProps` | `HTMLAttributes<HTMLElement>`                    | no       | —           | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `targetRef`   | `RefObject<HTMLElement \| null>`                 | no       | —           | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+
+## CSS class names
+
+Available when `@sikt/sds-popover/dist/index.css` is imported.
+
+- `.sds-popover`
+- `.sds-popover__target`
+- `.sds-popover__target--anchor`
+
+## Storybook examples
+
+Examples are visible at https://designsystem.sikt.no/ under the corresponding component.
+
+- **Popover**: Abbreviation, Default, Tooltip
+
+## Dependencies
+
+**Runtime:**
+
+- `@sikt/sds-core` ^5.3.0
+- `react-aria` ^3.48.0
+
+**Peer:**
+
+- `@types/react` ^18.0.0 || ^19.0.0
+- `@types/react-dom` ^18.0.0 || ^19.0.0
+- `clsx` ^2.1.0
+- `react` ^18.0.0 || ^19.0.0
+- `react-dom` ^18.0.0 || ^19.0.0

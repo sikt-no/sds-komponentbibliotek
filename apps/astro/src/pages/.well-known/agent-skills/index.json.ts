@@ -6,9 +6,6 @@
  * from each SKILL.md, computes SHA-256 digests, and outputs a JSON index per the
  * Agent Skills Discovery spec (v0.2.0).
  *
- * This implementation generates `type: "skill-md"` entries only. Archive-based
- * skills (`type: "archive"`) require separate tooling to create and register.
- *
  * Usage: Place this file at src/pages/.well-known/agent-skills/index.json.ts
  * Skills: Place skill directories at public/.well-known/agent-skills/{name}/SKILL.md
  *

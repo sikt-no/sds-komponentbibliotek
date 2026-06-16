@@ -24,16 +24,28 @@ interface InputBaseProps extends Omit<
 > {
   className?: string;
   placeholder?: string;
+  /**
+   * Called when the input value changes. Receives the native event and the new
+   * string value as a second argument — use the second argument rather than
+   * reading `event.target.value`.
+   */
   onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void;
   value?: string;
   /**
-   * Icon element to display on the component.
-   * Should be a `@sikt/sds-icons` element,
-   * or optionally `@phosphor-icons/react`
-   * (with `className="sds-icon" aria-hidden="true"`).
+   * Icon element displayed inside the input field, before the text.
+   * Use an icon from `@sikt/sds-icons`. The specialized variants
+   * (`EmailInput`, `PasswordInput`, `TelInput`) pre-wire the appropriate icon.
    */
   icon?: ReactNode;
+  /**
+   * Props for the clear button shown in `SearchInput` when the field has a value.
+   * At minimum supply `aria-label` with a localized "Clear" string.
+   */
   clearActionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
+  /**
+   * Props for the action button shown in `SearchInput` (the search submit button).
+   * At minimum supply `aria-label` with a localized "Search" string.
+   */
   actionProps?: Pick<ButtonProps, "onClick" | "aria-label" | "type">;
   /**
    * Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` &  `aria-errormessage`.

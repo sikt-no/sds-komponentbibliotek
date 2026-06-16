@@ -18,14 +18,31 @@ export type ButtonLinkProps =
 interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
   /**
-   * Icon element to display on the component.
-   * Should be a `@sikt/sds-icons` element,
-   * or optionally `@phosphor-icons/react`
-   * (with `className="sds-icon" aria-hidden="true"`).
+   * Icon element to display inside the link. Use an icon from `@sikt/sds-icons`.
+   * Position is controlled by `iconVariant`.
    */
   icon?: ReactNode;
+  /**
+   * Controls where the icon appears relative to the label.
+   * - `right` (default): icon after the label.
+   * - `left`: icon before the label.
+   * - `only`: icon replaces the label. The label text is used as `aria-label` automatically.
+   */
   iconVariant?: ButtonIconVariant;
+  /**
+   * Visual emphasis of the button link. Choose based on the action's importance, not aesthetics.
+   * - `subtle` (default): secondary actions.
+   * - `strong`: primary call to action — use at most one per section.
+   * - `transparent`: low-emphasis or icon-only actions.
+   * - `critical`: destructive actions such as delete or remove.
+   * - `neutral` / `neutral-transparent`: neutral-tone variants.
+   */
   variant?: ButtonVariant;
+  /**
+   * Size of the button link.
+   * - `default`: standard size for most contexts.
+   * - `small`: compact size for dense UIs or toolbars.
+   */
   size?: ButtonSize;
   /**
    * Use to change element type into alternative React component. Useful with libraries that require their own routing components.
