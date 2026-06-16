@@ -37,9 +37,7 @@ export const Default: Story = {
         <Button
           variant="strong"
           className="sds-dialog__trigger"
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
+          onClick={() => {
             setArgs({ ...args, open: true });
           }}
           aria-controls={id}
@@ -112,9 +110,7 @@ export const NonModal: Story = {
         <Button
           variant="strong"
           className="sds-dialog__trigger"
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
+          onClick={() => {
             setArgs({ ...args, open: true });
           }}
           aria-controls={id}
@@ -187,9 +183,7 @@ export const Drawer: Story = {
         <Button
           variant="strong"
           className="sds-dialog__trigger"
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
+          onClick={() => {
             setArgs({ ...args, open: true });
           }}
           aria-controls={id}
