@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@3.0.2...@sikt/sds-input-datepicker@3.0.3) (2026-06-17)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-hooks ([f6877c1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f6877c1be8e05cf9304fb309a8772c85cccfb1ef))
+- **deps:** update react-spectrum monorepo ([617864c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/617864c812b90c8763870c9c058d0332f0b9807e))
+
 ## [3.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@3.0.1...@sikt/sds-input-datepicker@3.0.2) (2026-05-08)
 
 ### Bug Fixes
