@@ -88,7 +88,7 @@ Sikt designsystem needs various technology for building, testing, maintaining an
   Used by Sikt.
 - Payload
 - Sanity **Don't**  
-  Coast and don't own our own data.
+  Costs and don't own our own data.
 - Docusaurus **Don't**  
   Used by Sikt. Have too bad DevEx and UX.
 
