@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@1.0.1...@sikt/sds-hooks@1.0.2) (2026-06-17)
+
+### Bug Fixes
+
+- **useClickOutside:** change listener to register both up & down clicks ([7d8fe82](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7d8fe8205d6e2fe5c77271d251b6e32bfac296f7))
+
 ## [1.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@1.0.0...@sikt/sds-hooks@1.0.1) (2026-05-08)
 
 ### Bug Fixes
