@@ -17,6 +17,7 @@ export default defineConfig({
     minify: true,
     transformer: "postcss",
     lightningcss: {
+      /* INFO: Remove when solved https://github.com/parcel-bundler/lightningcss/issues/873 */
       exclude: Features.LightDark,
     },
   },
