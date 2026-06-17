@@ -17,6 +17,13 @@ const config: StorybookConfig = {
     reactDocgenTypescriptOptions: {
       tsconfigPath: resolve(__dirname, "../../../tsconfig.json"),
       exclude: ["**/icons/build/**", "**/.storybook/**"],
+      include: [resolve(__dirname, "../../../packages/**/*.tsx")],
+      // Without this, docgen returns bare type names ("ButtonSize | undefined") which
+      // Storybook maps to type "other", causing mapArgsToTypes to drop URL args like
+      // args=size:small. With true, docgen produces enum values, Storybook's parseLiteral
+      // strips the TS string-literal quotes, and URL args pass validation correctly.
+      shouldExtractLiteralValuesFromEnum: true,
+      shouldRemoveUndefinedFromOptional: true,
     },
   },
   addons: [
