@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@5.2.0...@sikt/sds-select@5.2.1) (2026-06-17)
+
+### Bug Fixes
+
+- **select:** only icon rotation on error button ([42cc5d9](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/42cc5d9e02c78f25288f2bbb305d092840aba607))
+
 ## [5.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-select@5.1.0...@sikt/sds-select@5.2.0) (2026-05-28)
 
 ### Features
