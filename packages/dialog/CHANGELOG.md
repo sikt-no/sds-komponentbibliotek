@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.6...@sikt/sds-dialog@2.0.7) (2026-06-17)
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-hooks ([f6877c1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f6877c1be8e05cf9304fb309a8772c85cccfb1ef))
+- **deps:** update eslint ([a7e8284](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a7e828486c7a9a74495ec1fc4e26f3ac69845030))
+
 ## [2.0.6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.5...@sikt/sds-dialog@2.0.6) (2026-03-13)
 
 ### Bug Fixes
