@@ -38,18 +38,12 @@ const config: StorybookConfig = {
     disableTelemetry: true,
   },
   viteFinal: async (config) => {
+    type PluginOption = NonNullable<typeof config.plugins>[number];
     const { default: svgr } = await import("vite-plugin-svgr");
-    // TODO: Logo.tsx uses the CRA-style `{ ReactComponent }` named import.
-    // Scoping to **/Logo.svg is a workaround — the real fix is to migrate
-    // Logo.tsx to the Vite import syntax (`import LogoSvg from "../Logo.svg?react"`)
-    // and drop this plugin override entirely.
     config.plugins = [
-      svgr({
-        include: "**/Logo.svg",
-        svgrOptions: { exportType: "named", namedExport: "ReactComponent" },
-      }),
+      svgr({ include: "**/*.svg" }),
       ...(config.plugins ?? []),
-    ];
+    ].filter((p): p is PluginOption => p != null);
     return config;
   },
   features: {

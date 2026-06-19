@@ -21,10 +21,6 @@ export default defineConfig({
       exclude: Features.LightDark,
     },
   },
-  plugins: [
-    svgr({
-      exportType: "named",
-    }),
-  ],
+  plugins: [svgr()],
   publint: true,
 });
