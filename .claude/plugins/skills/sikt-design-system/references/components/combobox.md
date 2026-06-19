@@ -103,21 +103,3 @@ Available when `@sikt/sds-combobox/dist/index.css` is imported.
 Examples are visible at https://designsystem.sikt.no/ under the corresponding component.
 
 - **Combobox**: Controlled, ControlledMultiple, Default, InForm, InFormMultiple, Multiple, WithError, WithGroupedOptions, WithGroupedOptionsMultiple, WithHelpText
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-form` ^4.1.1
-- `@sikt/sds-icons` ^4.2.0
-- `@u-elements/u-combobox` ^2.0.4
-- `@u-elements/u-datalist` ^2.0.1
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

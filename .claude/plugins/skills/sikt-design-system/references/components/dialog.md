@@ -1,6 +1,6 @@
 # @sikt/sds-dialog
 
-Version: `2.0.6`  
+Version: `2.0.7`  
 Package slug: `dialog` (under `packages/dialog`)
 
 Dialog component, Sikt component library
@@ -73,20 +73,3 @@ Available when `@sikt/sds-dialog/dist/index.css` is imported.
 Examples are visible at https://designsystem.sikt.no/ under the corresponding component.
 
 - **Dialog**: Default, Drawer, NonModal
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-button` ^4.6.0
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-hooks` ^1.0.0
-- `@sikt/sds-icons` ^4.2.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

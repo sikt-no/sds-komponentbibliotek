@@ -1,6 +1,6 @@
 # @sikt/sds-hooks
 
-Version: `1.0.1`
+Version: `1.0.2`
 
 React Hooks, Sikt component library
 

@@ -74,18 +74,3 @@ Available when `@sikt/sds-popover/dist/index.css` is imported.
 Examples are visible at https://designsystem.sikt.no/ under the corresponding component.
 
 - **Popover**: Abbreviation, Default, Tooltip
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-core` ^5.3.0
-- `react-aria` ^3.48.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

@@ -43,11 +43,11 @@ Extends: `HTMLAttributes<HTMLButtonElement>`
 
 **Props**
 
-| Prop        | Type                                             | Required | Default | Description |
-| ----------- | ------------------------------------------------ | -------- | ------- | ----------- |
-| `className` | `string`                                         | no       | —       | —           |
-| `icon`      | `ReactNode`                                      | no       | —       | —           |
-| `onClick`   | `((e: MouseEvent<Element, MouseEvent>) => void)` | no       | —       | —           |
+| Prop        | Type                                             | Required | Default | Description                                                                                                                                                              |
+| ----------- | ------------------------------------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `className` | `string`                                         | no       | —       | —                                                                                                                                                                        |
+| `icon`      | `ReactNode`                                      | no       | —       | Icon element to display on the component. Should be a `@sikt/sds-icons` element, or optionally `@phosphor-icons/react` (with `className="sds-icon" aria-hidden="true"`). |
+| `onClick`   | `((e: MouseEvent<Element, MouseEvent>) => void)` | no       | —       | —                                                                                                                                                                        |
 
 ### TabLink
 
@@ -57,12 +57,12 @@ Extends: `AnchorHTMLAttributes<HTMLAnchorElement>`
 
 **Props**
 
-| Prop         | Type        | Required | Default | Description |
-| ------------ | ----------- | -------- | ------- | ----------- |
-| `asChild`    | `boolean`   | no       | `false` | —           |
-| `className`  | `string`    | no       | —       | —           |
-| `icon`       | `ReactNode` | no       | —       | —           |
-| `isSelected` | `boolean`   | no       | —       | —           |
+| Prop         | Type        | Required | Default | Description                                                                                                                                                              |
+| ------------ | ----------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `asChild`    | `boolean`   | no       | `false` | —                                                                                                                                                                        |
+| `className`  | `string`    | no       | —       | —                                                                                                                                                                        |
+| `icon`       | `ReactNode` | no       | —       | Icon element to display on the component. Should be a `@sikt/sds-icons` element, or optionally `@phosphor-icons/react` (with `className="sds-icon" aria-hidden="true"`). |
+| `isSelected` | `boolean`   | no       | —       | —                                                                                                                                                                        |
 
 ### TabList
 
@@ -128,22 +128,3 @@ Examples are visible at https://designsystem.sikt.no/ under the corresponding co
 
 - **TabLink**: Default, WithIcon, WithTag
 - **Tabs**: Controlled, Default, TooManyTabsOnTheDancefloor, WithIcon, WithTag
-
-## Dependencies
-
-**Runtime:**
-
-- `@radix-ui/react-slot` ^1.2.4
-- `@radix-ui/react-use-controllable-state` ^1.2.2
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-hooks` ^1.0.0
-- `@sikt/sds-icons` ^4.2.0
-- `@sikt/sds-popover` ^1.4.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

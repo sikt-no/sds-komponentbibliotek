@@ -172,7 +172,7 @@ Extends: `Omit<InputHTMLAttributes<HTMLTextAreaElement>, "onChange" | "aria-labe
 | `className`       | `string`                                                                         | no       | —       | —                                                                                                                                                                                                                        |
 | `errorText`       | `ReactNode`                                                                      | no       | —       | Text to show when the input is invalid to help the user enter correct value. This also sets `aria-invalid` & `aria-errormessage`.                                                                                        |
 | `helpText`        | `ReactNode`                                                                      | no       | —       | Text to show to help the user enter correct value. It's a better pattern to have enough information in the `label`.                                                                                                      |
-| `icon`            | `ReactNode`                                                                      | no       | —       | —                                                                                                                                                                                                                        |
+| `icon`            | `ReactNode`                                                                      | no       | —       | Icon element to display on the component. Should be a `@sikt/sds-icons` element, or optionally `@phosphor-icons/react` (with `className="sds-icon" aria-hidden="true"`).                                                 |
 | `label`           | `NonNullable<ReactNode>`                                                         | yes\*    | —       | Required unless `aria-labelledby` is set. Mutually exclusive with `aria-labelledby`.                                                                                                                                     |
 | `onChange`        | `((event: ChangeEvent<HTMLTextAreaElement, Element>, newValue: string) => void)` | no       | —       | —                                                                                                                                                                                                                        |
 | `placeholder`     | `string`                                                                         | no       | —       | —                                                                                                                                                                                                                        |
@@ -221,20 +221,3 @@ Examples are visible at https://designsystem.sikt.no/ under the corresponding co
 - **SearchInput**: Default, WithClearButton, WithCustomIcon, WithError, WithHelpText
 - **TelInput**: Default, Readonly, WithCustomIcon, WithError, WithHelpText
 - **TextArea**: Default, Readonly, WithCustomIcon, WithError, WithHelpText, WithRows
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-button` ^4.6.0
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-form` ^4.1.1
-- `@sikt/sds-icons` ^4.2.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

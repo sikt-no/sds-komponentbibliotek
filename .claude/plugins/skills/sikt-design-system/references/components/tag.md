@@ -36,11 +36,11 @@ Source: `packages/tag/src/Tag.tsx`
 
 **Props**
 
-| Prop        | Type                                                   | Required | Default | Description |
-| ----------- | ------------------------------------------------------ | -------- | ------- | ----------- |
-| `category`  | `"1" \| "2" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8"` | no       | —       | —           |
-| `className` | `string`                                               | no       | —       | —           |
-| `icon`      | `ReactNode`                                            | no       | —       | —           |
+| Prop        | Type                                                   | Required | Default | Description                                                                                                                                                              |
+| ----------- | ------------------------------------------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `category`  | `"1" \| "2" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8"` | no       | —       | —                                                                                                                                                                        |
+| `className` | `string`                                               | no       | —       | —                                                                                                                                                                        |
+| `icon`      | `ReactNode`                                            | no       | —       | Icon element to display on the component. Should be a `@sikt/sds-icons` element, or optionally `@phosphor-icons/react` (with `className="sds-icon" aria-hidden="true"`). |
 
 ### TagStatus
 
@@ -48,12 +48,12 @@ Source: `packages/tag/src/Tag.tsx`
 
 **Props**
 
-| Prop         | Type                                                                     | Required | Default  | Description |
-| ------------ | ------------------------------------------------------------------------ | -------- | -------- | ----------- |
-| `className`  | `string`                                                                 | no       | —        | —           |
-| `icon`       | `ReactNode`                                                              | no       | —        | —           |
-| `variant`    | `"brand" \| "neutral" \| "success" \| "info" \| "warning" \| "critical"` | no       | `brand`  | —           |
-| `visibility` | `"strong" \| "subtle"`                                                   | no       | `subtle` | —           |
+| Prop         | Type                                                                     | Required | Default  | Description                                                                                                                                                              |
+| ------------ | ------------------------------------------------------------------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `className`  | `string`                                                                 | no       | —        | —                                                                                                                                                                        |
+| `icon`       | `ReactNode`                                                              | no       | —        | Icon element to display on the component. Should be a `@sikt/sds-icons` element, or optionally `@phosphor-icons/react` (with `className="sds-icon" aria-hidden="true"`). |
+| `variant`    | `"brand" \| "neutral" \| "success" \| "info" \| "warning" \| "critical"` | no       | `brand`  | —                                                                                                                                                                        |
+| `visibility` | `"strong" \| "subtle"`                                                   | no       | `subtle` | —                                                                                                                                                                        |
 
 ## CSS class names
 
@@ -85,18 +85,3 @@ Examples are visible at https://designsystem.sikt.no/ under the corresponding co
 
 - **TagCategory**: Default, IconLeft
 - **TagStatus**: AllVariantsDefault, AllVariantsStrongVisibility, CustomIconsForBrandAndNeutral, Default, IconLeft
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-icons` ^4.2.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

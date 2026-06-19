@@ -1,6 +1,6 @@
 # @sikt/sds-select
 
-Version: `5.2.0`  
+Version: `5.2.1`  
 Package slug: `select` (under `packages/select`)
 
 ## Install
@@ -50,6 +50,7 @@ Extends: `Omit<SelectHTMLAttributes<HTMLSelectElement>, "onChange" | "aria-label
 
 Available when `@sikt/sds-select/dist/index.css` is imported.
 
+- `.sds-icon`
 - `.sds-select`
 - `.sds-select--invalid`
 - `.sds-select__optgroup`
@@ -57,19 +58,3 @@ Available when `@sikt/sds-select/dist/index.css` is imported.
 - `.sds-select__select`
 - `.sds-select__select-button`
 - `.sds-select__select-input`
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-form` ^4.1.1
-- `@sikt/sds-icons` ^4.2.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

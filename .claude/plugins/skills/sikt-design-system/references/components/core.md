@@ -153,7 +153,7 @@ Extends: `AnchorHTMLAttributes<HTMLAnchorElement>`
 | -------------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `asChild`      | `boolean`           | no       | `false` | Use to change element type into alternative React component. Useful with libraries that require their own routing components. For example `<Link asChild><NextLink>` would result in a `<NextLink>` with all properties of this component. |
 | `className`    | `string`            | no       | —       | —                                                                                                                                                                                                                                          |
-| `icon`         | `ReactNode`         | no       | —       | —                                                                                                                                                                                                                                          |
+| `icon`         | `ReactNode`         | no       | —       | Icon element to display on the component. Should be a `@sikt/sds-icons` element, or optionally `@phosphor-icons/react` (with `className="sds-icon" aria-hidden="true"`).                                                                   |
 | `iconVariant`  | `"right" \| "left"` | no       | `right` | —                                                                                                                                                                                                                                          |
 | `isExternal`   | `boolean`           | no       | —       | Will add icon to external links. These are default added to `target="_blank"`.                                                                                                                                                             |
 | `isNavigation` | `boolean`           | no       | —       | Will add icon to navigation links.                                                                                                                                                                                                         |
@@ -244,19 +244,3 @@ Examples are visible at https://designsystem.sikt.no/ under the corresponding co
 - **Link**: Default, External, Mail, Navigation, Phone, WithIcon
 - **Paragraph**: AsHeading3, AsSpan, ColorCritical, ColorSecondary, Regular
 - **ScreenReaderOnly**: Focusable
-
-## Dependencies
-
-**Runtime:**
-
-- `@radix-ui/react-slot` ^1.2.4
-- `@sikt/sds-tokens` ^6.2.0
-- `sanitize.css` ^13.0.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

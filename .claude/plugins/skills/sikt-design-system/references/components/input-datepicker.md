@@ -1,6 +1,6 @@
 # @sikt/sds-input-datepicker
 
-Version: `3.0.2`  
+Version: `3.0.3`  
 Package slug: `input-datepicker` (under `packages/input-datepicker`)
 
 ## Install
@@ -114,22 +114,3 @@ Examples are visible at https://designsystem.sikt.no/ under the corresponding co
 
 - **InputDatepicker**: WithClearOption, WithCustomLocale, WithError, WithTime
 - **InputDaterangepicker**: WithClearOption
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-button` ^4.6.0
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-form` ^4.1.1
-- `@sikt/sds-hooks` ^1.0.0
-- `@sikt/sds-icons` ^4.2.0
-- `react-aria-components` ^1.18.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

@@ -69,20 +69,3 @@ Available when `@sikt/sds-header/dist/index.css` is imported.
 Examples are visible at https://designsystem.sikt.no/ under the corresponding component.
 
 - **Header**: Default, WithApplicationStatus, WithProductName, WithSlots
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-button` ^4.6.0
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-icons` ^4.2.0
-- `@sikt/sds-logo` ^2.2.3
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

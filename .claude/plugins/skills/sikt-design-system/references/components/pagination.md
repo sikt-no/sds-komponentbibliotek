@@ -61,18 +61,3 @@ Available when `@sikt/sds-pagination/dist/index.css` is imported.
 Examples are visible at https://designsystem.sikt.no/ under the corresponding component.
 
 - **Pagination**: Default
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-icons` ^4.2.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0

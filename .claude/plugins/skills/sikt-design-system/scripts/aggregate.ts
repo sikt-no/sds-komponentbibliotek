@@ -86,7 +86,6 @@ interface ComponentPackageMeta {
   version: string;
   description: string;
   dependencies: Record<string, string>;
-  peerDependencies: Record<string, string>;
   readme: string | null;
   exports: string[];
   components: ParsedComponent[];
@@ -499,7 +498,6 @@ function scanComponentPackage(slug: string): ComponentPackageMeta {
     version: pkg.version,
     description: pkg.description ?? "",
     dependencies: pkg.dependencies ?? {},
-    peerDependencies: pkg.peerDependencies ?? {},
     readme: readReadme(slug),
     exports: extractExports(slug),
     components,
@@ -658,33 +656,6 @@ function renderComponentMd(meta: ComponentPackageMeta): string {
       parts.push(`- **${sf.file}**: ${sf.stories.join(", ")}`);
     }
     parts.push("");
-  }
-
-  const depEntries = Object.entries(meta.dependencies).sort(([a], [b]) =>
-    a.localeCompare(b),
-  );
-  const peerEntries = Object.entries(meta.peerDependencies).sort(([a], [b]) =>
-    a.localeCompare(b),
-  );
-  if (depEntries.length + peerEntries.length > 0) {
-    parts.push("## Dependencies");
-    parts.push("");
-    if (depEntries.length > 0) {
-      parts.push("**Runtime:**");
-      parts.push("");
-      for (const [name, ver] of depEntries) {
-        parts.push(`- \`${name}\` ${ver}`);
-      }
-      parts.push("");
-    }
-    if (peerEntries.length > 0) {
-      parts.push("**Peer:**");
-      parts.push("");
-      for (const [name, ver] of peerEntries) {
-        parts.push(`- \`${name}\` ${ver}`);
-      }
-      parts.push("");
-    }
   }
 
   return parts.join("\n");

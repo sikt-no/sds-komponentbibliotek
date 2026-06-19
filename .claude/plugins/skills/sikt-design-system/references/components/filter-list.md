@@ -52,17 +52,17 @@ Source: `packages/filter-list/src/FilterListCategory/FilterListCategory.tsx`
 
 **Props**
 
-| Prop                    | Type                            | Required | Default | Description |
-| ----------------------- | ------------------------------- | -------- | ------- | ----------- |
-| `ariaLabelExpandToggle` | `string`                        | yes      | —       | —           |
-| `checked`               | `boolean`                       | yes      | —       | —           |
-| `count`                 | `number`                        | no       | —       | —           |
-| `expanded`              | `boolean`                       | no       | —       | —           |
-| `icon`                  | `ReactNode`                     | no       | —       | —           |
-| `indeterminate`         | `boolean`                       | yes      | —       | —           |
-| `label`                 | `string`                        | yes      | —       | —           |
-| `onCategoryToggle`      | `((checked: boolean) => void)`  | no       | —       | —           |
-| `onExpandToggle`        | `((expanded: boolean) => void)` | no       | —       | —           |
+| Prop                    | Type                            | Required | Default | Description                                                                                                                                                              |
+| ----------------------- | ------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ariaLabelExpandToggle` | `string`                        | yes      | —       | —                                                                                                                                                                        |
+| `checked`               | `boolean`                       | yes      | —       | —                                                                                                                                                                        |
+| `count`                 | `number`                        | no       | —       | —                                                                                                                                                                        |
+| `expanded`              | `boolean`                       | no       | —       | —                                                                                                                                                                        |
+| `icon`                  | `ReactNode`                     | no       | —       | Icon element to display on the component. Should be a `@sikt/sds-icons` element, or optionally `@phosphor-icons/react` (with `className="sds-icon" aria-hidden="true"`). |
+| `indeterminate`         | `boolean`                       | yes      | —       | —                                                                                                                                                                        |
+| `label`                 | `string`                        | yes      | —       | —                                                                                                                                                                        |
+| `onCategoryToggle`      | `((checked: boolean) => void)`  | no       | —       | —                                                                                                                                                                        |
+| `onExpandToggle`        | `((expanded: boolean) => void)` | no       | —       | —                                                                                                                                                                        |
 
 ### FilterListExpand
 
@@ -141,22 +141,3 @@ Available when `@sikt/sds-filter-list/dist/index.css` is imported.
 - `.sds-filter-list-section--expandable`
 - `.sds-filter-list-section__label`
 - `.sds-form-fieldset__legend`
-
-## Dependencies
-
-**Runtime:**
-
-- `@sikt/sds-button` ^4.6.0
-- `@sikt/sds-checkbox` ^4.0.0
-- `@sikt/sds-core` ^5.3.0
-- `@sikt/sds-icons` ^4.2.0
-- `@sikt/sds-notification` ^1.1.0
-- `@sikt/sds-radio` ^5.0.0
-
-**Peer:**
-
-- `@types/react` ^18.0.0 || ^19.0.0
-- `@types/react-dom` ^18.0.0 || ^19.0.0
-- `clsx` ^2.1.0
-- `react` ^18.0.0 || ^19.0.0
-- `react-dom` ^18.0.0 || ^19.0.0
