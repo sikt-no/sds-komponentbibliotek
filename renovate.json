@@ -103,6 +103,10 @@
     {
       "matchPackagePatterns": ["^@astrojs", "^astro"],
       "groupName": "astro"
+    },
+    {
+      "matchPackagePatterns": ["^vite"],
+      "groupName": "vite"
     }
   ]
 }
