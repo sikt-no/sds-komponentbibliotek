@@ -1,20 +1,21 @@
-import { isValidElement, ReactNode } from "react";
+import { isValidElement, ReactNode, ReactElement } from "react";
 
+/**
+ * Recursively extracts the text content from a React node, concatenating
+ * strings, numbers, arrays, and element children into a single string.
+ */
 export const reactNodeToString = (reactNode: ReactNode): string => {
-  let string = "";
-  if (typeof reactNode === "string") {
-    string = reactNode;
-  } else if (typeof reactNode === "number") {
-    string = reactNode.toString();
-  } else if (reactNode instanceof Array) {
-    reactNode.forEach((child) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      string += reactNodeToString(child);
-    });
-  } else if (isValidElement(reactNode)) {
-    // @ts-expect-error is of type unknown
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    string += reactNodeToString(reactNode.props.children);
+  if (typeof reactNode === "string") return reactNode;
+  if (typeof reactNode === "number") return String(reactNode);
+
+  if (Array.isArray(reactNode)) {
+    return reactNode.map(reactNodeToString).join("");
   }
-  return string;
+
+  if (isValidElement(reactNode)) {
+    const element = reactNode as ReactElement<{ children?: ReactNode }>;
+    return reactNodeToString(element.props.children);
+  }
+
+  return "";
 };

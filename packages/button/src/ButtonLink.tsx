@@ -112,14 +112,13 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
         {...rest}
       >
         {(!icon || !iconOnly) &&
-          (asChild && isValidElement(children) ? (
+          (asChild && isValidElement<{ children?: ReactNode }>(children) ? (
             <Slottable>
               {cloneElement(
                 children,
-                children.props ?? {},
+                children.props,
                 <span className="sds-button__label">
-                  {/* @ts-expect-error Property does not exist on type */}
-                  {children.props?.children}
+                  {children.props.children}
                 </span>,
               )}
             </Slottable>
@@ -127,9 +126,11 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
             <span className="sds-button__label">{children}</span>
           ))}
         {icon &&
-          (iconOnly && asChild && isValidElement(children) ? (
+          (iconOnly &&
+          asChild &&
+          isValidElement<{ children?: ReactNode }>(children) ? (
             <Slottable>
-              {cloneElement(children, children.props ?? {}, iconElement)}
+              {cloneElement(children, children.props, iconElement)}
             </Slottable>
           ) : (
             iconElement
