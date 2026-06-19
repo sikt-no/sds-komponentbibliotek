@@ -19,6 +19,6 @@
     "cpy-cli": "^7.0.0",
     "storybook": "^10.4.4",
     "vite": "^6.3.5",
-    "vite-plugin-svgr": "^4.3.0"
+    "vite-plugin-svgr": "^5.2.0"
   }
 }
