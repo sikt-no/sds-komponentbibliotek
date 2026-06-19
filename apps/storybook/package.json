@@ -18,7 +18,7 @@
     "@whitespace/storybook-addon-html": "^9.0.0",
     "cpy-cli": "^7.0.0",
     "storybook": "^10.4.4",
-    "vite": "^6.3.5",
+    "vite": "^8.0.16",
     "vite-plugin-svgr": "^5.2.0"
   }
 }
