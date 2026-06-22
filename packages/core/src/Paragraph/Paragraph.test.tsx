@@ -41,16 +41,5 @@ describe("Paragraph", () => {
 
       expect(screen.getByText("Foo").nodeName).toBe("SPAN");
     });
-
-    it("should have deprecation warning", async () => {
-      const spy = jest
-        .spyOn(global.console, "warn")
-        .mockImplementationOnce(() => jest.fn);
-
-      render(<Paragraph variant="small">Foo</Paragraph>);
-
-      expect(screen.getByText("Foo")).toHaveClass("sds-typography-body");
-      expect(spy).toHaveBeenCalled();
-    });
   });
 });

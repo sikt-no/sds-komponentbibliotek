@@ -33,19 +33,7 @@ export interface BodyProps extends Omit<BaseParagraphProps, "variant"> {
   size?: "s" | "default" | "l";
 }
 
-export interface DeprecatedParagraphProps extends Omit<
-  BaseParagraphProps,
-  "variant" | "size"
-> {
-  variant?: "small" | "regular" | "large" | "lead";
-  size?: undefined;
-}
-
-export type ParagraphProps =
-  | DeprecatedParagraphProps
-  | LabelProps
-  | OverlineProps
-  | BodyProps;
+export type ParagraphProps = LabelProps | OverlineProps | BodyProps;
 
 export const Paragraph = ({
   children,
@@ -58,23 +46,12 @@ export const Paragraph = ({
   ...rest
 }: ParagraphProps) => {
   const Component: ElementType = as;
-  const isDeprecated = !["body", "label", "overline"].includes(variant);
-
-  if (isDeprecated) {
-    console.warn(
-      `Deprecated <Paragraph /> variant. Please use variant "body", "label" or "overline".`,
-    );
-  }
 
   return (
     <Component
       className={clsx(
-        isDeprecated && "sds-typography-body",
-        isDeprecated && `sds-typography-body--${variant}`,
-        !isDeprecated && `sds-typography-${variant}`,
-        !isDeprecated &&
-          size !== "default" &&
-          `sds-typography-${variant}--${size}`,
+        `sds-typography-${variant}`,
+        size !== "default" && `sds-typography-${variant}--${size}`,
         modifier && `sds-typography--${modifier}`,
         `sds-typography--color-${color}`,
         className,

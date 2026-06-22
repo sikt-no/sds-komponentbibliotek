@@ -16,7 +16,6 @@ export {
 
 export type {
   ParagraphProps,
-  DeprecatedParagraphProps,
   LabelProps,
   OverlineProps,
   BodyProps,

@@ -18,7 +18,6 @@ Add `@import "@sikt/sds-core/dist/index.css";` to your app's `globals.css` — n
 ## Exports
 
 - `BodyProps`
-- `DeprecatedParagraphProps`
 - `Figure`
 - `FigureProps`
 - `Heading`
@@ -165,14 +164,14 @@ Source: `packages/core/src/Paragraph/Paragraph.tsx`
 
 **Props**
 
-| Prop        | Type                                                                           | Required | Default   | Description |
-| ----------- | ------------------------------------------------------------------------------ | -------- | --------- | ----------- |
-| `as`        | `ElementType`                                                                  | no       | `p`       | —           |
-| `className` | `string`                                                                       | no       | —         | —           |
-| `color`     | `"primary" \| "secondary" \| "critical"`                                       | no       | `primary` | —           |
-| `modifier`  | `"emphasis" \| "strong" \| "code" \| "quote"`                                  | no       | —         | —           |
-| `size`      | `"s" \| "l" \| "default"`                                                      | no       | `default` | —           |
-| `variant`   | `"small" \| "regular" \| "large" \| "lead" \| "label" \| "overline" \| "body"` | no       | `body`    | —           |
+| Prop        | Type                                          | Required | Default   | Description |
+| ----------- | --------------------------------------------- | -------- | --------- | ----------- |
+| `as`        | `ElementType`                                 | no       | `p`       | —           |
+| `className` | `string`                                      | no       | —         | —           |
+| `color`     | `"primary" \| "secondary" \| "critical"`      | no       | `primary` | —           |
+| `modifier`  | `"emphasis" \| "strong" \| "code" \| "quote"` | no       | —         | —           |
+| `size`      | `"s" \| "l" \| "default"`                     | no       | `default` | —           |
+| `variant`   | `"label" \| "overline" \| "body"`             | no       | `body`    | —           |
 
 ### ScreenReaderOnly
 
