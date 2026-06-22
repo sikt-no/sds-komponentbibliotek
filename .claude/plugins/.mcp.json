@@ -2,7 +2,7 @@
   "mcpServers": {
     "storybook-mcp": {
       "command": "npx",
-      "args": ["-y", "storybook-mcp@latest"],
+      "args": ["-y", "storybook-mcp@0.5.1"],
       "env": {
         "STORYBOOK_URL": "https://designsystem.sikt.no/storybook/index.json"
       }
