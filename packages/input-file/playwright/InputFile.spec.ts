@@ -40,6 +40,8 @@ test.describe("InputFile", () => {
         "/iframe.html?viewMode=story&id=components-inputfile--default",
       );
 
+      await page.locator(componentSelector).waitFor();
+
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
@@ -47,6 +49,8 @@ test.describe("InputFile", () => {
       await page.goto(
         "/iframe.html?viewMode=story&id=components-inputfile--with-error",
       );
+
+      await page.locator(componentSelector).waitFor();
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
