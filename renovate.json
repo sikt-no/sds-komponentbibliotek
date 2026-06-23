@@ -19,6 +19,16 @@
   "rangeStrategy": "bump",
   "minimumReleaseAge": "5 days",
   "ignorePaths": ["**/node_modules/**", "**/__example__/**", "turbo/**"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/.mcp.json$/"],
+      "matchStrings": [
+        "\"(?<depName>[a-z][a-z0-9-]*)@(?<currentValue>[^\"]+)\""
+      ],
+      "datasourceTemplate": "npm"
+    }
+  ],
   "packageRules": [
     {
       "matchPackagePatterns": ["react"],
