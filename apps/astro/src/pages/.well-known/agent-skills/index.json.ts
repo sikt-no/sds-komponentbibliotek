@@ -1,4 +1,7 @@
 /**
+ * From
+ * https://github.com/cloudflare/agent-skills-discovery-rfc/
+ *
  * Astro API route that generates /.well-known/agent-skills/index.json.
  * Runs at build time (static) or request time (SSR) depending on your Astro config.
  *
