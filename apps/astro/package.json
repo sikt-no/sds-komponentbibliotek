@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "copy:icons": "cpy ../../packages/icons/dist/assets public/images/sds-icons --flat",
-    "copy:skills": "cpy ../../.claude/plugins/skills/* public/.well-known/agent-skills"
+    "copy:skills": "node scripts/archive-skills.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.6",

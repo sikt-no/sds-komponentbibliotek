@@ -1,5 +1,5 @@
 ---
-name: design
+name: design-md
 description: DESIGN.md for Sikt designsystem
 ---
 

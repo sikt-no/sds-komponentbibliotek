@@ -96,11 +96,17 @@ See custom markup below or go to the [Vue component example](./docs/VUE.md).
 
 Install plugins for Claude from our marketplace:
 
-```
+```sh
 claude
 /plugin marketplace add https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git
 /plugin install sikt-sds@sikt-sds
 /reload-plugins
+```
+
+or through [Agent Skills Discovery](https://github.com/cloudflare/agent-skills-discovery-rfc):
+
+```sh
+npx skills add https://designsystem.sikt.no/
 ```
 
 ## Examples
