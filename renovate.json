@@ -31,6 +31,12 @@
   ],
   "packageRules": [
     {
+      "matchCurrentValue": "/^0\\./",
+      "automerge": false,
+      "gitLabIgnoreApprovals": false,
+      "platformAutomerge": false
+    },
+    {
       "matchPackagePatterns": ["react"],
       "excludeDepPatterns": [
         "^@phosphor-icons",
