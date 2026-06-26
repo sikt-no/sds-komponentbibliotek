@@ -13,7 +13,7 @@ import { TextInput } from "@sikt/sds-input";
 import "@sikt/sds-form/dist/index.css";
 import "@sikt/sds-input/dist/index.css";
 
-<TextInput label="Label" onChange={() => {}} value={value} />;
+<TextInput label="Label" value={value} onChange={(event, newValue) => {}} />;
 ```
 
 ### Input Component
