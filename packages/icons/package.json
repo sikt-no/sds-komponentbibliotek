@@ -41,7 +41,7 @@
     "prebuild": "run-s build:*",
     "build": "tsdown",
     "build:icons": "node bin/build.mjs",
-    "build:components": "svgr  --config-file svgr/svgr.config.js -- dist/assets",
+    "build:components": "svgr --config-file svgr/svgr.config.js -- dist/assets",
     "build:sprite": "svgstore dist/assets/*.svg -o dist/sds-icons.svg"
   },
   "dependencies": {

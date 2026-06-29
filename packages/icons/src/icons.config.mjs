@@ -112,6 +112,10 @@ export const config = [
   { id: "info", name: "info", category: "status" },
   { id: "warning", name: "alert", category: "status" },
   { id: "x-circle", name: "failed", category: "status" },
+  { id: "check-circle-fill", name: "success-alt", category: "status" },
+  { id: "info-fill", name: "info-alt", category: "status" },
+  { id: "warning-fill", name: "alert-alt", category: "status" },
+  { id: "x-circle-fill", name: "failed-alt", category: "status" },
   {
     id: "shopping-cart",
     name: "shopping-cart-selected-items",
