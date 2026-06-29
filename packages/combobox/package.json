@@ -41,7 +41,7 @@
     "@sikt/sds-form": "^4.1.1",
     "@sikt/sds-icons": "^4.2.0",
     "@u-elements/u-combobox": "^2.0.5",
-    "@u-elements/u-datalist": "^2.0.1"
+    "@u-elements/u-datalist": "^2.0.3"
   },
   "peerDependencies": {
     "@types/react": "^18.0.0 || ^19.0.0",
