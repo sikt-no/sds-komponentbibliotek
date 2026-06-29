@@ -41,7 +41,7 @@ const headingId = `card-heading-${crypto.randomUUID()}`;
     @container page (min-width: 760px) {
       flex-direction: row-reverse;
 
-      > * {
+      > :global(*) {
         flex: 1;
       }
     }

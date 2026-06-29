@@ -17,16 +17,16 @@ const { frontmatter } = Astro.props;
     max-width: 720px;
     width: 100%;
 
-    > :first-child {
+    > :global(:first-child) {
       padding-bottom: var(--sds-space-gap-medium);
     }
 
-    > h2 {
+    > :global(h2) {
       border-bottom: var(--sds-space-border-weight-regular) solid
         var(--sds-color-layout-divider-subtle);
       padding: var(--sds-space-padding-large) 0;
 
-      & + * {
+      & + :global(*) {
         padding-top: var(--sds-space-padding-medium);
       }
     }
