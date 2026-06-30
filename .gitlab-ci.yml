@@ -1,5 +1,5 @@
 default:
-  image: node:24.16.0
+  image: node:24.18.0
   interruptible: true
   artifacts:
     expire_in: 1 days
