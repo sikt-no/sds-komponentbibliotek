@@ -1,6 +1,6 @@
 ---
 status: "accepted"
-date: 2023-08-30
+date: 2023-08-01
 decision-makers: Kristoffer
 ---
 
@@ -14,28 +14,28 @@ Sikt designsystem needs various technology for building, testing, maintaining an
 
 ### Testing
 
-- Playwright **Do**
+- ✅ Playwright
 
 ### Releases
 
-- Standard Version **Maybe**  
+- Standard Version **consider**  
   Unmaintained.
-- Sematic Release **Don't**  
-  No CLI.
 - Release It
+- ❌ Sematic Release  
+  No CLI.
 
 ### Packages
 
-- esbuild **Maybe**  
+- esbuild **consider**  
   Didn't give faster build when all plugins where added.
-- tsup **Maybe**  
+- tsup **consider**  
   Only experimental support for CSS
 
 ### Docs
 
-- Astro **Maybe**
-- 11ty **Maybe**
-- Gatsby **Maybe/Don't**
+- Astro **consider**
+- 11ty **consider**
+- ❌ Gatsby **consider**
 
 ## More Information
 

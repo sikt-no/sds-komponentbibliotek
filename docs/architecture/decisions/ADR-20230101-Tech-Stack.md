@@ -1,6 +1,6 @@
 ---
 status: "accepted"
-date: 2023-01-30
+date: 2023-01-01
 decision-makers: Kristoffer
 ---
 
@@ -14,38 +14,38 @@ Sikt designsystem needs various technology for building, testing, maintaining an
 
 ### JavaScript
 
-- React **Do**  
+- ✅ React  
   Most teams/developers at Sikt are on React.
 - Vue
 - Svelte
-- Web Components **Don't**  
+- ❌ Web Components  
   Wished by Sikt but without no knowhow in the teams and a failed MVP this is not a good strategy. Reevaluate in the future.
-- Angular **Don't**
+- ❌ Angular
 
 ### CSS
 
-- PostCSS **Do**  
+- ✅ PostCSS  
   Can easily be migrated to CSS when we know what CSS type is most common in Sikt. Supports future CSS today.
-- CSS **Do**  
+- ✅ CSS  
   Should distribute CSS with support for own templating so non-React teams can still use the CSS.
 - SCSS
 - Less
 - CSS modules
-- CSS-in-JS **Don't**  
+- ❌ CSS-in-JS  
   Bad performance, tooling, etc. Do not work with vanilla CSS output.
-- Utility **Don't**  
+- ❌ Utility  
   Wished by Sikt but strongly advised against. Add speed in the start, lowers speed in the long run.
-- Framework **Don't**  
+- ❌ Framework  
   Gives tight dependency to 3rd party library. Other design systems have had problems based on going for this strategy.
 
 ### Tokens
 
-- Style Dictionary **Do**
-- Theo **Don't**
+- ✅ Style Dictionary
+- ❌ Theo
 
 ### Testing
 
-- Jest **Do**
+- ✅ Jest
 - Playwright
 - Cypress
 
@@ -53,45 +53,45 @@ Sikt designsystem needs various technology for building, testing, maintaining an
 
 #### Bundler
 
-- Rollup **Do**
+- ✅ Rollup
 - Turbopack
-- Webpack **Don't**
+- ❌ Webpack
 
 #### Manager
 
-- npm **Do**
+- ✅ npm
 - Yarn
 - pnpm
 
 #### Monorepo
 
-- npm Workspaces **Do**  
+- ✅ npm Workspaces  
   Fullfills basic needs. Use for MVP. Reevaluate in the future.
 - Lerna
 - Turborepo
 
 #### Registry
 
-- npmjs.org **Do**
+- ✅ npmjs.org
 - Artifactory
 - Gitlab
 
 ### Docs
 
-- Storybook **Do**  
+- ✅ Storybook  
   Wished by Sikt. Meets requriements for a developer sandbox but doesn't work as full documentation. Requries downgraded npm version. Look for alternatives.
-- Markdown **Do**  
+- ✅ Markdown  
   Documentation close to code and can be distributed with published packages.
 - Styleguidist
 
 ### Security
 
-- Renovate **Do**  
+- ✅ Renovate  
   Doesn't work with npm Workspaces but they are working on a fix.
 - Trivy
 - Snyk
 - socket.dev
-- Dependabot **Don't**  
+- ❌ Dependabot  
   Can't group dependencies which will cause extra work.
 
 ## More Information

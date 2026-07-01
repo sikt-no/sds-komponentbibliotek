@@ -1,7 +1,7 @@
 ---
 status: "accepted"
-date: 2024-09-30
-decision-makers: Kristoffer & Vegar
+date: 2024-09-01
+decision-makers: Kristoffer & Vegar N.
 ---
 
 # Tech Stack
@@ -14,88 +14,88 @@ Sikt designsystem needs various technology for building, testing, maintaining an
 
 ### JavaScript
 
-- React **Do**
-- Web Components **Maybe**  
+- ✅ React
+- Web Components **consider**  
   Vanilla, Lit, Stencil, Atomico?
 
 ### CSS
 
-- PostCSS **Do**
+- ✅ PostCSS
 - CSS
 - SCSS
 
 ### Tokens
 
-- Style Dictionary **Do**
-- Figma API **Do/Maybe**  
+- ✅ Style Dictionary
+- ✅ Figma API  
   Sikt doesn't have high enough Figma tier.
 
 ### Testing
 
-- Palywright **Do**
-- Jest **Do**
-- Vitest **Maybe**  
+- ✅ Playwright
+- ✅ Jest
+- Vitest **consider**  
   No big gain from migrating.
-- chromatic **Don't**  
+- ❌ chromatic  
   Cost and lockdown to Storybook. We have the same features with Playwright.
 
 ### Releases
 
-- commit-and-tag-version **Do**  
+- ✅ commit-and-tag-version  
   Forked Standard Version
 - Release It
 - changesets
-- Standard Version **Don't**  
+- ❌ Standard Version  
   Unmaintained.
-- Sematic Release **Don't**  
+- ❌ Sematic Release  
   No CLI
 
 ### Packages
 
 #### Bundler
 
-- esbuild **Do**
-- tsup **Do**  
+- ✅ esbuild
+- ✅ tsup  
   CSS support is better.
-- Rollup **Don't**
+- ❌ Rollup
 
 #### Monorepo
 
-- npm Workspaces **Do**
-- Turborepo **Do**
-- Nx **Maybe**  
+- ✅ npm Workspaces
+- ✅ Turborepo
+- Nx **consider**  
   High cost.
-- Lerna **Don't**
+- ❌ Lerna
 
 ### Docs
 
-- Storybook **Do**  
+- ✅ Storybook  
   Hopefully we can phase this out.
-- Astro **Do**
-- Zeroheight **Maybe**  
+- ✅ Astro
+- Zeroheight **consider**  
   Cost and work load.
-- Gatsby **Don't**
+- ❌ Gatsby
   Unmaintained.
-- 11ty **Don't**  
+- ❌ 11ty  
   Doesn't fullfill our needs with support for MDX and React.
 
 #### CMS
 
-- MDX **Do**
-- Decap **Do**  
+- ✅ MDX
+- ✅ Decap  
   Good support for MDX, Gitlab Auth and content in version control. Require Gitlab maintainer role to push/publish new content.
 - Drupal
   Used by Sikt.
 - Payload
-- Sanity **Don't**  
+- ❌ Sanity  
   Costs and don't own our own data.
-- Docusaurus **Don't**  
+- ❌ Docusaurus  
   Used by Sikt. Have too bad DevEx and UX.
 
 ### Security
 
-- Renovate **Do**
-- Trivy **Do**  
+- ✅ Renovate
+- ✅ Trivy  
   In Sikt platform Platon.
 
 ## More Information
