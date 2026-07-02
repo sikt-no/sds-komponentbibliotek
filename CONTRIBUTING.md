@@ -54,7 +54,7 @@ Good starting point templates for filing bugs, discussions or requests. Fill out
 
 ## Design
 
-[Figma File](https://www.figma.com/files/1167338716494500240/project/73250738/Designsystem)
+[Figma File](https://www.figma.com/files/1167338716494500240/project/466688625)
 (for which you need to [order access](https://isikt.sharepoint.com/sites/it-stotte/SitePages/Trenger-du-lisenser-eller-tilganger-.aspx))
 
 ## Development
