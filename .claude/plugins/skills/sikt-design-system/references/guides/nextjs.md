@@ -136,7 +136,7 @@ const nextConfig = {
 };
 ```
 
-See `references/guides/fonts-and-csp.md` for full CSP guidance.
+See `references/guides/bootstrap.md` for full CSP guidance.
 
 ## `color-scheme: only dark` — LightningCSS bug in Next.js 15+
 

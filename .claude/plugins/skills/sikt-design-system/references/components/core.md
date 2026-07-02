@@ -84,61 +84,31 @@ Source: `packages/core/src/Heading/Heading.tsx`
 
 Source: `packages/core/src/Heading/Heading.tsx`
 
-**Props**
-
-| Prop        | Type                                                  | Required | Default     | Description                                                                                                                                                                                                                                                                        |
-| ----------- | ----------------------------------------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `className` | `string`                                              | no       | —           | —                                                                                                                                                                                                                                                                                  |
-| `size`      | `"xxs" \| "xs" \| "s" \| "m" \| "l" \| "xl" \| "xxl"` | no       | `m`         | Visual size of the heading.                                                                                                                                                                                                                                                        |
-| `variant`   | `"application" \| "editorial"`                        | no       | `editorial` | Represents two sets of heading styles. These should in most cases be used separately. - Editorial is for applications with low complexity and enough space - that strive for a calm user interface. - Application is for more compact, information dense and complex applications. |
+Same props as [`Heading1`](#heading1).
 
 ### Heading3
 
 Source: `packages/core/src/Heading/Heading.tsx`
 
-**Props**
-
-| Prop        | Type                                                  | Required | Default     | Description                                                                                                                                                                                                                                                                        |
-| ----------- | ----------------------------------------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `className` | `string`                                              | no       | —           | —                                                                                                                                                                                                                                                                                  |
-| `size`      | `"xxs" \| "xs" \| "s" \| "m" \| "l" \| "xl" \| "xxl"` | no       | `m`         | Visual size of the heading.                                                                                                                                                                                                                                                        |
-| `variant`   | `"application" \| "editorial"`                        | no       | `editorial` | Represents two sets of heading styles. These should in most cases be used separately. - Editorial is for applications with low complexity and enough space - that strive for a calm user interface. - Application is for more compact, information dense and complex applications. |
+Same props as [`Heading1`](#heading1).
 
 ### Heading4
 
 Source: `packages/core/src/Heading/Heading.tsx`
 
-**Props**
-
-| Prop        | Type                                                  | Required | Default     | Description                                                                                                                                                                                                                                                                        |
-| ----------- | ----------------------------------------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `className` | `string`                                              | no       | —           | —                                                                                                                                                                                                                                                                                  |
-| `size`      | `"xxs" \| "xs" \| "s" \| "m" \| "l" \| "xl" \| "xxl"` | no       | `m`         | Visual size of the heading.                                                                                                                                                                                                                                                        |
-| `variant`   | `"application" \| "editorial"`                        | no       | `editorial` | Represents two sets of heading styles. These should in most cases be used separately. - Editorial is for applications with low complexity and enough space - that strive for a calm user interface. - Application is for more compact, information dense and complex applications. |
+Same props as [`Heading1`](#heading1).
 
 ### Heading5
 
 Source: `packages/core/src/Heading/Heading.tsx`
 
-**Props**
-
-| Prop        | Type                                                  | Required | Default     | Description                                                                                                                                                                                                                                                                        |
-| ----------- | ----------------------------------------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `className` | `string`                                              | no       | —           | —                                                                                                                                                                                                                                                                                  |
-| `size`      | `"xxs" \| "xs" \| "s" \| "m" \| "l" \| "xl" \| "xxl"` | no       | `m`         | Visual size of the heading.                                                                                                                                                                                                                                                        |
-| `variant`   | `"application" \| "editorial"`                        | no       | `editorial` | Represents two sets of heading styles. These should in most cases be used separately. - Editorial is for applications with low complexity and enough space - that strive for a calm user interface. - Application is for more compact, information dense and complex applications. |
+Same props as [`Heading1`](#heading1).
 
 ### Heading6
 
 Source: `packages/core/src/Heading/Heading.tsx`
 
-**Props**
-
-| Prop        | Type                                                  | Required | Default     | Description                                                                                                                                                                                                                                                                        |
-| ----------- | ----------------------------------------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `className` | `string`                                              | no       | —           | —                                                                                                                                                                                                                                                                                  |
-| `size`      | `"xxs" \| "xs" \| "s" \| "m" \| "l" \| "xl" \| "xxl"` | no       | `m`         | Visual size of the heading.                                                                                                                                                                                                                                                        |
-| `variant`   | `"application" \| "editorial"`                        | no       | `editorial` | Represents two sets of heading styles. These should in most cases be used separately. - Editorial is for applications with low complexity and enough space - that strive for a calm user interface. - Application is for more compact, information dense and complex applications. |
+Same props as [`Heading1`](#heading1).
 
 ### Link
 

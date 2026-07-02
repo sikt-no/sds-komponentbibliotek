@@ -49,18 +49,6 @@ Extends: `TableHTMLAttributes<HTMLTableElement>`
 | `showCaption`  | `boolean`                                                        | no       | —       | —           |
 | `wrapperProps` | `(HTMLAttributes<HTMLDivElement> & { "data-testid"?: string; })` | no       | —       | —           |
 
-### TableBody
-
-Source: `packages/table/src/TableBody.tsx`
-
-Extends: `HTMLAttributes<HTMLTableSectionElement>`
-
-**Props**
-
-| Prop        | Type     | Required | Default | Description |
-| ----------- | -------- | -------- | ------- | ----------- |
-| `className` | `string` | no       | —       | —           |
-
 ### TableCell
 
 Source: `packages/table/src/TableCell.tsx`
@@ -74,42 +62,6 @@ Extends: `TdHTMLAttributes<HTMLTableCellElement>`
 | `className` | `string` | no       | —       | —           |
 | `data-th`   | `string` | yes      | —       | —           |
 
-### TableFoot
-
-Source: `packages/table/src/TableFoot.tsx`
-
-Extends: `HTMLAttributes<HTMLTableSectionElement>`
-
-**Props**
-
-| Prop        | Type     | Required | Default | Description |
-| ----------- | -------- | -------- | ------- | ----------- |
-| `className` | `string` | no       | —       | —           |
-
-### TableHead
-
-Source: `packages/table/src/TableHead.tsx`
-
-Extends: `HTMLAttributes<HTMLTableSectionElement>`
-
-**Props**
-
-| Prop        | Type     | Required | Default | Description |
-| ----------- | -------- | -------- | ------- | ----------- |
-| `className` | `string` | no       | —       | —           |
-
-### TableHeader
-
-Source: `packages/table/src/TableHeader.tsx`
-
-Extends: `ThHTMLAttributes<HTMLTableCellElement>`
-
-**Props**
-
-| Prop        | Type     | Required | Default | Description |
-| ----------- | -------- | -------- | ------- | ----------- |
-| `className` | `string` | no       | —       | —           |
-
 ### TableRow
 
 Source: `packages/table/src/TableRow.tsx`
@@ -121,6 +73,38 @@ Extends: `HTMLAttributes<HTMLTableRowElement>`
 | Prop        | Type     | Required | Default | Description |
 | ----------- | -------- | -------- | ------- | ----------- |
 | `className` | `string` | no       | —       | —           |
+
+### TableBody
+
+Source: `packages/table/src/TableBody.tsx`
+
+Extends: `HTMLAttributes<HTMLTableSectionElement>`
+
+Same props as [`TableRow`](#tablerow).
+
+### TableFoot
+
+Source: `packages/table/src/TableFoot.tsx`
+
+Extends: `HTMLAttributes<HTMLTableSectionElement>`
+
+Same props as [`TableRow`](#tablerow).
+
+### TableHead
+
+Source: `packages/table/src/TableHead.tsx`
+
+Extends: `HTMLAttributes<HTMLTableSectionElement>`
+
+Same props as [`TableRow`](#tablerow).
+
+### TableHeader
+
+Source: `packages/table/src/TableHeader.tsx`
+
+Extends: `ThHTMLAttributes<HTMLTableCellElement>`
+
+Same props as [`TableRow`](#tablerow).
 
 ## CSS class names
 

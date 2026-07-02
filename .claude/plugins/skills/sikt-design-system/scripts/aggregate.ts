@@ -204,7 +204,9 @@ function parseComponentsForPackage(slug: string): ParsedComponent[] {
           return {
             name,
             type: formatPropType(p),
-            required: exclusiveWith.length ? "yes*" : p.required,
+            required: exclusiveWith.length
+              ? "conditionally required"
+              : p.required,
             defaultValue: extractDefaultValue(p.defaultValue),
             description: constraint
               ? constraint + (baseDescription ? " " + baseDescription : "")
@@ -528,9 +530,83 @@ function md_escape(s: string): string {
   return s.replace(/\|/g, "\\|").replace(/\n/g, " ");
 }
 
-function renderPropsTable(props: ParsedProp[]): string {
+// GFM-compatible slug for in-document anchors. Lowercases, replaces
+// runs of non-alphanumeric chars with `-`, and trims leading/trailing `-`.
+function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+// Compute a signature that's identical for components sharing the same
+// prop set (used to collapse thin wrappers like EmailInput → Input).
+function propSignature(c: ParsedComponent): string {
+  return JSON.stringify(
+    c.props.map((p) => [p.name, p.type, p.required, p.defaultValue ?? ""]),
+  );
+}
+
+// Group components in a package by their prop signature and reorder so the
+// canonical component (the one whose name is a substring of every peer, or
+// the shortest name alphabetically) comes first within its group. Returns a
+// flat list annotated with `canonicalName` for peer entries.
+function groupBySharedProps(
+  components: ParsedComponent[],
+): { component: ParsedComponent; canonicalName: string | null }[] {
+  const groups = new Map<string, ParsedComponent[]>();
+  for (const c of components) {
+    if (c.props.length === 0) {
+      // Components with no declared props aren't meaningfully "same" as each
+      // other — leave them ungrouped.
+      groups.set(`__solo__${c.displayName}`, [c]);
+      continue;
+    }
+    const sig = propSignature(c);
+    const g = groups.get(sig);
+    if (g) g.push(c);
+    else groups.set(sig, [c]);
+  }
+
+  for (const g of groups.values()) {
+    if (g.length < 2) continue;
+    const substringRoot = g.find((c) =>
+      g.every((peer) => peer.displayName.includes(c.displayName)),
+    );
+    const canonical =
+      substringRoot ??
+      g
+        .slice()
+        .sort(
+          (a, b) =>
+            a.displayName.length - b.displayName.length ||
+            a.displayName.localeCompare(b.displayName),
+        )[0];
+    const rest = g
+      .filter((c) => c !== canonical)
+      .sort((a, b) => a.displayName.localeCompare(b.displayName));
+    g.length = 0;
+    g.push(canonical, ...rest);
+  }
+
+  const groupArray = [...groups.values()].sort((a, b) =>
+    a[0].displayName.localeCompare(b[0].displayName),
+  );
+
+  const out: { component: ParsedComponent; canonicalName: string | null }[] =
+    [];
+  for (const g of groupArray) {
+    out.push({ component: g[0], canonicalName: null });
+    for (let i = 1; i < g.length; i++) {
+      out.push({ component: g[i], canonicalName: g[0].displayName });
+    }
+  }
+  return out;
+}
+
+function renderProps(props: ParsedProp[]): string {
   if (props.length === 0) return "_No declared props._\n";
-  const lines: string[] = [];
+  const lines: string[] = ["**Props**", ""];
   lines.push("| Prop | Type | Required | Default | Description |");
   lines.push("| --- | --- | --- | --- | --- |");
   for (const p of props) {
@@ -611,7 +687,9 @@ function renderComponentMd(meta: ComponentPackageMeta): string {
   if (meta.components.length > 0) {
     parts.push("## Components");
     parts.push("");
-    for (const c of meta.components) {
+    for (const { component: c, canonicalName } of groupBySharedProps(
+      meta.components,
+    )) {
       parts.push(`### ${c.displayName}`);
       parts.push("");
       parts.push(`Source: \`${c.filePath}\``);
@@ -626,9 +704,14 @@ function renderComponentMd(meta: ComponentPackageMeta): string {
         );
         parts.push("");
       }
-      parts.push("**Props**");
-      parts.push("");
-      parts.push(renderPropsTable(c.props));
+      if (canonicalName) {
+        parts.push(
+          `Same props as [\`${canonicalName}\`](#${slugify(canonicalName)}).`,
+        );
+        parts.push("");
+      } else {
+        parts.push(renderProps(c.props));
+      }
     }
   }
 

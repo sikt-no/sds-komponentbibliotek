@@ -40,14 +40,14 @@ Extends: `HTMLAttributes<HTMLDivElement | HTMLDetailsElement>`
 
 **Props**
 
-| Prop           | Type                     | Required | Default | Description                                                            |
-| -------------- | ------------------------ | -------- | ------- | ---------------------------------------------------------------------- |
-| `className`    | `string`                 | no       | —       | —                                                                      |
-| `count`        | `number`                 | yes\*    | —       | Required unless `children` is set. Mutually exclusive with `children`. |
-| `currentIndex` | `number`                 | yes      | —       | —                                                                      |
-| `expandable`   | `boolean`                | no       | —       | —                                                                      |
-| `heading`      | `NonNullable<ReactNode>` | yes      | —       | —                                                                      |
-| `open`         | `boolean`                | no       | —       | —                                                                      |
+| Prop           | Type                     | Required               | Default | Description                                                            |
+| -------------- | ------------------------ | ---------------------- | ------- | ---------------------------------------------------------------------- |
+| `className`    | `string`                 | no                     | —       | —                                                                      |
+| `count`        | `number`                 | conditionally required | —       | Required unless `children` is set. Mutually exclusive with `children`. |
+| `currentIndex` | `number`                 | yes                    | —       | —                                                                      |
+| `expandable`   | `boolean`                | no                     | —       | —                                                                      |
+| `heading`      | `NonNullable<ReactNode>` | yes                    | —       | —                                                                      |
+| `open`         | `boolean`                | no                     | —       | —                                                                      |
 
 ### ProgressStep
 

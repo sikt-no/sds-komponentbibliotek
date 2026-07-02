@@ -30,40 +30,6 @@ Add `@import "@sikt/sds-list/dist/index.css";` to your app's `globals.css` — n
 
 ## Components
 
-### DescriptionDetails
-
-Source: `packages/list/src/DescriptionDetails.tsx`
-
-Extends: `HTMLAttributes<HTMLElement>`
-
-**Props**
-
-| Prop        | Type     | Required | Default | Description |
-| ----------- | -------- | -------- | ------- | ----------- |
-| `className` | `string` | no       | —       | —           |
-
-### DescriptionList
-
-Source: `packages/list/src/List.tsx`
-
-**Props**
-
-| Prop        | Type     | Required | Default | Description |
-| ----------- | -------- | -------- | ------- | ----------- |
-| `className` | `string` | no       | —       | —           |
-
-### DescriptionTerm
-
-Source: `packages/list/src/DescriptionTerm.tsx`
-
-Extends: `HTMLAttributes<HTMLElement>`
-
-**Props**
-
-| Prop        | Type     | Required | Default | Description |
-| ----------- | -------- | -------- | ------- | ----------- |
-| `className` | `string` | no       | —       | —           |
-
 ### ListItem
 
 Source: `packages/list/src/ListItem.tsx`
@@ -76,25 +42,39 @@ Extends: `LiHTMLAttributes<HTMLLIElement>`
 | ----------- | -------- | -------- | ------- | ----------- |
 | `className` | `string` | no       | —       | —           |
 
+### DescriptionDetails
+
+Source: `packages/list/src/DescriptionDetails.tsx`
+
+Extends: `HTMLAttributes<HTMLElement>`
+
+Same props as [`ListItem`](#listitem).
+
+### DescriptionList
+
+Source: `packages/list/src/List.tsx`
+
+Same props as [`ListItem`](#listitem).
+
+### DescriptionTerm
+
+Source: `packages/list/src/DescriptionTerm.tsx`
+
+Extends: `HTMLAttributes<HTMLElement>`
+
+Same props as [`ListItem`](#listitem).
+
 ### OrderedList
 
 Source: `packages/list/src/List.tsx`
 
-**Props**
-
-| Prop        | Type     | Required | Default | Description |
-| ----------- | -------- | -------- | ------- | ----------- |
-| `className` | `string` | no       | —       | —           |
+Same props as [`ListItem`](#listitem).
 
 ### UnorderedList
 
 Source: `packages/list/src/List.tsx`
 
-**Props**
-
-| Prop        | Type     | Required | Default | Description |
-| ----------- | -------- | -------- | ------- | ----------- |
-| `className` | `string` | no       | —       | —           |
+Same props as [`ListItem`](#listitem).
 
 ## CSS class names
 

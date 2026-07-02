@@ -6,6 +6,12 @@ Mandatory patterns and common errors for SDS development. Read this before writi
 
 `@sikt/sds-core` is the only required root import — it bundles the reset, font-face, and all design tokens. Every component package also needs its own CSS imported. The format depends on the bundler — see `styling.md` for bundler-specific examples and `@layer` usage.
 
+## Page shell — Header + main + Footer
+
+Every page in a Sikt product renders inside the shared shell: `Header` from `@sikt/sds-header`, a `<main>`, and `Footer` from `@sikt/sds-footer`. This is non-negotiable — the Footer is not optional even on minimal pages, login pages, or embedded views. A Sikt product without a Footer reads as half-built and breaks brand consistency.
+
+When asked to build a page or set up an app, ship the full shell unless the user explicitly says otherwise. See `bootstrap.md` for the shell layout and `patterns/footer.md` for the Footer convention.
+
 ## Typography — never use raw HTML elements
 
 All text must use SDS typography components from `@sikt/sds-core`. Raw `<h1>`–`<h6>` and `<p>` bypass the SDS typography system and produce unstyled text.

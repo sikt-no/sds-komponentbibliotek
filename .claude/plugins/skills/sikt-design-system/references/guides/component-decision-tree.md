@@ -65,17 +65,17 @@ Quick guide for choosing the right SDS component.
 
 ## Layout and navigation
 
-| Situation                  | Use                                                          |
-| -------------------------- | ------------------------------------------------------------ |
-| App-level header           | `Header` from `@sikt/sds-header`                             |
-| App-level footer           | `Footer` from `@sikt/sds-footer`                             |
-| Sikt logo                  | `Logo` from `@sikt/sds-logo`                                 |
-| Content section wrapper    | `Section` from `@sikt/sds-section`                           |
-| Horizontal scroll tabs     | `Tabs`, `TabList`, `Tab` from `@sikt/sds-tabs`               |
-| Collapsible section        | `Details` from `@sikt/sds-details`                           |
-| Breadcrumb navigation      | `Breadcrumbs`, `BreadcrumbItem` from `@sikt/sds-breadcrumbs` |
-| Page-level pagination      | `Pagination` from `@sikt/sds-pagination`                     |
-| Filterable list navigation | `FilterList` from `@sikt/sds-filter-list`                    |
+| Situation                                 | Use                                                          |
+| ----------------------------------------- | ------------------------------------------------------------ |
+| App-level header                          | `Header` from `@sikt/sds-header` — see `patterns/header.md`  |
+| App-level footer (required on every page) | `Footer` from `@sikt/sds-footer` — see `patterns/footer.md`  |
+| Sikt logo                                 | `Logo` from `@sikt/sds-logo`                                 |
+| Content section wrapper                   | `Section` from `@sikt/sds-section`                           |
+| Horizontal scroll tabs                    | `Tabs`, `TabList`, `Tab` from `@sikt/sds-tabs`               |
+| Collapsible section                       | `Details` from `@sikt/sds-details`                           |
+| Breadcrumb navigation                     | `Breadcrumbs`, `BreadcrumbItem` from `@sikt/sds-breadcrumbs` |
+| Page-level pagination                     | `Pagination` from `@sikt/sds-pagination`                     |
+| Filterable list navigation                | `FilterList` from `@sikt/sds-filter-list`                    |
 
 ## Data display
 

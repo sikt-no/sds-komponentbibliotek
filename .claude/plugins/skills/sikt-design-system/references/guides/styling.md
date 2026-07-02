@@ -160,49 +160,9 @@ Your CSS has one job: positioning elements relative to each other. SDS component
 
 For PostCSS setup, breakpoints, conventions, and layout patterns → `references/guides/responsive.md`.
 
-## Page shell pattern
+## Bootstrap
 
-Every new Sikt app starts with a header + main + footer shell:
-
-```bash
-npm install @sikt/sds-core @sikt/sds-header @sikt/sds-footer @sikt/sds-logo
-```
-
-```css
-/* globals.css */
-@import url("@sikt/sds-core");
-@import url("@sikt/sds-logo");
-@import url("@sikt/sds-header");
-@import url("@sikt/sds-footer");
-```
-
-```tsx
-import "./globals.css";
-import { Header } from "@sikt/sds-header";
-import { Footer } from "@sikt/sds-footer";
-import styles from "./Shell.module.css";
-
-export default function Shell({ children }: { children: React.ReactNode }) {
-  return (
-    <div className={styles.shell}>
-      <Header logoText="App name" />
-      <main id="main">{children}</main>
-      <Footer lang="nb" />
-    </div>
-  );
-}
-```
-
-```css
-/* Shell.module.css */
-.shell {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100dvh;
-}
-```
-
-`grid-template-rows: auto 1fr auto` gives the header its natural height, expands main to fill remaining space, and pins the footer at the bottom. `100dvh` accounts for mobile browser chrome.
+For new-project setup — package install, page shell, favicon, Haffer fonts, CSP — see `references/guides/bootstrap.md`.
 
 ## Verifying CSS completeness
 
