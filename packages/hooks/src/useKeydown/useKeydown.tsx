@@ -1,10 +1,15 @@
-import { RefObject, useEffect } from "react";
+import { RefObject, useEffect, useRef } from "react";
 
 export const useKeydown = (
   ref: RefObject<HTMLElement | null> | null,
   key: string,
   callback: (event: KeyboardEvent) => void,
 ) => {
+  const callbackRef = useRef(callback);
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+
   useEffect(() => {
     const targetElement = ref?.current ?? document;
 
@@ -12,7 +17,7 @@ export const useKeydown = (
       const keyboardEvent = event as KeyboardEvent;
       if (keyboardEvent.key === key) {
         keyboardEvent.preventDefault();
-        callback(keyboardEvent);
+        callbackRef.current(keyboardEvent);
       }
     };
 
@@ -21,5 +26,5 @@ export const useKeydown = (
     return () => {
       targetElement.removeEventListener("keydown", listener);
     };
-  }, [ref, key, callback]);
+  }, [ref, key]);
 };

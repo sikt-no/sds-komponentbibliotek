@@ -1,9 +1,14 @@
-import { RefObject, useEffect } from "react";
+import { RefObject, useEffect, useRef } from "react";
 
 export const useClickOutside = (
   ref: RefObject<HTMLElement | null>,
   callback: (event: MouseEvent) => void,
 ) => {
+  const callbackRef = useRef(callback);
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+
   useEffect(() => {
     let isPointerdownOutside = false;
 
@@ -17,7 +22,7 @@ export const useClickOutside = (
         ref.current &&
         !ref.current.contains(event.target as Node)
       ) {
-        callback(event);
+        callbackRef.current(event);
       }
       isPointerdownOutside = false;
     };
@@ -29,5 +34,5 @@ export const useClickOutside = (
       document.removeEventListener("pointerdown", listenerPointerdown);
       document.removeEventListener("pointerup", listenerPointerup);
     };
-  }, [ref, callback]);
+  }, [ref]);
 };
