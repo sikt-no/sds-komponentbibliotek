@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-notification@1.1.1...@sikt/sds-notification@1.1.2) (2026-07-03)
+
+### Bug Fixes
+
+- **notification:** prevent element from shrinking ([1800206](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/18002067bb3ca01fcdc8d4c26d7b5254c0d7f9aa))
+
 ## [1.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-notification@1.1.0...@sikt/sds-notification@1.1.1) (2026-05-27)
 
 ### Bug Fixes
