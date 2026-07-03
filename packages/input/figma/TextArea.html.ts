@@ -20,8 +20,7 @@ figma.connect(
             aria-describedby="unique-id-help-text"
           >
 ${value}
-            </textarea
-          >
+            </textarea>
         </div>
       </div>`,
   },
@@ -55,8 +54,7 @@ figma.connect(
             aria-describedby="unique-id-help-text"
           >
 ${value}
-            </textarea
-          >
+            </textarea>
         </div>
       </div>`,
   },
@@ -104,8 +102,7 @@ figma.connect(
             aria-errormessage="unique-id-help-text"
           >
 ${value}
-            </textarea
-          >
+            </textarea>
         </div>
       </div>`,
   },

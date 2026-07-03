@@ -4,12 +4,7 @@ import { HTMLAttributes, ReactNode } from "react";
 import "./tag.css";
 
 type TagVariant =
-  | "brand"
-  | "neutral"
-  | "success"
-  | "info"
-  | "warning"
-  | "critical";
+  "brand" | "neutral" | "success" | "info" | "warning" | "critical";
 
 interface TagBaseProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: TagVariant;

@@ -45,9 +45,8 @@ export const sanitizeItems = (
     return [values];
   }
 
-  return values.map(
-    (value): ComboboxItem =>
-      typeof value === "string" ? { label: value, value } : value,
+  return values.map((value): ComboboxItem =>
+    typeof value === "string" ? { label: value, value } : value,
   );
 };
 

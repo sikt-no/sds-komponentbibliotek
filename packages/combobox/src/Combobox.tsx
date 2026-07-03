@@ -119,10 +119,7 @@ export type ComboboxMultipleProps = ComboboxBaseProps &
 export type ComboboxProps = ComboboxSingleProps | ComboboxMultipleProps;
 
 export type ComboboxSelected =
-  | string
-  | ComboboxItem
-  | (string | ComboboxItem)[]
-  | null;
+  string | ComboboxItem | (string | ComboboxItem)[] | null;
 
 export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
   function Combobox(
@@ -213,15 +210,13 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
         if (multiple) {
           // Multiple selection: nextItem should be ComboboxItem[]
           const callback = onSelectedChangeRef.current as
-            | ((value: ComboboxItem[]) => void)
-            | undefined;
+            ((value: ComboboxItem[]) => void) | undefined;
           callback?.(nextItem as ComboboxItem[]);
           if (!isControlled) setDefaultItems(nextItem as ComboboxItem[]);
         } else {
           // Single selection: nextItem should be ComboboxItem | undefined
           const callback = onSelectedChangeRef.current as
-            | ((value: ComboboxItem | null) => void)
-            | undefined;
+            ((value: ComboboxItem | null) => void) | undefined;
           callback?.((nextItem as ComboboxItem | undefined) ?? null);
           if (!isControlled) setDefaultItems(sanitizeItems(nextItem));
         }

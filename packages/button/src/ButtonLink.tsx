@@ -12,8 +12,7 @@ import { reactNodeToString } from "./utils/reactNodeToString";
 import "./button-link.css";
 
 export type ButtonLinkProps =
-  | ButtonLinkChildrenProps
-  | ButtonLinkAriaLabelProps;
+  ButtonLinkChildrenProps | ButtonLinkAriaLabelProps;
 
 interface ButtonLinkBaseProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
