@@ -41,6 +41,10 @@ This is a v4 config with peer dependency on `tailwindcss@^4.0.0`. It disables Ta
 <button class="text-brand-primary-strong">Hello, World!</button>
 ```
 
+#### Dark mode
+
+This config doesn't support utility class prefix `dark:` for [dark mode](https://tailwindcss.com/docs/dark-mode), instead use our data attribute `data-color-scheme="dark"` or style `color-scheme: only dark;`.
+
 #### Caveats
 
 Theme utilities where we have our own tokens have been disabled in the Tailwind config with `--property-*: initial;`.
