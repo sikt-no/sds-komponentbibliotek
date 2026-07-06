@@ -1,0 +1,15 @@
+import { Markdown, Meta, Source } from "@storybook/addon-docs/blocks";
+import Readme from "../README.md?raw";
+import config from "../dist/tailwind/config.css?raw";
+
+<Meta title="Tokens/Tailwind CSS" />
+
+# Tailwind CSS
+
+<Markdown>
+  {Readme.split("### Tailwind CSS")[1].split("## Design Tokens")[0]}
+</Markdown>
+
+## Config
+
+<Source code={config} />
