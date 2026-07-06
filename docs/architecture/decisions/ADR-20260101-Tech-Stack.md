@@ -27,8 +27,10 @@ Sikt designsystem needs various technology for building, testing, maintaining an
 
 ### Tokens
 
-- Terrazzo **consider**
-- sugarcube **consider**
+- Terrazzo **consider**  
+  DTCG support. Supports Figma API. Supports Tailwind CSS v4.
+- ❌ sugarcube  
+  DTCG support. Has tokens, utilities, theming and components. A valid alternative to Style Dictionary. Is opinionated and utility first. Doesn't support `light-dark()` or Tailwind Config.
 
 ### Releases
 
@@ -36,10 +38,10 @@ Sikt designsystem needs various technology for building, testing, maintaining an
 
 ### Packages
 
-- ❌ pnpm  
-  Astro requires shamefully-hoist. Component docs (stories and md) are located in packages directory which don't work with silos.
 - ✅ tsdown
 - No bundling **consider**
+- ❌ pnpm  
+  Astro requires shamefully-hoist. Component docs (stories and md) are located in packages directory which don't work with silos.
 
 ### Docs
 
