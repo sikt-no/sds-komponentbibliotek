@@ -1,0 +1,43 @@
+{
+  "name": "@sikt/sd3-design-tokens",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "description": "Design tokens, Sikt design system",
+  "homepage": "https://designsystem.sikt.no/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git",
+    "directory": "packages/design-tokens"
+  },
+  "type": "commonjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "style": "./dist/index.css",
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./dist/*": "./dist/*"
+  },
+  "types": "dist/index.d.cts",
+  "style": "dist/index.css",
+  "files": [
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {}
+}
