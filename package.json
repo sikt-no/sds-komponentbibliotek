@@ -62,7 +62,7 @@
     "@axe-core/playwright": "^4.12.1",
     "@commitlint/cli": "^21.2.0",
     "@commitlint/config-conventional": "^21.2.0",
-    "@figma/code-connect": "^1.4.8",
+    "@figma/code-connect": "^1.4.9",
     "@playwright/test": "^1.61.1",
     "@svgr/rollup": "^8.1.0",
     "@testing-library/dom": "^10.4.1",
