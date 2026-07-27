@@ -38,20 +38,20 @@ describe("useWindowResize", () => {
   });
 
   test("should add and remove event listener on mount and unmount", () => {
-    window.addEventListener = jest.fn();
-    window.removeEventListener = jest.fn();
+    const addEventListenerSpy = jest.spyOn(window, "addEventListener");
+    const removeEventListenerSpy = jest.spyOn(window, "removeEventListener");
     const callback = jest.fn();
     const throttleTime = 200;
     const { unmount } = renderHook(() => {
       useWindowResize(callback, { throttleTime });
     });
 
-    expect(window.addEventListener).toHaveBeenCalledWith(
+    expect(addEventListenerSpy).toHaveBeenCalledWith(
       "resize",
       expect.any(Function),
     );
     unmount();
-    expect(window.removeEventListener).toHaveBeenCalledWith(
+    expect(removeEventListenerSpy).toHaveBeenCalledWith(
       "resize",
       expect.any(Function),
     );
