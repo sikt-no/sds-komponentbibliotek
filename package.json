@@ -80,7 +80,7 @@
     "browserslist": "^4.28.7",
     "browserslist-to-esbuild": "^2.1.1",
     "clsx": "^2.1.1",
-    "commit-and-tag-version": "^12.7.3",
+    "commit-and-tag-version": "^13.1.0",
     "eslint": "^10.7.0",
     "husky": "^9.1.7",
     "jest": "^30.4.2",
