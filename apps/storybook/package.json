@@ -11,13 +11,13 @@
     "copy:css:logo": "cpy ../../packages/logo/dist/*.css static/dist/ --flat --rename=logo.css"
   },
   "devDependencies": {
-    "@storybook/addon-docs": "^10.5.3",
+    "@storybook/addon-docs": "^10.5.4",
     "@storybook/addon-mcp": "^0.7.0",
-    "@storybook/react-vite": "^10.5.3",
+    "@storybook/react-vite": "^10.5.4",
     "@vitejs/plugin-react-swc": "^4.3.1",
     "@whitespace/storybook-addon-html": "^9.0.0",
     "cpy-cli": "^7.0.0",
-    "storybook": "^10.5.3",
+    "storybook": "^10.5.4",
     "vite": "^8.1.5",
     "vite-plugin-svgr": "^5.2.0"
   }
