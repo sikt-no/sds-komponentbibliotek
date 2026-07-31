@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.6.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.6.1...@sikt/sds-button@4.6.2) (2026-07-31)
+
+### Bug Fixes
+
+- **deps:** update react ([88b1ab8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/88b1ab81a74f1e36045906ac2255236cca9add5b))
+- **deps:** update react ([341fcaa](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/341fcaa4b8e0a282f74c7b4aabefbf4e2e306627))
+- **deps:** update react ([6d1e15a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/6d1e15aec3fcc756272dd8a6945098ff651c1e05))
+
 ## [4.6.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-button@4.6.0...@sikt/sds-button@4.6.1) (2026-03-20)
 
 ### Bug Fixes
