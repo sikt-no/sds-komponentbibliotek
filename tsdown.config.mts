@@ -23,4 +23,5 @@ export default defineConfig({
   },
   plugins: [svgr()],
   publint: true,
+  checks: { pluginTimings: false },
 });
