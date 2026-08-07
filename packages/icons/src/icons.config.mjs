@@ -125,6 +125,8 @@ export const config = [
   { id: "archive", name: "archive", category: "menu" },
   { id: "map-pin", name: "location", category: "map" },
   { id: "spinner-gap", name: "spinner-gap", category: "ui" },
+  { id: "rows", name: "list-view", category: "ui" },
+  { id: "squares-four", name: "grid-view", category: "ui" },
   { id: "book", name: "book", category: "categorization" },
   { id: "law", source: "sds", name: "law", category: "categorization" },
   {
