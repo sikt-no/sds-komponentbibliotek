@@ -2,6 +2,7 @@ import { MoveToPreviousIcon, MoveToNextIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, MouseEvent } from "react";
 import "./pagination.css";
+import { usePaginationRange } from "./usePaginationRange";
 
 export interface PaginationProps extends Omit<
   HTMLAttributes<HTMLElement>,
@@ -59,20 +60,7 @@ export const Pagination = ({
   className,
   ...rest
 }: PaginationProps) => {
-  const constantCount = 2;
-  const delimiter = Math.ceil(limit / 2) - constantCount - 1;
-  const max = currentIndex + delimiter;
-  const min = currentIndex - delimiter;
-  const hasMaxSpacer = count - 1 > max;
-  const hasMinSpacer = 1 < min;
-  const maxModifier = count - 1 - max - 1;
-  const minModifier = min - 1;
-  const hasLessBeforeIndex = minModifier < 0;
-  const hasLessAfterIndex = maxModifier < 0;
-  let maxLimit = hasMaxSpacer ? max - 1 : max;
-  maxLimit = hasLessBeforeIndex ? maxLimit - minModifier : maxLimit;
-  let minLimit = hasMinSpacer ? min + 1 : min;
-  minLimit = hasLessAfterIndex ? minLimit + maxModifier : minLimit;
+  const items = usePaginationRange({ count, currentIndex, limit });
 
   return (
     <nav
@@ -93,34 +81,29 @@ export const Pagination = ({
             <MoveToPreviousIcon />
           </button>
         </li>
-        {[...Array(count).keys()].map((value) => {
-          if (
-            value === 0 ||
-            value === count - 1 ||
-            (value >= minLimit && value <= maxLimit)
-          ) {
+        {items.map((item) => {
+          if (item.type === "spacer") {
             return (
-              <li className="sds-pagination__list-item" key={value}>
-                <button
-                  className="sds-pagination__button"
-                  aria-current={value === currentIndex ? "page" : undefined}
-                  aria-label={`${ariaLabelItem} ${value + 1}`}
-                  disabled={value === currentIndex}
-                  onClick={(event) => {
-                    onClick(event, value);
-                  }}
-                >
-                  {value + 1}
-                </button>
-              </li>
-            );
-          } else if (value == maxLimit + 1 || value == minLimit - 1) {
-            return (
-              <li className="sds-pagination__list-item" key={value}>
+              <li className="sds-pagination__list-item" key={item.key}>
                 <div className="sds-pagination__button--spacer">&hellip;</div>
               </li>
             );
           }
+          return (
+            <li className="sds-pagination__list-item" key={item.index}>
+              <button
+                className="sds-pagination__button"
+                aria-current={item.index === currentIndex ? "page" : undefined}
+                aria-label={`${ariaLabelItem} ${item.index + 1}`}
+                disabled={item.index === currentIndex}
+                onClick={(event) => {
+                  onClick(event, item.index);
+                }}
+              >
+                {item.index + 1}
+              </button>
+            </li>
+          );
         })}
         <li className="sds-pagination__list-item">
           <button
