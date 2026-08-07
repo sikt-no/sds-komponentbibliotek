@@ -1,256 +1,39 @@
 import StyleDictionary from "style-dictionary";
-import { fileHeader } from "style-dictionary/utils";
-import Color from "tinycolor2";
-import JsonToTS from "json-to-ts";
+import { colorDarkTransform } from "./transform/colorDark.mjs";
+import { colorLightDarkTransform } from "./transform/colorLightDark.mjs";
+import { colorLightDarkFormat } from "./format/colorLightDark.mjs";
+import { customMediaFormat } from "./format/customMedia.mjs";
+import { atMediaFormat } from "./format/atMedia.mjs";
+import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
+import { tailwindConfigFormat } from "./format/tailwindConfig.mjs";
+import { prefix } from "./config.mjs";
+import { colorFilter, filter } from "./filters.mjs";
 
-const prefix = "sds";
 const sourcePath = "src/";
 const buildPath = "dist/";
-const defaultFileHeader = await fileHeader({});
 
-const filter = (token) => !token.attributes?.category?.startsWith("_");
-const colorFilter = (token) =>
-  (token.attributes?.category === "color" || token.type === "color") &&
-  filter(token);
+const cssTransforms = [
+  "attribute/cti",
+  "name/kebab",
+  "time/seconds",
+  "html/icon",
+  "color/hex",
+  "size/pxToRem",
+];
+const tsTransforms = ["attribute/cti", "name/pascal", "color/hex"];
 
-const transformHex = (c) => {
-  const color = Color(c);
-  if (color.getAlpha() === 1) {
-    return color.toHexString();
-  } else {
-    return color.toHex8String();
-  }
-};
+StyleDictionary.registerTransform(colorDarkTransform);
+StyleDictionary.registerTransform(colorLightDarkTransform);
 
-/**
- * Custom Transform: Color Dark
- * This change color tokens value to dark attribute.
- */
-StyleDictionary.registerTransform({
-  name: "transform/color/dark",
-  type: "value",
-  transitive: true,
-  filter: colorFilter,
-  transform: (token) => {
-    return transformHex(token.dark);
-  },
-});
+StyleDictionary.registerFormat(colorLightDarkFormat);
+StyleDictionary.registerFormat(customMediaFormat);
+StyleDictionary.registerFormat(atMediaFormat);
+StyleDictionary.registerFormat(tailwindConfigFormat);
+StyleDictionary.registerFormat(tsAccurateModuleDeclarationsFormat);
 
 /**
- * Custom Transform: Color Light-Dark
- * This change color tokens value to `light-dark(value, value)`.
+ * Builds Tokens for CSS (not Color), TS and Tailwind
  */
-StyleDictionary.registerTransform({
-  name: "transform/color/light-dark",
-  type: "value",
-  transitive: true,
-  filter: colorFilter,
-  transform: (token) => {
-    const dark = transformHex(token.dark);
-    return `light-dark(${token.$value}, ${dark})`;
-  },
-});
-
-/**
- * Custom Format: Color Light-Dark
- * This adds `color-scheme: light dark` to color tokens.
- */
-StyleDictionary.registerFormat({
-  name: "format/color/light-dark",
-  format: ({ dictionary, options }) => {
-    return (
-      defaultFileHeader +
-      `:root {
-  color-scheme: light dark;
-
-${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.$value};`).join("\n")}
-}
-
-[data-color-scheme="light"] {
-  color-scheme: only light;
-}
-
-[data-color-scheme="dark"] {
-  color-scheme: only dark;
-}`
-    );
-  },
-});
-
-/**
- * Custom Format: Custom Media
- * This converts our viewport tokens to the very specific `@custom-media`
- * variable definition format.
- */
-StyleDictionary.registerFormat({
-  name: "format/custom-media",
-  format: ({ dictionary }) => {
-    return (
-      defaultFileHeader +
-      dictionary.allTokens
-        .map((prop) => {
-          const { name, $value } = prop;
-          return `@custom-media --${name} (width >= ${$value});`;
-        })
-        .join("\n")
-    );
-  },
-});
-
-/**
- * Custom Format: At Media
- * This adds `@media` to tokens.
- */
-StyleDictionary.registerFormat({
-  name: "format/at-media",
-  format: ({ dictionary, options }) => {
-    return (
-      defaultFileHeader +
-      `@media (width >= ${
-        dictionary.tokens.base.breakpoint[options.atMedia].$value
-      }) {
-  :root {
-${dictionary.allTokens
-  .filter((prop) => !prop.filePath.includes("base"))
-  .map((prop) => `  --${prop.name}: ${prop.$value};`)
-  .join("\n")}
-  }
-}`
-    );
-  },
-});
-
-/**
- * Custom Format: Tailwind @theme
- * This adds tokens to @theme.
- */
-StyleDictionary.registerFormat({
-  name: "format/tailwind/config",
-  format: ({ dictionary, options }) => {
-    const colorTokens = dictionary.allTokens.filter(
-      (prop) => prop.attributes.category === "color",
-    );
-    const typographyTokens = dictionary.allTokens.filter(
-      (prop) => prop.attributes.category === "typography",
-    );
-    const fontSizeTokensBase = typographyTokens.filter(
-      (prop) =>
-        prop.attributes.category === "typography" &&
-        prop.attributes.type?.includes("fontsize"),
-    );
-    const fontSizeTokensSemantic = typographyTokens.filter(
-      (prop) =>
-        prop.attributes.category === "typography" &&
-        prop.name.endsWith("fontsize"),
-    );
-    const fontSizeTokens = [...fontSizeTokensBase, ...fontSizeTokensSemantic];
-    const lineHeightTokensBase = typographyTokens.filter(
-      (prop) =>
-        prop.attributes.category === "typography" &&
-        prop.attributes.type?.includes("lineheight"),
-    );
-    const lineHeightTokensSemantic = typographyTokens.filter(
-      (prop) =>
-        prop.attributes.category === "typography" &&
-        prop.name.endsWith("lineheight"),
-    );
-    const lineHeightTokens = [
-      ...lineHeightTokensBase,
-      ...lineHeightTokensSemantic,
-    ];
-    const fontWeightTokens = typographyTokens.filter(
-      (prop) =>
-        prop.attributes.category === "typography" &&
-        prop.attributes.type?.includes("fontweight"),
-    );
-    const letterSpacingTokens = typographyTokens.filter(
-      (prop) =>
-        prop.attributes.category === "typography" &&
-        prop.attributes.type?.includes("letterspacing"),
-    );
-    const breakpointTokens = dictionary.allTokens.filter(
-      (prop) => prop.attributes.type === "breakpoint",
-    );
-    const borderRadiusTokens = dictionary.allTokens.filter(
-      (prop) =>
-        prop.attributes.type === "border" && prop.attributes.item === "radius",
-    );
-
-    return (
-      defaultFileHeader +
-      `@layer theme, base, components, utilities;
-
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities);
-
-@theme inline {
-  --color-*: initial;
-${colorTokens.map((prop) => `  --${prop.name.replace(`${prefix}-`, "")}: var(--${prop.name});`).join("\n")}
-
-  --font-*: initial;
-  --font-sans: Haffer, Arial, sans-serif;
-  --font-mono: monospace;
-
-  --text-*: initial;
-${fontSizeTokens.map((prop) => `  --text${prop.name.replace("sds-typography", "").replace("-fontsize", "")}: var(--${prop.name});`).join("\n")}
-${lineHeightTokens.map((prop) => `  --text${prop.name.replace("sds-typography", "").replace("-lineheight", "")}--line-height: var(--${prop.name});`).join("\n")}
-
-  --font-weight-*: initial;
-${fontWeightTokens.map((prop) => `  --font-weight-${prop.attributes.item}: var(--${prop.name});`).join("\n")}
-
-  --tracking-*: initial;
-${letterSpacingTokens.map((prop) => `  --tracking-${prop.attributes.item}: var(--${prop.name});`).join("\n")}
-
-  --breakpoint-*: initial;
-${breakpointTokens.map((prop) => `  --breakpoint-${prop.attributes.item}: ${prop.$value};`).join("\n")}
-
-  --spacing-*: initial;
-
-  --radius-*: initial;
-${borderRadiusTokens.map((prop) => `  --radius-${prop.attributes.subitem}: var(--${prop.name});`).join("\n")}
-}`
-    );
-  },
-});
-
-/**
- * Custom Format: TypeScript Accurate Module Declarations
- * This generates more accurate TypeScript types using json-to-ts.
- * Based on the official StyleDictionary documentation pattern:
- * https://styledictionary.com/reference/hooks/formats/predefined/
- */
-StyleDictionary.registerFormat({
-  name: "typescript/accurate-module-declarations",
-  format: function ({ dictionary }) {
-    try {
-      const typeInterfaces = JsonToTS(dictionary.tokens);
-
-      if (!Array.isArray(typeInterfaces) || typeInterfaces.length === 0) {
-        throw new Error("JsonToTS returned invalid or empty type definitions");
-      }
-
-      return (
-        "declare const root: RootObject\n" +
-        "export default root\n" +
-        typeInterfaces.join("\n")
-      );
-    } catch (error) {
-      console.error(
-        "Error generating TypeScript types with json-to-ts:",
-        error.message,
-      );
-      console.error("Falling back to basic type declaration");
-
-      // Fallback to a basic type declaration if json-to-ts fails
-      return (
-        "declare const root: any\n" +
-        "export default root\n" +
-        "// Error: Could not generate accurate types, falling back to 'any'"
-      );
-    }
-  },
-});
-
 const dictionaryTokens = new StyleDictionary({
   /*
   log: {
@@ -260,14 +43,7 @@ const dictionaryTokens = new StyleDictionary({
   source: [`${sourcePath}**/!(*.tablet|*.desktop).{json,js,mjs}`],
   platforms: {
     css: {
-      transforms: [
-        "attribute/cti",
-        "name/kebab",
-        "time/seconds",
-        "html/icon",
-        "color/hex",
-        "size/pxToRem",
-      ],
+      transforms: cssTransforms,
       buildPath,
       prefix,
       files: [
@@ -284,7 +60,7 @@ const dictionaryTokens = new StyleDictionary({
       ],
     },
     ts: {
-      transforms: ["attribute/cti", "name/pascal", "color/hex"],
+      transforms: tsTransforms,
       buildPath,
       prefix,
       files: [
@@ -294,7 +70,7 @@ const dictionaryTokens = new StyleDictionary({
           filter,
         },
         {
-          format: "typescript/accurate-module-declarations",
+          format: "format/typescript/accurate-module-declarations",
           destination: "js/tokens.d.ts",
           filter,
         },
@@ -327,25 +103,21 @@ const dictionaryTokens = new StyleDictionary({
 
 await dictionaryTokens.buildAllPlatforms();
 
+/**
+ * Builds Color tokens for CSS
+ */
 const dictionaryColorCss = new StyleDictionary({
   source: [`${sourcePath}color/*.{json,js,mjs}`],
   platforms: {
     css: {
-      transforms: [
-        "attribute/cti",
-        "name/kebab",
-        "time/seconds",
-        "html/icon",
-        "color/hex",
-        "transform/color/light-dark",
-      ],
+      transforms: [...cssTransforms, "transform/color/light-dark"],
       buildPath,
       prefix,
       files: [
         {
           format: "format/color/light-dark",
           destination: "css/color.css",
-          filter: colorFilter,
+          filter: (token) => filter(token) && colorFilter(token),
         },
       ],
     },
@@ -354,33 +126,31 @@ const dictionaryColorCss = new StyleDictionary({
 
 await dictionaryColorCss.buildAllPlatforms();
 
+/**
+ * Builds Color (dark) tokens for TS
+ */
 const dictionaryColorDark = new StyleDictionary({
   source: [`${sourcePath}color/*.{json,js,mjs}`],
   platforms: {
     ts: {
-      transforms: [
-        "attribute/cti",
-        "name/pascal",
-        "color/hex",
-        "transform/color/dark",
-      ],
+      transforms: [...tsTransforms, "transform/color/dark"],
       buildPath,
       prefix,
       files: [
         {
           format: "javascript/module",
           destination: "js/color.dark.js",
-          filter: colorFilter,
+          filter: (token) => filter(token) && colorFilter(token),
         },
         {
-          format: "typescript/accurate-module-declarations",
+          format: "format/typescript/accurate-module-declarations",
           destination: "js/color.dark.d.ts",
-          filter: colorFilter,
+          filter: (token) => filter(token) && colorFilter(token),
         },
         {
           format: "javascript/esm",
           destination: "js/color.dark.mjs",
-          filter: colorFilter,
+          filter: (token) => filter(token) && colorFilter(token),
         },
       ],
     },
@@ -389,112 +159,55 @@ const dictionaryColorDark = new StyleDictionary({
 
 await dictionaryColorDark.buildAllPlatforms();
 
-const dictionaryMediaTablet = new StyleDictionary({
-  source: [
-    `${sourcePath}**/base/*.{json,js,mjs}`,
-    `${sourcePath}**/*.tablet.{json,js,mjs}`,
-  ],
-  platforms: {
-    css: {
-      transforms: [
-        "attribute/cti",
-        "name/kebab",
-        "time/seconds",
-        "html/icon",
-        "color/hex",
-        "size/pxToRem",
-      ],
-      buildPath,
-      prefix,
-      files: [
-        {
-          format: "format/at-media",
-          destination: "css/tokens.tablet.css",
-          filter,
-          options: {
-            atMedia: "tablet",
+/**
+ * Builds Viewport tokens for CSS
+ */
+for (const viewport of ["tablet", "desktop"]) {
+  const dictionaryMediaViewport = new StyleDictionary({
+    source: [
+      `${sourcePath}**/base/*.{json,js,mjs}`,
+      `${sourcePath}**/*.${viewport}.{json,js,mjs}`,
+    ],
+    platforms: {
+      css: {
+        transforms: cssTransforms,
+        buildPath,
+        prefix,
+        files: [
+          {
+            format: "format/at-media",
+            destination: `css/tokens.${viewport}.css`,
+            filter,
+            options: {
+              atMedia: viewport,
+            },
           },
-        },
-      ],
-    },
-    ts: {
-      transforms: ["attribute/cti", "name/pascal", "color/hex"],
-      buildPath,
-      prefix,
-      files: [
-        {
-          format: "javascript/module",
-          destination: "js/tokens.tablet.js",
-          filter,
-        },
-        {
-          format: "typescript/accurate-module-declarations",
-          destination: "js/tokens.tablet.d.ts",
-          filter,
-        },
-        {
-          format: "javascript/esm",
-          destination: "js/tokens.tablet.mjs",
-          filter,
-        },
-      ],
-    },
-  },
-});
-
-await dictionaryMediaTablet.buildAllPlatforms();
-
-const dictionaryMediaDesktop = new StyleDictionary({
-  source: [
-    `${sourcePath}**/base/*.{json,js,mjs}`,
-    `${sourcePath}**/*.desktop.{json,js,mjs}`,
-  ],
-  platforms: {
-    css: {
-      transforms: [
-        "attribute/cti",
-        "name/kebab",
-        "time/seconds",
-        "html/icon",
-        "color/hex",
-        "size/pxToRem",
-      ],
-      buildPath,
-      prefix,
-      files: [
-        {
-          format: "format/at-media",
-          destination: "css/tokens.desktop.css",
-          filter,
-          options: {
-            atMedia: "desktop",
+        ],
+      },
+      ts: {
+        transforms: tsTransforms,
+        buildPath,
+        prefix,
+        files: [
+          {
+            format: "javascript/module",
+            destination: `js/tokens.${viewport}.js`,
+            filter,
           },
-        },
-      ],
+          {
+            format: "format/typescript/accurate-module-declarations",
+            destination: `js/tokens.${viewport}.d.ts`,
+            filter,
+          },
+          {
+            format: "javascript/esm",
+            destination: `js/tokens.${viewport}.mjs`,
+            filter,
+          },
+        ],
+      },
     },
-    ts: {
-      transforms: ["attribute/cti", "name/pascal", "color/hex"],
-      buildPath,
-      prefix,
-      files: [
-        {
-          format: "javascript/module",
-          destination: "js/tokens.desktop.js",
-          filter,
-        },
-        {
-          format: "typescript/accurate-module-declarations",
-          destination: "js/tokens.desktop.d.ts",
-          filter,
-        },
-        {
-          format: "javascript/esm",
-          destination: "js/tokens.desktop.mjs",
-          filter,
-        },
-      ],
-    },
-  },
-});
+  });
 
-await dictionaryMediaDesktop.buildAllPlatforms();
+  await dictionaryMediaViewport.buildAllPlatforms();
+}
