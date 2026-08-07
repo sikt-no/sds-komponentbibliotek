@@ -27,9 +27,10 @@ export type RadioInputProps = RadioInputBaseProps &
 
 export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
   (props, ref) => {
-    const { value: valueContext, ...context } = useRadioFieldset() ?? {};
+    const { value: valueContext, ...context } = useRadioFieldset();
 
-    const checked = valueContext && valueContext === props.value ? true : false;
+    // `props.value` cannot be undefined, so we can compare directly.
+    const checked = valueContext === props.value;
 
     return (
       <RadioInputBase {...context} {...props} ref={ref} checked={checked} />

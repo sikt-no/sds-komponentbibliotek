@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
+import { useState } from "react";
 import { RadioFieldset } from "./RadioFieldset";
 import { RadioInput } from "./RadioInput";
 
@@ -48,6 +49,70 @@ describe("RadioFieldset", () => {
       expect(screen.getByLabelText("Radio 2")).toHaveAttribute("checked");
       expect(screen.getByLabelText("Radio 3")).not.toBeChecked();
       expect(screen.getByLabelText("Radio 3")).not.toHaveAttribute("checked");
+    });
+
+    it("radio button with empty value should be checked when fieldset value is empty", async () => {
+      render(
+        <RadioFieldset legend="Foo" onChange={jest.fn()} value="">
+          <RadioInput label="All" value="" />
+          <RadioInput label="Radio 1" value="1" />
+          <RadioInput label="Radio 2" value="2" />
+        </RadioFieldset>,
+      );
+
+      expect(screen.getByLabelText("All")).toBeChecked();
+      expect(screen.getByLabelText("Radio 1")).not.toBeChecked();
+      expect(screen.getByLabelText("Radio 2")).not.toBeChecked();
+    });
+
+    it("no radio button should be checked when fieldset value is undefined", async () => {
+      render(
+        <RadioFieldset legend="Foo" onChange={jest.fn()} value={undefined}>
+          <RadioInput label="All" value="" />
+          <RadioInput label="Radio 1" value="1" />
+          <RadioInput label="Radio 2" value="2" />
+        </RadioFieldset>,
+      );
+
+      expect(screen.getByLabelText("All")).not.toBeChecked();
+      expect(screen.getByLabelText("Radio 1")).not.toBeChecked();
+      expect(screen.getByLabelText("Radio 2")).not.toBeChecked();
+    });
+
+    it("supports selecting away from and back to an empty value", async () => {
+      const user = userEvent.setup();
+
+      const ControlledFieldset = () => {
+        const [value, setValue] = useState("");
+
+        return (
+          <RadioFieldset
+            legend="Foo"
+            value={value}
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+          >
+            <RadioInput label="All" value="" />
+            <RadioInput label="Radio 1" value="1" />
+            <RadioInput label="Radio 2" value="2" />
+          </RadioFieldset>
+        );
+      };
+
+      render(<ControlledFieldset />);
+
+      expect(screen.getByLabelText("All")).toBeChecked();
+
+      await user.click(screen.getByText("Radio 1"));
+
+      expect(screen.getByLabelText("All")).not.toBeChecked();
+      expect(screen.getByLabelText("Radio 1")).toBeChecked();
+
+      await user.click(screen.getByText("All"));
+
+      expect(screen.getByLabelText("All")).toBeChecked();
+      expect(screen.getByLabelText("Radio 1")).not.toBeChecked();
     });
 
     it("calls change handler", async () => {

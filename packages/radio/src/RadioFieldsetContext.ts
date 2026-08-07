@@ -10,8 +10,7 @@ export const RadioFieldsetContext = createContext<
   RadioFieldsetState | undefined
 >(undefined);
 
-export default function useRadioFieldset():
-  (RadioFieldsetState & FieldsetState) | undefined {
+export default function useRadioFieldset(): RadioFieldsetState & FieldsetState {
   const fieldsetContext = useFieldset();
   const radioFieldsetContext = useContext(RadioFieldsetContext);
 
