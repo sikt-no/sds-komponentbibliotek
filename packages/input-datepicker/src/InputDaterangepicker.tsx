@@ -1,6 +1,6 @@
 import { Button, type ButtonProps } from "@sikt/sds-button";
 import { HelpText, Label } from "@sikt/sds-form";
-import { useClickOutside, useKeydown } from "@sikt/sds-hooks";
+import { useClickOutside, useFormFieldIds, useKeydown } from "@sikt/sds-hooks";
 import {
   DateCalendarIcon,
   MoveToPreviousIcon,
@@ -11,7 +11,6 @@ import { clsx } from "clsx/lite";
 import {
   ReactNode,
   forwardRef,
-  useId,
   useRef,
   useState,
   useContext,
@@ -145,8 +144,9 @@ export const InputDaterangepicker = forwardRef<
   ) => {
     const calendarRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLDivElement>(null);
-    const id = useId();
-    const errorTextId = `${id}-error-text`;
+    const { id, errorTextId, ariaErrorMessage } = useFormFieldIds({
+      errorText,
+    });
     const [calendarOpen, setCalendarOpen] = useState(false);
 
     const handleEscapeKeydown = () => {
@@ -170,7 +170,7 @@ export const InputDaterangepicker = forwardRef<
           onChange={onValueChange}
           isInvalid={Boolean(errorText)}
           aria-labelledby={ariaLabelledBy}
-          aria-errormessage={errorText ? errorTextId : undefined}
+          aria-errormessage={ariaErrorMessage}
           className={clsx(
             "sds-input",
             errorText && "sds-input--error",

@@ -1,4 +1,5 @@
 import { Label, HelpText } from "@sikt/sds-form";
+import { useFormFieldIds } from "@sikt/sds-hooks";
 import type { UHTMLComboboxElement } from "@u-elements/u-combobox";
 import { clsx } from "clsx/lite";
 import {
@@ -6,7 +7,6 @@ import {
   HTMLAttributes,
   ReactNode,
   useEffect,
-  useId,
   useRef,
   useState,
   forwardRef,
@@ -143,9 +143,7 @@ export const Combobox = forwardRef<UHTMLComboboxElement, ComboboxProps>(
     ref,
   ) {
     const comboboxRef = useRef<UHTMLComboboxElement>(null);
-    const id = useId();
-    const errorTextId = `${id}-error-text`;
-    const helpTextId = `${id}-help-text`;
+    const { id, errorTextId, helpTextId } = useFormFieldIds();
     const listId = `${id}-list`;
     const textProps = getTextProps(lang);
     const isControlled = selected !== undefined;

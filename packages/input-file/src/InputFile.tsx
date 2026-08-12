@@ -1,9 +1,10 @@
 import { DropEvent } from "@react-types/shared";
 import { Paragraph } from "@sikt/sds-core";
 import { FormField } from "@sikt/sds-form";
+import { useFormFieldIds } from "@sikt/sds-hooks";
 import { UploadIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
-import { forwardRef, ReactNode, useEffect, useId, useState } from "react";
+import { forwardRef, ReactNode, useEffect, useState } from "react";
 import {
   Button,
   DropZone,
@@ -67,19 +68,13 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
     },
     ref,
   ) => {
-    const id = useId();
-    const errorTextId = `${id}-error-text`;
-    const helpTextId = `${id}-help-text`;
+    const { id, errorTextId, helpTextId, ariaDescribedBy, ariaErrorMessage } =
+      useFormFieldIds({ errorText, helpText });
     const [files, setFiles] = useState(value ?? []);
     const inputId = { id };
     const acceptedFileTypes =
       typeof accept === "string" ? accept.split(",") : accept;
     const minFileSize = 0;
-
-    const ariaDescribedBy =
-      [errorText && errorTextId, helpText && helpTextId]
-        .filter(Boolean)
-        .join(" ") || undefined;
 
     useEffect(() => {
       if (value) {
@@ -174,7 +169,7 @@ export const InputFile = forwardRef<HTMLDivElement, InputFileProps>(
             aria-label={ariaLabel}
             aria-describedby={ariaDescribedBy}
             aria-invalid={Boolean(errorText)}
-            aria-errormessage={errorText ? errorTextId : undefined}
+            aria-errormessage={ariaErrorMessage}
             ref={ref}
             {...rest}
           >

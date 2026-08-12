@@ -1,4 +1,5 @@
 import { FormField } from "@sikt/sds-form";
+import { useFormFieldIds } from "@sikt/sds-hooks";
 import { clsx } from "clsx/lite";
 import {
   ChangeEvent,
@@ -6,7 +7,6 @@ import {
   ReactNode,
   forwardRef,
   useCallback,
-  useId,
 } from "react";
 import "./input.css";
 
@@ -71,20 +71,14 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     },
     ref,
   ) => {
-    const id = useId();
+    const { id, errorTextId, helpTextId, ariaDescribedBy, ariaErrorMessage } =
+      useFormFieldIds({ errorText, helpText });
     const changeHandler = useCallback(
       (event: ChangeEvent<HTMLTextAreaElement>) => {
         onChange?.(event, event.target.value);
       },
       [onChange],
     );
-    const errorTextId = `${id}-error-text`;
-    const helpTextId = `${id}-help-text`;
-
-    const ariaDescribedBy =
-      [errorText && errorTextId, helpText && helpTextId]
-        .filter(Boolean)
-        .join(" ") || undefined;
 
     return (
       <FormField
@@ -116,7 +110,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             aria-labelledby={ariaLabelledBy}
             aria-describedby={ariaDescribedBy}
             aria-invalid={Boolean(errorText)}
-            aria-errormessage={errorText ? errorTextId : undefined}
+            aria-errormessage={ariaErrorMessage}
             rows={rows}
             {...rest}
           />

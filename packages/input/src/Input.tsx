@@ -1,5 +1,6 @@
 import { Button, ButtonProps } from "@sikt/sds-button";
 import { FormField } from "@sikt/sds-form";
+import { useFormFieldIds } from "@sikt/sds-hooks";
 import {
   EmailIcon,
   SearchIcon,
@@ -14,7 +15,6 @@ import {
   ReactNode,
   forwardRef,
   useCallback,
-  useId,
 } from "react";
 import "./input.css";
 
@@ -91,20 +91,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref,
   ) => {
-    const id = useId();
+    const { id, errorTextId, helpTextId, ariaDescribedBy, ariaErrorMessage } =
+      useFormFieldIds({ errorText, helpText });
     const changeHandler = useCallback(
       (event: ChangeEvent<HTMLInputElement>) => {
         onChange?.(event, event.target.value);
       },
       [onChange],
     );
-    const errorTextId = `${id}-error-text`;
-    const helpTextId = `${id}-help-text`;
-
-    const ariaDescribedBy =
-      [errorText && errorTextId, helpText && helpTextId]
-        .filter(Boolean)
-        .join(" ") || undefined;
 
     const handleClearClick = (event: React.MouseEvent<HTMLButtonElement>) => {
       if (clearActionProps?.onClick) {
@@ -177,7 +171,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             aria-labelledby={ariaLabelledBy}
             aria-describedby={ariaDescribedBy}
             aria-invalid={Boolean(errorText)}
-            aria-errormessage={errorText ? errorTextId : undefined}
+            aria-errormessage={ariaErrorMessage}
             {...rest}
           />
         </span>

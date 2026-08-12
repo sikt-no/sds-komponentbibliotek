@@ -1,5 +1,6 @@
+import { useFormFieldIds } from "@sikt/sds-hooks";
 import { clsx } from "clsx/lite";
-import { HTMLAttributes, ReactNode, forwardRef, useId, useMemo } from "react";
+import { HTMLAttributes, ReactNode, forwardRef, useMemo } from "react";
 import { FieldsetContext } from "./FieldsetContext";
 import "./fieldset.css";
 import { HelpText } from "./HelpText";
@@ -50,19 +51,13 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
     },
     ref,
   ) => {
-    const id = useId();
-    const errorTextId = `${id}-error-text`;
-    const helpTextId = `${id}-help-text`;
+    const { id, errorTextId, helpTextId, ariaDescribedBy, ariaErrorMessage } =
+      useFormFieldIds({ errorText, helpText });
 
     const context = useMemo(
       () => ({ name: name ?? id, error: Boolean(errorText) }),
       [name, id, errorText],
     );
-
-    const ariaDescribedBy =
-      [errorText && errorTextId, helpText && helpTextId]
-        .filter(Boolean)
-        .join(" ") || undefined;
 
     return (
       <FieldsetContext.Provider value={context}>
@@ -76,7 +71,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
           aria-labelledby={ariaLabelledby}
           aria-describedby={ariaDescribedBy}
           aria-invalid={Boolean(errorText)}
-          aria-errormessage={errorText ? errorTextId : undefined}
+          aria-errormessage={ariaErrorMessage}
           {...rest}
         >
           {legend !== undefined && (
