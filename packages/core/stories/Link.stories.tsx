@@ -60,3 +60,22 @@ export const WithIcon: Story = {
     icon: <NavigateToNextIcon />,
   },
 };
+
+export const ExternalMultiline: Story = {
+  args: {
+    ...Default.args,
+    isExternal: true,
+    children: "The market fit team has been doing",
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: "10rem" }}>
+        Can someone from the shareholder value team deep dive into this and
+        report back? I want us to sunset the results-driven ecosystem and run up
+        the flagpole the market fit. Once we take ownership of the robust ask,
+        the rest is just headcount <Story /> a great job trying to table the
+        deep dive.
+      </div>
+    ),
+  ],
+};

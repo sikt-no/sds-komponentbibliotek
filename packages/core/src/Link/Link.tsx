@@ -53,6 +53,17 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     const Comp = asChild ? Slot : "a";
     const iconLeft = iconVariant === "left";
 
+    const iconElement = icon && (
+      <span
+        className={clsx(
+          "sds-typography-link__icon",
+          `sds-typography-link__icon--${iconVariant}`,
+        )}
+      >
+        {icon}
+      </span>
+    );
+
     return (
       <Comp
         ref={ref}
@@ -61,22 +72,13 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
           isNavigation && "sds-typography-link--navigation",
           isExternal && "sds-typography-link--external",
           noIcon && "sds-typography-link--no-icon",
-          icon && iconLeft && "sds-typography-link--icon-left",
           className,
         )}
         {...rest}
       >
+        {iconLeft && iconElement}
         <Slottable>{children}</Slottable>
-        {icon && (
-          <span
-            className={clsx(
-              "sds-typography-link__icon",
-              `sds-typography-link__icon--${iconVariant}`,
-            )}
-          >
-            {icon}
-          </span>
-        )}
+        {!iconLeft && iconElement}
       </Comp>
     );
   },

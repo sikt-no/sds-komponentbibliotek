@@ -190,19 +190,22 @@
     --link-icon-size: 1.3em;
 
     color: var(--sds-color-text-primary);
-    display: inline-flex;
-    gap: var(--sds-space-gap-minimal);
     text-decoration: underline;
-
-    &--icon-left {
-      flex-direction: row-reverse;
-    }
 
     &__icon {
       align-items: center;
       display: inline-flex;
       font-size: var(--link-icon-size);
       justify-content: center;
+      vertical-align: sub;
+
+      &--right {
+        margin-inline-start: var(--sds-space-gap-minimal);
+      }
+
+      &--left {
+        margin-inline-end: var(--sds-space-gap-minimal);
+      }
     }
 
     &::after,
@@ -236,9 +239,9 @@
     &--external,
     &--navigation {
       &::after {
-        align-self: center;
         content: "";
         display: inline-block;
+        margin-inline-start: var(--sds-space-gap-minimal);
         mask-position: center right;
         mask-repeat: no-repeat;
         mask-size: var(--link-icon-size);
@@ -266,9 +269,9 @@
     &[href^="mailto:"],
     &[href^="tel:"] {
       &::before {
-        align-self: center;
         content: "";
         display: inline-block;
+        margin-inline-end: var(--sds-space-gap-minimal);
         mask-position: center left;
         mask-repeat: no-repeat;
         mask-size: var(--link-icon-size);
