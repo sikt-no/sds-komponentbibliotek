@@ -16,7 +16,7 @@ describe("{{pascalCase name}}", () => {
     it("should render", async () => {
       render(<{{pascalCase name}} data-testid="test" />);
 
-      expect(screen.getByTestId("test")).toHaveClass("sds-{{kebabCase name}}");
+      expect(screen.getByTestId("test")).toHaveClass("sd3-{{kebabCase name}}");
     });
 
     it("should have class name", async () => {
@@ -25,7 +25,7 @@ describe("{{pascalCase name}}", () => {
       );
 
       expect(screen.getByTestId("test")).toHaveClass(
-          "sds-{{kebabCase name}} test-class-name",
+          "sd3-{{kebabCase name}} test-class-name",
       );
     });
   });

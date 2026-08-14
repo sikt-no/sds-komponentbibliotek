@@ -1,5 +1,5 @@
 import figma from "@figma/code-connect";
-import { {{pascalCase name}} } from "@sikt/sds-{{kebabCase name}}";
+import { {{pascalCase name}} } from "@sikt/sd3-design-system";
 
 figma.connect(
   {{pascalCase name}},

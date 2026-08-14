@@ -1,16 +1,16 @@
-# `@sikt/sds-{{kebabCase name}}`
+# `@sikt/sd3-{{kebabCase name}}`
 
 ## Consume
 
 ```sh
-npm i -s @sikt/sds-{{kebabCase name}}
+npm i -s @sikt/sd3-design-system
 ```
 
 ### React
 
 ```js
-import { {{pascalCase name}} } from "@sikt/sds-{{kebabCase name}}";
-import "@sikt/sds-{{kebabCase name}}/dist/index.css";
+import { {{pascalCase name}} } from "@sikt/sd3-design-system";
+import "@sikt/sd3-design-system/dist/index.css";
 
 /* jsx example goes here */
 ```
@@ -20,7 +20,7 @@ import "@sikt/sds-{{kebabCase name}}/dist/index.css";
 Import stylesheet:
 
 ```css
-@import url("@sikt/sds-{{kebabCase name}}");
+@import url("@sikt/sd3-design-system");
 ```
 
 Create custom markup:

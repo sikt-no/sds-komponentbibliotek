@@ -14,7 +14,7 @@ export const {{pascalCase name}} = ({ className, ...rest }: {{pascalCase name}}P
   /* logic goes here */
   return (
     <div
-      className={clsx("sds-{{kebabCase name}}", className)}
+      className={clsx("sd3-{{kebabCase name}}", className)}
       {...rest}
     />
   );

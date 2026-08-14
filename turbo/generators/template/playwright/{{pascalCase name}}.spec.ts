@@ -2,13 +2,13 @@ import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
 
 test.describe("{{pascalCase name}}", () => {
-  const componentSelector = ".sds-{{kebabCase name}}";
+  const componentSelector = ".sd3-{{kebabCase name}}";
 
   test.describe("a11y", () => {
     /* tests goes here */
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-{{kebabCase name}}--default",
+        "/iframe.html?viewMode=story&id=sd3-{{kebabCase name}}--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -25,7 +25,7 @@ test.describe("{{pascalCase name}}", () => {
     /* tests goes here */
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-{{kebabCase name}}--default",
+        "/iframe.html?viewMode=story&id=sd3-{{kebabCase name}}--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
