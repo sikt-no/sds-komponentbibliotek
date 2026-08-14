@@ -1,3 +1,7 @@
 @scope (.sd3-button) {
   color: rebeccapurple;
+
+  .red {
+    color: rebeccapurple;
+  }
 }
