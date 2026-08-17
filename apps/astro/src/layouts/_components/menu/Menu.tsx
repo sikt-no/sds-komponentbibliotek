@@ -37,6 +37,7 @@ const visuellIdentitetMenu: MenuItemType[] = [
     name: "Logoer",
     url: "/visuell-identitet/logoer",
   },
+  { name: "Illustrasjoner", url: "/visuell-identitet/illustrasjoner" },
 ];
 
 const produktutviklingMenu: MenuItemType[] = [
