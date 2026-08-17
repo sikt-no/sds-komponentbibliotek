@@ -1,0 +1,19 @@
+{
+  "animation": {
+    "duration-short": {
+      "$value": "100ms",
+      "$type": "duration"
+    },
+    "duration-medium": {
+      "$value": "250ms",
+      "$type": "duration"
+    },
+    "duration-long": {
+      "$value": "500ms",
+      "$type": "duration"
+    },
+    "easing-default": {
+      "$value": "ease-in-out"
+    }
+  }
+}

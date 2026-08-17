@@ -1,0 +1,8 @@
+{
+  "font": {
+    "family": {
+      "$value": ["Haffer", "Arial", "sans-serif"],
+      "$type": "fontFamily"
+    }
+  }
+}

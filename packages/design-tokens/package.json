@@ -37,7 +37,9 @@
     "*.css"
   ],
   "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {}
+  "devDependencies": {
+    "json-to-ts": "^2.1.0",
+    "style-dictionary": "^5.5.1",
+    "tinycolor2": "^1.6.0"
+  }
 }
