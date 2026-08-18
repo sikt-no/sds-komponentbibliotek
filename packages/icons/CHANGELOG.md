@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@4.2.0...@sikt/sds-icons@4.3.0) (2026-08-18)
+
+### Features
+
+- **icons:** add list-view and grid-view icons ([1f21606](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/1f216061f877c9dbce3bc9b824bcb532e2a38281))
+- **icons:** add new icons for success, info, alert & failed ([93617df](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/93617dfcb5286fcb83e84935869ca1376ce1111c))
+
+### Bug Fixes
+
+- **deps:** update eslint ([a7e8284](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a7e828486c7a9a74495ec1fc4e26f3ac69845030))
+
 ## [4.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@4.1.0...@sikt/sds-icons@4.2.0) (2026-01-07)
 
 ### Features
