@@ -31,15 +31,16 @@ StyleDictionary.registerFormat(atMediaFormat);
 StyleDictionary.registerFormat(tailwindConfigFormat);
 StyleDictionary.registerFormat(tsAccurateModuleDeclarationsFormat);
 
+const logLevel = "default";
+// const logLevel = "verbose";
+
 /**
  * Builds Tokens for CSS (not Color), TS and Tailwind
  */
 const dictionaryTokens = new StyleDictionary({
-  /*
   log: {
-    verbosity: "verbose",
+    verbosity: logLevel,
   },
-  */
   source: [`${sourcePath}**/!(*.tablet|*.desktop).{json,js,mjs}`],
   platforms: {
     css: {
@@ -107,6 +108,9 @@ await dictionaryTokens.buildAllPlatforms();
  * Builds Color tokens for CSS
  */
 const dictionaryColorCss = new StyleDictionary({
+  log: {
+    verbosity: logLevel,
+  },
   source: [`${sourcePath}color/*.{json,js,mjs}`],
   platforms: {
     css: {
@@ -130,6 +134,9 @@ await dictionaryColorCss.buildAllPlatforms();
  * Builds Color (dark) tokens for TS
  */
 const dictionaryColorDark = new StyleDictionary({
+  log: {
+    verbosity: logLevel,
+  },
   source: [`${sourcePath}color/*.{json,js,mjs}`],
   platforms: {
     ts: {
@@ -164,6 +171,9 @@ await dictionaryColorDark.buildAllPlatforms();
  */
 for (const viewport of ["tablet", "desktop"]) {
   const dictionaryMediaViewport = new StyleDictionary({
+    log: {
+      verbosity: logLevel,
+    },
     source: [
       `${sourcePath}**/base/*.{json,js,mjs}`,
       `${sourcePath}**/*.${viewport}.{json,js,mjs}`,
