@@ -9,8 +9,8 @@ const config: StorybookConfig = {
   framework: "@storybook/react-vite",
   stories: [
     "../stories/**/*.mdx",
-    "../../../packages/*/stories/**/*.mdx",
-    "../../../packages/*/stories/*.stories.@(js|jsx|ts|tsx)",
+    "../../../packages/**/stories/**/*.mdx",
+    "../../../packages/**/stories/*.stories.@(js|jsx|ts|tsx)",
   ],
   staticDirs: ["../static"],
   typescript: {
