@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@6.0.0...@sikt/sds-core@6.0.1) (2026-08-18)
+
+### Bug Fixes
+
+- **link:** keep external icon inline with wrapped text ([60fb6a9](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/60fb6a998ac5bf4a2bf72c960d25ea8049e506cf))
+
 ## [6.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@5.3.0...@sikt/sds-core@6.0.0) (2026-07-31)
 
 ### ⚠ BREAKING CHANGES
