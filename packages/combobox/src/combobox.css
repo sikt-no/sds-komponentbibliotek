@@ -219,7 +219,7 @@
   }
 
   &:has(.sds-combobox__input[aria-expanded="true"]) {
-    .sds-combobox__button-icon {
+    .sds-combobox__button--expand .sds-combobox__button-icon {
       rotate: 180deg;
     }
   }
