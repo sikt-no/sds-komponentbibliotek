@@ -31,7 +31,7 @@ const categories = [...new Set(config.map((item) => item.category))];
 
   {
     categories.map((category) => (
-      <Section headingText={kebabToString(category)}>
+      <Section headingText={kebabToString(category)} lang="en">
         <div class="ocean">
           {config
             .filter((item) => item.category === category)
