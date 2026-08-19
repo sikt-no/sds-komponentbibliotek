@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@1.0.2...@sikt/sds-hooks@1.1.0) (2026-08-19)
+
+### Bug Fixes
+
+- **deps:** update eslint ([bd971a3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bd971a3cec84a1c1811c79538291503f39ba1ad1))
+
 ## [1.0.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@1.0.1...@sikt/sds-hooks@1.0.2) (2026-06-17)
 
 ### Bug Fixes
