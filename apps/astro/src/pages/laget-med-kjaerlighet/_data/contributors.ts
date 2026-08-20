@@ -97,5 +97,5 @@ export const contributors: Contributors[] = [
   [{ name: "Jesper", role: "Design", team: "Læremiddelkatalogen" }],
   [{ name: "Magnus", role: "Teknologi", team: "KI-chat" }],
   [{ name: "Andreas T.", role: "Teknologi", team: "Oversikt" }],
-  [{ name: "Deg", role: "Din rolle", team: "Din produkt" }],
+  [{ name: "Deg", role: "Din rolle", team: "Ditt produkt" }],
 ].reverse();

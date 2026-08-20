@@ -25,8 +25,8 @@ import { Hero } from "../../components";
   heading={frontmatter.pageTitle}
 >
   Gjør disse grunnleggende testene for tilgjengelighet på nettsidene dere lager!
-  Automatiske testverktøy finner ca 30% av tilgjengelighetsproblemene. Metodene
-  nedenfor er nyttige for å bedre tilgjengeligheten ytterligere.
+  Automatiske testverktøy finner ca. 30 % av tilgjengelighetsproblemene.
+  Metodene nedenfor er nyttige for å bedre tilgjengeligheten ytterligere.
 </Hero>
 
 ## Hva ligger til grunn for testingen?
@@ -39,7 +39,7 @@ import { Hero } from "../../components";
 ## Lett å bruke
 
 - Er siden enkel å bruke for alle?
-- Er det forutsigart hva som skjer når man aktiverer menyvalg, knapper og lenker?
+- Er det forutsigbart hva som skjer når man aktiverer menyvalg, knapper og lenker?
 - Er det lett å holde oversikt?
 - Gis det gode bekreftelser og feilmeldinger når man har gjort noe?
 
@@ -65,7 +65,7 @@ Bruk tab, piltaster, enter, escape og space. Legg vekk musa.
 
 - Kan modalvinduer lukkes med escape? <sup>WCAG 2.1.2</sup>
 - Kan modalvinduer lukkes med en knapp? <sup>WCAG 2.1.2</sup>
-- Settes fokus tilake til knappen som åpnet modalvinduet når modalvinduet lukkes? <sup>WCAG 2.4.3</sup>
+- Settes fokus tilbake til knappen som åpnet modalvinduet når modalvinduet lukkes? <sup>WCAG 2.4.3</sup>
 
 ## Overskrifter
 
@@ -84,7 +84,7 @@ Sammenlign overskriftene på siden med det HeadingsMap viser.
 - Har siden én h1 som beskriver sidens innhold?
 - Følger overskriftene et hierarki uten hopp?
 - Er overskrift-strukturen logisk bygget opp? <sup>WCAG 1.3.1</sup>
-- Gir overskriftene en god beskrivende av innholdet? <sup>WCAG 2.4.6</sup>
+- Gir overskriftene en god beskrivelse av innholdet? <sup>WCAG 2.4.6</sup>
 
 ## Forstørring
 
@@ -100,7 +100,7 @@ Sjekk at ikke noe overlapper / forsvinner. <sup>WCAG 1.4.4</sup>
 
 - Sett skjermstørrelsen til 1280px bredde og 1024px høyde med 400% zoom.  
   Nettleser-tillegget Web Developer har en funksjon Resize som kan hjelpe deg med å sette vindu-størrelsen.  
-  Denne [bookmarkleten viser vindustørrlsen](https://coderwall.com/p/7vlbtw/bookmarklet-debug-window-width-height).
+  Denne [bookmarkleten viser vindusstørrelsen](https://coderwall.com/p/7vlbtw/bookmarklet-debug-window-width-height).
 - eller sett 320px bredde og 256px høyde.  
   Bruk for eksempel Utviklerverktøy (F12) - Device Toolbar.
 
@@ -120,7 +120,7 @@ Trykk på synlig feltnavn. Sjekk at feltet får fokusmarkering. <sup>WCAG 1.3.1<
 
 ### Tilgjengelig navn
 
-Tilgjengelig navn brukes i hjelpemiddelteknnologi som stemmestyring og skjermlesere.
+Tilgjengelig navn brukes i hjelpemiddelteknologi som stemmestyring og skjermlesere.
 
 God praksis er at synlig navn og tilgjengelig navn er like.<sup>WCAG 2.5.3</sup>
 Tekst-innholdet i knapper og lenker blir automatisk både synlig og tilgjengelig navn. Unngå å overstyre det med f.eks. aria-label.
@@ -140,9 +140,9 @@ Tekst-innholdet i knapper og lenker blir automatisk både synlig og tilgjengelig
 
 ### Test-verktøy
 
-alt-attributtet er oligatorisk i HTML, og er ofte det beste metoden for å angi alternativtekst.
+alt-attributtet er obligatorisk i HTML, og er ofte den beste metoden for å angi alternativtekst.
 Automatiske testverktøy som Axe DevTools og ARC Toolkit kan fortelle om alt-attributt mangler helt.
-Nettleser-tillegget Web Developer --> Images --> "Display alt attributes" viser teksten i alt-attriuttet sammen med bildet, slik at man selv kan vurdere om teksten gir god informasjon.
+Nettleser-tillegget Web Developer --> Images --> "Display alt attributes" viser teksten i alt-attributtet sammen med bildet, slik at man selv kan vurdere om teksten gir god informasjon.
 
 ### Dekorative bilder
 
@@ -151,7 +151,7 @@ Et bilde er dekorativt når det ikke tilfører noe ekstra meningsinnhold til sid
 
 ### Funksjonelle bilder
 
-Sjekk at alt-teksten bør beskriver funksjonen, ikke bildet. <sup>WCAG 1.1.1</sup>  
+Sjekk at alt-teksten beskriver funksjonen, ikke bildet. <sup>WCAG 1.1.1</sup>  
 Bilder i lenker bør ha alt-tekst som beskriver siden det lenkes til.  
 Bilder i knapper bør ha alt-tekst som beskriver knappefunksjonen.
 
@@ -163,7 +163,7 @@ Sjekk at informative bilder har alt-tekst som gir informasjonen, i stedet for å
 
 SVG fungerer bra som ikon-format siden det skalerer ved zoom, og dermed beholder nøyaktigheten.  
 title-taggen gir alternativ-tekst til meningsbærende SVG.
-Et alternativ er å skjule ikonet med aria-hidden, og legge til et navn direkte på en knappen som inneholder ikonet.
+Et alternativ er å skjule ikonet med aria-hidden, og legge til et navn direkte på knappen som inneholder ikonet.
 
 ## Kontrast
 
@@ -172,20 +172,20 @@ Et alternativ er å skjule ikonet med aria-hidden, og legge til et navn direkte 
 Kontrast mellom tekst og ensfarget bakgrunn testes bra av automatiske verktøy som Axe DevTools, ARC Toolkit og Wave.
 
 Kontrast i lenker, fokusmarkering, hover, grafer og ikoner gjøres best manuelt.  
-Når kontrasten ser svak ut, kan man undersøk om de overholder kravene med verktøyene nedenfor.
+Når kontrasten ser svak ut, kan man undersøke om den overholder kravene med verktøyene nedenfor.
 
-- Utviklerverktøy(F12) kan være nyttig for å finne fargekode på tekst og bakgrunn.
-- [Undersøk konstrasten mellom to hex-verdier (WebAIM)](https://webaim.org/resources/contrastchecker/).  
+- Utviklerverktøy (F12) kan være nyttig for å finne fargekode på tekst og bakgrunn.
+- [Undersøk kontrasten mellom to hex-verdier (WebAIM)](https://webaim.org/resources/contrastchecker/).  
   Minstekravet er [WCAG 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Både svaksynte og funksjonsfriske har stor nytte av å følge det forbedrede kravet i [WCAG 1.4.6](https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html).
 - [Undersøk kontrasten mellom lenke, bakgrunn og teksten rundt (WebAIM)](https://webaim.org/resources/linkcontrastchecker/)
 - [Finn ny farge som overholder kravene (Accessible Colors)](https://accessible-colors.com/). Velg AAA.
-- Ikke tekstlig kontrast skal være minst 3:1 iht [WCAG 1.4.11](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html). Kravet gjelder fokusmarkering, grafer, informative bilder mm.
+- Ikke tekstlig kontrast skal være minst 3:1 iht. [WCAG 1.4.11](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html). Kravet gjelder fokusmarkering, grafer, informative bilder mm.
 - Kontrastkravene gjelder også ulike statuser som hover og fokus. Utviklerverktøy i Firefox har en egen :hov-seksjon der man kan velge disse for å få sjekket fargekodene.
 
 ## Automatiske test-verktøy
 
 Det finnes mange verktøy som kan scanne igjennom en side. De er fine for en rask gjennomgang av noen problemer.
-Tilgjengelighetseksperter vurderer at de finner 20-40 % av prolemene, så man må sjekke manuelt også.
+Tilgjengelighetseksperter vurderer at de finner 20–40 % av problemene, så man må sjekke manuelt også.
 
 - [Axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 - [Wave](https://wave.webaim.org/extension/)
@@ -211,7 +211,7 @@ Skjermlesere er spesielt nyttige for blinde, svaksynte og dyslektikere.
 
 ### Noen skjermlesere du kan teste med
 
-- [Demo og nybegynneropplæring i de vanligste skjermleserene (ca 10 min)](https://axesslab.com/what-is-a-screen-reader/)
+- [Demo og nybegynneropplæring i de vanligste skjermleserne (ca 10 min)](https://axesslab.com/what-is-a-screen-reader/)
 - [NVDA (PC)](https://www.nvaccess.org/download/)
 - VoiceOver (Apple)
 - TalkBack (Android)
