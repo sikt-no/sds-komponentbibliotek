@@ -1,6 +1,7 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { StorybookConfig } from "@storybook/react-vite";
+import { Features } from "lightningcss";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -44,6 +45,11 @@ const config: StorybookConfig = {
       svgr({ include: "**/*.svg" }),
       ...(config.plugins ?? []),
     ].filter((p): p is PluginOption => p != null);
+    config.css = {
+      lightningcss: {
+        exclude: Features.LightDark,
+      },
+    };
     return config;
   },
   features: {
