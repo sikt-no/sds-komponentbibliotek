@@ -10,24 +10,24 @@
     "directory": "packages/design-tokens"
   },
   "type": "commonjs",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "main": "dist/js/tokens.js",
+  "module": "dist/js/tokens.mjs",
   "exports": {
     ".": {
-      "style": "./dist/index.css",
+      "style": "./dist/css/tokens.css",
       "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
+        "types": "./dist/js/tokens.d.ts",
+        "default": "./dist/js/tokens.mjs"
       },
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
+        "types": "./dist/js/tokens.d.ts",
+        "default": "./dist/js/tokens.js"
       }
     },
     "./dist/*": "./dist/*"
   },
-  "types": "dist/index.d.cts",
-  "style": "dist/index.css",
+  "types": "dist/js/tokens.d.ts",
+  "style": "dist/css/tokens.css",
   "files": [
     "CHANGELOG.md",
     "dist",
@@ -36,7 +36,11 @@
   "sideEffects": [
     "*.css"
   ],
-  "scripts": {},
+  "scripts": {
+    "prebuild": "npm run build:tokens",
+    "build": "",
+    "build:tokens": "node bin/build.mjs"
+  },
   "devDependencies": {
     "json-to-ts": "^2.1.0",
     "style-dictionary": "^5.5.1",
