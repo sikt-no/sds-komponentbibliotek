@@ -1,4 +1,4 @@
-import { UserProfileIcon } from "@sikt/sds-icons";
+import { UserProfileCircleIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import type { Contributor as ContributorType } from "../../_data/contributors.ts";
 import styles from "./contributors.module.css";
@@ -41,7 +41,7 @@ export const Contributor = ({
         <div className={styles.crown}>🎩️</div>
       )}
       {name === "Deg" && (
-        <UserProfileIcon className={clsx(styles.image, styles.pulse)} />
+        <UserProfileCircleIcon className={clsx(styles.image, styles.pulse)} />
       )}
       {showEasterEggs && name === "Andreas" && (
         <div className={styles.crown}>👑</div>
