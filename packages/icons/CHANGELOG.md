@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@4.3.0...@sikt/sds-icons@5.0.0) (2026-08-24)
+
+### ⚠ BREAKING CHANGES
+
+- **icons:** sync icons with figma and add deprecation aliases
+
+### Features
+
+- **icons:** sync icons with figma and add deprecation aliases ([b6971c0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b6971c0d7b2f6c953794142037fb79c34db88cc3))
+
 ## [4.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@4.2.0...@sikt/sds-icons@4.3.0) (2026-08-18)
 
 ### Features
