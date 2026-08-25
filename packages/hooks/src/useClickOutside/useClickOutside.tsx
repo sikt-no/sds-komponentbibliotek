@@ -12,16 +12,26 @@ export const useClickOutside = (
   useEffect(() => {
     let isPointerdownOutside = false;
 
+    const isEventOutside = (event: MouseEvent) => {
+      if (!ref.current) return;
+
+      const rect = ref.current.getBoundingClientRect();
+
+      /* istanbul ignore next */
+      const isOutside =
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom;
+
+      return isOutside;
+    };
+
     const listenerPointerdown = (event: MouseEvent) => {
-      isPointerdownOutside =
-        (ref.current && !ref.current.contains(event.target as Node)) ?? false;
+      isPointerdownOutside = isEventOutside(event) ?? false;
     };
     const listenerPointerup = (event: MouseEvent) => {
-      if (
-        isPointerdownOutside &&
-        ref.current &&
-        !ref.current.contains(event.target as Node)
-      ) {
+      if (isPointerdownOutside && isEventOutside(event)) {
         callbackRef.current(event);
       }
       isPointerdownOutside = false;

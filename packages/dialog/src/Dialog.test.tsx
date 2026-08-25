@@ -237,7 +237,7 @@ describe("Dialog", () => {
     expect(handleClose).toHaveBeenCalledTimes(0);
   });
 
-  it("closes dialog (modal) when click outside wrapper", async () => {
+  it("closes dialog (modal) when click outside", async () => {
     const user = userEvent.setup();
     const handleClose = jest.fn();
     render(
@@ -252,13 +252,24 @@ describe("Dialog", () => {
         <p>Dialog Content</p>
       </Dialog>,
     );
+    screen.getByTestId("test").getBoundingClientRect = jest.fn(
+      () =>
+        ({
+          bottom: 10,
+          height: 10,
+          left: 10,
+          right: 10,
+          top: 10,
+          width: 10,
+        }) as DOMRect,
+    );
 
-    await user.click(screen.getByTestId("test"));
+    await user.click(document.body);
 
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 
-  it("does not close dialog (non-modal) when click outside wrapper", async () => {
+  it("does not close dialog (non-modal) when click outside", async () => {
     const user = userEvent.setup();
     const handleClose = jest.fn();
     render(
@@ -274,8 +285,19 @@ describe("Dialog", () => {
         <p>Dialog Content</p>
       </Dialog>,
     );
+    screen.getByTestId("test").getBoundingClientRect = jest.fn(
+      () =>
+        ({
+          bottom: 10,
+          height: 10,
+          left: 10,
+          right: 10,
+          top: 10,
+          width: 10,
+        }) as DOMRect,
+    );
 
-    await user.click(screen.getByTestId("test"));
+    await user.click(document.body);
 
     expect(handleClose).toHaveBeenCalledTimes(0);
   });

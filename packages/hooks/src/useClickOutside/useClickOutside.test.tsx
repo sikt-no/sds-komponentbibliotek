@@ -8,6 +8,18 @@ describe("useClickOutside", () => {
     const ref = { current: document.createElement("div") };
     const callback = jest.fn();
 
+    ref.current.getBoundingClientRect = jest.fn(
+      () =>
+        ({
+          bottom: 20,
+          height: 10,
+          left: 10,
+          right: 20,
+          top: 10,
+          width: 10,
+        }) as DOMRect,
+    );
+
     renderHook(() => {
       useClickOutside(ref, callback);
     });
@@ -23,6 +35,18 @@ describe("useClickOutside", () => {
     const user = userEvent.setup();
     const ref = { current: document.createElement("div") };
     const callback = jest.fn();
+
+    ref.current.getBoundingClientRect = jest.fn(
+      () =>
+        ({
+          bottom: 20,
+          height: 10,
+          left: 10,
+          right: 20,
+          top: 10,
+          width: 10,
+        }) as DOMRect,
+    );
 
     renderHook(() => {
       useClickOutside(ref, callback);

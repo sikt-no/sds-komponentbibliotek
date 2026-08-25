@@ -91,7 +91,6 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     ref,
   ) => {
     const dialogRef = useRef<HTMLDialogElement>(null);
-    const wrapperRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [isScrolling, setIsScrolling] = useState(false);
 
@@ -146,7 +145,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     const headingId = `${id}-heading`;
     const contentId = `${id}-content`;
 
-    useClickOutside(wrapperRef, handleBackdropClick);
+    useClickOutside(dialogRef, handleBackdropClick);
     useKeydown(null, "Escape", handleEscapeKey);
     useWindowResize(checkScroll, { throttleTime: 200 });
     useEffect(checkScroll, [children]);
@@ -165,42 +164,40 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
         ref={dialogRef}
         {...rest}
       >
-        <div ref={wrapperRef}>
-          <div className="sds-dialog__header">
-            <div
-              id={headingId}
-              data-testid="headings"
-              className="sds-dialog__heading"
-            >
-              <Heading1 size="s">{heading}</Heading1>
-              {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
-            </div>
+        <div className="sds-dialog__header">
+          <div
+            id={headingId}
+            data-testid="headings"
+            className="sds-dialog__heading"
+          >
+            <Heading1 size="s">{heading}</Heading1>
+            {subheading !== undefined && <Paragraph>{subheading}</Paragraph>}
+          </div>
 
-            {closedby != "none" && (
-              <Button
-                variant="transparent"
-                icon={<CancelIcon />}
-                iconVariant={closeButtonAriaLabel ? "only" : undefined}
-                className="sds-dialog__close-button"
-                onClick={onClose}
-                aria-label={closeButtonLabel ? undefined : closeButtonAriaLabel}
-              >
-                {closeButtonLabel}
-              </Button>
-            )}
-          </div>
-          <div className="sds-dialog__content-wrapper" ref={contentRef}>
-            <div
-              id={contentId}
-              data-testid="content"
-              className="sds-typography-body--xl sds-dialog__content"
+          {closedby != "none" && (
+            <Button
+              variant="transparent"
+              icon={<CancelIcon />}
+              iconVariant={closeButtonAriaLabel ? "only" : undefined}
+              className="sds-dialog__close-button"
+              onClick={onClose}
+              aria-label={closeButtonLabel ? undefined : closeButtonAriaLabel}
             >
-              {children}
-            </div>
-            {footer !== undefined && (
-              <div className="sds-dialog__footer">{footer}</div>
-            )}
+              {closeButtonLabel}
+            </Button>
+          )}
+        </div>
+        <div className="sds-dialog__content-wrapper" ref={contentRef}>
+          <div
+            id={contentId}
+            data-testid="content"
+            className="sds-typography-body--xl sds-dialog__content"
+          >
+            {children}
           </div>
+          {footer !== undefined && (
+            <div className="sds-dialog__footer">{footer}</div>
+          )}
         </div>
       </dialog>
     );
