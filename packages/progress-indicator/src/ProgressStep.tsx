@@ -21,7 +21,7 @@ export const ProgressStep = ({
   children,
   className,
   current,
-  index = 0,
+  index,
   ...rest
 }: ProgressStepProps) => {
   return (
@@ -44,7 +44,7 @@ export const ProgressStep = ({
           className="sds-progress-indicator__step-details-content"
           aria-current={current ? "step" : undefined}
         >
-          {index + 1}.&nbsp;{children}
+          {(index ?? 0) + 1}.&nbsp;{children}
         </span>
       )}
     </li>
