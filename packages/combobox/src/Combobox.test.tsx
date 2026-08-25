@@ -112,15 +112,28 @@ describe("Combobox", () => {
       expect(screen.getByText("Quux")).toBeInTheDocument();
     });
 
-    it("should render initial selected options as data elements", async () => {
+    it("should not render chips", async () => {
       const { container } = render(
-        <Combobox label="Foo" options={optionsWithSelected} multiple />,
+        <Combobox label="Foo" options={optionsWithSelected} multiple noChips />,
       );
 
-      const dataElements = container.querySelectorAll("data");
-      expect(dataElements).toHaveLength(1);
-      expect(dataElements[0]).toHaveTextContent("Baz");
-      expect(dataElements[0]).toHaveAttribute("value", "2");
+      expect(
+        container.getElementsByClassName(
+          "sds-combobox sds-combobox--no-chips",
+        )[0],
+      ).toBeInTheDocument();
+    });
+
+    it("should render initial selected options as data elements", async () => {
+      render(<Combobox label="Foo" options={optionsWithSelected} multiple />);
+
+      expect(
+        screen.getByText("Baz", { selector: "data" }),
+      ).toBeInTheDocument();
+      expect(screen.queryByText("Baz", { selector: "data" })).toHaveAttribute(
+        "value",
+        "2",
+      );
     });
 
     it("should not render duplicate badges in controlled mode", async () => {

@@ -74,6 +74,13 @@ export const WithError: Story = {
   },
 };
 
+export const NoChips: Story = {
+  args: {
+    ...Multiple.args,
+    noChips: true,
+  },
+};
+
 export const WithGroupedOptions: Story = {
   args: {
     label: "Choose a food item",
