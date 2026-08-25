@@ -103,6 +103,17 @@ describe("InputDaterangepicker", () => {
       await user.click(calendarButton);
 
       expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
+      screen.getByTestId("test-calendar").getBoundingClientRect = jest.fn(
+        () =>
+          ({
+            bottom: 20,
+            height: 10,
+            left: 10,
+            right: 20,
+            top: 10,
+            width: 10,
+          }) as DOMRect,
+      );
 
       await user.click(document.body);
 

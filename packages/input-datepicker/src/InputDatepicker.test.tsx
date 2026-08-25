@@ -93,7 +93,7 @@ describe("InputDatepicker", () => {
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
     });
 
-    it("should close calendar on outside click", async () => {
+    it("should close calendar on click outside", async () => {
       const user = userEvent.setup();
       render(<InputDatepicker label="Foo" data-testid="test" />);
       expect(screen.queryByTestId("test-calendar")).not.toBeInTheDocument();
@@ -102,6 +102,17 @@ describe("InputDatepicker", () => {
       await user.click(calendarButton);
 
       expect(screen.getByTestId("test-calendar")).toBeInTheDocument();
+      screen.getByTestId("test-calendar").getBoundingClientRect = jest.fn(
+        () =>
+          ({
+            bottom: 20,
+            height: 10,
+            left: 10,
+            right: 20,
+            top: 10,
+            width: 10,
+          }) as DOMRect,
+      );
 
       await user.click(document.body);
 
