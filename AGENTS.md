@@ -47,6 +47,7 @@ Guidelines for coding agents.
 ## Setup
 
 - `npm ci` Install dependencies
+- `npm run postinstall` Builds packages that other packages or apps depend on
 - `npm run build` Build packages
 - `npm run dev` Run web apps
 

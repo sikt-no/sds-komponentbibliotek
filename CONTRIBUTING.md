@@ -124,7 +124,7 @@ Write visual regression tests for components with [Playwright](https://playwrigh
 #### Build
 
 Export components as both CSS & React components, with [tsdown](https://tsdown.dev/), to allow use of both custom markup & React.  
-Build all packages with `npm run build` from root.
+Build all packages with `npm run prebuild && npm run build` from root.
 
 #### CI/CD
 
@@ -152,6 +152,7 @@ mise install
 
 ```sh
 npm ci
+npm run postinstall
 npm run build
 npm run dev
 ```

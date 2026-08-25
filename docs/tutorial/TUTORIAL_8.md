@@ -7,6 +7,7 @@
 #### Build packages
 
 ```sh
+npm run prebuild
 npm run build
 ```
 
