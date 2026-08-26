@@ -10,6 +10,17 @@
     {
       "name": "sikt-sds",
       "description": "Sikt designsystem Claude plugins",
+      "relevance": {
+        "topic": "Sikt designsystem",
+        "signals": {
+          "manifestDeps": [
+            {
+              "file": "[/\\\\]package\\.json$",
+              "pattern": "@sikt/sds-"
+            }
+          ]
+        }
+      },
       "source": "./.claude/plugins"
     }
   ],
