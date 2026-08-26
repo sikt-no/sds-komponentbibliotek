@@ -17,7 +17,14 @@
             {
               "file": "[/\\\\]package\\.json$",
               "pattern": "@sikt/sds-"
+            },
+            {
+              "file": "[/\\\\]package\\.json$",
+              "pattern": "\"react\":"
             }
+          ],
+          "filesRead": [
+            "**/*.tsx"
           ]
         }
       },
