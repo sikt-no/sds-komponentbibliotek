@@ -1,5 +1,6 @@
 import { Button } from "@sikt/sds-button";
 import { Meta, StoryObj } from "@storybook/react-vite";
+import { useId } from "react";
 import { useArgs } from "storybook/preview-api";
 
 import type { DialogProps } from "../index";
@@ -30,7 +31,7 @@ export const Default: Story = {
   },
   render: (args: DialogProps) => {
     const [, setArgs] = useArgs();
-    const id = "id";
+    const id = useId();
 
     return (
       <>
@@ -103,7 +104,7 @@ export const NonModal: Story = {
   },
   render: (args: DialogProps) => {
     const [, setArgs] = useArgs();
-    const id = "id";
+    const id = useId();
 
     return (
       <>
@@ -176,7 +177,7 @@ export const Drawer: Story = {
   },
   render: (args: DialogProps) => {
     const [, setArgs] = useArgs();
-    const id = "id";
+    const id = useId();
 
     return (
       <>

@@ -1,6 +1,6 @@
 # @sikt/sds-core
 
-Version: `5.3.0`  
+Version: `6.0.1`  
 Package slug: `core` (under `packages/core`)
 
 ## Install
@@ -198,10 +198,11 @@ Available when `@sikt/sds-core/dist/index.css` is imported.
 - `.sds-typography-label--l`
 - `.sds-typography-link`
 - `.sds-typography-link--external`
-- `.sds-typography-link--icon-left`
 - `.sds-typography-link--navigation`
 - `.sds-typography-link--no-icon`
 - `.sds-typography-link__icon`
+- `.sds-typography-link__icon--left`
+- `.sds-typography-link__icon--right`
 - `.sds-typography-overline`
 
 ## Storybook examples
@@ -210,6 +211,6 @@ Examples are visible at https://designsystem.sikt.no/ under the corresponding co
 
 - **Figure**: AspectRatio16x9, Default
 - **Heading**: Heading
-- **Link**: Default, External, Mail, Navigation, Phone, WithIcon
+- **Link**: Default, External, ExternalMultiline, Mail, Navigation, Phone, WithIcon
 - **Paragraph**: AsHeading3, AsSpan, ColorCritical, ColorSecondary, Regular
 - **ScreenReaderOnly**: Focusable

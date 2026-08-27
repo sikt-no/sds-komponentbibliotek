@@ -1,6 +1,6 @@
 # @sikt/sds-button
 
-Version: `4.6.1`  
+Version: `4.6.2`  
 Package slug: `button` (under `packages/button`)
 
 ## Install

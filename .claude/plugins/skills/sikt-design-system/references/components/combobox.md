@@ -1,6 +1,6 @@
 # @sikt/sds-combobox
 
-Version: `5.3.0`  
+Version: `5.3.1`  
 Package slug: `combobox` (under `packages/combobox`)
 
 ## Install
@@ -88,6 +88,7 @@ Available when `@sikt/sds-combobox/dist/index.css` is imported.
 - `.sds-combobox--invalid`
 - `.sds-combobox--no-chips`
 - `.sds-combobox__button`
+- `.sds-combobox__button--expand`
 - `.sds-combobox__button-icon`
 - `.sds-combobox__combobox`
 - `.sds-combobox__datalist`

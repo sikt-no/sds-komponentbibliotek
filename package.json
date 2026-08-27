@@ -41,7 +41,10 @@
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "prepare": "husky",
     "release": "commit-and-tag-version",
-    "skill:sync": "node --experimental-strip-types --no-warnings=ExperimentalWarning .claude/plugins/skills/sikt-design-system/scripts/aggregate.ts && prettier .claude/plugins/skills/sikt-design-system/references --write --ignore-unknown",
+    "skill:sync:aggregate": "node --experimental-strip-types --no-warnings=ExperimentalWarning .claude/plugins/skills/sikt-design-system/scripts/aggregate.ts",
+    "skill:sync:html": "node --experimental-strip-types --no-warnings=ExperimentalWarning .claude/plugins/skills/sikt-design-system/scripts/generate-html.ts",
+    "skill:sync:format": "prettier .claude/plugins/skills/sikt-design-system/references --write --ignore-unknown --embedded-language-formatting off",
+    "skill:sync": "npm run skill:sync:aggregate && npm run skill:sync:html && npm run skill:sync:format",
     "test": "npm run test:unit",
     "test:unit": "jest",
     "test:e2e": "playwright test"

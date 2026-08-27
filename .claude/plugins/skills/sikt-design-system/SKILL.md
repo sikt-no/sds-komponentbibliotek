@@ -24,3 +24,4 @@ Always read `references/guides/rules.md` before writing any code.
 13. **Footer pattern** → `references/guides/patterns/footer.md` — when setting up the page shell or asked about omitting the footer
 14. **Dialog pattern** → `references/guides/patterns/dialog.md` — when deciding between modal and non-modal dialogs
 15. **Custom components** → `references/guides/custom-components.md` — only when no SDS component covers the need
+16. **Using SDS without React** (vanilla HTML, Vue, Svelte, server-rendered templates) → `references/guides/no-react.md` — when the consumer wants SDS classes/markup but is not building a React app. Points to pre-rendered HTML snippets under `references/html/<slug>.md`.

@@ -1,6 +1,6 @@
 # @sikt/sds-tabs
 
-Version: `7.1.0`  
+Version: `7.1.1`  
 Package slug: `tabs` (under `packages/tabs`)
 
 ## Install

@@ -1,6 +1,6 @@
 # @sikt/sds-notification
 
-Version: `1.1.1`  
+Version: `1.1.2`  
 Package slug: `notification` (under `packages/notification`)
 
 Notification component, Sikt component library
