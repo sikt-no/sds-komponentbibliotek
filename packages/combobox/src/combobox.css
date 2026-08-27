@@ -74,7 +74,15 @@
   }
 
   &--no-chips data {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: circle(0);
+    white-space: nowrap;
+    border-width: 0;
   }
   /* stylelint-enable selector-max-type */
 
