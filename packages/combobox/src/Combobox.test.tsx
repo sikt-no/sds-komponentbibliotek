@@ -127,9 +127,7 @@ describe("Combobox", () => {
     it("should render initial selected options as data elements", async () => {
       render(<Combobox label="Foo" options={optionsWithSelected} multiple />);
 
-      expect(
-        screen.getByText("Baz", { selector: "data" }),
-      ).toBeInTheDocument();
+      expect(screen.getByText("Baz", { selector: "data" })).toBeInTheDocument();
       expect(screen.queryByText("Baz", { selector: "data" })).toHaveAttribute(
         "value",
         "2",

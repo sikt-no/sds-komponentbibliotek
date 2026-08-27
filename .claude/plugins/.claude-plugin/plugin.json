@@ -7,10 +7,5 @@
   },
   "homepage": "https://designsystem.sikt.no",
   "version": "0.2.0",
-  "keywords": [
-    "designsystem",
-    "frontend",
-    "react",
-    "sikt"
-  ]
+  "keywords": ["designsystem", "frontend", "react", "sikt"]
 }

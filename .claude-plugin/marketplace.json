@@ -23,9 +23,7 @@
               "pattern": "\"react\":"
             }
           ],
-          "filesRead": [
-            "**/*.tsx"
-          ]
+          "filesRead": ["**/*.tsx"]
         }
       },
       "source": "./.claude/plugins"
