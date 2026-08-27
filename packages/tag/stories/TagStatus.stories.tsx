@@ -1,4 +1,4 @@
-import { InfoIcon, BookIcon, UserProfileIcon } from "@sikt/sds-icons";
+import { InfoIcon, BookIcon, UserProfileCircleIcon } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { TagStatus, TagStatusProps } from "../index";
 
@@ -86,7 +86,7 @@ export const CustomIconsForBrandAndNeutral: Story = {
       <TagStatus variant="brand" icon={<BookIcon />}>
         brand with icon
       </TagStatus>
-      <TagStatus variant="neutral" icon={<UserProfileIcon />}>
+      <TagStatus variant="neutral" icon={<UserProfileCircleIcon />}>
         neutral with icon
       </TagStatus>
     </div>

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { ButtonLink } from "../../button/index";
-import { NavigateToNextAltIcon } from "../../icons/index";
+import { NavigateToNextCircleIcon } from "../../icons/index";
 import { Section, SectionProps } from "../index";
 
 const meta: Meta = {
@@ -31,7 +31,7 @@ export const WithCallToAction: Story = {
   args: {
     headingText: "Header",
     callToAction: (
-      <ButtonLink variant="subtle" href="#" icon={<NavigateToNextAltIcon />}>
+      <ButtonLink variant="subtle" href="#" icon={<NavigateToNextCircleIcon />}>
         Action
       </ButtonLink>
     ),

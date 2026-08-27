@@ -1,5 +1,5 @@
 import { FormField } from "@sikt/sds-form";
-import { ExpandShowAltIcon } from "@sikt/sds-icons";
+import { ExpandShowCircleIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
   ChangeEvent,
@@ -158,7 +158,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             )}
           </select>
           <span className="sds-select__select-button">
-            <ExpandShowAltIcon />
+            <ExpandShowCircleIcon />
           </span>
         </div>
       </FormField>

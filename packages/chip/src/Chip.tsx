@@ -1,4 +1,4 @@
-import { AddAltIcon, SubtractAltIcon } from "@sikt/sds-icons";
+import { AddCircleIcon, SubtractCircleIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import "./chip.css";
@@ -40,7 +40,7 @@ const ChipBase = ({
     >
       <span className="sds-chip__label">{children}</span>
       <span className="sds-chip__icon">
-        {checked && toggle ? <SubtractAltIcon /> : <AddAltIcon />}
+        {checked && toggle ? <SubtractCircleIcon /> : <AddCircleIcon />}
       </span>
     </button>
   );

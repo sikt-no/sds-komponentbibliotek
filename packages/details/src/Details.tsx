@@ -1,4 +1,4 @@
-import { ExpandShowAltIcon } from "@sikt/sds-icons";
+import { ExpandShowCircleIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import { DetailsHTMLAttributes, ReactNode } from "react";
 import "./details.css";
@@ -35,7 +35,7 @@ export const Details = ({
     >
       <summary className="sds-details__summary">
         <span className="sds-details__icon">
-          <ExpandShowAltIcon />
+          <ExpandShowCircleIcon />
         </span>
         {summary}
       </summary>

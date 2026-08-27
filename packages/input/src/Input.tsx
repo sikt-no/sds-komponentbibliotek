@@ -6,7 +6,7 @@ import {
   SearchIcon,
   PasswordIcon,
   PhoneIcon,
-  CancelIcon,
+  CloseIcon,
 } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
@@ -120,7 +120,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             iconVariant="only"
             className="sds-input__clear"
             onClick={handleClearClick}
-            icon={<CancelIcon />}
+            icon={<CloseIcon />}
             aria-label={clearActionProps?.["aria-label"] ?? "Tøm søketekst"}
             type={clearActionProps?.type ?? "button"}
           />

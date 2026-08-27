@@ -5,7 +5,7 @@ import {
   AlertIcon,
   EmailIcon,
   NotificationIcon,
-  UserProfileIcon,
+  UserProfileCircleIcon,
 } from "../../icons/index";
 import { Notification } from "../../notification/index";
 import { Button, ButtonProps } from "../index";
@@ -112,7 +112,7 @@ export const WithNotificationIconLeft: Story = {
   args: {
     children: "User activity",
     variant: "subtle",
-    icon: <UserProfileIcon />,
+    icon: <UserProfileCircleIcon />,
     iconVariant: "left",
     notification: <Notification count={25} maxCount={9} />,
   },

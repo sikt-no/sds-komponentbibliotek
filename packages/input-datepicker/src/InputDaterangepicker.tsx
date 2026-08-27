@@ -5,7 +5,7 @@ import {
   DateCalendarIcon,
   MoveToPreviousIcon,
   MoveToNextIcon,
-  CancelIcon,
+  CloseIcon,
 } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
@@ -112,7 +112,7 @@ export const ClearButton = (clearActionProps?: ClearActionProps) => {
         className="sds-input__clear"
         onClick={handleClearClick}
         onKeyDown={handleClearKeydown}
-        icon={<CancelIcon />}
+        icon={<CloseIcon />}
         aria-label={clearActionProps?.["aria-label"] ?? "Tøm datofelt"}
         type={clearActionProps?.type ?? "button"}
       />
