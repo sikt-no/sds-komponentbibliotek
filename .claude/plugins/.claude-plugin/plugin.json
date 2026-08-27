@@ -2,5 +2,15 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "sikt-sds",
   "description": "Sikt designsystem Claude plugins",
-  "version": "0.2.0"
+  "author": {
+    "name": "Sikt designsystem"
+  },
+  "homepage": "https://designsystem.sikt.no",
+  "version": "0.2.0",
+  "keywords": [
+    "designsystem",
+    "frontend",
+    "react",
+    "sikt"
+  ]
 }
