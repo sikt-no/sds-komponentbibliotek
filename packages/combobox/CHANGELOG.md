@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.3.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.3.1...@sikt/sds-combobox@5.3.2) (2026-08-27)
+
+### Bug Fixes
+
+- **combobox:** noChips prop to work ([c961567](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c96156744a53db2ecf363ca4c2db1e3fbb286ab2))
+- **combobox:** noChips visually hidden not removed ([81a2c8f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/81a2c8fdfac70e4d109df4d26b15e9a0d39d4968))
+- **combobox:** prevent clear icon from rotating on expand ([b35b66e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b35b66eb5dedf1e100532b55f5774499cecf5f0b))
+- **deps:** update dependency @u-elements/u-combobox to ^2.1.2 ([a43acc3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a43acc37ec491feb83e9272b915769a592d9a31f))
+- **deps:** update dependency @u-elements/u-combobox to ^2.1.3 ([89c956d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/89c956d535f23783caa1a69d070fc611f32cf493))
+
 ## [5.3.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-combobox@5.3.0...@sikt/sds-combobox@5.3.1) (2026-07-03)
 
 ### Bug Fixes
