@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@1.1.0...@sikt/sds-hooks@1.1.1) (2026-08-27)
+
+### Bug Fixes
+
+- **useClickOutside:** click on target scrollbar should not be outside ([cdad342](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cdad342c35541acc795b7e78a9c2566af85c2168))
+
 ## [1.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@1.0.2...@sikt/sds-hooks@1.1.0) (2026-08-19)
 
 ### Bug Fixes
