@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.7...@sikt/sds-dialog@2.0.8) (2026-08-27)
+
+### Bug Fixes
+
+- **useClickOutside:** click on target scrollbar should not be outside ([cdad342](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cdad342c35541acc795b7e78a9c2566af85c2168))
+
 ## [2.0.7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.6...@sikt/sds-dialog@2.0.7) (2026-06-17)
 
 ### Bug Fixes
