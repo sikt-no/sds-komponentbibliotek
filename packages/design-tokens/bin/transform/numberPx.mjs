@@ -7,5 +7,10 @@ export const numberPxTransform = {
   type: "value",
   transitive: true,
   filter: (token) => token.$type === "number",
-  transform: (token) => `${token.$value}px`,
+  transform: (token) => {
+    for (const mode of Object.values(token.$extensions?.modes ?? {})) {
+      mode.$value = `${mode.$value}px`;
+    }
+    return `${token.$value}px`;
+  },
 };

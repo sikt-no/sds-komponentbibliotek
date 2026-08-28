@@ -26,28 +26,28 @@ const getIn = (node, keyPath) =>
   keyPath.reduce((acc, key) => (acc ? acc[key] : undefined), node);
 
 /**
- * Walks the base theme's color tree and attaches an `$extensions.mode`
- * entry for each alternate theme, sourced from the matching path in that
- * theme's own token file.
+ * Walks the base tree and attaches an `$extensions.modes` entry for each
+ * alternate mode, sourced from the matching path in that mode's own token
+ * file.
  */
-const buildModeAwareColorTree = (node, modeTrees, keyPath = []) => {
+const buildModeAwareTree = (node, modeTrees, keyPath = []) => {
   if (isToken(node)) {
-    const mode = {};
+    const modes = {};
     for (const [modeKey, modeTree] of Object.entries(modeTrees)) {
       const modeToken = getIn(modeTree, keyPath);
       if (!isToken(modeToken)) {
         console.warn(
-          `[preprocessor/figma/modes] Missing token at "${keyPath.join(".")}" in mode "${modeKey}", skipping.`,
+          `[preprocessor/figma/color/modes] Missing token at "${keyPath.join(".")}" in mode "${modeKey}", skipping.`,
         );
         continue;
       }
-      mode[modeKey] = modeToken;
+      modes[modeKey] = modeToken;
     }
     return {
       ...node,
       $extensions: {
         ...node.$extensions,
-        mode,
+        modes,
       },
     };
   }
@@ -55,7 +55,7 @@ const buildModeAwareColorTree = (node, modeTrees, keyPath = []) => {
   return Object.fromEntries(
     Object.entries(node).map(([key, value]) => [
       key,
-      buildModeAwareColorTree(value, modeTrees, [...keyPath, key]),
+      buildModeAwareTree(value, modeTrees, [...keyPath, key]),
     ]),
   );
 };
@@ -73,7 +73,7 @@ export const figmaColorModesPreprocessor = {
 
     dict.color = {
       ...dict.color,
-      ...buildModeAwareColorTree(baseTree, modeTrees),
+      ...buildModeAwareTree(baseTree, modeTrees),
     };
 
     return dict;

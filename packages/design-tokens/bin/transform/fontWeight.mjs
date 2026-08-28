@@ -15,5 +15,10 @@ export const fontWeightTransform = {
   type: "value",
   transitive: true,
   filter: (token) => isFontWeight(token),
-  transform: (token) => fontWeights[token.$value],
+  transform: (token) => {
+    for (const mode of Object.values(token.$extensions?.modes ?? {})) {
+      mode.$value = fontWeights[mode.$value];
+    }
+    return fontWeights[token.$value];
+  },
 };

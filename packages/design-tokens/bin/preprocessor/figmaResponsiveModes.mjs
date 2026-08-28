@@ -23,9 +23,9 @@ const getIn = (node, keyPath) =>
   keyPath.reduce((acc, key) => (acc ? acc[key] : undefined), node);
 
 /**
- * Walks the base mode's (comfortable) token tree and attaches an
- * `$extensions.modes` entry for each alternate mode, sourced from the
- * matching path in that mode's own token file.
+ * Walks the base tree and attaches an `$extensions.modes` entry for each
+ * alternate mode, sourced from the matching path in that mode's own token
+ * file.
  */
 const buildModeAwareTree = (node, modeTrees, keyPath = []) => {
   if (isToken(node)) {
@@ -62,9 +62,10 @@ export const figmaResponsiveModesPreprocessor = {
   preprocessor: (dict) => {
     for (const dir of RESPONSIVE_DIRS) {
       const baseFile = readTokenFile(dir, BASE_FILE);
-      const [namespace] = Object.keys(baseFile).filter(
+      const namespace = Object.keys(baseFile).find(
         (key) => key !== "$extensions",
       );
+      const baseTree = baseFile[namespace];
       const modeTrees = Object.fromEntries(
         Object.entries(MODE_FILES).map(([modeKey, fileName]) => [
           modeKey,
@@ -74,7 +75,7 @@ export const figmaResponsiveModesPreprocessor = {
 
       dict[namespace] = {
         ...dict[namespace],
-        ...buildModeAwareTree(baseFile[namespace], modeTrees),
+        ...buildModeAwareTree(baseTree, modeTrees),
       };
     }
 
