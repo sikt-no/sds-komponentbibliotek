@@ -4,6 +4,8 @@ import { isHiddenFromPublishing, isColor } from "./filters.mjs";
 import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
 import { figmaColorModesPreprocessor } from "./preprocessor/figmaColorModes.mjs";
 import { figmaResponsiveModesPreprocessor } from "./preprocessor/figmaResponsiveModes.mjs";
+import { figmaTypographyDimensionsPreprocessor } from "./preprocessor/figmaTypographyDimensions.mjs";
+import { sizeDimensionTransform } from "./transform/sizeDimension.mjs";
 import { fontWeightTransform } from "./transform/fontWeight.mjs";
 import { numberPxTransform } from "./transform/numberPx.mjs";
 
@@ -16,22 +18,30 @@ const cssTransforms = [
   "time/seconds",
   "html/icon",
   "color/hex",
+  "transform/number/px",
   "size/pxToRem",
+  "transform/size/dimension",
+  "transform/font/weight",
 ];
 const tsTransforms = [
   "attribute/cti",
   "name/pascal",
   "color/hex",
+  "transform/number/px",
   "size/pxToRem",
+  "transform/size/dimension",
+  "transform/font/weight",
 ];
 
 StyleDictionary.registerPreprocessor(figmaColorModesPreprocessor);
 StyleDictionary.registerPreprocessor(figmaResponsiveModesPreprocessor);
+StyleDictionary.registerPreprocessor(figmaTypographyDimensionsPreprocessor);
 
 StyleDictionary.registerFormat(tsAccurateModuleDeclarationsFormat);
 
 StyleDictionary.registerTransform(numberPxTransform);
 StyleDictionary.registerTransform(fontWeightTransform);
+StyleDictionary.registerTransform(sizeDimensionTransform);
 
 // const logLevel = "default";
 const logLevel = "verbose";
@@ -52,12 +62,9 @@ const dictionaryTokens = new StyleDictionary({
       preprocessors: [
         "preprocessor/figma/color/modes",
         "preprocessor/figma/responsive/modes",
+        "preprocessor/figma/typography/dimensions",
       ],
-      transforms: [
-        "transform/number/px",
-        ...cssTransforms,
-        "transform/font/weight",
-      ],
+      transforms: cssTransforms,
       buildPath,
       prefix,
       files: [
@@ -72,12 +79,9 @@ const dictionaryTokens = new StyleDictionary({
       preprocessors: [
         "preprocessor/figma/color/modes",
         "preprocessor/figma/responsive/modes",
+        "preprocessor/figma/typography/dimensions",
       ],
-      transforms: [
-        "transform/number/px",
-        ...tsTransforms,
-        "transform/font/weight",
-      ],
+      transforms: tsTransforms,
       buildPath,
       prefix,
       files: [
