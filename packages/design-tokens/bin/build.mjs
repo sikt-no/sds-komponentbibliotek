@@ -2,9 +2,11 @@ import StyleDictionary from "style-dictionary";
 import { prefix } from "./config.mjs";
 import { isHiddenFromPublishing, isColor } from "./filters.mjs";
 import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
+import { colorLightDarkFormat } from "./format/colorLightDark.mjs";
 import { figmaColorModesPreprocessor } from "./preprocessor/figmaColorModes.mjs";
 import { figmaResponsiveModesPreprocessor } from "./preprocessor/figmaResponsiveModes.mjs";
 import { figmaTypographyDimensionsPreprocessor } from "./preprocessor/figmaTypographyDimensions.mjs";
+import { colorLightDarkTransform } from "./transform/colorLightDark.mjs";
 import { sizeDimensionTransform } from "./transform/sizeDimension.mjs";
 import { fontWeightTransform } from "./transform/fontWeight.mjs";
 import { numberPxTransform } from "./transform/numberPx.mjs";
@@ -18,6 +20,7 @@ const cssTransforms = [
   "time/seconds",
   "html/icon",
   "color/hex",
+  "transform/color/light-dark",
   "transform/number/px",
   "size/pxToRem",
   "transform/size/dimension",
@@ -38,10 +41,12 @@ StyleDictionary.registerPreprocessor(figmaResponsiveModesPreprocessor);
 StyleDictionary.registerPreprocessor(figmaTypographyDimensionsPreprocessor);
 
 StyleDictionary.registerFormat(tsAccurateModuleDeclarationsFormat);
+StyleDictionary.registerFormat(colorLightDarkFormat);
 
 StyleDictionary.registerTransform(numberPxTransform);
 StyleDictionary.registerTransform(fontWeightTransform);
 StyleDictionary.registerTransform(sizeDimensionTransform);
+StyleDictionary.registerTransform(colorLightDarkTransform);
 
 // const logLevel = "default";
 const logLevel = "verbose";
@@ -71,7 +76,12 @@ const dictionaryTokens = new StyleDictionary({
         {
           format: "css/variables",
           destination: "css/tokens.css",
-          filter: isHiddenFromPublishing,
+          filter: (token) => isHiddenFromPublishing(token) && !isColor(token),
+        },
+        {
+          format: "format/color/light-dark",
+          destination: "css/color.css",
+          filter: (token) => isHiddenFromPublishing(token) && isColor(token),
         },
       ],
     },
