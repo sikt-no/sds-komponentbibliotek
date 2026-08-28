@@ -16,7 +16,7 @@ const themeBlock = (selector, tokens, themeKey) => {
 /**
  * Custom Format: Color Light-Dark
  * This adds `color-scheme: light dark` to color tokens, plus
- * [data-color-theme="grey"] and [data-color-theme="feide"] overrides for
+ * [data-color-theme="white"] and [data-color-theme="feide"] overrides for
  * the alternate color themes.
  */
 export const colorLightDarkFormat = {
@@ -37,10 +37,10 @@ export const colorLightDarkFormat = {
 }
   
 :root, 
-[data-color-theme="light"] {
+[data-color-theme="grey"] {
 ${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.$value};`).join("\n")}
 }` +
-      themeBlock('[data-color-theme="grey"]', dictionary.allTokens, "grey") +
+      themeBlock('[data-color-theme="white"]', dictionary.allTokens, "white") +
       themeBlock('[data-color-theme="feide"]', dictionary.allTokens, "feide")
     );
   },

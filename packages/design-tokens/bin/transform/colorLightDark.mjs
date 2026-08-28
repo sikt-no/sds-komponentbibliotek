@@ -26,14 +26,14 @@ export const colorLightDarkTransform = {
   filter: (token) => isColor(token),
   transform: (token) => {
     const siktDark = modeHex(token, "sikt-dark");
-    const siktGrey = modeHex(token, "sikt-grey");
+    const siktWhite = modeHex(token, "sikt-white");
     const feideLight = modeHex(token, "feide-light");
     const feideDark = modeHex(token, "feide-dark");
 
     token.themes = {
-      grey:
-        siktGrey && siktDark
-          ? `light-dark(${siktGrey}, ${siktDark})`
+      white:
+        siktWhite && siktDark
+          ? `light-dark(${siktWhite}, ${siktDark})`
           : undefined,
       feide:
         feideLight && feideDark

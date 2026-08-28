@@ -5,10 +5,10 @@ import { fileURLToPath } from "node:url";
 const COLOR_THEMES_DIR = fileURLToPath(
   new URL("../../src/figma/color-themes", import.meta.url),
 );
-const BASE_FILE = "Sikt white (light).tokens.json";
+const BASE_FILE = "Sikt grey (light).tokens.json";
 const MODE_FILES = {
   "sikt-dark": "Sikt dark.tokens.json",
-  "sikt-grey": "Sikt grey (light).tokens.json",
+  "sikt-white": "Sikt white (light).tokens.json",
   "feide-light": "Feide light.tokens.json",
   "feide-dark": "Feide dark.tokens.json",
 };
