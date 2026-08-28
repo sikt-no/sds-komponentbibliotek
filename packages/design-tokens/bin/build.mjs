@@ -2,10 +2,11 @@ import StyleDictionary from "style-dictionary";
 import { prefix } from "./config.mjs";
 import { isHiddenFromPublishing, isColor } from "./filters.mjs";
 import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
+import { figmaColorModesPreprocessor } from "./preprocessor/figmaColorModes.mjs";
 import { fontWeightTransform } from "./transform/fontWeight.mjs";
 import { numberPxTransform } from "./transform/numberPx.mjs";
 
-const sourcePath = "src/**";
+const sourcePath = "src/";
 const buildPath = "dist/";
 
 const cssTransforms = [
@@ -16,15 +17,22 @@ const cssTransforms = [
   "color/hex",
   "size/pxToRem",
 ];
-const tsTransforms = ["attribute/cti", "name/pascal", "color/hex"];
+const tsTransforms = [
+  "attribute/cti",
+  "name/pascal",
+  "color/hex",
+  "size/pxToRem",
+];
+
+StyleDictionary.registerPreprocessor(figmaColorModesPreprocessor);
 
 StyleDictionary.registerFormat(tsAccurateModuleDeclarationsFormat);
 
 StyleDictionary.registerTransform(numberPxTransform);
 StyleDictionary.registerTransform(fontWeightTransform);
 
-const logLevel = "default";
-// const logLevel = "verbose";
+// const logLevel = "default";
+const logLevel = "verbose";
 
 /**
  * Builds Tokens for CSS and TS
@@ -33,9 +41,13 @@ const dictionaryTokens = new StyleDictionary({
   log: {
     verbosity: logLevel,
   },
-  source: [`${sourcePath}/*.{json,js,mjs}`],
+  source: [
+    `${sourcePath}/*.{json,js,mjs}`,
+    `${sourcePath}/figma/!(color-themes)/**/*.{json,js,mjs}`,
+  ],
   platforms: {
     css: {
+      preprocessors: ["preprocessor/figma/color/modes"],
       transforms: [
         "transform/number/px",
         ...cssTransforms,
@@ -52,7 +64,12 @@ const dictionaryTokens = new StyleDictionary({
       ],
     },
     ts: {
-      transforms: tsTransforms,
+      preprocessors: ["preprocessor/figma/color/modes"],
+      transforms: [
+        "transform/number/px",
+        ...tsTransforms,
+        "transform/font/weight",
+      ],
       buildPath,
       prefix,
       files: [
