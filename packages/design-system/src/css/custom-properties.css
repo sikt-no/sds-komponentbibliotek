@@ -1,0 +1,8 @@
+@import url("@sikt/sd3-design-tokens");
+
+:root {
+  --sd3-focus-outline-width: var(--sd3-space-border-weight-050);
+  --sd3-focus-outline: var(--sd3-focus-outline-width) solid
+    var(--sd3-color-focus-border);
+  --sd3-focus-outline-offset: var(--sd3-focus-outline-width);
+}

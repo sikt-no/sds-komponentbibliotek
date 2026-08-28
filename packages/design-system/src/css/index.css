@@ -3,13 +3,27 @@
 @import url("sanitize.css/forms.css");
 @import url("sanitize.css/typography.css");
 @import url("sanitize.css/reduce-motion.css");
-
-/* @import url("@sikt/sd3-design-tokens"); */
 @import url("./reset.css");
+@import url("./custom-properties.css");
 @import url("./font-face.css");
+@import url("./visually-hidden.css");
 
 @media (prefers-reduced-motion: reduce) {
   @view-transition {
     navigation: none !important;
   }
+}
+
+:root {
+  background-color: var(--sd3-color-background-default);
+  color: var(--sd3-color-text-primary);
+  font-family: var(--sd3-font-family);
+  font-size: var(--sd3-typography-size-text-body-md);
+  font-style: normal;
+  font-variant-ligatures: no-contextual;
+  font-weight: var(--sd3-typography-weight-regular);
+  interpolate-size: allow-keywords;
+  line-height: var(--sd3-typography-line-height-text-body-md);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

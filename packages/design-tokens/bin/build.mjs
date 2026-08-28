@@ -1,3 +1,5 @@
+import { writeFileSync } from "node:fs";
+import path from "node:path";
 import StyleDictionary from "style-dictionary";
 import { prefix } from "./config.mjs";
 import {
@@ -5,6 +7,7 @@ import {
   isColor,
   isSizeRelative,
   isTypography,
+  withPublishing,
 } from "./filters.mjs";
 import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
 import { colorLightDarkFormat } from "./format/colorLightDark.mjs";
@@ -21,6 +24,12 @@ import { numberPxTransform } from "./transform/numberPx.mjs";
 const sourcePath = "src/";
 const buildPath = "dist/";
 
+const preprocessors = [
+  "preprocessor/figma/color/modes",
+  "preprocessor/figma/responsive/modes",
+  "preprocessor/figma/typography/dimensions",
+];
+
 const cssTransforms = [
   "attribute/cti",
   "name/kebab",
@@ -33,6 +42,7 @@ const cssTransforms = [
   "transform/size/dimension",
   "transform/font/weight",
 ];
+
 const tsTransforms = [
   "attribute/cti",
   "name/pascal",
@@ -57,8 +67,34 @@ StyleDictionary.registerTransform(fontWeightTransform);
 StyleDictionary.registerTransform(sizeDimensionTransform);
 StyleDictionary.registerTransform(colorLightDarkTransform);
 
-// const logLevel = "default";
-const logLevel = "verbose";
+const logLevel = "default";
+// const logLevel = "verbose";
+
+const cssFiles = [
+  {
+    format: "css/variables",
+    destination: "css/tokens.css",
+    filter: withPublishing(
+      (token) =>
+        !isColor(token) && !isSizeRelative(token) && !isTypography(token),
+    ),
+  },
+  {
+    format: "format/color/light-dark",
+    destination: "css/color.css",
+    filter: withPublishing(isColor),
+  },
+  {
+    format: "format/space/theme",
+    destination: "css/space.css",
+    filter: withPublishing(isSizeRelative),
+  },
+  {
+    format: "format/typography/theme",
+    destination: "css/typography.css",
+    filter: withPublishing(isTypography),
+  },
+];
 
 /**
  * Builds Tokens for CSS and TS
@@ -73,49 +109,14 @@ const dictionaryTokens = new StyleDictionary({
   ],
   platforms: {
     css: {
-      preprocessors: [
-        "preprocessor/figma/color/modes",
-        "preprocessor/figma/responsive/modes",
-        "preprocessor/figma/typography/dimensions",
-      ],
+      preprocessors,
       transforms: cssTransforms,
       buildPath,
       prefix,
-      files: [
-        {
-          format: "css/variables",
-          destination: "css/tokens.css",
-          filter: (token) =>
-            isHiddenFromPublishing(token) &&
-            !isColor(token) &&
-            !isSizeRelative(token) &&
-            !isTypography(token),
-        },
-        {
-          format: "format/color/light-dark",
-          destination: "css/color.css",
-          filter: (token) => isHiddenFromPublishing(token) && isColor(token),
-        },
-        {
-          format: "format/space/theme",
-          destination: "css/space.css",
-          filter: (token) =>
-            isHiddenFromPublishing(token) && isSizeRelative(token),
-        },
-        {
-          format: "format/typography/theme",
-          destination: "css/typography.css",
-          filter: (token) =>
-            isHiddenFromPublishing(token) && isTypography(token),
-        },
-      ],
+      files: cssFiles,
     },
     ts: {
-      preprocessors: [
-        "preprocessor/figma/color/modes",
-        "preprocessor/figma/responsive/modes",
-        "preprocessor/figma/typography/dimensions",
-      ],
+      preprocessors,
       transforms: tsTransforms,
       buildPath,
       prefix,
@@ -141,3 +142,16 @@ const dictionaryTokens = new StyleDictionary({
 });
 
 await dictionaryTokens.buildAllPlatforms();
+
+const indexCss =
+  `/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+` +
+  cssFiles
+    .map((file) => `@import url("./${path.basename(file.destination)}");`)
+    .join("\n") +
+  "\n";
+
+writeFileSync(path.join(buildPath, "css/index.css"), indexCss);

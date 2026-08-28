@@ -14,7 +14,7 @@
   "module": "dist/js/tokens.mjs",
   "exports": {
     ".": {
-      "style": "./dist/css/tokens.css",
+      "style": "./dist/css/index.css",
       "import": {
         "types": "./dist/js/tokens.d.ts",
         "default": "./dist/js/tokens.mjs"
@@ -27,7 +27,7 @@
     "./dist/*": "./dist/*"
   },
   "types": "dist/js/tokens.d.ts",
-  "style": "dist/css/tokens.css",
+  "style": "dist/css/index.css",
   "files": [
     "CHANGELOG.md",
     "dist",

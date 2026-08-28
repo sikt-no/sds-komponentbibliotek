@@ -1,0 +1,92 @@
+@scope (.sd3-typography-headline) {
+  :scope {
+    &.editorial {
+      &.xxs {
+        font-size: var(--sd3-typography-size-editorial-xxl);
+        font-weight: var(--sd3-typography-size-editorial-xxl);
+        line-height: var(--sd3-typography-weight-semibold);
+      }
+    }
+  }
+}
+
+@scope (.sd3-typography-body) {
+  :scope {
+    &.sm {
+      font-size: var(--sd3-typography-size-body-sm);
+      font-weight: var(--sd3-typography-size-body-sm);
+      line-height: var(--sd3-typography-weight-regular);
+    }
+
+    &.md {
+      font-size: var(--sd3-typography-size-body-md);
+      font-weight: var(--sd3-typography-size-body-md);
+      line-height: var(--sd3-typography-weight-regular);
+    }
+
+    &.lg {
+      font-size: var(--sd3-typography-size-body-lg);
+      font-weight: var(--sd3-typography-size-body-lg);
+      line-height: var(--sd3-typography-weight-regular);
+    }
+
+    &.xl {
+      font-size: var(--sd3-typography-size-body-xl);
+      font-weight: var(--sd3-typography-size-body-xl);
+      line-height: var(--sd3-typography-weight-regular);
+    }
+  }
+}
+
+@scope (.sd3-typography-label) {
+  :scope {
+    font-size: var(--sd3-typography-size-label);
+    font-weight: var(--sd3-typography-size-label);
+    line-height: var(--sd3-typography-weight-semibold);
+
+    &.lg {
+      font-size: var(--sd3-typography-size-label-lg);
+      font-weight: var(--sd3-typography-size-label-lg);
+      line-height: var(--sd3-typography-weight-semibold);
+    }
+  }
+}
+
+@scope (.sd3-typography-helper) {
+  :scope {
+    font-size: var(--sd3-typography-size-helper);
+    font-weight: var(--sd3-typography-size-helper);
+    line-height: var(--sd3-typography-weight-regular);
+  }
+}
+
+@scope (.sd3-typography-overline) {
+  :scope {
+    font-size: var(--sd3-typography-size-overline);
+    font-weight: var(--sd3-typography-size-overline);
+    line-height: var(--sd3-typography-weight-semibold);
+    text-transform: uppercase;
+  }
+}
+
+@scope (.sd3-typography-interaction) {
+  :scope {
+    &.sm {
+      font-size: var(--sd3-typography-size-interaction-sm);
+      font-weight: var(--sd3-typography-size-interaction-sm);
+      line-height: var(--sd3-typography-weight-regular);
+    }
+
+    &.md {
+      font-size: var(--sd3-typography-size-interaction-md);
+      font-weight: var(--sd3-typography-size-interaction-md);
+      line-height: var(--sd3-typography-weight-regular);
+    }
+
+    &.lg {
+      font-size: var(--sd3-typography-size-interaction-lg);
+      font-weight: var(--sd3-typography-size-interaction-lg);
+      line-height: var(--sd3-typography-weight-regular);
+    }
+  }
+}

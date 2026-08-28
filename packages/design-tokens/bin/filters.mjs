@@ -17,3 +17,6 @@ export const isSizeRelative = (token) =>
 
 export const isTypography = (token) =>
   token.attributes.category === "typography";
+
+export const withPublishing = (predicate) => (token) =>
+  isHiddenFromPublishing(token) && predicate(token);
