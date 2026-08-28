@@ -11,3 +11,9 @@ export const isFontWeight = (token) =>
   /* INFO: Hack to solve Figma missing DTCG types */ (token.attributes
     .category === "typography" &&
     token.attributes.type === "weight");
+
+export const isSizeRelative = (token) =>
+  token.attributes.category === "space-layout";
+
+export const isTypography = (token) =>
+  token.attributes.category === "typography";

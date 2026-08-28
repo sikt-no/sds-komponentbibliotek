@@ -37,9 +37,10 @@
     "*.css"
   ],
   "scripts": {
-    "prebuild": "npm run build:tokens",
+    "prebuild": "npm run clean && npm run build:tokens",
     "build": "",
-    "build:tokens": "node bin/build.mjs"
+    "build:tokens": "node bin/build.mjs",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "json-to-ts": "^2.1.0",

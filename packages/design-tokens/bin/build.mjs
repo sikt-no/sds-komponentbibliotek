@@ -1,8 +1,15 @@
 import StyleDictionary from "style-dictionary";
 import { prefix } from "./config.mjs";
-import { isHiddenFromPublishing, isColor } from "./filters.mjs";
+import {
+  isHiddenFromPublishing,
+  isColor,
+  isSizeRelative,
+  isTypography,
+} from "./filters.mjs";
 import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
 import { colorLightDarkFormat } from "./format/colorLightDark.mjs";
+import { spaceThemeFormat } from "./format/spaceTheme.mjs";
+import { typographyThemeFormat } from "./format/typographyTheme.mjs";
 import { figmaColorModesPreprocessor } from "./preprocessor/figmaColorModes.mjs";
 import { figmaResponsiveModesPreprocessor } from "./preprocessor/figmaResponsiveModes.mjs";
 import { figmaTypographyDimensionsPreprocessor } from "./preprocessor/figmaTypographyDimensions.mjs";
@@ -42,6 +49,8 @@ StyleDictionary.registerPreprocessor(figmaTypographyDimensionsPreprocessor);
 
 StyleDictionary.registerFormat(tsAccurateModuleDeclarationsFormat);
 StyleDictionary.registerFormat(colorLightDarkFormat);
+StyleDictionary.registerFormat(spaceThemeFormat);
+StyleDictionary.registerFormat(typographyThemeFormat);
 
 StyleDictionary.registerTransform(numberPxTransform);
 StyleDictionary.registerTransform(fontWeightTransform);
@@ -76,12 +85,28 @@ const dictionaryTokens = new StyleDictionary({
         {
           format: "css/variables",
           destination: "css/tokens.css",
-          filter: (token) => isHiddenFromPublishing(token) && !isColor(token),
+          filter: (token) =>
+            isHiddenFromPublishing(token) &&
+            !isColor(token) &&
+            !isSizeRelative(token) &&
+            !isTypography(token),
         },
         {
           format: "format/color/light-dark",
           destination: "css/color.css",
           filter: (token) => isHiddenFromPublishing(token) && isColor(token),
+        },
+        {
+          format: "format/space/theme",
+          destination: "css/space.css",
+          filter: (token) =>
+            isHiddenFromPublishing(token) && isSizeRelative(token),
+        },
+        {
+          format: "format/typography/theme",
+          destination: "css/typography.css",
+          filter: (token) =>
+            isHiddenFromPublishing(token) && isTypography(token),
         },
       ],
     },
