@@ -3,6 +3,7 @@ import { prefix } from "./config.mjs";
 import { isHiddenFromPublishing, isColor } from "./filters.mjs";
 import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
 import { figmaColorModesPreprocessor } from "./preprocessor/figmaColorModes.mjs";
+import { figmaResponsiveModesPreprocessor } from "./preprocessor/figmaResponsiveModes.mjs";
 import { fontWeightTransform } from "./transform/fontWeight.mjs";
 import { numberPxTransform } from "./transform/numberPx.mjs";
 
@@ -25,6 +26,7 @@ const tsTransforms = [
 ];
 
 StyleDictionary.registerPreprocessor(figmaColorModesPreprocessor);
+StyleDictionary.registerPreprocessor(figmaResponsiveModesPreprocessor);
 
 StyleDictionary.registerFormat(tsAccurateModuleDeclarationsFormat);
 
@@ -43,11 +45,14 @@ const dictionaryTokens = new StyleDictionary({
   },
   source: [
     `${sourcePath}/*.{json,js,mjs}`,
-    `${sourcePath}/figma/!(color-themes)/**/*.{json,js,mjs}`,
+    `${sourcePath}/figma/!(color-themes|size-responsive|typography)/**/*.{json,js,mjs}`,
   ],
   platforms: {
     css: {
-      preprocessors: ["preprocessor/figma/color/modes"],
+      preprocessors: [
+        "preprocessor/figma/color/modes",
+        "preprocessor/figma/responsive/modes",
+      ],
       transforms: [
         "transform/number/px",
         ...cssTransforms,
@@ -64,7 +69,10 @@ const dictionaryTokens = new StyleDictionary({
       ],
     },
     ts: {
-      preprocessors: ["preprocessor/figma/color/modes"],
+      preprocessors: [
+        "preprocessor/figma/color/modes",
+        "preprocessor/figma/responsive/modes",
+      ],
       transforms: [
         "transform/number/px",
         ...tsTransforms,
