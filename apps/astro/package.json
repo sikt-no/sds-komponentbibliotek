@@ -12,8 +12,8 @@
     "copy:skills": "node scripts/archive-skills.mjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.6",
-    "@astrojs/react": "^6.0.3",
+    "@astrojs/mdx": "^7.0.7",
+    "@astrojs/react": "^6.0.4",
     "@astrojs/sitemap": "^3.7.3",
     "@phosphor-icons/react": "^2.1.10",
     "@sikt/sds-breadcrumbs": "^2.0.3",
@@ -31,7 +31,7 @@
     "@sikt/sds-tabs": "^3.0.4",
     "@sikt/sds-tag": "^1.0.0",
     "@sikt/sds-tokens": "^6.2.0",
-    "astro": "^7.2.3",
+    "astro": "^7.2.4",
     "astro-matomo": "^1.12.0",
     "astro-pagefind": "^2.0.1",
     "canvas-confetti": "^1.9.4",
