@@ -1,9 +1,18 @@
 const packageName = process.env.npm_config_package;
+const isSd3 = packageName.startsWith("design-");
 const isConfig = packageName.includes("config");
-const packagePrefix = !isConfig ? "sds-" : "";
 const packageSuffix = isConfig ? "-sds" : "";
+let packagePrefix = "";
+if (isSd3) {
+  packagePrefix = "sd3-";
+} else if (!isConfig) {
+  packagePrefix = "sds-";
+}
 
-module.exports = {
+/**
+ * commit-and-tag-version config file
+ */
+export default {
   "commit-all": true,
   bumpFiles: [
     `./packages/${packageName}/package.json`,
