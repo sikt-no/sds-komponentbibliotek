@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "json-to-ts": "^2.1.0",
-    "style-dictionary": "^5.5.1",
+    "style-dictionary": "^5.5.2",
     "tinycolor2": "^1.6.0"
   }
 }
