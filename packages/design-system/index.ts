@@ -2,10 +2,10 @@ import "./src/css/index.css";
 
 export type {
   Category,
-  Density,
   IconPosition,
   Variant,
-  Visibility,
+  VariantButton,
   Size,
+  SizeDensity,
   State,
 } from "./types";
