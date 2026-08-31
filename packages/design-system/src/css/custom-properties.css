@@ -5,4 +5,6 @@
   --sd3-focus-outline: var(--sd3-focus-outline-width) solid
     var(--sd3-color-focus-border);
   --sd3-focus-outline-offset: var(--sd3-focus-outline-width);
+  --sds-focus-box-shadow: 0 0 0 var(--sd3-focus-outline-width)
+    var(--sd3-color-background-default);
 }
