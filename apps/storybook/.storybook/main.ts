@@ -5,12 +5,15 @@ import { Features } from "lightningcss";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+const isDev = process.env.NODE_ENV === "development";
+const excludeSd3 = isDev ? "" : "!(design-*)";
+
 const config: StorybookConfig = {
   framework: "@storybook/react-vite",
   stories: [
     "../stories/**/*.mdx",
-    "../../../packages/**/stories/**/*.mdx",
-    "../../../packages/**/stories/*.stories.@(js|jsx|ts|tsx)",
+    `../../../packages/${excludeSd3}**/stories/**/*.mdx`,
+    `../../../packages/${excludeSd3}**/stories/*.stories.@(js|jsx|ts|tsx)`,
   ],
   staticDirs: ["../static"],
   typescript: {
