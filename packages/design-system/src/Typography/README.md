@@ -1,4 +1,4 @@
-# `{{kebabCase name}}`
+# Typography
 
 ## Consume
 
@@ -9,8 +9,8 @@ npm i -s @sikt/sd3-design-system
 ### React
 
 ```js
-import { {{pascalCase name}} } from "@sikt/sd3-design-system";
-/** 
+import { Typography } from "@sikt/sd3-design-system";
+/**
  * NOTE: Importing CSS in JS is usually not a good idea,
  * see example for Stylesheets for how to import it into CSS
  */

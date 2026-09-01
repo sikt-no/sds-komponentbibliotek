@@ -1,3 +1,5 @@
-.sd3-{{kebabCase name}} {
-  /* styles goes here */
+@scope(.sd3-{{kebabCase name}}) {
+  :scope {
+    /* styles goes here */
+  }
 }
