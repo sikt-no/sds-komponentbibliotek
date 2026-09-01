@@ -1,5 +1,5 @@
 // url=https://www.figma.com/design/0aelUwbn2Ivir3T2JfhdOo/SDS-Komponenter?node-id=<node-id>
-// source=packages/design-system/src/{{pascalCase name}}/index.ts
+// source=https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/packages/design-system/src/{{pascalCase name}}/index.ts
 // component={{pascalCase name}}
 import figma from "figma";
 
@@ -11,4 +11,7 @@ export default {
   `,
   imports: ["import { {{pascalCase name}} } from \"@sikt/sd3-design-system\";"],
   id: "{{kebabCase name}}",
+  metadata: {
+    nestable: true,
+  },
 };

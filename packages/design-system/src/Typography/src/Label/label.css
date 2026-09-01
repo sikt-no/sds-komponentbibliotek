@@ -1,0 +1,15 @@
+@scope (.sd3-typography) {
+  :scope {
+    &[data-variant="label"] {
+      font-size: var(--sd3-typography-size-text-label);
+      font-weight: var(--sd3-typography-weight-semibold);
+      line-height: var(--sd3-typography-line-height-text-label);
+
+      &[data-size="lg"] {
+        font-size: var(--sd3-typography-size-text-label-lg);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-text-label-lg);
+      }
+    }
+  }
+}

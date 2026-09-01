@@ -1,0 +1,91 @@
+@scope (.sd3-typography) {
+  :scope {
+    &[data-variant="editorial"] {
+      &[data-size="xxs"] {
+        font-size: var(--sd3-typography-size-editorial-xxs);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-editorial-xxs);
+      }
+
+      &[data-size="xs"] {
+        font-size: var(--sd3-typography-size-editorial-xs);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-editorial-xs);
+      }
+
+      &[data-size="sm"] {
+        font-size: var(--sd3-typography-size-editorial-sm);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-editorial-sm);
+      }
+
+      &[data-size="md"] {
+        font-size: var(--sd3-typography-size-editorial-md);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-editorial-md);
+      }
+
+      &[data-size="lg"] {
+        font-size: var(--sd3-typography-size-editorial-lg);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-editorial-lg);
+      }
+
+      &[data-size="xl"] {
+        font-size: var(--sd3-typography-size-editorial-xl);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-editorial-xl);
+      }
+
+      &[data-size="xxl"] {
+        font-size: var(--sd3-typography-size-editorial-xxl);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-editorial-xxl);
+      }
+    }
+
+    &[data-variant="application"] {
+      &[data-size="xxs"] {
+        font-size: var(--sd3-typography-size-application-xxs);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-application-xxs);
+      }
+
+      &[data-size="xs"] {
+        font-size: var(--sd3-typography-size-application-xs);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-application-xs);
+      }
+
+      &[data-size="sm"] {
+        font-size: var(--sd3-typography-size-application-sm);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-application-sm);
+      }
+
+      &[data-size="md"] {
+        font-size: var(--sd3-typography-size-application-md);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-application-md);
+      }
+
+      &[data-size="lg"] {
+        font-size: var(--sd3-typography-size-application-lg);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-application-lg);
+      }
+
+      &[data-size="xl"] {
+        font-size: var(--sd3-typography-size-application-xl);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-application-xl);
+      }
+
+      &[data-size="xxl"] {
+        font-size: var(--sd3-typography-size-application-xxl);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-application-xxl);
+      }
+    }
+  }
+}

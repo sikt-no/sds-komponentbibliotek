@@ -1,0 +1,36 @@
+@scope (.sd3-typography) {
+  :scope {
+    &[data-variant="helper"] {
+      font-size: var(--sd3-typography-size-text-helper);
+      font-weight: var(--sd3-typography-weight-regular);
+      line-height: var(--sd3-typography-line-height-text-helper);
+    }
+
+    &[data-variant="overline"] {
+      font-size: var(--sd3-typography-size-text-overline);
+      font-weight: var(--sd3-typography-weight-semibold);
+      line-height: var(--sd3-typography-line-height-text-overline);
+      text-transform: uppercase;
+    }
+
+    &[data-variant="interaction"] {
+      &[data-size="sm"] {
+        font-size: var(--sd3-typography-size-text-interaction-sm);
+        font-weight: var(--sd3-typography-weight-regular);
+        line-height: var(--sd3-typography-line-height-text-interaction-sm);
+      }
+
+      &[data-size="md"] {
+        font-size: var(--sd3-typography-size-text-interaction-md);
+        font-weight: var(--sd3-typography-weight-regular);
+        line-height: var(--sd3-typography-line-height-text-interaction-md);
+      }
+
+      &[data-size="lg"] {
+        font-size: var(--sd3-typography-size-text-interaction-lg);
+        font-weight: var(--sd3-typography-weight-regular);
+        line-height: var(--sd3-typography-line-height-text-interaction-lg);
+      }
+    }
+  }
+}
