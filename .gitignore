@@ -17,6 +17,11 @@ node_modules
 # local settings files
 *.local*
 
+# local claude skills
+.claude/skills/create-component-spec
+.claude/skills/implement-component-spec
+.claude/skills/review-component-spec
+
 # testing
 coverage
 junit.xml
