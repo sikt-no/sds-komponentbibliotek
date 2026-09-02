@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react-vite";
 import "../../../packages/core/src/index.css";
+import "../../../packages/design-system/src/css/index.css";
 import "../../../packages/logo/src/logo.css";
 import "../../../packages/icons/src/icon.css";
 import "../../../packages/input/src/input.css";
