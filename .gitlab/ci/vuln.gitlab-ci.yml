@@ -49,3 +49,14 @@ audit:
   script:
     - npm audit --omit=dev --audit-level=moderate
   needs: []
+
+audit-signatures:
+  stage: test
+  extends: .npm_cache
+  allow_failure: false
+  script:
+    - npm pkg delete scripts.prepare
+    - npm pkg delete scripts.postinstall
+    - npm ci --no-audit --no-fund --cache .npm
+    - npm audit signatures
+  needs: []
