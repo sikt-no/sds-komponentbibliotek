@@ -55,7 +55,6 @@ const preview: Preview = {
     options: {
       storySort: {
         order: [
-          "SD3",
           "Introduction",
           "Tokens",
           ["Readme", "Changelog", "Size", "Layout", "Color", "Typography", "*"],
@@ -65,6 +64,8 @@ const preview: Preview = {
           ["*", ["Readme", "Changelog"]],
           "Utils",
           "Config",
+          "SD3",
+          ["Introduction", "*", ["Readme", "Changelog"]],
         ],
       },
     },
