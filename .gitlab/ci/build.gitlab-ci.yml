@@ -28,6 +28,7 @@ packages:
       - packages/**/*.png
       - packages/**/*.svg
       - packages/**/index.js
+      - packages/**/index.mjs
   needs:
     - install
   rules:
