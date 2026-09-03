@@ -15,7 +15,6 @@ publish-figma:
     - npm pkg delete scripts.postinstall
     - npm ci --no-audit --no-fund --cache .npm
     - npx figma connect publish --token ${FIGMA_TOKEN}
-    - npx figma connect publish --token ${FIGMA_TOKEN} --config figma.html.config.json
   needs:
     - install
   rules:
@@ -23,6 +22,4 @@ publish-figma:
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       changes:
-        - packages/**/figma/*.figma.tsx
-        - packages/**/figma/*.react.tsx
-        - packages/**/figma/*.html.ts
+        - packages/design-*/**/figma/*.figma.ts
