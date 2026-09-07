@@ -33,7 +33,7 @@
       outline: var(--sd3-focus-outline-width) solid
         var(--sd3-color-focus-border);
       outline-offset: var(--sd3-focus-outline-width);
-      box-shadow: var(--sds-focus-box-shadow);
+      box-shadow: var(--sd3-focus-box-shadow);
       pointer-events: none;
     }
 
