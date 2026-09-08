@@ -28,14 +28,38 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
+    theme: {
+      name: "Theme",
+      description: "Select color theme",
+      defaultValue: "",
+      toolbar: {
+        items: [
+          { value: "", icon: "switchalt", title: "Color theme" },
+          { value: "grey", icon: "playnext", title: "Sikt grey" },
+          { value: "white", icon: "playnext", title: "Sikt white" },
+          { value: "feide", icon: "playnext", title: "Feide" },
+        ],
+        dynamicTitle: true,
+      },
+    },
   },
   decorators: [
     (Story, context) => {
       const scheme = context.globals;
+      const theme = context.globals;
       const rootElement = document.querySelector("html");
 
       if (rootElement !== null) {
-        rootElement.setAttribute("data-color-scheme", scheme.scheme as string);
+        if (scheme.scheme !== "") {
+          rootElement.setAttribute(
+            "style",
+            `color-scheme: only ${scheme.scheme as string}`,
+          );
+        }
+
+        if (theme.theme !== "") {
+          rootElement.setAttribute("data-color-theme", theme.theme as string);
+        }
       }
 
       return <Story />;
