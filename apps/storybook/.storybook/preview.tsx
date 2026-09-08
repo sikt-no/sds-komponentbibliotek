@@ -18,7 +18,7 @@ const preview: Preview = {
   globalTypes: {
     scheme: {
       name: "Scheme",
-      description: "Select light or dark theme",
+      description: "Select light or dark scheme",
       defaultValue: "",
       toolbar: {
         items: [
@@ -43,11 +43,26 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
+    space: {
+      name: "Space",
+      description: "Select space theme",
+      defaultValue: "",
+      toolbar: {
+        items: [
+          { value: "", icon: "grow", title: "Space theme" },
+          { value: "compact", icon: "playnext", title: "Compact" },
+          { value: "comfortable", icon: "playnext", title: "Comfortable" },
+          { value: "spacious", icon: "playnext", title: "Spacious" },
+        ],
+        dynamicTitle: true,
+      },
+    },
   },
   decorators: [
     (Story, context) => {
       const scheme = context.globals;
       const theme = context.globals;
+      const space = context.globals;
       const rootElement = document.querySelector("html");
 
       if (rootElement !== null) {
@@ -60,6 +75,10 @@ const preview: Preview = {
 
         if (theme.theme !== "") {
           rootElement.setAttribute("data-color-theme", theme.theme as string);
+        }
+
+        if (space.space !== "") {
+          rootElement.setAttribute("data-space-theme", space.space as string);
         }
       }
 
@@ -90,7 +109,13 @@ const preview: Preview = {
           "Utils",
           "Config",
           "SD3",
-          ["Introduction", "*", ["Readme", "Changelog"]],
+          [
+            "Introduction",
+            "Tokens",
+            ["Readme", "Changelog", "Color", "Typography", "Size", "*"],
+            "*",
+            ["Readme", "Changelog"],
+          ],
         ],
       },
     },

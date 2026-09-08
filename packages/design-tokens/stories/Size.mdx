@@ -1,0 +1,29 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import tokens from "../dist/js/tokens.mjs";
+import { ValueTable } from "./TokenTable";
+
+<Meta title="SD3/Tokens/Size" />
+
+# Size
+
+## Space
+
+### Component
+
+<ValueTable category={tokens.space.component} />
+
+### Layout
+
+<ValueTable category={tokens.space.layout} />
+
+### Border weight
+
+<ValueTable category={tokens.space.border.weight} />
+
+### Border radius
+
+<ValueTable category={tokens.space.border.radius} />
+
+## Breakpoint
+
+<ValueTable category={tokens.breakpoint} />
