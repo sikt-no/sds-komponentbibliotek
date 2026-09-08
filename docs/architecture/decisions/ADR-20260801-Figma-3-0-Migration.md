@@ -21,8 +21,8 @@ A new design overhaul of Figma that breaks almost everything from tokens to comp
   - Change prefix preventing package and CSS conflicts. This means old and new tokens and packages can work in the same page or app.
   - Build bridge components. Mapping old component props to the equivalent in the new components.
   - Build codemods or Agent skills that helps migrate to new packages
+- ✅ **Use Atomic/Attribute Based CSS** Even though this pattern is trying to solve issues with Utility CSS enormous class attribute. It still makes the API cross framework to be more clear.
 - Consider drop PostCSS. Most of the features we need are now native in CSS. Exceptions autoprefix and custom media.
-- ❌ Do not use Atomic/Attribute Based CSS. This is a pattern trying to solve issues with Utility CSS enormous class attribute, this doesn't affect us.
 
 ## More Information
 
