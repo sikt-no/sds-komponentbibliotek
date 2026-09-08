@@ -13,7 +13,7 @@ export const isFontWeight = (token) =>
     token.attributes.type === "weight");
 
 export const isSizeRelative = (token) =>
-  token.attributes.category === "space-layout";
+  token.attributes.category === "space" && token.attributes.type === "layout";
 
 export const isTypography = (token) =>
   token.attributes.category === "typography";
