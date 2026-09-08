@@ -13,6 +13,7 @@ import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDec
 import { colorLightDarkFormat } from "./format/colorLightDark.mjs";
 import { spaceThemeFormat } from "./format/spaceTheme.mjs";
 import { typographyThemeFormat } from "./format/typographyTheme.mjs";
+import { customMediaFormat } from "./format/customMedia.mjs";
 import { figmaColorModesPreprocessor } from "./preprocessor/figmaColorModes.mjs";
 import { figmaResponsiveModesPreprocessor } from "./preprocessor/figmaResponsiveModes.mjs";
 import { figmaTypographyDimensionsPreprocessor } from "./preprocessor/figmaTypographyDimensions.mjs";
@@ -61,6 +62,7 @@ StyleDictionary.registerFormat(tsAccurateModuleDeclarationsFormat);
 StyleDictionary.registerFormat(colorLightDarkFormat);
 StyleDictionary.registerFormat(spaceThemeFormat);
 StyleDictionary.registerFormat(typographyThemeFormat);
+StyleDictionary.registerFormat(customMediaFormat);
 
 StyleDictionary.registerTransform(numberPxTransform);
 StyleDictionary.registerTransform(fontWeightTransform);
@@ -93,6 +95,11 @@ const cssFiles = [
     format: "format/typography/theme",
     destination: "css/typography.css",
     filter: withPublishing(isTypography),
+  },
+  {
+    format: "format/custom-media",
+    destination: "css/custom-media.css",
+    filter: { attributes: { category: "breakpoint" } },
   },
 ];
 

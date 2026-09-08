@@ -60,25 +60,23 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const scheme = context.globals;
-      const theme = context.globals;
-      const space = context.globals;
+      const { scheme, theme, space } = context.globals;
       const rootElement = document.querySelector("html");
 
       if (rootElement !== null) {
-        if (scheme.scheme !== "") {
+        if (scheme !== "") {
           rootElement.setAttribute(
             "style",
-            `color-scheme: only ${scheme.scheme as string}`,
+            `color-scheme: only ${scheme as string}`,
           );
         }
 
-        if (theme.theme !== "") {
-          rootElement.setAttribute("data-color-theme", theme.theme as string);
+        if (theme !== "") {
+          rootElement.setAttribute("data-color-theme", theme as string);
         }
 
-        if (space.space !== "") {
-          rootElement.setAttribute("data-space-theme", space.space as string);
+        if (space !== "") {
+          rootElement.setAttribute("data-space-theme", space as string);
         }
       }
 
