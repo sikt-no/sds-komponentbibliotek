@@ -37,7 +37,7 @@ export const colorLightDarkFormat = {
 }
   
 :root, 
-[data-color-theme="grey"] {
+[data-color-theme="gray"] {
 ${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.$value};`).join("\n")}
 }` +
       themeBlock('[data-color-theme="white"]', dictionary.allTokens, "white") +

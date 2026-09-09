@@ -1385,7 +1385,7 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11076",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
           }
         },
         "02": {
@@ -1400,7 +1400,7 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11077",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
           }
         },
         "03": {
@@ -1415,7 +1415,7 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11078",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
           }
         },
         "04": {
@@ -1430,7 +1430,7 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11079",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
           }
         },
         "05": {
@@ -1443,7 +1443,7 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11080",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
           }
         }
       },
@@ -1460,7 +1460,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:31256:11115",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "dark": {
@@ -1475,7 +1480,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:31256:11116",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         }
       },
@@ -1491,9 +1501,10 @@
               "alpha": 1,
               "hex": "#F3A9B3"
             },
+            "$description": "Brukes til fyllfarge for hele ansiktet.",
             "$extensions": {
               "com.figma.variableId": "VariableID:30949:11060",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           },
           "02": {
@@ -1506,9 +1517,10 @@
               "alpha": 1,
               "hex": "#F19B8A"
             },
+            "$description": "Brukes til fyllfarge for hele ansiktet.",
             "$extensions": {
               "com.figma.variableId": "VariableID:30949:11061",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           },
           "03": {
@@ -1521,9 +1533,10 @@
               "alpha": 1,
               "hex": "#F49262"
             },
+            "$description": "Brukes til fyllfarge for hele ansiktet.",
             "$extensions": {
               "com.figma.variableId": "VariableID:30949:11062",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           },
           "04": {
@@ -1536,12 +1549,15 @@
               "alpha": 1,
               "hex": "#D67B76"
             },
+            "$description": "Brukes til fyllfarge for hele ansiktet.",
             "$extensions": {
               "com.figma.variableId": "VariableID:30949:11063",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
-          },
-          "05": {
+          }
+        },
+        "face-secondary": {
+          "01": {
             "$type": "color",
             "$value": {
               "colorSpace": "srgb",
@@ -1551,12 +1567,13 @@
               "alpha": 1,
               "hex": "#CA614F"
             },
+            "$description": "Brukes kun der hvor ansiktet ikke har detaljer og ses på avstand.",
             "$extensions": {
               "com.figma.variableId": "VariableID:30949:11064",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"]
             }
           },
-          "06": {
+          "02": {
             "$type": "color",
             "$value": {
               "colorSpace": "srgb",
@@ -1566,13 +1583,14 @@
               "alpha": 1,
               "hex": "#B54A4B"
             },
+            "$description": "Brukes kun der hvor ansiktet ikke har detaljer og ses på avstand.",
             "$extensions": {
               "com.figma.variableId": "VariableID:30949:11065",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"]
             }
           }
         },
-        "ear-nose-neck": {
+        "ear-neck-nose": {
           "01": {
             "$type": "color",
             "$value": {
@@ -1583,9 +1601,10 @@
               "alpha": 1,
               "hex": "#C96D6F"
             },
+            "$description": "Brukes kun for detaljer som øre, nese og hals.",
             "$extensions": {
               "com.figma.variableId": "VariableID:31256:11105",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           },
           "02": {
@@ -1598,9 +1617,10 @@
               "alpha": 1,
               "hex": "#CE6663"
             },
+            "$description": "Brukes kun for detaljer som øre, nese og hals.",
             "$extensions": {
               "com.figma.variableId": "VariableID:31256:11106",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           },
           "03": {
@@ -1613,9 +1633,10 @@
               "alpha": 1,
               "hex": "#BF5645"
             },
+            "$description": "Brukes kun for detaljer som øre, nese og hals.",
             "$extensions": {
               "com.figma.variableId": "VariableID:31256:11107",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           },
           "04": {
@@ -1628,13 +1649,14 @@
               "alpha": 1,
               "hex": "#B75954"
             },
+            "$description": "Brukes kun for detaljer som øre, nese og hals.",
             "$extensions": {
               "com.figma.variableId": "VariableID:31256:11108",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           }
         },
-        "mouth-eyebrows": {
+        "eyebrow-mouth": {
           "01": {
             "$type": "color",
             "$value": {
@@ -1645,9 +1667,10 @@
               "alpha": 1,
               "hex": "#B64B4B"
             },
+            "$description": "Brukes kun for detaljer som munn og øyebryn.",
             "$extensions": {
               "com.figma.variableId": "VariableID:31256:11111",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           },
           "02": {
@@ -1660,9 +1683,10 @@
               "alpha": 1,
               "hex": "#B54A4B"
             },
+            "$description": "Brukes kun for detaljer som munn og øyebryn.",
             "$extensions": {
               "com.figma.variableId": "VariableID:31256:11112",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           },
           "03": {
@@ -1675,9 +1699,10 @@
               "alpha": 1,
               "hex": "#A33636"
             },
+            "$description": "Brukes kun for detaljer som munn og øyebryn.",
             "$extensions": {
               "com.figma.variableId": "VariableID:31256:11113",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           },
           "04": {
@@ -1690,9 +1715,10 @@
               "alpha": 1,
               "hex": "#A34343"
             },
+            "$description": "Brukes kun for detaljer som munn og øyebryn.",
             "$extensions": {
               "com.figma.variableId": "VariableID:31256:11114",
-              "com.figma.scopes": ["ALL_SCOPES"]
+              "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"]
             }
           }
         }
@@ -1710,7 +1736,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11066",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "green-02": {
@@ -1725,7 +1756,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11067",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "green-03": {
@@ -1740,7 +1776,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11068",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "yellow-01": {
@@ -1753,7 +1794,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11069",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "yellow-02": {
@@ -1766,7 +1812,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11070",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "yellow-03": {
@@ -1781,7 +1832,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11071",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "pink-01": {
@@ -1794,7 +1850,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11072",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "pink-02": {
@@ -1809,7 +1870,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11073",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "blue-01": {
@@ -1822,7 +1888,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11074",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         },
         "blue-02": {
@@ -1835,7 +1906,12 @@
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:30949:11075",
-            "com.figma.scopes": ["ALL_SCOPES"]
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE",
+              "EFFECT_COLOR"
+            ]
           }
         }
       }

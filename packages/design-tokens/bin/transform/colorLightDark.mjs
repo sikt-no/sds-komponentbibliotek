@@ -16,7 +16,7 @@ const modeHex = (token, modeKey) => {
 /**
  * Custom Transform: Color Light-Dark
  * Combines the Sikt light/dark modes into `light-dark()` on the token's
- * own $value, and attaches the same for the "grey" (Sikt grey/dark) and
+ * own $value, and attaches the same for the "gray" (Sikt gray/dark) and
  * "feide" (Feide light/dark) themes onto `token.themes`, for the
  * formatter to emit as [data-color-theme] overrides.
  */

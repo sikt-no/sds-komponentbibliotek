@@ -36,7 +36,7 @@ const preview: Preview = {
       toolbar: {
         items: [
           { value: "", icon: "switchalt", title: "Color theme" },
-          { value: "grey", icon: "playnext", title: "Sikt grey" },
+          { value: "gray", icon: "playnext", title: "Sikt gray" },
           { value: "white", icon: "playnext", title: "Sikt white" },
           { value: "feide", icon: "playnext", title: "Feide" },
         ],

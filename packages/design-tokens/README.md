@@ -34,7 +34,7 @@ import tokens from "@sikt/sd3-design-tokens";
 ## Design Tokens
 
 Colors are available in light and dark scheme following system preferences.  
-Color themes are available in Sikt grey (default), Sikt white and Feide.  
+Color themes are available in Sikt gray (default), Sikt white and Feide.  
 Space themes are available in Compact, Comfortable (default) and Spacious.
 
 ### Tips

@@ -81,7 +81,7 @@ Next.js 16 used Turbopack by default which in turn uses LightningCSS with a [bug
 
 ## Color Theme
 
-Color theme is default `grey`and can be changed with the data-attribute `data-color-theme="grey|white|feide"`.
+Color theme is default `gray`and can be changed with the data-attribute `data-color-theme="gray|white|feide"`.
 
 ## Space Theme
 
