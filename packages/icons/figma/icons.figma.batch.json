@@ -1,0 +1,509 @@
+{
+  "templateFile": "./icons.figma.batch.ts",
+  "components": [
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-238",
+      "name": "AddCircleIcon",
+      "id": "add-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-237",
+      "name": "AddIcon",
+      "id": "add-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-304",
+      "name": "AddToCalendarIcon",
+      "id": "add-to-calendar-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-228",
+      "name": "AddUserCircleIcon",
+      "id": "add-user-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-324",
+      "name": "AdjustSettingsIcon",
+      "id": "adjust-settings-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=4239-215",
+      "name": "AlertFilledIcon",
+      "id": "alert-filled-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-332",
+      "name": "AlertIcon",
+      "id": "alert-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-338",
+      "name": "ArchiveIcon",
+      "id": "archive-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=3668-91",
+      "name": "ArtificialIntelligenceIcon",
+      "id": "artificial-intelligence-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-316",
+      "name": "AttachmentIcon",
+      "id": "attachment-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=4020-246",
+      "name": "BackInTimeIcon",
+      "id": "back-in-time-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2960-210",
+      "name": "BookIcon",
+      "id": "book-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=3166-224",
+      "name": "BookmarkFilledIcon",
+      "id": "bookmark-filled-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-292",
+      "name": "BookmarkIcon",
+      "id": "bookmark-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-268",
+      "name": "CloseIcon",
+      "id": "close-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-260",
+      "name": "CollapseHideCircleIcon",
+      "id": "collapse-hide-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-259",
+      "name": "CollapseHideIcon",
+      "id": "collapse-hide-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-266",
+      "name": "ConfirmIcon",
+      "id": "confirm-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=5931-220",
+      "name": "ContextualMenuCircleIcon",
+      "id": "contextual-menu-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=5931-223",
+      "name": "ContextualMenuIcon",
+      "id": "contextual-menu-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-272",
+      "name": "CopyIcon",
+      "id": "copy-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-313",
+      "name": "CreateFolderIcon",
+      "id": "create-folder-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-302",
+      "name": "DateCalendarIcon",
+      "id": "date-calendar-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-306",
+      "name": "DeadlineIcon",
+      "id": "deadline-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-275",
+      "name": "DeleteIcon",
+      "id": "delete-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-290",
+      "name": "DownloadIcon",
+      "id": "download-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-276",
+      "name": "EditIcon",
+      "id": "edit-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-300",
+      "name": "EmailIcon",
+      "id": "email-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-256",
+      "name": "ExpandShowCircleIcon",
+      "id": "expand-show-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-255",
+      "name": "ExpandShowIcon",
+      "id": "expand-show-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-270",
+      "name": "ExportIcon",
+      "id": "export-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=4239-213",
+      "name": "FailedFilledIcon",
+      "id": "failed-filled-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-331",
+      "name": "FailedIcon",
+      "id": "failed-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-339",
+      "name": "FeedbackIcon",
+      "id": "feedback-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-323",
+      "name": "FilterIcon",
+      "id": "filter-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-314",
+      "name": "FolderIcon",
+      "id": "folder-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=5874-202",
+      "name": "GridViewIcon",
+      "id": "grid-view-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-226",
+      "name": "HelpCircleIcon",
+      "id": "help-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-264",
+      "name": "HomeLandingIcon",
+      "id": "home-landing-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-315",
+      "name": "ImagePlaceholderIcon",
+      "id": "image-placeholder-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=4239-214",
+      "name": "InfoFilledIcon",
+      "id": "info-filled-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-333",
+      "name": "InfoIcon",
+      "id": "info-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=3166-226",
+      "name": "LawIcon",
+      "id": "law-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-216",
+      "name": "LinkIcon",
+      "id": "link-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-344",
+      "name": "LinkedInIcon",
+      "id": "linked-in-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2572-210",
+      "name": "ListViewIcon",
+      "id": "list-view-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-342",
+      "name": "LocationIcon",
+      "id": "location-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-220",
+      "name": "LockedIcon",
+      "id": "locked-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-262",
+      "name": "MenuIcon",
+      "id": "menu-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-298",
+      "name": "MessageIcon",
+      "id": "message-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-247",
+      "name": "MoveToNextCircleIcon",
+      "id": "move-to-next-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-248",
+      "name": "MoveToNextIcon",
+      "id": "move-to-next-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-251",
+      "name": "MoveToPreviousCircleIcon",
+      "id": "move-to-previous-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-252",
+      "name": "MoveToPreviousIcon",
+      "id": "move-to-previous-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-245",
+      "name": "NavigateToExternalIcon",
+      "id": "navigate-to-external-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-204",
+      "name": "NavigateToNextCircleIcon",
+      "id": "navigate-to-next-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-202",
+      "name": "NavigateToNextIcon",
+      "id": "navigate-to-next-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-234",
+      "name": "NavigateToPreviousCircleIcon",
+      "id": "navigate-to-previous-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-233",
+      "name": "NavigateToPreviousIcon",
+      "id": "navigate-to-previous-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-218",
+      "name": "NotificationIcon",
+      "id": "notification-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-224",
+      "name": "PasswordIcon",
+      "id": "password-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-299",
+      "name": "PhoneIcon",
+      "id": "phone-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-280",
+      "name": "RedoIcon",
+      "id": "redo-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-294",
+      "name": "RefreshIcon",
+      "id": "refresh-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-230",
+      "name": "RemoveUserCircleIcon",
+      "id": "remove-user-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-322",
+      "name": "ReorderHandleIcon",
+      "id": "reorder-handle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-282",
+      "name": "SaveIcon",
+      "id": "save-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-214",
+      "name": "SearchIcon",
+      "id": "search-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-212",
+      "name": "SettingsIcon",
+      "id": "settings-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-340",
+      "name": "ShoppingCartSelectedItemsIcon",
+      "id": "shopping-cart-selected-items-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-284",
+      "name": "SignInIcon",
+      "id": "sign-in-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-286",
+      "name": "SignOutIcon",
+      "id": "sign-out-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-326",
+      "name": "SortAscendingIcon",
+      "id": "sort-ascending-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-325",
+      "name": "SortDescendingIcon",
+      "id": "sort-descending-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-241",
+      "name": "SubtractCircleIcon",
+      "id": "subtract-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-242",
+      "name": "SubtractIcon",
+      "id": "subtract-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=4239-212",
+      "name": "SuccessFilledIcon",
+      "id": "success-filled-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-334",
+      "name": "SuccessIcon",
+      "id": "success-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-308",
+      "name": "TimeIcon",
+      "id": "time-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-278",
+      "name": "UndoIcon",
+      "id": "undo-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-222",
+      "name": "UnlockedIcon",
+      "id": "unlocked-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-288",
+      "name": "UploadIcon",
+      "id": "upload-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-200",
+      "name": "UserProfileCircleIcon",
+      "id": "user-profile-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=5914-215",
+      "name": "UserProfileIcon",
+      "id": "user-profile-icon",
+      "importPath": "@sikt/sds-icons"
+    }
+  ]
+}

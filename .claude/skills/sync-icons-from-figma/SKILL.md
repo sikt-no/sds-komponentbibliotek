@@ -1,13 +1,8 @@
 ---
 name: sync-icons-from-figma
 description: >
-  Reconcile the icon catalog in @sikt/sds-icons against the "SDS Ikoner" Figma file.
-  Both sides reference Phosphor icons — this skill syncs the config only, not SVGs.
-  Figma is the source of truth: adds missing entries, removes entries no longer in Figma,
-  renames mismatches. Use when the user wants to sync icons, align icons with Figma,
-  audit icons, or add/remove an icon from the catalog.
-  Trigger words: "sync icons", "align icons with Figma", "audit icons", "reconcile icons",
-  "add icon", "remove icon".
+  Reconcile @sikt/sds-icons with the "SDS Ikoner" Figma file. Use when the user
+  wants to sync icons, audit icons, or add/remove an icon from the catalog.
 ---
 
 # Sync Icons from Figma
@@ -30,28 +25,23 @@ Scope:
   - Name contains `UnderConstruction`, `InDevelopment`, `WIP`, `TODO`, or `Draft` (case-insensitive, with or without spaces/dashes).
   - Label text like "Under Construction", "In Development", "Coming soon".
   - The node is a plain `<frame>` where a `<symbol>` is expected in that row.
-    When in doubt, skip and mention it in the Step 3 summary so the user can confirm.
+
+  When in doubt, skip and mention it in the Step 3 summary so the user can confirm.
 
 ## Deprecate-first policy
 
-**Every rename or removal ships with a backward-compatible alias for one major cycle before deletion.** A rename in `icons.config.mjs` alone would break every consumer on import. Instead:
-
-1. Apply the config change (Figma-aligned name).
-2. Add a JSDoc-`@deprecated` alias in `packages/icons/index.ts` re-exporting the old name as a `const` pointing at the new component. See the existing v5 alias block in `packages/icons/index.ts` for the exact pattern.
-3. Document the change in a **migration guide** — one file per major bump, named `MIGRATION-v<old>-to-v<new>.md` at the root of `packages/icons/`. **Required whenever the release will bump a major version or otherwise introduce breaking changes** (rename, remove, retarget with visible behaviour change). Without it, downstream AI agents and humans have no rewrite reference.
-4. Remove the alias in the **next** major (e.g. aliases added for v5 are removed in v6).
-
-This turns what would be a breaking release into an additive one: old imports keep working, IDE surfaces the deprecation, consumers migrate at their own pace — and the migration guide is the durable record of what changed and how to adapt.
+**Every rename or removal ships with a backward-compatible alias for one major cycle before deletion.** A rename in `icons.config.mjs` alone would break every consumer on import. The alias (Step 5) plus a migration guide (Step 6) turn a breaking release into an additive one: old imports keep working, IDE surfaces the deprecation, consumers migrate at their own pace. Aliases added in one major are removed in the next (v5 aliases → gone in v6).
 
 ---
 
 ## Step 1 — Build both inventories
 
-**Figma inventory.** Use the Figma MCP tools (`mcp__figma-remote-mcp__*` or `mcp__claude_ai_Figma__*`; authenticate if needed) to list every icon under frame `426:254`. For each icon extract three things:
+**Figma inventory.** Use the Figma MCP tools (`mcp__figma-remote-mcp__*` or `mcp__claude_ai_Figma__*`; authenticate if needed) to list every icon under frame `426:254`. For each icon extract four things:
 
 - **`name`** — the SDS-facing name (what consumers import as `<Name>Icon`), in kebab-case. Take this from the icon's symbol/instance layer name in Figma.
 - **`id`** — the Phosphor icon slug it renders (e.g. `magnifying-glass`, `arrow-right`), in kebab-case. Fill-variant Phosphor icons end in `-fill`.
 - **`category`** — the name of the **top-level frame** the icon sits under (e.g. `UI`, `Navigation`, `Sorting/filtering`, `Time and date`), normalized to code-side kebab-case.
+- **`figmaNodeId`** — the `id` attribute on the `<symbol>` element (e.g. `2243:214`, `5914:215`). Used in Step 7 to regenerate Code Connect mappings. Keep the `:` form — convert to `-` only when writing URLs.
 
 **Category normalization.** Figma frames use display labels; code uses kebab-case. Normalize by lowercasing, replacing `/` and spaces with `-`, and collapsing repeats. Known mappings:
 
@@ -70,11 +60,13 @@ This turns what would be a breaking release into an additive one: old imports ke
 | `Categorization`    | `categorization`        |
 | `Social Media`      | `social-media`          |
 
-If a Figma frame doesn't map cleanly to an existing code category, **stop and ask** — do not invent one. Same rule for Phosphor `id`: if you cannot determine it confidently, **stop and ask**. A wrong `id` breaks the build.
+If a Figma frame doesn't map cleanly to an existing code category, **stop and ask** — do not invent one.
+
+If you cannot confidently determine a Phosphor `id`, **stop and ask** — a wrong `id` breaks the build.
 
 **Code inventory.** Read `packages/icons/src/icons.config.mjs` and keep only entries **without** a `source` field. Record `{ id, name, category }` for each.
 
-**Completion criterion:** two lists — Figma icons and code icons — each with `{ id, name, category }` triples.
+**Completion criterion:** two lists — Figma icons (with `{ id, name, category, figmaNodeId }` quads) and code icons (with `{ id, name, category }` triples).
 
 ## Step 2 — Compute the diff
 
@@ -103,7 +95,7 @@ Recategorize (N): <name>  <old-category> → <new-category>
 
 For every **Rename** and **Remove**, note that the old name will remain as a `@deprecated` alias in `packages/icons/index.ts` per the deprecate-first policy — not deleted this release. Actual deletion happens in the following major.
 
-Do not proceed until the user explicitly confirms. If the diff is empty, report "icons in sync" and stop.
+Do not proceed until the user explicitly confirms. If the diff is empty, report "catalog in sync" and skip to Step 7 — Code Connect can still drift from the config even when the catalog matches Figma.
 
 ## Step 4 — Apply changes to `icons.config.mjs`
 
@@ -160,7 +152,73 @@ Create or update `packages/icons/MIGRATION-v<old>-to-v<new>.md` (e.g. `MIGRATION
 - A short "migration recipe" listing the three replacement forms: `<Old>Icon` → `<New>Icon`, `<old>.svg` → `<new>.svg`, and `#<old>` → `#<new>`.
 - A false-positive warning for any rename where the old name is a common substring (e.g. `ai` → `artificial-intelligence`).
 
-## Step 7 — Verify
+## Step 7 — Regenerate Code Connect mappings
+
+`packages/icons/figma/icons.figma.batch.json` is a **build artifact** — regenerate from scratch every run; never hand-edit. The shared template lives next to it in `icons.figma.batch.ts` and should almost never change.
+
+**Input:** the Figma inventory from Step 1 (with `figmaNodeId`) and the current state of `icons.config.mjs`.
+
+**For each entry in `icons.config.mjs`, in alphabetical order by PascalCase name:**
+
+1. **Skip if in the code-side ignore list.** Currently only `spinner-gap` (not in Figma catalog).
+2. **Derive component name.** `<name>` (kebab) → `<PascalCase>Icon`. Example: `add-circle` → `AddCircleIcon`, `linked-in` → `LinkedInIcon`. Must match an export from `packages/icons/build/index.ts` — verify.
+3. **Look up `figmaNodeId`:**
+   - Try direct match: find Figma inventory entry where `name` equals config `name`. Works for all Phosphor-backed entries and for `source: "sds"` entries that share the Figma symbol name (e.g. `law` → `law`).
+   - If no direct match and entry has `source: "sds"`, consult the **sds-overrides map** below.
+   - If still no match, **stop and ask the user** — do not invent a node id.
+
+**sds-overrides map** (code `name` → Figma symbol `name`):
+
+| Code name   | Figma symbol name      |
+| ----------- | ---------------------- |
+| `linked-in` | `linkedin-logo-filled` |
+
+Add to this table when a new `source: "sds"` icon lands whose code name diverges from the Figma symbol name.
+
+**Output shape.** A batch JSON file with one entry per icon, alphabetical by `name`. Convert `figmaNodeId` from `X:Y` to `X-Y` for the URL. `id` is the kebab-case form of `name`:
+
+```json
+{
+  "templateFile": "./icons.figma.batch.ts",
+  "components": [
+    {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-238",
+      "name": "AddCircleIcon",
+      "id": "add-circle-icon",
+      "importPath": "@sikt/sds-icons"
+    }
+  ]
+}
+```
+
+The shared template (`icons.figma.batch.ts`) references `figma.batch.name` and `figma.batch.id` and stays untouched by this skill:
+
+```ts
+import figma from "figma";
+
+export default {
+  example: figma.code`<${figma.batch.name} />`,
+  imports: [`import { ${figma.batch.name} } from "${figma.batch.importPath}"`],
+  id: figma.batch.id,
+  metadata: {
+    nestable: true,
+  },
+};
+```
+
+`nestable: true` ensures that an icon used as a `figma.instance()` prop on a parent (e.g. a Button) renders inline in Dev Mode (`<Button><AddCircleIcon /></Button>`) instead of as a reference.
+
+**Verify:** run a dry-run publish to confirm all mappings parse:
+
+```sh
+npx figma connect publish --dry-run
+```
+
+Expect a `Files that would be published:` block listing every mapped icon. The `FIGMA_ACCESS_TOKEN` warning at the end is expected in dry-run.
+
+**Completion criterion:** the dry-run lists exactly N mappings, where N = (icons in `icons.config.mjs`) − (code-side ignore list). No parser errors.
+
+## Step 8 — Verify
 
 Build the package:
 
@@ -179,12 +237,12 @@ Most common failure: `id` doesn't match a real Phosphor slug → `cpy` errors wi
 
 **Completion criterion:** `npm run build -w packages/icons` succeeds, every planned change is reflected in `build/`, and every deprecated alias from Step 5 still resolves.
 
-## Step 8 — Report back
+## Step 9 — Report back
 
 Summarize:
 
 - Counts per bucket, plus how many deprecation aliases were added.
-- Files changed: `packages/icons/src/icons.config.mjs`, `packages/icons/index.ts`, `packages/icons/MIGRATION-v<old>-to-v<new>.md`.
+- Files changed: `packages/icons/src/icons.config.mjs`, `packages/icons/index.ts`, `packages/icons/MIGRATION-v<old>-to-v<new>.md`, `packages/icons/figma/icons.figma.tsx`.
 - Suggested Conventional Commit — thanks to the alias layer, renames/removes are additive at the API surface:
   - `feat(icons): sync icons from figma` (mixed changes)
   - `feat(icons): add <name> icon`

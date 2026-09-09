@@ -1,6 +1,10 @@
 {
   "codeConnect": {
-    "include": ["/packages/design-*/**/figma/*.figma.ts"],
+    "include": [
+      "packages/design-*/**/figma/*.figma.ts",
+      "packages/design-*/**/figma/*.figma.batch.json",
+      "packages/icons/figma/*.figma.batch.json"
+    ],
     "label": "React",
     "language": "tsx"
   }
