@@ -1,0 +1,21 @@
+---
+title: "Details"
+id: "details"
+package: "design-system"
+---
+
+Details er en innsyns-komponent som lar brukeren vise eller skjule sekundært innhold ved å aktivere en overskriftsrad. Komponenten bygger på nettleserens `<details>` og `<summary>`-elementer, og får dermed full tastaturstøtte og skjermleser-semantikk gratis. Flere Details kan grupperes til en trekkspilliste ved å dele `name`-attributt — da holdes bare én åpen om gangen.
+
+## Passer bra til
+
+- Ofte stilte spørsmål (FAQ) der svaret er sekundært for de fleste brukere.
+- «Les mer»-utvidelser av oppsummeringstekst eller lange beskrivelser.
+- Valgfrie eller avanserte skjemafelter som ikke er relevante for alle.
+- Grupper av valgfrie detaljer der brukeren kan åpne én om gangen (via `name`-gruppering).
+
+## Passer mindre bra til
+
+- Primærnavigasjon — bruk `Menu` eller tilsvarende navigasjonskomponent.
+- Modale dialoger som krever brukerhandling — bruk `Dialog`.
+- Kritisk informasjon som må være synlig for alle brukere — hold den utenfor Details.
+- Faneinnhold der brukeren forventer å se flere seksjoner samtidig — bruk `Tabs`.

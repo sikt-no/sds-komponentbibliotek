@@ -1,0 +1,143 @@
+@scope (.sd3-details) {
+  :scope {
+    --details-background: var(--sd3-color-interaction-neutral-transparent);
+    --details-radius-top: var(--sd3-space-border-radius-200);
+    --details-radius-bottom: var(--sd3-space-border-radius-200);
+    --details-padding-block: var(--sd3-space-component-200);
+    --details-content-padding-top: var(--sd3-space-component-100);
+
+    position: relative;
+    border-block: var(--sd3-space-border-weight-025) solid
+      var(--sd3-color-border-subtle);
+    padding-block: var(--sd3-space-component-200);
+    color: var(--sd3-color-text-primary);
+    font-family: var(--sd3-font-family);
+    font-weight: var(--sd3-typography-weight-regular);
+
+    /* Adjacent Details share a divider — collapse the doubled border. */
+    & + & {
+      border-top: none;
+    }
+
+    /*
+     * Focus ring wraps the whole trigger + content fill area (not the
+     * padding-block gap), so keyboard focus on the summary highlights the
+     * entire component. The pseudo carries its own always-4px border-radius
+     * so the ring stays a pill regardless of the summary/content join.
+     */
+    &:has([data-part="summary"]:focus-visible)::after {
+      content: "";
+      position: absolute;
+      inset: var(--sd3-space-component-200) 0;
+      border-radius: var(--sd3-space-border-radius-100);
+      outline: var(--sd3-focus-outline-width) solid
+        var(--sd3-color-focus-border);
+      outline-offset: var(--sd3-focus-outline-width);
+      box-shadow: var(--sds-focus-box-shadow);
+      pointer-events: none;
+    }
+
+    &[data-size="compact"] {
+      --details-padding-block: var(--sd3-space-component-100);
+      --details-content-padding-top: var(--sd3-space-component-050);
+    }
+
+    /*
+     * Open state: trigger's bottom edge meets content's top edge with a
+     * shared fill. Both meeting edges are square (0) so the join reads as one
+     * seamless rounded rectangle.
+     */
+    &[open] {
+      --details-background: var(--sd3-color-interaction-subtle-default);
+      --details-radius-top: var(--sd3-space-border-radius-100);
+      --details-radius-bottom: 0;
+    }
+
+    & [data-part="summary"] {
+      display: flex;
+      align-items: center;
+      gap: var(--sd3-space-component-200);
+      padding-block: var(--details-padding-block);
+      padding-inline: var(--sd3-space-component-300)
+        var(--sd3-space-component-400);
+      background-color: var(--details-background);
+      border-radius: var(--details-radius-top) var(--details-radius-top)
+        var(--details-radius-bottom) var(--details-radius-bottom);
+      font-size: var(--sd3-typography-size-text-body-lg);
+      line-height: var(--sd3-typography-line-height-text-body-lg);
+      list-style: none;
+      cursor: pointer;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      /* Ring is drawn on the root via ::after — suppress the summary's own outline. */
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    /*
+     * Hover/active update --details-background on the root so summary and
+     * content share the same fill (no risk of drift). When closed, summary
+     * also becomes a stand-alone pill (radii 4/4); when open the radii stay
+     * at 4/0 from the &[open] block above so the join with content stays flat.
+     */
+    @media (pointer: fine) {
+      &:has([data-part="summary"]:hover) {
+        --details-background: var(--sd3-color-interaction-subtle-hover);
+      }
+    }
+
+    &:has([data-part="summary"]:active) {
+      --details-background: var(--sd3-color-interaction-subtle-pressed);
+    }
+
+    &:not([open]):has([data-part="summary"]:hover) [data-part="summary"],
+    &:not([open]):has([data-part="summary"]:active) [data-part="summary"] {
+      --details-radius-top: var(--sd3-space-border-radius-100);
+      --details-radius-bottom: var(--sd3-space-border-radius-100);
+    }
+
+    & [data-part="icon-closed"],
+    & [data-part="icon-open"] {
+      flex: none;
+      width: var(--sd3-space-component-600);
+      height: var(--sd3-space-component-600);
+      color: var(--sd3-color-icon-primary);
+    }
+
+    &:not([open]) [data-part="icon-open"],
+    &[open] [data-part="icon-closed"] {
+      display: none;
+    }
+
+    & [data-part="label"] {
+      flex: 1 0 0;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    & [data-part="content"] {
+      background-color: var(--details-background);
+      border-radius: 0 0 var(--sd3-space-border-radius-100)
+        var(--sd3-space-border-radius-100);
+      padding-block: var(--details-content-padding-top)
+        var(--sd3-space-component-300);
+
+      /*
+       * Content indent = trigger padding-left + caret + gap:
+       * 12 + 24 + 8 = 44px. Figma renders 46px which we treat as a bug;
+       * see SPEC.md § Design tokens > Hardcoded.
+       */
+      padding-inline: calc(
+          var(--sd3-space-component-300) + var(--sd3-space-component-600) +
+            var(--sd3-space-component-200)
+        )
+        var(--sd3-space-component-400);
+      font-size: var(--sd3-typography-size-text-body-md);
+      line-height: var(--sd3-typography-line-height-text-body-md);
+    }
+  }
+}

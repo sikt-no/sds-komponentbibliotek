@@ -11,6 +11,7 @@ import "../../../packages/form/src/form-field.css";
 import "../../../packages/checkbox/src/checkbox-input.css";
 import "../../../packages/table/src/table.css";
 import "../../../packages/list/src/list.css";
+import "../../../packages/design-system/src/css/index.css";
 import "./style.css";
 
 const preview: Preview = {

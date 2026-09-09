@@ -9,3 +9,11 @@ export type {
   SizeDensity,
   State,
 } from "./types";
+
+export type {
+  DetailsContentProps,
+  DetailsProps,
+  DetailsSummaryProps,
+} from "./src/Details";
+
+export { Details } from "./src/Details";

@@ -42,6 +42,7 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.3",
     "@sikt/sd3-design-tokens": "^0.1.0",
+    "@sikt/sds-icons": "^5.0.0",
     "sanitize.css": "^13.0.0"
   },
   "peerDependencies": {
