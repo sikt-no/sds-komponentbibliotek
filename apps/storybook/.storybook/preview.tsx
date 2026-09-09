@@ -69,6 +69,8 @@ const preview: Preview = {
             "style",
             `color-scheme: only ${scheme as string}`,
           );
+        } else {
+          rootElement.setAttribute("style", `color-scheme: light dark`);
         }
 
         if (theme !== "") {
