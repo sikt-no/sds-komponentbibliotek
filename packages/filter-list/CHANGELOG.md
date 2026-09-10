@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.6.4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.6.3...@sikt/sds-filter-list@0.6.4) (2026-09-10)
+
+### Bug Fixes
+
+- **filter-list:** do not pad clickable area ([92a0ab2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/92a0ab2e329cdd652101db22ee055c2af27b6778))
+- **notification:** prevent element from shrinking ([1800206](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/18002067bb3ca01fcdc8d4c26d7b5254c0d7f9aa))
+
 ## [0.6.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-filter-list@0.6.2...@sikt/sds-filter-list@0.6.3) (2026-03-13)
 
 ### Bug Fixes
