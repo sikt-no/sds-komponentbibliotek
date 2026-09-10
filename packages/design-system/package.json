@@ -46,6 +46,7 @@
     "sanitize.css": "^13.0.0"
   },
   "peerDependencies": {
+    "@sikt/sds-icons": "^5.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "clsx": "^2.1.0",

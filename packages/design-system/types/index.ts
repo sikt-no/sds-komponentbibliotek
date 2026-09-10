@@ -26,3 +26,19 @@ export type Size = "small" | "medium" | "large";
 
 /** @default "default" */
 export type State = "default" | "disabled" | "busy";
+
+/**
+ * Requires exactly one of `aria-label` or `aria-labelledby`. Intersect into a
+ * component's props to force consumers to supply an accessible name at compile
+ * time. Setting both is rejected — `aria-labelledby` wins at runtime and
+ * leaves `aria-label` as dead code.
+ */
+export type AriaLabelOrAriaLabelledby =
+  | {
+      "aria-label": string;
+      "aria-labelledby"?: never;
+    }
+  | {
+      "aria-labelledby": string;
+      "aria-label"?: never;
+    };

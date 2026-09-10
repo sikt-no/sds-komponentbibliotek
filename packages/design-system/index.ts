@@ -17,3 +17,5 @@ export type {
 } from "./src/Details";
 
 export { Details } from "./src/Details";
+
+export * from "./src/Avatar";

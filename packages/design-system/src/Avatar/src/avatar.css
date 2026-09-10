@@ -1,0 +1,97 @@
+@scope (.sd3-avatar) {
+  :scope {
+    --avatar-size: var(--sd3-space-component-1000);
+    --avatar-icon-size: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: var(--sd3-space-border-radius-full);
+    vertical-align: middle;
+    user-select: none;
+
+    &[data-size="small"] {
+      --avatar-size: var(--sd3-space-component-800);
+      --avatar-icon-size: var(--sd3-space-component-400);
+    }
+
+    &[data-size="large"] {
+      --avatar-size: var(--sd3-space-component-1200);
+      --avatar-icon-size: var(--sd3-space-component-600);
+    }
+
+    &[data-variant="photo"] > * {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &[data-variant="placeholder"] {
+      background-color: var(--sd3-color-brand-primary-strong);
+      color: var(--sd3-color-icon-on-strong);
+
+      & > .sds-icon {
+        /* Icon medium = 20px. No matching --sd3-space-component-500 exists in the fixed
+         * scale (jumps 18 → 24), and --sd3-space-layout-600 is responsive to density theme
+         * which would break the fixed container aspect ratio. Replace with a fixed 20px
+         * token when one is added. See Avatar/spec/SPEC.md → "Documented exception". */
+        width: var(--avatar-icon-size);
+        height: var(--avatar-icon-size);
+      }
+    }
+
+    &[data-variant="initials"] {
+      color: var(--sd3-color-component-category-strong-text);
+      font-size: var(--sd3-typography-size-text-interaction-md);
+      line-height: var(--sd3-typography-line-height-text-interaction-md);
+      text-transform: uppercase;
+
+      &[data-size="small"] {
+        font-size: var(--sd3-typography-size-text-interaction-sm);
+        line-height: var(--sd3-typography-line-height-text-interaction-sm);
+      }
+
+      &[data-size="large"] {
+        font-size: var(--sd3-typography-size-text-interaction-lg);
+        line-height: var(--sd3-typography-line-height-text-interaction-lg);
+      }
+
+      &[data-color="1"] {
+        background-color: var(--sd3-color-component-category-strong-1);
+      }
+
+      &[data-color="2"] {
+        background-color: var(--sd3-color-component-category-strong-2);
+      }
+
+      &[data-color="3"] {
+        background-color: var(--sd3-color-component-category-strong-3);
+      }
+
+      &[data-color="4"] {
+        background-color: var(--sd3-color-component-category-strong-4);
+      }
+
+      &[data-color="5"] {
+        background-color: var(--sd3-color-component-category-strong-5);
+      }
+
+      &[data-color="6"] {
+        background-color: var(--sd3-color-component-category-strong-6);
+      }
+
+      &[data-color="7"] {
+        background-color: var(--sd3-color-component-category-strong-7);
+      }
+
+      &[data-color="8"] {
+        background-color: var(--sd3-color-component-category-strong-8);
+      }
+    }
+  }
+}
