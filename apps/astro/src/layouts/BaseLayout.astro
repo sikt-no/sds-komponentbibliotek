@@ -9,6 +9,7 @@ import tokens from "@sikt/sds-tokens/dist/js/tokens.mjs";
 import colorDark from "@sikt/sds-tokens/dist/js/color.dark.mjs";
 import { Footer } from "./_components/footer/Footer";
 import { Header } from "./_components/header/Header";
+import { ApplicationStatus } from "@sikt/sds-message";
 
 const { title } = Astro.props;
 const currentPath = Astro.url.pathname;
@@ -56,6 +57,9 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
   </head>
   <body class="body">
     <Header currentHref={currentPath} />
+    <ApplicationStatus variant="warning"
+      >Denne dokumentasjonen er for Sikt designsystem 2.0</ApplicationStatus
+    >
     <div class="page-wrapper">
       <slot name="sidebar" />
       <main id="main">
