@@ -172,10 +172,11 @@
     gap: var(--button-padding);
     padding: var(--button-padding)
       calc(var(--button-padding) + var(--button-padding));
+    outline: unset;
 
-    /* INFO: override u-components styling */
+    /* INFO: make button clickable */
     /* stylelint-disable-next-line */
-    del& {
+    button[type="reset"]& {
       pointer-events: auto;
     }
 
@@ -190,20 +191,20 @@
         var(--sds-effect-animation-easing-default);
     }
 
-    &:focus-visible {
-      --combobox-button-background-color: var(
-        --sds-color-interaction-primary-transparent-highlight
-      );
-
-      outline: var(--sds-focus-outline);
-    }
-
     @media (pointer: fine) {
       &:hover {
         --combobox-button-background-color: var(
           --sds-color-interaction-primary-transparent-highlight
         );
       }
+    }
+
+    &:focus-visible {
+      --combobox-button-background-color: var(
+        --sds-color-interaction-primary-transparent-highlight
+      );
+
+      outline: var(--sds-focus-outline);
     }
 
     &:active {

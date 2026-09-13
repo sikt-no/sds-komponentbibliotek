@@ -6,10 +6,14 @@ interface ClearButtonProps {
 }
 
 export const ClearButton = ({ clearText }: ClearButtonProps) => (
-  <del suppressHydrationWarning className="sds-combobox__button">
+  <button
+    type="reset"
+    suppressHydrationWarning
+    className="sds-combobox__button"
+  >
     <ScreenReaderOnly>{clearText}</ScreenReaderOnly>
     <span className="sds-combobox__button-icon">
       <CloseIcon />
     </span>
-  </del>
+  </button>
 );
