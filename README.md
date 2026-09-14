@@ -1,6 +1,4 @@
-# Sikt komponentbibliotek
-
-A component library for [Sikt designsystem](https://isikt.sharepoint.com/sites/Innsikt-OmOss/SitePages/Profil.aspx).
+# Sikt designsystem
 
 <details>
   <summary>Table of Contents</summary>
