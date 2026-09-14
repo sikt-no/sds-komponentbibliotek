@@ -111,7 +111,7 @@ const preview: Preview = {
           "SD3",
           [
             "Introduction",
-            "Tokens",
+            "Design Tokens",
             ["Readme", "Changelog", "Color", "Typography", "Size", "*"],
             "*",
             ["Readme", "Changelog"],
