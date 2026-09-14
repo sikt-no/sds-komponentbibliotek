@@ -9,10 +9,7 @@
 - [Link](#link)
   - [Next.js](#nextjs)
   - [React Router](#react-router)
-- [Color Scheme](#color-scheme)
-  - [Caveats](#caveats)
-- [Color Theme](#color-theme)
-- [Space Theme](#space-theme)
+- [Design Tokens](#design-tokens)
 - [Migration from SDS](#migration-from-sds)
 - [License](#space-theme)
 
@@ -89,21 +86,9 @@ export const Link = ({
 };
 ```
 
-## Color Scheme
+## Design Tokens
 
-Color scheme is default `light` and can be changed by the users color scheme preferences. If a web page or parts of a web page should be locked to one mode it can be done with the CSS property `color-scheme: only <scheme>;`, remember to set a background if used on a partial pages as the root background otherwise will affect the visibility of the text.
-
-### Caveats
-
-Next.js 16 used Turbopack by default which in turn uses LightningCSS with a [bug related to light-dark()](https://github.com/parcel-bundler/lightningcss/issues/873). A work around is to add `@csstools/postcss-light-dark-function`.
-
-## Color Theme
-
-Color theme is default `gray`and can be changed with the data-attribute `data-color-theme="gray|white|feide"`.
-
-## Space Theme
-
-Space theme is default `comfortable`and can be changed with the data-attribute `data-space-theme="compact|comfortable|spacious"`.
+[@sikt/sd3-design-tokens/README.md](../design-tokens/README.md)
 
 ## Migration from SDS
 
