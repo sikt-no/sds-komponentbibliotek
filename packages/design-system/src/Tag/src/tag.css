@@ -1,0 +1,140 @@
+@scope (.sd3-tag) {
+  :scope {
+    --tag-base-background-color: var(--sd3-color-interaction-neutral-default);
+    --tag-base-color: var(--sd3-color-component-category-subtle-text);
+    --tag-base-icon-size: 1.25rem;
+
+    align-items: center;
+    background-color: var(--tag-base-background-color);
+    border-radius: var(--sd3-space-border-radius-100);
+    box-shadow: inset 0 0 0 var(--tag-base-border-width, 0)
+      var(--tag-base-border-color, transparent);
+    color: var(--tag-base-color);
+    display: inline-flex;
+    font-size: var(--sd3-typography-size-text-interaction-lg);
+    font-weight: var(--sd3-typography-weight-regular);
+    gap: var(--sd3-space-component-100);
+    justify-content: center;
+    line-height: var(--sd3-typography-line-height-text-interaction-lg);
+    padding: var(--sd3-space-component-100) var(--sd3-space-component-200);
+    white-space: nowrap;
+
+    &[data-size="compact"] {
+      font-size: var(--sd3-typography-size-text-interaction-md);
+      line-height: 1;
+
+      --tag-base-icon-size: 1rem;
+    }
+
+    & > [data-part="icon"] {
+      align-items: center;
+      display: inline-flex;
+      flex-shrink: 0;
+      font-size: var(--tag-base-icon-size);
+      justify-content: center;
+    }
+
+    &[data-color="brand"] {
+      --tag-base-background-color: var(--sd3-color-interaction-subtle-default);
+
+      &[data-visibility="strong"] {
+        --tag-base-background-color: var(--sd3-color-brand-primary-strong);
+        --tag-base-color: var(--sd3-color-text-on-strong);
+      }
+    }
+
+    &[data-color="neutral"] {
+      &[data-visibility="strong"] {
+        --tag-base-background-color: #656565;
+        --tag-base-color: var(--sd3-color-text-on-strong);
+      }
+    }
+
+    &[data-color^="category-"] {
+      &[data-visibility="subtle"] {
+        --tag-base-border-width: var(--sd3-space-border-weight-025);
+      }
+
+      &[data-visibility="strong"] {
+        --tag-base-color: var(--sd3-color-component-category-strong-text);
+      }
+    }
+
+    &[data-color="category-1"] {
+      --tag-base-background-color: var(--sd3-color-component-category-subtle-1);
+      --tag-base-border-color: var(--sd3-color-component-category-strong-1);
+
+      &[data-visibility="strong"] {
+        --tag-base-background-color: var(
+          --sd3-color-component-category-strong-1
+        );
+      }
+    }
+
+    &[data-color="category-2"] {
+      --tag-base-background-color: var(--sd3-color-component-category-subtle-2);
+      --tag-base-border-color: var(--sd3-color-component-category-strong-2);
+
+      &[data-visibility="strong"] {
+        --tag-base-background-color: var(
+          --sd3-color-component-category-strong-2
+        );
+      }
+    }
+
+    &[data-color="category-3"] {
+      --tag-base-background-color: var(--sd3-color-component-category-subtle-3);
+      --tag-base-border-color: var(--sd3-color-component-category-strong-3);
+
+      &[data-visibility="strong"] {
+        --tag-base-background-color: var(
+          --sd3-color-component-category-strong-3
+        );
+      }
+    }
+
+    &[data-color="category-4"] {
+      --tag-base-background-color: var(--sd3-color-component-category-subtle-4);
+      --tag-base-border-color: var(--sd3-color-component-category-strong-4);
+
+      &[data-visibility="strong"] {
+        --tag-base-background-color: var(
+          --sd3-color-component-category-strong-4
+        );
+      }
+    }
+
+    &[data-color="category-5"] {
+      --tag-base-background-color: var(--sd3-color-component-category-subtle-5);
+      --tag-base-border-color: var(--sd3-color-component-category-strong-5);
+
+      &[data-visibility="strong"] {
+        --tag-base-background-color: var(
+          --sd3-color-component-category-strong-5
+        );
+      }
+    }
+
+    &[data-color="category-6"] {
+      --tag-base-background-color: var(--sd3-color-component-category-subtle-6);
+      --tag-base-border-color: var(--sd3-color-component-category-strong-6);
+
+      &[data-visibility="strong"] {
+        --tag-base-background-color: var(
+          --sd3-color-component-category-strong-6
+        );
+      }
+    }
+
+    &[data-color="category-7"] {
+      --tag-base-background-color: var(--sd3-color-component-category-subtle-7);
+      --tag-base-border-color: var(--sd3-color-component-category-strong-7);
+
+      &[data-visibility="strong"] {
+        --tag-base-background-color: var(
+          --sd3-color-component-category-strong-7
+        );
+      }
+    }
+  }
+}

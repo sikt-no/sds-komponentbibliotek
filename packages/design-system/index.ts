@@ -19,3 +19,5 @@ export type {
 export { Details } from "./src/Details";
 
 export * from "./src/Avatar";
+export * from "./src/Tag";
+export * from "./src/TagStatus";
