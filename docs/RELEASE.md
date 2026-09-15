@@ -20,10 +20,10 @@ npm run release --package=<package-name>
 **Note** You can always edit the changelog and commit before pushing if need be. Just remember to delete the generated tag and create a new one since it will be pointing to the wrong commit hash. Example:
 
 ```sh
-git tag -d @sikt/sds-<package-name>@<package-version>
+git tag -d @sikt/sd3-<package-name>@<package-version>
 git rebase -i HEAD~1
 ...
-git tag -a @sikt/sds-<package-name>@<package-version> -m "chore(<package-name>): release <package-version>"
+git tag -a @sikt/sd3-<package-name>@<package-version> -m "chore(<package-name>): release <package-version>"
 ```
 
 ℹ️ _Tips:_

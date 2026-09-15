@@ -13,7 +13,7 @@ npm i
 #### Run devtools (Storybook)
 
 ```sh
-npm run storybook
+npm run dev:storybook
 ```
 
 #### Read documentation 🙈

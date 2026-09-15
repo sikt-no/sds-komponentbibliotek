@@ -69,7 +69,7 @@ See [Architectural Decision Record](./docs/architecture/decisions/).
 
 #### Naming
 
-- Sikt Design System's acronym, `sds`, is used as prefix for packages, classes and so on. It is used as a suffix for config packages since that is convention and a requirement for some configs.
+- Sikt Design System's acronym,`sds` or `sd3`, is used as prefix for packages, classes and so on. It is used as a suffix for config packages since that is convention and a requirement for some configs.
 - Sikt scope `@sikt` is used on packages to link them to our organization on NPM.
 - Keep directory, style class selectors & stylesheets names kebab-case while component names PascalCase.
 
@@ -79,6 +79,8 @@ This is a [monorepo](https://monorepo.tools/) built with [npm workspaces](https:
 All commands should be able to run from the project root, for example dependency installs (`npm i -s @sikt/sds-core -w packages/button`) or package builds (`npm run build` / `npm run build -w packages/button`).
 
 The reasoning behind multiple packages is rooted in micro architecture. This way, a single breaking change to one package won't affect consumers of other packages.
+
+For Sikt Design System 3.0 we are shifting to a much smaller set of packages and one single main package `@sikt/sd3-design-system`.
 
 #### Documentation
 
@@ -93,22 +95,20 @@ See [Accessibility](./docs/A11Y.md)
 #### Stylesheets
 
 - Do not use element selectors for styling since these affect global styles and elements used may change.
-- Follow [BEM](https://getbem.com/naming/) (Block, Element, Modifier) naming convention for style scoping to a specific component.
-- Use a `sds` prefix on selector class names to avoid collision with other selectors.
-- Use a `sds` prefix on global variables and avoid it on local variables to differentiate.
+- Use [@scope](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@scope) for style scoping to a specific component.
+- Use a `sd3` prefix on selector class names to avoid collision with other selectors.
+- Use a `sd3` prefix on global variables and avoid it on local variables to differentiate.
 
 Example:
 
 ```css
---sds-<variable-name>: value;
+--sd3-<variable-name>: value;
 
-.sds-<package-name > {
-  --<package-name>-<variable-name>: value;
+@scope (.sd3-<package-name>) {
+  :scope {
+    --<package-name>-<variable-name>: value;
 
-  /* styling */
-  &__<element > {
-  }
-  &--<modifier > {
+    /* styles goes here */
   }
 }
 ```
@@ -167,12 +167,9 @@ Open an issue on Gitlab and/or talk to us. We are here to help!
 
 ### Creating a new component
 
-See [Tutorial](./docs/tutorial/TUTORIAL.md) for a interactive tutorial on how to build your own component.  
-See [Example](./docs/tutorial/__example__) component for base setup.
-
 Initialize a package:
 
-When asked, enter a package name without `sds-` prefix.
+When asked, enter a package name without `sd3-` prefix.
 
 ```sh
 npm run init
