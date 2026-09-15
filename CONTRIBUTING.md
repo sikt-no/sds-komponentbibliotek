@@ -4,6 +4,7 @@
   <summary>Table of Contents</summary>
 
 - [Code of conduct](#code-of-conduct)
+  - [AI usage policy](#ai-usage-policy)
 - [Feedback](#feedback)
   - [Templates](#templates)
   - [Work process](#work-process)
@@ -24,6 +25,12 @@
 - Be nice! 😊
 - You are people - We are also people 🤗
 - _">0.1 ratio smileys to text"_ -developer @Sikt
+
+### AI usage policy
+
+- You are responsible for all AI-generated material
+- Please disclose AI usage to reduce maintainer fatigue
+- Low-quality or unreviewed AI content will be closed immediately
 
 ## Feedback
 
