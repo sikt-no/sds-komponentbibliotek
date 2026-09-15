@@ -1,7 +1,15 @@
 /** @type {import('stylelint').Config} */
 export default {
-  extends: "./packages/stylelint-config/index",
-  rules: {},
+  extends: ["stylelint-config-standard"],
+  rules: {
+    "media-feature-name-disallowed-list": [
+      "^max-width",
+      {
+        message: "Use min-width for a mobile-first approach",
+      },
+    ],
+    "selector-max-type": 0,
+  },
   overrides: [
     {
       /* INFO: SDS BEM style */
@@ -30,6 +38,43 @@ export default {
       files: ["**/*.module.css", "**/stories/*.css"],
       rules: {
         "selector-class-pattern": "",
+        "selector-pseudo-class-no-unknown": [
+          true,
+          {
+            ignorePseudoClasses: [
+              "export",
+              "import",
+              "global",
+              "local",
+              "external",
+            ],
+          },
+        ],
+        "selector-type-no-unknown": [
+          true,
+          {
+            ignoreTypes: ["from"],
+          },
+        ],
+        "property-no-unknown": [
+          true,
+          {
+            ignoreProperties: ["composes", "compose-with"],
+            ignoreSelectors: [":export", /^:import/],
+          },
+        ],
+        "at-rule-no-unknown": [
+          true,
+          {
+            ignoreAtRules: ["value"],
+          },
+        ],
+        "function-no-unknown": [
+          true,
+          {
+            ignoreFunctions: ["global"],
+          },
+        ],
       },
     },
   ],
