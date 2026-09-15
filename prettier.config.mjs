@@ -1,11 +1,9 @@
-import sdsConfig from "./packages/prettier-config/index.mjs";
-
 /**
  * @see https://prettier.io/docs/configuration
  * @type {import("prettier").Config}
  */
 const config = {
-  ...sdsConfig,
+  /* purposefully empty to point out that default prettier config is used */
 };
 
 export default config;
