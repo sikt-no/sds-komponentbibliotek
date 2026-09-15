@@ -28,10 +28,16 @@ const modeBlock = (selector, tokens, modeKey) => {
 
 /**
  * Custom Format Factory: Theme Variables
- * Outputs the default (base) value to :root, and each alternate mode's
- * value to its own [attribute="mode"] override block.
+ * Outputs the base value to `:root` and `[attribute="baseKey"]`, and each
+ * alternate mode's value to its own `[attribute="mode"]` override block.
+ * `baseKey` names the default mode (e.g. "comfortable" for space,
+ * "main" for button).
  */
-export const createThemeVariablesFormat = ({ name, attribute }) => ({
+export const createThemeVariablesFormat = ({
+  name,
+  attribute,
+  baseKey = "comfortable",
+}) => ({
   name,
   format: ({ dictionary }) => {
     const modeKeys = collectModeKeys(dictionary.allTokens);
@@ -39,7 +45,7 @@ export const createThemeVariablesFormat = ({ name, attribute }) => ({
     return (
       defaultFileHeader +
       `:root,
-[${attribute}="comfortable"] {
+[${attribute}="${baseKey}"] {
 ${dictionary.allTokens.map((prop) => `  --${prop.name}: ${prop.$value};`).join("\n")}
 }` +
       modeKeys

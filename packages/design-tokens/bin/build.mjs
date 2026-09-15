@@ -5,28 +5,32 @@ import { prefix } from "./config.mjs";
 import {
   isHiddenFromPublishing,
   isColor,
+  isButtonColor,
   isSizeRelative,
   isTypography,
   withPublishing,
 } from "./filters.mjs";
-import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
+import { buttonThemeFormat } from "./format/buttonTheme.mjs";
 import { colorLightDarkFormat } from "./format/colorLightDark.mjs";
-import { spaceThemeFormat } from "./format/spaceTheme.mjs";
-import { typographyThemeFormat } from "./format/typographyTheme.mjs";
 import { customMediaFormat } from "./format/customMedia.mjs";
+import { spaceThemeFormat } from "./format/spaceTheme.mjs";
+import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
+import { typographyThemeFormat } from "./format/typographyTheme.mjs";
+import { figmaButtonThemesPreprocessor } from "./preprocessor/figmaButtonThemes.mjs";
 import { figmaColorModesPreprocessor } from "./preprocessor/figmaColorModes.mjs";
 import { figmaResponsiveModesPreprocessor } from "./preprocessor/figmaResponsiveModes.mjs";
 import { figmaTypographyDimensionsPreprocessor } from "./preprocessor/figmaTypographyDimensions.mjs";
 import { colorLightDarkTransform } from "./transform/colorLightDark.mjs";
-import { sizeDimensionTransform } from "./transform/sizeDimension.mjs";
 import { fontWeightTransform } from "./transform/fontWeight.mjs";
 import { numberPxTransform } from "./transform/numberPx.mjs";
+import { sizeDimensionTransform } from "./transform/sizeDimension.mjs";
 
 const sourcePath = "src/";
 const buildPath = "dist/";
 
 const preprocessors = [
   "preprocessor/figma/color/modes",
+  "preprocessor/figma/button-themes/modes",
   "preprocessor/figma/responsive/modes",
   "preprocessor/figma/typography/dimensions",
 ];
@@ -55,6 +59,7 @@ const tsTransforms = [
 ];
 
 StyleDictionary.registerPreprocessor(figmaColorModesPreprocessor);
+StyleDictionary.registerPreprocessor(figmaButtonThemesPreprocessor);
 StyleDictionary.registerPreprocessor(figmaResponsiveModesPreprocessor);
 StyleDictionary.registerPreprocessor(figmaTypographyDimensionsPreprocessor);
 
@@ -63,6 +68,7 @@ StyleDictionary.registerFormat(colorLightDarkFormat);
 StyleDictionary.registerFormat(spaceThemeFormat);
 StyleDictionary.registerFormat(typographyThemeFormat);
 StyleDictionary.registerFormat(customMediaFormat);
+StyleDictionary.registerFormat(buttonThemeFormat);
 
 StyleDictionary.registerTransform(numberPxTransform);
 StyleDictionary.registerTransform(fontWeightTransform);
@@ -84,7 +90,12 @@ const cssFiles = [
   {
     format: "format/color/light-dark",
     destination: "css/color.css",
-    filter: withPublishing(isColor),
+    filter: withPublishing((token) => isColor(token) && !isButtonColor(token)),
+  },
+  {
+    format: "format/button/theme",
+    destination: "css/button-theme.css",
+    filter: withPublishing(isButtonColor),
   },
   {
     format: "format/space/theme",
@@ -112,7 +123,7 @@ const dictionaryTokens = new StyleDictionary({
   },
   source: [
     `${sourcePath}/*.{json,js,mjs}`,
-    `${sourcePath}/figma/!(color-themes|size-responsive|typography)/**/*.{json,js,mjs}`,
+    `${sourcePath}/figma/!(color-themes|button-themes|size-responsive|typography)/**/*.{json,js,mjs}`,
   ],
   platforms: {
     css: {

@@ -1,7 +1,228 @@
 @scope (.sd3-button) {
-  color: rebeccapurple;
+  :scope {
+    --button-background: var(--sd3-color-button-primary-default);
+    --button-background-hover: var(--sd3-color-button-primary-hover);
+    --button-background-pressed: var(--sd3-color-button-primary-pressed);
+    --button-color: var(--sd3-color-button-primary-text);
+    --button-color-hover: var(--sd3-color-button-primary-text);
+    --button-color-pressed: var(--sd3-color-button-primary-text);
+    --button-icon-color: var(--sd3-color-button-primary-icon);
+    --button-icon-color-hover: var(--sd3-color-button-primary-icon);
+    --button-icon-color-pressed: var(--sd3-color-button-primary-icon);
+    --button-border-color: transparent;
+    --button-border-color-hover: transparent;
+    --button-border-color-pressed: transparent;
 
-  .red {
-    color: rebeccapurple;
+    /* Padding: default is the "text-edge" distance (outer + label breathing).
+       When an icon is adjacent, the icon-adjacent side collapses to the outer
+       padding so the icon sits closer to the edge (Figma design intent). */
+    --button-padding-inline: var(--sd3-space-component-400);
+    --button-padding-inline-icon: var(--sd3-space-component-300);
+    --button-padding-block: var(--sd3-space-component-200);
+    --button-gap: var(--sd3-space-component-200);
+    --button-font-size: var(--sd3-typography-size-text-body-md);
+    --button-line-height: var(--sd3-typography-line-height-text-body-md);
+    --button-icon-size: 1.25rem;
+
+    align-items: center;
+    appearance: none;
+    background-color: var(--button-background);
+
+    /* Border width is shared across all variants so secondary (visible border)
+       does not render larger than primary/tertiary (transparent border).
+       border-box keeps total dimensions matching Figma when the border is
+       included. */
+    border: var(--sd3-space-border-weight-025) solid var(--button-border-color);
+    border-radius: var(--sd3-space-border-radius-full);
+    box-sizing: border-box;
+    color: var(--button-color);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: var(--button-font-size);
+    font-weight: var(--sd3-typography-weight-regular);
+    gap: var(--button-gap);
+    justify-content: center;
+    line-height: var(--button-line-height);
+    padding: var(--button-padding-block) var(--button-padding-inline);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+
+    /* Icon-adjacent side uses the tighter outer padding — only when the button
+       has content beside the icon(s). Icon-only is handled below. */
+    &:not([data-icon-only]) {
+      &:has(> [data-part="icon"]:first-child) {
+        padding-inline-start: var(--button-padding-inline-icon);
+      }
+
+      &:has(> [data-part="icon"]:last-child) {
+        padding-inline-end: var(--button-padding-inline-icon);
+      }
+    }
+
+    /* Icon-only — equalise inline padding to the block padding so the pill
+       border-radius (999px) produces a perfect circle. Set by the consumer
+       via the `iconOnly` prop. */
+    &[data-icon-only] {
+      padding-inline: var(--button-padding-block);
+    }
+
+    @media (pointer: fine) {
+      &:hover:not(:disabled, [aria-disabled="true"]) {
+        background-color: var(--button-background-hover);
+        border-color: var(--button-border-color-hover);
+        color: var(--button-color-hover);
+
+        & > [data-part="icon"] {
+          color: var(--button-icon-color-hover);
+        }
+      }
+    }
+
+    &:active:not(:disabled, [aria-disabled="true"]) {
+      background-color: var(--button-background-pressed);
+      border-color: var(--button-border-color-pressed);
+      color: var(--button-color-pressed);
+
+      & > [data-part="icon"] {
+        color: var(--button-icon-color-pressed);
+      }
+    }
+
+    &:focus-visible {
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+      box-shadow: var(--sd3-focus-box-shadow);
+    }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+      background-color: var(--sd3-color-interaction-disabled-default);
+      border-color: transparent;
+      color: var(--sd3-color-text-disabled);
+      cursor: not-allowed;
+
+      /* Neutralise variant hover/pressed swaps while disabled. */
+      --button-background-hover: var(--sd3-color-interaction-disabled-default);
+      --button-background-pressed: var(
+        --sd3-color-interaction-disabled-default
+      );
+      --button-border-color-hover: transparent;
+      --button-border-color-pressed: transparent;
+      --button-color-hover: var(--sd3-color-text-disabled);
+      --button-color-pressed: var(--sd3-color-text-disabled);
+      --button-icon-color: var(--sd3-color-icon-disabled);
+      --button-icon-color-hover: var(--sd3-color-icon-disabled);
+      --button-icon-color-pressed: var(--sd3-color-icon-disabled);
+    }
+
+    /* Icon slot — sized via font-size so child SVGs sized in em scale correctly.
+       Icon colour follows the variant's icon token, and swaps on hover/pressed. */
+    & > [data-part="icon"] {
+      align-items: center;
+      color: var(--button-icon-color);
+      display: inline-flex;
+      flex-shrink: 0;
+      font-size: var(--button-icon-size);
+      justify-content: center;
+    }
+
+    &[data-variant="primary-subtle"] {
+      --button-background: var(--sd3-color-button-primary-subtle-default);
+      --button-background-hover: var(--sd3-color-button-primary-subtle-hover);
+      --button-background-pressed: var(
+        --sd3-color-button-primary-subtle-pressed
+      );
+      --button-color: var(--sd3-color-button-primary-subtle-text);
+      --button-color-hover: var(--sd3-color-button-primary-subtle-text-hover);
+      --button-color-pressed: var(
+        --sd3-color-button-primary-subtle-text-pressed
+      );
+      --button-icon-color: var(--sd3-color-button-primary-subtle-icon);
+      --button-icon-color-hover: var(
+        --sd3-color-button-primary-subtle-icon-hover
+      );
+      --button-icon-color-pressed: var(
+        --sd3-color-button-primary-subtle-icon-pressed
+      );
+    }
+
+    &[data-variant="secondary"] {
+      --button-background: var(--sd3-color-button-secondary-default);
+      --button-background-hover: var(--sd3-color-button-secondary-hover);
+      --button-background-pressed: var(--sd3-color-button-secondary-pressed);
+      --button-color: var(--sd3-color-button-secondary-text);
+      --button-color-hover: var(--sd3-color-button-secondary-text-hover);
+      --button-color-pressed: var(--sd3-color-button-secondary-text-pressed);
+      --button-icon-color: var(--sd3-color-button-secondary-icon);
+      --button-icon-color-hover: var(--sd3-color-button-secondary-icon-hover);
+      --button-icon-color-pressed: var(
+        --sd3-color-button-secondary-icon-pressed
+      );
+      --button-border-color: var(--sd3-color-button-secondary-border);
+      --button-border-color-hover: var(
+        --sd3-color-button-secondary-border-hover
+      );
+      --button-border-color-pressed: var(
+        --sd3-color-button-secondary-border-pressed
+      );
+    }
+
+    &[data-variant="tertiary"] {
+      --button-background: var(--sd3-color-button-tertiary-default);
+      --button-background-hover: var(--sd3-color-button-tertiary-hover);
+      --button-background-pressed: var(--sd3-color-button-tertiary-pressed);
+      --button-color: var(--sd3-color-button-tertiary-text);
+      --button-color-hover: var(--sd3-color-button-tertiary-text-hover);
+      --button-color-pressed: var(--sd3-color-button-tertiary-text-pressed);
+      --button-icon-color: var(--sd3-color-button-tertiary-icon);
+      --button-icon-color-hover: var(--sd3-color-button-tertiary-icon-hover);
+      --button-icon-color-pressed: var(
+        --sd3-color-button-tertiary-icon-pressed
+      );
+    }
+
+    &[data-size="large"] {
+      /* Padding: outer 16 (space-400) + label breathing 8 (space-200) = 24.
+         Icon-adjacent side collapses back to 16. */
+      --button-padding-inline: calc(
+        var(--sd3-space-component-400) + var(--sd3-space-component-200)
+      );
+      --button-padding-inline-icon: var(--sd3-space-component-400);
+
+      /* Extra 2px block padding at large — matches Figma's label container
+         padding-block (space-050). */
+      --button-padding-block: calc(
+        var(--sd3-space-component-200) + var(--sd3-space-component-050)
+      );
+      --button-font-size: var(--sd3-typography-size-text-body-lg);
+      --button-line-height: var(--sd3-typography-line-height-text-body-lg);
+      --button-icon-size: 1.5rem;
+    }
+
+    &[data-size="medium"] {
+      /* Padding: outer 12 (space-300) + label breathing 8 (space-200) = 20.
+         Icon-adjacent side collapses back to 12. */
+      --button-padding-inline: calc(
+        var(--sd3-space-component-300) + var(--sd3-space-component-200)
+      );
+      --button-padding-inline-icon: var(--sd3-space-component-300);
+      --button-padding-block: var(--sd3-space-component-200);
+      --button-font-size: var(--sd3-typography-size-text-body-md);
+      --button-line-height: var(--sd3-typography-line-height-text-body-md);
+    }
+
+    &[data-size="small"] {
+      /* Padding: outer 12 (space-300) + label breathing 4 (space-100) = 16.
+         Icon-adjacent side collapses back to 12. */
+      --button-padding-inline: calc(
+        var(--sd3-space-component-300) + var(--sd3-space-component-100)
+      );
+      --button-padding-inline-icon: var(--sd3-space-component-300);
+      --button-padding-block: var(--sd3-space-component-100);
+      --button-gap: var(--sd3-space-component-100);
+      --button-font-size: var(--sd3-typography-size-text-body-md);
+      --button-line-height: var(--sd3-typography-line-height-text-body-md);
+    }
   }
 }

@@ -6,6 +6,9 @@ export const isColor = (token) =>
   /* INFO: Hack to solve Figma missing DTCG types */ token.attributes
     .category === "color";
 
+export const isButtonColor = (token) =>
+  isColor(token) && token.path[0] === "color" && token.path[1] === "button";
+
 export const isFontWeight = (token) =>
   token.$type === "fontWeight" ||
   /* INFO: Hack to solve Figma missing DTCG types */ (token.attributes

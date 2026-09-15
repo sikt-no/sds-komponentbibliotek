@@ -4,4 +4,14 @@ id: "button"
 package: "design-system"
 ---
 
-{/* content goes here */}
+En knapp brukes til å utløse en handling — for eksempel å sende inn et skjema, bekrefte et valg eller gå videre i en flyt. Bruk en lenke i stedet dersom handlingen navigerer til en annen URL.
+
+## Bruk
+
+Sett `variant` etter hvor viktig handlingen er, ikke etter estetikk. Bruk `primary` for den viktigste handlingen i seksjonen, `primary-subtle` for en dempet primærtone, `secondary` for en handling med lavere emfase, og `tertiary` for lenkelignende handlinger uten fyll.
+
+Bruk `theme="danger"` for destruktive handlinger som å slette eller fjerne innhold.
+
+## Sammensetning
+
+Send teksten som children av `Button`, og pakk ikoner i `Button.Icon`. Rekkefølgen i JSX styrer om ikonet vises før eller etter teksten. En knapp som kun består av et ikon skal sette `aria-label` på selve `Button` — komponenten oppdager selv at det ikke finnes tekst, og gjør knappen rund.
