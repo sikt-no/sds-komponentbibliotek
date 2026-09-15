@@ -28,9 +28,9 @@
 
 ### AI usage policy
 
-- You are responsible for all AI-generated material
+- You are responsible for everything you submit, however it was produced.
 - Please disclose AI usage to reduce maintainer fatigue
-- Low-quality or unreviewed AI content will be closed immediately
+- We close contributions that don't meet our quality bar. This applies equally to AI-assisted and hand-written work.
 
 ## Feedback
 
