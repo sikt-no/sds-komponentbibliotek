@@ -1,44 +1,33 @@
-// url=https://www.figma.com/design/0aelUwbn2Ivir3T2JfhdOo/SDS-Komponenter?node-id=13122-9882
+// url=https://www.figma.com/design/0aelUwbn2Ivir3T2JfhdOo/SDS-Komponenter?node-id=26055-2910
 // component=Button
-
-// TODO: Nested icons inside Button are unresolved. `findInstance("iconLeft").executeTemplate().example`
-// only produces a clean `<XxxIcon />` snippet once every icon in `@sikt/sds-icons` has its own
-// Code Connect binding. Until then, the interpolated content falls back to Figma's default
-// rendering of the swapped instance. Follow-up: set up `packages/icons/figma/icons.figma.batch.{ts,json}`,
-// extend `figma.config.json` include globs, and revisit this template afterwards.
 
 import figma from "figma";
 
-const variant = figma.properties.enum("Variant", {
+const variant = figma.properties.enum("variant", {
   Primary: "primary",
   "Primary-subtle": "primary-subtle",
   Secondary: "secondary",
   Tertiary: "tertiary",
 });
-const size = figma.properties.enum("Size", {
+const size = figma.properties.enum("size", {
   Large: "large",
   Medium: "medium",
   Small: "small",
 });
-const label = figma.properties.string("Label");
+const label = figma.properties.string("label");
 const showIconLeft = figma.properties.boolean("showIconLeft");
 const showIconRight = figma.properties.boolean("showIconRight");
 
-const selected = figma.selectedInstance;
-const iconLeftSnippet = selected
-  .findInstance("iconLeft")
-  .executeTemplate().example;
-const iconRightSnippet = selected
-  .findInstance("iconRight")
-  .executeTemplate().example;
+const iconLeftInstance = figma.properties.instance("iconLeft");
+const iconRightInstance = figma.properties.instance("iconRight");
 
 const leftIcon = showIconLeft
   ? figma.code`
-      <Button.Icon>${iconLeftSnippet}</Button.Icon>`
+      <Button.Icon>${iconLeftInstance}</Button.Icon>`
   : "";
 const rightIcon = showIconRight
   ? figma.code`
-      <Button.Icon>${iconRightSnippet}</Button.Icon>`
+      <Button.Icon>${iconRightInstance}</Button.Icon>`
   : "";
 
 // Figma has no dedicated iconOnly variant — detect it from an empty label

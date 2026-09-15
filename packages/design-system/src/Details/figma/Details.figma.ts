@@ -1,16 +1,19 @@
-// url=https://www.figma.com/design/0aelUwbn2Ivir3T2JfhdOo/SDS-Komponenter?node-id=13122-2440
+// url=https://www.figma.com/design/0aelUwbn2Ivir3T2JfhdOo/SDS-Komponenter?node-id=27292-17134
 // component=Details
 
 import figma from "figma";
 
 const instance = figma.selectedInstance;
 
-const size = instance.getEnum("Size", {
+const size = instance.getEnum("size", {
   Standard: "standard",
   Compact: "compact",
 });
 
-const isOpen = instance.getBoolean("Open");
+const isOpen = instance.getEnum("isOpen", {
+  True: true,
+  False: false,
+});
 const labelText = instance.getString("labelText");
 
 const content =
