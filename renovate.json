@@ -76,7 +76,11 @@
       "groupName": "commitlint"
     },
     {
-      "matchPackagePatterns": ["eslint", "eslint-plugin-jest", "globals"],
+      "matchPackagePatterns": [
+        "eslint",
+        "globals",
+        "confusing-browser-globals"
+      ],
       "groupName": "eslint"
     },
     {
