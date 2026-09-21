@@ -28,11 +28,33 @@ Supported languages: Norwegian Bokmål (nb), Norwegian Nynorsk (nn), English (en
   <link rel="icon" href="@sikt/sds-logo/Favicon-Light@32px.png" sizes="any" />
   <link
     rel="icon"
+    href="@sikt/sds-logo/Favicon-Dark@32px.png"
+    sizes="any"
+    media="(prefers-color-scheme: dark)"
+  />
+  <link
+    rel="icon"
     href="@sikt/sds-logo/Favicon-Light.svg"
     type="image/svg+xml"
   />
+  <link
+    rel="icon"
+    href="@sikt/sds-logo/Favicon-Dark.svg"
+    type="image/svg+xml"
+    media="(prefers-color-scheme: dark)"
+  />
   <link rel="apple-touch-icon" href="@sikt/sds-logo/Favicon-Light@180px.png" />
+  <link
+    rel="apple-touch-icon"
+    href="@sikt/sds-logo/Favicon-Dark@180px.png"
+    media="(prefers-color-scheme: dark)"
+  />
   <link rel="manifest" href="/manifest.webmanifest" />
+  <link
+    rel="manifest"
+    href="/manifest-dark.webmanifest"
+    media="(prefers-color-scheme: dark)"
+  />
 </head>
 ```
 
