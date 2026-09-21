@@ -74,7 +74,7 @@
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^14.6.7",
-    "@tsdown/css": "^0.22.14",
+    "@tsdown/css": "^0.23.0",
     "@turbo/gen": "^2.10.12",
     "@types/jest": "^30.0.0",
     "@types/jest-axe": "^3.5.9",
@@ -106,7 +106,7 @@
     "stylelint": "^17.15.0",
     "stylelint-config-standard": "^40.0.0",
     "syncpack": "^15.3.3",
-    "tsdown": "^0.22.14",
+    "tsdown": "^0.23.0",
     "turbo": "^2.10.12",
     "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
