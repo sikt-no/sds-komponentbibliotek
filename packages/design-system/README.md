@@ -10,6 +10,7 @@
   - [Next.js](#nextjs)
   - [React Router](#react-router)
 - [Design Tokens](#design-tokens)
+- [Font](#font)
 - [Migration from SDS](#migration-from-sds)
 - [License](#space-theme)
 
@@ -89,6 +90,10 @@ export const Link = ({
 ## Design Tokens
 
 [@sikt/sd3-design-tokens/README.md](../design-tokens/README.md)
+
+## Font
+
+Sikt uses Haffer as font-family. The license doesn't allow for distribution from other domians than our CDN (static.sikt.no) so do not copy or publish it.
 
 ## Migration from SDS
 
