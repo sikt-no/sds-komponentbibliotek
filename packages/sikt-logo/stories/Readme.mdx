@@ -1,0 +1,24 @@
+import { Markdown, Meta } from "@storybook/addon-docs/blocks";
+import Readme from "../README.md?raw";
+import faviconDarkSvg from "../Favicon-Dark.svg?url";
+import faviconLightSvg from "../Favicon-Light.svg?url";
+
+<Meta title="SD3/Sikt Logo/Readme" />
+
+<Markdown>{Readme}</Markdown>
+
+#### Light
+
+<img
+  src={faviconLightSvg}
+  alt="Sikt Favicon Light SVG"
+  style={{ backgroundColor: "white" }}
+/>
+
+#### Dark
+
+<img
+  src={faviconDarkSvg}
+  alt="Sikt Favicon Dark SVG"
+  style={{ backgroundColor: "black" }}
+/>

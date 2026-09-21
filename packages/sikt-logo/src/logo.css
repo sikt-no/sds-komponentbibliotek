@@ -1,0 +1,46 @@
+@scope (.sd3-sikt-logo) {
+  :scope {
+    align-items: center;
+    color: var(--sd3-color-icon-primary);
+    display: flex;
+    flex-direction: row;
+    gap: var(--sd3-space-component-300);
+
+    [data-part="symbol"] {
+      width: 1.57em;
+    }
+
+    &[data-variant="primary"] {
+      font-size: 3rem;
+      font-weight: var(--sd3-typography-weight-regular);
+      line-height: 1em;
+    }
+
+    &[data-variant="secondary"] {
+      font-size: 1rem;
+      font-weight: var(--sd3-typography-weight-semibold);
+      line-height: 1em;
+
+      [data-part="subtitle"] {
+        font-weight: var(--sd3-typography-weight-regular);
+      }
+
+      [data-part="symbol"] {
+        width: 4.69em;
+      }
+    }
+
+    &[data-variant="product"] {
+      font-size: 1.75rem;
+      font-weight: var(--sd3-typography-weight-regular);
+      line-height: 1em;
+      gap: var(--sd3-space-component-200);
+
+      [data-part="title"] {
+        font-size: 1.5rem;
+        font-weight: var(--sd3-typography-weight-regular);
+        line-height: 1.5;
+      }
+    }
+  }
+}

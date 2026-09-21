@@ -104,6 +104,8 @@ const preview: Preview = {
             "Introduction",
             "Design Tokens",
             ["Readme", "Changelog", "Color", "Typography", "Size", "*"],
+            "Sikt Logo",
+            ["Readme", "Changelog"],
             "*",
             ["Readme", "Changelog"],
           ],

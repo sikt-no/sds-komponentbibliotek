@@ -1,0 +1,23 @@
+import { Meta, StoryObj } from "@storybook/react-vite";
+import { Logo } from "../index";
+
+const meta = {
+  title: "SD3/Sikt Logo",
+  component: Logo,
+} satisfies Meta<typeof Logo>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    variant: "primary",
+  },
+};
+
+export const Product: Story = {
+  args: {
+    productName: "My product",
+  },
+};

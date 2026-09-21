@@ -2,6 +2,7 @@
   "codeConnect": {
     "include": [
       "packages/design-*/**/figma/*.figma.ts",
+      "packages/sikt-logo/**/figma/*.figma.ts",
       "packages/design-*/**/figma/*.figma.batch.json",
       "packages/icons/figma/*.figma.batch.json"
     ],

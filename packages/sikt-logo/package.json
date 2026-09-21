@@ -1,0 +1,54 @@
+{
+  "name": "@sikt/sd3-sikt-logo",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "homepage": "https://designsystem.sikt.no/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git"
+  },
+  "type": "commonjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "style": "./dist/index.css",
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./dist/*": "./dist/*",
+    "./*.png": "./*.png",
+    "./*.svg": "./*.svg"
+  },
+  "types": "dist/index.d.cts",
+  "style": "dist/index.css",
+  "files": [
+    "CHANGELOG.md",
+    "dist",
+    "README.md",
+    "*.png",
+    "*.svg"
+  ],
+  "sideEffects": [
+    "*.css",
+    "*.png",
+    "*.svg"
+  ],
+  "scripts": {
+    "build": "tsdown"
+  },
+  "peerDependencies": {
+    "@sikt/sd3-design-tokens": "^0.1.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "clsx": "^2.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

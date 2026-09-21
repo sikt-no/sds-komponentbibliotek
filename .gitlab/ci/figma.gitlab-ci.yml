@@ -23,5 +23,6 @@ publish-figma:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       changes:
         - packages/design-*/**/figma/*.figma.ts
+        - packages/sikt-logo/**/figma/*.figma.ts
         - packages/design-*/**/figma/*.figma.batch.json
         - packages/icons/figma/*.figma.batch.json
