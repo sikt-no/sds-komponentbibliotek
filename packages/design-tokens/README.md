@@ -6,6 +6,7 @@
 - [Consume](#consume)
   - [Stylesheet](#stylesheet)
   - [React](#react)
+  - [Tailwind CSS](#tailwind-css)
 - [Color Scheme](#color-scheme)
   - [CSS](#css-color-scheme)
     - [Caveats](#caveats)
@@ -46,6 +47,31 @@ import tokens from "@sikt/sd3-design-tokens";
   Hello, World!
 </MyComponent>;
 ```
+
+### Tailwind CSS
+
+This is a v4 config with peer dependency on `tailwindcss@^4.0.0`. It disables Tailwind preflight and relies on the CSS design tokens variables.
+
+**Note** The Tailwind config builds on variables from the CSS dist, which need to be imported before the Tailwind config.
+
+```css
+@import url("@sikt/sd3-design-tokens/dist/css/index.css");
+@import url("@sikt/sd3-design-tokens/dist/tailwind/config.css");
+```
+
+```html
+<button class="text-brand-primary-strong">Hello, World!</button>
+```
+
+#### Dark mode
+
+This config doesn't support utility class prefix `dark:` for [dark mode](https://tailwindcss.com/docs/dark-mode), but uses variables that change based on user preferences so you shouldn't have to.
+
+#### Caveats
+
+Theme utilities where we have our own tokens have been disabled in the Tailwind config with `--property-*: initial;`.
+
+Tailwind spacing (padding/margin) is scale constructed from a base value. This has been disabled and instead you should use our CSS custom properties `p-(--sd3-space-component-200)`.
 
 ## Color Scheme
 

@@ -14,6 +14,7 @@ import { buttonThemeFormat } from "./format/buttonTheme.mjs";
 import { colorLightDarkFormat } from "./format/colorLightDark.mjs";
 import { customMediaFormat } from "./format/customMedia.mjs";
 import { spaceThemeFormat } from "./format/spaceTheme.mjs";
+import { tailwindConfigFormat } from "./format/tailwindConfig.mjs";
 import { tsAccurateModuleDeclarationsFormat } from "./format/tsAccurateModuleDeclarations.mjs";
 import { typographyThemeFormat } from "./format/typographyTheme.mjs";
 import { figmaButtonThemesPreprocessor } from "./preprocessor/figmaButtonThemes.mjs";
@@ -69,6 +70,7 @@ StyleDictionary.registerFormat(spaceThemeFormat);
 StyleDictionary.registerFormat(typographyThemeFormat);
 StyleDictionary.registerFormat(customMediaFormat);
 StyleDictionary.registerFormat(buttonThemeFormat);
+StyleDictionary.registerFormat(tailwindConfigFormat);
 
 StyleDictionary.registerTransform(numberPxTransform);
 StyleDictionary.registerTransform(fontWeightTransform);
@@ -152,6 +154,19 @@ const dictionaryTokens = new StyleDictionary({
         {
           format: "javascript/esm",
           destination: "js/tokens.mjs",
+          filter: isHiddenFromPublishing,
+        },
+      ],
+    },
+    tailwind: {
+      preprocessors,
+      transforms: cssTransforms,
+      buildPath,
+      prefix,
+      files: [
+        {
+          format: "format/tailwind/config",
+          destination: "tailwind/config.css",
           filter: isHiddenFromPublishing,
         },
       ],
