@@ -1,3 +1,18 @@
+@layer sds, sd3;
+
+@import url("../../../packages/core/src/index.css") layer(sds);
+@import url("../../../packages/logo/src/logo.css") layer(sds);
+@import url("../../../packages/icons/src/icon.css") layer(sds);
+@import url("../../../packages/input/src/input.css") layer(sds);
+@import url("../../../packages/button/src/button.css") layer(sds);
+@import url("../../../packages/button/src/button-link.css") layer(sds);
+@import url("../../../packages/form/src/fieldset.css") layer(sds);
+@import url("../../../packages/form/src/form-field.css"); /* layer(sds) INFO: unlayered because of JS inline CSS in Storybook story */
+@import url("../../../packages/checkbox/src/checkbox-input.css") layer(sds);
+@import url("../../../packages/table/src/table.css") layer(sds);
+@import url("../../../packages/list/src/list.css") layer(sds);
+@import url("../../../packages/design-system/src/css/index.css") layer(sd3);
+
 /* stylelint-disable */
 .docs-story,
 .docblock-icongallery > div > div:first-of-type {

@@ -1,17 +1,4 @@
 import type { Preview } from "@storybook/react-vite";
-import "../../../packages/design-system/src/css/index.css";
-import "../../../packages/core/src/index.css";
-import "../../../packages/logo/src/logo.css";
-import "../../../packages/icons/src/icon.css";
-import "../../../packages/input/src/input.css";
-import "../../../packages/button/src/button.css";
-import "../../../packages/button/src/button-link.css";
-import "../../../packages/form/src/fieldset.css";
-import "../../../packages/form/src/form-field.css";
-import "../../../packages/checkbox/src/checkbox-input.css";
-import "../../../packages/table/src/table.css";
-import "../../../packages/list/src/list.css";
-import "../../../packages/design-system/src/css/index.css";
 import "./style.css";
 
 const preview: Preview = {
