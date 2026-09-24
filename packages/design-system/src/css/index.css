@@ -1,9 +1,9 @@
-@import url("sanitize.css");
-@import url("sanitize.css/assets.css");
-@import url("sanitize.css/forms.css");
-@import url("sanitize.css/typography.css");
-@import url("sanitize.css/reduce-motion.css");
-@import url("./reset.css");
+@import url("sanitize.css") layer(reset);
+@import url("sanitize.css/assets.css") layer(reset);
+@import url("sanitize.css/forms.css") layer(reset);
+@import url("sanitize.css/typography.css") layer(reset);
+@import url("sanitize.css/reduce-motion.css") layer(reset);
+@import url("./reset.css") layer(reset);
 @import url("./custom-properties.css");
 @import url("./font-face.css");
 @import url("./visually-hidden.css");
