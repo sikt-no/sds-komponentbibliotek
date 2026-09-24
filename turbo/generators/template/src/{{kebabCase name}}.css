@@ -1,4 +1,4 @@
-@scope(.sd3-{{kebabCase name}}) {
+@scope(.sd3-{{kebabCase name}}) to ([class^="sds-"], [class^="sd3-"]) {
   :scope {
     /* styles goes here */
   }
