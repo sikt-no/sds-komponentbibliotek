@@ -1,10 +1,10 @@
 <title>Storybook | Sikt designsystem</title>
 
-<link rel="stylesheet" href="dist/core.css" />
-<link rel="stylesheet" href="dist/header.css" />
-<link rel="stylesheet" href="dist/logo.css" />
-
 <style>
+  @import url("dist/core.css") layer(sds);
+  @import url("dist/header.css") layer(sds);
+  @import url("dist/logo.css") layer(sds);
+
   #root > * {
     height: calc(
       100dvh - calc(var(--sikt-top-header-height) + var(--header-height))
