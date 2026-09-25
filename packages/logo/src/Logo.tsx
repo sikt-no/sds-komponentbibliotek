@@ -10,7 +10,7 @@ export interface LogoProps extends HTMLAttributes<HTMLDivElement> {
   lang?: "nb" | "nn" | "en" | "se" | "smj" | "sma" | "fkv";
   variant?: LogoVariant;
   productName?: string;
-  hasSymbol?: boolean;
+  hideSymbol?: boolean;
 }
 
 const i18n = {
@@ -39,7 +39,7 @@ export const Logo = ({
   productName,
   className,
   lang = "nb",
-  hasSymbol = true,
+  hideSymbol = false,
   ...rest
 }: LogoProps) => {
   const isSecondary = variant === "secondary" && !productName;
@@ -52,7 +52,7 @@ export const Logo = ({
       )}
       {...rest}
     >
-      {hasSymbol && <LogoSvg className="sds-logo__icon" aria-hidden />}
+      {!hideSymbol && <LogoSvg className="sds-logo__icon" aria-hidden />}
       <div>
         <div className="sds-logo__title">{productName ?? "Sikt"}</div>
         {isSecondary && (
