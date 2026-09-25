@@ -1,0 +1,33 @@
+---
+title: "Status message"
+id: "status-message"
+package: "design-system"
+---
+
+Dette komponentet fremhever viktig informasjon i en tydelig avgrenset boks som skiller seg ut fra resten av innholdet. Den kan gi tilbakemelding på handlinger brukeren har utført, oppsummere feil i et skjema, eller vise veiledning og retningslinjer som er en fast del av siden.
+
+## Bruk
+
+Velg `variant` etter tone: `success` bekrefter en fullført handling, `failure` rapporterer en feil, `warning` advarer før en irreversibel handling, `info` gir nøytral veiledning, og `neutral` brukes for meldinger uten semantisk vekt.
+
+`size="compact"` gir tettere typografi (body-md) og litt strammere ikonjustering. Bruk den når meldingen skal ta mindre plass, for eksempel inne i et skjema.
+
+## Sammensetning
+
+Meldingen komponeres av tre valgfrie underkomponenter:
+
+- `StatusMessage.Title` — overskrift i samme kolonne som brødteksten.
+- `StatusMessage.Description` — beskrivende tekst rett under tittelen, innrykket etter ikonet.
+- `StatusMessage.Body` — full-bredde område nederst i meldingen. Bruk til handlingsknapper, lenkelister, skjemafelter eller annet innhold som ikke skal innrykkes.
+
+Minst én av `Title` og `Description` bør være til stede.
+
+## Tilgjengelighet
+
+Komponenten setter ikke `role` eller `aria-live` selv. Konsumenten velger hva som passer for konteksten og sender attributtene rett gjennom:
+
+- `role="alert"` (impliserer `aria-live="assertive"`) for feil og advarsler som må annonseres umiddelbart.
+- `role="status"` (impliserer `aria-live="polite"`) for tilbakemeldinger som kan annonseres når brukeren er i ro.
+- Ingen `role` for vedvarende sideelementer som et statisk guide panel — meldingen skal ikke annonseres ved sideoppdatering.
+
+Ikonet er dekorativt og skjules automatisk fra hjelpeteknologi. Tonen formidles av teksten, ikke av ikonet alene.

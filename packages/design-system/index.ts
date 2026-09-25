@@ -20,6 +20,15 @@ export { Details } from "./src/Details";
 export * from "./src/Avatar";
 export * from "./src/Button";
 
+export type {
+  StatusMessageBodyProps,
+  StatusMessageDescriptionProps,
+  StatusMessageProps,
+  StatusMessageTitleProps,
+  StatusMessageVariant,
+} from "./src/StatusMessage";
+export { StatusMessage } from "./src/StatusMessage";
+
 export * from "./src/Tag";
 export * from "./src/TagStatus";
 
