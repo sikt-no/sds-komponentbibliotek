@@ -102,12 +102,12 @@ Sikt designsystem 2.0 (SDS) & Sikt designsystem 3.0 (SD3) does play nicely toget
 Base CSS on `:root` like `color` and `background-color` can be chosen by you which one has presidence by using CSS @layers.
 
 ```css
-@layer sd3.reset, sds, sd3, my-own-more-specific-layer;
+@layer reset, sds, my-own-more-specific-layer;
 
 @import url("@sikt/sds-core") layer(sds);
 @import url("@sikt/sds-button") layer(sds);
 ...
-@import url("@sikt/sd3-design-system") layer(sd3);
+@import url("@sikt/sd3-design-system");
 ```
 
 ## License

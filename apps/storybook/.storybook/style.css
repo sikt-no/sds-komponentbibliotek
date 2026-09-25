@@ -1,4 +1,4 @@
-@layer sd3.reset, sds, sd3;
+@layer reset, sds;
 
 @import url("../../../packages/core/src/index.css") layer(sds);
 @import url("../../../packages/logo/src/logo.css") layer(sds);
@@ -11,7 +11,7 @@
 @import url("../../../packages/checkbox/src/checkbox-input.css") layer(sds);
 @import url("../../../packages/table/src/table.css") layer(sds);
 @import url("../../../packages/list/src/list.css") layer(sds);
-@import url("../../../packages/design-system/src/css/index.css") layer(sd3);
+@import url("../../../packages/design-system/src/css/index.css");
 
 /* stylelint-disable */
 .docs-story,
