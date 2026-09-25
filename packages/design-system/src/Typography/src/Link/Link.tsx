@@ -19,7 +19,7 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   /**
    * Hide default icons for `target="_blank"`, `href="mailto:"` & `href="tel:"`.
    */
-  noIcon?: boolean;
+  hideIcon?: boolean;
   /**
    * Use to change element type into alternative React component. Useful with libraries that require their own routing components.
    *
@@ -43,8 +43,8 @@ const LinkIcon = ({ children }: LinkIconProps) => (
 );
 LinkIcon.displayName = "Link.Icon";
 
-const dataIsValue = (isExternal, noIcon) => {
-  if (noIcon) return "no-icon"; // noIcon wins, even for external links
+const dataIsValue = (isExternal, hideIcon) => {
+  if (hideIcon) return "hide-icon"; // hideIcon wins, even for external links
   if (isExternal) return "external";
   return undefined;
 };
@@ -54,7 +54,7 @@ const LinkBase = ({
   className,
   size,
   isExternal,
-  noIcon,
+  hideIcon = false,
   asChild = false,
   ...rest
 }: LinkProps) => {
@@ -65,7 +65,7 @@ const LinkBase = ({
       className={clsx("sd3-typography", className)}
       data-variant="link"
       data-size={size}
-      data-is={dataIsValue(isExternal, noIcon)}
+      data-is={dataIsValue(isExternal, hideIcon)}
       {...rest}
     >
       <Slottable>{children}</Slottable>

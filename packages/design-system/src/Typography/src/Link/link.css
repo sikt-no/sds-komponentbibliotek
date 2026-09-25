@@ -94,7 +94,7 @@
         }
       }
 
-      &[data-is="no-icon"] {
+      &[data-is="hide-icon"] {
         &[target="_blank"] {
           &::after {
             align-self: unset;

@@ -68,14 +68,17 @@ describe("Link", () => {
       expect(screen.getByTestId("test")).toHaveAttribute("data-is", "external");
     });
 
-    it("should have no icon modifier", async () => {
+    it("should have hide icon modifier", async () => {
       render(
-        <Link href="#" noIcon data-testid="test">
+        <Link href="#" hideIcon data-testid="test">
           Foo
         </Link>,
       );
 
-      expect(screen.getByTestId("test")).toHaveAttribute("data-is", "no-icon");
+      expect(screen.getByTestId("test")).toHaveAttribute(
+        "data-is",
+        "hide-icon",
+      );
     });
   });
 });
