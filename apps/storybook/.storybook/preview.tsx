@@ -57,15 +57,19 @@ const preview: Preview = {
             `color-scheme: only ${scheme as string}`,
           );
         } else {
-          rootElement.setAttribute("style", `color-scheme: light dark`);
+          rootElement.removeAttribute("style");
         }
 
         if (theme !== "") {
           rootElement.setAttribute("data-color-theme", theme as string);
+        } else {
+          rootElement.removeAttribute("data-color-theme");
         }
 
         if (space !== "") {
           rootElement.setAttribute("data-space-theme", space as string);
+        } else {
+          rootElement.removeAttribute("data-space-theme");
         }
       }
 
