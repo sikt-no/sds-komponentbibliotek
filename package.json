@@ -88,7 +88,7 @@
     "browserslist": "^4.28.9",
     "browserslist-to-esbuild": "^2.1.1",
     "clsx": "^2.1.1",
-    "commit-and-tag-version": "^13.2.0",
+    "commit-and-tag-version": "^13.2.1",
     "confusing-browser-globals": "^1.0.11",
     "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
