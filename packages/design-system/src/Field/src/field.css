@@ -1,0 +1,54 @@
+@scope (.sd3-field) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --field-label-color: var(--sd3-color-text-primary);
+    --field-description-color: var(--sd3-color-text-secondary);
+    --field-label-font-size: var(--sd3-typography-size-text-label);
+    --field-label-line-height: var(--sd3-typography-line-height-text-label);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--sd3-space-component-200);
+
+    &[data-size="large"] {
+      --field-label-font-size: var(--sd3-typography-size-text-label-lg);
+      --field-label-line-height: var(
+        --sd3-typography-line-height-text-label-lg
+      );
+    }
+
+    &[data-disabled] {
+      --field-label-color: var(--sd3-color-text-disabled);
+      --field-description-color: var(--sd3-color-text-disabled);
+    }
+
+    & [data-part="label"] {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sd3-space-component-200);
+      color: var(--field-label-color);
+      font-size: var(--field-label-font-size);
+      line-height: var(--field-label-line-height);
+      font-weight: var(--sd3-typography-weight-semibold);
+    }
+
+    & [data-part="description"] {
+      margin-top: calc(
+        var(--sd3-space-component-100) - var(--sd3-space-component-200)
+      );
+      color: var(--field-description-color);
+      font-size: var(--sd3-typography-size-text-helper);
+      line-height: var(--sd3-typography-line-height-text-helper);
+      font-weight: var(--sd3-typography-weight-regular);
+    }
+
+    & [data-part="validation"] {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sd3-space-component-100);
+      color: var(--sd3-color-text-critical);
+      font-size: var(--sd3-typography-size-text-helper);
+      line-height: var(--sd3-typography-line-height-text-helper);
+      font-weight: var(--sd3-typography-weight-regular);
+    }
+  }
+}
