@@ -15,12 +15,7 @@ export const FieldValidationMessage = ({
 }: FieldValidationMessageProps) => {
   const { id } = useFieldContext();
   return (
-    <span
-      data-part="validation"
-      aria-live="polite"
-      {...rest}
-      id={`${id}-validation`}
-    >
+    <span data-part="validation" {...rest} id={`${id}-validation`}>
       <FailedFilledIcon data-part="icon" />
       {children}
     </span>

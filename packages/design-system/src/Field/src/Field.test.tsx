@@ -206,7 +206,7 @@ describe("Field", () => {
         expect(screen.getByTestId("input")).toHaveAttribute("id", "custom-id");
       });
 
-      it("should wire Description via aria-describedby and ValidationMessage via aria-errormessage", () => {
+      it("should reference Description and ValidationMessage ids on aria-describedby and set aria-errormessage to the validation id", () => {
         render(
           <Field id="a">
             <Field.Label>Navn</Field.Label>
@@ -216,11 +216,28 @@ describe("Field", () => {
           </Field>,
         );
         const input = screen.getByTestId("input");
-        expect(input).toHaveAttribute("aria-describedby", "a-description");
+        expect(input).toHaveAttribute(
+          "aria-describedby",
+          "a-description a-validation",
+        );
         expect(input).toHaveAttribute("aria-errormessage", "a-validation");
         expect(screen.getByText("Oppgi fullt navn")).toHaveAttribute(
           "id",
           "a-description",
+        );
+      });
+
+      it("should reference only the ValidationMessage id on aria-describedby when no Description is present", () => {
+        render(
+          <Field id="a">
+            <Field.Label>Navn</Field.Label>
+            <TestInput />
+            <Field.ValidationMessage>Feil</Field.ValidationMessage>
+          </Field>,
+        );
+        expect(screen.getByTestId("input")).toHaveAttribute(
+          "aria-describedby",
+          "a-validation",
         );
       });
 
@@ -247,7 +264,7 @@ describe("Field", () => {
       });
     });
 
-    it("ValidationMessage should render as a polite live region, not role=alert", () => {
+    it("ValidationMessage should not announce itself as a live region", () => {
       render(
         <Field>
           <Field.Label>Navn</Field.Label>
@@ -255,7 +272,7 @@ describe("Field", () => {
           <Field.ValidationMessage>Feil</Field.ValidationMessage>
         </Field>,
       );
-      expect(screen.getByText("Feil")).toHaveAttribute("aria-live", "polite");
+      expect(screen.getByText("Feil")).not.toHaveAttribute("aria-live");
       expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     });
   });

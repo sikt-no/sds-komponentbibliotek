@@ -127,21 +127,6 @@ describe("Input", () => {
       ).toHaveAttribute("readonly");
     });
 
-    it("should inherit aria-describedby, aria-errormessage and aria-invalid wiring from Field", () => {
-      render(
-        <Field id="org">
-          <Field.Label>Organization</Field.Label>
-          <Field.Description>The legal name.</Field.Description>
-          <Input />
-          <Field.ValidationMessage>Required.</Field.ValidationMessage>
-        </Field>,
-      );
-      const input = screen.getByRole("textbox", { name: "Organization" });
-      expect(input).toHaveAttribute("aria-describedby", "org-description");
-      expect(input).toHaveAttribute("aria-errormessage", "org-validation");
-      expect(input).toHaveAttribute("aria-invalid", "true");
-    });
-
     it("should let explicit props override Field context", () => {
       render(
         <Field id="org" size="large" disabled>

@@ -32,6 +32,14 @@ const FieldRoot = ({
   const hasDescription = hasChildOfType(children, FieldDescription);
   const hasValidation = hasChildOfType(children, FieldValidationMessage);
 
+  const describedBy =
+    [
+      hasDescription ? `${inputId}-description` : null,
+      hasValidation ? `${inputId}-validation` : null,
+    ]
+      .filter(Boolean)
+      .join(" ") || undefined;
+
   return (
     <div
       className={clsx("sd3-field", className)}
@@ -44,9 +52,7 @@ const FieldRoot = ({
       <FieldContext.Provider
         value={{
           id: inputId,
-          "aria-describedby": hasDescription
-            ? `${inputId}-description`
-            : undefined,
+          "aria-describedby": describedBy,
           "aria-errormessage": hasValidation
             ? `${inputId}-validation`
             : undefined,
