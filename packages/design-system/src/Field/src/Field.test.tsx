@@ -206,7 +206,7 @@ describe("Field", () => {
         expect(screen.getByTestId("input")).toHaveAttribute("id", "custom-id");
       });
 
-      it("should combine Description and ValidationMessage ids into aria-describedby", () => {
+      it("should wire Description via aria-describedby and ValidationMessage via aria-errormessage", () => {
         render(
           <Field id="a">
             <Field.Label>Navn</Field.Label>
@@ -215,26 +215,25 @@ describe("Field", () => {
             <Field.ValidationMessage>Feil</Field.ValidationMessage>
           </Field>,
         );
-        expect(screen.getByTestId("input")).toHaveAttribute(
-          "aria-describedby",
-          "a-description a-validation",
-        );
+        const input = screen.getByTestId("input");
+        expect(input).toHaveAttribute("aria-describedby", "a-description");
+        expect(input).toHaveAttribute("aria-errormessage", "a-validation");
         expect(screen.getByText("Oppgi fullt navn")).toHaveAttribute(
           "id",
           "a-description",
         );
       });
 
-      it("should omit aria-describedby when neither is present", () => {
+      it("should omit aria-describedby and aria-errormessage when neither part is present", () => {
         render(
           <Field>
             <Field.Label>Navn</Field.Label>
             <TestInput />
           </Field>,
         );
-        expect(screen.getByTestId("input")).not.toHaveAttribute(
-          "aria-describedby",
-        );
+        const input = screen.getByTestId("input");
+        expect(input).not.toHaveAttribute("aria-describedby");
+        expect(input).not.toHaveAttribute("aria-errormessage");
       });
 
       it("useFieldContext should throw outside of Field", () => {
@@ -248,7 +247,7 @@ describe("Field", () => {
       });
     });
 
-    it("ValidationMessage should render with role='alert'", () => {
+    it("ValidationMessage should render as a polite live region, not role=alert", () => {
       render(
         <Field>
           <Field.Label>Navn</Field.Label>
@@ -256,7 +255,8 @@ describe("Field", () => {
           <Field.ValidationMessage>Feil</Field.ValidationMessage>
         </Field>,
       );
-      expect(screen.getByRole("alert")).toHaveTextContent("Feil");
+      expect(screen.getByText("Feil")).toHaveAttribute("aria-live", "polite");
+      expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     });
   });
 });

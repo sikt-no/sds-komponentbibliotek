@@ -1,0 +1,82 @@
+@scope (.sd3-input) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --input-background: var(--sd3-color-surface-default-1);
+    --input-border-width: var(--sd3-space-border-weight-025);
+    --input-border-color: var(--sd3-color-border-strong);
+    --input-color: var(--sd3-color-text-primary);
+    --input-placeholder-color: var(--sd3-color-text-secondary);
+    --input-padding-block: var(--sd3-space-component-200);
+    --input-padding-inline: var(--sd3-space-component-300);
+    --input-font-size: var(--sd3-typography-size-text-body-lg);
+    --input-line-height: var(--sd3-typography-line-height-text-body-lg);
+
+    background-color: var(--input-background);
+    border: none;
+    border-radius: var(--sd3-space-border-radius-100);
+    box-shadow: inset 0 0 0 var(--input-border-width) var(--input-border-color);
+    box-sizing: border-box;
+    color: var(--input-color);
+    display: block;
+    font-size: var(--input-font-size);
+    line-height: var(--input-line-height);
+    min-width: 0;
+    padding: var(--input-padding-block) var(--input-padding-inline);
+    width: 100%;
+
+    &::placeholder {
+      color: var(--input-placeholder-color);
+
+      /* Firefox adds opacity: 0.54 on ::placeholder by default. */
+      opacity: 1;
+    }
+
+    @media (pointer: fine) {
+      &:hover:not(:disabled, [readonly]) {
+        --input-border-width: var(--sd3-space-border-weight-050);
+      }
+    }
+
+    &:focus {
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+      box-shadow:
+        inset 0 0 0 var(--input-border-width) var(--input-border-color),
+        var(--sd3-focus-box-shadow);
+    }
+
+    &:focus:not(:placeholder-shown) {
+      --input-background: var(--sd3-color-surface-default-2);
+    }
+
+    &:disabled {
+      --input-border-color: var(--sd3-color-border-disabled);
+      --input-color: var(--sd3-color-text-disabled);
+      --input-placeholder-color: var(--sd3-color-text-disabled);
+    }
+
+    &[readonly] {
+      --input-background: var(--sd3-color-background-default);
+    }
+
+    &[aria-invalid="true"] {
+      --input-background: var(--sd3-color-support-critical-subtle);
+      --input-border-color: var(--sd3-color-border-critical);
+    }
+
+    &[data-size="large"] {
+      --input-padding-block: calc(
+        var(--sd3-space-component-200) + var(--sd3-space-component-050)
+      );
+    }
+
+    &[data-size="medium"],
+    &[data-size="small"] {
+      --input-font-size: var(--sd3-typography-size-text-body-md);
+      --input-line-height: var(--sd3-typography-line-height-text-body-md);
+    }
+
+    &[data-size="small"] {
+      --input-padding-block: var(--sd3-space-component-100);
+    }
+  }
+}

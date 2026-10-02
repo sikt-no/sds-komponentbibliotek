@@ -17,22 +17,6 @@ export interface FieldProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-/** Builds a space-separated `aria-describedby` value from the parts present on the Field, or `undefined` when there are none. */
-const getDescribedBy = (
-  hasDescription: boolean,
-  hasErrorMessage: boolean,
-  inputId: string,
-): string | undefined => {
-  return (
-    [
-      hasDescription ? `${inputId}-description` : undefined,
-      hasErrorMessage ? `${inputId}-validation` : undefined,
-    ]
-      .filter(Boolean)
-      .join(" ") || undefined
-  );
-};
-
 const FieldRoot = ({
   size = "medium",
   disabled,
@@ -47,7 +31,6 @@ const FieldRoot = ({
 
   const hasDescription = hasChildOfType(children, FieldDescription);
   const hasValidation = hasChildOfType(children, FieldValidationMessage);
-  const describedBy = getDescribedBy(hasDescription, hasValidation, inputId);
 
   return (
     <div
@@ -61,7 +44,12 @@ const FieldRoot = ({
       <FieldContext.Provider
         value={{
           id: inputId,
-          "aria-describedby": describedBy,
+          "aria-describedby": hasDescription
+            ? `${inputId}-description`
+            : undefined,
+          "aria-errormessage": hasValidation
+            ? `${inputId}-validation`
+            : undefined,
           "aria-invalid": hasValidation ? true : undefined,
           disabled,
           readOnly,

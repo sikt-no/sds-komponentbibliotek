@@ -28,6 +28,7 @@ export { Field, useFieldContext } from "./src/Field";
 
 export * from "./src/Avatar";
 export * from "./src/Button";
+export * from "./src/Input";
 
 export type {
   StatusMessageBodyProps,

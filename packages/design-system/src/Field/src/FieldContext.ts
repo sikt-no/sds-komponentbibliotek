@@ -4,6 +4,7 @@ import type { Size } from "../../../types";
 export interface FieldContextValue {
   id: string;
   "aria-describedby"?: string;
+  "aria-errormessage"?: string;
   "aria-invalid"?: true;
   disabled?: boolean;
   readOnly?: boolean;

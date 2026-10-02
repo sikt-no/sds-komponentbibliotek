@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Input } from "../../Input";
 import { Tag } from "../../Tag";
 import { Field, type FieldProps } from "../index";
-import { useFieldContext } from "../src/FieldContext";
 
-const InputControl = () => <input {...useFieldContext()} />;
+type DefaultArgs = FieldProps & {
+  description?: boolean;
+  validationMessage?: boolean;
+};
 
-const meta: Meta<FieldProps> = {
+const meta: Meta<DefaultArgs> = {
   title: "SD3/Field",
   component: Field,
   parameters: {
@@ -16,20 +19,46 @@ const meta: Meta<FieldProps> = {
       },
     },
   },
+  argTypes: {
+    size: {
+      control: { type: "radio" },
+      options: ["small", "medium", "large"],
+    },
+    disabled: { control: "boolean" },
+    readOnly: { control: "boolean" },
+    description: {
+      name: "Show description",
+      control: "boolean",
+      table: { category: "Composition" },
+    },
+    validationMessage: {
+      name: "Show Validation Error",
+      control: "boolean",
+      table: { category: "Composition" },
+    },
+  },
 };
 
 export default meta;
 
-type Story = StoryObj<FieldProps>;
+type Story = StoryObj<DefaultArgs>;
 
 export const Default: Story = {
-  render: (args) => (
+  args: { description: true },
+  render: ({ description, validationMessage, ...args }) => (
     <Field {...args}>
       <Field.Label>Email</Field.Label>
-      <Field.Description>
-        We only use your address to send you a receipt.
-      </Field.Description>
-      <InputControl />
+      {description ? (
+        <Field.Description>
+          We only use your address to send you a receipt.
+        </Field.Description>
+      ) : null}
+      <Input />
+      {validationMessage ? (
+        <Field.ValidationMessage>
+          Enter a valid email address.
+        </Field.ValidationMessage>
+      ) : null}
     </Field>
   ),
 };
@@ -41,7 +70,7 @@ export const WithValidation: Story = {
       <Field.Description>
         We only use your address to send you a receipt.
       </Field.Description>
-      <InputControl />
+      <Input />
       <Field.ValidationMessage>
         Enter a valid email address.
       </Field.ValidationMessage>
@@ -57,7 +86,7 @@ export const ReadOnly: Story = {
       <Field.Description>
         We only use your address to send you a receipt.
       </Field.Description>
-      <InputControl />
+      <Input />
     </Field>
   ),
 };
@@ -70,7 +99,7 @@ export const Disabled: Story = {
       <Field.Description>
         We only use your address to send you a receipt.
       </Field.Description>
-      <InputControl />
+      <Input />
     </Field>
   ),
 };
@@ -87,7 +116,7 @@ export const RequiredLabelTag: Story = {
       <Field.Description>
         We only use your address to send you a receipt.
       </Field.Description>
-      <InputControl />
+      <Input required />
     </Field>
   ),
 };
@@ -104,7 +133,7 @@ export const OptionalLabelTag: Story = {
       <Field.Description>
         We only use your address to send you a receipt.
       </Field.Description>
-      <InputControl />
+      <Input />
     </Field>
   ),
 };
