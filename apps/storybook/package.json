@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@storybook/addon-docs": "^10.6.0",
-    "@storybook/addon-mcp": "^0.7.0",
+    "@storybook/addon-mcp": "^10.6.0",
     "@storybook/react-vite": "^10.6.0",
     "@vitejs/plugin-react-swc": "^4.3.3",
     "@whitespace/storybook-addon-html": "^9.0.0",
