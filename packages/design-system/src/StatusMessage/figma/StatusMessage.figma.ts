@@ -8,7 +8,7 @@ const instance = figma.selectedInstance;
 
 const variant = instance.getEnum("variant", {
   Success: "success",
-  Failure: "failure",
+  Critical: "critical",
   Warning: "warning",
   Info: "info",
   Neutral: "neutral",

@@ -66,7 +66,7 @@ export const WithLinks: Story = {
 
 export const ErrorSummary: Story = {
   args: {
-    variant: "failure",
+    variant: "critical",
     role: "alert",
     "aria-live": "assertive",
   },

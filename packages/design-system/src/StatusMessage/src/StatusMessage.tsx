@@ -11,7 +11,7 @@ import type { SizeDensity } from "../../../types";
 import "./status-message.css";
 
 export type StatusMessageVariant =
-  "success" | "failure" | "warning" | "info" | "neutral";
+  "success" | "critical" | "warning" | "info" | "neutral";
 
 export interface StatusMessageProps extends HTMLAttributes<HTMLDivElement> {
   variant?: StatusMessageVariant;
@@ -66,7 +66,7 @@ StatusMessageBody.displayName = "StatusMessage.Body";
 
 const VARIANT_ICON: Record<StatusMessageVariant, ReactNode> = {
   success: <SuccessIcon />,
-  failure: <FailedIcon />,
+  critical: <FailedIcon />,
   warning: <AlertIcon />,
   info: <InfoIcon />,
   neutral: <FeedbackIcon />,

@@ -7,7 +7,7 @@ const componentSelector = ".sd3-status-message";
 
 const variants: StatusMessageVariant[] = [
   "success",
-  "failure",
+  "critical",
   "warning",
   "info",
   "neutral",

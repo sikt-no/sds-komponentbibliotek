@@ -4,7 +4,7 @@ import { StatusMessage, type StatusMessageVariant } from "./StatusMessage";
 
 const variants: StatusMessageVariant[] = [
   "success",
-  "failure",
+  "critical",
   "warning",
   "info",
   "neutral",
@@ -143,7 +143,7 @@ describe("StatusMessage", () => {
       render(
         <StatusMessage
           data-testid="test"
-          variant="failure"
+          variant="critical"
           role="alert"
           aria-live="assertive"
         >
@@ -157,7 +157,7 @@ describe("StatusMessage", () => {
 
     it("should not set role or aria-live by default", () => {
       render(
-        <StatusMessage data-testid="test" variant="failure">
+        <StatusMessage data-testid="test" variant="critical">
           <StatusMessage.Description>Feil</StatusMessage.Description>
         </StatusMessage>,
       );

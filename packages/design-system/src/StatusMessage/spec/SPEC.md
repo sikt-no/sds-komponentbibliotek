@@ -9,16 +9,16 @@
 
 A boxed message that highlights important information (feedback on an action, a form-error summary, or persistent guidance) in a visually contained region separated from the surrounding page content.
 
-Reach for it when a message needs its own container and a semantic tone (success, failure, warning, info, neutral). It is the single component behind the previously separate Alert, Application Status, Error Summary and Guide Panel patterns — consumers compose those experiences by choosing a `variant` and, when needed, adding a `Body` region for buttons, forms or link lists that span the full width.
+Reach for it when a message needs its own container and a semantic tone (success, critical, warning, info, neutral). It is the single component behind the previously separate Alert, Application Status, Error Summary and Guide Panel patterns — consumers compose those experiences by choosing a `variant` and, when needed, adding a `Body` region for buttons, forms or link lists that span the full width.
 
 > **Internal use only.** This section orients readers of the SPEC file (implementers, reviewers). Consumer-facing docs come from the "Documentation text (verbatim from Figma)" section at the bottom.
 
 ## Variant axes
 
-| Axis      | Values                                             | Default    | Figma label mapping                                                      | Notes                                                             |
-| --------- | -------------------------------------------------- | ---------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------- |
-| `variant` | `success`, `failure`, `warning`, `info`, `neutral` | `info`     | Success / Failure / Warning / Info / Neutral (labels already in English) | Drives background, border and icon color + which icon is rendered |
-| `size`    | `standard`, `compact`                              | `standard` | Standard / Compact                                                       | Changes body typography and icon-container top padding            |
+| Axis      | Values                                              | Default    | Figma label mapping                                                       | Notes                                                             |
+| --------- | --------------------------------------------------- | ---------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `variant` | `success`, `critical`, `warning`, `info`, `neutral` | `info`     | Success / Critical / Warning / Info / Neutral (labels already in English) | Drives background, border and icon color + which icon is rendered |
+| `size`    | `standard`, `compact`                               | `standard` | Standard / Compact                                                        | Changes body typography and icon-container top padding            |
 
 ## Interaction states
 
@@ -53,20 +53,20 @@ None. The icon is always chosen by the component from `variant`; consumers do no
 
 ### Internal icons (component renders)
 
-| Icon name      | Where it appears                  | Notes                                                                                                                  |
-| -------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `check-circle` | Icon container, `variant=success` | Glyph color = white (`color/icon/on-strong`)                                                                           |
-| `x-circle`     | Icon container, `variant=failure` | Glyph color = white                                                                                                    |
-| `warning`      | Icon container, `variant=warning` | Glyph color = dark (`color/icon/primary`) for contrast on the yellow "strong" fill                                     |
-| `info`         | Icon container, `variant=info`    | Glyph color = white                                                                                                    |
-| `megaphone`    | Icon container, `variant=neutral` | Glyph color = white; component applies a horizontal mirror transform (Figma renders it with `-scale-y-100 rotate-180`) |
+| Icon name      | Where it appears                   | Notes                                                                                                                  |
+| -------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `check-circle` | Icon container, `variant=success`  | Glyph color = white (`color/icon/on-strong`)                                                                           |
+| `x-circle`     | Icon container, `variant=critical` | Glyph color = white                                                                                                    |
+| `warning`      | Icon container, `variant=warning`  | Glyph color = dark (`color/icon/primary`) for contrast on the yellow "strong" fill                                     |
+| `info`         | Icon container, `variant=info`     | Glyph color = white                                                                                                    |
+| `megaphone`    | Icon container, `variant=neutral`  | Glyph color = white; component applies a horizontal mirror transform (Figma renders it with `-scale-y-100 rotate-180`) |
 
 ## Props / API (proposal)
 
 ```ts
 export interface StatusMessageProps {
   /** Semantic tone of the message. Chooses colors and the internal icon. */
-  variant?: "success" | "failure" | "warning" | "info" | "neutral";
+  variant?: "success" | "critical" | "warning" | "info" | "neutral";
   /** Density. `compact` uses smaller body text and tighter icon alignment. */
   size?: "standard" | "compact";
   /** Optional short heading rendered above the body. */
@@ -84,7 +84,7 @@ Defaults: `variant="info"`, `size="standard"`. The component does not set `role`
 ## Accessibility
 
 - **Semantic element:** a plain container (`<div>`). The component sets no `role` and no `aria-live` — those attributes are the consumer's decision and flow through `...rest`. Guidance for consumers:
-  - `role="alert"` for failure/warning messages that must be announced immediately (implies `aria-live="assertive"`).
+  - `role="alert"` for critical/warning messages that must be announced immediately (implies `aria-live="assertive"`).
   - `role="status"` for success/info/neutral messages that can wait until the user is idle (implies `aria-live="polite"`).
   - Neither for persistent page furniture like a static Guide Panel that should not announce on mount or navigation.
 - **Keyboard:** no keyboard interaction on the container itself.
@@ -99,8 +99,8 @@ Defaults: `variant="info"`, `size="standard"`. The component does not set `role`
 | ----------------------------------------- | ------------- | ------------------------------ | ---------------------------------------------------------- |
 | `color/support/success/subtle`            | `#cff7e2`     | background-color               | root, `variant=success`                                    |
 | `color/support/success/strong`            | `#096638`     | border-color, background-color | root border + icon container, `variant=success`            |
-| `color/support/critical/subtle`           | `#ffeae9`     | background-color               | root, `variant=failure`                                    |
-| `color/support/critical/strong`           | `#b60203`     | border-color, background-color | root border + icon container, `variant=failure`            |
+| `color/support/critical/subtle`           | `#ffeae9`     | background-color               | root, `variant=critical`                                   |
+| `color/support/critical/strong`           | `#b60203`     | border-color, background-color | root border + icon container, `variant=critical`           |
 | `color/support/warning/subtle`            | `#fceed2`     | background-color               | root, `variant=warning`                                    |
 | `color/support/warning/strong`            | `#ffb700`     | border-color, background-color | root border + icon container, `variant=warning`            |
 | `color/support/info/subtle`               | `#e6f0ff`     | background-color               | root, `variant=info`                                       |
@@ -136,14 +136,14 @@ Defaults: `variant="info"`, `size="standard"`. The component does not set `role`
 | Property           | Variants that bind it                                                              | Variants that DON'T                     | Intent (consumer-visible size difference? y/n)                              |
 | ------------------ | ---------------------------------------------------------------------------------- | --------------------------------------- | --------------------------------------------------------------------------- |
 | `border-width`     | all (via `mode-dependent/dynamic-border-weight-01`, resolves to `0` in light mode) | none                                    | n — token resolves uniformly; borders appear in HC mode across all variants |
-| Icon-inner padding | `success`, `failure`, `info`, `neutral` (`layout/padding/01` = 2px all sides)      | `warning` (asymmetric `pt:1 pb:3 px:2`) | n intended — visual centering only. Should not change layout box            |
+| Icon-inner padding | `success`, `critical`, `info`, `neutral` (`layout/padding/01` = 2px all sides)     | `warning` (asymmetric `pt:1 pb:3 px:2`) | n intended — visual centering only. Should not change layout box            |
 
 ## Reference screenshots
 
 Capture from Figma into `packages/design-system/src/StatusMessage/spec/screenshots/`:
 
 - ![variant-success-standard](./screenshots/variant-success-standard.png) — node `25912:1617`
-- ![variant-failure-standard](./screenshots/variant-failure-standard.png) — node `25912:1626`
+- ![variant-critical-standard](./screenshots/variant-critical-standard.png) — node `25912:1626`
 - ![variant-warning-standard](./screenshots/variant-warning-standard.png) — node `31360:1142`
 - ![variant-info-standard](./screenshots/variant-info-standard.png) — node `31360:1156`
 - ![variant-neutral-standard](./screenshots/variant-neutral-standard.png) — node `31406:1571`
@@ -192,7 +192,7 @@ Passer mindre bra til: _Situasjoner der man har kun ett skjemafelt som kan ha fo
 
 > Alerts brukes for å gi umiddelbar tilbakemelding på brukerens handlinger. De bør plasseres i kontekst av handlingen som utføres, og ikke legge seg oppå annet innhold.
 
-> Det finnes 2 typer Alerts, Success og Failure. Success brukes for å gi tilbakemelding om at en handling har blitt utført. Failure brukes for å gi tilbakemelding om at en handling ikke har blitt utført. Den brukes ikke for å gi tilbakemelding om formelle feil.
+> Det finnes 2 typer Alerts, Success og Critical. Success brukes for å gi tilbakemelding om at en handling har blitt utført. Failure brukes for å gi tilbakemelding om at en handling ikke har blitt utført. Den brukes ikke for å gi tilbakemelding om formelle feil.
 
 **Guide panel (fra eksempel 31377:1060):**
 

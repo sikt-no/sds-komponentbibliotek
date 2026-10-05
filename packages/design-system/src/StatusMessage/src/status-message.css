@@ -29,7 +29,7 @@
       --status-message-accent: var(--sd3-color-support-success-strong);
     }
 
-    &[data-variant="failure"] {
+    &[data-variant="critical"] {
       --status-message-background: var(--sd3-color-support-critical-subtle);
       --status-message-accent: var(--sd3-color-support-critical-strong);
     }
