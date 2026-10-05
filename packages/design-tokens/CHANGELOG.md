@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.1.0...@sikt/sd3-design-tokens@0.2.0) (2026-10-05)
+
+### ⚠ BREAKING CHANGES
+
+- **button:** rename theme danger to critical
+- **design-tokens:** update tokens from figma
+
+### Features
+
+- **button:** rename theme danger to critical ([646c825](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/646c825dfcad0c8288d6ce44b4d3dccadebc80ae))
+- **design-tokens:** add tailwind css config ([d13aaf4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d13aaf4fc1537367d5af9a7b88dd68db602a8fbf))
+- **design-tokens:** update tokens from figma ([a56c7a5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a56c7a541ee9c9521e8077ae275fb19aaa28be54))
+
 ## 0.1.0 (2026-09-10)
 
 ### Features
