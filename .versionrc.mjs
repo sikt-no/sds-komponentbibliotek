@@ -1,5 +1,6 @@
 const packageName = process.env.npm_config_package;
-const isSd3 = packageName.startsWith("design-");
+const isSd3 =
+  packageName.startsWith("design-") || packageName.startsWith("sikt-");
 const isConfig = packageName.includes("config");
 const packageSuffix = isConfig ? "-sds" : "";
 let packagePrefix = "";
