@@ -27,12 +27,10 @@ All notable changes to this project will be documented in this file. See [commit
 
 ### Bug Fixes
 
-- **code-connect:** repoint Button/Details to current Figma component sets ([2de065e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2de065e89ee7f657f6f9995870feecece271152f))
 - **deps:** update @sikt/sd3-design-tokens@0.2.0 ([3bc25f6](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3bc25f6d01458ca382c252eccae2e49893b38948))
 - **deps:** update dependency @radix-ui/react-slot to ^1.3.3 ([240ada5](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/240ada5739bff7bcf9b05ccfa4a219c1b31e8f1c))
 - **field:** reference validation message from aria-describedby ([2d22220](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2d2222031627c2392ba36fe4e7d7b4da716d665a))
 - incorrect prefix on css variable focus-box-shadow ([7859c28](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/7859c286324f162fe9092404a426443328b26497))
 - **sd3:** add focus visible box shadow css variable ([774a4a0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/774a4a0b985b8b1dd5276894f188d84e8e4202ad))
 - **sd3:** change types for size & variant ([992da51](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/992da514b9dece9f83a11e873e9df4e538df9862))
-- **sd3:** plop generator template ([cfc1276](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cfc1276c1fb1f49be8cb93432a5c245d52fec026))
 - **status-message:** point Code Connect url at component set node ([f02d3a7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f02d3a740c5a1f90bb0e2c6a020d153e5ecc7896))
