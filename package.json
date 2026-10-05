@@ -32,7 +32,7 @@
     "dev": "run-p dev:astro dev:storybook",
     "dev:astro": "npm run dev --workspace=apps/astro",
     "dev:storybook": "npm run dev --workspace=apps/storybook",
-    "deps:fix": "syncpack fix --dependencies '$LOCAL' --specifier-types range",
+    "deps:fix": "syncpack fix --dependencies '$LOCAL' --specifier-types range && npm i",
     "format": "prettier . --write --ignore-unknown",
     "init": "turbo gen init-package",
     "postinstall": "npm run prebuild --workspaces --if-present",
