@@ -44,7 +44,7 @@
     "build": "tsdown"
   },
   "peerDependencies": {
-    "@sikt/sd3-design-tokens": "^0.1.0",
+    "@sikt/sd3-design-tokens": "^0.2.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "clsx": "^2.1.0",
