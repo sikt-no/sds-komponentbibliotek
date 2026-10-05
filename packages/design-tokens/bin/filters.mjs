@@ -7,7 +7,9 @@ export const isColor = (token) =>
     .category === "color";
 
 export const isButtonColor = (token) =>
-  isColor(token) && token.path[0] === "color" && token.path[1] === "button";
+  isColor(token) &&
+  token.attributes.category === "color" &&
+  token.attributes.type === "button";
 
 export const isFontWeight = (token) =>
   token.$type === "fontWeight" ||

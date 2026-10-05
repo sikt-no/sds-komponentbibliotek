@@ -114,7 +114,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:6fc939bb4736ba28eb9447a82d2182669f2fbf28/-1:-1",
-              "targetVariableName": "color/component/button/danger/primary-subtle/default",
+              "targetVariableName": "color/component/button/critical/primary-subtle/default",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -133,7 +133,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:08fc9d7c3f0f8078e90c4a243e9f584045ca41ca/-1:-1",
-              "targetVariableName": "color/component/button/danger/primary-subtle/hover",
+              "targetVariableName": "color/component/button/critical/primary-subtle/hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -154,7 +154,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:585bb0f375094e094aa362ba0fd578aee2928524/-1:-1",
-              "targetVariableName": "color/component/button/danger/primary-subtle/pressed",
+              "targetVariableName": "color/component/button/critical/primary-subtle/pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -175,7 +175,7 @@
             "com.figma.scopes": ["TEXT_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:da9601ae23b40d2447af8141eca757a9ef0bf630/-1:-1",
-              "targetVariableName": "color/component/button/danger/primary-subtle/text",
+              "targetVariableName": "color/component/button/critical/primary-subtle/text",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -196,7 +196,7 @@
             "com.figma.scopes": ["TEXT_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:373ac506f9edd1f38ef92dee1967ccbcaa95cc0a/-1:-1",
-              "targetVariableName": "color/component/button/danger/primary-subtle/text-hover",
+              "targetVariableName": "color/component/button/critical/primary-subtle/text-hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -215,7 +215,7 @@
             "com.figma.scopes": ["TEXT_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:53a1c8fce6a89a8f7a7100609c0290c0fb7fa383/-1:-1",
-              "targetVariableName": "color/component/button/danger/primary-subtle/text-pressed",
+              "targetVariableName": "color/component/button/critical/primary-subtle/text-pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -236,7 +236,7 @@
             "com.figma.scopes": ["SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:0ae079f77077c1b587973791eca28f1981f64c76/-1:-1",
-              "targetVariableName": "color/component/button/danger/primary-subtle/icon",
+              "targetVariableName": "color/component/button/critical/primary-subtle/icon",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -257,7 +257,7 @@
             "com.figma.scopes": ["SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:2325ca2784c65f4c4bf3c58fba65d1533d3c8793/-1:-1",
-              "targetVariableName": "color/component/button/danger/primary-subtle/icon-hover",
+              "targetVariableName": "color/component/button/critical/primary-subtle/icon-hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -276,7 +276,7 @@
             "com.figma.scopes": ["SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:1383614b7b36c0d0638479907292acc573cb3d2f/-1:-1",
-              "targetVariableName": "color/component/button/danger/primary-subtle/icon-pressed",
+              "targetVariableName": "color/component/button/critical/primary-subtle/icon-pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -316,7 +316,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:b74760939326a6e4574a68fc2a139eee8047e570/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/hover",
+              "targetVariableName": "color/component/button/critical/secondary/hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -337,7 +337,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:a9f3575810f02a473f566e443dd72d7637681de2/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/pressed",
+              "targetVariableName": "color/component/button/critical/secondary/pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -358,7 +358,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:c63f70145f05cc556ebd9689e245be34ef5b9e6c/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/border",
+              "targetVariableName": "color/component/button/critical/secondary/border",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -379,7 +379,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:b169e65fea78268be159b4258a205124e2fbd4c1/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/border-hover",
+              "targetVariableName": "color/component/button/critical/secondary/border-hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -398,7 +398,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:fd90d5fbcf6c5bc80220f3e0516b898fa596704c/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/border-pressed",
+              "targetVariableName": "color/component/button/critical/secondary/border-pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -419,7 +419,7 @@
             "com.figma.scopes": ["TEXT_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:4b308c3dc331836761e92ef013610b3b0761b273/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/text",
+              "targetVariableName": "color/component/button/critical/secondary/text",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -440,7 +440,7 @@
             "com.figma.scopes": ["TEXT_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:264a4d8745a2dd3102311222de62f9cbf81307ba/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/text-hover",
+              "targetVariableName": "color/component/button/critical/secondary/text-hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -459,7 +459,7 @@
             "com.figma.scopes": ["TEXT_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:ce0aa79655d001ed896f9ecd8a79a168d8f12dd1/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/text-pressed",
+              "targetVariableName": "color/component/button/critical/secondary/text-pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -480,7 +480,7 @@
             "com.figma.scopes": ["SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:9ea95a9a6af49581f9a69e2575cfdae962cb627f/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/icon",
+              "targetVariableName": "color/component/button/critical/secondary/icon",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -501,7 +501,7 @@
             "com.figma.scopes": ["SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:8c3442b99aac0d7ce139fdc2b74bb4f74b7dad26/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/icon-hover",
+              "targetVariableName": "color/component/button/critical/secondary/icon-hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -520,7 +520,7 @@
             "com.figma.scopes": ["SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:66cccd1c1233939b4c27cae2b8d3e392a1716f0b/-1:-1",
-              "targetVariableName": "color/component/button/danger/secondary/icon-pressed",
+              "targetVariableName": "color/component/button/critical/secondary/icon-pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -541,7 +541,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:ffad36d80e3efede7086aeff2a809f32e0f180cc/-1:-1",
-              "targetVariableName": "color/component/button/danger/tertiary/default",
+              "targetVariableName": "color/component/button/critical/tertiary/default",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -560,7 +560,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:76a5498a4f7c2a8be23d812036da9e6ad2663e62/-1:-1",
-              "targetVariableName": "color/component/button/danger/tertiary/hover",
+              "targetVariableName": "color/component/button/critical/tertiary/hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -581,7 +581,7 @@
             "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:b433599b4f3163348f0ec9515c37731d922c74f6/-1:-1",
-              "targetVariableName": "color/component/button/danger/tertiary/pressed",
+              "targetVariableName": "color/component/button/critical/tertiary/pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -602,7 +602,7 @@
             "com.figma.scopes": ["TEXT_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:c2a4fcb359c6d5c2b82b8158bff22536d922bf37/-1:-1",
-              "targetVariableName": "color/component/button/danger/tertiary/text",
+              "targetVariableName": "color/component/button/critical/tertiary/text",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -623,7 +623,7 @@
             "com.figma.scopes": ["TEXT_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:d8f473efde2af77fed001cecafd762637d051a0d/-1:-1",
-              "targetVariableName": "color/component/button/danger/tertiary/text-hover",
+              "targetVariableName": "color/component/button/critical/tertiary/text-hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -642,7 +642,7 @@
             "com.figma.scopes": ["TEXT_FILL"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:da61b6b7612f437de2a79b9e62fb99bbb1a30b48/-1:-1",
-              "targetVariableName": "color/component/button/danger/tertiary/text-pressed",
+              "targetVariableName": "color/component/button/critical/tertiary/text-pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -663,7 +663,7 @@
             "com.figma.scopes": ["SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:4b63333e41f62381d38067acc3663386177ada88/-1:-1",
-              "targetVariableName": "color/component/button/danger/tertiary/icon",
+              "targetVariableName": "color/component/button/critical/tertiary/icon",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -684,7 +684,7 @@
             "com.figma.scopes": ["SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:6c27f54dac252c8f70a15811b7e969cacbade640/-1:-1",
-              "targetVariableName": "color/component/button/danger/tertiary/icon-hover",
+              "targetVariableName": "color/component/button/critical/tertiary/icon-hover",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -703,7 +703,7 @@
             "com.figma.scopes": ["SHAPE_FILL", "STROKE"],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:be76a0857dcf906b77fbb6e29e2ca413c48c2d79/-1:-1",
-              "targetVariableName": "color/component/button/danger/tertiary/icon-pressed",
+              "targetVariableName": "color/component/button/critical/tertiary/icon-pressed",
               "targetVariableSetId": "VariableCollectionId:5a931999849f8b9754f0fa2f686337c31be0b39e/-1:-1",
               "targetVariableSetName": "color-themes"
             }
@@ -711,7 +711,7 @@
         }
       },
       "$extensions": {
-        "com.figma.modeName": "danger"
+        "com.figma.modeName": "critical"
       }
     }
   }

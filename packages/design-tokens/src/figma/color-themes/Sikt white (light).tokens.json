@@ -1134,30 +1134,6 @@
           }
         }
       },
-      "toggle": {
-        "handle": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.3960784375667572, 0.3960784375667572, 0.3960784375667572
-            ],
-            "alpha": 1,
-            "hex": "#656565"
-          },
-          "$extensions": {
-            "com.figma.variableId": "VariableID:30160:34",
-            "com.figma.hiddenFromPublishing": true,
-            "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"],
-            "com.figma.aliasData": {
-              "targetVariableId": "VariableID:8fe70c80be410d31ef8d6233e344a3c96854bfee/-1:-1",
-              "targetVariableName": "color-primitives/neutral/600",
-              "targetVariableSetId": "VariableCollectionId:87e4feb60dc51b2c8e135186a51eb5f4905cba87/-1:-1",
-              "targetVariableSetName": "foundation"
-            }
-          }
-        }
-      },
       "message": {
         "hover": {
           "$type": "color",
@@ -1364,6 +1340,50 @@
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:bdb2f347d30e1c843a439fd8f49a506f308a98e7/-1:-1",
               "targetVariableName": "color-primitives/blue/100",
+              "targetVariableSetId": "VariableCollectionId:87e4feb60dc51b2c8e135186a51eb5f4905cba87/-1:-1",
+              "targetVariableSetName": "foundation"
+            }
+          }
+        }
+      },
+      "neutral": {
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.30000001192092896, 0.30000001192092896, 0.30000001192092896
+            ],
+            "alpha": 1,
+            "hex": "#4D4D4D"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:31450:2614",
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:37ce228c07c420d2decb8f7412e02ae5b954435d/-1:-1",
+              "targetVariableName": "color-primitives/neutral/700",
+              "targetVariableSetId": "VariableCollectionId:87e4feb60dc51b2c8e135186a51eb5f4905cba87/-1:-1",
+              "targetVariableSetName": "foundation"
+            }
+          }
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9450980424880981, 0.9450980424880981, 0.9450980424880981
+            ],
+            "alpha": 1,
+            "hex": "#F1F1F1"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:31450:2615",
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1a7b2c4c33cbae0bbb973765ef208b29ca3a1818/-1:-1",
+              "targetVariableName": "color-primitives/neutral/200",
               "targetVariableSetId": "VariableCollectionId:87e4feb60dc51b2c8e135186a51eb5f4905cba87/-1:-1",
               "targetVariableSetName": "foundation"
             }
@@ -1917,6 +1937,30 @@
       }
     },
     "component": {
+      "toggle": {
+        "handle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3960784375667572, 0.3960784375667572, 0.3960784375667572
+            ],
+            "alpha": 1,
+            "hex": "#656565"
+          },
+          "$description": "Denne skal kun brukes for toggle handle, ingenting annet.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:30160:34",
+            "com.figma.scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE"],
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:8fe70c80be410d31ef8d6233e344a3c96854bfee/-1:-1",
+              "targetVariableName": "color-primitives/neutral/600",
+              "targetVariableSetId": "VariableCollectionId:87e4feb60dc51b2c8e135186a51eb5f4905cba87/-1:-1",
+              "targetVariableSetName": "foundation"
+            }
+          }
+        }
+      },
       "category": {
         "strong": {
           "1": {
@@ -2985,7 +3029,7 @@
             }
           }
         },
-        "danger": {
+        "critical": {
           "primary-subtle": {
             "default": {
               "$type": "color",
