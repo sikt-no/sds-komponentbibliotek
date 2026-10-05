@@ -13,7 +13,7 @@ const COLOR_THEMES_DIR = fileURLToPath(
 const BASE_FILE = "main.tokens.json";
 const MODE_FILES = {
   neutral: "neutral.tokens.json",
-  danger: "danger.tokens.json",
+  critical: "critical.tokens.json",
 };
 // The button-theme JSONs alias into `color-themes`. We use `Sikt dark` as the
 // dark-mode source; light values come from the button-theme file directly (they

@@ -9,7 +9,7 @@ const variants = [
   "secondary",
   "tertiary",
 ] as const;
-const themes = ["main", "neutral", "danger"] as const;
+const themes = ["main", "neutral", "critical"] as const;
 const sizes = ["large", "medium", "small"] as const;
 
 describe("Button", () => {

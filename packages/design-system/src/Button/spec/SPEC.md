@@ -13,11 +13,11 @@ Reach for it whenever a user needs to invoke an action, submit a form, or advanc
 
 ## Variant axes
 
-| Axis    | Values                                               | Default   | Figma label mapping                      | Notes                                                                                                          |
-| ------- | ---------------------------------------------------- | --------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| variant | `primary`, `primary-subtle`, `secondary`, `tertiary` | `primary` | `Primary-subtle` → `primary-subtle`      | Controls fill / border / text tokens. Layout is identical across variants.                                     |
-| theme   | `main`, `neutral`, `danger`                          | `main`    | `Fare` → `danger`, `Nøytral` → `neutral` | Swaps the color palette via variable modes; token _names_ stay the same. Use `danger` for destructive actions. |
-| size    | `large`, `medium`, `small`                           | `medium`  |                                          | Controls height (48 / 40 / 32 px) via padding + line-height. Border radius is `999px` (pill) for all sizes.    |
+| Axis    | Values                                               | Default   | Figma label mapping                        | Notes                                                                                                            |
+| ------- | ---------------------------------------------------- | --------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| variant | `primary`, `primary-subtle`, `secondary`, `tertiary` | `primary` | `Primary-subtle` → `primary-subtle`        | Controls fill / border / text tokens. Layout is identical across variants.                                       |
+| theme   | `main`, `neutral`, `critical`                        | `main`    | `Fare` → `critical`, `Nøytral` → `neutral` | Swaps the color palette via variable modes; token _names_ stay the same. Use `critical` for destructive actions. |
+| size    | `large`, `medium`, `small`                           | `medium`  |                                            | Controls height (48 / 40 / 32 px) via padding + line-height. Border radius is `999px` (pill) for all sizes.      |
 
 ## Interaction states
 
@@ -66,8 +66,8 @@ The Button takes label text as `children` and pairs it with an optional `Button.
 export interface ButtonProps {
   /** Visual emphasis. Use `primary` for the main call-to-action; `subtle` / `secondary` / `tertiary` step down in emphasis. */
   variant?: "primary" | "primary-subtle" | "secondary" | "tertiary";
-  /** Semantic theme — swaps the color palette. Use `danger` for destructive actions. */
-  theme?: "main" | "neutral" | "danger";
+  /** Semantic theme — swaps the color palette. Use `critical` for destructive actions. */
+  theme?: "main" | "neutral" | "critical";
   /** Height. `large` (48px), `medium` (40px, default), `small` (32px). */
   size?: "large" | "medium" | "small";
   /** Label text and/or `Button.Icon`. Icon position is determined by DOM order. When the only children are `Button.Icon`s, the button collapses to a circle. */
@@ -114,7 +114,7 @@ Usage:
 
 Record what Figma binds. Whether these tokens exist in the SD3 CSS catalog, and what to do about hardcoded values, is `implement-component-spec`'s call.
 
-Values below are the **`main` theme** palette. `neutral` and `danger` themes use the same token names with different raw values — see Open questions.
+Values below are the **`main` theme** palette. `neutral` and `critical` themes use the same token names with different raw values — see Open questions.
 
 ### Figma-bound tokens
 
@@ -176,7 +176,7 @@ Capture these node groupings from Figma manually and save them to `spec/screensh
 - `icon-only.png` — icon-only variants at all three sizes (should render as circles)
 - `focus-ring.png` — Large Primary with focus overlay visible
 - `theme-neutral.png` — Large Primary at `data-button-theme="neutral"`
-- `theme-danger.png` — Large Primary at `data-button-theme="danger"`
+- `theme-critical.png` — Large Primary at `data-button-theme="critical"`
 
 ## Open questions & gaps
 

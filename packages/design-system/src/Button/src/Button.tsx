@@ -6,7 +6,7 @@ import "./button.css";
 export type ButtonVariant =
   "primary" | "primary-subtle" | "secondary" | "tertiary";
 
-export type ButtonTheme = "main" | "neutral" | "danger";
+export type ButtonTheme = "main" | "neutral" | "critical";
 
 export type ButtonSize = "large" | "medium" | "small";
 
@@ -18,7 +18,7 @@ type CommonButtonProps = Omit<
   asChild?: boolean;
   /** Visual emphasis. */
   variant?: ButtonVariant;
-  /** Colour palette. Use `danger` for destructive actions. */
+  /** Colour palette. Use `critical` for destructive actions. */
   theme?: ButtonTheme;
   /** Visual size. */
   size?: ButtonSize;

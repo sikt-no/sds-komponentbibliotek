@@ -10,7 +10,7 @@ const variants: ButtonVariant[] = [
   "secondary",
   "tertiary",
 ];
-const themes: ButtonTheme[] = ["main", "neutral", "danger"];
+const themes: ButtonTheme[] = ["main", "neutral", "critical"];
 const sizes: ButtonSize[] = ["large", "medium", "small"];
 
 test.describe("Button", () => {
