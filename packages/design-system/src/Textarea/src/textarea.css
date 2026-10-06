@@ -1,0 +1,61 @@
+@scope (.sd3-textarea) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --textarea-background: var(--sd3-color-surface-default-1);
+    --textarea-border-width: var(--sd3-space-border-weight-025);
+    --textarea-border-color: var(--sd3-color-border-strong);
+    --textarea-color: var(--sd3-color-text-primary);
+    --textarea-placeholder-color: var(--sd3-color-text-secondary);
+
+    background-color: var(--textarea-background);
+    border: none;
+    border-radius: var(--sd3-space-border-radius-100);
+    box-shadow: inset 0 0 0 var(--textarea-border-width)
+      var(--textarea-border-color);
+    box-sizing: border-box;
+    color: var(--textarea-color);
+    display: block;
+    font-size: var(--sd3-typography-size-text-body-lg);
+    line-height: var(--sd3-typography-line-height-text-body-lg);
+    padding: var(--sd3-space-component-200) var(--sd3-space-component-300);
+    resize: vertical;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--textarea-placeholder-color);
+      opacity: 1;
+    }
+
+    @media (pointer: fine) {
+      &:hover:not(:disabled, [readonly]) {
+        --textarea-border-width: var(--sd3-space-border-weight-050);
+      }
+    }
+
+    &:focus {
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+      box-shadow:
+        inset 0 0 0 var(--textarea-border-width) var(--textarea-border-color),
+        var(--sd3-focus-box-shadow);
+    }
+
+    &:focus:not(:placeholder-shown) {
+      --textarea-background: var(--sd3-color-surface-default-2);
+    }
+
+    &:disabled {
+      --textarea-border-color: var(--sd3-color-border-disabled);
+      --textarea-color: var(--sd3-color-text-disabled);
+      --textarea-placeholder-color: var(--sd3-color-text-disabled);
+    }
+
+    &[readonly] {
+      --textarea-background: var(--sd3-color-surface-default-2);
+    }
+
+    &[aria-invalid="true"] {
+      --textarea-background: var(--sd3-color-support-critical-subtle);
+      --textarea-border-color: var(--sd3-color-border-critical);
+    }
+  }
+}
