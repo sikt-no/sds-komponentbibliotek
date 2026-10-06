@@ -12,20 +12,22 @@ npm i -s @sikt/sd3-design-system
 
 ```jsx
 import { Avatar } from "@sikt/sd3-design-system";
-import "@sikt/sd3-design-system/dist/index.css";
 
 <Avatar initials="AL" aria-label="Ada Lovelace" />;
 ```
 
 See Storybook for the photo, initials, and `asChild` variants.
 
-### Stylesheets & custom markup
+### Stylesheets
 
 Import stylesheet:
 
 ```css
-@import url("@sikt/sd3-design-system");
+@layer sd3 /*, my-own-more-specific-layer */;
+@import url("@sikt/sd3-design-system") layer(sd3);
 ```
+
+### Custom markup
 
 ```html
 <!-- see html example in Storybook -->

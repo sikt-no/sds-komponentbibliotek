@@ -14,7 +14,6 @@ npm i -s @sikt/sd3-design-system
 
 ```tsx
 import { Tag } from "@sikt/sd3-design-system";
-import "@sikt/sd3-design-system/dist/index.css";
 
 <Tag color="brand">Ny</Tag>;
 <Tag color="category-3" visibility="strong">
@@ -22,11 +21,16 @@ import "@sikt/sd3-design-system/dist/index.css";
 </Tag>;
 ```
 
-### Stylesheets & custom markup
+### Stylesheets
+
+Import stylesheet:
 
 ```css
-@import url("@sikt/sd3-design-system");
+@layer sd3 /*, my-own-more-specific-layer */;
+@import url("@sikt/sd3-design-system") layer(sd3);
 ```
+
+### Custom markup
 
 ```html
 <!-- see html example in Storybook -->

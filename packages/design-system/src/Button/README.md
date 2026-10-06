@@ -10,20 +10,20 @@ npm i -s @sikt/sd3-design-system
 
 ```js
 import { Button } from "@sikt/sd3-design-system";
-import "@sikt/sd3-design-system/dist/index.css";
 
 <Button>Hello, World!</Button>;
 ```
 
-### Stylesheets & custom markup
+### Stylesheets
 
 Import stylesheet:
 
 ```css
-@import url("@sikt/sd3-design-system");
+@layer sd3 /*, my-own-more-specific-layer */;
+@import url("@sikt/sd3-design-system") layer(sd3);
 ```
 
-Create custom markup:
+### Custom markup
 
 ```html
 <!-- see html example in Storybook -->

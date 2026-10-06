@@ -14,7 +14,6 @@ npm i -s @sikt/sd3-design-system
 
 ```tsx
 import { TagStatus } from "@sikt/sd3-design-system";
-import "@sikt/sd3-design-system/dist/index.css";
 
 <TagStatus variant="success">Bekreftet</TagStatus>;
 <TagStatus variant="critical" visibility="strong">
@@ -22,11 +21,16 @@ import "@sikt/sd3-design-system/dist/index.css";
 </TagStatus>;
 ```
 
-### Stylesheets & custom markup
+### Stylesheets
+
+Import stylesheet:
 
 ```css
-@import url("@sikt/sd3-design-system");
+@layer sd3 /*, my-own-more-specific-layer */;
+@import url("@sikt/sd3-design-system") layer(sd3);
 ```
+
+### Custom markup
 
 ```html
 <!-- see html example in Storybook -->

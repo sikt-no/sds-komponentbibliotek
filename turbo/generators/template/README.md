@@ -10,22 +10,20 @@ npm i -s @sikt/sd3-design-system
 
 ```js
 import { {{pascalCase name}} } from "@sikt/sd3-design-system";
-/** 
- * NOTE: Importing CSS in JS is usually not a good idea,
- * see example for Stylesheets for how to import it into CSS
- */
-import "@sikt/sd3-design-system/dist/index.css";
 
 /* jsx example goes here */
 ```
 
-### Stylesheets & custom markup
+### Stylesheets
 
 Import stylesheet:
 
 ```css
-@import url("@sikt/sd3-design-system");
+@layer sd3 /*, my-own-more-specific-layer */;
+@import url("@sikt/sd3-design-system") layer(sd3);
 ```
+
+### Custom markup
 
 Create custom markup:
 

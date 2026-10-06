@@ -12,7 +12,6 @@ npm i -s @sikt/sd3-design-system
 
 ```tsx
 import { Details } from "@sikt/sd3-design-system";
-import "@sikt/sd3-design-system/dist/index.css";
 
 export const Faq = () => (
   <>
@@ -30,15 +29,16 @@ export const Faq = () => (
 );
 ```
 
-### Stylesheets & custom markup
+### Stylesheets
 
 Import stylesheet:
 
 ```css
-@import url("@sikt/sd3-design-system");
+@layer sd3 /*, my-own-more-specific-layer */;
+@import url("@sikt/sd3-design-system") layer(sd3);
 ```
 
-Create custom markup:
+### Custom markup
 
 ```html
 <!-- see html example in Storybook -->

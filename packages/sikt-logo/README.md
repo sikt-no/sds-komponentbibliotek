@@ -12,12 +12,20 @@ npm i -s @sikt/sd3-sikt-logo
 
 ```js
 import { Logo } from "@sikt/sd3-sikt-logo";
-import "@sikt/sd3-sikt-logo/dist/index.css";
 
 <Logo />;
 ```
 
 Supported languages: Norwegian Bokmål (nb), Norwegian Nynorsk (nn), English (en), Northern Sámi (se), Lule Sámi (smj), Southern Sámi (sma), Kven (fkv).
+
+### Stylesheets
+
+Import stylesheet:
+
+```css
+@layer sd3 /*, my-own-more-specific-layer */;
+@import url("@sikt/sd3-sikt-logo") layer(sd3);
+```
 
 ### Favicon
 
