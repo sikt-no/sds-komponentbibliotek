@@ -6,6 +6,7 @@
 - [Consume](#consume)
   - [Stylesheet](#stylesheet)
   - [React](#react)
+  - [Web Application Manifest](#web-application-manifest)
   - [Tailwind CSS](#tailwind-css)
 - [Color Scheme](#color-scheme)
   - [CSS](#css-color-scheme)
@@ -29,7 +30,7 @@ npm i -s @sikt/sd3-design-tokens
 @layer sd3, my-own-more-specific-layer;
 @import url("@sikt/sd3-design-tokens") layer(sd3);
 
-@scope (.my-component) {
+@scope (.my-component) to ([class^="sd3-"]) {
   :scope {
     color: var(--sd3-color-brand-primary-strong);
   }
@@ -46,6 +47,20 @@ import tokens from "@sikt/sd3-design-tokens";
 <MyComponent style={{ color: tokens.color.brand.primary.strong.$value }}>
   Hello, World!
 </MyComponent>;
+```
+
+### Web Application Manifest
+
+```js
+import tokens from "@sikt/sd3-design-tokens";
+
+export function GET() {
+  const manifest = {
+    background_color: tokens.color.background.default.$value,
+    theme_color: tokens.color.brand["primary-strong"].$value,
+  };
+  return new Response(JSON.stringify({ manifest }));
+}
 ```
 
 ### Tailwind CSS

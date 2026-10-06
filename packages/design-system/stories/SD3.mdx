@@ -18,10 +18,12 @@ import { Meta } from "@storybook/addon-docs/blocks";
   <summary>Table of Contents</summary>
   
   - [Consume](#consume)
+    - [Getting started]
     - [Stylesheets, Design Tokens & React](#stylesheets--design-tokens--react)
       - [Stylesheets & Design Tokens](#stylesheets--design-tokens)
       - [React components](#react-components)
     - [Design Tokens](#design-tokens)
+    - [Icons](#icons)
     - [Vue](#vue)
     - [Agents](#agents)
   - [Examples](#examples)
@@ -33,6 +35,14 @@ import { Meta } from "@storybook/addon-docs/blocks";
 </details>
 
 ## Consume
+
+### Getting started
+
+Fast setup with the packages you probably need:
+
+```sh
+npm i -s @sikt/sd3-design-system @sikt/sd3-design-tokens @sikt/sd3-sikt-logo @sikt/sds-icons
+```
 
 ### Stylesheets, Design Tokens & React
 
@@ -62,7 +72,6 @@ Import component & stylesheet:
 
 ```jsx
 import { Button } from "@sikt/sd3-design-system";
-import "@sikt/sd3-design-system/dist/index.css";
 
 return (
   <Button variant="primary">Hello, World!</Button>;
@@ -76,6 +85,20 @@ See [@sikt/sd3-design-tokens](./packages/design-tokens/README.md)
 ```sh
 npm i -s @sikt/sd3-design-tokens
 ```
+
+This package may be needed to import Design Tokens into JavaScript files, like a `manifest.webmanifest`.
+
+### Icons
+
+See [@sikt/sds-icons](./packages/icons/README.md)
+
+```sh
+npm i -s @sikt/sds-icons
+```
+
+### Font
+
+See [@sikt/sd3-design-system](./packages/design-system/README.md#font)
 
 ### Vue
 
