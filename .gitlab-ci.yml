@@ -5,15 +5,15 @@ default:
     expire_in: 1 days
 
 include:
-  - component: gitlab.sikt.no/platon/ci-components/docker/docker@v4.0.1
+  - component: $CI_SERVER_FQDN/platon/ci-components/docker/docker@v4.0.1
     inputs:
       image: $CI_REGISTRY_IMAGE
       image-tag: $CI_REGISTRY_TAG
-  - component: gitlab.sikt.no/platon/ci-components/imagescan/imagescan@4.1.1
+  - component: $CI_SERVER_FQDN/platon/ci-components/imagescan/imagescan@4.1.1
     inputs:
       image: $CI_REGISTRY_IMAGE
       image-tag: $CI_REGISTRY_TAG
-  - component: gitlab.sikt.no/platon/ci-components/deploy/deploy@2.0.8
+  - component: $CI_SERVER_FQDN/platon/ci-components/deploy/deploy@2.0.8
     inputs:
       prod-domain: "designsystem.sikt.no"
       test-id: "komponentbibliotek"
