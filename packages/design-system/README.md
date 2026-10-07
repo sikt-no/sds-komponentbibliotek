@@ -9,6 +9,7 @@
 - [Link](#link)
 - [Design Tokens](#design-tokens)
 - [Font](#font)
+  - [Content Security Policy (CSP)](#content-security-policy-csp)
 - [Migration from SDS](#migration-from-sds)
 - [License](#space-theme)
 
@@ -50,6 +51,14 @@ import "@sikt/sd3-design-system/dist/index.css";
 ## Font
 
 Sikt uses Haffer as font-family. The license doesn't allow for distribution from other domians than our CDN (static.sikt.no) so do not copy or publish it.
+
+### Content Security Policy (CSP)
+
+To allow fetching of this resource you need to add it to your CSPs `font-src`:
+
+```http
+font-src 'self' https://static.sikt.no/;
+```
 
 ## Migration from SDS
 
