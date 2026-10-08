@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import StyleDictionary from "style-dictionary";
 import { prefix } from "./config.mjs";
@@ -83,7 +83,7 @@ const logLevel = "default";
 const cssFiles = [
   {
     format: "css/variables",
-    destination: "css/tokens.css",
+    destination: "css/index.css",
     filter: withPublishing(
       (token) =>
         !isColor(token) && !isSizeRelative(token) && !isTypography(token),
@@ -176,15 +176,15 @@ const dictionaryTokens = new StyleDictionary({
 
 await dictionaryTokens.buildAllPlatforms();
 
-const indexCss =
-  `/**
- * Do not edit directly, this file was auto-generated.
- */
+const indexCssPath = path.join(buildPath, "css/index.css");
 
-` +
-  cssFiles
-    .map((file) => `@import url("./${path.basename(file.destination)}");`)
-    .join("\n") +
-  "\n";
+const imports = cssFiles
+  .map((file) => path.basename(file.destination))
+  .filter((name) => name !== "index.css")
+  .map((name) => `@import url("./${name}");`)
+  .join("\n");
 
-writeFileSync(path.join(buildPath, "css/index.css"), indexCss);
+writeFileSync(
+  indexCssPath,
+  `${imports}\n\n${readFileSync(indexCssPath, "utf8")}`,
+);
