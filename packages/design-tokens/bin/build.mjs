@@ -143,17 +143,17 @@ const dictionaryTokens = new StyleDictionary({
       files: [
         {
           format: "javascript/module",
-          destination: "js/tokens.js",
+          destination: "js/index.js",
           filter: isHiddenFromPublishing,
         },
         {
           format: "format/typescript/accurate-module-declarations",
-          destination: "js/tokens.d.ts",
+          destination: "js/index.d.ts",
           filter: isHiddenFromPublishing,
         },
         {
           format: "javascript/esm",
-          destination: "js/tokens.mjs",
+          destination: "js/index.mjs",
           filter: isHiddenFromPublishing,
         },
       ],

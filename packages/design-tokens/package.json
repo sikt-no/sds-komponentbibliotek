@@ -10,23 +10,23 @@
     "directory": "packages/design-tokens"
   },
   "type": "commonjs",
-  "main": "dist/js/tokens.js",
-  "module": "dist/js/tokens.mjs",
+  "main": "dist/js/index.js",
+  "module": "dist/js/index.mjs",
   "exports": {
     ".": {
       "style": "./dist/css/index.css",
       "import": {
-        "types": "./dist/js/tokens.d.ts",
-        "default": "./dist/js/tokens.mjs"
+        "types": "./dist/js/index.d.ts",
+        "default": "./dist/js/index.mjs"
       },
       "require": {
-        "types": "./dist/js/tokens.d.ts",
-        "default": "./dist/js/tokens.js"
+        "types": "./dist/js/index.d.ts",
+        "default": "./dist/js/index.js"
       }
     },
     "./dist/*": "./dist/*"
   },
-  "types": "dist/js/tokens.d.ts",
+  "types": "dist/js/index.d.ts",
   "style": "dist/css/index.css",
   "files": [
     "CHANGELOG.md",
