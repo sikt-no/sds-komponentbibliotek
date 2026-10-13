@@ -47,7 +47,6 @@ test.describe("Details", () => {
         "/iframe.html?viewMode=story&id=sds-components-details--accordion",
       );
 
-      // eslint-disable-next-line testing-library/prefer-screen-queries
       await expect(page.getByTestId("test")).toHaveScreenshot();
     });
   });

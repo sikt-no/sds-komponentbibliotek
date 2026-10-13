@@ -131,7 +131,7 @@ export default [
     files: [
       "**/jest.*.[jt]s?(x)",
       "**/__tests__/**/*.[jt]s?(x)",
-      "**/?(*.)+(spec|test).[jt]s?(x)",
+      "**/?(*.)+(test).[jt]s?(x)",
     ],
     ...jest.configs["flat/recommended"],
   },
@@ -139,7 +139,7 @@ export default [
     files: [
       "**/jest.*.[jt]s?(x)",
       "**/__tests__/**/*.[jt]s?(x)",
-      "**/?(*.)+(spec|test).[jt]s?(x)",
+      "**/?(*.)+(test).[jt]s?(x)",
     ],
     ...testingLibrary.configs["flat/react"],
   },
@@ -161,7 +161,7 @@ export default [
     files: [
       "**/jest.*.[jt]s?(x)",
       "**/__tests__/**/*.[jt]s?(x)",
-      "**/?(*.)+(spec|test).[jt]s?(x)",
+      "**/?(*.)+(test).[jt]s?(x)",
     ],
 
     rules: {
