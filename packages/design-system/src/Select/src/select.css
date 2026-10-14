@@ -1,0 +1,121 @@
+@scope (.sd3-select) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --select-background: var(--sd3-color-surface-default-1);
+    --select-border-width: var(--sd3-space-border-weight-025);
+    --select-border-color: var(--sd3-color-border-strong);
+    --select-color: var(--sd3-color-text-primary);
+    --select-caret-color: var(--sd3-color-icon-secondary);
+    --select-caret-size: 1.25rem;
+    --select-caret-inline-pad: var(--sd3-space-component-200);
+    --select-padding-block: var(--sd3-space-component-200);
+    --select-padding-inline-start: var(--sd3-space-component-300);
+    --select-padding-inline-end: calc(
+      var(--select-caret-inline-pad) + var(--select-caret-size) +
+        var(--select-caret-inline-pad)
+    );
+    --select-font-size: var(--sd3-typography-size-text-body-md);
+    --select-line-height: var(--sd3-typography-line-height-text-body-md);
+
+    display: inline-grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    width: 100%;
+
+    [data-part="control"] {
+      appearance: none;
+      background-color: var(--select-background);
+      background-image: none;
+      border: none;
+      border-radius: var(--sd3-space-border-radius-100);
+      box-shadow: inset 0 0 0 var(--select-border-width)
+        var(--select-border-color);
+      box-sizing: border-box;
+      color: var(--select-color);
+      cursor: pointer;
+      font-size: var(--select-font-size);
+      font-weight: var(--sd3-typography-weight-regular);
+      grid-column: 1 / -1;
+      grid-row: 1;
+      line-height: var(--select-line-height);
+      min-width: 0;
+      padding-block: var(--select-padding-block);
+      padding-inline: var(--select-padding-inline-start)
+        var(--select-padding-inline-end);
+      width: 100%;
+    }
+
+    [data-part="caret"] {
+      align-items: center;
+      color: var(--select-caret-color);
+      display: flex;
+      font-size: var(--select-caret-size);
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+      line-height: 1;
+      margin-inline-end: var(--select-caret-inline-pad);
+      pointer-events: none;
+    }
+
+    @media (pointer: fine) {
+      &:has(
+        [data-part="control"]:hover:not(:disabled, [aria-readonly="true"])
+      ) {
+        --select-border-width: var(--sd3-space-border-weight-050);
+      }
+    }
+
+    &:has([data-part="control"]:focus:not([aria-readonly="true"])) {
+      --select-background: var(--sd3-color-surface-default-2);
+      --select-border-width: var(--sd3-space-border-weight-050);
+    }
+
+    &:has([data-part="control"][aria-readonly="true"]) {
+      --select-background: var(--sd3-color-background-default);
+    }
+
+    [data-part="control"]:focus {
+      outline: none;
+    }
+
+    [data-part="control"]:focus-visible {
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+      box-shadow:
+        inset 0 0 0 var(--select-border-width) var(--select-border-color),
+        var(--sd3-focus-box-shadow);
+    }
+
+    &:has([data-part="control"]:disabled) {
+      --select-border-color: var(--sd3-color-border-disabled);
+      --select-color: var(--sd3-color-text-disabled);
+      --select-caret-color: var(--sd3-color-icon-disabled);
+    }
+
+    [data-part="control"]:disabled {
+      cursor: not-allowed;
+    }
+
+    &:has([data-part="control"][aria-invalid="true"]) {
+      --select-background: var(--sd3-color-support-critical-subtle);
+      --select-border-color: var(--sd3-color-border-critical);
+    }
+
+    &:has([data-part="control"]:open) [data-part="caret"] {
+      rotate: 180deg;
+    }
+
+    &[data-size="large"] {
+      --select-caret-size: 1.5rem;
+      --select-font-size: var(--sd3-typography-size-text-body-lg);
+      --select-line-height: var(--sd3-typography-line-height-text-body-lg);
+      --select-padding-block: calc(
+        var(--sd3-space-component-200) + var(--sd3-space-component-050)
+      );
+    }
+
+    &[data-size="small"] {
+      --select-padding-block: var(--sd3-space-component-100);
+    }
+  }
+}

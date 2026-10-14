@@ -30,6 +30,7 @@ export * from "./src/Avatar";
 export * from "./src/Button";
 export * from "./src/Chip";
 export * from "./src/Input";
+export * from "./src/Select";
 
 export type {
   StatusMessageBodyProps,
