@@ -23,7 +23,11 @@ describe("Link", () => {
     });
 
     it("should have class name", async () => {
-      render(<Link href="#" data-testid="test" className="test-class-name" />);
+      render(
+        <Link href="#" data-testid="test" className="test-class-name">
+          Foo
+        </Link>,
+      );
 
       expect(screen.getByTestId("test")).toHaveClass(
         "sd3-typography test-class-name",
@@ -36,14 +40,12 @@ describe("Link", () => {
 
     it("should change component with asChild", async () => {
       render(
-        <Link href="#" asChild>
+        <Link data-testid="test" href="#" asChild>
           <h2>Foo</h2>
         </Link>,
       );
 
-      expect(
-        screen.getByRole("heading", { level: 2, name: "Foo" }),
-      ).toBeInTheDocument();
+      expect(screen.getByTestId("test")).toHaveRole("heading");
     });
 
     it("should have icon", async () => {

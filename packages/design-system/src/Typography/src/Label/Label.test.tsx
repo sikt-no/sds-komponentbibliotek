@@ -33,14 +33,12 @@ describe("Label", () => {
 
     it("should change component with asChild", async () => {
       render(
-        <Label asChild>
+        <Label data-testid="test" asChild>
           <h2>Foo</h2>
         </Label>,
       );
 
-      expect(
-        screen.getByRole("heading", { level: 2, name: "Foo" }),
-      ).toBeInTheDocument();
+      expect(screen.getByTestId("test")).toHaveRole("heading");
     });
   });
 });
