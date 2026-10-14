@@ -1,0 +1,99 @@
+@scope (.sd3-chip) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --chip-background: transparent;
+    --chip-background-hover: transparent;
+    --chip-background-pressed: transparent;
+    --chip-border-color: var(--sd3-color-border-strong);
+    --chip-border-color-hover: var(--sd3-color-border-strong);
+    --chip-border-color-pressed: var(--sd3-color-border-strong);
+    --chip-border-width: var(--sd3-space-border-weight-025);
+    --chip-padding-inline: var(--sd3-space-component-300);
+    --chip-padding-block: var(--sd3-space-component-200);
+
+    align-items: center;
+    appearance: none;
+    background-color: var(--chip-background);
+    border: none;
+    border-radius: var(--sd3-space-border-radius-100);
+    box-shadow: inset 0 0 0 var(--chip-border-width) var(--chip-border-color);
+    box-sizing: border-box;
+    color: var(--sd3-color-text-primary);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: var(--sd3-typography-size-text-interaction-md);
+    font-weight: var(--sd3-typography-weight-regular);
+    gap: var(--sd3-space-component-100);
+    justify-content: center;
+    line-height: 1;
+    padding: var(--chip-padding-block) var(--chip-padding-inline);
+    white-space: nowrap;
+
+    &[data-size="compact"] {
+      --chip-padding-inline: var(--sd3-space-component-200);
+      --chip-padding-block: var(--sd3-space-component-100);
+    }
+
+    & > [data-part="icon"] {
+      align-items: center;
+      color: var(--sd3-color-icon-primary);
+      display: inline-flex;
+      flex-shrink: 0;
+      font-size: var(--sd3-typography-size-text-interaction-md);
+      justify-content: center;
+    }
+
+    @media (pointer: fine) {
+      &:hover:not(:disabled, [aria-disabled="true"]) {
+        --chip-border-color: var(--chip-border-color-hover);
+        --chip-border-width: var(--sd3-space-border-weight-050);
+
+        background-color: var(--chip-background-hover);
+      }
+    }
+
+    &:active:not(:disabled, [aria-disabled="true"]) {
+      --chip-border-color: var(--chip-border-color-pressed);
+      --chip-border-width: var(--sd3-space-border-weight-050);
+
+      background-color: var(--chip-background-pressed);
+    }
+
+    &:focus-visible {
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+      box-shadow:
+        var(--sd3-focus-box-shadow),
+        inset 0 0 0 var(--chip-border-width) var(--chip-border-color);
+    }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+      cursor: not-allowed;
+    }
+
+    &[data-chip="input"] {
+      --chip-background: var(--sd3-color-interaction-subtle-default);
+      --chip-background-hover: var(--sd3-color-interaction-subtle-hover);
+      --chip-background-pressed: var(--sd3-color-interaction-subtle-pressed);
+      --chip-border-color: var(--sd3-color-interaction-primary-default);
+      --chip-border-color-hover: var(--sd3-color-interaction-primary-hover);
+      --chip-border-color-pressed: var(--sd3-color-interaction-primary-pressed);
+    }
+
+    &[data-chip="filter"] {
+      --chip-background-hover: var(--sd3-color-interaction-neutral-hover);
+      --chip-background-pressed: var(--sd3-color-interaction-neutral-pressed);
+
+      &[aria-pressed="true"] {
+        --chip-background: var(--sd3-color-interaction-subtle-default);
+        --chip-background-hover: var(--sd3-color-interaction-subtle-hover);
+        --chip-background-pressed: var(--sd3-color-interaction-subtle-pressed);
+        --chip-border-color: var(--sd3-color-interaction-primary-default);
+        --chip-border-color-hover: var(--sd3-color-interaction-primary-hover);
+        --chip-border-color-pressed: var(
+          --sd3-color-interaction-primary-pressed
+        );
+      }
+    }
+  }
+}
