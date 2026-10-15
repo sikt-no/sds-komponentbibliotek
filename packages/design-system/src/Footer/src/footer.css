@@ -1,0 +1,37 @@
+@import url("@sikt/sd3-design-tokens/dist/css/custom-media.css");
+
+@scope (.sd3-footer) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    background-color: var(--sd3-color-brand-accent-strong);
+    padding: var(--sd3-space-component-600) var(--sd3-space-component-1200);
+
+    [data-part="content"] {
+      align-items: start;
+      color: var(--sd3-color-text-on-strong);
+      color-scheme: only dark;
+      display: flex;
+      flex-flow: column;
+      gap: var(--sd3-space-layout-1200);
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 100%;
+      padding: var(--sd3-space-component-300) 0;
+
+      @media (--sd3-breakpoint-md) {
+        flex-flow: row;
+      }
+    }
+
+    [data-part="link"] {
+      background-color: unset;
+      display: inline-flex;
+      text-decoration: none;
+
+      &:focus-visible {
+        box-shadow: var(--sd3-focus-box-shadow);
+        outline: var(--sd3-focus-outline);
+        outline-offset: var(--sd3-focus-outline-offset);
+      }
+    }
+  }
+}

@@ -66,3 +66,5 @@ export { Paragraph } from "./src/Typography";
 
 export type { SpanProps } from "./src/Typography";
 export { Span } from "./src/Typography";
+
+export * from "./src/Footer";

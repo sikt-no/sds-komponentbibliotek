@@ -7,6 +7,7 @@
 @import url("./custom-properties.css");
 @import url("./font-face.css");
 @import url("./visually-hidden.css");
+@import url("@sikt/sd3-sikt-logo");
 
 @media (prefers-reduced-motion: reduce) {
   @view-transition {
