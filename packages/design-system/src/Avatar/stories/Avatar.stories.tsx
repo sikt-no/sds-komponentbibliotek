@@ -39,7 +39,10 @@ export const Photo: Story = {
   },
   render: (args: AvatarProps) => (
     <Avatar size={args.size}>
-      <img src="/storybook/avatar-photo.jpeg" alt="Sven-Åke" />
+      <img
+        src={`${import.meta.env.STORYBOOK_STATIC_URL}/avatar-photo.jpeg`}
+        alt="Sven-Åke"
+      />
     </Avatar>
   ),
   parameters: {

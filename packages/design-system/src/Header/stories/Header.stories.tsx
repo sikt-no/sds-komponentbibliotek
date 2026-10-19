@@ -8,6 +8,7 @@ import {
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { useEffect, useRef, useState } from "react";
 import { Button, Field, Input } from "../../../index";
+import { Avatar } from "../../../index";
 import { Header, HeaderProps } from "../index";
 
 const meta: Meta = {
@@ -45,7 +46,7 @@ export const ProductName: Story = {
   ),
 };
 
-export const Menu: Story = {
+export const WithMenu: Story = {
   args: {},
   render: ({ ...args }) => {
     const inputRef = useRef<HTMLDivElement>(null);
@@ -59,6 +60,60 @@ export const Menu: Story = {
         inputRef.current?.focus();
       }
     });
+
+    const LoginButton = () => {
+      const [isLoggedIn, setIsLoggedIn] = useState(false);
+      const toggleLoggedIn = () => {
+        setIsLoggedIn(!isLoggedIn);
+      };
+
+      return isLoggedIn ? (
+        <>
+          <Button variant="tertiary" popoverTarget="user-menu">
+            <Button.Avatar>
+              <Avatar>
+                <img
+                  src={`${import.meta.env.STORYBOOK_STATIC_URL}/avatar-photo.jpeg`}
+                  alt="Sven-Åke"
+                />
+              </Avatar>
+            </Button.Avatar>
+            Sven-Åke
+          </Button>
+          <div
+            popover="auto"
+            id="user-menu"
+            style={{
+              position: "absolute",
+              positionArea: "bottom",
+              margin: "var(--sd3-space-component-200)",
+            }}
+          >
+            <ul>
+              <li>
+                <button>Bytt bruker</button>
+              </li>
+              <li>
+                <button onClick={toggleLoggedIn}>Logg ut</button>
+              </li>
+            </ul>
+          </div>
+        </>
+      ) : (
+        <Button
+          variant="tertiary"
+          onClick={(e) => {
+            e.preventDefault();
+            toggleLoggedIn();
+          }}
+        >
+          <Button.Icon>
+            <SignInIcon />
+          </Button.Icon>
+          Logg inn
+        </Button>
+      );
+    };
 
     return (
       <Header {...args}>
@@ -97,17 +152,7 @@ export const Menu: Story = {
             </Button.Icon>
             Søk
           </Button>
-          <Button
-            variant="tertiary"
-            onClick={() => {
-              console.log("TODO");
-            }}
-          >
-            <Button.Icon>
-              <SignInIcon />
-            </Button.Icon>
-            Logg inn
-          </Button>
+          <LoginButton />
           <Button
             variant="tertiary"
             iconOnly

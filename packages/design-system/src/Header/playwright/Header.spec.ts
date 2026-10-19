@@ -18,7 +18,7 @@ test.describe("Header", () => {
     });
 
     test("with menu should be accessible", async ({ page }) => {
-      await page.goto("/iframe.html?viewMode=story&id=sd3-header--menu");
+      await page.goto("/iframe.html?viewMode=story&id=sd3-header--with-menu");
 
       await page.locator(componentSelector).waitFor();
 
@@ -46,13 +46,13 @@ test.describe("Header", () => {
     });
 
     test("with menu should have screenshot", async ({ page }) => {
-      await page.goto("/iframe.html?viewMode=story&id=sd3-header--menu");
+      await page.goto("/iframe.html?viewMode=story&id=sd3-header--with-menu");
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
     test("with menu open search should have screenshot", async ({ page }) => {
-      await page.goto("/iframe.html?viewMode=story&id=sd3-header--menu");
+      await page.goto("/iframe.html?viewMode=story&id=sd3-header--with-menu");
 
       await page.locator(componentSelector).waitFor();
       await page.getByRole("button", { name: "Søk" }).click();

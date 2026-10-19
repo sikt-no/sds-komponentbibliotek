@@ -1,5 +1,5 @@
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { Logo, LogoPrimaryProps } from "@sikt/sd3-sikt-logo";
+import { Logo, LogoPrimaryProps, LogoProductProps } from "@sikt/sd3-sikt-logo";
 import { clsx } from "clsx/lite";
 import {
   AnchorHTMLAttributes,
@@ -55,9 +55,14 @@ const HeaderLogoLink = ({
 };
 HeaderLogoLink.displayName = "HeaderLogoLink";
 
-const HeaderLogo = ({ ...rest }: Omit<LogoPrimaryProps, "size">) => (
-  <Logo {...rest} size="compact" data-part="logo" />
-);
+const HeaderLogo = (
+  props: Omit<LogoPrimaryProps, "size"> | LogoProductProps,
+) =>
+  props.productName !== undefined ? (
+    <Logo {...props} data-part="logo" />
+  ) : (
+    <Logo {...props} size="compact" data-part="logo" />
+  );
 HeaderLogo.displayName = "HeaderLogo";
 
 const HeaderSubHeader = ({ ...rest }: HeaderSubHeaderProps) => (
