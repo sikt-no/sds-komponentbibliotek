@@ -28,12 +28,24 @@ export interface ButtonIconProps {
   children?: ReactNode;
 }
 
+export interface ButtonAvatarProps {
+  /** The avatar element to render. */
+  children?: ReactNode;
+}
+
 const ButtonIcon = ({ children }: ButtonIconProps) => (
   <span data-part="icon" aria-hidden="true">
     {children}
   </span>
 );
 ButtonIcon.displayName = "Button.Icon";
+
+const ButtonAvatar = ({ children }: ButtonAvatarProps) => (
+  <span data-part="avatar" aria-hidden="true">
+    {children}
+  </span>
+);
+ButtonAvatar.displayName = "Button.Avatar";
 
 export const Button = ({
   ref,
@@ -71,3 +83,4 @@ export const Button = ({
 };
 Button.displayName = "Button";
 Button.Icon = ButtonIcon;
+Button.Avatar = ButtonAvatar;

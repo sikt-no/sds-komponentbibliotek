@@ -1,6 +1,7 @@
 export type {
   ButtonProps,
   ButtonIconProps,
+  ButtonAvatarProps,
   ButtonVariant,
   ButtonTheme,
   ButtonSize,

@@ -5,6 +5,7 @@ import {
   iconArgType,
   type IconComponent,
 } from "../../../../icons/stories/iconArgType";
+import { Avatar } from "../../../index";
 import {
   Button,
   type ButtonSize,
@@ -158,6 +159,47 @@ export const AsChildLink: Story = {
       description: {
         story:
           "`asChild` renders the Button through Radix Slot — the child element replaces the `<button>` while keeping all styling and `data-*` attributes. Use to compose with router `<Link>` components or a native `<a>`.",
+      },
+    },
+  },
+};
+
+export const AvatarLeft: Story = {
+  render: (args) => (
+    <Button {...(args as ButtonProps)}>
+      <Button.Avatar>
+        <Avatar size={args.size} initials="AL" aria-label="Ada Lovelace" />
+      </Button.Avatar>
+      Label
+    </Button>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "Avatar before the label — DOM order controls position.",
+      },
+    },
+  },
+};
+
+export const AvatarRight: Story = {
+  render: (args) => (
+    <Button {...(args as ButtonProps)}>
+      Label
+      <Button.Avatar>
+        <Avatar size={args.size}>
+          <img
+            src={`${import.meta.env.STORYBOOK_STATIC_URL}/avatar-photo.jpeg`}
+            alt="Sven-Åke"
+          />
+        </Avatar>
+      </Button.Avatar>
+    </Button>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "Avatar after the label — DOM order controls position.",
       },
     },
   },

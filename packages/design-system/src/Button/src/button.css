@@ -128,6 +128,19 @@
       padding: var(--sd3-space-component-050);
     }
 
+    & > [data-part="avatar"] {
+      margin: calc(var(--button-padding-block) * -1)
+        calc(var(--button-padding-inline) * -1);
+
+      &:first-child {
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-left: 0;
+      }
+    }
+
     &[data-variant="primary-subtle"] {
       --button-background: var(--sd3-color-button-primary-subtle-default);
       --button-background-hover: var(--sd3-color-button-primary-subtle-hover);
