@@ -7,7 +7,7 @@ import type { DialogProps } from "../index";
 import { Dialog } from "../index";
 
 const meta: Meta = {
-  title: "Components/Dialog",
+  title: "SDS/Components/Dialog",
   component: Dialog,
 };
 

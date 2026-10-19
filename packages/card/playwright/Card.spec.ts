@@ -7,7 +7,7 @@ test.describe("Card", () => {
   test.describe("a11y", () => {
     test("default should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-card--default",
+        "/iframe.html?viewMode=story&id=sds-components-card--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Card", () => {
   test.describe("visual", () => {
     test("default should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-card--default",
+        "/iframe.html?viewMode=story&id=sds-components-card--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

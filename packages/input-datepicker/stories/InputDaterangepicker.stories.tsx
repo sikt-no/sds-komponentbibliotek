@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { InputDaterangepicker } from "../index";
 
 const meta = {
-  title: "Components/InputDatepicker/InputDaterangepicker",
+  title: "SDS/Components/InputDatepicker/InputDaterangepicker",
   component: InputDaterangepicker,
 } satisfies Meta<typeof InputDaterangepicker>;
 

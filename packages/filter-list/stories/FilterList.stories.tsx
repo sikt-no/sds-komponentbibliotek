@@ -16,7 +16,7 @@ import "@sikt/sds-notification/dist/index.css";
 import "@sikt/sds-checkbox/dist/index.css";
 
 const meta = {
-  title: "Components/FilterList",
+  title: "SDS/Components/FilterList",
   component: FilterList,
 };
 

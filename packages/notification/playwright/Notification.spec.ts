@@ -7,7 +7,7 @@ test.describe("Notification", () => {
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-notification--default",
+        "/iframe.html?viewMode=story&id=sds-components-notification--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Notification", () => {
   test.describe("visual", () => {
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-notification--default",
+        "/iframe.html?viewMode=story&id=sds-components-notification--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -31,7 +31,7 @@ test.describe("Notification", () => {
 
     test("should have screenshot without count", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-notification--without-count",
+        "/iframe.html?viewMode=story&id=sds-components-notification--without-count",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

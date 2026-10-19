@@ -11,7 +11,7 @@ import {
 } from "../index";
 
 const meta: Meta = {
-  title: "Components/Table",
+  title: "SDS/Components/Table",
   component: Table,
 };
 

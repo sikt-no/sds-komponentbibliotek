@@ -11,7 +11,7 @@ import { useState } from "react";
 import { RadioFieldset, RadioInput } from "../index";
 
 const meta = {
-  title: "Components/Radio/RadioFieldset",
+  title: "SDS/Components/Radio/RadioFieldset",
   component: RadioFieldset,
 } satisfies Meta<typeof RadioFieldset>;
 

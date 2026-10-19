@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { ListProps, UnorderedList, ListItem } from "../index";
 
 const meta: Meta = {
-  title: "Components/List/Unordered",
+  title: "SDS/Components/List/Unordered",
   component: UnorderedList,
 };
 

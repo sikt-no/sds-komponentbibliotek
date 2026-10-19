@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Popover, PopoverProps, Tooltip as TooltipComp } from "../index";
 
 const meta: Meta = {
-  title: "Components/Popover",
+  title: "SDS/Components/Popover",
   component: Popover,
   argTypes: {
     children: {

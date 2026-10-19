@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { GuidePanel as Component, GuidePanelProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Message/Guide Panel",
+  title: "SDS/Components/Message/Guide Panel",
   component: Component,
   argTypes: {
     children: {

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Paragraph, ParagraphProps } from "../index";
 
 const meta: Meta = {
-  title: "Core/Paragraph",
+  title: "SDS/Core/Paragraph",
   component: Paragraph,
   argTypes: {
     children: {

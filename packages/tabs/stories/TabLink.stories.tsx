@@ -4,7 +4,7 @@ import { TagStatus } from "../../tag/index";
 import { TabLink, TabLinkProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Tabs/TabLink",
+  title: "SDS/Components/Tabs/TabLink",
   component: TabLink,
   argTypes: {
     children: {

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Combobox, type ComboboxProps, type ComboboxItem } from "../index";
 
 const meta = {
-  title: "Components/Combobox",
+  title: "SDS/Components/Combobox",
   component: Combobox,
 } satisfies Meta<typeof Combobox>;
 

@@ -7,7 +7,7 @@ test.describe("Text Input Field", () => {
   test.describe("a11y", () => {
     test("default text input field should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-text--default",
+        "/iframe.html?viewMode=story&id=sds-components-input-text--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Text Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-text--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-input-text--with-help-text",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -39,7 +39,7 @@ test.describe("Text Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-text--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-input-text--with-error",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -57,7 +57,7 @@ test.describe("Text Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-text--default",
+        "/iframe.html?viewMode=story&id=sds-components-input-text--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -67,7 +67,7 @@ test.describe("Text Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-text--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-input-text--with-help-text",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -77,7 +77,7 @@ test.describe("Text Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-text--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-input-text--with-error",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

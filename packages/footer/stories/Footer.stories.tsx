@@ -5,7 +5,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Footer } from "../index";
 
 const meta = {
-  title: "Components/Footer",
+  title: "SDS/Components/Footer",
   component: Footer,
 } satisfies Meta<typeof Footer>;
 

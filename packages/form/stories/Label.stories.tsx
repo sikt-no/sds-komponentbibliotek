@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Label, LabelProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Form/Label",
+  title: "SDS/Components/Form/Label",
   component: Label,
 };
 

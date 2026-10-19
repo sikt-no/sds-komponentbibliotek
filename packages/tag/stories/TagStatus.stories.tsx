@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { TagStatus, TagStatusProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Tag/Status",
+  title: "SDS/Components/Tag/Status",
   component: TagStatus,
   parameters: {
     docs: {

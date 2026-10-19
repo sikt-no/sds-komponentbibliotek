@@ -7,7 +7,7 @@ import {
 } from "../index";
 
 const meta: Meta = {
-  title: "Components/Toggle/ToggleSegment",
+  title: "SDS/Components/Toggle/ToggleSegment",
   component: ToggleSegment,
 };
 

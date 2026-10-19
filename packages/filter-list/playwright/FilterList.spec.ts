@@ -7,7 +7,7 @@ test.describe("FilterList", () => {
   test.describe("a11y", () => {
     test("FilterList should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--item-with-checkbox",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--item-with-checkbox",
       );
       await page.locator(componentSelector).waitFor();
       const accessibilityScanResults = await new AxeBuilder({ page })
@@ -19,7 +19,7 @@ test.describe("FilterList", () => {
 
     test("FilterListItem should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--item-with-radio",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--item-with-radio",
       );
       await page.locator(componentSelector).waitFor();
       const accessibilityScanResults = await new AxeBuilder({ page })
@@ -31,7 +31,7 @@ test.describe("FilterList", () => {
 
     test("FilterListSection should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--section-example",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--section-example",
       );
       await page.locator(componentSelector).waitFor();
       const accessibilityScanResults = await new AxeBuilder({ page })
@@ -43,7 +43,7 @@ test.describe("FilterList", () => {
 
     test("FilterListCategory should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--category-example",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--category-example",
       );
       await page.locator(componentSelector).waitFor();
       const accessibilityScanResults = await new AxeBuilder({ page })
@@ -55,7 +55,7 @@ test.describe("FilterList", () => {
 
     test("FilterListIcon should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--icon-example",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--icon-example",
       );
       await page.locator(componentSelector).waitFor();
       const accessibilityScanResults = await new AxeBuilder({ page })
@@ -69,35 +69,35 @@ test.describe("FilterList", () => {
   test.describe("visual", () => {
     test("FilterList should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--item-with-checkbox",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--item-with-checkbox",
       );
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
     test("FilterListItem should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--item-with-radio",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--item-with-radio",
       );
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
     test("FilterListSection should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--section-example",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--section-example",
       );
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
     test("FilterListCategory should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--category-example",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--category-example",
       );
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
     test("FilterListIcon should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-filterlist--icon-example",
+        "/iframe.html?viewMode=story&id=sds-components-filterlist--icon-example",
       );
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });

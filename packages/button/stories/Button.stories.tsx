@@ -12,7 +12,7 @@ import { Button, ButtonProps } from "../index";
 import "../../notification/dist/index.css";
 
 const meta: Meta = {
-  title: "Components/Button/Button",
+  title: "SDS/Components/Button/Button",
   component: Button,
   argTypes: {
     children: {

@@ -7,7 +7,7 @@ test.describe("Header", () => {
   test.describe("a11y", () => {
     test("default header should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--default",
+        "/iframe.html?viewMode=story&id=sds-components-header--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -21,7 +21,7 @@ test.describe("Header", () => {
 
     test("header with product name should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-product-name",
+        "/iframe.html?viewMode=story&id=sds-components-header--with-product-name",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -35,7 +35,7 @@ test.describe("Header", () => {
 
     test("header with slots should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-slots",
+        "/iframe.html?viewMode=story&id=sds-components-header--with-slots",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -51,7 +51,7 @@ test.describe("Header", () => {
   test.describe("visual", () => {
     test("default header should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--default",
+        "/iframe.html?viewMode=story&id=sds-components-header--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -61,7 +61,7 @@ test.describe("Header", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-product-name",
+        "/iframe.html?viewMode=story&id=sds-components-header--with-product-name",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -69,7 +69,7 @@ test.describe("Header", () => {
 
     test("header with slots should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-header--with-slots",
+        "/iframe.html?viewMode=story&id=sds-components-header--with-slots",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

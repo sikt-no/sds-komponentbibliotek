@@ -8,7 +8,7 @@ import {
 } from "../index";
 
 const meta: Meta = {
-  title: "Components/ProgressIndicator",
+  title: "SDS/Components/ProgressIndicator",
   component: ProgressIndicator,
 };
 

@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Link, LinkProps } from "../index";
 
 const meta: Meta = {
-  title: "Core/Link",
+  title: "SDS/Core/Link",
   component: Link,
   argTypes: {
     children: {

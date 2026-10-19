@@ -7,7 +7,7 @@ test.describe("Breadcrumbs", () => {
   test.describe("a11y", () => {
     test("default breadcrumbs should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-breadcrumbs--default",
+        "/iframe.html?viewMode=story&id=sds-components-breadcrumbs--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Breadcrumbs", () => {
   test.describe("visual", () => {
     test("default breadcrumbs should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-breadcrumbs--default",
+        "/iframe.html?viewMode=story&id=sds-components-breadcrumbs--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

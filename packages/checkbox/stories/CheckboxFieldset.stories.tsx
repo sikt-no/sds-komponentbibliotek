@@ -11,7 +11,7 @@ import { Fieldset } from "../../form";
 import { CheckboxInput } from "../index";
 
 const meta = {
-  title: "Components/Checkbox/CheckboxFieldset",
+  title: "SDS/Components/Checkbox/CheckboxFieldset",
   component: Fieldset,
 } satisfies Meta<typeof Fieldset>;
 

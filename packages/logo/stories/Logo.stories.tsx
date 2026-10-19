@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Logo } from "../index";
 
 const meta = {
-  title: "Components/Logo",
+  title: "SDS/Logo",
   component: Logo,
 } satisfies Meta<typeof Logo>;
 

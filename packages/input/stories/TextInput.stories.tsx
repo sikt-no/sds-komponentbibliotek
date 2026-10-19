@@ -11,7 +11,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { TextInput } from "../index";
 
 const meta = {
-  title: "Components/Input/Text",
+  title: "SDS/Components/Input/Text",
   component: TextInput,
 } satisfies Meta<typeof TextInput>;
 

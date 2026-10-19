@@ -21,7 +21,7 @@ test.describe("Tag", () => {
           page,
         }) => {
           await page.goto(
-            `/iframe.html?viewMode=story&id=components-tag-status--default&args=variant:${variant};visibility:${visibility}`,
+            `/iframe.html?viewMode=story&id=sds-components-tag-status--default&args=variant:${variant};visibility:${visibility}`,
           );
 
           await page.locator(componentSelector).waitFor();
@@ -38,7 +38,7 @@ test.describe("Tag", () => {
     categories.map((category) => {
       test(`category ${category} should be accessible`, async ({ page }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=components-tag-category--default&args=category:${category}`,
+          `/iframe.html?viewMode=story&id=sds-components-tag-category--default&args=category:${category}`,
         );
 
         await page.locator(componentSelector).waitFor();
@@ -53,7 +53,7 @@ test.describe("Tag", () => {
 
     test("status with icon left should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tag-status--icon-left",
+        "/iframe.html?viewMode=story&id=sds-components-tag-status--icon-left",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -73,7 +73,7 @@ test.describe("Tag", () => {
           page,
         }) => {
           await page.goto(
-            `/iframe.html?viewMode=story&id=components-tag-status--default&args=variant:${variant};visibility:${visibility}`,
+            `/iframe.html?viewMode=story&id=sds-components-tag-status--default&args=variant:${variant};visibility:${visibility}`,
           );
 
           await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -84,7 +84,7 @@ test.describe("Tag", () => {
     categories.map((category) => {
       test(`category ${category} should have screenshot`, async ({ page }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=components-tag-category--default&args=category:${category}`,
+          `/iframe.html?viewMode=story&id=sds-components-tag-category--default&args=category:${category}`,
         );
 
         await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -93,7 +93,7 @@ test.describe("Tag", () => {
 
     test("status with icon left should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tag-status--icon-left",
+        "/iframe.html?viewMode=story&id=sds-components-tag-status--icon-left",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

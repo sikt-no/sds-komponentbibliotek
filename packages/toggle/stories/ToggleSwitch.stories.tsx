@@ -11,7 +11,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { ToggleSwitch } from "../index";
 
 const meta = {
-  title: "Components/Toggle/ToggleSwitch",
+  title: "SDS/Components/Toggle/ToggleSwitch",
   component: ToggleSwitch,
 } satisfies Meta<typeof ToggleSwitch>;
 

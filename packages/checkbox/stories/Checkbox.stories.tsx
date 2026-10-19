@@ -10,7 +10,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { CheckboxInput } from "../index";
 
 const meta: Meta<typeof CheckboxInput> = {
-  title: "Components/Checkbox/Checkbox",
+  title: "SDS/Components/Checkbox/Checkbox",
   component: CheckboxInput,
 };
 

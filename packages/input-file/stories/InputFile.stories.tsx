@@ -3,7 +3,7 @@ import { Popover } from "../../popover/index";
 import { InputFile, InputFileProps, FileList, FileListItem } from "../index";
 
 const meta: Meta = {
-  title: "Components/InputFile",
+  title: "SDS/Components/InputFile",
   component: InputFile,
   subcomponents: { FileList, FileListItem },
 };

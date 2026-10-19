@@ -4,7 +4,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { ErrorSummary as Component } from "../index";
 
 const meta = {
-  title: "Components/Message/Error Summary",
+  title: "SDS/Components/Message/Error Summary",
   component: Component,
   subcomponents: { Link, ListItem, UnorderedList },
 } satisfies Meta<typeof Component>;

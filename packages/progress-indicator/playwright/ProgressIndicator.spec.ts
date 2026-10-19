@@ -7,7 +7,7 @@ test.describe("Progress Indicator", () => {
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-progressindicator--default",
+        "/iframe.html?viewMode=story&id=sds-components-progressindicator--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -21,7 +21,7 @@ test.describe("Progress Indicator", () => {
 
     test("expandable should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-progressindicator--expandable",
+        "/iframe.html?viewMode=story&id=sds-components-progressindicator--expandable",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -37,7 +37,7 @@ test.describe("Progress Indicator", () => {
   test.describe("visual", () => {
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-progressindicator--default",
+        "/iframe.html?viewMode=story&id=sds-components-progressindicator--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -45,7 +45,7 @@ test.describe("Progress Indicator", () => {
 
     test("without details should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-progressindicator--default",
+        "/iframe.html?viewMode=story&id=sds-components-progressindicator--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -53,7 +53,7 @@ test.describe("Progress Indicator", () => {
 
     test("expandable should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-progressindicator--expandable",
+        "/iframe.html?viewMode=story&id=sds-components-progressindicator--expandable",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -61,7 +61,7 @@ test.describe("Progress Indicator", () => {
 
     test("expandable open should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-progressindicator--expandable",
+        "/iframe.html?viewMode=story&id=sds-components-progressindicator--expandable",
       );
 
       await page.locator(componentSelector).waitFor();

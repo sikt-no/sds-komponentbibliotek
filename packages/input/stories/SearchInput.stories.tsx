@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { InputProps, SearchInput } from "../index";
 
 const meta: Meta = {
-  title: "Components/Input/Search",
+  title: "SDS/Components/Input/Search",
   component: SearchInput,
 };
 

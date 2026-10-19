@@ -17,7 +17,7 @@ test.describe("Button", () => {
     variants.map((variant) => {
       test(`${variant} should be accessible`, async ({ page }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=components-button-button--default&args=variant:${variant}`,
+          `/iframe.html?viewMode=story&id=sds-components-button-button--default&args=variant:${variant}`,
         );
 
         await page.locator(componentSelector).waitFor();
@@ -32,7 +32,7 @@ test.describe("Button", () => {
 
     test("small should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-button-button--default&args=size:small",
+        "/iframe.html?viewMode=story&id=sds-components-button-button--default&args=size:small",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -46,7 +46,7 @@ test.describe("Button", () => {
 
     test("icon-right should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-button-button--icon-right",
+        "/iframe.html?viewMode=story&id=sds-components-button-button--icon-right",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -60,7 +60,7 @@ test.describe("Button", () => {
 
     test("icon-left should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-button-button--icon-left",
+        "/iframe.html?viewMode=story&id=sds-components-button-button--icon-left",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -74,7 +74,7 @@ test.describe("Button", () => {
 
     test("icon-only should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-button-button--icon-only",
+        "/iframe.html?viewMode=story&id=sds-components-button-button--icon-only",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -91,7 +91,7 @@ test.describe("Button", () => {
     variants.map((variant) => {
       test(`${variant} should have screenshot`, async ({ page }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=components-button-button--default&args=variant:${variant}`,
+          `/iframe.html?viewMode=story&id=sds-components-button-button--default&args=variant:${variant}`,
         );
 
         await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -100,7 +100,7 @@ test.describe("Button", () => {
 
     test("small should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-button-button--default&args=size:small",
+        "/iframe.html?viewMode=story&id=sds-components-button-button--default&args=size:small",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -108,7 +108,7 @@ test.describe("Button", () => {
 
     test("icon-right should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-button-button--icon-right",
+        "/iframe.html?viewMode=story&id=sds-components-button-button--icon-right",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -116,7 +116,7 @@ test.describe("Button", () => {
 
     test("icon-left should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-button-button--icon-left",
+        "/iframe.html?viewMode=story&id=sds-components-button-button--icon-left",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -124,7 +124,7 @@ test.describe("Button", () => {
 
     test("icon-only should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-button-button--icon-only",
+        "/iframe.html?viewMode=story&id=sds-components-button-button--icon-only",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -132,7 +132,7 @@ test.describe("Button", () => {
 
     test("with-notification should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-button-button--with-notification",
+        "/iframe.html?viewMode=story&id=sds-components-button-button--with-notification",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

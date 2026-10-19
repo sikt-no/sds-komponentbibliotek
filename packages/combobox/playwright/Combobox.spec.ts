@@ -8,7 +8,7 @@ test.describe("Combobox", () => {
   test.describe("a11y", () => {
     test("combobox should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-combobox--default",
+        "/iframe.html?viewMode=story&id=sds-components-combobox--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -25,7 +25,7 @@ test.describe("Combobox", () => {
 
     test("combobox multiple should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-combobox--multiple",
+        "/iframe.html?viewMode=story&id=sds-components-combobox--multiple",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -44,7 +44,7 @@ test.describe("Combobox", () => {
   test.describe("visual", () => {
     test("combobox should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-combobox--default",
+        "/iframe.html?viewMode=story&id=sds-components-combobox--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -54,7 +54,7 @@ test.describe("Combobox", () => {
 
     test("combobox multiple should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-combobox--multiple",
+        "/iframe.html?viewMode=story&id=sds-components-combobox--multiple",
       );
 
       await page.locator(componentSelector).waitFor();

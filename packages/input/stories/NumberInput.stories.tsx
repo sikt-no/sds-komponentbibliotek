@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { InputProps, NumberInput } from "../index";
 
 const meta: Meta = {
-  title: "Components/Input/Number",
+  title: "SDS/Components/Input/Number",
   component: NumberInput,
 };
 

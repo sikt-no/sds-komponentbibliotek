@@ -11,7 +11,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { InputDatepicker } from "../index";
 
 const meta = {
-  title: "Components/InputDatepicker/InputDatepicker",
+  title: "SDS/Components/InputDatepicker/InputDatepicker",
   component: InputDatepicker,
 } satisfies Meta<typeof InputDatepicker>;
 

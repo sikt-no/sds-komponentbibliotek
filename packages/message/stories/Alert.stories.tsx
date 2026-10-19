@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Alert as Component, AlertProps, MessageButton } from "../index";
 
 const meta: Meta = {
-  title: "Components/Message/Alert",
+  title: "SDS/Components/Message/Alert",
   component: Component,
   subcomponents: { MessageButton },
   argTypes: {

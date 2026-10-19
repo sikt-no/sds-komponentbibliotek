@@ -8,7 +8,7 @@ import {
 } from "../index";
 
 const meta: Meta = {
-  title: "Components/Message/Application Status",
+  title: "SDS/Components/Message/Application Status",
   component: Component,
   argTypes: {
     children: {

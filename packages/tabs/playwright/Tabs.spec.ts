@@ -7,7 +7,7 @@ test.describe("Tabs", () => {
   test.describe("a11y", () => {
     test("default tabs should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tabs--default",
+        "/iframe.html?viewMode=story&id=sds-components-tabs--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -21,7 +21,7 @@ test.describe("Tabs", () => {
 
     test("tabs with icon should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tabs--with-icon",
+        "/iframe.html?viewMode=story&id=sds-components-tabs--with-icon",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -35,7 +35,7 @@ test.describe("Tabs", () => {
 
     test("tabs with tag should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tabs--with-tag",
+        "/iframe.html?viewMode=story&id=sds-components-tabs--with-tag",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -51,7 +51,7 @@ test.describe("Tabs", () => {
   test.describe("visual", () => {
     test("tabs should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tabs--default",
+        "/iframe.html?viewMode=story&id=sds-components-tabs--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -59,7 +59,7 @@ test.describe("Tabs", () => {
 
     test("tabs with icon should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tabs--with-icon",
+        "/iframe.html?viewMode=story&id=sds-components-tabs--with-icon",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -67,7 +67,7 @@ test.describe("Tabs", () => {
 
     test("tabs with tag should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-tabs--with-tag",
+        "/iframe.html?viewMode=story&id=sds-components-tabs--with-tag",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

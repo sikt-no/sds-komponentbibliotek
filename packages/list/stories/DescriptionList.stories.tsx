@@ -7,7 +7,7 @@ import {
 } from "../index";
 
 const meta: Meta = {
-  title: "Components/List/Description",
+  title: "SDS/Components/List/Description",
   component: DescriptionList,
 };
 

@@ -4,7 +4,7 @@ import { NavigateToNextCircleIcon } from "../../icons/index";
 import { Section, SectionProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Section",
+  title: "SDS/Components/Section",
   component: Section,
   argTypes: {
     children: {

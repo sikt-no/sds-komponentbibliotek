@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Notification } from "../index";
 
 const meta = {
-  title: "Components/Notification",
+  title: "SDS/Components/Notification",
   component: Notification,
 } satisfies Meta<typeof Notification>;
 

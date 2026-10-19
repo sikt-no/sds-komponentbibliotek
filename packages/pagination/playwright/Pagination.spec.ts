@@ -7,7 +7,7 @@ test.describe("Pagination", () => {
   test.describe("a11y", () => {
     test("pagination should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-pagination--default",
+        "/iframe.html?viewMode=story&id=sds-components-pagination--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Pagination", () => {
   test.describe("visual", () => {
     test("pagination should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-pagination--default",
+        "/iframe.html?viewMode=story&id=sds-components-pagination--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

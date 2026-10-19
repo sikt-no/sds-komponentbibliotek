@@ -3,7 +3,7 @@ import { NavigateToNextIcon, NavigateToPreviousIcon } from "../../icons/index";
 import { Button, ButtonGroup, ButtonGroupProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Button/ButtonGroup",
+  title: "SDS/Components/Button/ButtonGroup",
   component: ButtonGroup,
 };
 

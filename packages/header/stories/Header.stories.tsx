@@ -5,7 +5,7 @@ import { Header } from "../index";
 import "@sikt/sds-message/dist/index.css";
 
 const meta = {
-  title: "Components/Header",
+  title: "SDS/Components/Header",
   component: Header,
 } satisfies Meta<typeof Header>;
 

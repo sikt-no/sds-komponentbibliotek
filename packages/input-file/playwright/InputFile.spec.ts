@@ -7,7 +7,7 @@ test.describe("InputFile", () => {
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputfile--default",
+        "/iframe.html?viewMode=story&id=sds-components-inputfile--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -21,7 +21,7 @@ test.describe("InputFile", () => {
 
     test("with error text should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputfile--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-inputfile--with-error",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -37,7 +37,7 @@ test.describe("InputFile", () => {
   test.describe("visual", () => {
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputfile--default",
+        "/iframe.html?viewMode=story&id=sds-components-inputfile--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -47,7 +47,7 @@ test.describe("InputFile", () => {
 
     test("with error should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-inputfile--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-inputfile--with-error",
       );
 
       await page.locator(componentSelector).waitFor();

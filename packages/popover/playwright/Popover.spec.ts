@@ -7,7 +7,7 @@ test.describe("Popover", () => {
   test.describe("a11y", () => {
     test("popover should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-popover--default",
+        "/iframe.html?viewMode=story&id=sds-components-popover--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Popover", () => {
   test.describe("visual", () => {
     test("popover should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-popover--default",
+        "/iframe.html?viewMode=story&id=sds-components-popover--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -31,7 +31,7 @@ test.describe("Popover", () => {
 
     test("popover target should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-popover--default",
+        "/iframe.html?viewMode=story&id=sds-components-popover--default",
       );
 
       await page.locator(componentSelector).waitFor();

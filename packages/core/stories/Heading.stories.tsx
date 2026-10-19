@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Heading1, HeadingProps } from "../index";
 
 const meta: Meta = {
-  title: "Core/Heading",
+  title: "SDS/Core/Heading",
   component: Heading1,
   argTypes: {
     children: {

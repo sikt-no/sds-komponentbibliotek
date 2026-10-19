@@ -7,7 +7,7 @@ test.describe("RadioFieldset", () => {
   test.describe("a11y", () => {
     test("default radio fieldset should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-radio-radiofieldset--default",
+        "/iframe.html?viewMode=story&id=sds-components-radio-radiofieldset--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("RadioFieldset", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-radio-radiofieldset--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-radio-radiofieldset--with-help-text",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -39,7 +39,7 @@ test.describe("RadioFieldset", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-radio-radiofieldset--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-radio-radiofieldset--with-error",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -55,7 +55,7 @@ test.describe("RadioFieldset", () => {
   test.describe("visual", () => {
     test("default radio fieldset should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-radio-radiofieldset--default",
+        "/iframe.html?viewMode=story&id=sds-components-radio-radiofieldset--default",
       );
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
@@ -64,7 +64,7 @@ test.describe("RadioFieldset", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-radio-radiofieldset--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-radio-radiofieldset--with-help-text",
       );
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
@@ -73,7 +73,7 @@ test.describe("RadioFieldset", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-radio-radiofieldset--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-radio-radiofieldset--with-error",
       );
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });

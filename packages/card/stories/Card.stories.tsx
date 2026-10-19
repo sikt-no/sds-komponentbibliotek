@@ -4,7 +4,7 @@ import { NavigateToNextCircleIcon } from "../../icons/index";
 import { Card, CardProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Card",
+  title: "SDS/Components/Card",
   component: Card,
   argTypes: {
     children: {

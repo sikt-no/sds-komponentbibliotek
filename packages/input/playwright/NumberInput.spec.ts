@@ -9,7 +9,7 @@ test.describe("Number Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-number--default",
+        "/iframe.html?viewMode=story&id=sds-components-input-number--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -25,7 +25,7 @@ test.describe("Number Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-number--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-input-number--with-help-text",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -41,7 +41,7 @@ test.describe("Number Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-number--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-input-number--with-error",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -59,7 +59,7 @@ test.describe("Number Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-number--default",
+        "/iframe.html?viewMode=story&id=sds-components-input-number--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -69,7 +69,7 @@ test.describe("Number Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-number--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-input-number--with-help-text",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -79,7 +79,7 @@ test.describe("Number Input Field", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-input-number--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-input-number--with-error",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

@@ -7,7 +7,7 @@ test.describe("Select", () => {
   test.describe("a11y", () => {
     test("default select should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-select--default",
+        "/iframe.html?viewMode=story&id=sds-components-select--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -22,7 +22,7 @@ test.describe("Select", () => {
 
     test("select with help text should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-select--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-select--with-help-text",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -36,7 +36,7 @@ test.describe("Select", () => {
 
     test("select with error should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-select--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-select--with-error",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -52,7 +52,7 @@ test.describe("Select", () => {
   test.describe("visual", () => {
     test("default select should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-select--default",
+        "/iframe.html?viewMode=story&id=sds-components-select--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -63,7 +63,7 @@ test.describe("Select", () => {
 
     test("select with help text should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-select--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-select--with-help-text",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -73,7 +73,7 @@ test.describe("Select", () => {
 
     test("select with error should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-select--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-select--with-error",
       );
 
       await page.locator(componentSelector).waitFor();

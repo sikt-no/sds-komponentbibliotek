@@ -6,7 +6,7 @@ import { Tab, TabList, TabPanel, Tabs, TabsProps } from "../index";
 import "@sikt/sds-popover/dist/index.css";
 
 const meta: Meta = {
-  title: "Components/Tabs",
+  title: "SDS/Components/Tabs",
   component: Tabs,
 };
 

@@ -5,7 +5,7 @@ test.describe("Toggle", () => {
   test.describe("a11y", () => {
     test("toggle segment default should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-togglesegment--default",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-togglesegment--default",
       );
 
       await page.locator(".sds-toggle-segment").first().waitFor();
@@ -21,7 +21,7 @@ test.describe("Toggle", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-togglesegment--with-fixed-width",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-togglesegment--with-fixed-width",
       );
 
       await page.locator(".sds-toggle-segment").first().waitFor();
@@ -35,7 +35,7 @@ test.describe("Toggle", () => {
 
     test("toggle switch default should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-toggleswitch--default",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-toggleswitch--default",
       );
 
       await page.locator(".sds-toggle-switch").first().waitFor();
@@ -51,7 +51,7 @@ test.describe("Toggle", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-toggleswitch--without-icon",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-toggleswitch--without-icon",
       );
 
       await page.locator(".sds-toggle-switch").first().waitFor();
@@ -67,7 +67,7 @@ test.describe("Toggle", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-toggleswitch--with-label-first",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-toggleswitch--with-label-first",
       );
 
       await page.locator(".sds-toggle-switch").first().waitFor();
@@ -83,7 +83,7 @@ test.describe("Toggle", () => {
   test.describe("visual", () => {
     test("toggle segment default should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-togglesegment--default",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-togglesegment--default",
       );
 
       await expect(page.locator(".sds-toggle-segment")).toHaveScreenshot();
@@ -93,7 +93,7 @@ test.describe("Toggle", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-togglesegment--with-fixed-width",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-togglesegment--with-fixed-width",
       );
 
       await expect(page.locator(".sds-toggle-segment")).toHaveScreenshot();
@@ -101,7 +101,7 @@ test.describe("Toggle", () => {
 
     test("toggle switch default should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-toggleswitch--default",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-toggleswitch--default",
       );
 
       await expect(page.locator(".sds-toggle-switch")).toHaveScreenshot();
@@ -111,7 +111,7 @@ test.describe("Toggle", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-toggleswitch--without-icon",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-toggleswitch--without-icon",
       );
 
       await expect(page.locator(".sds-toggle-switch")).toHaveScreenshot();
@@ -121,7 +121,7 @@ test.describe("Toggle", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-toggle-toggleswitch--with-label-first",
+        "/iframe.html?viewMode=story&id=sds-components-toggle-toggleswitch--with-label-first",
       );
 
       await expect(page.locator(".sds-toggle-switch")).toHaveScreenshot();

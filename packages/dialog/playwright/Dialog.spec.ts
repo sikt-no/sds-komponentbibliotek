@@ -7,7 +7,7 @@ test.describe("Dialog", () => {
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-dialog--default",
+        "/iframe.html?viewMode=story&id=sds-components-dialog--default",
       );
       await page.locator(`${componentSelector}__trigger`).click();
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Dialog", () => {
   test.describe("visual", () => {
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-dialog--default",
+        "/iframe.html?viewMode=story&id=sds-components-dialog--default",
       );
       await page.locator(`${componentSelector}__trigger`).click();
       await expect(page.locator(componentSelector)).toHaveScreenshot();

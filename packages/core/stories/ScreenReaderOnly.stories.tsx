@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { ScreenReaderOnly, ScreenReaderOnlyProps } from "../index";
 
 const meta: Meta = {
-  title: "Core/ScreenReaderOnly",
+  title: "SDS/Core/ScreenReaderOnly",
   component: ScreenReaderOnly,
 };
 

@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { TagCategory, TagCategoryProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Tag/Category",
+  title: "SDS/Components/Tag/Category",
   component: TagCategory,
   argTypes: {
     category: {

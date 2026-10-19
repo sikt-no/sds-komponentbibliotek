@@ -7,7 +7,7 @@ test.describe("ChipToggle", () => {
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-chip-toggle--default",
+        "/iframe.html?viewMode=story&id=sds-components-chip-toggle--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("ChipToggle", () => {
   test.describe("visual", () => {
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-chip-toggle--default",
+        "/iframe.html?viewMode=story&id=sds-components-chip-toggle--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -31,7 +31,7 @@ test.describe("ChipToggle", () => {
 
     test("should have toggled screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-chip-toggle--default",
+        "/iframe.html?viewMode=story&id=sds-components-chip-toggle--default",
       );
 
       await page.locator(componentSelector).waitFor();

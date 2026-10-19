@@ -11,7 +11,7 @@ import { useArgs } from "storybook/preview-api";
 import { Select } from "../index";
 
 const meta = {
-  title: "Components/Select",
+  title: "SDS/Components/Select",
   component: Select,
 } satisfies Meta<typeof Select>;
 

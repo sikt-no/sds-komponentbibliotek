@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { EmailInput, InputProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Input/Email",
+  title: "SDS/Components/Input/Email",
   component: EmailInput,
 };
 

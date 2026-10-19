@@ -9,7 +9,7 @@ test.describe("Checkbox", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--default",
+        "/iframe.html?viewMode=story&id=sds-components-checkbox-checkboxfieldset--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -25,7 +25,7 @@ test.describe("Checkbox", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-checkbox-checkboxfieldset--with-help-text",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -41,7 +41,7 @@ test.describe("Checkbox", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-checkbox-checkboxfieldset--with-error",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -59,7 +59,7 @@ test.describe("Checkbox", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--default",
+        "/iframe.html?viewMode=story&id=sds-components-checkbox-checkboxfieldset--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -69,7 +69,7 @@ test.describe("Checkbox", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--with-help-text",
+        "/iframe.html?viewMode=story&id=sds-components-checkbox-checkboxfieldset--with-help-text",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -79,7 +79,7 @@ test.describe("Checkbox", () => {
       page,
     }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-checkbox-checkboxfieldset--with-error",
+        "/iframe.html?viewMode=story&id=sds-components-checkbox-checkboxfieldset--with-error",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

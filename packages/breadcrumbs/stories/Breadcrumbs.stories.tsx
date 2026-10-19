@@ -5,7 +5,7 @@ import type { BreadcrumbsProps } from "../index";
 import { Breadcrumbs, BreadcrumbItem } from "../index";
 
 const meta: Meta = {
-  title: "Components/Breadcrumbs",
+  title: "SDS/Components/Breadcrumbs",
   component: Breadcrumbs,
 };
 

@@ -7,7 +7,7 @@ test.describe("Details", () => {
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-details--default",
+        "/iframe.html?viewMode=story&id=sds-components-details--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("Details", () => {
   test.describe("visual", () => {
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-details--default",
+        "/iframe.html?viewMode=story&id=sds-components-details--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -31,7 +31,7 @@ test.describe("Details", () => {
 
     test("open should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-details--default",
+        "/iframe.html?viewMode=story&id=sds-components-details--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -44,7 +44,7 @@ test.describe("Details", () => {
 
     test("accordion should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-details--accordion",
+        "/iframe.html?viewMode=story&id=sds-components-details--accordion",
       );
 
       // eslint-disable-next-line testing-library/prefer-screen-queries

@@ -7,7 +7,7 @@ test.describe("Section", () => {
   test.describe("a11y", () => {
     test("default should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-section--default",
+        "/iframe.html?viewMode=story&id=sds-components-section--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -21,7 +21,7 @@ test.describe("Section", () => {
 
     test("with call to action should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-section--with-call-to-action",
+        "/iframe.html?viewMode=story&id=sds-components-section--with-call-to-action",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -37,7 +37,7 @@ test.describe("Section", () => {
   test.describe("visual", () => {
     test("default should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-section--default",
+        "/iframe.html?viewMode=story&id=sds-components-section--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -45,7 +45,7 @@ test.describe("Section", () => {
 
     test("with call to action should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-section--with-call-to-action",
+        "/iframe.html?viewMode=story&id=sds-components-section--with-call-to-action",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

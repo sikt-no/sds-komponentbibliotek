@@ -6,7 +6,7 @@ test.describe("List", () => {
   test.describe("a11y", () => {
     test("description list should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-list-description--list",
+        "/iframe.html?viewMode=story&id=sds-components-list-description--list",
       );
 
       await page.locator(".sds-description-list").waitFor();
@@ -20,7 +20,7 @@ test.describe("List", () => {
 
     test("ordered list nested should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-list-ordered--nested",
+        "/iframe.html?viewMode=story&id=sds-components-list-ordered--nested",
       );
 
       await page.locator(componentSelector).first().waitFor();
@@ -34,7 +34,7 @@ test.describe("List", () => {
 
     test("unordered list nested should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-list-unordered--nested",
+        "/iframe.html?viewMode=story&id=sds-components-list-unordered--nested",
       );
 
       await page.locator(componentSelector).first().waitFor();
@@ -50,7 +50,7 @@ test.describe("List", () => {
   test.describe("visual", () => {
     test("description list should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-list-description--list",
+        "/iframe.html?viewMode=story&id=sds-components-list-description--list",
       );
 
       await expect(page.locator(".sds-description-list")).toHaveScreenshot();
@@ -58,7 +58,7 @@ test.describe("List", () => {
 
     test("ordered list nested should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-list-ordered--nested",
+        "/iframe.html?viewMode=story&id=sds-components-list-ordered--nested",
       );
 
       await expect(page.locator(componentSelector).first()).toHaveScreenshot();
@@ -66,7 +66,7 @@ test.describe("List", () => {
 
     test("unordered list nested should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-list-unordered--nested",
+        "/iframe.html?viewMode=story&id=sds-components-list-unordered--nested",
       );
 
       await expect(page.locator(componentSelector).first()).toHaveScreenshot();

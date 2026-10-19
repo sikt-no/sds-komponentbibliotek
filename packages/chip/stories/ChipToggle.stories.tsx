@@ -4,7 +4,7 @@ import { action } from "storybook/actions";
 import { ChipToggle, ChipToggleProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Chip/Toggle",
+  title: "SDS/Components/Chip/Toggle",
   component: ChipToggle,
   argTypes: {
     children: {

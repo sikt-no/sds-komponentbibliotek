@@ -3,7 +3,7 @@ import { Figure, FigureProps } from "../index";
 import siktStol from "./sikt-stol.jpg";
 
 const meta: Meta = {
-  title: "Core/Figure",
+  title: "SDS/Core/Figure",
   component: Figure,
 };
 

@@ -7,7 +7,7 @@ test.describe("ChipButton", () => {
   test.describe("a11y", () => {
     test("should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-chip-button--default",
+        "/iframe.html?viewMode=story&id=sds-components-chip-button--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -23,7 +23,7 @@ test.describe("ChipButton", () => {
   test.describe("visual", () => {
     test("should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-chip-button--default",
+        "/iframe.html?viewMode=story&id=sds-components-chip-button--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

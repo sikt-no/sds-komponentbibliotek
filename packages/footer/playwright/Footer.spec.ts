@@ -7,7 +7,7 @@ test.describe("Footer", () => {
   test.describe("a11y", () => {
     test("footer should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-footer--default",
+        "/iframe.html?viewMode=story&id=sds-components-footer--default",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -21,7 +21,7 @@ test.describe("Footer", () => {
 
     test("footer with content should be accessible", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-footer--with-content",
+        "/iframe.html?viewMode=story&id=sds-components-footer--with-content",
       );
 
       await page.locator(componentSelector).waitFor();
@@ -37,7 +37,7 @@ test.describe("Footer", () => {
   test.describe("visual", () => {
     test("footer should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-footer--default",
+        "/iframe.html?viewMode=story&id=sds-components-footer--default",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -45,7 +45,7 @@ test.describe("Footer", () => {
 
     test("footer with content should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=components-footer--with-content",
+        "/iframe.html?viewMode=story&id=sds-components-footer--with-content",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

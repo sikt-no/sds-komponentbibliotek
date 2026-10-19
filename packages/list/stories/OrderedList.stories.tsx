@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { ListProps, OrderedList, ListItem } from "../index";
 
 const meta: Meta = {
-  title: "Components/List/Ordered",
+  title: "SDS/Components/List/Ordered",
   component: OrderedList,
 };
 

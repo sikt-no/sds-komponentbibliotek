@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { FormField, FormFieldProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Form/FormField",
+  title: "SDS/Components/Form/FormField",
   component: FormField,
 };
 

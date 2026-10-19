@@ -3,7 +3,7 @@ import { action } from "storybook/actions";
 import { ChipButton, ChipButtonProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Chip/Button",
+  title: "SDS/Components/Chip/Button",
   component: ChipButton,
   argTypes: {
     children: {

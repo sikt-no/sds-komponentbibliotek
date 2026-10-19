@@ -3,7 +3,7 @@ import { Heading3 } from "../../core/index";
 import { Details, DetailsProps } from "../index";
 
 const meta: Meta = {
-  title: "Components/Details",
+  title: "SDS/Components/Details",
   component: Details,
   argTypes: {
     children: {

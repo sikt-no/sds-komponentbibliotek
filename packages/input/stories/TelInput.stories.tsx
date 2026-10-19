@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { InputProps, TelInput } from "../index";
 
 const meta: Meta = {
-  title: "Components/Input/Tel",
+  title: "SDS/Components/Input/Tel",
   component: TelInput,
 };
 

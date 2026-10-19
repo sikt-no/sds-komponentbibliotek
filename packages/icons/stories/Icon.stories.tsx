@@ -8,7 +8,7 @@ import {
 } from "../index";
 
 const meta = {
-  title: "Components/Icons/Icon",
+  title: "SDS/Icons/Icon",
   component: NavigateToNextIcon,
 } satisfies Meta<typeof NavigateToNextIcon>;
 

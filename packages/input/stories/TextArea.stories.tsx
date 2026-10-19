@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { TextAreaProps, TextArea } from "../index";
 
 const meta: Meta = {
-  title: "Components/Input/TextArea",
+  title: "SDS/Components/Input/TextArea",
   component: TextArea,
 };
 

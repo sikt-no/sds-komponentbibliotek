@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { HelpText } from "../index";
 
 const meta = {
-  title: "Components/Form/HelpText",
+  title: "SDS/Components/Form/HelpText",
   component: HelpText,
 } satisfies Meta<typeof HelpText>;
 
