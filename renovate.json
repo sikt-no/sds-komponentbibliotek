@@ -53,6 +53,7 @@
     {
       "matchPackagePatterns": [
         "tsdown",
+        "^@tsdown",
         "rollup",
         "browserslist-to-esbuild",
         "publint"
