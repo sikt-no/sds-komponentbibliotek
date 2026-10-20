@@ -41,6 +41,7 @@
     "*.svg"
   ],
   "scripts": {
+    "prebuild": "run-s build:*",
     "build": "tsdown"
   },
   "peerDependencies": {
