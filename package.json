@@ -68,7 +68,7 @@
     "@eslint/compat": "^2.1.1",
     "@eslint/js": "^10.0.1",
     "@figma/code-connect": "^2.0.1",
-    "@playwright/test": "^1.63.0",
+    "@playwright/test": "^1.64.0",
     "@svgr/rollup": "^8.1.0",
     "@swc/core": "^1.16.18",
     "@swc/jest": "^0.2.39",
