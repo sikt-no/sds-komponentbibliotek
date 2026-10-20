@@ -1,0 +1,31 @@
+.tablet {
+  display: none !important;
+}
+
+.desktop {
+  display: none !important;
+}
+
+@media (width >= 45rem) {
+  .mobile {
+    display: none !important;
+  }
+
+  .tablet {
+    display: flex !important;
+  }
+}
+
+@media (width >= 64rem) {
+  .mobile {
+    display: none !important;
+  }
+
+  .tablet {
+    display: none !important;
+  }
+
+  .desktop {
+    display: flex !important;
+  }
+}

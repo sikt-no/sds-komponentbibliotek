@@ -12,9 +12,12 @@ npm i -s @sikt/sd3-design-system
 import { Header } from "@sikt/sd3-design-system";
 
 <Header>
-  <Header.Link>
-    <Header.Logo />
-  </Header.Link>
+  <Header.SkipLink href="">Skip to main content</Header.SkipLink>
+  <Header.Content>
+    <Header.Link href="">
+      <Header.Logo />
+    </Header.Link>
+  </Header.Content>
 </Header>;
 ```
 

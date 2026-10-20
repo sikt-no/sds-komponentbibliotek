@@ -8,9 +8,12 @@ const instance = figma.selectedInstance;
 export default {
   example: figma.code`
     <Header>
-        <Header.Link>
-            <Header.Logo />
-        </Header.Link>
+        <Header.SkipLink href="#"></Header.SkipLink>
+        <Header.Content>
+            <Header.Link href="#">
+                <Header.Logo />
+            </Header.Link>
+        </Header.Content>
     </Header>
   `,
   imports: ['import { Header } from "@sikt/sd3-design-system";'],

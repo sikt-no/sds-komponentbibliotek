@@ -80,3 +80,4 @@ export type { SpanProps } from "./src/Typography";
 export { Span } from "./src/Typography";
 
 export * from "./src/Footer";
+export * from "./src/Header";

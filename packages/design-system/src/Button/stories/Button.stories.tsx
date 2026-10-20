@@ -166,7 +166,7 @@ export const AsChildLink: Story = {
 
 export const AvatarLeft: Story = {
   render: (args) => (
-    <Button {...(args as ButtonProps)}>
+    <Button {...args}>
       <Button.Avatar>
         <Avatar size={args.size} initials="AL" aria-label="Ada Lovelace" />
       </Button.Avatar>
@@ -184,7 +184,7 @@ export const AvatarLeft: Story = {
 
 export const AvatarRight: Story = {
   render: (args) => (
-    <Button {...(args as ButtonProps)}>
+    <Button {...args}>
       Label
       <Button.Avatar>
         <Avatar size={args.size}>

@@ -1,15 +1,9 @@
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { Logo, LogoPrimaryProps, LogoProductProps } from "@sikt/sd3-sikt-logo";
 import { clsx } from "clsx/lite";
-import {
-  AnchorHTMLAttributes,
-  Children,
-  HTMLAttributes,
-  ReactNode,
-} from "react";
+import { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 import "./header.css";
 import { Link } from "../../../index";
-import { hasChildOfType } from "../../../utils/has-child-of-type";
 
 export interface HeaderProps extends HTMLAttributes<HTMLElement> {
   className?: string;
@@ -27,9 +21,13 @@ export interface HeaderLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement>
   asChild?: boolean;
 }
 
-export type HeaderSubHeaderProps = HTMLAttributes<HTMLDivElement>;
+export type HeaderSkipLinkProps = HeaderLinkProps;
 
-const HeaderSkipLink = ({ ...rest }: HeaderLinkProps) => {
+export type HeaderLogoProps = Omit<LogoPrimaryProps, "size"> | LogoProductProps;
+
+export type HeaderContentProps = HTMLAttributes<HTMLDivElement>;
+
+const HeaderSkipLink = ({ ...rest }: HeaderSkipLinkProps) => {
   return (
     <Link
       className="sd3-visually-hidden focusable"
@@ -55,50 +53,25 @@ const HeaderLogoLink = ({
 };
 HeaderLogoLink.displayName = "HeaderLogoLink";
 
-const HeaderLogo = (
-  props: Omit<LogoPrimaryProps, "size"> | LogoProductProps,
-) =>
-  props.productName !== undefined ? (
-    <Logo {...props} data-part="logo" />
+const HeaderLogo = ({ ...rest }: HeaderLogoProps) =>
+  rest.productName !== undefined ? (
+    <Logo {...rest} data-part="logo" />
   ) : (
-    <Logo {...props} size="compact" data-part="logo" />
+    <Logo {...rest} size="compact" data-part="logo" />
   );
 HeaderLogo.displayName = "HeaderLogo";
 
-const HeaderSubHeader = ({ ...rest }: HeaderSubHeaderProps) => (
-  <div data-part="sub-header" {...rest} />
+const HeaderContent = ({ ...rest }: HeaderContentProps) => (
+  <div data-part="content" {...rest} />
 );
-HeaderSubHeader.displayName = "HeaderSubHeader";
+HeaderContent.displayName = "HeaderContent";
 
-export const Header = ({ children, className, ...rest }: HeaderProps) => {
-  const isSkipLink = (child: ReactNode) =>
-    hasChildOfType(child, HeaderSkipLink);
-  const isLogo = (child: ReactNode) =>
-    hasChildOfType(child, HeaderLogoLink) || hasChildOfType(child, HeaderLogo);
-  const isSubHeader = (child: ReactNode) =>
-    hasChildOfType(child, HeaderSubHeader);
-  const items = Children.toArray(children);
-  const skipLink = items.filter(isSkipLink);
-  const logo = items.filter(isLogo);
-  const content = items.filter(
-    (child) => !isSkipLink(child) && !isLogo(child) && !isSubHeader(child),
-  );
-  const subHeader = items.filter(isSubHeader);
-
-  return (
-    <header className={clsx("sd3-header", className)} {...rest}>
-      {skipLink}
-      <div data-part="header">
-        {logo}
-        {content.length > 0 && <div data-part="content">{content}</div>}
-      </div>
-      {subHeader}
-    </header>
-  );
-};
+export const Header = ({ className, ...rest }: HeaderProps) => (
+  <header className={clsx("sd3-header", className)} {...rest} />
+);
 
 Header.displayName = "Header";
 Header.SkipLink = HeaderSkipLink;
 Header.LogoLink = HeaderLogoLink;
 Header.Logo = HeaderLogo;
-Header.SubHeader = HeaderSubHeader;
+Header.Content = HeaderContent;

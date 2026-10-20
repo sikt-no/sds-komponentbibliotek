@@ -132,11 +132,11 @@
       margin: calc(var(--button-padding-block) * -1)
         calc(var(--button-padding-inline) * -1);
 
-      &:first-child {
+      &:first-child:not(:only-child) {
         margin-right: 0;
       }
 
-      &:last-child {
+      &:last-child:not(:only-child) {
         margin-left: 0;
       }
     }
