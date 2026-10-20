@@ -26,6 +26,18 @@ export type {
 } from "./src/Field";
 export { Field, useFieldContext } from "./src/Field";
 
+export type {
+  FieldsetContentDirection,
+  FieldsetContentProps,
+  FieldsetContextValue,
+  FieldsetDescriptionProps,
+  FieldsetLegendProps,
+  FieldsetProps,
+  FieldsetSize,
+  FieldsetValidationMessageProps,
+} from "./src/Fieldset";
+export { Fieldset, useFieldsetContext } from "./src/Fieldset";
+
 export * from "./src/Avatar";
 export * from "./src/Button";
 export * from "./src/Chip";

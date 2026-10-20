@@ -1,7 +1,8 @@
 import { clsx } from "clsx/lite";
-import { HTMLAttributes, ReactNode, useId } from "react";
+import { HTMLAttributes, ReactNode, useContext, useId } from "react";
 import type { Size } from "../../../types";
 import { hasChildOfType } from "../../../utils/has-child-of-type";
+import { FieldsetContext } from "../../Fieldset/src/FieldsetContext";
 import "./field.css";
 import { FieldContext } from "./FieldContext";
 import { FieldDescription } from "./FieldDescription";
@@ -26,6 +27,9 @@ const FieldRoot = ({
   children,
   ...rest
 }: FieldProps) => {
+  const fieldset = useContext(FieldsetContext);
+  const effectiveDisabled = disabled ?? fieldset?.disabled;
+
   const autoId = useId();
   const inputId = id ?? autoId;
 
@@ -44,7 +48,7 @@ const FieldRoot = ({
     <div
       className={clsx("sd3-field", className)}
       data-size={size}
-      data-disabled={disabled ? true : undefined}
+      data-disabled={effectiveDisabled ? true : undefined}
       data-readonly={readOnly ? true : undefined}
       data-invalid={hasValidation ? true : undefined}
       {...rest}
@@ -57,7 +61,7 @@ const FieldRoot = ({
             ? `${inputId}-validation`
             : undefined,
           "aria-invalid": hasValidation ? true : undefined,
-          disabled,
+          disabled: effectiveDisabled,
           readOnly,
           size,
         }}

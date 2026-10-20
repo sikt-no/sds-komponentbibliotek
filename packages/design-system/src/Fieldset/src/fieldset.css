@@ -1,0 +1,77 @@
+@scope (.sd3-fieldset) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --fieldset-legend-color: var(--sd3-color-text-primary);
+    --fieldset-description-color: var(--sd3-color-text-secondary);
+    --fieldset-legend-font-size: var(--sd3-typography-size-text-label);
+    --fieldset-legend-line-height: var(--sd3-typography-line-height-text-label);
+
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-inline-size: 0;
+
+    > * + * {
+      margin-top: var(--sd3-space-component-300);
+    }
+
+    > [data-part="legend"] + [data-part="description"] {
+      margin-top: var(--sd3-space-component-100);
+    }
+
+    &[data-size="large"] {
+      --fieldset-legend-font-size: var(--sd3-typography-size-text-label-lg);
+      --fieldset-legend-line-height: var(
+        --sd3-typography-line-height-text-label-lg
+      );
+    }
+
+    &[data-disabled] {
+      --fieldset-legend-color: var(--sd3-color-text-disabled);
+      --fieldset-description-color: var(--sd3-color-text-disabled);
+    }
+
+    [data-part="legend"] {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: var(--sd3-space-component-200);
+      padding: 0;
+      color: var(--fieldset-legend-color);
+      font-size: var(--fieldset-legend-font-size);
+      line-height: var(--fieldset-legend-line-height);
+      font-weight: var(--sd3-typography-weight-semibold);
+    }
+
+    [data-part="description"] {
+      display: block;
+      color: var(--fieldset-description-color);
+      font-size: var(--sd3-typography-size-text-helper);
+      line-height: var(--sd3-typography-line-height-text-helper);
+      font-weight: var(--sd3-typography-weight-regular);
+    }
+
+    [data-part="content"] {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sd3-space-component-200);
+
+      &[data-direction="horizontal"] {
+        flex-flow: row wrap;
+      }
+    }
+
+    [data-part="validation"] {
+      display: flex;
+      align-items: center;
+      gap: var(--sd3-space-component-100);
+      color: var(--sd3-color-text-critical);
+      font-size: var(--sd3-typography-size-text-helper);
+      line-height: var(--sd3-typography-line-height-text-helper);
+      font-weight: var(--sd3-typography-weight-regular);
+
+      [data-part="icon"] {
+        font-size: var(--sd3-typography-size-text-interaction-lg);
+      }
+    }
+  }
+}
