@@ -191,11 +191,11 @@ export const WithDateFields: Story = {
       <Fieldset.Content direction="horizontal">
         <Field>
           <Field.Label>Time</Field.Label>
-          <Input type="time" />
+          <Input type="time" defaultValue="14:30" />
         </Field>
         <Field>
           <Field.Label>Date</Field.Label>
-          <Input type="date" />
+          <Input type="date" defaultValue="1990-05-15" />
         </Field>
       </Fieldset.Content>
     </Fieldset>
