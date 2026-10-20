@@ -10,19 +10,30 @@ interface LogoBaseProps extends HTMLAttributes<HTMLDivElement> {
   hideSymbol?: boolean;
 }
 
-interface LogoBrandProps extends LogoBaseProps {
-  variant?: LogoVariant;
+export interface LogoPrimaryProps extends LogoBaseProps {
+  variant?: "primary" | undefined;
   lang?: LogoLang;
+  /** @default "standard" */
+  size?: "standard" | "compact";
   productName?: never;
 }
 
-interface LogoProductProps extends LogoBaseProps {
+export interface LogoSecondaryProps extends LogoBaseProps {
+  variant: "secondary";
+  lang?: LogoLang;
+  size?: never;
+  productName?: never;
+}
+
+export interface LogoProductProps extends LogoBaseProps {
   productName: string;
   variant?: never;
   lang?: never;
+  size?: never;
 }
 
-export type LogoProps = LogoBrandProps | LogoProductProps;
+export type LogoProps =
+  LogoPrimaryProps | LogoSecondaryProps | LogoProductProps;
 
 const i18n = {
   nb: "Kunnskapssektorens\n tjenesteleverandør",
@@ -51,6 +62,7 @@ export const Logo = ({
   className,
   lang = "nb",
   hideSymbol = false,
+  size = "standard",
   ...rest
 }: LogoProps) => {
   const isSecondary = variant === "secondary" && !productName;
@@ -58,6 +70,7 @@ export const Logo = ({
     <div
       className={clsx("sd3-sikt-logo", className)}
       data-variant={productName ? "product" : variant}
+      data-size={size}
       {...rest}
     >
       {!hideSymbol && <LogoSvg data-part="symbol" aria-hidden />}

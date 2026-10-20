@@ -30,7 +30,8 @@
       }
     }
 
-    &[data-variant="product"] {
+    &[data-variant="product"],
+    &[data-variant="primary"][data-size="compact"] {
       font-size: 1.75rem;
       font-weight: var(--sd3-typography-weight-regular);
       line-height: 1em;

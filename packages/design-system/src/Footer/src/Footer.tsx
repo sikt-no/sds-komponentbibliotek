@@ -1,5 +1,5 @@
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { Logo, LogoProps } from "@sikt/sd3-sikt-logo";
+import { Logo, LogoSecondaryProps } from "@sikt/sd3-sikt-logo";
 import { clsx } from "clsx/lite";
 import { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 import "./footer.css";
@@ -36,9 +36,7 @@ const FooterLink = ({
 };
 FooterLink.displayName = "FooterLink";
 
-const FooterLogo = ({
-  ...rest
-}: Omit<LogoProps, "variant" | "productName">) => (
+const FooterLogo = ({ ...rest }: Omit<LogoSecondaryProps, "variant">) => (
   <Logo {...rest} variant="secondary" />
 );
 FooterLogo.displayName = "FooterLogo";
