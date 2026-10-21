@@ -7,7 +7,6 @@ import {
 } from "../../../../icons/stories/iconArgType";
 import {
   Button,
-  type ButtonProps,
   type ButtonSize,
   type ButtonTheme,
   type ButtonVariant,
@@ -15,18 +14,12 @@ import {
 
 type IconPosition = "left" | "right";
 
-/**
- * Flattened story args. `ButtonProps` is a discriminated union (`iconOnly` gates
- * the aria-label requirement) which confuses Storybook's ArgsStoryFn inference —
- * so stories use a plain intersection here. The type-forcing still applies at
- * consumer call sites through `ButtonProps`.
- */
+/** Button props plus story-only icon pickers. */
 type StoryArgs = ComponentProps<"button"> & {
   variant?: ButtonVariant;
   theme?: ButtonTheme;
   size?: ButtonSize;
   asChild?: boolean;
-  iconOnly?: boolean;
   icon?: IconComponent | null;
   iconPosition?: IconPosition;
 };
@@ -71,7 +64,7 @@ export const Default: Story = {
     iconPosition: "left",
   },
   render: ({ icon: Icon, iconPosition, children, ...args }) => (
-    <Button {...(args as ButtonProps)}>
+    <Button {...args}>
       {Icon && iconPosition === "left" && (
         <Button.Icon>
           <Icon />
@@ -89,7 +82,7 @@ export const Default: Story = {
 
 export const IconLeft: Story = {
   render: (args) => (
-    <Button {...(args as ButtonProps)}>
+    <Button {...args}>
       <Button.Icon>
         <ConfirmIcon />
       </Button.Icon>
@@ -107,7 +100,7 @@ export const IconLeft: Story = {
 
 export const IconRight: Story = {
   render: (args) => (
-    <Button {...(args as ButtonProps)}>
+    <Button {...args}>
       Label
       <Button.Icon>
         <NavigateToNextIcon />
@@ -125,7 +118,6 @@ export const IconRight: Story = {
 
 export const IconOnly: Story = {
   args: {
-    iconOnly: true,
     "aria-label": "Lukk",
     icon: "close" as unknown as IconComponent,
   },
@@ -134,7 +126,7 @@ export const IconOnly: Story = {
     iconPosition: { table: { disable: true } },
   },
   render: ({ icon: Icon, ...args }) => (
-    <Button {...(args as ButtonProps)}>
+    <Button {...args}>
       {Icon && (
         <Button.Icon>
           <Icon />
@@ -146,7 +138,7 @@ export const IconOnly: Story = {
     docs: {
       description: {
         story:
-          "Icon-only button — set `iconOnly` (the type-system then requires `aria-label` or `aria-labelledby`) and pass a `Button.Icon` as the only child.",
+          "Icon-only button — pass a `Button.Icon` as the only child and set `aria-label` or `aria-labelledby`. The circle shape is applied automatically via CSS.",
       },
     },
   },
@@ -157,7 +149,7 @@ export const AsChildLink: Story = {
     asChild: true,
   },
   render: (args) => (
-    <Button {...(args as ButtonProps)}>
+    <Button {...args}>
       <a href="https://sikt.no">Gå til sikt.no</a>
     </Button>
   ),

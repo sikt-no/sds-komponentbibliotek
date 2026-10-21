@@ -25,7 +25,7 @@ describe("Button", () => {
 
     it("should be accessible when icon-only with aria-label", async () => {
       const { container } = render(
-        <Button iconOnly aria-label="Lukk">
+        <Button aria-label="Lukk">
           <Button.Icon>
             <svg data-testid="icon" />
           </Button.Icon>
@@ -144,36 +144,6 @@ describe("Button", () => {
     });
   });
 
-  describe("iconOnly", () => {
-    it("sets data-icon-only when iconOnly is true", () => {
-      render(
-        <Button iconOnly aria-label="Lukk">
-          <Button.Icon>
-            <svg data-testid="icon" />
-          </Button.Icon>
-        </Button>,
-      );
-      expect(screen.getByRole("button")).toHaveAttribute("data-icon-only", "");
-    });
-
-    it("does not set data-icon-only by default", () => {
-      render(<Button>Label</Button>);
-      expect(screen.getByRole("button")).not.toHaveAttribute("data-icon-only");
-    });
-
-    it("does not forward iconOnly as a DOM attribute", () => {
-      render(
-        <Button iconOnly aria-label="Lukk">
-          <Button.Icon>
-            <svg data-testid="icon" />
-          </Button.Icon>
-        </Button>,
-      );
-      expect(screen.getByRole("button")).not.toHaveAttribute("icononly");
-      expect(screen.getByRole("button")).not.toHaveAttribute("iconOnly");
-    });
-  });
-
   describe("slots", () => {
     it("Button.Icon renders content with data-part='icon' and aria-hidden", () => {
       render(
@@ -219,20 +189,6 @@ describe("Button", () => {
       expect(link).toHaveAttribute("data-size", "small");
       expect(link).toHaveAttribute("href", "/somewhere");
       expect(link).not.toHaveAttribute("type");
-    });
-
-    it("propagates iconOnly onto the slotted element", () => {
-      render(
-        <Button asChild iconOnly aria-label="Lukk">
-          {/* eslint-disable-next-line jsx-a11y/control-has-associated-label -- aria-label is merged onto the anchor via Slot */}
-          <a href="/close">
-            <Button.Icon>
-              <svg data-testid="icon" />
-            </Button.Icon>
-          </a>
-        </Button>,
-      );
-      expect(screen.getByRole("link")).toHaveAttribute("data-icon-only", "");
     });
   });
 });

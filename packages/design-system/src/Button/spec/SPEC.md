@@ -36,7 +36,7 @@ Reach for it whenever a user needs to invoke an action, submit a form, or advanc
 
 ### Icon-only layout
 
-When the button has no text children (only `Button.Icon`s), it must render as a circle at each size — large `48×48`, medium `40×40`, small `32×32`. Detection is done in the component and signalled to CSS via `data-icon-only`; the CSS equalises inline padding so the `999px` border-radius produces a circle.
+When the button has no text children (only `Button.Icon`s), it must render as a circle at each size — large `48×48`, medium `40×40`, small `32×32`. Detection is done in CSS via `:has(> [data-part="icon"]:only-child)`, which equalises inline padding so the `999px` border-radius produces a circle.
 
 ## Internal composition
 

@@ -10,10 +10,7 @@ export type ButtonTheme = "main" | "neutral" | "critical";
 
 export type ButtonSize = "large" | "medium" | "small";
 
-type CommonButtonProps = Omit<
-  ComponentProps<"button">,
-  "aria-label" | "aria-labelledby"
-> & {
+export type ButtonProps = ComponentProps<"button"> & {
   /** Render as the child element (e.g. an `<a>` or router `<Link>`). */
   asChild?: boolean;
   /** Visual emphasis. */
@@ -22,25 +19,9 @@ type CommonButtonProps = Omit<
   theme?: ButtonTheme;
   /** Visual size. */
   size?: ButtonSize;
-  /** Label text and/or `Button.Icon`. */
+  /** Label text and/or `Button.Icon`. A lone `Button.Icon` renders a circle — set `aria-label` or `aria-labelledby`. */
   children?: ReactNode;
 };
-
-type TextButtonProps = CommonButtonProps & {
-  /** Set to `true` when the button contains only a `Button.Icon`. Collapses the button to a circle and type-forces `aria-label` or `aria-labelledby`. */
-  iconOnly?: false;
-  "aria-label"?: string;
-  "aria-labelledby"?: string;
-};
-
-type IconOnlyButtonProps = CommonButtonProps & {
-  iconOnly: true;
-} & (
-    | { "aria-label": string; "aria-labelledby"?: string }
-    | { "aria-label"?: string; "aria-labelledby": string }
-  );
-
-export type ButtonProps = TextButtonProps | IconOnlyButtonProps;
 
 export interface ButtonIconProps {
   /** The icon element to render. Sized by the parent Button's `size` prop. */
@@ -60,7 +41,6 @@ export const Button = ({
   variant = "primary",
   theme = "main",
   size = "medium",
-  iconOnly,
   type,
   className,
   children,
@@ -74,7 +54,6 @@ export const Button = ({
       data-variant={variant}
       data-button-theme={theme}
       data-size={size}
-      data-icon-only={iconOnly ? "" : undefined}
       type={asChild ? undefined : (type ?? "button")}
       {...rest}
     >

@@ -22,7 +22,7 @@ export default {
   id: "Button",
   imports: [`import { Button } from "@sikt/sd3-design-system"`],
   example: figma.code`
-    <Button${figma.helpers.react.renderProp("variant", variant)}${figma.helpers.react.renderProp("size", size)} iconOnly aria-label="<must be filled in by consumer>">
+    <Button${figma.helpers.react.renderProp("variant", variant)}${figma.helpers.react.renderProp("size", size)} aria-label="<must be filled in by consumer>">
         <Button.Icon>${icon}</Button.Icon>
     </Button>`,
   metadata: {

@@ -47,22 +47,19 @@
     text-decoration: none;
     vertical-align: middle;
 
-    /* Icon-adjacent side uses the tighter outer padding — only when the button
-       has content beside the icon(s). Icon-only is handled below. */
-    &:not([data-icon-only]) {
-      &:has(> [data-part="icon"]:first-child) {
-        padding-inline-start: var(--button-padding-inline-icon);
-      }
+    /* Icon-adjacent side uses the tighter outer padding. */
+    &:has(> [data-part="icon"]:first-child) {
+      padding-inline-start: var(--button-padding-inline-icon);
+    }
 
-      &:has(> [data-part="icon"]:last-child) {
-        padding-inline-end: var(--button-padding-inline-icon);
-      }
+    &:has(> [data-part="icon"]:last-child) {
+      padding-inline-end: var(--button-padding-inline-icon);
     }
 
     /* Icon-only — equalise inline padding to the block padding so the pill
-       border-radius (999px) produces a perfect circle. Set by the consumer
-       via the `iconOnly` prop. */
-    &[data-icon-only] {
+       border-radius (999px) produces a perfect circle. Must come after the
+       icon-adjacent rules above (same specificity). */
+    &:has(> [data-part="icon"]:only-child) {
       padding-inline: var(--button-padding-block);
     }
 
