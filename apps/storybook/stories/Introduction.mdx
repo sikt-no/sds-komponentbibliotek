@@ -1,4 +1,6 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Markdown, Meta } from "@storybook/addon-docs/blocks";
+import SdsReadme from "../../../README.md?raw";
+import Sd3Readme from "../../../packages/design-system/stories/README.md?raw";
 
 <Meta title="Introduction" />
 
@@ -7,6 +9,11 @@ import { Meta } from "@storybook/addon-docs/blocks";
 ## Sikt designsystem 2.0 (SDS)
 
 This is the current production ready latest version of Sikt designsystem. It is currently in Long-Term Support (LTS) with no new features being added since we are migrating to the new version [SD3](#sikt-designsystem-30-sd3).
+
+<details>
+  <summary>Readme</summary>
+  <Markdown>{SdsReadme}</Markdown>
+</details>
 
 ## Sikt designsystem 3.0 (SD3)
 
@@ -19,3 +26,8 @@ This is the current production ready latest version of Sikt designsystem. It is 
 >
 > Please continue to use the existing component packages (e.g.
 > `@sikt/sds-button`) in production applications until SD3 is released on a stable major version.
+
+<details>
+  <summary>Readme</summary>
+  <Markdown>{Sd3Readme}</Markdown>
+</details>

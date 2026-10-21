@@ -1,0 +1,121 @@
+# Sikt designsystem
+
+<details>
+  <summary>Table of Contents</summary>
+
+- [Consume](#consume)
+  - [Getting started](#getting-started)
+  - [Stylesheets, Design Tokens & React](#stylesheets--design-tokens--react)
+    - [Stylesheets & Design Tokens](#stylesheets--design-tokens)
+    - [React components](#react-components)
+  - [Design Tokens](#design-tokens)
+  - [Icons](#icons)
+  - [Vue](#vue)
+  - [Agents](#agents)
+- [Examples](#examples)
+- [Accessibility](#accessibility)
+- [Contribute](#contribute)
+- [Security](#security)
+- [License](#license)
+
+</details>
+
+## Consume
+
+### Getting started
+
+Fast setup with the packages you probably need:
+
+```sh
+npm i -s @sikt/sd3-design-system @sikt/sd3-design-tokens @sikt/sd3-sikt-logo @sikt/sds-icons
+```
+
+### Stylesheets, Design Tokens & React
+
+See [@sikt/sd3-design-system](./packages/design-system/README.md)
+
+```sh
+npm i -s @sikt/sd3-design-system
+```
+
+#### Stylesheets & Design Tokens
+
+Import the [@sikt/sd3-design-system](./packages/design-system/) package. It contains, among other things, a base stylesheet with reset, font family, [Design Tokens](./packages/design-tokens/README.md) and component styles.
+
+```css
+@layer sd3, my-own-more-specific-layer;
+
+@import url("@sikt/sd3-design-system") layer(sd3);
+```
+
+**Note** This package may be required whether you use the React components or not. Unless you import design tokens directly and make the setup yourself.
+
+**Note** Using [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer) when importing CSS is a good way to handle specificity when you have a need to override styles.
+
+#### React components
+
+Import component & stylesheet:
+
+```jsx
+import { Button } from "@sikt/sd3-design-system";
+
+return (
+  <Button variant="primary">Hello, World!</Button>;
+);
+```
+
+### Design Tokens
+
+See [@sikt/sd3-design-tokens](./packages/design-tokens/README.md)
+
+```sh
+npm i -s @sikt/sd3-design-tokens
+```
+
+This package may be needed to import Design Tokens into JavaScript files, like a `manifest.webmanifest`.
+
+### Icons
+
+See [@sikt/sds-icons](./packages/icons/README.md)
+
+```sh
+npm i -s @sikt/sds-icons
+```
+
+### Font
+
+See [@sikt/sd3-design-system](./packages/design-system/README.md#font)
+
+### Vue
+
+See custom markup below or go to the [Vue component example](./docs/VUE.md#example-component-sd3).
+
+### Agents
+
+_TODO_
+
+## Examples
+
+These are example web applications to see how things can be built with Sikt designsystem:
+
+- [SD3 Example](https://gitlab.sikt.no/designsystem/sd3-example) (_TODO_)
+
+## Accessibility
+
+[Accessibility](./docs/A11Y.md)
+
+## Contribute
+
+[Contributing](CONTRIBUTING.md)
+
+## Security
+
+[Security](./docs/SECURITY.md)
+
+## License
+
+[License](LICENSE.md)
+
+---
+
+Made with ❤️🧡💛💚💙💜 at [Sikt](https://www.sikt.no/)
