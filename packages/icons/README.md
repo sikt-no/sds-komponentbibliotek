@@ -63,4 +63,4 @@ Or use sprite:
 
 ## Contribute
 
-Add new icons by adding name to `src/icons.config.js`.
+Add new icons by adding config object to `src/icons.config.js` and `figma/icons.figma.batch.json`.
