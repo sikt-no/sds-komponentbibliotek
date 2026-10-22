@@ -90,11 +90,11 @@ const preview: Preview = {
     options: {
       storySort: {
         order: [
-          "Introduction",
+          "Readme",
           "*",
           "SDS",
           [
-            "Introduction",
+            "Readme",
             "Tokens",
             [
               "Readme",
@@ -116,7 +116,7 @@ const preview: Preview = {
           ],
           "SD3",
           [
-            "Introduction",
+            "Readme",
             "Design Tokens",
             ["Readme", "Changelog", "Color", "Typography", "Size", "*"],
             "Sikt Logo",

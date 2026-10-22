@@ -10,10 +10,12 @@ import colorDark from "@sikt/sds-tokens/dist/js/color.dark.mjs";
 import { Footer } from "./_components/footer/Footer";
 import { Header } from "./_components/header/Header";
 import { ApplicationStatus } from "@sikt/sds-message";
+import { Link } from "@sikt/sds-core";
 
 const { title } = Astro.props;
 const currentPath = Astro.url.pathname;
 const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
+const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
 ---
 
 <!doctype html>
@@ -58,7 +60,14 @@ const pageTitle = `${title ? `${title} | ` : ""}Sikt designsystem`;
   <body class="body">
     <Header currentHref={currentPath} />
     <ApplicationStatus variant="warning"
-      >Denne dokumentasjonen er for Sikt designsystem 2.0</ApplicationStatus
+      ><span
+        >Denne dokumentasjonen er for Sikt designsystem 2.0. Se <Link
+          href="https://www.figma.com/files/1167338716494500240/project/466688625"
+          >ny design i Figma for 3.0</Link
+        > eller les <Link href={storybookUrl}
+          >mer om det tekniska arbeidet i Storybook</Link
+        ></span
+      ></ApplicationStatus
     >
     <div class="page-wrapper">
       <slot name="sidebar" />
