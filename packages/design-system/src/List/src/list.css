@@ -1,0 +1,9 @@
+@scope (.sd3-list) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    padding-inline-start: var(--sd3-space-component-600);
+
+    [data-part="list-item"] {
+      margin: var(--sd3-space-component-200) 0;
+    }
+  }
+}
