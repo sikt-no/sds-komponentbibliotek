@@ -1,4 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
+import { List } from "../../List";
+import { Link } from "../../Typography";
 import { Details, DetailsProps } from "../index";
 
 const meta: Meta<DetailsProps> = {
@@ -109,14 +111,19 @@ export const RichContent: Story = {
           <strong>frivillig virksomhet</strong>. Følgende organisasjonsformer
           kan registreres:
         </p>
-        <ul>
-          <li>Foreninger og lag</li>
-          <li>Stiftelser</li>
-          <li>Aksjeselskap som ikke deler ut midler til fysiske personer</li>
-        </ul>
+        <List.Unordered>
+          <List.Item>Foreninger og lag</List.Item>
+          <List.Item>Stiftelser</List.Item>
+          <List.Item>
+            Aksjeselskap som ikke deler ut midler til fysiske personer
+          </List.Item>
+        </List.Unordered>
         <p>
           Les mer på{" "}
-          <a href="https://www.brreg.no/">Brønnøysundregistrenes nettsider</a>.
+          <Link href="https://www.brreg.no/">
+            Brønnøysundregistrenes nettsider
+          </Link>
+          .
         </p>
       </Details.Content>
     </Details>

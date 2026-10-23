@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "../../Button";
+import { List } from "../../List";
 import { Link } from "../../Typography";
 import { StatusMessage, type StatusMessageProps } from "../index";
 
@@ -51,14 +52,14 @@ export const WithLinks: Story = {
         Her er noen ressurser som kan hjelpe deg videre med utfyllingen.
       </StatusMessage.Description>
       <StatusMessage.Body>
-        <ul>
-          <li>
+        <List.Unordered>
+          <List.Item>
             <Link href="https://sikt.no">Les brukerveiledningen</Link>
-          </li>
-          <li>
+          </List.Item>
+          <List.Item>
             <Link href="https://sikt.no">Kontakt brukerstøtte</Link>
-          </li>
-        </ul>
+          </List.Item>
+        </List.Unordered>
       </StatusMessage.Body>
     </StatusMessage>
   ),
@@ -76,17 +77,17 @@ export const ErrorSummary: Story = {
         Rett opp feilene før du sender inn
       </StatusMessage.Title>
       <StatusMessage.Body>
-        <ul>
-          <li>
+        <List.Unordered>
+          <List.Item>
             <Link href="#navn">Navn må fylles ut</Link>
-          </li>
-          <li>
+          </List.Item>
+          <List.Item>
             <Link href="#epost">E-postadressen er ikke gyldig</Link>
-          </li>
-          <li>
+          </List.Item>
+          <List.Item>
             <Link href="#dato">Velg en dato som er senere enn i dag</Link>
-          </li>
-        </ul>
+          </List.Item>
+        </List.Unordered>
       </StatusMessage.Body>
     </StatusMessage>
   ),
