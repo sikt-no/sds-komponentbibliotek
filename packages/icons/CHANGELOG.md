@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@5.0.0...@sikt/sds-icons@5.1.0) (2026-10-23)
+
+### Features
+
+- **icons:** add language ([bbfa708](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bbfa70803e1a76a62d19b99796186589d25f650c))
+- **icons:** enable code connect for icons ([d3122a7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d3122a7f1186cb1654059043d4258bd58b51d3cb))
+
 ## [5.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-icons@4.3.0...@sikt/sds-icons@5.0.0) (2026-08-24)
 
 ### ⚠ BREAKING CHANGES
