@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.2.0...@sikt/sd3-design-tokens@0.3.0) (2026-10-23)
+
+### ⚠ BREAKING CHANGES
+
+- rename exported js files from tokens to index
+
+### Features
+
+- rename exported js files from tokens to index ([093e805](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/093e80560cf5d529daaa8db1533e5256b442fc5c))
+
 ## [0.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.1.0...@sikt/sd3-design-tokens@0.2.0) (2026-10-05)
 
 ### ⚠ BREAKING CHANGES
