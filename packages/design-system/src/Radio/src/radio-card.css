@@ -5,14 +5,12 @@
     --radio-card-control-border-color: var(--sd3-color-border-strong);
     --radio-card-control-border-width: var(--sd3-space-border-weight-025);
     --radio-card-control-hole-color: transparent;
-    --radio-card-background: var(--sd3-color-surface-default-1);
     --radio-card-border-color: var(--sd3-color-border-strong);
 
     display: flex;
     align-items: flex-start;
     gap: var(--sd3-space-component-200);
     padding: var(--sd3-space-component-400);
-    background-color: var(--radio-card-background);
     border: var(--sd3-space-border-weight-025) solid
       var(--radio-card-border-color);
     border-radius: var(--sd3-space-border-radius-200);
@@ -149,7 +147,6 @@
     }
 
     &:has([data-part="control"]:disabled) {
-      --radio-card-background: var(--sd3-color-interaction-disabled-default);
       --radio-card-border-color: var(--sd3-color-border-disabled);
       --radio-card-control-background: var(
         --sd3-color-interaction-disabled-default
@@ -158,10 +155,6 @@
       --radio-card-control-border-width: var(--sd3-space-border-weight-025);
 
       cursor: not-allowed;
-      color: var(--sd3-color-text-disabled);
-    }
-
-    &:has([data-part="control"]:disabled) [data-part="help-text"] {
       color: var(--sd3-color-text-disabled);
     }
 

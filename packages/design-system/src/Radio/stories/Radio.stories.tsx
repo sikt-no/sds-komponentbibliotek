@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
+import { Fieldset } from "../../Fieldset";
 import { Radio, type RadioProps } from "../index";
 
 const meta: Meta<RadioProps> = {
@@ -60,11 +61,12 @@ export const CriticalChecked: Story = {
   },
 };
 
-export const Group: Story = {
+export const WithFieldset: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Three radios sharing `name="plan"`.',
+        story:
+          "Grouped under a `Fieldset` with a legend. `Fieldset.Content` owns the stacking and gap.",
       },
     },
   },
@@ -76,21 +78,24 @@ export const Group: Story = {
       { value: "trondheim", label: "Trondheim" },
     ];
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        {options.map((o) => (
-          <Radio
-            key={o.value}
-            name="plan"
-            value={o.value}
-            checked={value === o.value}
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
-          >
-            {o.label}
-          </Radio>
-        ))}
-      </div>
+      <Fieldset>
+        <Fieldset.Legend>City</Fieldset.Legend>
+        <Fieldset.Content>
+          {options.map((o) => (
+            <Radio
+              key={o.value}
+              name="city"
+              value={o.value}
+              checked={value === o.value}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
+            >
+              {o.label}
+            </Radio>
+          ))}
+        </Fieldset.Content>
+      </Fieldset>
     );
   },
 };

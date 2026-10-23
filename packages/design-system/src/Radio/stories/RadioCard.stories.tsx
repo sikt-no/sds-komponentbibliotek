@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
+import { Fieldset } from "../../Fieldset";
 import { RadioCard, type RadioCardProps } from "../index";
 
 const meta: Meta<RadioCardProps> = {
@@ -75,11 +76,12 @@ export const Critical: Story = {
   },
 };
 
-export const Group: Story = {
+export const WithFieldset: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Three cards sharing `name="plan"`.',
+        story:
+          "Grouped under a `Fieldset` with a legend. `Fieldset.Content` owns the stacking and gap.",
       },
     },
   },
@@ -103,22 +105,25 @@ export const Group: Story = {
       },
     ];
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        {options.map((o) => (
-          <RadioCard
-            key={o.value}
-            name="plan"
-            value={o.value}
-            checked={value === o.value}
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
-          >
-            {o.label}
-            <RadioCard.HelpText>{o.help}</RadioCard.HelpText>
-          </RadioCard>
-        ))}
-      </div>
+      <Fieldset>
+        <Fieldset.Legend>City</Fieldset.Legend>
+        <Fieldset.Content>
+          {options.map((o) => (
+            <RadioCard
+              key={o.value}
+              name="city"
+              value={o.value}
+              checked={value === o.value}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
+            >
+              {o.label}
+              <RadioCard.HelpText>{o.help}</RadioCard.HelpText>
+            </RadioCard>
+          ))}
+        </Fieldset.Content>
+      </Fieldset>
     );
   },
 };
