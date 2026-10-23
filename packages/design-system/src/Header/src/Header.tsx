@@ -53,12 +53,9 @@ const HeaderLogoLink = ({
 };
 HeaderLogoLink.displayName = "HeaderLogoLink";
 
-const HeaderLogo = ({ ...rest }: HeaderLogoProps) =>
-  rest.productName !== undefined ? (
-    <Logo {...rest} data-part="logo" />
-  ) : (
-    <Logo {...rest} size="compact" data-part="logo" />
-  );
+const HeaderLogo = ({ ...rest }: HeaderLogoProps) => (
+  <Logo {...rest} size="compact" data-part="logo" />
+);
 HeaderLogo.displayName = "HeaderLogo";
 
 const HeaderContent = ({ ...rest }: HeaderContentProps) => (

@@ -19,5 +19,6 @@ export const Default: Story = {
 export const Product: Story = {
   args: {
     productName: "My product",
+    size: "compact",
   },
 };

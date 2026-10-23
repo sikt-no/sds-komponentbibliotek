@@ -10,7 +10,8 @@
       width: 1.57em;
     }
 
-    &[data-variant="primary"] {
+    &[data-variant="primary"],
+    &[data-variant="product"] {
       font-size: 3rem;
       font-weight: var(--sd3-typography-weight-regular);
       line-height: 1em;
@@ -30,17 +31,19 @@
       }
     }
 
-    &[data-variant="product"],
-    &[data-variant="primary"][data-size="compact"] {
-      font-size: 1.75rem;
-      font-weight: var(--sd3-typography-weight-regular);
-      line-height: 1em;
-      gap: var(--sd3-space-component-200);
-
-      [data-part="title"] {
-        font-size: 1.5rem;
+    &[data-size="compact"] {
+      &[data-variant="primary"],
+      &[data-variant="product"] {
+        font-size: 1.75rem;
         font-weight: var(--sd3-typography-weight-regular);
-        line-height: 1.5;
+        line-height: 1em;
+        gap: var(--sd3-space-component-200);
+
+        [data-part="title"] {
+          font-size: 1.5rem;
+          font-weight: var(--sd3-typography-weight-regular);
+          line-height: 1.5;
+        }
       }
     }
   }

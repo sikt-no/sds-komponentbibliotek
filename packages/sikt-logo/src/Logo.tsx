@@ -3,6 +3,9 @@ import { HTMLAttributes } from "react";
 import "./logo.css";
 import LogoSvg from "../Logo.svg";
 
+/** @default "standard" */
+type SizeDensity = "standard" | "compact";
+
 export type LogoVariant = "primary" | "secondary";
 type LogoLang = "nb" | "nn" | "en" | "se" | "smj" | "sma" | "fkv";
 
@@ -13,8 +16,7 @@ interface LogoBaseProps extends HTMLAttributes<HTMLDivElement> {
 export interface LogoPrimaryProps extends LogoBaseProps {
   variant?: "primary" | undefined;
   lang?: LogoLang;
-  /** @default "standard" */
-  size?: "standard" | "compact";
+  size?: SizeDensity;
   productName?: never;
 }
 
@@ -29,7 +31,7 @@ export interface LogoProductProps extends LogoBaseProps {
   productName: string;
   variant?: never;
   lang?: never;
-  size?: never;
+  size?: SizeDensity;
 }
 
 export type LogoProps =
