@@ -1267,16 +1267,16 @@
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
-            "components": [1, 0.7176470756530762, 0],
+            "components": [0.5960784554481506, 0.3960784375667572, 0],
             "alpha": 1,
-            "hex": "#FFB700"
+            "hex": "#986500"
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:7963:8291",
             "com.figma.scopes": ["ALL_FILLS", "STROKE"],
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:73762e9a6d04d514446d04afef156f64d3bb75f6/-1:-1",
-              "targetVariableName": "color-primitives/yellow/400",
+              "targetVariableId": "VariableID:3e690774358242c73a676e6de949394a0c78720d/-1:-1",
+              "targetVariableName": "color-primitives/yellow/800",
               "targetVariableSetId": "VariableCollectionId:87e4feb60dc51b2c8e135186a51eb5f4905cba87/-1:-1",
               "targetVariableSetName": "foundation"
             }
@@ -1286,11 +1286,9 @@
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
-            "components": [
-              0.9882352948188782, 0.9333333373069763, 0.8235294222831726
-            ],
+            "components": [1, 0.9725490212440491, 0.9215686321258545],
             "alpha": 1,
-            "hex": "#FCEED2"
+            "hex": "#FFF8EB"
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:7994:8840",
@@ -3666,6 +3664,28 @@
                   "targetVariableSetName": "foundation"
                 }
               }
+            }
+          }
+        }
+      },
+      "input": {
+        "background": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [1, 1, 1],
+            "alpha": 1,
+            "hex": "#FFFFFF"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:31651:2120",
+            "com.figma.hiddenFromPublishing": true,
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:186b2e63a8568c74943a9475a4818d80bbd238e0/-1:-1",
+              "targetVariableName": "color-primitives/neutral/100",
+              "targetVariableSetId": "VariableCollectionId:87e4feb60dc51b2c8e135186a51eb5f4905cba87/-1:-1",
+              "targetVariableSetName": "foundation"
             }
           }
         }

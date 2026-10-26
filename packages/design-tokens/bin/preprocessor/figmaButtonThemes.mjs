@@ -69,11 +69,11 @@ const normalizeToken = (token, darkTree) => ({
 export const figmaButtonThemesPreprocessor = {
   name: "preprocessor/figma/button-themes/modes",
   preprocessor: (dict) => {
-    const baseTree = readButtonThemeFile(BASE_FILE).color;
+    const baseTree = readButtonThemeFile(BASE_FILE)["color-button"];
     const modeTrees = Object.fromEntries(
       Object.entries(MODE_FILES).map(([modeKey, fileName]) => [
         modeKey,
-        readButtonThemeFile(fileName).color,
+        readButtonThemeFile(fileName)["color-button"],
       ]),
     );
     // Keep the full root object so alias paths like `color/interaction/...`
@@ -82,7 +82,7 @@ export const figmaButtonThemesPreprocessor = {
 
     dict.color = {
       ...dict.color,
-      ...buildModeAwareTree(baseTree, modeTrees, {
+      button: buildModeAwareTree(baseTree, modeTrees, {
         transformToken: (token) => normalizeToken(token, darkTree),
         warnLabel: "preprocessor/figma/button-themes/modes",
       }),
