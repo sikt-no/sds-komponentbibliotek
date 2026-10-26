@@ -3,6 +3,7 @@
   "globalDependencies": ["tsconfig.json", "tsdown.config.mts"],
   "tasks": {
     "build": {
+      "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     }
   }
