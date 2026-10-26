@@ -59,6 +59,19 @@ describe("List", () => {
           "sd3-list test-class-name",
         );
       });
+
+      it("should hide list style", async () => {
+        render(
+          <Component data-testid="test" hideListStyle>
+            {children}
+          </Component>,
+        );
+
+        expect(screen.getByTestId("test")).toHaveAttribute(
+          "data-is",
+          "hide-list-style",
+        );
+      });
     });
   });
 

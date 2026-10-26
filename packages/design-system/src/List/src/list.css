@@ -5,5 +5,10 @@
     [data-part="list-item"] {
       margin: var(--sd3-space-component-200) 0;
     }
+
+    &[data-is="hide-list-style"] {
+      list-style-type: "";
+      padding-inline-start: unset;
+    }
   }
 }

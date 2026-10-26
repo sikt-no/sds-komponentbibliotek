@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { List, ListProps } from "../index";
+import { List, OrderedListProps } from "../index";
 
 const meta: Meta = {
   title: "SD3/List/Ordered",
@@ -9,7 +9,7 @@ const meta: Meta = {
 
 export default meta;
 
-type Story = StoryObj<ListProps>;
+type Story = StoryObj<OrderedListProps>;
 
 export const Default: Story = {
   args: {

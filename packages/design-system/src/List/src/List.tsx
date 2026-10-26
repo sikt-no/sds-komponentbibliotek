@@ -2,9 +2,18 @@ import { clsx } from "clsx/lite";
 import { HTMLAttributes, LiHTMLAttributes, OlHTMLAttributes } from "react";
 import "./list.css";
 
-export type UnorderedListProps = HTMLAttributes<HTMLUListElement>;
-export type OrderedListProps = OlHTMLAttributes<HTMLOListElement>;
-export type DescriptionProps = HTMLAttributes<HTMLElement>;
+interface ListBaseProps {
+  /**
+   * Hide default list-style
+   */
+  hideListStyle?: boolean;
+}
+
+export type UnorderedListProps = HTMLAttributes<HTMLUListElement> &
+  ListBaseProps;
+export type OrderedListProps = OlHTMLAttributes<HTMLOListElement> &
+  ListBaseProps;
+export type DescriptionProps = HTMLAttributes<HTMLElement> & ListBaseProps;
 
 interface ListVariants {
   variant: "description" | "unordered" | "ordered";
@@ -18,11 +27,13 @@ const ListComponents = {
 
 export type ListItemProps = LiHTMLAttributes<HTMLLIElement>;
 
-type ListProps = UnorderedListProps | OrderedListProps | DescriptionProps;
+export type ListProps =
+  UnorderedListProps | OrderedListProps | DescriptionProps;
 
 const ListRoot = ({
   className,
   variant,
+  hideListStyle,
   ...rest
 }: ListProps & ListVariants) => {
   const Comp = ListComponents[variant];
@@ -31,6 +42,7 @@ const ListRoot = ({
     <Comp
       className={clsx("sd3-list", className)}
       data-variant={variant}
+      data-is={hideListStyle ? "hide-list-style" : undefined}
       {...rest}
     />
   );

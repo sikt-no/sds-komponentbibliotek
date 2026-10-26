@@ -1,7 +1,7 @@
 export type {
   DescriptionProps,
   ListItemProps,
-  ListProps,
   OrderedListProps,
+  UnorderedListProps,
 } from "./src/List";
 export { List } from "./src/List";
