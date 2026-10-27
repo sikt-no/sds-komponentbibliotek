@@ -52,7 +52,9 @@ test-e2e:
     - npm ci --no-audit --no-fund --cache .npm
     - npm run postinstall
     - npx playwright install --with-deps
-    - npm run test:e2e -- --shard=$SHARD_INDEX/$SHARD_TOTAL
+    - npm run test:e2e -- --shard=$SHARD_INDEX/$SHARD_TOTAL --last-failed-file=playwright/last-run-shard-$SHARD_INDEX.json || exit ${E2E_FAILURE_EXIT_CODE:-1}
+  allow_failure:
+    exit_codes: 42
   artifacts:
     expire_in: 1 days
     paths:
@@ -70,8 +72,8 @@ test-e2e:
     - if: $CI_MERGE_REQUEST_IID
       when: on_success
     - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
-      when: manual
-      allow_failure: true
+      variables:
+        E2E_FAILURE_EXIT_CODE: 42
     - when: on_success
 
 test-e2e-update-snapshots:
@@ -90,7 +92,7 @@ test-e2e-update-snapshots:
     - npm ci --no-audit --no-fund --cache .npm
     - npm run postinstall
     - npx playwright install --with-deps
-    - npm run test:e2e -- --update-snapshots=changed
+    - for f in playwright/last-run-shard-*.json; do npm run test:e2e -- --update-snapshots=changed --last-failed --last-failed-file="$f" --output="${f%.json}" --pass-with-no-tests || exit 1; done
   after_script:
     - git config user.name "CI Pipeline"
     - git config user.email "cipipeline@example.com"
@@ -102,6 +104,7 @@ test-e2e-update-snapshots:
   needs:
     - install
     - packages
+    - test-e2e
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
       when: never
@@ -109,9 +112,7 @@ test-e2e-update-snapshots:
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: never
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
-      when: manual
-      allow_failure: true
     - if: $CI_MERGE_REQUEST_IID
-      when: manual
+      when: never
+    - when: manual
       allow_failure: true
