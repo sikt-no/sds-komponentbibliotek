@@ -1273,16 +1273,16 @@
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
-            "components": [0.7411764860153198, 0.4941176474094391, 0],
+            "components": [0.5803921818733215, 0.3843137323856354, 0],
             "alpha": 1,
-            "hex": "#BD7E00"
+            "hex": "#946200"
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:7963:8291",
             "com.figma.scopes": ["ALL_FILLS", "STROKE"],
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:a114fcc02b6322fd323955932aaca3f749507716/-1:-1",
-              "targetVariableName": "color-primitives/yellow/700",
+              "targetVariableId": "VariableID:3e690774358242c73a676e6de949394a0c78720d/-1:-1",
+              "targetVariableName": "color-primitives/yellow/800",
               "targetVariableSetId": "VariableCollectionId:87e4feb60dc51b2c8e135186a51eb5f4905cba87/-1:-1",
               "targetVariableSetName": "foundation"
             }
