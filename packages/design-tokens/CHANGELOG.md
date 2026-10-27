@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.3.0...@sikt/sd3-design-tokens@0.3.1) (2026-10-27)
+
+### Features
+
+- **design-tokens:** update yellow color ([06ba014](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/06ba014decf12890cfe716500c8bf9dbfd8c74a6))
+- **skills:** add update-tokens-package skill ([c320207](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c320207091b8152017775f5040a3fafb3f1e67c4))
+
 ## [0.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.2.0...@sikt/sd3-design-tokens@0.3.0) (2026-10-23)
 
 ### ⚠ BREAKING CHANGES
