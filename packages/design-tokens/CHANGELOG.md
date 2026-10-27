@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.3.1...@sikt/sd3-design-tokens@0.3.2) (2026-10-27)
+
+### Features
+
+- **design-tokens:** update yellow color in dark mode ([0a9dff2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/0a9dff2c80bfe796516299ea4016a29c196d0143))
+
 ## [0.3.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.3.0...@sikt/sd3-design-tokens@0.3.1) (2026-10-27)
 
 ### Features
