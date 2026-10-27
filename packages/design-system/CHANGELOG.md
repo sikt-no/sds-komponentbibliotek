@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-system@0.2.0...@sikt/sd3-design-system@0.2.1) (2026-10-27)
+
+### Features
+
+- **badge:** add component ([2a28695](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2a286952906134a31ce24b277940d33785f2d97e))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sd3-design-tokens ([4fb7c54](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/4fb7c54112606f6d86e9390fa8acb29809f9dc1c))
+- **deps:** update @sikt/sd3-design-tokens ([a0a15cb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a0a15cb68f09e1c176c7aa9c7b1ecdffcf0ae37e))
+- **radio-card:** keep card background and help text color when disabled ([2d3c96f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/2d3c96ff59a95ad64393f36631bb9ba37f89f550))
+
 ## [0.2.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-system@0.1.0...@sikt/sd3-design-system@0.2.0) (2026-10-23)
 
 ### ⚠ BREAKING CHANGES
