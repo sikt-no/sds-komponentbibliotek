@@ -1,0 +1,75 @@
+@scope (.sd3-badge) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --badge-background-color: var(--sd3-color-brand-primary-strong);
+    --badge-color: var(--sd3-color-text-on-strong);
+    --badge-font-size: var(--sd3-typography-size-text-interaction-md);
+
+    align-items: center;
+    background-color: var(--badge-background-color);
+    border-radius: var(--sd3-space-border-radius-full);
+    color: var(--badge-color);
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: var(--badge-font-size);
+    justify-content: center;
+    min-width: var(--badge-min-size);
+    min-height: var(--badge-min-size);
+
+    [data-part="number"] {
+      align-items: center;
+      display: inline-flex;
+      font-size: var(--badge-font-size);
+      font-weight: var(--sd3-typography-weight-regular);
+      justify-content: center;
+      line-height: 1;
+      min-width: var(--badge-min-size);
+      min-height: var(--badge-min-size);
+      padding: 0 var(--sd3-space-component-100);
+    }
+
+    &[data-size="large"] {
+      --badge-min-size: 1em;
+
+      &:has([data-part="number"]) {
+        --badge-min-size: 1.75em;
+      }
+    }
+
+    &[data-size="medium"] {
+      --badge-min-size: 0.875em;
+
+      &:has([data-part="number"]) {
+        --badge-min-size: 1.5em;
+      }
+    }
+
+    &[data-size="small"] {
+      --badge-font-size: var(--sd3-typography-size-text-interaction-sm);
+      --badge-min-size: 0.857em;
+
+      &:has([data-part="number"]) {
+        --badge-min-size: 1.428em;
+      }
+    }
+
+    &[data-variant="critical"] {
+      --badge-background-color: var(--sd3-color-support-critical-strong);
+    }
+
+    &[data-variant="info"] {
+      --badge-background-color: var(--sd3-color-support-info-strong);
+    }
+
+    &[data-variant="neutral"] {
+      --badge-background-color: var(--sd3-color-support-neutral-strong);
+    }
+
+    &[data-variant="success"] {
+      --badge-background-color: var(--sd3-color-support-success-strong);
+    }
+
+    &[data-variant="warning"] {
+      --badge-background-color: var(--sd3-color-support-warning-strong);
+    }
+  }
+}
