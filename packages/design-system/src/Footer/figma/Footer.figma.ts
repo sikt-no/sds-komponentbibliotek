@@ -7,18 +7,24 @@ const instance = figma.selectedInstance;
 
 const showSlotCenter = instance.getBoolean("showSlotCenter");
 const slotCenter = instance.getSlot("slotCenter");
+const slotCenterItems = slotCenter?.connectedInstances.map(
+  (item) => item.executeTemplate().example,
+);
 
 const showSlotTopRight = instance.getBoolean("showSlotTopRight");
 const slotTopRight = instance.getSlot("slotTopRight");
+const slotTopRightItems = slotTopRight?.connectedInstances.map(
+  (item) => item.executeTemplate().example,
+);
 
 export default {
   example: figma.code`
     <Footer>
-        <Footer.Link>
+        <Footer.Link href="//sikt.no">
             <Footer.Logo />
         </Footer.Link>
-        ${showSlotCenter ? figma.code`${slotCenter}` : null}
-        ${showSlotTopRight ? figma.code`${slotTopRight}` : null}
+        ${showSlotCenter ? figma.code`${slotCenterItems}` : null}
+        ${showSlotTopRight ? figma.code`${slotTopRightItems}` : null}
     </Footer>
   `,
   imports: ['import { Footer } from "@sikt/sd3-design-system";'],

@@ -3,13 +3,13 @@
 // component=List
 import figma from "figma";
 
-//const instance = figma.selectedInstance;
+const instance = figma.selectedInstance;
+
+const text = instance.getString("Text");
 
 export default {
   example: figma.code`
-    <List.Ordered>
-        <List.Item></List.Item>
-    </List.Ordered>
+    <List.Item>${text}</List.Item>
   `,
   imports: ['import { List } from "@sikt/sd3-design-system";'],
   id: "list",

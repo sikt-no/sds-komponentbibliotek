@@ -5,19 +5,31 @@ import figma from "figma";
 
 const instance = figma.selectedInstance;
 
-const disabled = instance.getBoolean("Disabled");
-const label = instance.getString("Label");
+const state = instance.getEnum("state", {
+  Default: "default",
+  Hover: "default",
+  Active: "default",
+  Disabled: "disabled",
+  Critical: "critical",
+});
+
+const isDisabled = state === "disabled";
+const isCritical = state === "critical";
+
 const isBorder = instance.getBoolean("isBorder");
+const isSelected = instance.getBoolean("selected");
+
+const label = instance.getString("labelText");
 const secondaryText = instance.getString("secondaryText");
 
 const example = isBorder
   ? figma.code`
-      <RadioCard${figma.helpers.react.renderProp("disabled", disabled)}>
+      <RadioCard${isSelected ? " checked" : ""}${isDisabled ? " disabled" : ""}${isCritical ? " aria-invalid='true'" : ""}>
         ${label}
         ${secondaryText ? figma.code`<RadioCard.HelpText>${secondaryText}</RadioCard.HelpText>` : ""}
       </RadioCard>`
   : figma.code`
-      <Radio${figma.helpers.react.renderProp("disabled", disabled)}>${label}</Radio>`;
+      <Radio${isSelected ? " checked" : ""}${isDisabled ? " disabled" : ""}${isCritical ? " aria-invalid='true'" : ""}>${label}</Radio>`;
 
 const imports = isBorder
   ? [`import { RadioCard } from "@sikt/sd3-design-system"`]

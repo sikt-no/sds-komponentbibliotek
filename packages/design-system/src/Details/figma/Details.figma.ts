@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/0aelUwbn2Ivir3T2JfhdOo/SDS-Komponenter?node-id=27292-17134
+// source=https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/packages/design-system/src/Details/index.ts
 // component=Details
 
 import figma from "figma";
@@ -16,18 +17,21 @@ const isOpen = instance.getEnum("isOpen", {
 });
 const labelText = instance.getString("labelText");
 
-const content =
-  instance.children[0]?.type === "TEXT"
-    ? instance.children[0].textContent
-    : "Revealed content";
+const slotText = instance
+  .findLayers((node) => node.type === "TEXT", {
+    path: ["slot"],
+    traverseInstances: true,
+  })
+  .map((node) => (node.type === "TEXT" ? node.textContent : ""))
+  .join(" ");
 
 export default {
   id: "Details",
   imports: [`import { Details } from "@sikt/sd3-design-system"`],
   example: figma.code`
-    <Details${figma.helpers.react.renderProp("size", size)}${figma.helpers.react.renderProp("open", isOpen)}>
+    <Details size="${size}" ${figma.helpers.react.renderProp("open", isOpen)}>
       <Details.Summary>${labelText}</Details.Summary>
-      <Details.Content>${content}</Details.Content>
+      <Details.Content>${slotText}</Details.Content>
     </Details>`,
   metadata: {
     nestable: true,

@@ -5,15 +5,31 @@ import figma from "figma";
 
 const instance = figma.selectedInstance;
 
+const largeSlot = instance.getSlot("largeSlot");
+const largeSlotItems = largeSlot?.connectedInstances.map(
+  (item) => item.executeTemplate().example,
+);
+const mediumSlot = instance.getSlot("mediumSlot");
+const mediumSlotItems = mediumSlot?.connectedInstances.map(
+  (item) => item.executeTemplate().example,
+);
+const smallSlot = instance.getSlot("smallSlot");
+const smallSlotitems = smallSlot?.connectedInstances.map(
+  (item) => item.executeTemplate().example,
+);
+
 export default {
   example: figma.code`
     <Header>
-        <Header.SkipLink href="#"></Header.SkipLink>
+        <Header.SkipLink href="#main">{/* text content */}</Header.SkipLink>
         <Header.Content>
-            <Header.Link href="#">
+            <Header.Link href="/">
                 <Header.Logo />
             </Header.Link>
+            <div>${largeSlotItems}</div>
         </Header.Content>
+        <div>${mediumSlotItems}</div>
+        <div>${smallSlotitems}</div>
     </Header>
   `,
   imports: ['import { Header } from "@sikt/sd3-design-system";'],
