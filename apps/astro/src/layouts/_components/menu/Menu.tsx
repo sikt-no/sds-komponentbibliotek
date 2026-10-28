@@ -6,6 +6,7 @@ import {
   SquaresFourIcon,
   GridFourIcon,
   TextAaIcon,
+  SwatchesIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { MenuButtonLink } from "./_components/MenuButtonLink";
@@ -54,7 +55,7 @@ const produktutviklingMenu: MenuItemType[] = [
   {
     name: "Fargesystem",
     url: "/produktutvikling/fargesystem",
-    icon: <PaletteIcon className="sds-icon" aria-hidden />,
+    icon: <SwatchesIcon className="sds-icon" aria-hidden />,
   },
   {
     name: "Fargetokens",
