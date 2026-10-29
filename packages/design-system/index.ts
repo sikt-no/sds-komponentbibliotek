@@ -40,6 +40,7 @@ export { Fieldset, useFieldsetContext } from "./src/Fieldset";
 
 export * from "./src/Avatar";
 export * from "./src/Button";
+export * from "./src/Checkbox";
 export * from "./src/Chip";
 export * from "./src/Input";
 export * from "./src/Radio";

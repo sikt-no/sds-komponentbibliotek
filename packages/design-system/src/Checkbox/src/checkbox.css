@@ -1,0 +1,155 @@
+@scope (.sd3-checkbox) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --checkbox-size: 1.5em;
+    --checkbox-mark-size: 1.375em;
+    --checkbox-background: var(--sd3-color-surface-default-1);
+    --checkbox-border-color: var(--sd3-color-border-strong);
+    --checkbox-border-width: var(--sd3-space-border-weight-025);
+    --checkbox-mark-color: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sd3-space-component-200);
+    cursor: pointer;
+
+    [data-part="indicator"] {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--checkbox-size);
+      height: var(--checkbox-size);
+      flex-shrink: 0;
+    }
+
+    [data-part="control"] {
+      appearance: none;
+      box-sizing: border-box;
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      padding: 0;
+      background-color: var(--checkbox-background);
+      border: none;
+      border-radius: var(--sd3-space-border-radius-100);
+      box-shadow: inset 0 0 0 var(--checkbox-border-width)
+        var(--checkbox-border-color);
+      cursor: inherit;
+
+      &:focus-visible {
+        outline: var(--sd3-focus-outline);
+        outline-offset: var(--sd3-focus-outline-offset);
+        box-shadow:
+          inset 0 0 0 var(--checkbox-border-width) var(--checkbox-border-color),
+          var(--sd3-focus-box-shadow);
+      }
+    }
+
+    [data-part="mark"] {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--checkbox-mark-size);
+      color: var(--checkbox-mark-color);
+      pointer-events: none;
+    }
+
+    &:has([data-part="control"]:checked:not(:indeterminate))
+      [data-part="mark"][data-mark="check"] {
+      display: flex;
+    }
+
+    &:has([data-part="control"]:indeterminate)
+      [data-part="mark"][data-mark="minus"] {
+      display: flex;
+    }
+
+    &:has([data-part="control"]:checked),
+    &:has([data-part="control"]:indeterminate) {
+      --checkbox-background: var(--sd3-color-interaction-primary-default);
+      --checkbox-border-color: transparent;
+      --checkbox-mark-color: var(--sd3-color-icon-on-strong);
+    }
+
+    @media (pointer: fine) {
+      &:hover:not(
+          :has([data-part="control"]:disabled),
+          :has([data-part="control"][aria-invalid="true"])
+        ) {
+        --checkbox-border-width: var(--sd3-space-border-weight-050);
+        --checkbox-background: var(--sd3-color-interaction-neutral-hover);
+      }
+
+      &:hover:has(
+          [data-part="control"]:checked,
+          [data-part="control"]:indeterminate
+        ):not(
+          :has([data-part="control"]:disabled),
+          :has([data-part="control"][aria-invalid="true"])
+        ) {
+        --checkbox-background: var(--sd3-color-interaction-primary-hover);
+      }
+    }
+
+    &:active:not(
+        :has([data-part="control"]:disabled),
+        :has([data-part="control"][aria-invalid="true"])
+      ) {
+      --checkbox-border-width: var(--sd3-space-border-weight-050);
+      --checkbox-background: var(--sd3-color-interaction-neutral-pressed);
+    }
+
+    &:active:has(
+        [data-part="control"]:checked,
+        [data-part="control"]:indeterminate
+      ):not(
+        :has([data-part="control"]:disabled),
+        :has([data-part="control"][aria-invalid="true"])
+      ) {
+      --checkbox-background: var(--sd3-color-interaction-primary-pressed);
+    }
+
+    &:has(
+      [data-part="control"][aria-invalid="true"]:not(:checked, :indeterminate)
+    ) {
+      --checkbox-border-width: var(--sd3-space-border-weight-050);
+      --checkbox-border-color: var(--sd3-color-interaction-critical-default);
+    }
+
+    &:has([data-part="control"][aria-invalid="true"]:checked),
+    &:has([data-part="control"][aria-invalid="true"]:indeterminate) {
+      --checkbox-background: var(--sd3-color-interaction-critical-default);
+      --checkbox-border-color: transparent;
+      --checkbox-mark-color: var(--sd3-color-icon-on-strong);
+    }
+
+    @media (pointer: fine) {
+      &:hover:has(
+          [data-part="control"][aria-invalid="true"]:not(
+              :checked,
+              :indeterminate
+            )
+        ) {
+        --checkbox-background: var(--sd3-color-interaction-neutral-hover);
+      }
+    }
+
+    &:has([data-part="control"]:disabled) {
+      --checkbox-background: var(--sd3-color-interaction-disabled-default);
+      --checkbox-border-color: var(--sd3-color-border-disabled);
+      --checkbox-border-width: var(--sd3-space-border-weight-025);
+
+      cursor: not-allowed;
+      color: var(--sd3-color-text-disabled);
+    }
+
+    &:has([data-part="control"]:disabled:checked),
+    &:has([data-part="control"]:disabled:indeterminate) {
+      --checkbox-background: var(--sd3-color-interaction-disabled-default);
+      --checkbox-border-color: transparent;
+      --checkbox-mark-color: var(--sd3-color-icon-disabled);
+    }
+  }
+}
