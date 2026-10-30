@@ -55,6 +55,8 @@ export type {
 } from "./src/StatusMessage";
 export { StatusMessage } from "./src/StatusMessage";
 
+export * from "./src/InlineMessage";
+
 export * from "./src/Tag";
 export * from "./src/TagStatus";
 export * from "./src/Textarea";

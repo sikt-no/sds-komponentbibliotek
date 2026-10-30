@@ -1,0 +1,58 @@
+@scope (.sd3-inline-message) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --inline-message-icon-color: var(
+      --sd3-color-component-inline-message-critical-icon
+    );
+    --inline-message-text-color: var(
+      --sd3-color-component-inline-message-critical-text
+    );
+
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--inline-message-text-color);
+    display: inline-flex;
+    font-size: var(--sd3-typography-size-text-helper);
+    font-weight: var(--sd3-typography-weight-regular);
+    gap: var(--sd3-space-component-100);
+    line-height: var(--sd3-typography-line-height-text-helper);
+
+    [data-part="icon"] {
+      align-items: center;
+      color: var(--inline-message-icon-color);
+      display: inline-flex;
+      flex-shrink: 0;
+      font-size: var(--sd3-typography-size-text-interaction-lg);
+      height: calc(
+        var(--sd3-typography-size-text-helper) *
+          var(--sd3-typography-line-height-text-helper)
+      );
+    }
+
+    &[data-variant="warning"] {
+      --inline-message-icon-color: var(
+        --sd3-color-component-inline-message-warning-icon
+      );
+      --inline-message-text-color: var(
+        --sd3-color-component-inline-message-warning-text
+      );
+    }
+
+    &[data-variant="success"] {
+      --inline-message-icon-color: var(
+        --sd3-color-component-inline-message-success-icon
+      );
+      --inline-message-text-color: var(
+        --sd3-color-component-inline-message-success-text
+      );
+    }
+
+    &[data-variant="info"] {
+      --inline-message-icon-color: var(
+        --sd3-color-component-inline-message-info-icon
+      );
+      --inline-message-text-color: var(
+        --sd3-color-component-inline-message-info-text
+      );
+    }
+  }
+}
