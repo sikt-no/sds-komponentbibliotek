@@ -20,7 +20,7 @@ const color = instance.getEnum("color", {
 const initials = instance.getString("initials");
 
 export default {
-  example: figma.code`<Avatar initials="${initials}" color="${color}" />`,
+  example: figma.code`<Avatar initials="${initials}" color="category-${color}" />`,
   imports: ['import { Avatar } from "@sikt/sd3-design-system";'],
   id: "avatar",
   metadata: {
