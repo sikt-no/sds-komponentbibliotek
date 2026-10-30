@@ -1,0 +1,32 @@
+# `navigation-card`
+
+## Consume
+
+```sh
+npm i -s @sikt/sd3-design-system
+```
+
+### React
+
+```js
+import { NavigationCard } from "@sikt/sd3-design-system";
+
+<NavigationCard>{/* TODO */}</NavigationCard>;
+```
+
+### Stylesheets
+
+Import stylesheet:
+
+```css
+@layer sd3 /*, my-own-more-specific-layer */;
+@import url("@sikt/sd3-design-system") layer(sd3);
+```
+
+### Custom markup
+
+Create custom markup:
+
+```html
+<!-- see html example in Storybook -->
+```

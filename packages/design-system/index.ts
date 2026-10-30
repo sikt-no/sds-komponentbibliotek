@@ -84,3 +84,5 @@ export { Span } from "./src/Typography";
 
 export * from "./src/Footer";
 export * from "./src/Header";
+export * from "./src/Card";
+export * from "./src/NavigationCard";

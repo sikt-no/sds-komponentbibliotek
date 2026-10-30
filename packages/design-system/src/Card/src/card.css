@@ -1,0 +1,50 @@
+@scope (.sd3-card) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --card-border-radius: var(--sd3-space-border-radius-200);
+
+    background-color: var(--sd3-color-surface-default-1);
+    border-radius: var(--card-border-radius);
+    display: flex;
+
+    &[data-variant="vertical"] {
+      flex-direction: column;
+
+      [data-part="image"]:first-child {
+        border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+      }
+
+      [data-part="image"]:last-child {
+        border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+      }
+    }
+
+    &[data-variant="horizontal"] {
+      flex-direction: row;
+
+      [data-part="image"]:first-child {
+        border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
+      }
+
+      [data-part="image"]:last-child {
+        border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
+      }
+    }
+
+    [data-part="image"] {
+      overflow: hidden;
+
+      * {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    [data-part="content"] {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sd3-space-component-600);
+      padding: var(--sd3-space-component-800) var(--sd3-space-component-1000);
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@scope (.sd3-navigation-card) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --icon-size: 1.5rem;
+
+    align-items: center;
+    background-color: var(--sd3-color-surface-default-1);
+    border-radius: var(--sd3-space-border-radius-200);
+    color: var(--sd3-color-text-primary);
+    display: flex;
+    padding: var(--sd3-space-component-450) var(--sd3-space-component-400)
+      var(--sd3-space-component-450) var(--sd3-space-component-600);
+    text-decoration: none;
+
+    &:focus-visible {
+      box-shadow: var(--sd3-focus-box-shadow);
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        box-shadow:
+          0 0 1px 0 rgb(0 0 0 / 14%),
+          0 2px 4px 0 rgb(0 0 0 / 12%),
+          0 4px 8px 0 rgb(0 0 0 / 12%);
+      }
+    }
+
+    &:active {
+      box-shadow:
+        0 0 1px 0 rgb(0 0 0 / 15%),
+        0 1px 2px 0 rgb(0 0 0 / 12%),
+        0 2px 4px 0 rgb(0 0 0 / 10%);
+    }
+
+    &[data-size="standard"] {
+      flex-wrap: wrap;
+      gap: var(--sd3-space-component-600);
+
+      [data-part="content"] {
+        flex-basis: 100%;
+        order: 1;
+      }
+
+      [data-part="heading"] {
+        font-size: var(--sd3-typography-size-application-xs);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-application-xs);
+      }
+    }
+
+    &[data-size="compact"] {
+      gap: var(--sd3-space-component-300);
+
+      [data-part="content"] {
+        flex-grow: 1;
+      }
+
+      [data-part="heading"] {
+        font-size: var(--sd3-typography-size-application-xxs);
+        font-weight: var(--sd3-typography-weight-semibold);
+        line-height: var(--sd3-typography-line-height-application-xxs);
+      }
+    }
+
+    [data-part="nav-icon"] {
+      align-items: center;
+      display: flex;
+      font-size: var(--icon-size);
+      justify-content: center;
+      margin-left: auto;
+    }
+
+    [data-part="icon"] {
+      align-items: center;
+      background-color: var(--sd3-color-surface-default-2);
+      border-radius: var(--sd3-space-border-radius-full);
+      display: flex;
+      font-size: var(--icon-size);
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
