@@ -17,7 +17,7 @@ const color = instance.getEnum("color", {
   9: "9",
 });
 
-const initials = instance.getString("inititals");
+const initials = instance.getString("initials");
 
 export default {
   example: figma.code`<Avatar initials="${initials}" color="${color}" />`,
