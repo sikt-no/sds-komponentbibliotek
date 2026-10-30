@@ -1,0 +1,11 @@
+@scope (.sd3-toggle-group) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sd3-space-component-100);
+    padding: var(--sd3-space-component-100);
+    border: var(--sd3-space-border-weight-025) solid
+      var(--sd3-color-border-strong);
+    border-radius: var(--sd3-space-border-radius-full);
+  }
+}

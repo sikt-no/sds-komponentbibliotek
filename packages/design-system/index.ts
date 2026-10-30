@@ -58,6 +58,7 @@ export { StatusMessage } from "./src/StatusMessage";
 export * from "./src/Tag";
 export * from "./src/TagStatus";
 export * from "./src/Textarea";
+export * from "./src/ToggleGroup";
 
 export type { HeadingProps } from "./src/Typography";
 export {
