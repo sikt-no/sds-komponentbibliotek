@@ -1,0 +1,118 @@
+@scope (.sd3-toggle) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --toggle-track-fill: transparent;
+    --toggle-track-border: var(--sd3-color-border-strong);
+    --toggle-track-border-weight: var(--sd3-space-border-weight-025);
+    --toggle-handle-fill: var(--sd3-color-component-toggle-handle);
+    --toggle-handle-shift: 0em;
+
+    align-self: start;
+    cursor: pointer;
+
+    &:not([data-part="control"]) {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--sd3-space-component-200);
+    }
+
+    &[data-label-position="right"] {
+      flex-direction: row-reverse;
+    }
+
+    & [data-part="control"],
+    &[data-part="control"] {
+      appearance: none;
+      box-sizing: border-box;
+      position: relative;
+      flex-shrink: 0;
+      width: 3em;
+      height: 1.5em;
+      margin: 0;
+      padding: 0;
+      background-color: var(--toggle-track-fill);
+      border: var(--toggle-track-border-weight) solid var(--toggle-track-border);
+      border-radius: var(--sd3-space-border-radius-full);
+      cursor: inherit;
+      transition:
+        background-color var(--sd3-animation-duration-short)
+          var(--sd3-animation-easing-default),
+        border-color var(--sd3-animation-duration-short)
+          var(--sd3-animation-easing-default);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0.125em;
+        width: 1.25em;
+        height: 1.25em;
+        border-radius: var(--sd3-space-border-radius-full);
+        background-color: var(--toggle-handle-fill);
+        transform: translate(var(--toggle-handle-shift), -50%);
+        transition:
+          transform var(--sd3-animation-duration-medium)
+            var(--sd3-animation-easing-default),
+          background-color var(--sd3-animation-duration-medium)
+            var(--sd3-animation-easing-default);
+      }
+
+      &:focus-visible {
+        outline: var(--sd3-focus-outline);
+        outline-offset: var(--sd3-focus-outline-offset);
+        box-shadow: var(--sds-focus-box-shadow);
+      }
+    }
+
+    &:has([data-part="control"]:checked),
+    &[data-part="control"]:checked {
+      --toggle-track-fill: var(--sd3-color-interaction-primary-default);
+      --toggle-track-border: transparent;
+      --toggle-handle-fill: var(--sd3-color-surface-default-1);
+      --toggle-handle-shift: calc(
+        1.5em - 2 * var(--toggle-track-border-weight)
+      );
+    }
+
+    @media (pointer: fine) {
+      &:not([data-part="control"]):hover:not(
+          :has([data-part="control"]:checked)
+        ),
+      &[data-part="control"]:hover:not(:checked) {
+        --toggle-track-fill: var(--sd3-color-interaction-neutral-hover);
+        --toggle-handle-shift: 0.375em;
+      }
+
+      &:hover:has([data-part="control"]:checked),
+      &[data-part="control"]:hover:checked {
+        --toggle-track-fill: var(--sd3-color-interaction-primary-hover);
+        --toggle-handle-shift: calc(
+          1.125em - 2 * var(--toggle-track-border-weight)
+        );
+      }
+
+      &:not([data-part="control"]):active:not(
+          :has([data-part="control"]:checked)
+        ),
+      &[data-part="control"]:active:not(:checked) {
+        --toggle-track-fill: var(--sd3-color-interaction-neutral-pressed);
+        --toggle-handle-shift: 0.75em;
+      }
+
+      &:active:has([data-part="control"]:checked),
+      &[data-part="control"]:active:checked {
+        --toggle-track-fill: var(--sd3-color-interaction-primary-pressed);
+        --toggle-handle-shift: 0.75em;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      & [data-part="control"],
+      & [data-part="control"]::before,
+      &[data-part="control"],
+      &[data-part="control"]::before {
+        transition: none;
+      }
+    }
+  }
+}
