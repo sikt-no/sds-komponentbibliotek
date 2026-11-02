@@ -98,7 +98,7 @@ _TODO_
 
 These are example web applications to see how things can be built with Sikt designsystem:
 
-- [SD3 Example](https://gitlab.sikt.no/designsystem/sd3-example) (_TODO_)
+- [SD3 Example](https://gitlab.sikt.no/designsystem/sd3-example)
 
 ## Accessibility
 

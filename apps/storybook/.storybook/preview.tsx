@@ -117,6 +117,7 @@ const preview: Preview = {
           "SD3",
           [
             "Readme",
+            "Design System",
             "Design Tokens",
             ["Readme", "Changelog", "Color", "Typography", "Size", "*"],
             "Sikt Logo",
