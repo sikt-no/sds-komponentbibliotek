@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Checkbox } from "../../Checkbox";
 import { Field } from "../../Field";
 import { Input } from "../../Input";
+import { Radio } from "../../Radio";
 import { Select } from "../../Select";
 import { Tag } from "../../Tag";
 import { Textarea } from "../../Textarea";
@@ -56,18 +58,15 @@ export const Default: Story = {
         </Fieldset.Description>
       ) : null}
       <Fieldset.Content>
-        <label>
-          <input type="checkbox" name="preferences" value="newsletter" />
+        <Checkbox name="preferences" value="newsletter">
           Newsletter
-        </label>
-        <label>
-          <input type="checkbox" name="preferences" value="updates" />
+        </Checkbox>
+        <Checkbox name="preferences" value="updates">
           Product updates
-        </label>
-        <label>
-          <input type="checkbox" name="preferences" value="offers" />
+        </Checkbox>
+        <Checkbox name="preferences" value="offers">
           Offers and promotions
-        </label>
+        </Checkbox>
       </Fieldset.Content>
       {validationMessage ? (
         <Fieldset.ValidationMessage>
@@ -86,18 +85,15 @@ export const WithCheckboxes: Story = {
         Choose which notifications you&apos;d like to receive by email.
       </Fieldset.Description>
       <Fieldset.Content>
-        <label>
-          <input type="checkbox" name="preferences" value="newsletter" />
+        <Checkbox name="preferences" value="newsletter">
           Newsletter
-        </label>
-        <label>
-          <input type="checkbox" name="preferences" value="updates" />
+        </Checkbox>
+        <Checkbox name="preferences" value="updates">
           Product updates
-        </label>
-        <label>
-          <input type="checkbox" name="preferences" value="offers" />
+        </Checkbox>
+        <Checkbox name="preferences" value="offers">
           Offers and promotions
-        </label>
+        </Checkbox>
       </Fieldset.Content>
     </Fieldset>
   ),
@@ -111,18 +107,15 @@ export const WithRadioButtons: Story = {
         You can change your plan at any time.
       </Fieldset.Description>
       <Fieldset.Content>
-        <label>
-          <input type="radio" name="plan" value="standard" />
+        <Radio name="plan" value="standard">
           Standard
-        </label>
-        <label>
-          <input type="radio" name="plan" value="premium" />
+        </Radio>
+        <Radio name="plan" value="premium">
           Premium
-        </label>
-        <label>
-          <input type="radio" name="plan" value="business" />
+        </Radio>
+        <Radio name="plan" value="business">
           Business
-        </label>
+        </Radio>
       </Fieldset.Content>
     </Fieldset>
   ),
@@ -133,19 +126,18 @@ export const HorizontalRadios: Story = {
     <Fieldset {...args}>
       <Fieldset.Legend>Choose a size</Fieldset.Legend>
       <Fieldset.Content direction="horizontal">
-        <label>
-          <input type="radio" name="size" value="s" />S
-        </label>
-        <label>
-          <input type="radio" name="size" value="m" />M
-        </label>
-        <label>
-          <input type="radio" name="size" value="l" />L
-        </label>
-        <label>
-          <input type="radio" name="size" value="xl" />
+        <Radio name="size" value="s">
+          S
+        </Radio>
+        <Radio name="size" value="m">
+          M
+        </Radio>
+        <Radio name="size" value="l">
+          L
+        </Radio>
+        <Radio name="size" value="xl">
           XL
-        </label>
+        </Radio>
       </Fieldset.Content>
     </Fieldset>
   ),
@@ -210,14 +202,12 @@ export const WithValidation: Story = {
         You must choose one option to continue.
       </Fieldset.Description>
       <Fieldset.Content>
-        <label>
-          <input type="radio" name="plan" value="standard" />
+        <Radio name="plan" value="standard">
           Standard
-        </label>
-        <label>
-          <input type="radio" name="plan" value="premium" />
+        </Radio>
+        <Radio name="plan" value="premium">
           Premium
-        </label>
+        </Radio>
       </Fieldset.Content>
       <Fieldset.ValidationMessage>
         Choose a plan to continue.
@@ -235,14 +225,12 @@ export const Disabled: Story = {
         Notifications cannot be changed while your account is suspended.
       </Fieldset.Description>
       <Fieldset.Content>
-        <label>
-          <input type="checkbox" name="preferences" value="newsletter" />
+        <Checkbox name="preferences" value="newsletter">
           Newsletter
-        </label>
-        <label>
-          <input type="checkbox" name="preferences" value="updates" />
+        </Checkbox>
+        <Checkbox name="preferences" value="updates">
           Product updates
-        </label>
+        </Checkbox>
       </Fieldset.Content>
     </Fieldset>
   ),
@@ -290,14 +278,12 @@ export const LegendWithTag: Story = {
       </Fieldset.Legend>
       <Fieldset.Description>Select at least one category.</Fieldset.Description>
       <Fieldset.Content>
-        <label>
-          <input type="checkbox" name="preferences" value="newsletter" />
+        <Checkbox name="preferences" value="newsletter">
           Newsletter
-        </label>
-        <label>
-          <input type="checkbox" name="preferences" value="updates" />
+        </Checkbox>
+        <Checkbox name="preferences" value="updates">
           Product updates
-        </label>
+        </Checkbox>
       </Fieldset.Content>
     </Fieldset>
   ),
