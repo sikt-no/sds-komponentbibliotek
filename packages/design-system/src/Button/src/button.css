@@ -14,10 +14,6 @@
     --button-border-color-hover: transparent;
     --button-border-color-pressed: transparent;
     --button-border-color-disabled: transparent;
-
-    /* Padding: default is the "text-edge" distance (outer + label breathing).
-       When an icon is adjacent, the icon-adjacent side collapses to the outer
-       padding so the icon sits closer to the edge (Figma design intent). */
     --button-padding-inline: var(--sd3-space-component-400);
     --button-padding-inline-icon: var(--sd3-space-component-300);
     --button-padding-block: var(--sd3-space-component-200);
@@ -47,7 +43,6 @@
     text-decoration: none;
     vertical-align: middle;
 
-    /* Icon-adjacent side uses the tighter outer padding. */
     &:has(> [data-part="icon"]:first-child) {
       padding-inline-start: var(--button-padding-inline-icon);
     }
@@ -81,6 +76,7 @@
       --button-background: var(--button-background-pressed);
       --button-border-color: var(--button-border-color-pressed);
 
+      background-color: var(--button-background-pressed);
       color: var(--button-color-pressed);
 
       & > [data-part="icon"] {
@@ -92,28 +88,6 @@
       outline: var(--sd3-focus-outline);
       outline-offset: var(--sd3-focus-outline-offset);
       box-shadow: var(--sd3-focus-box-shadow);
-    }
-
-    &:disabled,
-    &[aria-disabled="true"] {
-      --button-background: var(--button-background-disabled) !important;
-      --button-border-color: var(--button-border-color-disabled) !important;
-
-      color: var(--sd3-color-text-disabled);
-      cursor: not-allowed;
-
-      /* Neutralise variant hover/pressed swaps while disabled. */
-      --button-background-hover: var(--sd3-color-interaction-disabled-default);
-      --button-background-pressed: var(
-        --sd3-color-interaction-disabled-default
-      );
-      --button-border-color-hover: transparent;
-      --button-border-color-pressed: transparent;
-      --button-color-hover: var(--sd3-color-text-disabled);
-      --button-color-pressed: var(--sd3-color-text-disabled);
-      --button-icon-color: var(--sd3-color-icon-disabled);
-      --button-icon-color-hover: var(--sd3-color-icon-disabled);
-      --button-icon-color-pressed: var(--sd3-color-icon-disabled);
     }
 
     /* Icon slot — sized via font-size so child SVGs sized in em scale correctly.
@@ -245,6 +219,26 @@
       --button-gap: var(--sd3-space-component-100);
       --button-font-size: var(--sd3-typography-size-text-body-md);
       --button-line-height: var(--sd3-typography-line-height-text-body-md);
+    }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+      --button-background: var(--button-background-disabled);
+      --button-border-color: var(--button-border-color-disabled);
+      --button-background-hover: var(--sd3-color-interaction-disabled-default);
+      --button-background-pressed: var(
+        --sd3-color-interaction-disabled-default
+      );
+      --button-border-color-hover: transparent;
+      --button-border-color-pressed: transparent;
+      --button-color-hover: var(--sd3-color-text-disabled);
+      --button-color-pressed: var(--sd3-color-text-disabled);
+      --button-icon-color: var(--sd3-color-icon-disabled);
+      --button-icon-color-hover: var(--sd3-color-icon-disabled);
+      --button-icon-color-pressed: var(--sd3-color-icon-disabled);
+
+      color: var(--sd3-color-text-disabled);
+      cursor: not-allowed;
     }
   }
 }
