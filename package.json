@@ -19,7 +19,7 @@
     "packageManager": {
       "name": "npm",
       "version": "^12.0.0",
-      "onFail": "warn"
+      "onFail": "ignore"
     }
   },
   "workspaces": [
