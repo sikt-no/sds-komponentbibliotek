@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-system@0.2.1...@sikt/sd3-design-system@0.2.2) (2026-11-04)
+
+### Features
+
+- **application-status:** add component ([974c8f4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/974c8f402cc44b3095d662c5fb3cbc18966c9749))
+- card ([5a651df](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5a651df3f2a0defdedaa13e950b3862743587717))
+- **checkbox:** add sd3 Checkbox and CheckboxCard components ([f498cd7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f498cd755254cb7bdee0d926a1c44779342e1121))
+- **inline-message:** add InlineMessage component ([d0d9dc0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d0d9dc0d7ace58843923a083f8d3c0209ec831f8))
+- **list:** add prop for hiding list style ([3bafe26](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3bafe260cb52a1ac969fd0cecebee95acf8fed77))
+- **toggle-group:** add component ([551470a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/551470a4e0953357a1d48320ed64efc24cd90d5e))
+- **toggle:** add Toggle component ([fa04706](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fa04706b502b6ca129471d5b0e160528e754f470))
+
+### Bug Fixes
+
+- **button:** show pressed background during :active+:hover ([feccd34](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/feccd34b028e228260ad424be1cd3158049c75e2))
+- **deps:** update @sikt/sd3-design-tokens ([dc19d44](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/dc19d449f9fa3a43c02e00907c339599ae906ca0))
+
 ## [0.2.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-system@0.2.0...@sikt/sd3-design-system@0.2.1) (2026-10-27)
 
 ### Features
