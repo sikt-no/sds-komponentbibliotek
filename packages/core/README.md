@@ -73,4 +73,4 @@ Color scheme is default light and can be changed by the users color scheme setti
 
 ### Caveats
 
-Next.js 16 used Turbopack by default which in turn uses LightningCSS with a [bug related to light-dark()](https://github.com/parcel-bundler/lightningcss/issues/873). A work around is to add `@csstools/postcss-light-dark-function`.
+Next.js 16 used Turbopack by default which in turn uses LightningCSS with a [bug related to light-dark()](https://github.com/parcel-bundler/lightningcss/issues/873). For Next.js >= 16.2 use [next.config](https://nextjs.org/docs/app/api-reference/config/next-config-js/useLightningcss#lightningcssfeatures) to `exclude: ["light-dark"]`. For prior versions a work around is to add `@csstools/postcss-light-dark-function`.
