@@ -38,6 +38,12 @@ export type {
 } from "./src/Fieldset";
 export { Fieldset, useFieldsetContext } from "./src/Fieldset";
 
+export type {
+  ApplicationStatusProps,
+  ApplicationStatusVariant,
+} from "./src/ApplicationStatus";
+export { ApplicationStatus } from "./src/ApplicationStatus";
+
 export * from "./src/Avatar";
 export * from "./src/Button";
 export * from "./src/Checkbox";

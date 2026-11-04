@@ -1,0 +1,99 @@
+@scope (.sd3-application-status) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --application-status-background: var(--sd3-color-support-info-subtle);
+    --application-status-accent: var(--sd3-color-support-info-strong);
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    width: 100%;
+    color: var(--sd3-color-text-primary);
+    background-color: var(--application-status-background);
+    border: var(--sd3-space-border-weight-025) solid
+      var(--application-status-accent);
+    box-sizing: border-box;
+
+    &[data-variant="warning"] {
+      --application-status-background: var(--sd3-color-support-warning-subtle);
+      --application-status-accent: var(--sd3-color-support-warning-strong);
+    }
+
+    &[data-variant="success"] {
+      --application-status-background: var(--sd3-color-support-success-subtle);
+      --application-status-accent: var(--sd3-color-support-success-strong);
+    }
+
+    &[data-variant="critical"] {
+      --application-status-background: var(--sd3-color-support-critical-subtle);
+      --application-status-accent: var(--sd3-color-support-critical-strong);
+    }
+
+    &[data-variant="neutral"] {
+      --application-status-background: var(--sd3-color-support-neutral-subtle);
+      --application-status-accent: var(--sd3-color-support-neutral-strong);
+    }
+
+    [data-part="icon"],
+    [data-part="message"],
+    [data-part="dismiss"] {
+      align-self: center;
+    }
+
+    [data-part="icon"] {
+      grid-row: 1;
+      grid-column: 1;
+      display: inline-flex;
+      padding-block: var(--sd3-space-component-300);
+      padding-inline-start: var(--sd3-space-component-600);
+    }
+
+    [data-part="message"] {
+      grid-row: 1;
+      grid-column: 2;
+      padding-block: var(--sd3-space-component-300);
+      padding-inline: var(--sd3-space-component-300)
+        var(--sd3-space-component-600);
+      font-size: var(--sd3-typography-size-text-body-md);
+      line-height: var(--sd3-typography-line-height-text-body-md);
+      font-weight: var(--sd3-typography-weight-semibold);
+    }
+
+    &:has([data-part="dismiss"]) [data-part="message"] {
+      padding-inline-end: var(--sd3-space-component-300);
+    }
+
+    [data-part="dismiss"] {
+      grid-row: 1;
+      grid-column: 3;
+      display: inline-flex;
+      margin-inline-end: var(--sd3-space-component-600);
+    }
+
+    [data-part="description"] {
+      grid-row: 2;
+      grid-column: 1 / -1;
+      padding: var(--sd3-space-component-400) var(--sd3-space-component-1200);
+      background-color: var(--sd3-color-surface-default-1);
+      border-top: var(--sd3-space-border-weight-025) solid
+        var(--application-status-accent);
+      box-sizing: border-box;
+    }
+  }
+}
+
+/* Outside @scope above — the scope cuts off at any sd3-* descendant. */
+.sd3-button[data-variant="tertiary"].sd3-application-status__dismiss {
+  --button-background-hover: color-mix(
+    in srgb,
+    var(--application-status-accent) 12%,
+    transparent
+  );
+  --button-background-pressed: color-mix(
+    in srgb,
+    var(--application-status-accent) 24%,
+    transparent
+  );
+  --button-icon-color: var(--sd3-color-icon-primary);
+  --button-icon-color-hover: var(--sd3-color-icon-primary);
+  --button-icon-color-pressed: var(--sd3-color-icon-primary);
+  --button-icon-size: var(--sd3-typography-size-application-sm);
+}

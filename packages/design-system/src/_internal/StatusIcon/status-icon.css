@@ -1,0 +1,52 @@
+@scope (.sd3-status-icon) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    font-size: var(--sd3-typography-size-application-lg);
+
+    &[data-size="compact"] {
+      font-size: var(--sd3-typography-size-application-md);
+    }
+
+    &[data-variant="success"] {
+      color: var(--sd3-color-support-success-strong);
+    }
+
+    &[data-variant="critical"] {
+      color: var(--sd3-color-support-critical-strong);
+    }
+
+    &[data-variant="info"] {
+      color: var(--sd3-color-support-info-strong);
+    }
+
+    &[data-variant="warning"] {
+      color: var(--sd3-color-support-warning-strong);
+    }
+
+    &[data-variant="neutral"] {
+      color: var(--sd3-color-icon-on-strong);
+
+      [data-part="badge"] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 0.8125em;
+        height: 0.8125em;
+        border-radius: var(--sd3-space-border-radius-full);
+        background-color: var(--sd3-color-support-neutral-strong);
+      }
+
+      [data-part="glyph"] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.5714em;
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
