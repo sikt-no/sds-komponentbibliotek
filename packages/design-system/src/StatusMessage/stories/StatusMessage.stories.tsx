@@ -1,12 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentType } from "react";
 import { Button } from "../../Button";
 import { List } from "../../List";
 import { Link } from "../../Typography";
 import { StatusMessage, type StatusMessageProps } from "../index";
 
-const meta: Meta<StatusMessageProps> = {
+type StoryArgs = StatusMessageProps & {
+  title?: string;
+  description?: string;
+};
+
+const meta: Meta<StoryArgs> = {
   title: "SD3/StatusMessage",
-  component: StatusMessage,
+  component: StatusMessage as ComponentType<StoryArgs>,
   parameters: {
     docs: {
       description: {
@@ -15,19 +21,36 @@ const meta: Meta<StatusMessageProps> = {
       },
     },
   },
+  argTypes: {
+    title: {
+      name: "Title",
+      control: { type: "text" },
+      table: { category: "Composition" },
+    },
+    description: {
+      name: "Description",
+      control: { type: "text" },
+      table: { category: "Composition" },
+    },
+  },
 };
 
 export default meta;
 
-type Story = StoryObj<StatusMessageProps>;
+type Story = StoryObj<StoryArgs>;
 
 export const Default: Story = {
-  render: (args) => (
+  args: {
+    title: "Kontaktinformasjon",
+    description:
+      "Ved endringer i kontaktinformasjon, oppdater dette så snart som mulig.",
+  },
+  render: ({ title, description, ...args }) => (
     <StatusMessage {...args}>
-      <StatusMessage.Title>Kontaktinformasjon</StatusMessage.Title>
-      <StatusMessage.Description>
-        Ved endringer i kontaktinformasjon, oppdater dette så snart som mulig.
-      </StatusMessage.Description>
+      {title && <StatusMessage.Title>{title}</StatusMessage.Title>}
+      {description && (
+        <StatusMessage.Description>{description}</StatusMessage.Description>
+      )}
     </StatusMessage>
   ),
 };

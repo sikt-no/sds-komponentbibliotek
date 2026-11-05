@@ -1,13 +1,7 @@
-import {
-  AlertIcon,
-  FailedIcon,
-  FeedbackIcon,
-  InfoIcon,
-  SuccessIcon,
-} from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import type { HTMLAttributes, ReactNode } from "react";
 import type { SizeDensity } from "../../../types";
+import { StatusIcon } from "../../_internal/StatusIcon/StatusIcon";
 import "./status-message.css";
 
 export type StatusMessageVariant =
@@ -64,14 +58,6 @@ const StatusMessageBody = ({
 );
 StatusMessageBody.displayName = "StatusMessage.Body";
 
-const VARIANT_ICON: Record<StatusMessageVariant, ReactNode> = {
-  success: <SuccessIcon />,
-  critical: <FailedIcon />,
-  warning: <AlertIcon />,
-  info: <InfoIcon />,
-  neutral: <FeedbackIcon />,
-};
-
 const StatusMessageRoot = ({
   variant = "info",
   size = "standard",
@@ -85,7 +71,9 @@ const StatusMessageRoot = ({
     data-variant={variant}
     data-size={size}
   >
-    <span data-part="icon">{VARIANT_ICON[variant]}</span>
+    <span data-part="icon">
+      <StatusIcon variant={variant} size={size} />
+    </span>
     {children}
   </div>
 );

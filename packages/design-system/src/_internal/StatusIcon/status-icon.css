@@ -5,10 +5,10 @@
     justify-content: center;
     width: 1em;
     height: 1em;
-    font-size: var(--sd3-typography-size-application-lg);
+    font-size: 1.75rem;
 
     &[data-size="compact"] {
-      font-size: var(--sd3-typography-size-application-md);
+      font-size: 1.5rem;
     }
 
     &[data-variant="success"] {
