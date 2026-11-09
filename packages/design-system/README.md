@@ -8,6 +8,7 @@
   - [React](#react)
 - [Link](#link)
 - [Design Tokens](#design-tokens)
+- [Respomsive design](#responsive-design)
 - [Font](#font)
   - [Content Security Policy (CSP)](#content-security-policy-csp)
 - [Migration from SDS](#migration-from-sds)
@@ -47,6 +48,10 @@ import "@sikt/sd3-design-system/dist/index.css";
 ## Design Tokens
 
 [@sikt/sd3-design-tokens/README.md](../design-tokens/README.md)
+
+## Responsive design
+
+Components lacks built in responsivity, as specified. Responsive design is left for the consumer to handle. This can be done with the different component sizes and [multiple rendered markup and CSS](./src/Header/stories/Header.stories.tsx) or viewport detection on the client side with JavaScript. Please remember to use [relative sizes](../../docs/A11Y.md#relative-sizes) for breakpoints (which can be found in the Design Tokens).
 
 ## Font
 
