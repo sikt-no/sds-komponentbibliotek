@@ -68,3 +68,58 @@ describe("Badge", () => {
     });
   });
 });
+
+describe("Badge.Position", () => {
+  describe("a11y", () => {
+    it("should be accessible", async () => {
+      const { container } = render(
+        <Badge.Position>
+          <Badge />
+        </Badge.Position>,
+      );
+
+      expect(await axe(container)).toHaveNoViolations();
+    });
+  });
+
+  describe("api", () => {
+    it("should render", async () => {
+      render(<Badge.Position data-testid="test" />);
+
+      expect(screen.getByTestId("test")).toHaveClass("sd3-badge-position");
+      expect(screen.getByTestId("test")).toHaveAttribute(
+        "data-position",
+        "top-right",
+      );
+    });
+
+    it("should have class name", async () => {
+      render(<Badge.Position data-testid="test" className="test-class-name" />);
+
+      expect(screen.getByTestId("test")).toHaveClass(
+        "sd3-badge-position test-class-name",
+      );
+    });
+
+    it.each(["top-right", "top-left", "bottom-right", "bottom-left"] as const)(
+      "should set data-position='%s'",
+      (position) => {
+        render(<Badge.Position data-testid="test" position={position} />);
+        expect(screen.getByTestId("test")).toHaveAttribute(
+          "data-position",
+          position,
+        );
+      },
+    );
+
+    it("should render children", async () => {
+      render(
+        <Badge.Position>
+          <Badge>{5}</Badge>
+        </Badge.Position>,
+      );
+
+      expect(screen.getByText("5")).toBeInTheDocument();
+    });
+  });
+});

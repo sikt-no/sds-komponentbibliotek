@@ -8,7 +8,7 @@ import {
 } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { useEffect, useRef, useState } from "react";
-import { ApplicationStatus, Button, Field, Input } from "../../../index";
+import { ApplicationStatus, Badge, Button, Field, Input } from "../../../index";
 import { Avatar } from "../../../index";
 import { Header, HeaderProps } from "../index";
 
@@ -135,17 +135,20 @@ export const WithMenu: Story = {
                   Logg inn
                 </Button>
               )}
-              <Button
-                variant="tertiary"
-                aria-label="Nye notifikasjoner"
-                onClick={() => {
-                  console.log("TODO");
-                }}
-              >
-                <Button.Icon>
-                  <NotificationIcon />
-                </Button.Icon>
-              </Button>
+              <Badge.Position anchor="inside">
+                <Badge aria-hidden>3</Badge>
+                <Button
+                  variant="tertiary"
+                  aria-label="3 nye notifikasjoner"
+                  onClick={() => {
+                    console.log("TODO");
+                  }}
+                >
+                  <Button.Icon>
+                    <NotificationIcon />
+                  </Button.Icon>
+                </Button>
+              </Badge.Position>
               <Button
                 variant="secondary"
                 onClick={() => {
@@ -203,18 +206,21 @@ export const WithMenu: Story = {
                 Logg inn
               </Button>
             )}
-            <Button
-              variant="tertiary"
-              size="small"
-              aria-label="Nye notifikasjoner"
-              onClick={() => {
-                console.log("TODO");
-              }}
-            >
-              <Button.Icon>
-                <NotificationIcon />
-              </Button.Icon>
-            </Button>
+            <Badge.Position anchor="inside">
+              <Badge size="small" />
+              <Button
+                variant="tertiary"
+                size="small"
+                aria-label="Nye notifikasjoner"
+                onClick={() => {
+                  console.log("TODO");
+                }}
+              >
+                <Button.Icon>
+                  <NotificationIcon />
+                </Button.Icon>
+              </Button>
+            </Badge.Position>
             <Button
               variant="secondary"
               size="small"
@@ -276,18 +282,21 @@ export const WithMenu: Story = {
                 </Button.Icon>
               </Button>
             )}
-            <Button
-              variant="tertiary"
-              size="small"
-              aria-label="Nye notifikasjoner"
-              onClick={() => {
-                console.log("TODO");
-              }}
-            >
-              <Button.Icon>
-                <NotificationIcon />
-              </Button.Icon>
-            </Button>
+            <Badge.Position anchor="inside">
+              <Badge size="small" />
+              <Button
+                variant="tertiary"
+                size="small"
+                aria-label="Nye notifikasjoner"
+                onClick={() => {
+                  console.log("TODO");
+                }}
+              >
+                <Button.Icon>
+                  <NotificationIcon />
+                </Button.Icon>
+              </Button>
+            </Badge.Position>
             <Button
               variant="secondary"
               size="small"

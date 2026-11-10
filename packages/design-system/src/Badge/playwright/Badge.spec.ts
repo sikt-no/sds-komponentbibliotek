@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 
 const variants = ["brand", "neutral", "critical", "warning", "info", "success"];
 const sizes = ["large", "medium", "small"];
+const positions = ["top-right", "top-left", "bottom-right", "bottom-left"];
 
 test.describe("Badge", () => {
   const componentSelector = ".sd3-badge";
@@ -73,6 +74,15 @@ test.describe("Badge", () => {
           `/iframe.html?viewMode=story&id=sd3-badge--is-dot&args=size:${size}`,
         );
         await expect(page.locator(componentSelector)).toHaveScreenshot();
+      });
+    });
+
+    positions.forEach((position) => {
+      test(`position=${position} should have screenshot`, async ({ page }) => {
+        await page.goto(
+          `/iframe.html?viewMode=story&id=sd3-badge--with-position&args=position:${position}`,
+        );
+        await expect(page.locator("#e2e-test")).toHaveScreenshot();
       });
     });
   });
