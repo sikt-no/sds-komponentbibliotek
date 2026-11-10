@@ -40,6 +40,7 @@
       "matchPackagePatterns": ["react"],
       "excludeDepPatterns": [
         "^@phosphor-icons",
+        "^@radix-ui",
         "react-aria-components",
         "react-syntax-highlighter",
         "@mdx-js/react"
@@ -128,6 +129,10 @@
     {
       "matchPackagePatterns": ["^vite"],
       "groupName": "vite"
+    },
+    {
+      "matchPackagePatterns": ["^@radix-ui"],
+      "groupName": "radix-ui"
     }
   ]
 }
