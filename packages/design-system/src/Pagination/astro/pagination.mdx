@@ -1,0 +1,70 @@
+---
+title: "Pagination"
+id: "pagination"
+package: "design-system"
+---
+
+Pagination er en navigasjonskontroll for sidedelte lister. Send inn `count`, `currentIndex` og `onPageChange`, så rendrer komponenten forrige/neste, sidetallene og ellipsen selv.
+
+## Passer bra til
+
+- Søkeresultater og rapportlister som er delt opp i sider.
+- Admin-tabeller der brukeren kan hoppe til en spesifikk side.
+- Innhold med forrige/neste og nummererte sider.
+
+## Passer mindre bra til
+
+- Uendelig scrolling eller «last mer»-knapper.
+- Stegbaserte wizarder. Bruk `Stepper`.
+- Lister med færre enn fem sider.
+
+## Bruk
+
+```tsx
+<Pagination
+  aria-label="Paginering"
+  count={42}
+  currentIndex={currentIndex}
+  onPageChange={setCurrentIndex}
+/>
+```
+
+- `aria-label` gir navn til `<nav>`-landemerket — påkrevd.
+- `currentIndex` er 0-indeksert.
+- `onPageChange` fyres ved klikk på en sideknapp, forrige eller neste.
+
+## Størrelser
+
+- `standard` (default). Forrige/neste viser både ikon og tekst.
+- `compact`. Tettere rad, og forrige/neste er ikon-kun.
+
+## Tilpasning av labels
+
+`i18n`-objektet styrer forrige/neste-tekstene:
+
+```tsx
+<Pagination
+  aria-label="Pagination"
+  count={42}
+  currentIndex={currentIndex}
+  onPageChange={setCurrentIndex}
+  i18n={{
+    previousLabel: "Previous",
+    nextLabel: "Next",
+  }}
+/>
+```
+
+- `i18n.previousLabel` / `i18n.nextLabel` overstyrer "Forrige" / "Neste".
+- Sidenummerene får sitt tilgjengelige navn fra knappeteksten (tallet) — ingen egen `pageLabel` trengs.
+- `limit` setter maks antall sideknapper (inkl. endene). Default `7`.
+
+## Universell utforming
+
+- `<nav>`-landemerket får navn fra `aria-label` — attributtet er påkrevd.
+- Aktiv side markeres med `aria-current="page"` automatisk. Klikk på gjeldende side er no-op.
+- Forrige/neste på endene får `aria-disabled="true"` og beholder tab-fokus; komponenten blokkerer klikk-aktivering.
+
+## Gjenbruk av range-math
+
+`usePaginationRange({ count, currentIndex, limit })` er eksportert hvis du trenger samme sidetall-logikk i egen markup — f.eks. i et SSR-rendret lenke-grid.

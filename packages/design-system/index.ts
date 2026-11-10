@@ -49,6 +49,7 @@ export * from "./src/Button";
 export * from "./src/Checkbox";
 export * from "./src/Chip";
 export * from "./src/Input";
+export * from "./src/Pagination";
 export * from "./src/Radio";
 export * from "./src/Select";
 

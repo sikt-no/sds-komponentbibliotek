@@ -1,0 +1,84 @@
+@scope (.sd3-pagination) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    display: block;
+
+    [data-part="list"] {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--sd3-space-component-100);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    [data-part="item"] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [data-part="ellipsis"],
+    [data-part="button"] {
+      --pagination-atom-background: transparent;
+      --pagination-atom-size: calc(8em / 3);
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: var(--pagination-atom-size);
+      height: var(--pagination-atom-size);
+      padding: 0;
+      border: none;
+      border-radius: var(--sd3-space-border-radius-full);
+      background-color: var(--pagination-atom-background);
+      color: var(--sd3-color-text-primary);
+      font-size: var(--sd3-typography-size-text-interaction-lg);
+      font-weight: var(--sd3-typography-weight-regular);
+      text-align: center;
+    }
+
+    [data-part="button"] {
+      cursor: pointer;
+      appearance: none;
+
+      &[aria-current="page"] {
+        --pagination-atom-background: var(
+          --sd3-color-interaction-subtle-default
+        );
+
+        cursor: default;
+      }
+
+      &:focus-visible {
+        outline: var(--sd3-focus-outline);
+        outline-offset: var(--sd3-focus-outline-offset);
+        box-shadow: var(--sd3-focus-box-shadow);
+      }
+
+      @media (pointer: fine) {
+        &:hover:not([aria-current="page"]) {
+          --pagination-atom-background: var(
+            --sd3-color-interaction-neutral-hover
+          );
+        }
+      }
+
+      &:active:not([aria-current="page"]) {
+        --pagination-atom-background: var(
+          --sd3-color-interaction-neutral-pressed
+        );
+      }
+    }
+
+    &[data-size="compact"] {
+      [data-part="ellipsis"],
+      [data-part="button"] {
+        --pagination-atom-size: 2.5em;
+
+        font-size: var(--sd3-typography-size-text-interaction-md);
+      }
+    }
+  }
+}
