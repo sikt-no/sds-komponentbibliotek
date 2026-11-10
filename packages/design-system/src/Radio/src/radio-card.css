@@ -120,7 +120,7 @@
     &:has([data-part="control"][aria-invalid="true"]:not(:checked)) {
       --radio-card-control-border-width: var(--sd3-space-border-weight-050);
       --radio-card-control-border-color: var(
-        --sd3-color-interaction-critical-default
+        --sd3-color-interaction-critical-border
       );
     }
 

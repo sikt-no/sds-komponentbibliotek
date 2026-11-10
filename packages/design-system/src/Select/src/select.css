@@ -98,7 +98,7 @@
 
     &:has([data-part="control"][aria-invalid="true"]) {
       --select-background: var(--sd3-color-support-critical-subtle);
-      --select-border-color: var(--sd3-color-border-critical);
+      --select-border-color: var(--sd3-color-interaction-critical-border);
     }
 
     &:has([data-part="control"]:open) [data-part="caret"] {

@@ -60,7 +60,7 @@
 
     &[aria-invalid="true"] {
       --input-background: var(--sd3-color-support-critical-subtle);
-      --input-border-color: var(--sd3-color-border-critical);
+      --input-border-color: var(--sd3-color-interaction-critical-border);
     }
 
     &[data-size="large"] {

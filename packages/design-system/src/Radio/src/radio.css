@@ -86,7 +86,7 @@
 
     &:has([data-part="control"][aria-invalid="true"]:not(:checked)) {
       --radio-border-width: var(--sd3-space-border-weight-050);
-      --radio-border-color: var(--sd3-color-interaction-critical-default);
+      --radio-border-color: var(--sd3-color-interaction-critical-border);
     }
 
     &:has([data-part="control"][aria-invalid="true"]:checked) {

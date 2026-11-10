@@ -115,7 +115,7 @@
       [data-part="control"][aria-invalid="true"]:not(:checked, :indeterminate)
     ) {
       --checkbox-border-width: var(--sd3-space-border-weight-050);
-      --checkbox-border-color: var(--sd3-color-interaction-critical-default);
+      --checkbox-border-color: var(--sd3-color-interaction-critical-border);
     }
 
     &:has([data-part="control"][aria-invalid="true"]:checked),

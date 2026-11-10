@@ -55,7 +55,7 @@
 
     &[aria-invalid="true"] {
       --textarea-background: var(--sd3-color-support-critical-subtle);
-      --textarea-border-color: var(--sd3-color-border-critical);
+      --textarea-border-color: var(--sd3-color-interaction-critical-border);
     }
   }
 }
