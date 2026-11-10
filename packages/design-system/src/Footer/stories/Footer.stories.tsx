@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { Link } from "../../../index";
+import { Link, List } from "../../../index";
 import { Footer, FooterProps } from "../index";
 
 const meta: Meta = {
@@ -14,18 +14,18 @@ type Story = StoryObj<FooterProps>;
 export const Default: Story = {
   args: {
     children: [
-      <ul key={0}>
-        <li>
+      <List.Unordered hideListStyle key={0}>
+        <List.Item>
           <Link href="#personvern-og-informasjonskapsler">
             Personvern og informasjons&shy;kapsler
           </Link>
-        </li>
-        <li>
+        </List.Item>
+        <List.Item>
           <Link href="#tilgjengelighetserklæring">
             Tilgjengelighets&shy;erklæring
           </Link>
-        </li>
-      </ul>,
+        </List.Item>
+      </List.Unordered>,
     ],
   },
   render: ({ ...args }) => (

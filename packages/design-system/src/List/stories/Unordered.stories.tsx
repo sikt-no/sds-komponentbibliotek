@@ -18,11 +18,17 @@ export const Default: Story = {
       <List.Item key={1}>
         Second Item
         <List.Unordered>
-          <List.Item key={20}>First Sub Item</List.Item>
-          <List.Item key={21}>Second Sub Item</List.Item>
+          <List.Item key={10}>First Sub Item</List.Item>
+          <List.Item key={11}>
+            Second Sub Item
+            <List.Unordered>
+              <List.Item key={110}>First Sub Item</List.Item>
+              <List.Item key={111}>Second Sub Item</List.Item>
+            </List.Unordered>
+          </List.Item>
         </List.Unordered>
       </List.Item>,
-      <List.Item key={3}>Third Item</List.Item>,
+      <List.Item key={2}>Third Item</List.Item>,
     ],
   },
 };
