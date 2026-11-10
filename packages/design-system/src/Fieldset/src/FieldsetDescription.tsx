@@ -1,4 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
+import { Span } from "../../Typography";
 import { useFieldsetContext } from "./FieldsetContext";
 
 export interface FieldsetDescriptionProps extends Omit<
@@ -14,9 +15,9 @@ export const FieldsetDescription = ({
 }: FieldsetDescriptionProps) => {
   const { descriptionId } = useFieldsetContext();
   return (
-    <span data-part="description" {...rest} id={descriptionId}>
+    <Span variant="helper" data-part="description" {...rest} id={descriptionId}>
       {children}
-    </span>
+    </Span>
   );
 };
 

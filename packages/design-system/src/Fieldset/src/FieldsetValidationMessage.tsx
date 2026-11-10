@@ -1,9 +1,9 @@
-import { FailedFilledIcon } from "@sikt/sds-icons";
 import type { HTMLAttributes, ReactNode } from "react";
+import { InlineMessage } from "../../InlineMessage";
 import { useFieldsetContext } from "./FieldsetContext";
 
 export interface FieldsetValidationMessageProps extends Omit<
-  HTMLAttributes<HTMLSpanElement>,
+  HTMLAttributes<HTMLDivElement>,
   "id" | "role"
 > {
   children: ReactNode;
@@ -15,10 +15,15 @@ export const FieldsetValidationMessage = ({
 }: FieldsetValidationMessageProps) => {
   const { validationId } = useFieldsetContext();
   return (
-    <span data-part="validation" role="alert" {...rest} id={validationId}>
-      <FailedFilledIcon data-part="icon" />
+    <InlineMessage
+      variant="critical"
+      data-part="validation"
+      role="alert"
+      {...rest}
+      id={validationId}
+    >
       {children}
-    </span>
+    </InlineMessage>
   );
 };
 

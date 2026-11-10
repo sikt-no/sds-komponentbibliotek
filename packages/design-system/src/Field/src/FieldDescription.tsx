@@ -1,4 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
+import { Span } from "../../Typography";
 import { useFieldContext } from "./FieldContext";
 
 export interface FieldDescriptionProps extends Omit<
@@ -14,9 +15,14 @@ export const FieldDescription = ({
 }: FieldDescriptionProps) => {
   const { id } = useFieldContext();
   return (
-    <span data-part="description" {...rest} id={`${id}-description`}>
+    <Span
+      variant="helper"
+      data-part="description"
+      {...rest}
+      id={`${id}-description`}
+    >
       {children}
-    </span>
+    </Span>
   );
 };
 

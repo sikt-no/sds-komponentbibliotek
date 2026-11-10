@@ -1,9 +1,9 @@
-import { FailedFilledIcon } from "@sikt/sds-icons";
 import type { HTMLAttributes, ReactNode } from "react";
+import { InlineMessage } from "../../InlineMessage";
 import { useFieldContext } from "./FieldContext";
 
 export interface FieldValidationMessageProps extends Omit<
-  HTMLAttributes<HTMLSpanElement>,
+  HTMLAttributes<HTMLDivElement>,
   "id"
 > {
   children: ReactNode;
@@ -15,10 +15,14 @@ export const FieldValidationMessage = ({
 }: FieldValidationMessageProps) => {
   const { id } = useFieldContext();
   return (
-    <span data-part="validation" {...rest} id={`${id}-validation`}>
-      <FailedFilledIcon data-part="icon" />
+    <InlineMessage
+      variant="critical"
+      data-part="validation"
+      {...rest}
+      id={`${id}-validation`}
+    >
       {children}
-    </span>
+    </InlineMessage>
   );
 };
 
