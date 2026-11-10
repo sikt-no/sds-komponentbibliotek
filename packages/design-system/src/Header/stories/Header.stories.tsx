@@ -8,7 +8,7 @@ import {
 } from "@sikt/sds-icons";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { useEffect, useRef, useState } from "react";
-import { Button, Field, Input } from "../../../index";
+import { ApplicationStatus, Button, Field, Input } from "../../../index";
 import { Avatar } from "../../../index";
 import { Header, HeaderProps } from "../index";
 
@@ -388,7 +388,7 @@ export const WithLefthandMenu: Story = {
             </Button.Icon>
           </Button>
           <Header.LogoLink href="//sikt.no">
-            <Header.Logo />
+            <Header.Logo productName="FS Admin" />
           </Header.LogoLink>
           <div
             style={{ display: "flex", gap: "var(--sd3-space-component-300)" }}
@@ -409,4 +409,24 @@ export const WithLefthandMenu: Story = {
       </Header>
     );
   },
+};
+
+export const WithApplicationStatus: Story = {
+  args: {},
+  render: ({ ...args }) => (
+    <Header {...args}>
+      <Header.SkipLink href="#main">Gå til innhold</Header.SkipLink>
+      <Header.Content>
+        <Header.LogoLink href="//sikt.no">
+          <Header.Logo />
+        </Header.LogoLink>
+      </Header.Content>
+      <ApplicationStatus variant="warning">
+        <ApplicationStatus.Message>
+          Tjenesten får ikke svar fra serveren. Siste kontakt for 3 minutter
+          siden.
+        </ApplicationStatus.Message>
+      </ApplicationStatus>
+    </Header>
+  ),
 };
