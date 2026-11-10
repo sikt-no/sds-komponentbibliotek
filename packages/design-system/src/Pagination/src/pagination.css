@@ -49,6 +49,7 @@
         );
 
         cursor: default;
+        font-weight: var(--sd3-typography-weight-semibold);
       }
 
       &:focus-visible {
@@ -62,6 +63,8 @@
           --pagination-atom-background: var(
             --sd3-color-interaction-neutral-hover
           );
+
+          font-weight: var(--sd3-typography-weight-semibold);
         }
       }
 
@@ -69,6 +72,8 @@
         --pagination-atom-background: var(
           --sd3-color-interaction-neutral-pressed
         );
+
+        font-weight: var(--sd3-typography-weight-semibold);
       }
     }
 

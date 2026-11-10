@@ -3,7 +3,7 @@
 **Figma:** [Pagination](https://www.figma.com/design/0aelUwbn2Ivir3T2JfhdOo/SDS-Komponenter?node-id=26150-1262&m=dev), [.PaginationAtom](https://www.figma.com/design/0aelUwbn2Ivir3T2JfhdOo/SDS-Komponenter?node-id=26150-945&m=dev)
 **Component folder:** `packages/design-system/src/Pagination/`
 **Replaces:** `@sikt/sds-pagination`
-**Last synced:** 2026-11-03
+**Last synced:** 2026-11-10
 
 ## Overview
 
@@ -21,11 +21,11 @@ Reach for it when a result set is split across pages the user navigates one at a
 
 Applies to each page button (atom). Previous/next controls inherit their states from the underlying Button / ButtonIcon.
 
-- **Default** — text in `color/text/primary`, transparent background.
-- **Hover** — background fades to `color/interaction/neutral/hover` (neutral grey). Text unchanged.
-- **Pressed** — background darkens to `color/interaction/neutral/pressed`.
+- **Default** — text in `color/text/primary` at `typography/weight/regular`, transparent background.
+- **Hover** — background fades to `color/interaction/neutral/hover` (neutral grey), text weight switches to `typography/weight/semibold`.
+- **Pressed** — background darkens to `color/interaction/neutral/pressed`, text weight stays at `typography/weight/semibold`.
 - **Focus-visible** — 2 px outline offset outside the atom (full pill shape). Rendered via a focus overlay inset `-2 px` on all sides.
-- **Selected** (`aria-current="page"`) — background set to `color/interaction/subtle/default` (lavender). Non-interactive — hover/pressed suppressed; the atom conveys "you are here".
+- **Selected** (`aria-current="page"`) — background set to `color/interaction/subtle/default` (lavender), text weight switches to `typography/weight/semibold`. Non-interactive — hover/pressed suppressed; the atom conveys "you are here".
 - **Disabled** — previous control at `currentIndex === 0`; next control at `currentIndex === count - 1`. Non-interactive, no hover/pressed, no focus ring in that direction.
 - **Spacer (ellipsis)** — `…` glyph inside a non-interactive 40 / 48 px slot; no hover/pressed/focus.
 
@@ -198,7 +198,8 @@ Record what Figma binds. Whether these tokens exist in the SD3 CSS catalog is `i
 | `layout/radius/16`                    | `999px`         | border-radius    | all page atoms (full pill)                                                     |
 | `typography/size/text/interaction-lg` | `18`            | font-size        | page atom text, size=standard                                                  |
 | `typography/size/text/interaction-md` | `16`            | font-size        | page atom text, size=compact; also "collapsed" (ellipsis) atom                 |
-| `typography/weight/regular`           | `Regular`       | font-weight      | all atom text                                                                  |
+| `typography/weight/regular`           | `Regular`       | font-weight      | atom text, state=default                                                       |
+| `typography/weight/semibold`          | `Semibold`      | font-weight      | atom text, state=hover / pressed / selected (both sizes)                       |
 | `space/component/100`                 | `4px`           | gap              | between items inside the pagination row (both sizes)                           |
 | `color-button/tertiary/default`       | `rgba(0,0,0,0)` | background-color | previous / next tertiary Button, size=standard                                 |
 | `color-button/tertiary/text`          | `#0a0132`       | color            | previous / next tertiary Button text, size=standard                            |
