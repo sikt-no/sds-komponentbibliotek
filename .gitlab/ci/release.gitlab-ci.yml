@@ -47,6 +47,8 @@ publish-npm:
   before_script:
     - npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
   script:
+    # TODO: Change when NPM stops allowing 2FA-bypass publishing
+    #- npm stage publish --workspace=packages/${PACKAGE_NAME} --access public
     - npm publish --workspace=packages/${PACKAGE_NAME} --access public
   dependencies:
     - packages

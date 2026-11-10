@@ -5,6 +5,8 @@
 
 - [Create release](#create-release)
 - [Publish](#publish)
+  - [Staged publish](#staged-publish-approval)
+- [Update internal dependencies](#update-internal-dependencies-optional)
 
 </details>
 
@@ -41,6 +43,15 @@ git push --follow-tags
 ```
 
 The following pipeline will create a release & publish the tagged package to npm.
+
+### Staged publish approval
+
+After January 2027 the release pipeline will no longer be able to publish directly to npmjs.org. Manual approval from a maintainer will be required.
+
+```sh
+npm stage list @sikt/sd3-<package-name>@<package-version>
+npm stage approve <stage-id>
+```
 
 ## Update internal dependencies (optional)
 
