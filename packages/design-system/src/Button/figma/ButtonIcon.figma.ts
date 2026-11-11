@@ -4,25 +4,27 @@
 
 import figma from "figma";
 
-const variant = figma.properties.enum("variant", {
+const instance = figma.selectedInstance;
+
+const variant = instance.getEnum("variant", {
   Primary: "primary",
   "Primary-subtle": "primary-subtle",
   Secondary: "secondary",
   Tertiary: "tertiary",
 });
-const size = figma.properties.enum("size", {
+const size = instance.getEnum("size", {
   Large: "large",
   Medium: "medium",
   Small: "small",
 });
-const label = figma.properties.string("label");
-const icon = figma.properties.instance("icon");
+const label = instance.getString("label");
+const icon = instance.getInstanceSwap("icon")?.executeTemplate().example;
 
 export default {
   id: "Button",
   imports: [`import { Button } from "@sikt/sd3-design-system"`],
   example: figma.code`
-    <Button${figma.helpers.react.renderProp("variant", variant)}${figma.helpers.react.renderProp("size", size)} aria-label={/* TODO: must be filled out */}>
+    <Button variant="${variant}" size="${size}" aria-label={/* TODO: must be filled out */}>
         <Button.Icon>${icon}</Button.Icon>
     </Button>`,
   metadata: {

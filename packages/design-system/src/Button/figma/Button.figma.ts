@@ -4,23 +4,29 @@
 
 import figma from "figma";
 
-const variant = figma.properties.enum("variant", {
+const instance = figma.selectedInstance;
+
+const variant = instance.getEnum("variant", {
   Primary: "primary",
   "Primary-subtle": "primary-subtle",
   Secondary: "secondary",
   Tertiary: "tertiary",
 });
-const size = figma.properties.enum("size", {
+const size = instance.getEnum("size", {
   Large: "large",
   Medium: "medium",
   Small: "small",
 });
-const label = figma.properties.string("label");
-const showIconLeft = figma.properties.boolean("showIconLeft");
-const showIconRight = figma.properties.boolean("showIconRight");
+const label = instance.getString("label");
+const showIconLeft = instance.getBoolean("showIconLeft");
+const showIconRight = instance.getBoolean("showIconRight");
 
-const iconLeftInstance = figma.properties.instance("iconLeft");
-const iconRightInstance = figma.properties.instance("iconRight");
+const iconLeftInstance = instance
+  .getInstanceSwap("iconLeft")
+  ?.executeTemplate().example;
+const iconRightInstance = instance
+  .getInstanceSwap("iconRight")
+  ?.executeTemplate().example;
 
 const leftIcon = showIconLeft
   ? figma.code`
@@ -35,8 +41,10 @@ export default {
   id: "Button",
   imports: [`import { Button } from "@sikt/sd3-design-system"`],
   example: figma.code`
-    <Button${figma.helpers.react.renderProp("variant", variant)}${figma.helpers.react.renderProp("size", size)}>${leftIcon}
-      ${label}${rightIcon}
+    <Button variant="${variant}" size="${size}">
+      ${showIconLeft}
+      ${label}
+      ${rightIcon}
     </Button>`,
   metadata: {
     nestable: true,
