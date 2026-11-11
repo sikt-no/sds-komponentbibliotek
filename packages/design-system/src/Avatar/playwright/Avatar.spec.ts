@@ -19,12 +19,12 @@ test.describe("Avatar", () => {
     });
   });
 
-  test.describe.skip("visual", () => {
+  test.describe("visual", () => {
     stories.forEach((story) => {
       test(`${story} should have screenshot`, async ({ page }) => {
         await page.goto(`/iframe.html?viewMode=story&id=sd3-avatar--${story}`);
         await page.locator(componentSelector).first().waitFor();
-        await expect(page.locator("#storybook-root")).toHaveScreenshot();
+        await expect(page.locator(componentSelector)).toHaveScreenshot();
       });
     });
   });
