@@ -36,7 +36,7 @@ const HeaderSkipLink = ({ ...rest }: HeaderSkipLinkProps) => {
     />
   );
 };
-HeaderSkipLink.displayName = "HeaderSkipLink";
+HeaderSkipLink.displayName = "Header.SkipLink";
 
 const HeaderLogoLink = ({
   children,
@@ -56,12 +56,12 @@ HeaderLogoLink.displayName = "HeaderLogoLink";
 const HeaderLogo = ({ ...rest }: HeaderLogoProps) => (
   <Logo {...rest} size="compact" data-part="logo" />
 );
-HeaderLogo.displayName = "HeaderLogo";
+HeaderLogo.displayName = "Header.Logo";
 
 const HeaderContent = ({ ...rest }: HeaderContentProps) => (
   <div data-part="content" {...rest} />
 );
-HeaderContent.displayName = "HeaderContent";
+HeaderContent.displayName = "Header.Content";
 
 export const Header = ({ className, ...rest }: HeaderProps) => (
   <header className={clsx("sd3-header", className)} {...rest} />

@@ -25,7 +25,7 @@ export type NavigationCardContentProps = HTMLAttributes<HTMLDivElement>;
 const NavigationCardIcon = ({ ...rest }: NavigationCardIconProps) => (
   <div data-part="icon" {...rest} />
 );
-NavigationCardIcon.displayName = "NavigationCardIcon";
+NavigationCardIcon.displayName = "NavigationCard.Icon";
 
 const NavigationCardHeading = ({
   children,
@@ -35,17 +35,17 @@ const NavigationCardHeading = ({
     {children}
   </p>
 );
-NavigationCardHeading.displayName = "NavigationCardHeading";
+NavigationCardHeading.displayName = "NavigationCard.Heading";
 
 const NavigationCardBody = ({ ...rest }: NavigationCardBodyProps) => (
   <Paragraph {...rest} />
 );
-NavigationCardBody.displayName = "NavigationCardBody";
+NavigationCardBody.displayName = "NavigationCard.Body";
 
 const NavigationCardContent = ({ ...rest }: NavigationCardContentProps) => (
   <div data-part="content" {...rest} />
 );
-NavigationCardContent.displayName = "NavigationCardContent";
+NavigationCardContent.displayName = "NavigationCard.Content";
 
 export const NavigationCard = ({
   className,

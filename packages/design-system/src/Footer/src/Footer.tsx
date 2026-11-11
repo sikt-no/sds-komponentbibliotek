@@ -34,12 +34,12 @@ const FooterLink = ({
     </Comp>
   );
 };
-FooterLink.displayName = "FooterLink";
+FooterLink.displayName = "Footer.Link";
 
 const FooterLogo = ({ ...rest }: Omit<LogoSecondaryProps, "variant">) => (
   <Logo {...rest} variant="secondary" />
 );
-FooterLogo.displayName = "FooterLogo";
+FooterLogo.displayName = "Footer.Logo";
 
 export const Footer = ({ children, className, ...rest }: FooterProps) => (
   <footer className={clsx("sd3-footer", className)} {...rest}>

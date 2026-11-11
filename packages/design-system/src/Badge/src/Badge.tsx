@@ -37,6 +37,7 @@ const BadgePosition = ({
     {...rest}
   />
 );
+BadgePosition.displayName = "Badge.Position";
 
 export const Badge = ({
   children,
