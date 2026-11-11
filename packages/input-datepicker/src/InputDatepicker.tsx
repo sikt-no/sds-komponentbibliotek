@@ -138,7 +138,8 @@ export const InputDatepicker = forwardRef<HTMLDivElement, InputDatepickerProps>(
     });
     const [calendarOpen, setCalendarOpen] = useState(false);
 
-    const handleEscapeKeydown = () => {
+    const handleEscapeKeydown = (event: KeyboardEvent) => {
+      event.preventDefault();
       setCalendarOpen(false);
       (inputRef.current?.firstChild as HTMLElement).focus();
     };
