@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { Dialog } from "./Dialog";
@@ -49,7 +49,7 @@ describe("Dialog", () => {
       const ariaLabel = "Dialog ARIA Label";
       render(
         <Dialog
-          footer={[<button key="primary">Click me!</button>]}
+          footer={<button>Click me!</button>}
           heading="Dialog Heading"
           onClose={jest.fn()}
           open
@@ -71,7 +71,7 @@ describe("Dialog", () => {
 
       render(
         <Dialog
-          footer={[<button key="primary">Click me!</button>]}
+          footer={<button>Click me!</button>}
           heading={headingText}
           subheading={subheadingText}
           onClose={jest.fn()}
@@ -100,7 +100,7 @@ describe("Dialog", () => {
           onClose={handleClose}
           heading={headingText}
           closeButtonAriaLabel={closeButtonText}
-          footer={[<button key="primary">Click me!</button>]}
+          footer={<button>Click me!</button>}
         >
           <p>Dialog Content</p>
         </Dialog>,
@@ -140,7 +140,7 @@ describe("Dialog", () => {
           open
           onClose={handleClose}
           heading="Test heading"
-          footer={[<button key="primary">Click me!</button>]}
+          footer={<button>Click me!</button>}
         >
           <p>Dialog Content</p>
         </Dialog>,
@@ -155,7 +155,7 @@ describe("Dialog", () => {
           open
           onClose={handleClose}
           heading="Test heading"
-          footer={[<button key="primary">Click me!</button>]}
+          footer={<button>Click me!</button>}
         >
           <p>Dialog Content</p>
         </Dialog>,
@@ -169,7 +169,7 @@ describe("Dialog", () => {
       const handleClose = jest.fn();
       const { rerender } = render(
         <Dialog
-          footer={[<button key="primary">Click me!</button>]}
+          footer={<button>Click me!</button>}
           open={false}
           onClose={handleClose}
           heading="Test heading"
@@ -185,7 +185,7 @@ describe("Dialog", () => {
 
       rerender(
         <Dialog
-          footer={[<button key="primary">Click me!</button>]}
+          footer={<button>Click me!</button>}
           open
           onClose={handleClose}
           heading="Test heading"
@@ -199,12 +199,18 @@ describe("Dialog", () => {
     });
   });
 
-  it("closes dialog when user presses escape key", async () => {
-    const user = userEvent.setup();
+  // jsdom does not fire `cancel` on Escape, so dispatch the close request manually.
+  const fireCancel = () => {
+    const event = new Event("cancel", { cancelable: true });
+    fireEvent(screen.getByRole("dialog"), event);
+    return event;
+  };
+
+  it("closes dialog on close request (escape key)", () => {
     const handleClose = jest.fn();
     render(
       <Dialog
-        footer={[<button key="primary">Click me!</button>]}
+        footer={<button>Click me!</button>}
         open
         onClose={handleClose}
         heading="Test heading"
@@ -214,16 +220,15 @@ describe("Dialog", () => {
       </Dialog>,
     );
 
-    await user.keyboard("[Escape]");
+    expect(fireCancel().defaultPrevented).toBe(true);
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 
-  it("does not close non-dismissable dialog when user presses escape key", async () => {
-    const user = userEvent.setup();
+  it("does not close non-dismissable dialog on close request (escape key)", () => {
     const handleClose = jest.fn();
     render(
       <Dialog
-        footer={[<button key="primary">Click me!</button>]}
+        footer={<button>Click me!</button>}
         open
         closedby="none"
         onClose={handleClose}
@@ -233,8 +238,74 @@ describe("Dialog", () => {
       </Dialog>,
     );
 
-    await user.keyboard("[Escape]");
+    expect(fireCancel().defaultPrevented).toBe(true);
     expect(handleClose).toHaveBeenCalledTimes(0);
+  });
+
+  it("closes on escape keydown inside the dialog and prevents the native close request", async () => {
+    const user = userEvent.setup();
+    const handleClose = jest.fn();
+    const handleKeyDown = jest.fn();
+    render(
+      <Dialog
+        footer={<button>Click me!</button>}
+        open
+        onClose={handleClose}
+        onKeyDown={handleKeyDown}
+        heading="Test heading"
+        closeButtonLabel="Close dialog"
+      >
+        <p>Dialog Content</p>
+      </Dialog>,
+    );
+
+    screen.getByRole("button", { name: "Click me!" }).focus();
+    await user.keyboard("[Escape]");
+    expect(handleClose).toHaveBeenCalledTimes(1);
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+    const [event] = handleKeyDown.mock.calls[0] as [
+      { defaultPrevented: boolean },
+    ];
+    expect(event.defaultPrevented).toBe(true);
+  });
+
+  it("does not prevent default on escape keydown outside the dialog", () => {
+    render(
+      <Dialog
+        open={false}
+        onClose={jest.fn()}
+        heading="Test heading"
+        closeButtonLabel="Close dialog"
+      >
+        <p>Dialog Content</p>
+      </Dialog>,
+    );
+
+    const event = new KeyboardEvent("keydown", {
+      key: "Escape",
+      cancelable: true,
+      bubbles: true,
+    });
+    document.body.dispatchEvent(event);
+    expect(event.defaultPrevented).toBe(false);
+  });
+
+  it("calls user onCancel", () => {
+    const handleCancel = jest.fn();
+    render(
+      <Dialog
+        open
+        onClose={jest.fn()}
+        onCancel={handleCancel}
+        heading="Test heading"
+        closeButtonLabel="Close dialog"
+      >
+        <p>Dialog Content</p>
+      </Dialog>,
+    );
+
+    fireCancel();
+    expect(handleCancel).toHaveBeenCalledTimes(1);
   });
 
   it("closes dialog (modal) when click outside", async () => {
@@ -242,7 +313,7 @@ describe("Dialog", () => {
     const handleClose = jest.fn();
     render(
       <Dialog
-        footer={[<button key="primary">Click me!</button>]}
+        footer={<button>Click me!</button>}
         open
         onClose={handleClose}
         heading="Test heading"
@@ -274,7 +345,7 @@ describe("Dialog", () => {
     const handleClose = jest.fn();
     render(
       <Dialog
-        footer={[<button key="primary">Click me!</button>]}
+        footer={<button>Click me!</button>}
         open
         modal={false}
         onClose={handleClose}

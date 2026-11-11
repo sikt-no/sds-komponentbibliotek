@@ -1,11 +1,13 @@
 import { Button } from "@sikt/sds-button";
 import { Heading1, Paragraph } from "@sikt/sds-core";
-import { useClickOutside, useKeydown, useWindowResize } from "@sikt/sds-hooks";
+import { useClickOutside, useWindowResize } from "@sikt/sds-hooks";
 import { CloseIcon } from "@sikt/sds-icons";
 import { clsx } from "clsx/lite";
 import {
-  HTMLAttributes,
+  DialogHTMLAttributes,
+  KeyboardEvent,
   ReactNode,
+  SyntheticEvent,
   useRef,
   useState,
   useId,
@@ -15,7 +17,7 @@ import {
 } from "react";
 import "./dialog.css";
 
-export interface DialogBaseProps extends HTMLAttributes<HTMLDialogElement> {
+export interface DialogBaseProps extends DialogHTMLAttributes<HTMLDialogElement> {
   children: ReactNode;
   className?: string;
   /**
@@ -83,7 +85,9 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
       heading,
       modal = true,
       drawer,
+      onCancel,
       onClose,
+      onKeyDown,
       open,
       subheading,
       ...rest
@@ -106,7 +110,22 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
       }
     };
 
-    const handleEscapeKey = () => {
+    // Prevent on keydown, not only on cancel: Chrome skips `cancel` and force-closes
+    // on a repeated Escape without user activation, desyncing the `open` prop.
+    // Scoped to the dialog so Escape elsewhere on the page is untouched.
+    const handleKeyDown = (event: KeyboardEvent<HTMLDialogElement>) => {
+      onKeyDown?.(event);
+      if (event.key !== "Escape" || event.defaultPrevented) return;
+      event.preventDefault();
+      if (modal && closedby != "none" && open) {
+        onClose();
+      }
+    };
+
+    // Fallback for close requests that aren't keydowns (e.g. Android back).
+    const handleCancel = (event: SyntheticEvent<HTMLDialogElement>) => {
+      onCancel?.(event);
+      event.preventDefault();
       if (modal && closedby != "none" && open) {
         onClose();
       }
@@ -146,7 +165,6 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     const contentId = `${id}-content`;
 
     useClickOutside(dialogRef, handleBackdropClick);
-    useKeydown(null, "Escape", handleEscapeKey);
     useWindowResize(checkScroll, { throttleTime: 200 });
     useEffect(checkScroll, [children]);
 
@@ -163,6 +181,8 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
         aria-label={contentLabel}
         ref={dialogRef}
         {...rest}
+        onCancel={handleCancel}
+        onKeyDown={handleKeyDown}
       >
         <div className="sds-dialog__header">
           <div
