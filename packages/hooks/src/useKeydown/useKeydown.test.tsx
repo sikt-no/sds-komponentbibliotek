@@ -18,6 +18,22 @@ describe("useKeydown", () => {
     expect(callback).toHaveBeenCalledWith(expect.any(KeyboardEvent));
   });
 
+  it("should not prevent default, leaving that to the callback", () => {
+    const ref = { current: document.createElement("button") };
+
+    renderHook(() => {
+      useKeydown(ref, "Escape", jest.fn());
+    });
+
+    const event = new KeyboardEvent("keydown", {
+      key: "Escape",
+      cancelable: true,
+    });
+    ref.current.dispatchEvent(event);
+
+    expect(event.defaultPrevented).toBe(false);
+  });
+
   it("should not call callback on keydown with incorrect key", async () => {
     const ref = { current: document.createElement("div") };
     const callback = jest.fn();
