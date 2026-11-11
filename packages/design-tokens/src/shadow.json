@@ -1,10 +1,10 @@
 {
   "shadow": {
     "elevated-default": {
-      "$value": "0 4px 24px var(--sds-color-shadow-elevated-default)"
+      "$value": "0 4px 24px var(--sd3-color-background-overlay)"
     },
     "elevated-hover": {
-      "$value": "0 4px 12px var(--sds-color-shadow-elevated-hover)"
+      "$value": "0 4px 12px var(--sd3-color-background-overlay)"
     }
   }
 }
