@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { Button } from "./Button";
@@ -11,6 +11,8 @@ const variants = [
 ] as const;
 const themes = ["main", "neutral", "critical"] as const;
 const sizes = ["large", "medium", "small"] as const;
+const orientations = ["horizontal", "vertical"] as const;
+const positions = ["left", "right", "split"] as const;
 
 describe("Button", () => {
   describe("a11y", () => {
@@ -84,11 +86,10 @@ describe("Button", () => {
     });
 
     describe("theme", () => {
-      it("should default data-button-theme to 'main'", () => {
+      it("should not set data-button-theme by default", () => {
         render(<Button>Label</Button>);
-        expect(screen.getByRole("button")).toHaveAttribute(
+        expect(screen.getByRole("button")).not.toHaveAttribute(
           "data-button-theme",
-          "main",
         );
       });
 
@@ -189,6 +190,87 @@ describe("Button", () => {
       expect(link).toHaveAttribute("data-size", "small");
       expect(link).toHaveAttribute("href", "/somewhere");
       expect(link).not.toHaveAttribute("type");
+    });
+  });
+});
+
+describe("Button.Group", () => {
+  const renderGroup = (props = {}) =>
+    render(
+      <Button.Group role="group" {...props}>
+        <Button>Første</Button>
+        <Button>Andre</Button>
+      </Button.Group>,
+    );
+
+  describe("a11y", () => {
+    orientations.forEach((orientation) => {
+      it(`should be accessible with orientation="${orientation}"`, async () => {
+        const { container } = renderGroup({ orientation });
+        expect(await axe(container)).toHaveNoViolations();
+      });
+    });
+  });
+
+  describe("api", () => {
+    it("should render a group with the root class and its buttons", () => {
+      renderGroup();
+      const group = screen.getByRole("group");
+      expect(group).toHaveClass("sd3-button-group");
+      expect(within(group).getAllByRole("button")).toHaveLength(2);
+    });
+
+    it("should merge className with the root class", () => {
+      renderGroup({ className: "custom" });
+      expect(screen.getByRole("group")).toHaveClass("sd3-button-group custom");
+    });
+
+    it("should set data-button-theme from the theme prop", () => {
+      renderGroup({ theme: "critical" });
+      expect(screen.getByRole("group")).toHaveAttribute(
+        "data-button-theme",
+        "critical",
+      );
+    });
+
+    describe("orientation", () => {
+      it("should default data-orientation to 'horizontal'", () => {
+        renderGroup();
+        expect(screen.getByRole("group")).toHaveAttribute(
+          "data-orientation",
+          "horizontal",
+        );
+      });
+
+      orientations.forEach((orientation) => {
+        it(`should set data-orientation="${orientation}"`, () => {
+          renderGroup({ orientation });
+          expect(screen.getByRole("group")).toHaveAttribute(
+            "data-orientation",
+            orientation,
+          );
+        });
+      });
+    });
+
+    describe("position", () => {
+      it("should default data-position to 'right'", () => {
+        renderGroup();
+        expect(screen.getByRole("group")).toHaveAttribute(
+          "data-position",
+          "right",
+        );
+      });
+
+      positions.forEach((position) => {
+        it(`should set data-position="${position}"`, () => {
+          renderGroup({ position });
+          expect(screen.getByRole("group")).toHaveAttribute(
+            "data-position",
+            position,
+          );
+        });
+      });
     });
   });
 });

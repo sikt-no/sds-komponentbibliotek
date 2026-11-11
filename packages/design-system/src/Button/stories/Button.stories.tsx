@@ -6,23 +6,27 @@ import {
   type IconComponent,
 } from "../../../../icons/stories/iconArgType";
 import { Avatar } from "../../../index";
-import {
-  Button,
-  type ButtonSize,
-  type ButtonTheme,
-  type ButtonVariant,
-} from "../index";
+import type {
+  VariantButton,
+  Orientation,
+  Size,
+  ThemeButton,
+} from "../../../types";
+import { Button } from "../index";
+import type { ButtonGroupProps } from "../src/Button";
 
 type IconPosition = "left" | "right";
 
 /** Button props plus story-only icon pickers. */
 type StoryArgs = ComponentProps<"button"> & {
-  variant?: ButtonVariant;
-  theme?: ButtonTheme;
-  size?: ButtonSize;
+  variant?: VariantButton;
+  theme?: ThemeButton;
+  size?: Size;
   asChild?: boolean;
   icon?: IconComponent | null;
   iconPosition?: IconPosition;
+  orientation?: Orientation;
+  position?: ButtonGroupProps["position"];
 };
 
 const meta: Meta<StoryArgs> = {
@@ -203,4 +207,49 @@ export const AvatarRight: Story = {
       },
     },
   },
+};
+
+export const WithButtonGroup: Story = {
+  args: {
+    orientation: "horizontal",
+    position: "right",
+  },
+  argTypes: {
+    orientation: {
+      control: { type: "inline-radio" },
+      options: ["horizontal", "vertical"] satisfies Orientation[],
+      table: { category: "Button.Group" },
+    },
+    position: {
+      control: { type: "inline-radio" },
+      options: [
+        "left",
+        "right",
+        "split",
+      ] satisfies ButtonGroupProps["position"][],
+      table: { category: "Button.Group" },
+    },
+  },
+  render: ({ orientation, position, ...args }) => (
+    <Button.Group
+      orientation={orientation}
+      position={position}
+      role="group"
+      aria-label="Confirm or Confirm or Die"
+      theme={args.theme}
+    >
+      <Button variant="secondary" {...args}>
+        <Button.Icon>
+          <ConfirmIcon />
+        </Button.Icon>
+        Label
+      </Button>
+      <Button variant="primary" {...args}>
+        <Button.Icon>
+          <ConfirmIcon />
+        </Button.Icon>
+        Label
+      </Button>
+    </Button.Group>
+  ),
 };

@@ -4,9 +4,12 @@ export type Category = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8";
 /** @default "right" */
 export type IconPosition = "right" | "left";
 
+/** @default "horizontal" */
+export type Orientation = "horizontal" | "vertical";
+
 /** @default "primary" */
 export type VariantButton =
-  "primary" | "primary-sublte" | "secondary" | "tertiary";
+  "primary" | "primary-subtle" | "secondary" | "tertiary";
 
 /** @default "brand" */
 export type Variant =
@@ -26,6 +29,9 @@ export type Size = "small" | "medium" | "large";
 
 /** @default "default" */
 export type State = "default" | "disabled" | "busy";
+
+/** @default "main" */
+export type ThemeButton = "main" | "neutral" | "critical";
 
 /**
  * Requires exactly one of `aria-label` or `aria-labelledby`. Intersect into a

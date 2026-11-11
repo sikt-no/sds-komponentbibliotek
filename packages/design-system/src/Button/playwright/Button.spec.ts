@@ -1,17 +1,20 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import type { ButtonSize, ButtonTheme, ButtonVariant } from "../src/Button";
+import { Orientation, VariantButton, Size, ThemeButton } from "../../../types";
 
 const componentSelector = ".sd3-button";
+const groupSelector = ".sd3-button-group";
 
-const variants: ButtonVariant[] = [
+const variants: VariantButton[] = [
   "primary",
   "primary-subtle",
   "secondary",
   "tertiary",
 ];
-const themes: ButtonTheme[] = ["main", "neutral", "critical"];
-const sizes: ButtonSize[] = ["large", "medium", "small"];
+const themes: ThemeButton[] = ["main", "neutral", "critical"];
+const sizes: Size[] = ["large", "medium", "small"];
+const orientations: Orientation[] = ["horizontal", "vertical"];
+const positions = ["left", "right", "split"] as const;
 
 test.describe("Button", () => {
   test.describe("a11y", () => {
@@ -49,12 +52,24 @@ test.describe("Button", () => {
         .analyze();
       expect(results.violations).toEqual([]);
     });
+
+    orientations.forEach((orientation) => {
+      test(`group orientation=${orientation} should be accessible`, async ({
+        page,
+      }) => {
+        await page.goto(
+          `/iframe.html?viewMode=story&id=sd3-button--with-button-group&args=orientation:${orientation}`,
+        );
+        await page.locator(groupSelector).waitFor();
+        const results = await new AxeBuilder({ page })
+          .include(groupSelector)
+          .analyze();
+        expect(results.violations).toEqual([]);
+      });
+    });
   });
 
   test.describe("visual", () => {
-    // Slice pattern: each dimension against a fixed baseline of the others.
-    // Avoids the variants × sizes × themes cartesian explosion.
-
     variants.forEach((variant) => {
       test(`variant=${variant} screenshot`, async ({ page }) => {
         await page.goto(
@@ -101,6 +116,24 @@ test.describe("Button", () => {
       await page.goto("/iframe.html?viewMode=story&id=sd3-button--default");
       await page.locator(componentSelector).focus();
       await expect(page.locator(componentSelector)).toHaveScreenshot();
+    });
+
+    orientations.forEach((orientation) => {
+      test(`group orientation=${orientation} screenshot`, async ({ page }) => {
+        await page.goto(
+          `/iframe.html?viewMode=story&id=sd3-button--with-button-group&args=orientation:${orientation}`,
+        );
+        await expect(page.locator(groupSelector)).toHaveScreenshot();
+      });
+    });
+
+    positions.forEach((position) => {
+      test(`group position=${position} screenshot`, async ({ page }) => {
+        await page.goto(
+          `/iframe.html?viewMode=story&id=sd3-button--with-button-group&args=position:${position}`,
+        );
+        await expect(page.locator(groupSelector)).toHaveScreenshot();
+      });
     });
   });
 

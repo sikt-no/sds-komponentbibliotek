@@ -1,0 +1,31 @@
+@scope (.sd3-button-group) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    &[data-orientation="horizontal"] {
+      flex-direction: row;
+      gap: var(--sd3-space-component-200);
+    }
+
+    &[data-orientation="vertical"] {
+      flex-direction: column;
+      gap: var(--sd3-space-component-300);
+    }
+
+    &[data-position="left"] {
+      justify-content: flex-start;
+    }
+  }
+}
+
+@scope (.sd3-button-group) {
+  :scope {
+    &[data-position="split"] {
+      > :first-child {
+        margin-right: auto;
+      }
+    }
+  }
+}
