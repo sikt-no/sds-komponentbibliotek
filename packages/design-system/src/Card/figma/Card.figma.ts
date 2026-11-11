@@ -5,7 +5,7 @@ import figma from "figma";
 
 const instance = figma.selectedInstance;
 
-const variant = instance.getEnum("direction", {
+const orientation = instance.getEnum("direction", {
   Vertical: "vertical",
   Horizontal: "horizontal",
 });
@@ -20,11 +20,11 @@ const slotHorizontal = instance.getSlot("slotHorizontal");
 
 export default {
   example: figma.code`
-    <Card variant="${variant}">
+    <Card orientation="${orientation}">
       ${showImage ? figma.code`<Card.Image>{/* image element */}</Card.Image>` : null}
       <Card.Content>
-        ${variant === "vertical" && showSlotVertical ? figma.code`${slotVertical}` : null}
-        ${variant === "horizontal" && showSlotHorizontal ? figma.code`${slotHorizontal}` : null}
+        ${orientation === "vertical" && showSlotVertical ? figma.code`${slotVertical}` : null}
+        ${orientation === "horizontal" && showSlotHorizontal ? figma.code`${slotHorizontal}` : null}
       </Card.Content>
     </Card>
   `,

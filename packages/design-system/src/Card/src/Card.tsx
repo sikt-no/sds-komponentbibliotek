@@ -1,6 +1,7 @@
 import { clsx } from "clsx/lite";
 import { HTMLAttributes } from "react";
 import "./card.css";
+import { Orientation } from "../../../types";
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   /**
@@ -8,7 +9,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
    *
    * @default "vertical"
    */
-  variant?: "vertical" | "horizontal";
+  orientation?: Orientation;
 }
 export type CardImageProps = HTMLAttributes<HTMLDivElement>;
 export type CardContentProps = HTMLAttributes<HTMLDivElement>;
@@ -25,13 +26,13 @@ CardContent.displayName = "Card.Content";
 
 export const Card = ({
   className,
-  variant = "vertical",
+  orientation = "vertical",
   ...rest
 }: CardProps) => {
   return (
     <div
       className={clsx("sd3-card", className)}
-      data-variant={variant}
+      data-orientation={orientation}
       {...rest}
     />
   );

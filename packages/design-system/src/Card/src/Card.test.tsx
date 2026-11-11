@@ -2,14 +2,14 @@ import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { Card, CardProps } from "./Card";
 
-const variants: CardProps["variant"][] = ["vertical", "horizontal"];
+const orientations: CardProps["orientation"][] = ["vertical", "horizontal"];
 
 describe("Card", () => {
-  describe.each(variants)("%s", (variant) => {
+  describe.each(orientations)("%s", (orientation) => {
     describe("a11y", () => {
       it("should be accessible", async () => {
         const { container } = render(
-          <Card variant={variant}>
+          <Card orientation={orientation}>
             <Card.Image>Image</Card.Image>
             <Card.Content>Content</Card.Content>
           </Card>,
@@ -21,18 +21,18 @@ describe("Card", () => {
 
     describe("api", () => {
       it("should render", async () => {
-        render(<Card data-testid="test" variant={variant} />);
+        render(<Card data-testid="test" orientation={orientation} />);
 
         const card = screen.getByTestId("test");
         expect(card).toHaveClass("sd3-card");
-        expect(card).toHaveAttribute("data-variant", variant);
+        expect(card).toHaveAttribute("data-orientation", orientation);
       });
 
       it("should have class name", async () => {
         render(
           <Card
             data-testid="test"
-            variant={variant}
+            orientation={orientation}
             className="test-class-name"
           />,
         );
@@ -48,7 +48,7 @@ describe("Card", () => {
     render(<Card data-testid="test" />);
 
     expect(screen.getByTestId("test")).toHaveAttribute(
-      "data-variant",
+      "data-orientation",
       "vertical",
     );
   });
