@@ -12,8 +12,10 @@ export default defineConfig({
   target: browserslistToEsbuild(),
   sourcemap: true,
   minify: true,
+  unbundle: true,
   css: {
     fileName: "index.css",
+    splitting: false,
     minify: true,
     transformer: "postcss",
     lightningcss: {
