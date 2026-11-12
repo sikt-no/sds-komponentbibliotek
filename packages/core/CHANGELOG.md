@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@6.0.1...@sikt/sds-core@6.1.0) (2026-11-12)
+
+### Features
+
+- **css:** move reset styles to own layer to support rearranging of order ([03512d4](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/03512d48e18d54ca954340291e241884c9255773))
+
+### Bug Fixes
+
+- **deps:** update react ([d07f210](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d07f210f5d38322432776e90a3b0dbe18898ad8d))
+- **dialog:** css reset for modal dialog ([8c23b63](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c23b63574399d6c916e8aaba74838195c9d3f4c))
+
 ## [6.0.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-core@6.0.0...@sikt/sds-core@6.0.1) (2026-08-18)
 
 ### Bug Fixes
