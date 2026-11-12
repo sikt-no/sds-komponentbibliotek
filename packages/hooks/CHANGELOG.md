@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@1.1.1...@sikt/sds-hooks@2.0.0) (2026-11-12)
+
+### ⚠ BREAKING CHANGES
+
+- **useKeydown:** remove preventDefault to stop from interfering with other events
+
+### Bug Fixes
+
+- **useKeydown:** remove preventDefault to stop from interfering with other events ([ee057ec](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ee057ec468e0a2ffbdc5cfe81a6aad6997acd814))
+
 ## [1.1.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-hooks@1.1.0...@sikt/sds-hooks@1.1.1) (2026-08-27)
 
 ### Bug Fixes
