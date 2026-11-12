@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@3.0.3...@sikt/sds-input-datepicker@3.1.0) (2026-11-12)
+
+### Features
+
+- **deps:** update @sikt/sds-hooks ([63d6a0b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/63d6a0b25fb555d38ca4c7e612d01d3bbd414eb2))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sds-hooks@1.1.1 ([d507a1c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d507a1c84c89e04c62c572bc231ea794965cc61c))
+- **deps:** update dependency react-aria-components to ^1.19.0 ([fa2a4e0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fa2a4e0a58e7f0b03b0f34febdb4988198759ced))
+- **deps:** update dependency react-aria-components to ^1.22.1 ([88fcc9f](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/88fcc9f61873266ba1e86459122a899e4c2f6ab8))
+- **deps:** update react-spectrum monorepo ([bc4f769](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bc4f76948ae6e949baf6c26d7003e8479cfa9563))
+- **deps:** update react-spectrum monorepo ([bc2649c](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bc2649caeed84f3e60bd11f40a65d64bea75a957))
+- preventDefault event that was removed from useKeydown hook ([b084102](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b0841027d833f1d3a7bfa021f74f120beff3feb7))
+
 ## [3.0.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-input-datepicker@3.0.2...@sikt/sds-input-datepicker@3.0.3) (2026-06-17)
 
 ### Bug Fixes
