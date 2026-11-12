@@ -10,9 +10,16 @@
 @import url("./typography.css");
 @import url("./screen-reader.css");
 
-@media (prefers-reduced-motion: reduce) {
-  @view-transition {
-    navigation: none !important;
+@layer reset {
+  /* stylelint-disable-next-line selector-max-type */
+  :where(dialog:modal) {
+    position: fixed;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    @view-transition {
+      navigation: none !important;
+    }
   }
 }
 
