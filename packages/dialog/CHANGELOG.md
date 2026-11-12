@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.8...@sikt/sds-dialog@2.1.0) (2026-11-12)
+
+### Features
+
+- **deps:** update @sikt/sds-hooks ([63d6a0b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/63d6a0b25fb555d38ca4c7e612d01d3bbd414eb2))
+
+### Bug Fixes
+
+- **dialog:** css reset for modal dialog ([8c23b63](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c23b63574399d6c916e8aaba74838195c9d3f4c))
+- **dialog:** preventing escape key events on other elements ([fe11569](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/fe11569941977f5cb8bc25c8e4d5efa6be11080b)), closes [#210](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/issues/210)
+
 ## [2.0.8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sds-dialog@2.0.7...@sikt/sds-dialog@2.0.8) (2026-08-27)
 
 ### Bug Fixes
