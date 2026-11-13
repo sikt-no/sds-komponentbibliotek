@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-system@0.2.2...@sikt/sd3-design-system@0.3.0) (2026-11-13)
+
+### Features
+
+- **badge:** add position component ([cf0b18b](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/cf0b18bb9573147f206ba6628dc7ab8304c9d0fd))
+- **progress-indicator:** add sd3 progress indicator component ([8477a3a](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8477a3a1ff1d15114af84d747be3062523d48856))
+- **sd3-pagination:** bold font-weight on hover, pressed, and selected ([d724c54](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d724c54b82dfdbcd56bb36f68a66d4388695f082))
+- **sd3:** add SD3 Pagination component ([c79c6b2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/c79c6b298f23f45339414b669e4364a6129730e8))
+
+### Bug Fixes
+
+- **deps:** update @sikt/sd3-design-tokens@0.4.0 ([9a08847](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/9a088478f23b3d0ca3b70c58232f408b11824f8a))
+- **deps:** update react ([d07f210](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/d07f210f5d38322432776e90a3b0dbe18898ad8d))
+- **design-system:** align StatusMessage with Figma spec ([bd4dba8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bd4dba8f3177734b9adb50600811085801dec362))
+- **dialog:** css reset for modal dialog ([8c23b63](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/8c23b63574399d6c916e8aaba74838195c9d3f4c))
+
 ## [0.2.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-system@0.2.1...@sikt/sd3-design-system@0.2.2) (2026-11-04)
 
 ### Features
