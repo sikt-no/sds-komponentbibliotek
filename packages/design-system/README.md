@@ -41,6 +41,8 @@ import "@sikt/sd3-design-system/dist/index.css";
 <Button>Hello, World!</Button>;
 ```
 
+See [documentation in Storybook](https://designsystem.sikt.no/storybook/) for each component.
+
 ## Link
 
 [How to use Link component with Next.js, React Router or other routing systems](./src/Typography/README.md#link)
