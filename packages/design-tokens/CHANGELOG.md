@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.3.3...@sikt/sd3-design-tokens@0.4.0) (2026-11-13)
+
+### Features
+
+- **design-tokens:** add shadow tokens ([84403e7](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/84403e73f6a66ab37b77c963ba43fa9db3aae866))
+
+### Bug Fixes
+
+- **design-tokens:** change shadow tokens to use sd3 tokens over sds ([3c73c26](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3c73c26630d5d41d4048c9c642baf759d9f233c6))
+
 ## [0.3.3](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.3.2...@sikt/sd3-design-tokens@0.3.3) (2026-11-04)
 
 ## [0.3.2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.3.1...@sikt/sd3-design-tokens@0.3.2) (2026-10-27)
