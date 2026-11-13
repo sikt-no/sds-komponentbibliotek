@@ -1,10 +1,19 @@
 {
   "shadow": {
-    "elevated-default": {
-      "$value": "0 4px 24px var(--sd3-color-background-overlay)"
+    "xs": {
+      "$value": "0 0 1px 0 rgba(0 0 0 / 16%), 0 1px 2px 0 rgba(0 0 0 / 12%)"
     },
-    "elevated-hover": {
-      "$value": "0 4px 12px var(--sd3-color-background-overlay)"
+    "sm": {
+      "$value": "0 0 1px 0 rgba(0 0 0 / 15%), 0 1px 2px 0 rgba(0 0 0 / 12%), 0 2px 4px 0 rgba(0 0 0 / 10%)"
+    },
+    "md": {
+      "$value": "0 0 1px 0 rgba(0 0 0 / 14%), 0 2px 4px 0 rgba(0 0 0 / 12%), 0 4px 8px 0 rgba(0 0 0 / 12%)"
+    },
+    "lg": {
+      "$value": "0 0 1px 0 rgba(0 0 0 / 13%), 0 3px 5px 0 rgba(0 0 0 / 13%), 0 6px 12px 0 rgba(0 0 0 / 14%)"
+    },
+    "xl": {
+      "$value": "0 0 1px 0 rgba(0 0 0 / 12%), 0 4px 8px 0 rgba(0 0 0 / 16%), 0 12px 24px 0 rgba(0 0 0 / 16%)"
     }
   }
 }
