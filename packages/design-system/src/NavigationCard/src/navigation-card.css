@@ -19,18 +19,12 @@
 
     @media (pointer: fine) {
       &:hover {
-        box-shadow:
-          0 0 1px 0 rgb(0 0 0 / 14%),
-          0 2px 4px 0 rgb(0 0 0 / 12%),
-          0 4px 8px 0 rgb(0 0 0 / 12%);
+        box-shadow: var(--sd3-shadow-md);
       }
     }
 
     &:active {
-      box-shadow:
-        0 0 1px 0 rgb(0 0 0 / 15%),
-        0 1px 2px 0 rgb(0 0 0 / 12%),
-        0 2px 4px 0 rgb(0 0 0 / 10%);
+      box-shadow: var(--sd3-shadow-sm);
     }
 
     &[data-size="standard"] {
