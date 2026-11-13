@@ -27,6 +27,7 @@ export * from "./src/Input";
 export * from "./src/List";
 export * from "./src/NavigationCard";
 export * from "./src/Pagination";
+export * from "./src/ProgressIndicator";
 export * from "./src/Radio";
 export * from "./src/Select";
 export * from "./src/StatusMessage";

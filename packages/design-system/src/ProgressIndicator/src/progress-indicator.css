@@ -1,0 +1,407 @@
+@scope (.sd3-progress-indicator) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --pi-marker-size: var(--sd3-space-component-1000);
+    --pi-marker-font-size: var(--sd3-typography-size-text-body-md);
+    --pi-marker-font-weight: var(--sd3-typography-weight-semibold);
+    --pi-marker-icon-size: var(--sd3-typography-size-text-body-xl);
+    --pi-marker-bg: var(--sd3-color-surface-default-1);
+    --pi-marker-border-color: var(--sd3-color-border-subtle);
+    --pi-marker-border-width: var(--sd3-space-border-weight-025);
+    --pi-marker-color: var(--sd3-color-text-primary);
+    --pi-bar-color: var(--sd3-color-border-subtle);
+    --pi-bar-thickness: var(--sd3-space-border-weight-050);
+    --pi-bar-length: 92px;
+    --pi-vertical-bar-length: 92px;
+    --pi-card-bg: transparent;
+    --pi-card-border-color: transparent;
+    --pi-parent-gap: var(--sd3-space-component-300);
+    --pi-marker-text-gap: var(--sd3-space-component-300);
+
+    display: flex;
+    gap: var(--pi-parent-gap);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+
+    &[data-direction="horizontal"] {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    &[data-direction="vertical"] {
+      flex-direction: column;
+      gap: var(--pi-vertical-bar-length);
+    }
+
+    &[data-direction="vertical"][data-size="expanded"] {
+      gap: var(--sd3-space-component-300);
+    }
+
+    &[data-size="compact"] {
+      --pi-marker-size: var(--sd3-space-component-600);
+      --pi-marker-font-size: var(--sd3-typography-size-text-interaction-sm);
+      --pi-marker-icon-size: var(--sd3-typography-size-text-interaction-sm);
+      --pi-marker-text-gap: var(--sd3-space-component-200);
+      --pi-bar-length: 133px;
+      --pi-vertical-bar-length: 133px;
+    }
+
+    [data-part="step"] {
+      counter-increment: step;
+      position: relative;
+    }
+
+    &[data-direction="horizontal"] [data-part="step"] {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--pi-marker-text-gap);
+      min-width: 0;
+    }
+
+    /* Expanded cards share the row width equally. Standard/Compact let each
+       step be as wide as its content + the fixed bar — the whole stepper
+       does NOT stretch to fill its container. */
+    &[data-direction="horizontal"][data-size="expanded"] [data-part="step"] {
+      flex: 1 0 0;
+    }
+
+    &[data-direction="horizontal"][data-size="expanded"] [data-part="trigger"] {
+      width: 100%;
+    }
+
+    /* Horizontal, non-expanded: trigger takes its content width and the bar
+       (::after on the <li>) is a flex sibling with a fixed width. The bar
+       lives outside the trigger — important when the trigger is a link,
+       so clicking the bar does NOT activate the link. */
+    &[data-direction="horizontal"]:not([data-size="expanded"])
+      [data-part="step"]
+      [data-part="trigger"] {
+      flex: 0 1 auto;
+      min-width: 0;
+      width: auto;
+    }
+
+    [data-part="trigger"] {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--pi-marker-text-gap);
+      box-sizing: border-box;
+      width: 100%;
+      font: inherit;
+      color: inherit;
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: inherit;
+      text-decoration: none;
+    }
+
+    [data-part="step"][data-interactive] [data-part="trigger"] {
+      cursor: pointer;
+    }
+
+    [data-part="marker"] {
+      flex: none;
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: var(--pi-marker-size);
+      height: var(--pi-marker-size);
+      background-color: var(--pi-marker-bg);
+      border: var(--pi-marker-border-width) solid var(--pi-marker-border-color);
+      border-radius: var(--sd3-space-border-radius-full);
+      color: var(--pi-marker-color);
+      font-size: var(--pi-marker-font-size);
+      font-weight: var(--pi-marker-font-weight);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    [data-part="marker"]::before {
+      content: counter(step);
+    }
+
+    &:not([data-size="expanded"])
+      :is([data-status="completed"], [data-status="critical"])
+      [data-part="marker"]::before {
+      content: none;
+    }
+
+    /* The icon-size bump is only for the circle marker — in Expanded the
+       marker is just a plain number and must stay at the normal font size. */
+    &:not([data-size="expanded"])
+      :is([data-status="completed"], [data-status="critical"])
+      [data-part="marker"] {
+      font-size: var(--pi-marker-icon-size);
+    }
+
+    [data-status="current"] [data-part="marker"] {
+      --pi-marker-bg: var(--sd3-color-brand-primary-subtle);
+      --pi-marker-border-color: var(--sd3-color-brand-primary-strong);
+    }
+
+    [data-status="completed"] [data-part="marker"] {
+      --pi-marker-bg: var(--sd3-color-interaction-primary-default);
+      --pi-marker-border-color: var(--sd3-color-interaction-primary-default);
+      --pi-marker-color: var(--sd3-color-icon-on-strong);
+    }
+
+    [data-status="critical"] [data-part="marker"] {
+      --pi-marker-bg: var(--sd3-color-support-critical-subtle);
+      --pi-marker-border-color: var(--sd3-color-support-critical-subtle);
+      --pi-marker-color: var(--sd3-color-icon-critical);
+    }
+
+    [data-status="critical"]
+      :is([data-part="label"], [data-part="description"]) {
+      color: var(--sd3-color-text-critical);
+    }
+
+    [data-status="disabled"] [data-part="marker"] {
+      --pi-marker-bg: var(--sd3-color-interaction-disabled-default);
+      --pi-marker-border-color: var(--sd3-color-interaction-disabled-default);
+      --pi-marker-color: var(--sd3-color-text-disabled);
+    }
+
+    [data-status="disabled"]
+      :is([data-part="label"], [data-part="description"]) {
+      color: var(--sd3-color-text-disabled);
+    }
+
+    &:not([data-size="compact"]) [data-status="disabled"] [data-part="marker"] {
+      font-size: var(--sd3-typography-size-text-interaction-sm);
+    }
+
+    &[data-size="expanded"] [data-part="marker"] {
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      color: var(--sd3-color-text-primary);
+      line-height: var(--sd3-typography-line-height-text-body-md);
+    }
+
+    &[data-size="expanded"] [data-status="disabled"] [data-part="marker"] {
+      color: var(--sd3-color-text-disabled);
+    }
+
+    &[data-size="expanded"] [data-status="critical"] [data-part="marker"] {
+      color: var(--sd3-color-text-critical);
+    }
+
+    [data-part="text"] {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sd3-space-component-000);
+      min-width: 0;
+    }
+
+    /* Non-expanded: give the text column the marker's height as a floor so a
+       label-only step centers vertically against the circle, while a step
+       with a description takes its natural height and top-aligns. */
+    &:not([data-size="expanded"]) [data-part="text"] {
+      min-height: var(--pi-marker-size);
+      justify-content: center;
+    }
+
+    [data-part="label"] {
+      font-size: var(--sd3-typography-size-text-body-md);
+      line-height: var(--sd3-typography-line-height-text-body-md);
+      font-weight: var(--sd3-typography-weight-semibold);
+    }
+
+    [data-part="description"] {
+      font-size: var(--sd3-typography-size-text-body-sm);
+      line-height: var(--sd3-typography-line-height-text-body-sm);
+      font-weight: var(--sd3-typography-weight-regular);
+    }
+
+    /* Compact is marker + inline label only — description is hidden. */
+    &[data-size="compact"] [data-part="description"] {
+      display: none;
+    }
+
+    &[data-size="expanded"] [data-part="trigger"] {
+      padding: var(--sd3-space-component-400);
+      background-color: var(--pi-card-bg);
+      border: var(--pi-marker-border-width) solid var(--pi-card-border-color);
+      border-radius: var(--sd3-space-border-radius-200);
+    }
+
+    &[data-size="expanded"] [data-status="upcoming"] [data-part="trigger"] {
+      --pi-card-bg: var(--sd3-color-surface-default-1);
+      --pi-card-border-color: var(--sd3-color-border-subtle);
+    }
+
+    &[data-size="expanded"] [data-status="current"] [data-part="trigger"] {
+      --pi-card-bg: var(--sd3-color-brand-primary-subtle);
+      --pi-card-border-color: var(--sd3-color-brand-primary-strong);
+    }
+
+    /* Expanded Completed: filled brand card, white text/digit, trailing white
+       check icon on the right. */
+    &[data-size="expanded"] [data-status="completed"] [data-part="trigger"] {
+      --pi-card-bg: var(--sd3-color-interaction-primary-default);
+
+      color: var(--sd3-color-icon-on-strong);
+    }
+
+    &[data-size="expanded"]
+      [data-status="completed"]
+      :is([data-part="marker"], [data-part="status-icon"]) {
+      color: var(--sd3-color-icon-on-strong);
+    }
+
+    &[data-size="expanded"] [data-status="critical"] [data-part="trigger"] {
+      --pi-card-bg: var(--sd3-color-support-critical-subtle);
+    }
+
+    &[data-size="expanded"] [data-status="disabled"] [data-part="trigger"] {
+      --pi-card-bg: var(--sd3-color-interaction-disabled-default);
+    }
+
+    /* Expanded trailing status icon (completed/critical) sits on the right. */
+    [data-part="status-icon"] {
+      flex: none;
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      font-size: var(--sd3-typography-size-text-body-xl);
+      line-height: 1;
+      color: var(--sd3-color-icon-critical);
+    }
+
+    /* Horizontal: bar is ::after on the <li> step (not inside the trigger),
+       so it sits outside any <a>/<button> and isn't part of the hit area.
+       Fixed width — step is sized to its content + the bar.
+       margin-top centers the bar on the marker's Y so wrapping descriptions
+       grow downward without shifting it. */
+    &[data-direction="horizontal"]:not([data-size="expanded"])
+      [data-part="step"]:not(:last-child)::after {
+      content: "";
+      flex: 0 0 auto;
+      align-self: flex-start;
+      margin-top: calc((var(--pi-marker-size) - var(--pi-bar-thickness)) / 2);
+      width: var(--pi-bar-length);
+      height: var(--pi-bar-thickness);
+      background-color: var(--pi-bar-color);
+      border-radius: var(--sd3-space-border-radius-full);
+    }
+
+    /* Vertical: bar lives in the parent gap, between this step's marker and
+       the next, with a small breathing gap on both ends so it doesn't touch
+       the circles. Anchored top-and-bottom (not a fixed height) so the gap
+       stays symmetric even when a step's text column is taller than its
+       marker. */
+    &[data-direction="vertical"] [data-part="step"]:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: calc(var(--pi-marker-size) + var(--sd3-space-component-100));
+      bottom: calc(
+        -1 * (var(--pi-vertical-bar-length) - var(--sd3-space-component-100))
+      );
+      left: calc(var(--pi-marker-size) / 2);
+      transform: translateX(-50%);
+      width: var(--pi-bar-thickness);
+      background-color: var(--pi-bar-color);
+      border-radius: var(--sd3-space-border-radius-full);
+      z-index: 0;
+    }
+
+    /* Expanded cards carry their own chrome and don't use connector bars. */
+    &[data-size="expanded"] [data-part="step"]:not(:last-child)::after {
+      display: none;
+    }
+
+    /* Bars before the current step are "progressed" (brand); bars at or after
+       current stay muted. A step's trailing bar is filled when either the
+       step itself is completed, or any later sibling is current (meaning this
+       bar sits before current). Horizontal-expanded has no ::after, and
+       vertical-expanded hides it, so no size guard is needed here. */
+    [data-part="step"]:has(~ [data-status="current"]):not(:last-child)::after,
+    [data-status="completed"]:not(:last-child)::after {
+      background-color: var(--sd3-color-interaction-primary-default);
+    }
+
+    @media (pointer: fine) {
+      [data-part="step"][data-interactive][data-status="upcoming"]:hover
+        [data-part="marker"] {
+        --pi-marker-bg: var(--sd3-color-interaction-neutral-hover);
+      }
+
+      [data-part="step"][data-interactive][data-status="completed"]:hover
+        [data-part="marker"] {
+        --pi-marker-bg: var(--sd3-color-interaction-primary-hover);
+        --pi-marker-border-color: var(--sd3-color-interaction-primary-hover);
+      }
+
+      /* Expanded: tint the card itself. Scoped to [href] so only linked
+         steps show hover — plain non-interactive cards stay inert. */
+      &[data-size="expanded"]
+        [data-status="upcoming"]
+        [data-part="trigger"][href]:hover {
+        --pi-card-bg: var(--sd3-color-interaction-neutral-hover);
+      }
+
+      &[data-size="expanded"]
+        [data-status="completed"]
+        [data-part="trigger"][href]:hover {
+        --pi-card-bg: var(--sd3-color-interaction-primary-hover);
+      }
+    }
+
+    [data-part="step"][data-interactive][data-status="upcoming"]:active
+      [data-part="marker"] {
+      --pi-marker-bg: var(--sd3-color-interaction-neutral-pressed);
+    }
+
+    [data-part="step"][data-interactive][data-status="completed"]:active
+      [data-part="marker"] {
+      --pi-marker-bg: var(--sd3-color-interaction-primary-pressed);
+      --pi-marker-border-color: var(--sd3-color-interaction-primary-pressed);
+    }
+
+    &[data-size="expanded"]
+      [data-status="upcoming"]
+      [data-part="trigger"][href]:active {
+      --pi-card-bg: var(--sd3-color-interaction-neutral-pressed);
+    }
+
+    &[data-size="expanded"]
+      [data-status="completed"]
+      [data-part="trigger"][href]:active {
+      --pi-card-bg: var(--sd3-color-interaction-primary-pressed);
+    }
+
+    /* Focus ring sits around the marker circle (Standard & Compact). The
+       trigger itself stays outline-free so the ring hugs the circle instead
+       of the whole hitbox. */
+    [data-part="step"][data-interactive] [data-part="trigger"]:focus-visible {
+      outline: none;
+    }
+
+    &:not([data-size="expanded"])
+      [data-part="step"][data-interactive]
+      [data-part="trigger"]:focus-visible
+      [data-part="marker"] {
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+      box-shadow: var(--sd3-focus-box-shadow);
+    }
+
+    /* Expanded has no marker circle — fall back to a ring around the whole
+       card. */
+    &[data-size="expanded"]
+      [data-part="step"][data-interactive]
+      [data-part="trigger"]:focus-visible {
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+      box-shadow: var(--sd3-focus-box-shadow);
+    }
+  }
+}
