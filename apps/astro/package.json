@@ -49,7 +49,7 @@
     "cpy-cli": "^7.0.0",
     "gray-matter": "^4.0.3",
     "postcss-custom-media": "^12.0.3",
-    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-astro": "^1.1.2",
     "style-dictionary": "^5.7.1",
     "vite-plugin-svgr": "^5.2.0"
   }
