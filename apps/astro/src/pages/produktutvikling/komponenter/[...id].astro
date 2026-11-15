@@ -36,34 +36,31 @@ const data = components.find((item) => item.id === id);
       slot="hero"
     >
       <ButtonGroup variant="left">
-        {
-          data?.figma && (
-            <ButtonLink size="small" href={data.figma}>
-              Figma
-            </ButtonLink>
-          )
-        }
+        {data?.figma && (
+          <ButtonLink size="small" href={data.figma}>
+            Figma
+          </ButtonLink>
+        )}
         <ButtonLink
           size="small"
           href={`https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/packages/${entry.data.package}`}
         >
           GitLab
         </ButtonLink>
-        {
-          data?.storybook && (
-            <ButtonLink size="small" href={data.storybook}>
-              Storybook
-            </ButtonLink>
-          )
-        }
+        {data?.storybook && (
+          <ButtonLink size="small" href={data.storybook}>
+            Storybook
+          </ButtonLink>
+        )}
       </ButtonGroup>
       <ButtonGroup variant="left">
         <ButtonLink
           variant="neutral-transparent"
           size="small"
           href={`https://www.npmjs.com/package/${pkg.name}`}
-          >{pkg.name}@{pkg.version}</ButtonLink
         >
+          {pkg.name}@{pkg.version}
+        </ButtonLink>
       </ButtonGroup>
     </Hero>
 

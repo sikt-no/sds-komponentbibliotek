@@ -7,9 +7,7 @@ const { token } = Astro.props;
 ---
 
 <div class="card">
-  <div class="name">
-    {pascalToKebabExcludeNumbers(token[1].name)}
-  </div>
+  <div class="name">{pascalToKebabExcludeNumbers(token[1].name)}</div>
   <div class="content">
     <div class="item">
       <Swatch color={token[1].$value} />

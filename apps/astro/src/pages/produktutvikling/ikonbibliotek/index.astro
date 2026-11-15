@@ -21,28 +21,27 @@ const categories = [...new Set(config.map((item) => item.category))];
     slot="hero"
   >
     <Paragraph>
-      Sikt bruker ikonsettet <Link
-        href="https://phosphoricons.com/"
-        target="_blank">Phosphor Icons</Link
-      >. Vi har gjort et utvalg fra ikonsettet for å definere hvilke ikoner som
+      Sikt bruker ikonsettet{" "}
+      <Link href="https://phosphoricons.com/" target="_blank">
+        Phosphor Icons
+      </Link>
+      . Vi har gjort et utvalg fra ikonsettet for å definere hvilke ikoner som
       brukes til hva.
     </Paragraph>
   </Hero>
 
-  {
-    categories.map((category) => (
-      <Section headingText={kebabToString(category)} lang="en">
-        <div class="ocean">
-          {config
-            .filter((item) => item.category === category)
-            .sort((a, b) => a.name.localeCompare(b.name))
-            .map(({ name }) => (
-              <IconCard name={name} />
-            ))}
-        </div>
-      </Section>
-    ))
-  }
+  {categories.map((category) => (
+    <Section headingText={kebabToString(category)} lang="en">
+      <div class="ocean">
+        {config
+          .filter((item) => item.category === category)
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(({ name }) => (
+            <IconCard name={name} />
+          ))}
+      </div>
+    </Section>
+  ))}
 </Layout>
 
 <style>

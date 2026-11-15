@@ -54,21 +54,17 @@ const pageTitle = "Størrelse og layout";
         </TableRow>
       </TableHead>
       <TableBody>
-        {
-          Object.entries(tokens.base.size).map((token) => {
-            return (
-              <TableRow key={token[1].name}>
-                <TableCell data-th="Navn">{token[0]}</TableCell>
-                <TableCell data-th="Verdi">{token[1].$value}</TableCell>
-                <TableCell data-th="Token">
-                  <TagStatus visibility="strong">
-                    {tokenName(token[1])}
-                  </TagStatus>
-                </TableCell>
-              </TableRow>
-            );
-          })
-        }
+        {Object.entries(tokens.base.size).map((token) => {
+          return (
+            <TableRow key={token[1].name}>
+              <TableCell data-th="Navn">{token[0]}</TableCell>
+              <TableCell data-th="Verdi">{token[1].$value}</TableCell>
+              <TableCell data-th="Token">
+                <TagStatus visibility="strong">{tokenName(token[1])}</TagStatus>
+              </TableCell>
+            </TableRow>
+          );
+        })}
       </TableBody>
     </Table>
   </Section>
@@ -94,32 +90,28 @@ const pageTitle = "Størrelse og layout";
         </TableRow>
       </TableHead>
       <TableBody>
-        {
-          Object.entries(tokens.space.padding).map((token) => {
-            const tabletToken = tablet.space.padding?.[token[0]] ?? token[1];
-            const desktopToken = desktop.space.padding?.[token[0]] ?? token[1];
+        {Object.entries(tokens.space.padding).map((token) => {
+          const tabletToken = tablet.space.padding?.[token[0]] ?? token[1];
+          const desktopToken = desktop.space.padding?.[token[0]] ?? token[1];
 
-            return (
-              <TableRow key={token[1].name}>
-                <TableCell data-th="Navn">{token[0]}</TableCell>
-                <TableCell data-th="Verdi @ mobile">
-                  <Token token={token[1]} />
-                </TableCell>
-                <TableCell data-th="Verdi @ tablet">
-                  <Token token={tabletToken} />
-                </TableCell>
-                <TableCell data-th="Verdi @ desktop">
-                  <Token token={desktopToken} />
-                </TableCell>
-                <TableCell data-th="Token">
-                  <TagStatus visibility="strong">
-                    {tokenName(token[1])}
-                  </TagStatus>
-                </TableCell>
-              </TableRow>
-            );
-          })
-        }
+          return (
+            <TableRow key={token[1].name}>
+              <TableCell data-th="Navn">{token[0]}</TableCell>
+              <TableCell data-th="Verdi @ mobile">
+                <Token token={token[1]} />
+              </TableCell>
+              <TableCell data-th="Verdi @ tablet">
+                <Token token={tabletToken} />
+              </TableCell>
+              <TableCell data-th="Verdi @ desktop">
+                <Token token={desktopToken} />
+              </TableCell>
+              <TableCell data-th="Token">
+                <TagStatus visibility="strong">{tokenName(token[1])}</TagStatus>
+              </TableCell>
+            </TableRow>
+          );
+        })}
       </TableBody>
     </Table>
   </Section>
@@ -145,31 +137,27 @@ const pageTitle = "Størrelse og layout";
         </TableRow>
       </TableHead>
       <TableBody>
-        {
-          Object.entries(tokens.space.gap).map((token) => {
-            const tabletToken = tablet.space.gap?.[token[0]] ?? token[1];
-            const desktopToken = desktop.space.gap?.[token[0]] ?? token[1];
-            return (
-              <TableRow key={token[1].name}>
-                <TableCell data-th="Navn">{token[0]}</TableCell>
-                <TableCell data-th="Verdi @ mobile">
-                  <Token token={token[1]} />
-                </TableCell>
-                <TableCell data-th="Verdi @ tablet">
-                  <Token token={tabletToken} />
-                </TableCell>
-                <TableCell data-th="Verdi @ desktop">
-                  <Token token={desktopToken} />
-                </TableCell>
-                <TableCell data-th="Token">
-                  <TagStatus visibility="strong">
-                    {tokenName(token[1])}
-                  </TagStatus>
-                </TableCell>
-              </TableRow>
-            );
-          })
-        }
+        {Object.entries(tokens.space.gap).map((token) => {
+          const tabletToken = tablet.space.gap?.[token[0]] ?? token[1];
+          const desktopToken = desktop.space.gap?.[token[0]] ?? token[1];
+          return (
+            <TableRow key={token[1].name}>
+              <TableCell data-th="Navn">{token[0]}</TableCell>
+              <TableCell data-th="Verdi @ mobile">
+                <Token token={token[1]} />
+              </TableCell>
+              <TableCell data-th="Verdi @ tablet">
+                <Token token={tabletToken} />
+              </TableCell>
+              <TableCell data-th="Verdi @ desktop">
+                <Token token={desktopToken} />
+              </TableCell>
+              <TableCell data-th="Token">
+                <TagStatus visibility="strong">{tokenName(token[1])}</TagStatus>
+              </TableCell>
+            </TableRow>
+          );
+        })}
       </TableBody>
     </Table>
   </Section>
@@ -190,33 +178,29 @@ const pageTitle = "Størrelse og layout";
         </TableRow>
       </TableHead>
       <TableBody>
-        {
-          Object.entries(tokens.space.border.weight).map((token) => {
-            const tabletToken =
-              tablet.space.border?.weight?.[token[0]] ?? token[1];
-            const desktopToken =
-              desktop.space.border?.weight?.[token[0]] ?? token[1];
-            return (
-              <TableRow key={token[1].name}>
-                <TableCell data-th="Navn">{token[0]}</TableCell>
-                <TableCell data-th="Verdi @ mobile">
-                  <Token token={token[1]} />
-                </TableCell>
-                <TableCell data-th="Verdi @ tablet">
-                  <Token token={tabletToken} />
-                </TableCell>
-                <TableCell data-th="Verdi @ desktop">
-                  <Token token={desktopToken} />
-                </TableCell>
-                <TableCell data-th="Token">
-                  <TagStatus visibility="strong">
-                    {tokenName(token[1])}
-                  </TagStatus>
-                </TableCell>
-              </TableRow>
-            );
-          })
-        }
+        {Object.entries(tokens.space.border.weight).map((token) => {
+          const tabletToken =
+            tablet.space.border?.weight?.[token[0]] ?? token[1];
+          const desktopToken =
+            desktop.space.border?.weight?.[token[0]] ?? token[1];
+          return (
+            <TableRow key={token[1].name}>
+              <TableCell data-th="Navn">{token[0]}</TableCell>
+              <TableCell data-th="Verdi @ mobile">
+                <Token token={token[1]} />
+              </TableCell>
+              <TableCell data-th="Verdi @ tablet">
+                <Token token={tabletToken} />
+              </TableCell>
+              <TableCell data-th="Verdi @ desktop">
+                <Token token={desktopToken} />
+              </TableCell>
+              <TableCell data-th="Token">
+                <TagStatus visibility="strong">{tokenName(token[1])}</TagStatus>
+              </TableCell>
+            </TableRow>
+          );
+        })}
       </TableBody>
     </Table>
   </Section>
@@ -237,34 +221,30 @@ const pageTitle = "Størrelse og layout";
         </TableRow>
       </TableHead>
       <TableBody>
-        {
-          Object.entries(tokens.space.border.radius).map((token) => {
-            const tabletToken =
-              tablet.space.border?.radius?.[token[0]] ?? token[1];
-            const desktopToken =
-              desktop.space.border?.radius?.[token[0]] ?? token[1];
+        {Object.entries(tokens.space.border.radius).map((token) => {
+          const tabletToken =
+            tablet.space.border?.radius?.[token[0]] ?? token[1];
+          const desktopToken =
+            desktop.space.border?.radius?.[token[0]] ?? token[1];
 
-            return (
-              <TableRow key={token[1].name}>
-                <TableCell data-th="Navn">{token[0]}</TableCell>
-                <TableCell data-th="Verdi @ mobile">
-                  <Token token={token[1]} />
-                </TableCell>
-                <TableCell data-th="Verdi @ tablet">
-                  <Token token={tabletToken} />
-                </TableCell>
-                <TableCell data-th="Verdi @ desktop">
-                  <Token token={desktopToken} />
-                </TableCell>
-                <TableCell data-th="Token">
-                  <TagStatus visibility="strong">
-                    {tokenName(token[1])}
-                  </TagStatus>
-                </TableCell>
-              </TableRow>
-            );
-          })
-        }
+          return (
+            <TableRow key={token[1].name}>
+              <TableCell data-th="Navn">{token[0]}</TableCell>
+              <TableCell data-th="Verdi @ mobile">
+                <Token token={token[1]} />
+              </TableCell>
+              <TableCell data-th="Verdi @ tablet">
+                <Token token={tabletToken} />
+              </TableCell>
+              <TableCell data-th="Verdi @ desktop">
+                <Token token={desktopToken} />
+              </TableCell>
+              <TableCell data-th="Token">
+                <TagStatus visibility="strong">{tokenName(token[1])}</TagStatus>
+              </TableCell>
+            </TableRow>
+          );
+        })}
       </TableBody>
     </Table>
   </Section>
@@ -286,21 +266,17 @@ const pageTitle = "Størrelse og layout";
         </TableRow>
       </TableHead>
       <TableBody>
-        {
-          Object.entries(tokens.base.breakpoint).map((token) => {
-            return (
-              <TableRow key={token[1].name}>
-                <TableCell data-th="Navn">{token[0]}</TableCell>
-                <TableCell data-th="Verdi">{token[1].$value}</TableCell>
-                <TableCell data-th="Token">
-                  <TagStatus visibility="strong">
-                    {tokenName(token[1])}
-                  </TagStatus>
-                </TableCell>
-              </TableRow>
-            );
-          })
-        }
+        {Object.entries(tokens.base.breakpoint).map((token) => {
+          return (
+            <TableRow key={token[1].name}>
+              <TableCell data-th="Navn">{token[0]}</TableCell>
+              <TableCell data-th="Verdi">{token[1].$value}</TableCell>
+              <TableCell data-th="Token">
+                <TagStatus visibility="strong">{tokenName(token[1])}</TagStatus>
+              </TableCell>
+            </TableRow>
+          );
+        })}
       </TableBody>
     </Table>
   </Section>

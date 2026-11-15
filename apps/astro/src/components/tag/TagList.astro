@@ -3,14 +3,12 @@ const { tags } = Astro.props;
 ---
 
 <div class="tag-list">
-  {
-    tags.map((tag) => (
-      <div class="tag-container">
-        <div class:list={["tag", "sds-typography-body--code"]}>{tag.tag}</div>
-        <div class="sds-typography-body--s">{tag.name}</div>
-      </div>
-    ))
-  }
+  {tags.map((tag) => (
+    <div class="tag-container">
+      <div class:list={["tag", "sds-typography-body--code"]}>{tag.tag}</div>
+      <div class="sds-typography-body--s">{tag.name}</div>
+    </div>
+  ))}
 </div>
 
 <style>

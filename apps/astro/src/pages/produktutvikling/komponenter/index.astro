@@ -24,15 +24,16 @@ const pageTitle = "Komponenter";
         og atomer.
       </p>
       <p>
-        Alle komponentene i Sikt designsystem ligger i <Link
-          href={import.meta.env.PUBLIC_STORYBOOK_URL}>Storybook</Link
-        >.
+        Alle komponentene i Sikt designsystem ligger i{" "}
+        <Link href={import.meta.env.PUBLIC_STORYBOOK_URL}>Storybook</Link>.
       </p>
     </div>
   </Hero>
 
   <div class="ocean">
-    {components.map(({ name, url }) => <ComponentCard name={name} url={url} />)}
+    {components.map(({ name, url }) => (
+      <ComponentCard name={name} url={url} />
+    ))}
   </div>
 </Layout>
 

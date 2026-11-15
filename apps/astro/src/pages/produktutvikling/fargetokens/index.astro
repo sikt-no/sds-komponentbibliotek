@@ -37,13 +37,11 @@ const pageTitle = "Fargetokens";
     </Paragraph>
 
     <div class="card-group">
-      {
-        Object.entries(tokens.color.brand).map((category) => {
-          return Object.entries(category[1]).map((token) => (
-            <ColorCard token={token} />
-          ));
-        })
-      }
+      {Object.entries(tokens.color.brand).map((category) => {
+        return Object.entries(category[1]).map((token) => (
+          <ColorCard token={token} />
+        ));
+      })}
     </div>
   </Section>
 
@@ -65,35 +63,33 @@ const pageTitle = "Fargetokens";
       pressed.
     </Paragraph>
 
-    {
-      ["strong", "subtle", "transparent"].map((category) => {
-        return (
-          <div class="card-group">
-            {Object.entries(tokens.color.interaction.primary[category]).map(
-              (token) => (
-                <ColorCard token={token} />
-              ),
-            )}
-          </div>
-        );
-      })
-    }
+    {["strong", "subtle", "transparent"].map((category) => {
+      return (
+        <div class="card-group">
+          {Object.entries(tokens.color.interaction.primary[category]).map(
+            (token) => (
+              <ColorCard token={token} />
+            ),
+          )}
+        </div>
+      );
+    })}
 
-    {
-      ["strong", "subtle", "transparent"].map((category) => {
-        return (
-          <div class="card-group">
-            {Object.entries(tokens.color.interaction.neutral[category]).map(
-              (token) => (
-                <ColorCard token={token} />
-              ),
-            )}
-          </div>
-        );
-      })
-    }
+    {["strong", "subtle", "transparent"].map((category) => {
+      return (
+        <div class="card-group">
+          {Object.entries(tokens.color.interaction.neutral[category]).map(
+            (token) => (
+              <ColorCard token={token} />
+            ),
+          )}
+        </div>
+      );
+    })}
 
-    <Heading level="3" size="xs">color-interaction-danger-</Heading>
+    <Heading level="3" size="xs">
+      color-interaction-danger-
+    </Heading>
 
     <Paragraph className="ds-content-max-width">
       Denne paletten benyttes for klikkbare elementer som utfører destruktive
@@ -106,13 +102,11 @@ const pageTitle = "Fargetokens";
     </Paragraph>
 
     <div class="card-group">
-      {
-        Object.entries(tokens.color.interaction.danger).map((category) => {
-          return Object.entries(category[1]).map((token) => (
-            <ColorCard token={token} />
-          ));
-        })
-      }
+      {Object.entries(tokens.color.interaction.danger).map((category) => {
+        return Object.entries(category[1]).map((token) => (
+          <ColorCard token={token} />
+        ));
+      })}
     </div>
   </Section>
 
@@ -122,21 +116,21 @@ const pageTitle = "Fargetokens";
       tilleggsinformasjon til brukeren.
     </Paragraph>
 
-    {
-      ["info", "success", "warning", "critical"].map((category) => {
-        return (
-          <div class="card-group">
-            {Object.entries(tokens.color.support[category]).map((token) => (
-              <ColorCard token={token} />
-            ))}
-          </div>
-        );
-      })
-    }
+    {["info", "success", "warning", "critical"].map((category) => {
+      return (
+        <div class="card-group">
+          {Object.entries(tokens.color.support[category]).map((token) => (
+            <ColorCard token={token} />
+          ))}
+        </div>
+      );
+    })}
   </Section>
 
   <Section headingText="Layout">
-    <Heading level="3" size="xs">Sidestruktur / color-layout-page-</Heading>
+    <Heading level="3" size="xs">
+      Sidestruktur / color-layout-page-
+    </Heading>
 
     <Paragraph className="ds-content-max-width">
       Page-fargene brukes for å dele opp sider med mye informasjon der det er
@@ -150,16 +144,14 @@ const pageTitle = "Fargetokens";
     </Paragraph>
 
     <div class="card-group">
-      {
-        Object.entries(tokens.color.layout.page).map((token) => (
-          <ColorCard token={token} />
-        ))
-      }
+      {Object.entries(tokens.color.layout.page).map((token) => (
+        <ColorCard token={token} />
+      ))}
     </div>
 
-    <Heading level="3" size="xs"
-      >Komponentstruktur / color-layout-surface-</Heading
-    >
+    <Heading level="3" size="xs">
+      Komponentstruktur / color-layout-surface-
+    </Heading>
 
     <Paragraph className="ds-content-max-width">
       Surface-fargene benyttes for bakgrunnsfarge på komponenter, for eksempel
@@ -176,31 +168,29 @@ const pageTitle = "Fargetokens";
     </Paragraph>
 
     <div class="card-group">
-      {
-        Object.entries(tokens.color.layout.background).map((token) => (
-          <ColorCard token={token} />
-        ))
-      }
+      {Object.entries(tokens.color.layout.background).map((token) => (
+        <ColorCard token={token} />
+      ))}
     </div>
 
-    <Heading level="3" size="xs">Skillelinjer / color-layout-divider-</Heading>
+    <Heading level="3" size="xs">
+      Skillelinjer / color-layout-divider-
+    </Heading>
 
     <div class="card-group">
-      {
-        Object.entries(tokens.color.layout.divider).map((token) => (
-          <ColorCard token={token} />
-        ))
-      }
+      {Object.entries(tokens.color.layout.divider).map((token) => (
+        <ColorCard token={token} />
+      ))}
     </div>
 
-    <Heading level="3" size="xs">Fokusmarkering / color-layout-focus</Heading>
+    <Heading level="3" size="xs">
+      Fokusmarkering / color-layout-focus
+    </Heading>
 
     <div class="card-group">
-      {
-        Object.entries(tokens.color.layout.focus).map((token) => (
-          <ColorCard token={token} />
-        ))
-      }
+      {Object.entries(tokens.color.layout.focus).map((token) => (
+        <ColorCard token={token} />
+      ))}
     </div>
   </Section>
 
@@ -246,11 +236,9 @@ const pageTitle = "Fargetokens";
 
   <Section headingText="Datavisualisering">
     <div class="card-group">
-      {
-        Object.entries(tokens.color.datavisualization.category).map((token) => (
-          <ColorCard token={token} />
-        ))
-      }
+      {Object.entries(tokens.color.datavisualization.category).map((token) => (
+        <ColorCard token={token} />
+      ))}
     </div>
   </Section>
 
@@ -276,28 +264,26 @@ const pageTitle = "Fargetokens";
 
     <Details size="small" summary="Basetokens">
       <div class="details-content">
-        {
-          Object.entries(baseTokensJson._color.base).map((category) => {
-            return (
-              <div class="card-group">
-                {Object.entries(category[1]).map((token) => {
-                  return (
-                    <BaseColorCard
-                      token={[
-                        "",
-                        {
-                          name: `color-base-${category[0]}-${token[0]}`,
-                          $value: token[1].$value,
-                          original: { $value: token[1].$value },
-                        },
-                      ]}
-                    />
-                  );
-                })}
-              </div>
-            );
-          })
-        }
+        {Object.entries(baseTokensJson._color.base).map((category) => {
+          return (
+            <div class="card-group">
+              {Object.entries(category[1]).map((token) => {
+                return (
+                  <BaseColorCard
+                    token={[
+                      "",
+                      {
+                        name: `color-base-${category[0]}-${token[0]}`,
+                        $value: token[1].$value,
+                        original: { $value: token[1].$value },
+                      },
+                    ]}
+                  />
+                );
+              })}
+            </div>
+          );
+        })}
       </div>
     </Details>
   </Section>

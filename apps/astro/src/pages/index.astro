@@ -35,12 +35,14 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
             aria-hidden="true"
           />
         </div>
-        <Heading1 size="xl" slot="heading">Lær, bruk og bidra</Heading1>
+        <Heading1 size="xl" slot="heading">
+          Lær, bruk og bidra
+        </Heading1>
         <p>
-          Velkommen til Sikts designsystem! Dette er en sammensetning av <Link
-            href="/produktutvikling/komponenter">komponenter</Link
-          > og retningslinjer du kan bruke når du designer og utvikler digitale løsninger
-          og tjenester.
+          Velkommen til Sikts designsystem! Dette er en sammensetning av{" "}
+          <Link href="/produktutvikling/komponenter">komponenter</Link> og
+          retningslinjer du kan bruke når du designer og utvikler digitale
+          løsninger og tjenester.
         </p>
       </Card>
     </div>
@@ -82,9 +84,8 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
           designtokens og atomer.
         </p>
         <p>
-          Alle komponentene i Sikt designsystem ligger i <Link
-            href={storybookUrl}>Storybook</Link
-          >.
+          Alle komponentene i Sikt designsystem ligger i{" "}
+          <Link href={storybookUrl}>Storybook</Link>.
         </p>
         <ButtonGroup variant="left" slot="call-to-action">
           <ButtonLink variant="strong" href="/produktutvikling/komponenter">
@@ -100,10 +101,11 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
         <Heading2 slot="heading">Samarbeid</Heading2>
         <p>
           Å bygge et godt designsystem for Sikt vil være en laginnsats, der alle
-          team er velkomne til å bidra inn. Mer om <Link
-            href="/laget-med-kjaerlighet#code-of-conduct"
-            >hvordan vi ønsker å arbeide</Link
-          >. Det har allerede kommet inn mange gode bidrag fra ulike team, og vi
+          team er velkomne til å bidra inn. Mer om{" "}
+          <Link href="/laget-med-kjaerlighet#code-of-conduct">
+            hvordan vi ønsker å arbeide
+          </Link>
+          . Det har allerede kommet inn mange gode bidrag fra ulike team, og vi
           håper at enda flere team ønsker å koble seg på fremover!
         </p>
 
@@ -180,10 +182,11 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
         </div>
         <Heading2 slot="heading">Vi er også folk 👋</Heading2>
         <p>
-          Vi som lager Sikt designsystem er også folk. Si hei til <Link
-            href={`https://over.sikt.no/ansatt/${randomMember.id}`}
-            >{randomMember.name}
-          </Link>!
+          Vi som lager Sikt designsystem er også folk. Si hei til{" "}
+          <Link href={`https://over.sikt.no/ansatt/${randomMember.id}`}>
+            {randomMember.name}
+          </Link>
+          !
         </p>
       </Card>
     </div>

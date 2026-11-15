@@ -19,7 +19,9 @@ const pageTitle = "Mønstre";
   />
 
   <div class="ocean">
-    {patterns.map(({ name, url }) => <ComponentCard name={name} url={url} />)}
+    {patterns.map(({ name, url }) => (
+      <ComponentCard name={name} url={url} />
+    ))}
   </div>
 </Layout>
 
