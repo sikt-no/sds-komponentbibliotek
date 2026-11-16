@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.4.0...@sikt/sd3-design-tokens@0.4.1) (2026-11-16)
+
+### Bug Fixes
+
+- **design-tokens:** make button themes follow data-color-theme ([57a1f03](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/57a1f037fa80bf2c6da6439841a4ff0450ff0518))
+
 ## [0.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-tokens@0.3.3...@sikt/sd3-design-tokens@0.4.0) (2026-11-13)
 
 ### Features
