@@ -103,4 +103,24 @@ test.describe("Button", () => {
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
   });
+
+  test.describe("color theme", () => {
+    test("primary follows data-color-theme=feide", async ({ page }) => {
+      await page.goto("/iframe.html?viewMode=story&id=sd3-button--default");
+      await page.locator(componentSelector).waitFor();
+
+      // Pin color-scheme to light so `light-dark()` resolves deterministically.
+      await page.evaluate(() => {
+        document.documentElement.style.colorScheme = "only light";
+        document.documentElement.setAttribute("data-color-theme", "feide");
+      });
+
+      const backgroundColor = await page
+        .locator(componentSelector)
+        .evaluate((el) => getComputedStyle(el).backgroundColor);
+
+      // Feide / interaction / primary / default (light) = #1f4698
+      expect(backgroundColor).toBe("rgb(31, 70, 152)");
+    });
+  });
 });
