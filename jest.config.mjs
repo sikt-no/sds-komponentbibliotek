@@ -52,7 +52,9 @@ export default defineConfig({
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/jest/__mocks__/fileTransformer.js",
   },
-  transformIgnorePatterns: ["node_modules/(?!@sikt/*)"],
+  transformIgnorePatterns: [
+    "node_modules/(?!(@sikt|dialog-closedby-polyfill)/)",
+  ],
   setupFilesAfterEnv: ["<rootDir>/jest/jest.setup.ts"],
   moduleDirectories: ["node_modules", "<rootDir>/"],
 });

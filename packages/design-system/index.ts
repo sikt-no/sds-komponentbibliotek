@@ -18,6 +18,7 @@ export * from "./src/Card";
 export * from "./src/Checkbox";
 export * from "./src/Chip";
 export * from "./src/Details";
+export * from "./src/Dialog";
 export * from "./src/Field";
 export * from "./src/Fieldset";
 export * from "./src/Footer";

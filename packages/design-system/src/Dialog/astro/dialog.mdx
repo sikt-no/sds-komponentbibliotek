@@ -1,0 +1,46 @@
+---
+title: "Dialog"
+id: "dialog"
+package: "design-system"
+---
+
+Dialog er en sentrert modal bygget på nettleserens native `<dialog>`-element. Bruk den når brukeren må bekrefte en handling, fullføre et fokusert skjema eller stoppes før en destruktiv operasjon. For ikke-blokkerende paneler — finn-felter, inspektorer, komponeringsvinduer — velg en popover i stedet.
+
+Dialogen åpnes og lukkes deklarativt via Invoker Commands (`command="show-modal"` og `command="close"` på `<Button>`), med en imperativ ref som nødutgang når det deklarative ikke strekker til.
+
+## Passer bra til
+
+- Bekreftelse av destruktive handlinger (slette, overskrive, avslutte).
+- Korte, fokuserte skjemaer som avbryter resten av siden.
+- Avklarende dialoger der brukeren må ta et valg før hen kan fortsette.
+
+## Passer mindre bra til
+
+- Ikke-blokkerende informasjon eller tilbakemeldinger — bruk `StatusMessage` eller `InlineMessage`.
+- Side-paneler og skuffer som ikke skal stenge resten av siden — velg en egen Drawer-komponent (ikke levert ennå).
+- Innhold som må være lesbart samtidig med resten av siden — plasser det i hovedflyten.
+
+## Komposisjon
+
+Dialog har én slot — `children` — som konsumenten bygger opp med `Dialog.Header`, `Dialog.Content`, `Dialog.Footer` og (valgfritt) `Dialog.Close`:
+
+- `Dialog.Header` er den padded toppseksjonen som holder overskrift, ingress og eventuelt `Dialog.Close`. Overskriften her bør være ankeret for `aria-labelledby`. Prop `divider` tegner en bunnlinje.
+- `Dialog.Content` er den padded brødtekstseksjonen for selve innholdet.
+- `Dialog.Footer` er en responsiv knapperad. Over 400px bredde ligger knappene høyrejustert på én linje; under 400px stables de vertikalt i full bredde. Container query — ingen JavaScript. Prop `divider` tegner en topplinje.
+- `Dialog.Close` renderer en X-knapp som er forhåndskoblet til å lukke sin forelder-dialog. Tar `aria-label` som obligatorisk prop. Plasseres typisk inne i `Dialog.Header`.
+
+## Oppførsel
+
+- Når dialogen blir mindre enn 400px i bredden, stables footer-knappene vertikalt og strekkes i full bredde.
+- Browseren viser en `::backdrop` når dialogen åpnes modalt, fanger Tab-fokus inne i dialogen og returnerer fokus til utløseren ved lukking. Dialogen bruker ingen manuell fokusfelle.
+- `closedby="any"` (standard) lar brukeren lukke med Esc, tilbake-gest og klikk utenfor. `closedby="closerequest"` fjerner klikk-utenfor. `closedby="none"` krever eksplisitt lukking fra kode (Esc utløser fortsatt `cancel`-eventet slik at «ulagrede endringer»-vakter kan reagere).
+
+## Tilgjengelighet
+
+- Native `<dialog>` eksponerer `role="dialog"` og `aria-modal="true"` automatisk — ikke sett dem manuelt.
+- `aria-labelledby` bør peke på en overskrift inne i `Dialog.Header`.
+- Første `autofocus`-etterkommer får fokus når dialogen åpnes. For destruktive bekreftelser bør `autofocus` ligge på den trygge handlingen (Avbryt).
+
+## Polyfill
+
+Dialogen bygger på Invoker Commands API. Modulen laster inn `invokers-polyfill` (samme pakke som Digdir Designsystemet) ved import og aktiverer den automatisk i nettlesere som ennå ikke støtter API-et. Ingen konfigurasjon kreves fra konsumenten.

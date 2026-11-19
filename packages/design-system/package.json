@@ -43,7 +43,8 @@
     "@radix-ui/react-slot": "^1.5.0",
     "@sikt/sds-icons": "^5.1.0",
     "@sikt/sd3-design-tokens": "^0.4.1",
-    "@sikt/sd3-sikt-logo": "^0.1.2"
+    "@sikt/sd3-sikt-logo": "^0.1.2",
+    "invokers-polyfill": "^1.0.4"
   },
   "peerDependencies": {
     "@types/react": "^19.0.0",
