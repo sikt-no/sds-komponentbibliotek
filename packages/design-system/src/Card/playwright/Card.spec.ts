@@ -27,7 +27,7 @@ test.describe("Card", () => {
 
     test("with image vertical should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=sd3-card--with-image&args=orientation:vertical",
+        "/iframe.html?viewMode=story&id=sd3-card--with-image&args=direction:vertical",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();
@@ -35,7 +35,7 @@ test.describe("Card", () => {
 
     test("with image horizontal should have screenshot", async ({ page }) => {
       await page.goto(
-        "/iframe.html?viewMode=story&id=sd3-card--with-image&args=orientation:horizontal",
+        "/iframe.html?viewMode=story&id=sd3-card--with-image&args=direction:horizontal",
       );
 
       await expect(page.locator(componentSelector)).toHaveScreenshot();

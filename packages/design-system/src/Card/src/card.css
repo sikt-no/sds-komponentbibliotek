@@ -6,7 +6,7 @@
     border-radius: var(--card-border-radius);
     display: flex;
 
-    &[data-orientation="vertical"] {
+    &[data-direction="vertical"] {
       flex-direction: column;
 
       [data-part="image"]:first-child {
@@ -18,7 +18,7 @@
       }
     }
 
-    &[data-orientation="horizontal"] {
+    &[data-direction="horizontal"] {
       flex-direction: row;
 
       [data-part="image"]:first-child {
