@@ -24,7 +24,7 @@ export default {
   id: "Button",
   imports: [`import { Button } from "@sikt/sd3-design-system"`],
   example: figma.code`
-    <Button variant="${variant}" size="${size}" aria-label={/* TODO: must be filled out */}>
+    <Button variant="${variant}" size="${size}" aria-label="{/* TODO: must be filled out */}">
         <Button.Icon>${icon}</Button.Icon>
     </Button>`,
   metadata: {

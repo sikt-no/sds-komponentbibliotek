@@ -15,12 +15,14 @@ const direction = instance.getEnum("direction", {
   Vertical: "vertical",
 });
 
+const children = instance.children.map(
+  (item) => item.type === "INSTANCE" && item.executeTemplate().example,
+);
+
 export default {
   example: figma.code`
-    <ProgressIndicator aria-label="Søknadsprosess"${figma.helpers.react.renderProp("size", size)}${figma.helpers.react.renderProp("direction", direction)}>
-      <ProgressIndicator.Step status="completed" label="Konto" />
-      <ProgressIndicator.Step status="current" label="Profil" />
-      <ProgressIndicator.Step status="upcoming" label="Betaling" />
+    <ProgressIndicator aria-label="{/* TODO: must be filled out */}" size="${size}" direction="${direction}">
+      ${children}
     </ProgressIndicator>
   `,
   imports: ['import { ProgressIndicator } from "@sikt/sd3-design-system";'],

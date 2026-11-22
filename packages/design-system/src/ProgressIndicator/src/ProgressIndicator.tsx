@@ -1,5 +1,6 @@
 import { clsx } from "clsx/lite";
 import { OlHTMLAttributes, ReactNode, useMemo } from "react";
+import { Direction } from "../../../types";
 import {
   ProgressIndicatorContext,
   ProgressIndicatorStepStatus,
@@ -11,7 +12,7 @@ export interface ProgressIndicatorProps extends OlHTMLAttributes<HTMLOListElemen
   /** @default "standard" */
   size?: "compact" | "standard" | "expanded";
   /** @default "horizontal" */
-  direction?: "horizontal" | "vertical";
+  direction?: Direction;
   "aria-label"?: string;
   /** Visually-hidden suffix read by screen readers for each status (e.g. `{ completed: "fullført" }`). Omitted statuses stay silent. */
   statusLabels?: Partial<Record<ProgressIndicatorStepStatus, string>>;
