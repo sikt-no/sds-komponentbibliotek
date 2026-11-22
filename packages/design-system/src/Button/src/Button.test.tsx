@@ -11,7 +11,7 @@ const variants = [
 ] as const;
 const themes = ["main", "neutral", "critical"] as const;
 const sizes = ["large", "medium", "small"] as const;
-const orientations = ["horizontal", "vertical"] as const;
+const directions = ["horizontal", "vertical"] as const;
 const positions = ["left", "right", "split"] as const;
 
 describe("Button", () => {
@@ -204,9 +204,9 @@ describe("Button.Group", () => {
     );
 
   describe("a11y", () => {
-    orientations.forEach((orientation) => {
-      it(`should be accessible with orientation="${orientation}"`, async () => {
-        const { container } = renderGroup({ orientation });
+    directions.forEach((direction) => {
+      it(`should be accessible with directions="${direction}"`, async () => {
+        const { container } = renderGroup({ direction });
         expect(await axe(container)).toHaveNoViolations();
       });
     });
@@ -233,21 +233,21 @@ describe("Button.Group", () => {
       );
     });
 
-    describe("orientation", () => {
-      it("should default data-orientation to 'horizontal'", () => {
+    describe("directions", () => {
+      it("should default data-direction to 'horizontal'", () => {
         renderGroup();
         expect(screen.getByRole("group")).toHaveAttribute(
-          "data-orientation",
+          "data-direction",
           "horizontal",
         );
       });
 
-      orientations.forEach((orientation) => {
-        it(`should set data-orientation="${orientation}"`, () => {
-          renderGroup({ orientation });
+      directions.forEach((direction) => {
+        it(`should set data-direction="${direction}"`, () => {
+          renderGroup({ direction });
           expect(screen.getByRole("group")).toHaveAttribute(
-            "data-orientation",
-            orientation,
+            "data-direction",
+            direction,
           );
         });
       });

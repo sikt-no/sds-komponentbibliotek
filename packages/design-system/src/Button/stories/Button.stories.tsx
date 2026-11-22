@@ -8,7 +8,7 @@ import {
 import { Avatar } from "../../../index";
 import type {
   VariantButton,
-  Orientation,
+  Direction,
   Size,
   ThemeButton,
 } from "../../../types";
@@ -25,7 +25,7 @@ type StoryArgs = ComponentProps<"button"> & {
   asChild?: boolean;
   icon?: IconComponent | null;
   iconPosition?: IconPosition;
-  orientation?: Orientation;
+  direction?: Direction;
   position?: ButtonGroupProps["position"];
 };
 
@@ -211,13 +211,13 @@ export const AvatarRight: Story = {
 
 export const WithButtonGroup: Story = {
   args: {
-    orientation: "horizontal",
+    direction: "horizontal",
     position: "right",
   },
   argTypes: {
-    orientation: {
+    direction: {
       control: { type: "inline-radio" },
-      options: ["horizontal", "vertical"] satisfies Orientation[],
+      options: ["horizontal", "vertical"] satisfies Direction[],
       table: { category: "Button.Group" },
     },
     position: {
@@ -230,9 +230,9 @@ export const WithButtonGroup: Story = {
       table: { category: "Button.Group" },
     },
   },
-  render: ({ orientation, position, ...args }) => (
+  render: ({ direction, position, ...args }) => (
     <Button.Group
-      orientation={orientation}
+      direction={direction}
       position={position}
       role="group"
       aria-label="Confirm or Confirm or Die"

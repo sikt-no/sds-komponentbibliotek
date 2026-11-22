@@ -4,12 +4,12 @@
     flex-wrap: wrap;
     justify-content: flex-end;
 
-    &[data-orientation="horizontal"] {
+    &[data-direction="horizontal"] {
       flex-direction: row;
       gap: var(--sd3-space-component-200);
     }
 
-    &[data-orientation="vertical"] {
+    &[data-direction="vertical"] {
       flex-direction: column;
       gap: var(--sd3-space-component-300);
     }

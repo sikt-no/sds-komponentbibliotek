@@ -6,7 +6,7 @@ import figma from "figma";
 
 const instance = figma.selectedInstance;
 
-const orientation = instance.getEnum("direction", {
+const direction = instance.getEnum("direction", {
   Horizontal: "horizontal",
   Vertical: "vertical",
 });
@@ -19,7 +19,7 @@ export default {
   id: "Button",
   imports: [`import { Button } from "@sikt/sd3-design-system"`],
   example: figma.code`
-    <Button.Group orientation="${orientation}">
+    <Button.Group direction="${direction}">
       ${children}
     </Button.Group>`,
   metadata: {

@@ -9,7 +9,7 @@ import {
 import "./button.css";
 import "./button-group.css";
 import type {
-  Orientation,
+  Direction,
   Size,
   ThemeButton,
   VariantButton,
@@ -58,7 +58,7 @@ export interface ButtonGroupProps
   extends HTMLAttributes<HTMLDivElement>, ButtonThemeProp {
   /** The button element/s to render. */
   children?: ReactNode;
-  orientation?: Orientation;
+  direction?: Direction;
   /**
    * Alignment of the buttons within the group.
    * - `split`: first button left-aligned, remaining buttons right-aligned.
@@ -73,14 +73,14 @@ export interface ButtonGroupProps
 const ButtonGroup = ({
   className,
   children,
-  orientation = "horizontal",
+  direction = "horizontal",
   position = "right",
   theme,
   ...rest
 }: ButtonGroupProps) => (
   <div
     className={clsx("sd3-button-group", className)}
-    data-orientation={orientation}
+    data-direction={direction}
     data-position={position}
     data-button-theme={theme}
     {...rest}

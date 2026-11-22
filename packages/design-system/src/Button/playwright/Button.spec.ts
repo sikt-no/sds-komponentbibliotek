@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { Orientation, VariantButton, Size, ThemeButton } from "../../../types";
+import { Direction, VariantButton, Size, ThemeButton } from "../../../types";
 
 const componentSelector = ".sd3-button";
 const groupSelector = ".sd3-button-group";
@@ -13,7 +13,7 @@ const variants: VariantButton[] = [
 ];
 const themes: ThemeButton[] = ["main", "neutral", "critical"];
 const sizes: Size[] = ["large", "medium", "small"];
-const orientations: Orientation[] = ["horizontal", "vertical"];
+const directions: Direction[] = ["horizontal", "vertical"];
 const positions = ["left", "right", "split"] as const;
 
 test.describe("Button", () => {
@@ -53,12 +53,12 @@ test.describe("Button", () => {
       expect(results.violations).toEqual([]);
     });
 
-    orientations.forEach((orientation) => {
-      test(`group orientation=${orientation} should be accessible`, async ({
+    directions.forEach((direction) => {
+      test(`group direction=${direction} should be accessible`, async ({
         page,
       }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=sd3-button--with-button-group&args=orientation:${orientation}`,
+          `/iframe.html?viewMode=story&id=sd3-button--with-button-group&args=direction:${direction}`,
         );
         await page.locator(groupSelector).waitFor();
         const results = await new AxeBuilder({ page })
@@ -118,10 +118,10 @@ test.describe("Button", () => {
       await expect(page.locator(componentSelector)).toHaveScreenshot();
     });
 
-    orientations.forEach((orientation) => {
-      test(`group orientation=${orientation} screenshot`, async ({ page }) => {
+    directions.forEach((direction) => {
+      test(`group direction=${direction} screenshot`, async ({ page }) => {
         await page.goto(
-          `/iframe.html?viewMode=story&id=sd3-button--with-button-group&args=orientation:${orientation}`,
+          `/iframe.html?viewMode=story&id=sd3-button--with-button-group&args=direction:${direction}`,
         );
         await expect(page.locator(groupSelector)).toHaveScreenshot();
       });
