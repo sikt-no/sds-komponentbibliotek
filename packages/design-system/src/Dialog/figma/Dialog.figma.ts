@@ -5,11 +5,15 @@ import figma from "figma";
 
 const instance = figma.selectedInstance;
 
+const showContent = instance.getBoolean("showContent");
+const Content = instance.findInstance(".Content");
+const slot = Content.type === "INSTANCE" ? Content.getSlot("slot") : null;
+
 export default {
   example: figma.code`
     <Dialog id="dialog-id">
       <Dialog.Content>
-        ${instance.getSlot("children")}
+        ${showContent ? figma.code`${slot}` : undefined}
       </Dialog.Content>
     </Dialog>
   `,

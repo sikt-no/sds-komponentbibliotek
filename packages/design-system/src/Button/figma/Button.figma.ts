@@ -42,7 +42,7 @@ export default {
   imports: [`import { Button } from "@sikt/sd3-design-system"`],
   example: figma.code`
     <Button variant="${variant}" size="${size}">
-      ${showIconLeft}
+      ${leftIcon}
       ${label}
       ${rightIcon}
     </Button>`,
