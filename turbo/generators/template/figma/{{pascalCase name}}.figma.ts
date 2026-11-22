@@ -5,6 +5,14 @@ import figma from "figma";
 
 const instance = figma.selectedInstance;
 
+/*
+const exampleString = instance.getString("stringName");
+const exampleBoolean = instance.getBoolean("booleanName");
+const exampleEnum = instance.getEnum("enumName", {
+  FigmaValue: "codeValue",
+});
+*/
+
 export default {
   example: figma.code`
     <{{pascalCase name}} />
