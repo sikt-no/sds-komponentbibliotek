@@ -1,0 +1,139 @@
+# Sikt designsystem
+
+> ℹ️ This is the current, production ready, latest version of Sikt designsystem. It is currently in Long-Term Support (LTS) with no new features being added since we are migrating to the new version SD3.
+
+<details>
+  <summary>Table of Contents</summary>
+
+- [Consume](#consume)
+  - [Core & Design Tokens](#core--design-tokens)
+    - [Tailwind CSS](#tailwind-css)
+  - [React](#react)
+  - [Stylesheets & custom markup](#stylesheets--custom-markup)
+    - htmx
+  - [Vue](#vue)
+  - [Agents](#agents)
+- [Accessibility](#accessibility)
+- [Contribute](#contribute)
+- [Security](#security)
+- [License](#license)
+
+</details>
+
+## Consume
+
+Install package to be consumed:
+
+```sh
+npm i -s @sikt/sds-{core,<package-name>}
+```
+
+### Core & Design Tokens
+
+Import the [@sikt/sds-core](./packages/core/) package. It contains, among other things, a base stylesheet with reset, font family and [Design Tokens](./packages/tokens/README.md#design-tokens), on which other packages are based.
+
+```css
+@import url("@sikt/sds-core");
+```
+
+**Note** This package may be required whether you use the React components or not. Unless you import design tokens directly and make the setup yourself.
+
+**Note** Using [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer) when importing CSS is a good way to handle specificity when you have a need to override styles.
+
+```css
+@layer sds, my-own-more-specific-layer;
+
+@import url("@sikt/sds-core") layer(sds);
+@import url("@sikt/sds-button") layer(sds);
+```
+
+**Note** Design Tokens can be imported in the needed format directly from [@sikt/sds-tokens](./packages/tokens/).
+
+#### Tailwind CSS
+
+[Tailwind CSS](./packages/tokens/README.md#tailwind-css)
+
+### React
+
+Import component & stylesheet:
+
+```jsx
+import { Button } from "@sikt/sds-button";
+import "@sikt/sds-button/dist/index.css";
+
+return (
+  <Button variant="strong">Hello, World!</Button>;
+);
+```
+
+**Note** How you import stylesheets depends on your framework and build tools, make sure to read and understand your frameworks documentation 🤓
+
+### Stylesheets & custom markup
+
+If you are not able to use the React components, for example if you are using Vue, Angular, Svelte, htmx or even PHP 😱. You can still benefit by using the stylesheets and building your own markup and functionality based on the components CSS class names.
+
+Import stylesheet:
+
+```css
+@import url("@sikt/sds-button");
+```
+
+Create custom markup:
+
+```html
+<button class="sds-button sds-button--strong">
+  <span class="sds-button__label">Hello, World!</span>
+</button>
+```
+
+### Vue
+
+See custom markup below or go to the [Vue component example](./docs/VUE.md).
+
+### Agents
+
+#### Claude Plugins
+
+Install plugins for Claude from our marketplace:
+
+```sh
+claude
+/plugin marketplace add https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git
+/plugin install sikt-sds@sikt-sds
+/reload-plugins
+```
+
+or through [Agent Skills Discovery](https://github.com/cloudflare/agent-skills-discovery-rfc):
+
+```sh
+npx skills add https://designsystem.sikt.no/
+```
+
+## Examples
+
+These are example web applications to see how things can be built with Sikt designsystem:
+
+- [designsystem.sikt.no](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/apps/astro) (Astro)
+- [Min kompetanse](https://gitlab.sikt.no/fs/min-kompetanse) (Next.js)
+- [FS Admin](https://gitlab.sikt.no/studieadm/fs-admin) (Next.js)
+- [htmx+TailwindCSS](https://gitlab.sikt.no/designsystem/htmx-tailwindcss) (htmx & TailwindCSS)
+
+## Accessibility
+
+[Accessibility](./docs/A11Y.md)
+
+## Contribute
+
+[Contributing](CONTRIBUTING.md)
+
+## Security
+
+[Security](./docs/SECURITY.md)
+
+## License
+
+[License](LICENSE.md)
+
+---
+
+Made with ❤️🧡💛💚💙💜 at [Sikt](https://www.sikt.no/)

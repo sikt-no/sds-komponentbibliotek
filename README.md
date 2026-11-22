@@ -1,16 +1,20 @@
 # Sikt designsystem
 
+> ℹ️ This is the new, currently still experimental, version of Sikt designsystem. It will soon be released as a stable major version and replace SDS. If you are starting with a Sikt product this is the version you should choose.
+
 <details>
   <summary>Table of Contents</summary>
 
 - [Consume](#consume)
-  - [Core & Design Tokens](#core--design-tokens)
-    - [Tailwind CSS](#tailwind-css)
-  - [React](#react)
-  - [Stylesheets & custom markup](#stylesheets--custom-markup)
-    - htmx
+  - [Getting started](#getting-started)
+  - [Stylesheets, Design Tokens & React](#stylesheets--design-tokens--react)
+    - [Stylesheets & Design Tokens](#stylesheets--design-tokens)
+    - [React components](#react-components)
+  - [Design Tokens](#design-tokens)
+  - [Icons](#icons)
   - [Vue](#vue)
   - [Agents](#agents)
+- [Examples](#examples)
 - [Accessibility](#accessibility)
 - [Contribute](#contribute)
 - [Security](#security)
@@ -20,101 +24,83 @@
 
 ## Consume
 
-Install package to be consumed:
+### Getting started
+
+Fast setup with the packages you probably need:
 
 ```sh
-npm i -s @sikt/sds-{core,<package-name>}
+npm i -s @sikt/sd3-design-system @sikt/sd3-design-tokens @sikt/sd3-sikt-logo @sikt/sds-icons
 ```
 
-### Core & Design Tokens
+### Stylesheets, Design Tokens & React
 
-Import the [@sikt/sds-core](./packages/core/) package. It contains, among other things, a base stylesheet with reset, font family and [Design Tokens](./packages/tokens/README.md#design-tokens), on which other packages are based.
+See [@sikt/sd3-design-system](./packages/design-system/README.md)
+
+```sh
+npm i -s @sikt/sd3-design-system
+```
+
+#### Stylesheets & Design Tokens
+
+Import the [@sikt/sd3-design-system](./packages/design-system/) package. It contains, among other things, a base stylesheet with reset, font family, [Design Tokens](./packages/design-tokens/README.md) and component styles.
 
 ```css
-@import url("@sikt/sds-core");
+@layer sd3, my-own-more-specific-layer;
+
+@import url("packages/design-system/dist/index.css") layer(sd3);
 ```
 
 **Note** This package may be required whether you use the React components or not. Unless you import design tokens directly and make the setup yourself.
 
 **Note** Using [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer) when importing CSS is a good way to handle specificity when you have a need to override styles.
 
-```css
-@layer sds, my-own-more-specific-layer;
-
-@import url("@sikt/sds-core") layer(sds);
-@import url("@sikt/sds-button") layer(sds);
-```
-
-**Note** Design Tokens can be imported in the needed format directly from [@sikt/sds-tokens](./packages/tokens/).
-
-#### Tailwind CSS
-
-[Tailwind CSS](./packages/tokens/README.md#tailwind-css)
-
-### React
+#### React components
 
 Import component & stylesheet:
 
 ```jsx
-import { Button } from "@sikt/sds-button";
-import "@sikt/sds-button/dist/index.css";
+import { Button } from "@sikt/sd3-design-system";
 
 return (
-  <Button variant="strong">Hello, World!</Button>;
+  <Button variant="primary">Hello, World!</Button>;
 );
 ```
 
-**Note** How you import stylesheets depends on your framework and build tools, make sure to read and understand your frameworks documentation 🤓
+### Design Tokens
 
-### Stylesheets & custom markup
+See [@sikt/sd3-design-tokens](./packages/design-tokens/README.md)
 
-If you are not able to use the React components, for example if you are using Vue, Angular, Svelte, htmx or even PHP 😱. You can still benefit by using the stylesheets and building your own markup and functionality based on the components CSS class names.
-
-Import stylesheet:
-
-```css
-@import url("@sikt/sds-button");
+```sh
+npm i -s @sikt/sd3-design-tokens
 ```
 
-Create custom markup:
+This package may be needed to import Design Tokens into JavaScript files, like a `manifest.webmanifest`.
 
-```html
-<button class="sds-button sds-button--strong">
-  <span class="sds-button__label">Hello, World!</span>
-</button>
+### Icons
+
+See [@sikt/sds-icons](./packages/icons/README.md)
+
+```sh
+npm i -s @sikt/sds-icons
 ```
+
+### Font
+
+See [@sikt/sd3-design-system](./packages/design-system/README.md#font)
 
 ### Vue
 
-See custom markup below or go to the [Vue component example](./docs/VUE.md).
+See custom markup below or go to the [Vue component example](./docs/VUE.md#example-component-sd3).
 
 ### Agents
 
-#### Claude Plugins
-
-Install plugins for Claude from our marketplace:
-
-```sh
-claude
-/plugin marketplace add https://gitlab.sikt.no/designsystem/sds-komponentbibliotek.git
-/plugin install sikt-sds@sikt-sds
-/reload-plugins
-```
-
-or through [Agent Skills Discovery](https://github.com/cloudflare/agent-skills-discovery-rfc):
-
-```sh
-npx skills add https://designsystem.sikt.no/
-```
+_TODO_
 
 ## Examples
 
 These are example web applications to see how things can be built with Sikt designsystem:
 
-- [designsystem.sikt.no](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/-/tree/main/apps/astro) (Astro)
-- [Min kompetanse](https://gitlab.sikt.no/fs/min-kompetanse) (Next.js)
-- [FS Admin](https://gitlab.sikt.no/studieadm/fs-admin) (Next.js)
-- [htmx+TailwindCSS](https://gitlab.sikt.no/designsystem/htmx-tailwindcss) (htmx & TailwindCSS)
+- [SD3 Example](https://gitlab.sikt.no/designsystem/sd3-example)
 
 ## Accessibility
 
