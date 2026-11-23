@@ -32,6 +32,7 @@ export * from "./src/ProgressIndicator";
 export * from "./src/Radio";
 export * from "./src/Select";
 export * from "./src/StatusMessage";
+export * from "./src/Tabs";
 export * from "./src/Tag";
 export * from "./src/TagStatus";
 export * from "./src/Textarea";

@@ -1,0 +1,85 @@
+@scope (.sd3-tabs) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --tabs-indicator-selected: var(--sd3-color-interaction-primary-default);
+
+    display: block;
+    color: var(--sd3-color-text-primary);
+  }
+
+  [data-part="list"] {
+    display: flex;
+    align-items: stretch;
+    box-shadow: inset 0 calc(-1 * var(--sd3-space-border-weight-050)) 0
+      var(--sd3-color-border-strong);
+  }
+
+  [data-part="tab"] {
+    --tab-background: var(--sd3-color-interaction-neutral-transparent);
+
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: var(--sd3-space-component-200);
+    padding: var(--sd3-space-component-300);
+    border: 0;
+    background-color: var(--tab-background);
+    color: inherit;
+    font-size: var(--sd3-typography-size-text-body-lg);
+    font-weight: var(--sd3-typography-weight-regular);
+    line-height: var(--sd3-typography-line-height-text-body-lg);
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: var(--sd3-space-border-weight-050);
+      background-color: var(--sd3-color-border-strong);
+      pointer-events: none;
+    }
+
+    &[aria-selected="true"]::after {
+      height: var(--sd3-space-border-weight-100);
+      background-color: var(--tabs-indicator-selected);
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        --tab-background: var(--sd3-color-interaction-neutral-hover);
+      }
+    }
+
+    &:active {
+      --tab-background: var(--sd3-color-interaction-neutral-pressed);
+    }
+
+    &:focus-visible {
+      outline: var(--sd3-focus-outline);
+      outline-offset: calc(-1 * var(--sd3-focus-outline-width));
+      box-shadow: inset 0 0 0 calc(2 * var(--sd3-focus-outline-width))
+        var(--sd3-color-background-default);
+    }
+
+    [data-part="icon"] {
+      display: inline-flex;
+      font-size: var(--sd3-typography-size-application-lg);
+    }
+
+    [data-part="slot"] {
+      display: inline-flex;
+    }
+  }
+
+  [data-part="panel"] {
+    padding-block: var(--sd3-space-component-400);
+
+    &:focus-visible {
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+---
+title: "Tabs"
+id: "tabs"
+package: "tabs"
+---
+
+Horisontale faner som bytter mellom relaterte paneler i samme kontekst. Bruk faner når alternativene er sidestilte og brukeren trenger å sammenligne eller bla mellom dem uten å navigere bort. Når seksjonene hører hierarkisk sammen, velg heller intern navigasjon eller en sidemeny.
+
+## Tilgjengelighet
+
+- Komponenten følger [WAI-ARIA Authoring Practices Guide for Tabs with Manual Activation](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/examples/tabs-manual/).
+- Piltastene flytter fokus mellom faner (med wrap). Home og End hopper til første og siste fane. Enter og mellomrom aktiverer fokusert fane (manuell aktivering).
+- Hver `Tabs.List` må ha et beskrivende navn via `aria-label` eller `aria-labelledby` når ingen overskrift i omgivelsene allerede beskriver fanegruppen.
+
+## Overflyt
+
+Når det ikke er plass til alle fanene i bredden, scroller fanelisten horisontalt. Piltast-navigasjonen scroller fokusert fane automatisk inn i synlig område.
