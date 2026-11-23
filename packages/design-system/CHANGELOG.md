@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.0](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-system@0.3.1...@sikt/sd3-design-system@0.4.0) (2026-11-23)
+
+### ⚠ BREAKING CHANGES
+
+- **button.group:** change orientation prop to direction
+- **card:** change orientation prop to direction
+- **card:** change variant prop to orientation
+
+### Features
+
+- **button:** add button group component ([f5b3649](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/f5b36495c1bcda0fb264e32fc8a25ca92811ae32))
+- **card:** change variant prop to orientation ([a2d4b2e](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/a2d4b2e2ef495b859d9cccdc67e24043a0f4deab))
+- **design-system:** add sd3 search field component ([b9f54fa](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/b9f54fa8514277c636e3a8a347d044d7c8c55af2))
+- **dialog:** add component ([ef805c8](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ef805c8403d991f1e432cfba38089ff625ac19df))
+- **tabs:** add SD3 Tabs ([bdb6afb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/bdb6afbc96aa9d3a760238fa7cd6e819c633de8c))
+
+### Bug Fixes
+
+- **button.group:** change orientation prop to direction ([035c950](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/035c950094d20babb2b49284afbb6c56b1ad1a9e))
+- **button:** add donut scope to styles ([3c985bb](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/3c985bb38381034afd6a1fa35497a09cbd7c63bf))
+- **card:** change orientation prop to direction ([5b5f14d](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/5b5f14dffe00a547ed0b830e23fd1a74eca8b954))
+- **input:** set height on input types with content that differs from font-size ([ff687d2](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/commit/ff687d2b70aebf385164266249408fa5f05c779c))
+
 ## [0.3.1](https://gitlab.sikt.no/designsystem/sds-komponentbibliotek/compare/@sikt/sd3-design-system@0.3.0...@sikt/sd3-design-system@0.3.1) (2026-11-16)
 
 ### Bug Fixes

@@ -212,7 +212,9 @@ export const SearchCountries: Story = {
               id="country-search"
               name="q"
               value={query}
-              onChange={(event) => { setQuery(event.target.value); }}
+              onChange={(event) => {
+                setQuery(event.target.value);
+              }}
             />
             <Button
               type="reset"
