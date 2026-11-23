@@ -25,8 +25,6 @@
 
     &::placeholder {
       color: var(--input-placeholder-color);
-
-      /* Firefox adds opacity: 0.54 on ::placeholder by default. */
       opacity: 1;
     }
 
@@ -77,6 +75,19 @@
 
     &[data-size="small"] {
       --input-padding-block: var(--sd3-space-component-100);
+    }
+
+    &[type="color"],
+    &[type="date"],
+    &[type="datetime-local"],
+    &[type="file"],
+    &[type="month"],
+    &[type="time"],
+    &[type="week"] {
+      height: calc(
+        (var(--input-font-size) * var(--input-line-height)) +
+          (var(--input-padding-block) * 2)
+      );
     }
   }
 }
