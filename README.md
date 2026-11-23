@@ -1,6 +1,6 @@
 # Sikt designsystem
 
-> ℹ️ This is the new, currently still experimental, version of Sikt designsystem. It will soon be released as a stable major version and replace SDS. If you are starting with a Sikt product this is the version you should choose.
+> ℹ️ This is the new, currently still experimental, version of Sikt designsystem. It will soon be released as a stable major version and replace SDS. If you are starting with a Sikt product today this is the version you should choose.
 
 <details>
   <summary>Table of Contents</summary>
