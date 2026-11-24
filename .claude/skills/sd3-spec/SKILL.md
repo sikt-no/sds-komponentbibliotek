@@ -43,7 +43,9 @@ Report the inference in the summary block (Step "Present + confirm"). The user o
 
 ## Launching sub-agents
 
-Spawn via `Agent` with `subagent_type: "general-purpose"`. Figma runs alone first; the other two go in parallel in one message after `figma.md` lands. Prompt shape:
+Spawn via `Agent` with `subagent_type: "general-purpose"`. **Foreground only — never set `run_in_background: true`.** Background sub-agents don't inherit the project's `.claude/settings.local.json`, so `Write(.../packages/design-system/src/**)` and `Bash(npx … modern-web-guidance retrieve:*)` end up denied even though the parent has them allowed.
+
+Figma runs alone first. Research + prior-art then go in parallel — put both `Agent` calls in the same message (the harness runs concurrent foreground calls in parallel). Prompt shape:
 
 ```
 Read .claude/skills/sd3-spec/prompts/<agent>.md and follow it exactly.
