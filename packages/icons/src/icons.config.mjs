@@ -107,6 +107,11 @@ export const config = [
     name: "sort-descending",
     category: "sorting-and-filtering",
   },
+  {
+    id: "arrows-down-up",
+    name: "sort-content",
+    category: "sorting-and-filtering",
+  },
   { id: "sliders", name: "adjust-settings", category: "sorting-and-filtering" },
   { id: "funnel", name: "filter", category: "sorting-and-filtering" },
   {

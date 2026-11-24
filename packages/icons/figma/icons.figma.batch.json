@@ -446,6 +446,12 @@
       "importPath": "@sikt/sds-icons"
     },
     {
+      "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=6236-746",
+      "name": "SortContentIcon",
+      "id": "sort-content-icon",
+      "importPath": "@sikt/sds-icons"
+    },
+    {
       "url": "https://www.figma.com/design/R5mBIZ6yBu96pZUsrqqv3H/SDS-Ikoner?node-id=2243-325",
       "name": "SortDescendingIcon",
       "id": "sort-descending-icon",
