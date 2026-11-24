@@ -61,14 +61,12 @@ const storybookUrl = import.meta.env.PUBLIC_STORYBOOK_URL;
     <Header currentHref={currentPath} />
     <ApplicationStatus variant="warning">
       <span>
-        Denne dokumentasjonen er for Sikt designsystem 2.0. Se{" "}
+        Denne dokumentasjonen er for gamle Sikt designsystem 2.0. For nye Sikt
+        designsystem 3.0 se{" "}
         <Link href="https://www.figma.com/files/1167338716494500240/project/466688625">
-          ny design i Figma for 3.0
+          ny design i Figma
         </Link>{" "}
-        eller les mer om{" "}
-        <Link href={storybookUrl}>
-          det tekniska arbeidet i Storybook for 3.0
-        </Link>
+        eller <Link href={storybookUrl}>ny kode i Storybook</Link>
       </span>
     </ApplicationStatus>
     <div class="page-wrapper">
