@@ -5,7 +5,7 @@ import {
   iconArgType,
   type IconComponent,
 } from "../../../../icons/stories/iconArgType";
-import { Avatar } from "../../../index";
+import { Avatar, Spinner } from "../../../index";
 import type {
   VariantButton,
   Direction,
@@ -116,6 +116,28 @@ export const IconRight: Story = {
     docs: {
       description: {
         story: "Icon after the label.",
+      },
+    },
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    "aria-busy": true,
+  },
+  render: (args) => (
+    <Button {...args}>
+      <Button.Icon>
+        <Spinner />
+      </Button.Icon>
+      Laster
+    </Button>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Use `Spinner` inside `Button.Icon` to show in-flight work. Set `aria-busy` so assistive tech announces the state.",
       },
     },
   },

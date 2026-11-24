@@ -1,0 +1,11 @@
+@scope (.sd3-spinner) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    animation: sd3-spinner-rotate 1s steps(8, end) infinite;
+  }
+
+  @keyframes sd3-spinner-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

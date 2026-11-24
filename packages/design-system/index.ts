@@ -32,6 +32,7 @@ export * from "./src/ProgressIndicator";
 export * from "./src/Radio";
 export * from "./src/SearchField";
 export * from "./src/Select";
+export * from "./src/Spinner";
 export * from "./src/StatusMessage";
 export * from "./src/Tabs";
 export * from "./src/Tag";
