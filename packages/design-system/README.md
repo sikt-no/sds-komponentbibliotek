@@ -25,7 +25,8 @@ npm i -s @sikt/sd3-design-system
 ### Stylesheet
 
 ```css
-@import url("@sikt/sd3-design-system");
+@layer sd3;
+@import url("@sikt/sd3-design-system") layer(sd3);
 ```
 
 ### React

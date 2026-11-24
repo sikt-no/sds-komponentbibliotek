@@ -46,8 +46,7 @@ Import the [@sikt/sd3-design-system](./packages/design-system/) package. It cont
 
 ```css
 @layer sd3, my-own-more-specific-layer;
-
-@import url("packages/design-system/dist/index.css") layer(sd3);
+@import url("@sikt/sd3-design-system") layer(sd3);
 ```
 
 **Note** This package may be required whether you use the React components or not. Unless you import design tokens directly and make the setup yourself.
