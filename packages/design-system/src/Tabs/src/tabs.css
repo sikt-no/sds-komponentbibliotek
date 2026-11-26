@@ -9,7 +9,7 @@
   [data-part="list"] {
     display: flex;
     align-items: stretch;
-    box-shadow: inset 0 calc(-1 * var(--sd3-space-border-weight-050)) 0
+    box-shadow: inset 0 calc(-1 * var(--sd3-space-border-weight-025)) 0
       var(--sd3-color-border-strong);
   }
 
@@ -21,8 +21,11 @@
     flex: 0 0 auto;
     align-items: center;
     gap: var(--sd3-space-component-200);
-    padding: var(--sd3-space-component-300);
+    padding-block: var(--sd3-space-component-200);
+    padding-inline: var(--sd3-space-component-300);
     border: 0;
+    border-top-left-radius: var(--sd3-space-border-radius-100);
+    border-top-right-radius: var(--sd3-space-border-radius-100);
     background-color: var(--tab-background);
     color: inherit;
     font-size: var(--sd3-typography-size-text-body-lg);
@@ -37,24 +40,36 @@
       position: absolute;
       inset-inline: 0;
       bottom: 0;
-      height: var(--sd3-space-border-weight-050);
+      height: var(--sd3-space-border-weight-025);
       background-color: var(--sd3-color-border-strong);
       pointer-events: none;
     }
 
-    &[aria-selected="true"]::after {
-      height: var(--sd3-space-border-weight-100);
-      background-color: var(--tabs-indicator-selected);
-    }
+    &[aria-selected="true"] {
+      --tab-background: var(--sd3-color-brand-primary-subtle);
 
-    @media (pointer: fine) {
-      &:hover {
-        --tab-background: var(--sd3-color-interaction-neutral-hover);
+      &::after {
+        height: var(--sd3-space-border-weight-050);
+        background-color: var(--tabs-indicator-selected);
       }
     }
 
-    &:active {
+    @media (pointer: fine) {
+      &[aria-selected="false"]:hover {
+        --tab-background: var(--sd3-color-interaction-neutral-hover);
+
+        &::after {
+          height: var(--sd3-space-border-weight-050);
+        }
+      }
+    }
+
+    &[aria-selected="false"]:active {
       --tab-background: var(--sd3-color-interaction-neutral-pressed);
+
+      &::after {
+        height: var(--sd3-space-border-weight-050);
+      }
     }
 
     &:focus-visible {
@@ -71,6 +86,16 @@
 
     [data-part="slot"] {
       display: inline-flex;
+    }
+  }
+
+  :scope[data-size="compact"] [data-part="tab"] {
+    padding-block: var(--sd3-space-component-100);
+    font-size: var(--sd3-typography-size-text-body-md);
+    line-height: var(--sd3-typography-line-height-text-body-md);
+
+    [data-part="icon"] {
+      font-size: var(--sd3-typography-size-application-md);
     }
   }
 

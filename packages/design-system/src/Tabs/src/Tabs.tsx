@@ -9,6 +9,7 @@ import {
   useMemo,
   useState,
 } from "react";
+import type { SizeDensity } from "../../../types";
 import { TabsContext } from "./TabsContext";
 import { TabsList } from "./TabsList";
 import { TabsPanel } from "./TabsPanel";
@@ -16,9 +17,12 @@ import { TabsTab } from "./TabsTab";
 import "./tabs.css";
 
 export interface TabsProps extends HTMLAttributes<HTMLDivElement> {
+  /** @default "standard" */
+  size?: SizeDensity;
   value?: string;
   defaultValue?: string;
   onValueChange?: (value: string) => void;
+  /** @default "manual" */
   activationMode?: "manual" | "automatic";
   children: ReactNode;
 }
@@ -35,6 +39,7 @@ const collectTabValues = (children: ReactNode, into: string[]): void => {
 };
 
 const TabsRoot = ({
+  size = "standard",
   value,
   defaultValue,
   onValueChange,
@@ -75,7 +80,7 @@ const TabsRoot = ({
 
   return (
     <TabsContext.Provider value={contextValue}>
-      <div className={clsx("sd3-tabs", className)} {...rest}>
+      <div data-size={size} className={clsx("sd3-tabs", className)} {...rest}>
         {children}
       </div>
     </TabsContext.Provider>
