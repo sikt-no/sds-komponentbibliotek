@@ -40,6 +40,7 @@
     "build": "tsdown"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.8.0",
     "@radix-ui/react-slot": "^1.5.0",
     "@sikt/sd3-design-tokens": "^0.4.1",
     "@sikt/sd3-sikt-logo": "^0.1.2",

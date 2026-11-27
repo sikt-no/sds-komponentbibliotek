@@ -1,0 +1,72 @@
+@scope (.sd3-popover) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    --popover-arrow-size: 0.6875rem;
+    --popover-border-width: var(--sd3-space-border-weight-025);
+    --popover-border-radius: var(--sd3-space-border-radius-200);
+    --popover-background: var(--sd3-color-surface-default-1);
+    --popover-border-color: var(--sd3-color-border-subtle);
+    --popover-max-inline-size: 18.75rem;
+
+    position: fixed;
+    inset: 0 auto auto 0;
+    margin: 0;
+    padding: var(--sd3-space-component-400);
+    border: var(--popover-border-width) solid var(--popover-border-color);
+    border-radius: var(--popover-border-radius);
+    background: var(--popover-background);
+    color: var(--sd3-color-text-primary);
+    overflow: visible;
+    box-sizing: border-box;
+    max-inline-size: var(--popover-max-inline-size);
+
+    &::before {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      width: var(--popover-arrow-size);
+      height: var(--popover-arrow-size);
+      background: inherit;
+      border: inherit;
+      border-block-start-color: transparent;
+      border-inline-start-color: transparent;
+      left: var(--arrow-x, 50%);
+      top: var(--arrow-y, 100%);
+      translate: -50% -50%;
+    }
+
+    &[data-placement^="top"]::before {
+      top: 100%;
+      rotate: 45deg;
+    }
+
+    &[data-placement^="right"]::before {
+      left: 0;
+      rotate: 135deg;
+    }
+
+    &[data-placement^="bottom"]::before {
+      top: 0;
+      rotate: -135deg;
+    }
+
+    &[data-placement^="left"]::before {
+      left: 100%;
+      rotate: -45deg;
+    }
+  }
+}
+
+@scope (.sd3-popover-inline-text-button) to ([class^="sds-"], [class^="sd3-"]) {
+  :scope {
+    all: unset;
+    cursor: pointer;
+    text-decoration: underline dotted;
+    text-underline-offset: var(--sd3-space-component-050);
+
+    &:focus-visible {
+      box-shadow: var(--sd3-focus-box-shadow);
+      outline: var(--sd3-focus-outline);
+      outline-offset: var(--sd3-focus-outline-offset);
+    }
+  }
+}
