@@ -1,6 +1,6 @@
 # <Component> — Spec
 
-**Figma:** [<page-title>](<full URL from user>)
+**Figma:** [<component-set name>](<component-set URL — the one Code Connect will consume, copied from figma.md's top-of-file Figma URL>)
 **Component folder:** `packages/design-system/src/<PascalCase>/`
 **Replaces:** `<@sikt/sds-x, @sikt/sds-y>` or `none`
 **Last synced:** <YYYY-MM-DD>

@@ -45,7 +45,11 @@ Report the inference in the summary block (Step "Present + confirm"). The user o
 
 Spawn via `Agent` with `subagent_type: "general-purpose"`. **Foreground only — never set `run_in_background: true`.** Background sub-agents don't inherit the project's `.claude/settings.local.json`, so `Write(.../packages/design-system/src/**)` and `Bash(npx … modern-web-guidance retrieve:*)` end up denied even though the parent has them allowed.
 
-Figma runs alone first. Research + prior-art then go in parallel — put both `Agent` calls in the same message (the harness runs concurrent foreground calls in parallel). Prompt shape:
+Figma runs alone first. Research + prior-art then go in parallel — put both `Agent` calls in the same message (the harness runs concurrent foreground calls in parallel).
+
+**If the figma-agent reports "multiple component sets on the page":** stop. Show the user the list it returned ( `name — nodeId` per set ) and ask which to spec. Re-launch figma-agent with the chosen component-set URL as `<Figma URL>` (not the original page URL). Research + prior-art run only after figma.md is written.
+
+Prompt shape:
 
 ```
 Read .claude/skills/sd3-spec/prompts/<agent>.md and follow it exactly.

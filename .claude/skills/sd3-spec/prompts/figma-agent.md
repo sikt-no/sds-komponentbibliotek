@@ -25,6 +25,16 @@ Classify children:
 
 If no component sub-frames exist, report back and stop — URL likely points at docs-only.
 
+### If the page contains more than one component set
+
+The user's URL may point at a page/frame that owns several top-level component sets (e.g. Popover + Tooltip on a shared surface page). You spec **one** component per run.
+
+- Enumerate every top-level component set on the page: `{ name, nodeId, url }`.
+- If exactly one matches `<PascalCase>` (case-insensitive), proceed with that one.
+- If zero or more than one matches, **stop**. Report back to the orchestrator with the full list and the ambiguity. The orchestrator asks the user which component set to spec. Do not pick silently.
+
+From here on, `<Figma URL>` and `<NodeId>` refer to **the chosen component set**, not the page URL the user sent.
+
 ## Step 2 — One component, one artefact
 
 A Figma page for a component like Combobox often contains sub-frames (`combofield`, `single item`, `list box`). These are **internal composition**, not separate components. Fold them into:
@@ -124,9 +134,10 @@ Write exactly this structure to the provided path. Delete empty optional section
 ```markdown
 # <Component> — Figma extraction
 
-**Figma URL:** <url>
+**Figma URL:** <component-set URL — the one Code Connect will consume>
 **File key:** 0aelUwbn2Ivir3T2JfhdOo
-**NodeId:** <id>
+**NodeId:** <component-set nodeId>
+**Page URL (navigation only):** <original page URL the user sent, if different>
 **Captured:** <YYYY-MM-DD>
 
 ## Overview

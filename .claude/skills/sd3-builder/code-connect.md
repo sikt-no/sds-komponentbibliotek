@@ -8,7 +8,7 @@ fileKey (SDS Komponenter 3.0): `0aelUwbn2Ivir3T2JfhdOo`. Reject the deprecated 2
 
 ## Edits to the generator's stub
 
-1. Replace `<node-id>` in `// url=` with SPEC's Figma node ID.
+1. Replace `<node-id>` in `// url=` with the **component-set URL** — the one Code Connect binds against. Source it from `spec/figma.md`'s `## Code Connect inputs` block (or the equivalent `**URL:**` field on the chosen component set). **Do not** copy SPEC.md's top-of-file Figma link blindly if the spec pre-dates the url-source fix — that may still be a page/frame link. Sanity check: the `node-id` you drop in must appear under `## Code Connect inputs` in `figma.md`; if not, stop and reconcile before continuing.
 2. Expand the default export: prop mappings + `example: figma.code\`…\``+`metadata: { nestable: true }`.
 
 ## Discover real Figma props first

@@ -49,6 +49,17 @@ Scan JSDoc, CSS comments, and Storybook `description.component` / `description.s
 
 (Focus-ring completeness is the a11y agent's beat, not this one.)
 
+## SD3 purity (no legacy sds-\* imports)
+
+Applies to `src/<PascalCase>.tsx`, any colocated hook/helper, **and** `stories/<PascalCase>.stories.tsx`. SD3 components and stories must not depend on legacy SDS packages — the point of the package is a clean slate. A single legacy import is a blocker.
+
+- **No `@sikt/sds-*` imports.** Exception: `@sikt/sds-icons` (icon source for both tracks) and `@sikt/sds-core` if it still ships purely-structural helpers. Everything else — `@sikt/sds-button`, `@sikt/sds-dialog`, `@sikt/sds-badge`, `@sikt/sds-typography`, … — is legacy; grep for `from "@sikt/sds-` and flag each hit.
+- **No relative imports into sibling legacy packages.** The repo also ships legacy packages at `packages/<kebab>/` (`packages/button/`, `packages/badge/`, etc.). `import … from "../../../../button"` and friends bypass the npm-package surface but still pull legacy code. Grep for `from "../../../../` or `from "../../../../../` in `.tsx` and reject hits that resolve to `packages/<legacy>/`. Allowed: `packages/design-system/**` (own package) and `packages/design-system/types/index.ts` (shared SD3 types per ADR-20260801).
+- **No `@sikt/sds-design-tokens` imports.** SD3 consumes `@sikt/sd3-design-tokens` only.
+- **Reach for the SD3 equivalent.** `ButtonGroup` from legacy sds-button → `Button.Group` from `../../Button`. If no SD3 equivalent exists, flag as **missing SD3 primitive** rather than papering over with the legacy import.
+
+(CSS side is already covered under "CSS conventions — Tokens are `--sd3-*` only." If a component's CSS imports `--sds-*` tokens, that's the same rule from the stylesheet angle.)
+
 ## Component conventions
 
 - **No custom props wrapping aria attributes.** No invented `announce` / `pressed` / etc. that map to `aria-live` / `aria-pressed`. Expose native via `HTMLAttributes`.
